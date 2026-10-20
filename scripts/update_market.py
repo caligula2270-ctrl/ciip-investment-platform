@@ -80,3 +80,6 @@ print(f"CIIP market: {len(result['prices'])} observations, {len(result['unavaila
 if not result["prices"]:
     print("ERROR: Ninguna cotización válida. Comprobar proveedor, disponibilidad y formato.", file=sys.stderr)
     sys.exit(1)
+if len(result["prices"]) < 10:
+    print("ERROR: Cobertura insuficiente ("+str(len(result["prices"]))+"/"+str(len(SYMBOLS))+").", file=sys.stderr)
+    sys.exit(1)
