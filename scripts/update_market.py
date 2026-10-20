@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """CIIP public daily closing-price collector. No credentials or trading."""
-import csv, datetime as dt, io, json, pathlib, time, urllib.error, urllib.parse, urllib.request
+import csv, datetime as dt, io, json, pathlib, sys, time, urllib.error, urllib.parse, urllib.request
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 # Explicit, auditable Stooq symbols; do not infer foreign exchange symbols.
 SYMBOLS={
@@ -47,3 +47,6 @@ if dest.exists():
     except (ValueError,OSError):pass
 dest.write_text(json.dumps(result,ensure_ascii=False,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 print(f"CIIP market: {len(result['prices'])} observations, {len(result['unavailable'])} unavailable")
+if not result["prices"]:
+    print("ERROR: Ninguna cotización válida. Comprobar proveedor, disponibilidad y formato.", file=sys.stderr)
+    sys.exit(1)
