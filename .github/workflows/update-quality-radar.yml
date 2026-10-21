@@ -1,0 +1,41 @@
+name: Actualizar cotizaciones Quality & Value Radar
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 06:20 UTC de lunes a viernes; normalmente incorpora el cierre del día anterior.
+    - cron: '20 6 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: qvr-quotes
+  cancel-in-progress: false
+
+jobs:
+  quotes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Actualizar cierres desde proveedores públicos
+        run: python quality-value-radar/scripts/update_quotes.py
+      - name: Guardar y publicar JSON de precios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add quality-value-radar/data/quotes.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data(qvr): actualizar cierres diarios con procedencia"
+            git push origin HEAD:main
+          else
+            echo "Sin cambios en precios"
+          fi
