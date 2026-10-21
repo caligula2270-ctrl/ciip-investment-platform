@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="theme-color" content="#0b1121">
+  <meta name="description" content="Radar de inversión en calidad y valor: coincidencias entre inversores, análisis y valoración disciplinada.">
+  <title>Quality & Value Radar · Investment Intelligence</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Navegación principal">
+    <div class="brand"><span class="brand-mark">◈</span><div><b>Q<span class="brand-amp">&</span>V RADAR</b><small>INVESTMENT INTELLIGENCE</small></div></div>
+    <div class="side-label">WORKSPACE</div>
+    <nav class="nav-stack" id="desktop-nav">
+      <button data-page="overview" class="nav-button selected"><span class="nav-icon">▦</span> Resumen <span class="nav-kbd">01</span></button>
+      <button data-page="radar" class="nav-button"><span class="nav-icon">◉</span> Radar de oportunidades <span class="nav-kbd">02</span></button>
+      <button data-page="universe" class="nav-button"><span class="nav-icon">▤</span> Empresas <span class="nav-kbd">03</span></button>
+      <button data-page="investors" class="nav-button"><span class="nav-icon">♧</span> Inversores <span class="nav-kbd">04</span></button>
+      <button data-page="valuation" class="nav-button"><span class="nav-icon">∑</span> Valorador <span class="nav-kbd">05</span></button>
+      <button data-page="sources" class="nav-button"><span class="nav-icon">≡</span> Fuentes y datos <span class="nav-kbd">06</span></button>
+    </nav>
+    <div class="sidebar-bottom"><div class="system-status"><span class="dot green"></span> Modo local operativo</div><small>Sin registro · tus decisiones se guardan en este navegador.</small></div>
+  </aside>
+  <div class="main-area">
+    <header class="topbar"><div class="mobile-brand">◈ <strong>Q&V RADAR</strong></div><div class="breadcrumb"><span>INVESTMENT DESK</span><span class="slash">/</span><b id="crumb">RESUMEN</b></div><div class="top-actions"><span id="clock-chip" class="clock-chip"></span><button class="btn btn-quiet" id="backup-top" title="Exportar copia de seguridad">↓ Exportar datos</button></div></header>
+    <main class="main" id="app" tabindex="-1"><div class="loading">Preparando radar de inversión…</div></main>
+    <footer class="footer"><span>Q&V RADAR · metodología Quality + Value</span><span>Datos orientativos · no constituye asesoramiento financiero</span></footer>
+  </div>
+</div>
+<nav class="mobile-nav" aria-label="Navegación móvil"><button data-page="overview">▦<span>Inicio</span></button><button data-page="radar">◉<span>Radar</span></button><button data-page="universe">▤<span>Empresas</span></button><button data-page="valuation">∑<span>Valorar</span></button><button data-page="sources">≡<span>Datos</span></button></nav>
+<div class="modal-backdrop hidden" id="modal-root" role="presentation"></div>
+<div class="toast-container" id="toasts" aria-live="polite"></div>
+<script src="data/seed.js"></script><script defer src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "generatedAt": "2026-10-22 (referencias manuales, sin actualización automática aún)",
+  "quotes": {
+    "CPRT": {"price": 27.83, "date": "2026-10-20", "currency": "USD", "source": "StockAnalysis", "sourceUrl": "https://stockanalysis.com/stocks/cprt/history/", "kind": "cierre"},
+    "AMZN": {"price": 262.36, "date": "2026-10-21", "currency": "USD", "source": "ChartExchange", "sourceUrl": "https://chartexchange.com/symbol/nasdaq-amzn/historical/", "kind": "cierre"},
+    "CSU.TO": {"price": 3240.00, "date": "2026-10-20", "currency": "CAD", "source": "YCharts", "sourceUrl": "https://ycharts.com/companies/CSU.TO/price", "kind": "cierre"}
+  }
+}
