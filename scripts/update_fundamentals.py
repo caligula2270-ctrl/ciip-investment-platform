@@ -18,7 +18,7 @@ TAGS={
 "cash":["CashAndCashEquivalentsAtCarryingValue"],
 "operating_cash_flow":["NetCashProvidedByUsedInOperatingActivities"],
 "capex":["PaymentsToAcquirePropertyPlantAndEquipment"],
-"long_term_debt":["LongTermDebtCurrent","LongTermDebtNoncurrent","LongTermDebt"],
+"long_term_debt":["LongTermDebtNoncurrent","LongTermDebt"],
 }
 FLOW={"revenue","net_income","operating_income","operating_cash_flow","capex"}
 def get(url):
@@ -34,35 +34,54 @@ def get(url):
         except zlib.error:
             raw=zlib.decompress(raw,-zlib.MAX_WBITS)
     return json.loads(raw.decode("utf-8-sig"))
-def select(facts,metric):
-    for tag in TAGS[metric]:
-        node=facts.get("us-gaap",{}).get(tag,{})
-        units=node.get("units",{}).get("USD",[])
-        rows=[]
-        for x in units:
+def select(facts, metric, as_of):
+    """Select comparable annual flows and recent balance sheet instants.
+
+    Annual income/cash-flow observations MUST come from Form 10-K.
+    Interim 10-Q cumulative observations must not be mislabelled as FY.
+    Compare all accepted US-GAAP tags; do not stop at the first tag.
+    """
+    candidates=[]
+    max_age=730 if metric in FLOW else 540
+    for priority,tag in enumerate(TAGS[metric]):
+        observations=facts.get("us-gaap",{}).get(tag,{}).get("units",{}).get("USD",[])
+        for x in observations:
             try:
-                if x.get("form") not in ("10-K","10-Q"):continue
-                if x.get("accn") is None or not x.get("filed"):continue
+                form=x.get("form")
+                if form not in ("10-K","10-Q"):continue
+                if not x.get("accn") or not x.get("filed"):continue
                 end=dt.date.fromisoformat(x["end"])
+                filed=dt.date.fromisoformat(x["filed"])
+                if end>as_of or filed>as_of or (as_of-end).days>max_age:continue
                 start=dt.date.fromisoformat(x["start"]) if x.get("start") else None
-                duration=(end-start).days if start else None
                 if metric in FLOW:
-                    if duration is None or not (70<=duration<=110 or 330<=duration<=380):continue
-                    period="FY" if duration>300 else "Q"
+                    if form!="10-K" or start is None:continue
+                    if not 330<=(end-start).days<=380:continue
+                    period="FY"
                 else:
                     if start is not None:continue
                     period="instant"
-                rows.append({"value":x["val"],"end":x["end"],"start":x.get("start"),"filed":x["filed"],"form":x["form"],"accession":x["accn"],"period":period,"tag":tag,"taxonomy":"us-gaap","unit":"USD"})
-            except (ValueError,KeyError,TypeError):continue
-        if rows:
-            # Prefer latest fiscal period; prefer latest filing if restated.
-            rows.sort(key=lambda x:(x["end"],x["filed"]),reverse=True)
-            return rows[0]
-    return None
+                value=x["val"]
+                if isinstance(value,bool) or not isinstance(value,(int,float)):continue
+                candidates.append({
+                    "value":value,"end":str(end),"start":str(start) if start else None,
+                    "filed":str(filed),"form":form,"accession":x["accn"],
+                    "period":period,"tag":tag,"taxonomy":"us-gaap","unit":"USD",
+                    "_priority":priority
+                })
+            except (ValueError,KeyError,TypeError,OverflowError):
+                continue
+    if not candidates:return None
+    # Most recent period; latest correction for that period; only then tag preference.
+    candidates.sort(key=lambda x:(x["end"],x["filed"],-x["_priority"]),reverse=True)
+    item=candidates[0]
+    item.pop("_priority")
+    return item
+
 def main():
     mapping=get("https://www.sec.gov/files/company_tickers.json")
     cikmap={v["ticker"].upper():str(v["cik_str"]).zfill(10) for v in mapping.values()}
-    result={"schema":"ciip-fundamentals-v1","source":"SEC EDGAR companyfacts (US GAAP)","generated_at":dt.datetime.now(dt.timezone.utc).isoformat(),"companies":{},"unavailable":{},"caveat":"Latest reported facts may represent different periods. Capex is cash outflow (positive). Debt components are NOT added because tags may overlap. No automatic FCF, ROIC or valuation."}
+    result={"schema":"ciip-fundamentals-v1","source":"SEC EDGAR companyfacts (US GAAP)","generated_at":dt.datetime.now(dt.timezone.utc).isoformat(),"companies":{},"unavailable":{},"caveat":"Annual flows: latest matching 10-K fiscal year, Form 10-Q year-to-date excluded. Balance sheet values can be later quarterly instants. Capex is a positive cash outflow. Reported long-term debt excludes current portion when tagged LongTermDebtNoncurrent. No automatic FCF, ROIC or valuation."}
     for ticker in TICKERS:
         cik=cikmap.get(ticker)
         if not cik:
@@ -72,8 +91,16 @@ def main():
         try:
             obj=get(url)
             facts=obj.get("facts",{})
-            metrics={k:select(facts,k) for k in TAGS}
-            result["companies"][ticker]={"cik":cik,"entity_name":obj.get("entityName"),"url":url,"metrics":metrics}
+            metrics={k:select(facts,k,dt.datetime.now(dt.timezone.utc).date()) for k in TAGS}
+            annual_ends=[m["end"] for name,m in metrics.items() if name in FLOW and m]
+            annual_end=max(annual_ends) if annual_ends else None
+            # Drop older annual metrics rather than mixing fiscal years in one row.
+            excluded=[]
+            for name in FLOW:
+                if metrics.get(name) and metrics[name]["end"]!=annual_end:
+                    excluded.append({"metric":name,"latest_available_end":metrics[name]["end"],"reason":"different_fiscal_year"})
+                    metrics[name]=None
+            result["companies"][ticker]={"cik":cik,"entity_name":obj.get("entityName"),"url":url,"annual_reference_end":annual_end,"excluded_annual_metrics":excluded,"metrics":metrics}
         except Exception as exc:
             result["unavailable"][ticker]=str(exc)[:180]
         time.sleep(0.16)
