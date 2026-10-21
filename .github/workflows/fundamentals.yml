@@ -1,0 +1,33 @@
+name: CIIP Weekly SEC Fundamentals
+on:
+  schedule:
+    - cron: '45 7 * * 2'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ciip-fundamentals
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download SEC reported fundamentals
+        env:
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
+        run: python scripts/update_fundamentals.py
+      - name: Commit source-linked facts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fundamentals-auto.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: update SEC fundamentals"
+            git pull --rebase
+            git push
+          fi
