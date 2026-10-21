@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0e1930"><title>Quality & Value Radar · CIIP</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,sans-serif;color:#e8f0ff;background:#081222}*{box-sizing:border-box}body{margin:0}a{color:#7ed7c9}button,input,select{font:inherit}button{cursor:pointer}header{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:18px max(20px,4vw);border-bottom:1px solid #273e55;background:#0d1a2e}.logo{font-weight:850;color:#70d5c4;letter-spacing:.1em}.wrap{max-width:1320px;margin:auto;padding:30px 20px}h1{font-size:clamp(26px,4vw,42px);margin:6px 0 12px}h2{font-size:19px;margin-top:0}.muted{color:#a4b4cb}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:bold;color:#71d6c4}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0}.card,.panel{background:#111f33;border:1px solid #29415a;border-radius:16px;padding:19px}.card strong{font-size:29px;display:block;margin-top:9px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.toolbar input,.toolbar select,input[type=number]{background:#0a1628;border:1px solid #35516d;padding:11px;border-radius:9px;color:#eff7ff;max-width:100%}#query{min-width:230px;flex:1}.tablewrap{overflow:auto}.data{width:100%;border-collapse:collapse;min-width:800px}.data th{text-align:left;font-size:11px;text-transform:uppercase;color:#8ea5c1;letter-spacing:.5px}.data td,.data th{padding:13px 9px;border-bottom:1px solid #263b51}.data tr:hover{background:#1a2f47}.tag{font-size:12px;color:#8bdfcd}.warn{color:#f5d08b}.chip{font-size:12px;background:#243b52;border-radius:30px;padding:5px 9px;white-space:nowrap}.btn{border:1px solid #456681;border-radius:9px;background:#193853;color:white;padding:10px 12px}.btn:hover{background:#235374}.primary{background:#146c68;border-color:#248f86}.rank{font-size:13px;font-weight:800;color:#71d6c4}.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:15px}.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.value-grid label{display:grid;gap:6px;color:#b8cadd;font-size:12px}.value-grid input{width:100%}.detail{margin-top:15px;line-height:1.7}.foot{font-size:12px;color:#8da5c0;line-height:1.6;margin:28px 0}.bar{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.hidden{display:none}.highlight{color:#6fdbc7;font-weight:800}.red{color:#ffad9e;font-weight:700}.small{font-size:12px}.toolbar label{align-self:center} @media(max-width:800px){.cards{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.value-grid{grid-template-columns:repeat(2,1fr)}header{flex-wrap:wrap}}
+</style></head>
+<body><header><span class="logo">CIIP / QUALITY & VALUE RADAR</span><a href="../">Volver a CIIP</a></header>
+<main class="wrap"><div class="eyebrow">INVESTMENT INTELLIGENCE · QUALITY + VALUE</div><h1>Radar de coincidencias y valoración</h1>
+<p class="muted">Seguimiento orientativo de empresas citadas por los inversores estudiados. La presencia en una lista histórica no equivale a posición vigente. Datos de cotización: cierres, no tiempo real.</p>
+<section class="cards"><div class="card"><span class="muted">Empresas examinadas</span><strong id="stat-companies">—</strong></div><div class="card"><span class="muted">Coincidencias documentadas *</span><strong id="stat-overlap">—</strong></div><div class="card"><span class="muted">Con cotización fechada</span><strong id="stat-priced">—</strong></div><div class="card"><span class="muted">En seguimiento</span><strong id="stat-watch">—</strong></div></section>
+<div class="toolbar"><input id="query" placeholder="Buscar empresa o ticker" aria-label="Buscar empresas"><select id="manager"><option value="">Todos los gestores</option></select><select id="mode"><option value="all">Todas</option><option value="overlap">Coincidencias</option><option value="watch">Favoritos</option><option value="priced">Con precio</option></select><button class="btn" id="export">Exportar CSV</button></div>
+<section class="grid"><div class="panel"><div class="bar"><h2>Universo de inversión</h2><span id="quote-status" class="small muted">Consultando datos…</span></div><div class="tablewrap"><table class="data"><thead><tr><th>Empresa</th><th>Gestores</th><th>Cotización</th><th>Observación</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></div>
+<div class="panel"><h2>Ficha y valoración manual</h2><select id="selected" aria-label="Seleccionar empresa" style="width:100%;padding:11px;background:#0b182b;color:white;border-radius:9px;border:1px solid #36536f"></select>
+<div class="detail"><div id="profile"></div><p class="muted small">El precio objetivo se calcula a partir de los supuestos que introduces; no se presenta como valoración certificada.</p></div>
+<div class="value-grid"><label>BPA normalizado<input id="eps" type="number" step=".01" min="0" placeholder="USD / acción"></label><label>Crecimiento anual %<input id="growth" type="number" value="8" step="1"></label><label>PER futuro<input id="pe" type="number" value="20" min="1" step="1"></label><label>Años<input id="years" type="number" value="5" min="1" max="20"></label><label>Rentabilidad exigida %<input id="discount" type="number" value="10" step="1"></label><label>Margen seguridad %<input id="safety" type="number" value="25" step="1"></label></div>
+<p class="bar"><button class="btn primary" id="calc">Calcular valor</button><button class="btn" id="fav">Añadir a favoritos</button></p><div class="card" id="out">Selecciona una empresa e introduce el beneficio por acción normalizado.</div></div></section>
+<div class="foot">* Coincidencias del material de referencia, no acreditación de posiciones actuales. Amazon se atribuye históricamente a Nick Sleep (no cartera actual); Copart se menciona para Galician Investor y Best Anchor Stocks. Algunas posiciones de otros gestores no disponen de una cartera actual verificable. Todas las compras requieren análisis financiero propio.</div></main>
+<script>
+const companies=[
+["CPRT","Copart","Servicios vehículos",["Galician Investor","Best Anchor Stocks"],"Plataforma de subastas, red de depósitos y relaciones con aseguradoras"],
+["AMZN","Amazon","Comercio / cloud",["Best Anchor Stocks","Nick Sleep (histórico)"],"Escala logística, AWS, publicidad; inversión intensiva"],
+["CSU.TO","Constellation Software","Software vertical",["Best Anchor Stocks"],"Adquisición descentralizada; atribuciones a otros gestores pendientes de verificar"],
+["COST","Costco","Distribución",["Nick Sleep (histórico)"],"Membresías, escala y precios bajos"],
+["KNSL","Kinsale Capital","Seguros",["Galician Investor"],"Disciplina de suscripción en especialidad E&S"],
+["DNP.WA","Dino Polska","Supermercados",["Galician Investor"],"Tiendas de proximidad en Polonia"],
+["ADBE","Adobe","Software",["Best Anchor Stocks"],"Ecosistema creativo, riesgos de IA"],
+["ASML","ASML","Semiconductores",["Best Anchor Stocks"],"Litografía EUV, dependencia de grandes clientes"],
+["ATCO-A.ST","Atlas Copco","Industria",["Best Anchor Stocks"],"Servicios, fiabilidad y red comercial"],
+["AAON","AAON","HVAC",["Best Anchor Stocks"],"Soluciones a medida y centros de datos"],
+["DE","Deere","Industria",["Best Anchor Stocks"],"Red de concesionarios, ciclicidad agrícola"],
+["DGE.L","Diageo","Consumo",["Best Anchor Stocks"],"Marcas premium"],
+["DHR","Danaher","Diagnóstico",["Best Anchor Stocks"],"Procesos operativos y tecnologías médicas"],
+["FIVE","Five Below","Retail",["Best Anchor Stocks"],"Propuesta de valor de retail"],
+["FOUR","Shift4","Pagos",["Best Anchor Stocks"],"Integración de pagos y software"],
+["FRPH","FRP Holdings","Inmobiliario",["Best Anchor Stocks"],"Activos de desarrollo y terrenos"],
+["INTU","Intuit","Software financiero",["Best Anchor Stocks"],"Costes de cambio y cumplimiento"],
+["JDG.L","Judges Scientific","Instrumentación",["Best Anchor Stocks"],"Instrumentación de nicho"],
+["KEYS","Keysight","Instrumentación",["Best Anchor Stocks"],"Software y equipos de test"],
+["MEDP","Medpace","Servicios clínicos",["Best Anchor Stocks"],"Investigación clínica"],
+["7974.T","Nintendo","Videojuegos",["Best Anchor Stocks"],"Franquicias de propiedad intelectual"],
+["RMD","ResMed","Equipamiento médico",["Best Anchor Stocks"],"Dispositivos y datos para terapias"],
+["STVN","Stevanato Group","Envase farmacéutico",["Best Anchor Stocks"],"Barrera de regulación y calidad"],
+["TRUP","Trupanion","Seguros mascotas",["Best Anchor Stocks"],"Suscripción aseguradora, exposición a siniestralidad"],
+["TXN","Texas Instruments","Semiconductores",["Best Anchor Stocks"],"Catálogo analógico y fabricación"],
+["ZTS","Zoetis","Salud animal",["Best Anchor Stocks"],"Escala comercial y desarrollo farmacéutico"],
+["GLNG","Golar LNG","Gas natural",["Cobas Internacional"],"Activos FLNG, ejecución de proyectos"],
+["0001.HK","CK Hutchison","Conglomerado",["Cobas Internacional"],"Puertos, retail y redes"],
+["ATYM.L","Atalaya Mining","Minería",["Cobas Internacional","Cobas Iberia"],"Exposición al cobre; misma gestora, dos fondos"],
+["DAN.MI","Danieli","Industria",["Cobas Internacional"],"Equipamiento siderúrgico"],
+["BWO.OL","BW Offshore","Energía",["Cobas Internacional"],"Infraestructura FPSO"],
+["BWE.OL","BW Energy","Energía",["Cobas Internacional"],"Producción de petróleo"],
+["WIZZ.L","Wizz Air","Aerolíneas",["Cobas Internacional"],"Modelo low cost"],
+["BRAV3.SA","Brava Energia","Energía",["Cobas Internacional"],"Exploración y producción"],
+["TGS.OL","TGS","Geofísica",["Cobas Internacional"],"Datos geofísicos"],
+["DBG.PA","Derichebourg","Reciclaje",["Cobas Internacional"],"Servicios industriales"],
+["MEL.MC","Meliá Hotels","Hoteles",["Cobas Iberia"],"Operación hotelera"],
+["SCYR.MC","Sacyr","Concesiones",["Cobas Iberia"],"Concesiones de infraestructura"],
+["TRE.MC","Técnicas Reunidas","Ingeniería",["Cobas Iberia"],"Proyectos de ingeniería"],
+["GRF.MC","Grifols","Biotecnología",["Cobas Iberia"],"Hemoderivados y apalancamiento"],
+["ALM.MC","Almirall","Farmacia",["Cobas Iberia"],"Dermatología"],
+["GEST.MC","Gestamp","Automoción",["Cobas Iberia"],"Componentes de automoción"],
+["DOM.MC","Global Dominion","Servicios",["Cobas Iberia"],"Servicios multitécnicos"],
+["MCM.MC","Miquel y Costas","Industria",["Cobas Iberia"],"Papeles especiales"],
+["TUB.MC","Tubacex","Industria",["Cobas Iberia"],"Tubos de alto rendimiento"]
+];
+let prices={},watch=new Set(JSON.parse(localStorage.getItem("qvr-watch")||"[]")),selected="CPRT";
+const $=id=>document.getElementById(id),format=(n,d=2)=>Number(n).toLocaleString("es-ES",{maximumFractionDigits:d}),get=s=>companies.find(x=>x[0]===s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const uniq=[...new Set(companies.flatMap(c=>c[3]))];
+$("manager").innerHTML+=[...uniq].map(s=>'<option value="'+esc(s)+'">'+esc(s)+'</option>').join("");
+$("selected").innerHTML=companies.map(c=>'<option value="'+c[0]+'">'+esc(c[1])+' ('+c[0]+')</option>').join("");
+function show(){
+let q=$("query").value.toLowerCase(),m=$("manager").value,mode=$("mode").value;
+let list=companies.filter(c=>(c.join(" ").toLowerCase().includes(q))&&(!m||c[3].includes(m))&&(mode!=="overlap"||c[3].length>1)&&(mode!=="watch"||watch.has(c[0]))&&(mode!=="priced"||prices[c[0]]));
+$("rows").innerHTML=list.map(c=>{let p=prices[c[0]],old=p&&((Date.now()-Date.parse(p.date))/86400000>7);
+return '<tr><td><strong>'+esc(c[1])+'</strong><div class="small muted">'+c[0]+' · '+esc(c[2])+'</div></td><td>'+c[3].map(x=>'<div class="tag">'+esc(x)+'</div>').join("")+'</td><td>'+ (p?'<strong>'+format(p.price)+' '+esc(p.currency)+'</strong><div class="small '+(old?'warn':'muted')+'">'+esc(p.date)+(old?' · antiguo':'')+'</div>':'<span class="warn">Sin datos</span>')+'</td><td class="small muted">'+esc(c[4])+'</td><td><button class="btn" data-select="'+c[0]+'">Analizar</button></td></tr>'}).join("");
+$("stat-companies").textContent=companies.length;$("stat-overlap").textContent=companies.filter(c=>c[3].length>1).length;$("stat-priced").textContent=Object.keys(prices).length;$("stat-watch").textContent=watch.size;profile();
+}
+function profile(){let c=get(selected),p=prices[selected];$("selected").value=selected;$("profile").innerHTML='<strong>'+esc(c[1])+'</strong> · '+esc(c[2])+'<div class="small muted">'+esc(c[4])+'</div><div class="small">Seguimiento: '+c[3].map(esc).join(", ")+'</div><div class="small">Cotización: '+(p?format(p.price)+' '+esc(p.currency)+' · '+p.date+' · <a target="_blank" rel="noopener noreferrer" href="'+esc(p.sourceUrl)+'">'+esc(p.source)+'</a>':'No disponible')+'</div>';$("fav").textContent=watch.has(selected)?"Retirar de favoritos":"Añadir a favoritos";$("out").textContent="Introduce un BPA normalizado y calcula el valor.";
+}
+$("rows").addEventListener("click",e=>{let b=e.target.closest("[data-select]");if(b){selected=b.dataset.select;profile();}});
+$("selected").addEventListener("change",e=>{selected=e.target.value;profile();});
+for(let k of ["query","manager","mode"])$(k).addEventListener(k==="query"?"input":"change",show);
+$("fav").onclick=()=>{watch.has(selected)?watch.delete(selected):watch.add(selected);localStorage.setItem("qvr-watch",JSON.stringify([...watch]));show();};
+$("calc").onclick=()=>{let eps=+$("eps").value,g=+$("growth").value/100,pe=+$("pe").value,y=+$("years").value,d=+$("discount").value/100,s=+$("safety").value/100,p=prices[selected];if(!(eps>0&&pe>0&&y>0&&y<=20&&d>=0&&s>=0&&s<1&&g>-1)){ $("out").textContent="Introduce supuestos válidos y un BPA positivo.";return;}
+let target=eps*Math.pow(1+g,y)*pe/Math.pow(1+d,y),entry=target*(1-s);
+$("out").innerHTML='<div class="muted small">Valor orientativo por acción</div><div class="highlight" style="font-size:27px">'+format(target)+'</div><div>Precio máximo con margen: <strong>'+format(entry)+'</strong></div><div>'+ (p?("Precio observado: "+format(p.price)+" "+p.currency+" · "+(p.price<entry?'<span class="highlight">por debajo de umbral</span>':'<span class="red">por encima de umbral</span>')):"No hay precio verificable")+'</div><p class="small muted">Modelo BPA × (1+crecimiento)^años × PER / (1+tasa exigida)^años. Requiere revisar sector, dilución, deuda y calidad del BPA.</p>';
+};
+$("export").onclick=()=>{let head=["Ticker","Empresa","Gestores","Precio","Divisa","Fecha","Fuente"];let rows=[head,...companies.map(c=>{let p=prices[c[0]]||{};return[c[0],c[1],c[3].join(" / "),p.price||"",p.currency||"",p.date||"",p.source||""]})];let csv="\uFEFF"+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(";")).join("\r\n");let u=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"}));let a=document.createElement("a");a.href=u;a.download="quality-value-radar.csv";a.click();setTimeout(()=>URL.revokeObjectURL(u),500)};
+fetch("./prices.json?cache="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()}).then(d=>{prices=d.quotes||{};$("quote-status").textContent="Datos: "+(d.successfulSymbols??0)+" símbolos actualizados en último intento · "+(d.lastAttemptUTC||"sin actualización");show()}).catch(()=>{$("quote-status").textContent="Fuente no disponible. No se presentan precios inventados.";show()});
+show();
+</script></body></html>
