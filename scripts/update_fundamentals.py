@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """CIIP fundamentals from SEC EDGAR companyfacts. No financial estimates."""
-import datetime as dt, json, os, pathlib, sys, time, urllib.request
+import datetime as dt, gzip, json, os, pathlib, sys, time, urllib.request, zlib
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 AGENT=os.environ.get("SEC_USER_AGENT","").strip()
 if not AGENT or "@" not in AGENT:
@@ -24,7 +24,16 @@ FLOW={"revenue","net_income","operating_income","operating_cash_flow","capex"}
 def get(url):
     req=urllib.request.Request(url,headers=HEADERS)
     with urllib.request.urlopen(req,timeout=25) as resp:
-        return json.load(resp)
+        raw=resp.read()
+        encoding=resp.headers.get("Content-Encoding","").lower()
+    if encoding=="gzip" or raw[:2]==bytes([31,139]):
+        raw=gzip.decompress(raw)
+    elif encoding=="deflate":
+        try:
+            raw=zlib.decompress(raw)
+        except zlib.error:
+            raw=zlib.decompress(raw,-zlib.MAX_WBITS)
+    return json.loads(raw.decode("utf-8-sig"))
 def select(facts,metric):
     for tag in TAGS[metric]:
         node=facts.get("us-gaap",{}).get(tag,{})
