@@ -2,7 +2,7 @@
 """CIIP fundamentals from SEC EDGAR companyfacts. No financial estimates."""
 import datetime as dt, json, os, pathlib, sys, time, urllib.request
 ROOT=pathlib.Path(__file__).resolve().parents[1]
-AGENT=os.environ.get("SEC_USER_AGENT","CIIP Research contact ciip-research@example.org")
+AGENT=os.environ.get("SEC_USER_AGENT","").strip()\nif not AGENT or "@" not in AGENT:\n    raise SystemExit("Set repository variable SEC_USER_AGENT to a descriptive name and valid contact email before running SEC ingestion.")
 HEADERS={"User-Agent":AGENT,"Accept":"application/json","Accept-Encoding":"gzip, deflate"}
 # Explicit mappings to SEC-listed US reporting issuers. ADRs and foreign issuers
 # are excluded until IFRS taxonomy and depositary share conventions are validated.
