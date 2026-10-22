@@ -1,4 +1,368 @@
 {
-  "quotes": {},
-  "note": "Sin precios iniciales; serán añadidos por el workflow tras la primera ejecución."
+  "quotes": {
+    "0001.HK": {
+      "price": 64.6,
+      "currency": "HKD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/0001.HK/history/",
+      "kind": "cierre"
+    },
+    "7974.T": {
+      "price": 8699.0,
+      "currency": "JPY",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/7974.T/history/",
+      "kind": "cierre"
+    },
+    "AAON": {
+      "price": 69.62,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/AAON/history/",
+      "kind": "cierre"
+    },
+    "ADBE": {
+      "price": 270.55,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/ADBE/history/",
+      "kind": "cierre"
+    },
+    "ALM.MC": {
+      "price": 10.38,
+      "currency": "EUR",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/ALM.MC/history/",
+      "kind": "cierre"
+    },
+    "AMZN": {
+      "price": 250.38,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/AMZN/history/",
+      "kind": "cierre"
+    },
+    "ASML": {
+      "price": 1560.54,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/ASML/history/",
+      "kind": "cierre"
+    },
+    "ATCO-A.ST": {
+      "price": 192.85,
+      "currency": "SEK",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/ATCO-A.ST/history/",
+      "kind": "cierre"
+    },
+    "ATYM.L": {
+      "price": 824.5,
+      "currency": "GBp",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/ATYM.L/history/",
+      "kind": "cierre"
+    },
+    "BRAV3.SA": {
+      "price": 21.1,
+      "currency": "BRL",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/BRAV3.SA/history/",
+      "kind": "cierre"
+    },
+    "BWE.OL": {
+      "price": 67.3,
+      "currency": "NOK",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/BWE.OL/history/",
+      "kind": "cierre"
+    },
+    "BWO.OL": {
+      "price": 39.8,
+      "currency": "NOK",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/BWO.OL/history/",
+      "kind": "cierre"
+    },
+    "COST": {
+      "price": 1018.21,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/COST/history/",
+      "kind": "cierre"
+    },
+    "CPRT": {
+      "price": 29.09,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/CPRT/history/",
+      "kind": "cierre"
+    },
+    "CSU.TO": {
+      "price": 3408.5701,
+      "currency": "CAD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/CSU.TO/history/",
+      "kind": "cierre"
+    },
+    "DAN.MI": {
+      "price": 51.5,
+      "currency": "EUR",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/DAN.MI/history/",
+      "kind": "cierre"
+    },
+    "DBG.PA": {
+      "price": 7.765,
+      "currency": "EUR",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/DBG.PA/history/",
+      "kind": "cierre"
+    },
+    "DE": {
+      "price": 643.62,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/DE/history/",
+      "kind": "cierre"
+    },
+    "DGE.L": {
+      "price": 1789.5,
+      "currency": "GBp",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/DGE.L/history/",
+      "kind": "cierre"
+    },
+    "DHR": {
+      "price": 229.75,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/DHR/history/",
+      "kind": "cierre"
+    },
+    "DNP.WA": {
+      "price": 39.06,
+      "currency": "PLN",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/DNP.WA/history/",
+      "kind": "cierre"
+    },
+    "DOM.MC": {
+      "price": 2.595,
+      "currency": "EUR",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/DOM.MC/history/",
+      "kind": "cierre"
+    },
+    "FIVE": {
+      "price": 225.87,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/FIVE/history/",
+      "kind": "cierre"
+    },
+    "FOUR": {
+      "price": 40.17,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/FOUR/history/",
+      "kind": "cierre"
+    },
+    "FRPH": {
+      "price": 19.24,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/FRPH/history/",
+      "kind": "cierre"
+    },
+    "GEST.MC": {
+      "price": 2.93,
+      "currency": "EUR",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/GEST.MC/history/",
+      "kind": "cierre"
+    },
+    "GLNG": {
+      "price": 44.03,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/GLNG/history/",
+      "kind": "cierre"
+    },
+    "GRF.MC": {
+      "price": 10.085,
+      "currency": "EUR",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/GRF.MC/history/",
+      "kind": "cierre"
+    },
+    "INTU": {
+      "price": 354.9,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/INTU/history/",
+      "kind": "cierre"
+    },
+    "JDG.L": {
+      "price": 3430.0,
+      "currency": "GBp",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/JDG.L/history/",
+      "kind": "cierre"
+    },
+    "KEYS": {
+      "price": 311.52,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/KEYS/history/",
+      "kind": "cierre"
+    },
+    "KNSL": {
+      "price": 390.64,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/KNSL/history/",
+      "kind": "cierre"
+    },
+    "MCM.MC": {
+      "price": 9.88,
+      "currency": "EUR",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/MCM.MC/history/",
+      "kind": "cierre"
+    },
+    "MEDP": {
+      "price": 653.96,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/MEDP/history/",
+      "kind": "cierre"
+    },
+    "MEL.MC": {
+      "price": 10.47,
+      "currency": "EUR",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/MEL.MC/history/",
+      "kind": "cierre"
+    },
+    "RMD": {
+      "price": 253.06,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/RMD/history/",
+      "kind": "cierre"
+    },
+    "SCYR.MC": {
+      "price": 4.038,
+      "currency": "EUR",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/SCYR.MC/history/",
+      "kind": "cierre"
+    },
+    "STVN": {
+      "price": 19.5,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/STVN/history/",
+      "kind": "cierre"
+    },
+    "TGS.OL": {
+      "price": 140.3,
+      "currency": "NOK",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/TGS.OL/history/",
+      "kind": "cierre"
+    },
+    "TRE.MC": {
+      "price": 27.88,
+      "currency": "EUR",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/TRE.MC/history/",
+      "kind": "cierre"
+    },
+    "TRUP": {
+      "price": 29.91,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/TRUP/history/",
+      "kind": "cierre"
+    },
+    "TUB.MC": {
+      "price": 2.715,
+      "currency": "EUR",
+      "date": "2026-10-21",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/TUB.MC/history/",
+      "kind": "cierre"
+    },
+    "TXN": {
+      "price": 279.5,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/TXN/history/",
+      "kind": "cierre"
+    },
+    "WIZZ.L": {
+      "price": 975.5,
+      "currency": "GBp",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/WIZZ.L/history/",
+      "kind": "cierre"
+    },
+    "ZTS": {
+      "price": 82.0,
+      "currency": "USD",
+      "date": "2026-10-22",
+      "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
+      "sourceUrl": "https://finance.yahoo.com/quote/ZTS/history/",
+      "kind": "cierre"
+    }
+  },
+  "attemptedSymbols": 45,
+  "successfulSymbols": 45,
+  "lastAttemptUTC": "2026-10-22T22:05:28Z",
+  "note": "Cierres fechados procedentes del mismo proceso que Quality Value Radar. No son precios en tiempo real."
 }
