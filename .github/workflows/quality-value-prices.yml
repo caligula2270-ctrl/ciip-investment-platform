@@ -5,9 +5,17 @@ on:
     - cron: '20 6 * * 1-5'
 permissions:
   contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,3 +34,12 @@ jobs:
             git commit -m "data: cotizaciones del radar"
             git push
           fi
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+      - name: Empaquetar web con precios actualizados
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - name: Publicar actualización
+        id: deployment
+        uses: actions/deploy-pages@v4
