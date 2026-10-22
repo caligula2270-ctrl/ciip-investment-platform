@@ -3,20 +3,25 @@ name: Actualizar cotizaciones Quality & Value Radar
 on:
   workflow_dispatch:
   schedule:
-    # 06:20 UTC de lunes a viernes; normalmente incorpora el cierre del día anterior.
+    # 06:20 UTC de lunes a viernes: último cierre bursátil disponible.
     - cron: '20 6 * * 1-5'
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
-  group: qvr-quotes
+  group: pages
   cancel-in-progress: false
 
 jobs:
   quotes:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Obtener repositorio
         uses: actions/checkout@v4
@@ -26,16 +31,47 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Actualizar cierres desde proveedores públicos
+      - name: Actualizar 45 cierres desde proveedores públicos
         run: python quality-value-radar/scripts/update_quotes.py
-      - name: Guardar y publicar JSON de precios
+      - name: Verificar datos y sincronizar ambos radares
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          source = Path("quality-value-radar/data/quotes.json")
+          payload = json.loads(source.read_text(encoding="utf-8"))
+          if not payload.get("successfulSymbols", 0):
+              raise SystemExit("Ninguna cotización se ha actualizado; revisar proveedores.")
+          target = Path("radar/prices.json")
+          mapped = {
+              "quotes": payload["quotes"],
+              "attemptedSymbols": payload["attemptedSymbols"],
+              "successfulSymbols": payload["successfulSymbols"],
+              "lastAttemptUTC": payload["generatedAt"],
+              "note": "Cierres fechados procedentes del mismo proceso que Quality Value Radar. No son precios en tiempo real."
+          }
+          target.write_text(json.dumps(mapped, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          print(f"Datos sincronizados: {len(mapped['quotes'])} símbolos")
+          PY
+      - name: Guardar JSON de cotizaciones
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add quality-value-radar/data/quotes.json
+          git add quality-value-radar/data/quotes.json radar/prices.json
           if ! git diff --cached --quiet; then
-            git commit -m "data(qvr): actualizar cierres diarios con procedencia"
+            git commit -m "data(qvr): actualizar cierres y sincronizar radares"
             git push origin HEAD:main
           else
             echo "Sin cambios en precios"
           fi
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Crear artefacto web
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Publicar CIIP y ambos radares
+        id: deployment
+        uses: actions/deploy-pages@v4
