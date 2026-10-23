@@ -86,12 +86,22 @@ def ttm(facts,latest_fy):
 def instant_value(facts, tagkey, year_end):
     series=fact_series(facts,tagkey)
     return b.asof_value(series,year_end,max_days=9)
-def balance(facts,end,revenues):
+# Cash and unused credit facilities: Copart 10-K 2024/2025/2026.
+# Explicit allow-list only; absent generic XBRL borrowing tags never imply zero debt.
+COPART_NO_REVOLVER_DATES = {"2023-07-31","2024-07-31","2025-07-31","2026-07-31"}
+COPART_DEBT_SOURCES = [
+ "https://www.sec.gov/Archives/edgar/data/900075/000090007524000024/cprt-20240731.htm",
+ "https://www.sec.gov/Archives/edgar/data/900075/000162828025042946/cprt-20250731.htm",
+ "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm"]
+def balance(facts,end,revenues,ticker=""):
     equity=instant_value(facts,"equity",end)
     cash=instant_value(facts,"cash",end)
     debt_l=instant_value(facts,"debt_long",end)
     debt_c=instant_value(facts,"debt_current",end)
-    # A missing debt tag is not proof debt=0. Require both tags for strict ROIC.
+    # Copart reports no revolving facility borrowing for specifically documented fiscal years;
+    # operating lease liabilities remain included separately. This is not a generic rule.
+    inferred_zero=(ticker=="CPRT" and end in COPART_NO_REVOLVER_DATES
+                   and debt_l is None and debt_c is None)
     if equity is None or cash is None:return None
     debt=(debt_l or 0)+(debt_c or 0)
     lease_l=instant_value(facts,"lease",end)
@@ -106,10 +116,11 @@ def balance(facts,end,revenues):
     intangibles=instant_value(facts,"intangibles",end)
     return {"end":end,"equity":equity,"cash":cash,"debt":debt,"leases":lease,
             "leasesDisclosed":lease_l is not None or lease_c is not None,
-            "debtTagsDisclosed":debt_l is not None or debt_c is not None,
+            "debtTagsDisclosed":debt_l is not None or debt_c is not None or inferred_zero,
+            "debtZeroFromNotes":inferred_zero,
             "goodwill":goodwill,"intangibles":intangibles,"excessCash":excess_cash,
             "investedCapital":invested}
-def adjusted_roic(facts,fy_end):
+def adjusted_roic(facts,fy_end,ticker=""):
     annual={k:fact_series(facts,k) for k in ("revenue","ebit","tax","pretax")}
     ends=sorted(annual["ebit"])
     rows=[]
@@ -124,8 +135,8 @@ def adjusted_roic(facts,fy_end):
         if ebit<=0:continue
         revnow=annual["revenue"].get(end,{}).get("value")
         revprev=annual["revenue"].get(previous,{}).get("value")
-        bn=balance(facts,end,revnow)
-        bp=balance(facts,previous,revprev)
+        bn=balance(facts,end,revnow,ticker)
+        bp=balance(facts,previous,revprev,ticker)
         if not bn or not bp:continue
         inv=(bn["investedCapital"]+bp["investedCapital"])/2
         if inv<=0:continue
@@ -141,7 +152,8 @@ def adjusted_roic(facts,fy_end):
              "nopat":round(ebit*(1-tax_rate),2),"averageInvestedCapital":round(inv,2),
              "effectiveTaxPct":round(tax_rate*100,2),"taxRateMethod":"reported" if tax_rate==real_rate else "fallback_25pct",
              "leaseIncluded":bn["leasesDisclosed"] and bp["leasesDisclosed"],
-             "partialDebtTags":not (bn["debtTagsDisclosed"] and bp["debtTagsDisclosed"])})
+             "partialDebtTags":not (bn["debtTagsDisclosed"] and bp["debtTagsDisclosed"]),
+             "debtZeroFromNotes":bool(bn.get("debtZeroFromNotes") or bp.get("debtZeroFromNotes"))})
     rows=rows[-5:]
     usable=[y["roicAdjustedPct"] for y in rows[-3:] if not y["partialDebtTags"]]
     med=round(statistics.median(usable),2) if len(usable)>=3 else None
@@ -169,9 +181,15 @@ def run():
             fy=row.get("fiscalEnd")
             if not fy:continue
             t=ttm(facts,fy)
-            r=adjusted_roic(facts,fy)
+            r=adjusted_roic(facts,fy,ticker)
             row["recentFinancials"]=t
             row["adjustedRoic"]=r
+            if ticker=="CPRT":
+                row["debtReviewSources"]=COPART_DEBT_SOURCES
+                row["debtZeroPolicy"]="Borrowings zero only for named filing years; lease liabilities and excess cash treated separately"
+                # Subsequent purchase of ACV Auctions (Oct 2026) must be re-evaluated;
+                # historical return is not a pro-forma balance sheet for acquisition.
+                row.setdefault("warnings",[]).append("ROIC histórico no incorpora plenamente la adquisición posterior de ACV Auctions en octubre de 2026")
             # The old approximation is NOT an acceptable automated gate.
             row["roicProxyMedianPct"]=None
             good_r=r["status"]=="available" and r["median3yPct"]>=15
