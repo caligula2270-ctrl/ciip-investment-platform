@@ -181,17 +181,21 @@ def compute(ticker, cik, facts, q, daily, splits, price_url):
             if invested>0 and 0<ebit<1e12:
                 roc=100*(ebit*.76)/invested
                 if not -100<roc<250:roc=None
+        # Compare all historical fiscal years on CURRENT split-adjusted share basis.
+        # Yahoo historical close is adjusted for splits, not dividends.
+        current_share_basis=shares*split_factor(dt.date.fromisoformat(end),splits)
+        if current_share_basis<=0:continue
         close=closing_near(daily,end)
         multiple=None;sample_date=None
         if close and fcf>0:
             day,close_price=close
-            normalized_shares=shares*split_factor(day,splits)
+            normalized_shares=current_share_basis
             per_share_at_year=fcf/normalized_shares
             multiple=close_price/per_share_at_year
             if not 0<multiple<200:multiple=None
             sample_date=day.isoformat()
         years.append({"fyEnd":end,"revenue":rev,"cfo":round(cfo,2),"capex":round(capex,2),
-                      "fcf":round(fcf,2),"fcfPerShare":round(fcf/shares,4),
+                      "fcf":round(fcf,2),"fcfPerShare":round(fcf/current_share_basis,4),
                       "shares":round(shares,2),"roicProxyPct":round(roc,2) if roc is not None else None,
                       "historicalPfcf":round(multiple,2) if multiple else None,
                       "historicalPriceDate":sample_date})
@@ -232,6 +236,17 @@ def compute(ticker, cik, facts, q, daily, splits, price_url):
     if max(y["fcfPerShare"] for y in recent)>4*min(y["fcfPerShare"] for y in recent):
         result["warnings"].append("FCF muy volátil (>4×); precio objetivo menos fiable")
     normalized=round(fcf_median,4)
+    # Reject distorted per-share denominators (e.g. class-A shares for a company
+    # with exchangeable noncontrolling economic interests). A 50%+ current
+    # FCF yield or a sub-2x historical P/FCF is a data-reconciliation blocker.
+    # This is an intentionally conservative false-negative safeguard.
+    px=q.get('price') if q and q.get('currency')=='USD' else None
+    mult_probe=[y['historicalPfcf'] for y in years if y['historicalPfcf'] is not None]
+    if (px and normalized/px>0.5) or (len(mult_probe)>=3 and median(mult_probe)<2):
+        result['status']='insufficient'
+        result['reason']='FCF por acción incompatible con precio o P/FCF histórico; revisar clases de acciones y dilución antes de valorar'
+        result['warnings'].append('Validación bloqueada por posible denominador de acciones incoherente')
+        return result
     g=clamp(revenue_cagr,0,.12)
     bear=dcf(normalized,max(-.02,g-.05),.13,.02)
     base=dcf(normalized,g,.115,.025)
