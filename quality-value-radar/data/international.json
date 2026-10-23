@@ -1,7 +1,7 @@
 {
   "schema": "qvr-international-v1",
   "asOf": "2026-10-24",
-  "note": "Datos primarios internacionales. No hay valoración intrínseca automática hasta conciliar balances, FCF diluido y moneda.",
+  "note": "Snapshot con FX 22 octubre y cotizaciones 21-22 octubre; el workflow puede reemplazarlo. DCF exploratorio sin señales de inversión.",
   "companies": {
     "CSU.TO": {
       "name": "Constellation Software",
@@ -17,8 +17,55 @@
       "operatingCashFlowYoYPct": 10,
       "source": "Constellation Software Q2 2026",
       "sourceUrl": "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-second-quarter-ended-june-30-2026-and-declares-quarterly-dividend/",
-      "status": "source_verified_model_pending",
-      "reason": "FCFA2S es definición no GAAP; CAD por cotización frente USD reportados, adquisición intensiva e IRGA exigen conciliación."
+      "status": "preliminary_valuation",
+      "reason": "FCFA2S es definición no GAAP; CAD por cotización frente USD reportados, adquisición intensiva e IRGA exigen conciliación.",
+      "valuation": {
+        "status": "preliminary",
+        "model": "5Y DCF median 3Y issuer FCF",
+        "annualFcf": [
+          {
+            "year": 2023,
+            "fcfMillions": 1160
+          },
+          {
+            "year": 2024,
+            "fcfMillions": 1472
+          },
+          {
+            "year": 2025,
+            "fcfMillions": 1683
+          }
+        ],
+        "normalizedFcfPerShare": 69.4617,
+        "sharesMillions": 21.19153,
+        "reportingCurrency": "USD",
+        "tradingCurrency": "CAD",
+        "fx": {
+          "rate": 1.4034,
+          "date": "2026-10-22",
+          "source": "https://exchangeratetool.com/historical/usd-cad"
+        },
+        "bear": 827.37,
+        "base": 1198.11,
+        "bull": 1635.91,
+        "quotePrice": 3408.5701,
+        "quoteDate": "2026-10-22",
+        "quoteSource": "Yahoo Finance snapshot from repository quotes.json dated prior to research",
+        "indicativeMarginPct": -184.5,
+        "assumptions": {
+          "baseGrowthPct": 7.000000000000001,
+          "discountPct": 12.5,
+          "terminalGrowthPct": 2.5
+        },
+        "metric": "FCFA2S no IFRS; antes de adquisiciones",
+        "primarySources": [
+          "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-fourth-quarter-and-year-ended-december-31-2025-and-declares-quarterly-dividend/",
+          "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-fourth-quarter-and-year-ended-december-31-2024-and-declares-quarterly-dividend/"
+        ],
+        "warning": "FCFA2S no descuenta adquisiciones; un DCF de FCF estático subestima potencialmente el valor de reinversión.",
+        "investmentSignal": "human_review_required",
+        "historicalMultipleAvailable": false
+      }
     },
     "ASML": {
       "name": "ASML",
@@ -32,8 +79,55 @@
       "grossMarginPct": 57.5,
       "source": "ASML Q3 2026",
       "sourceUrl": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
-      "status": "source_verified_model_pending",
-      "reason": "Cotización ADR USD frente resultados EUR y ausencia de serie normalizada FCF/ROIC para escenario prudente."
+      "status": "preliminary_valuation",
+      "reason": "Cotización ADR USD frente resultados EUR y ausencia de serie normalizada FCF/ROIC para escenario prudente.",
+      "valuation": {
+        "status": "preliminary",
+        "model": "5Y DCF median 3Y issuer FCF",
+        "annualFcf": [
+          {
+            "year": 2023,
+            "fcfMillions": 3247.2
+          },
+          {
+            "year": 2024,
+            "fcfMillions": 9083.1
+          },
+          {
+            "year": 2025,
+            "fcfMillions": 11027.3
+          }
+        ],
+        "normalizedFcfPerShare": 23.5669,
+        "sharesMillions": 385.417665,
+        "reportingCurrency": "EUR",
+        "tradingCurrency": "USD",
+        "fx": {
+          "rate": 1.1221,
+          "date": "2026-10-22",
+          "source": "https://www.investing.com/currencies/eur-usd-historical-data"
+        },
+        "bear": 244.11,
+        "base": 362.16,
+        "bull": 505.49,
+        "quotePrice": 1560.54,
+        "quoteDate": "2026-10-22",
+        "quoteSource": "Yahoo Finance snapshot from repository quotes.json dated prior to research",
+        "indicativeMarginPct": -330.9,
+        "assumptions": {
+          "baseGrowthPct": 7.000000000000001,
+          "discountPct": 11.5,
+          "terminalGrowthPct": 2.5
+        },
+        "metric": "FCF no-GAAP; CFO menos capex material e intangible",
+        "primarySources": [
+          "https://www.sec.gov/Archives/edgar/data/937966/000162828026011378/asml-20251231.htm",
+          "https://www.sec.gov/Archives/edgar/data/937966/000093796625000009/asml-20241231.htm"
+        ],
+        "warning": "Flujos muy cíclicos, anticipos de clientes y transición High-NA; los escenarios no son valores razonables validados.",
+        "investmentSignal": "human_review_required",
+        "historicalMultipleAvailable": false
+      }
     },
     "DNP.WA": {
       "name": "Dino Polska",
@@ -44,8 +138,56 @@
       "reportPeriod": "H1 2026",
       "source": "Dino Polska informes H1 2026 y cierre 2025",
       "sourceUrl": "https://grupadino.pl/en/financial-reports/",
-      "status": "source_verified_model_pending",
-      "reason": "Precisa extraer estados consolidados 2025/H1-2026 y conciliar expansión de tiendas y CAPEX; sin FCF normalizado no se emite precio objetivo."
+      "status": "preliminary_valuation",
+      "reason": "Precisa extraer estados consolidados 2025/H1-2026 y conciliar expansión de tiendas y CAPEX; sin FCF normalizado no se emite precio objetivo.",
+      "valuation": {
+        "status": "preliminary",
+        "model": "5Y DCF median 3Y issuer FCF",
+        "annualFcf": [
+          {
+            "year": 2023,
+            "fcfMillions": 599
+          },
+          {
+            "year": 2024,
+            "fcfMillions": 995
+          },
+          {
+            "year": 2025,
+            "fcfMillions": 610
+          }
+        ],
+        "normalizedFcfPerShare": 0.6222,
+        "sharesMillions": 980.4,
+        "reportingCurrency": "PLN",
+        "tradingCurrency": "PLN",
+        "fx": {
+          "rate": 1,
+          "date": "2026-10-21",
+          "source": "https://grupadino.pl/en/selected-financial-data/"
+        },
+        "bear": 6.07,
+        "base": 8.91,
+        "bull": 12.28,
+        "quotePrice": 39.06,
+        "quoteDate": "2026-10-21",
+        "quoteSource": "Yahoo Finance snapshot from repository quotes.json dated prior to research",
+        "indicativeMarginPct": -338.4,
+        "assumptions": {
+          "baseGrowthPct": 9.5,
+          "discountPct": 12,
+          "terminalGrowthPct": 2.5
+        },
+        "metric": "CFO-CAPEX; capex expansivo de tiendas",
+        "primarySources": [
+          "https://grupadino.pl/wp-content/uploads/2026/03/Dino-Polska-2025-results-presentation.pdf",
+          "https://grupadino.pl/en/selected-financial-data/"
+        ],
+        "warning": "El capex de nuevas tiendas reduce FCF normalizado y produce una infravaloración económica del crecimiento futuro.",
+        "investmentSignal": "human_review_required",
+        "historicalMultipleAvailable": false
+      }
     }
-  }
+  },
+  "generatedAt": "2026-10-24"
 }
