@@ -95,6 +95,11 @@ function ciipRadarModels(){
  }
  return rows.sort((a,b)=>b.score-a.score||(b.positive-a.positive)||a.ticker.localeCompare(b.ticker));
 }
+function ciipRadarGo(ticker){
+  if(!companies.some(c=>c.Ticker===ticker))return;
+  ciipValSelected=ticker;
+  go('valuation');
+}
 function ciipRadarResearchPanel(){
  const records=ciipRadarModels();
  const firms=records.filter(x=>x.valuationCapable);
@@ -103,7 +108,7 @@ function ciipRadarResearchPanel(){
  '<td>'+x.score+' / 6</td><td>'+x.years+' / 5</td><td>'+x.positive+'</td><td>'+ciipHistRatio(x.cagr)+'</td>'+
  '<td>'+ (x.fcf>0?ciipHistoryCurrency(x.fcf):'—')+'</td>'+
  '<td>'+esc(x.notes.length?x.notes.join(' · '):'Datos para revisión')+'</td>'+
- '<td><button class="btn secondary" onclick="ciipValChoose(\\''+esc(x.ticker)+'\\');go(\\'valuation\\')">Valorar ↗</button></td></tr>');
+ '<td><button class="btn secondary" data-ticker="'+esc(x.ticker)+'" onclick="ciipRadarGo(this.dataset.ticker)">Valorar ↗</button></td></tr>');;
  if(!records.length)return '<section class="panel"><h2>Radar fundamental automático</h2><div class="notice">Los históricos aún no están cargados. La clasificación automática permanecerá desactivada hasta que el archivo SEC incluya datos comparables.</div></section>';
  return '<section class="panel"><h2>Radar fundamental automático · lista de investigación</h2>'+
  '<p class="muted">Priorización orientativa por cobertura y estabilidad, no clasificación de compra. Puntuación de 0 a 6: FCF normalizado, cinco ejercicios, cinco FCF positivos, CAGR ingresos ≥4 %, serie de acciones diluidas sin saltos y precio reciente. No es valoración ni rentabilidad esperada.</p>'+
