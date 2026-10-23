@@ -1,6 +1,6 @@
 {
   "schema": "qvr-auto-v1",
-  "generatedAt": "2026-10-23T22:13:36.691519+00:00",
+  "generatedAt": "2026-10-23T22:58:05.894888+00:00",
   "source": "US SEC companyfacts; historical daily prices from Yahoo Finance",
   "methodology": "Conservative research screen, not a transaction recommendation.",
   "companies": {
@@ -151,7 +151,24 @@
       },
       "marginOfSafetyPct": 25.7,
       "fundamentalQualityGate": false,
-      "classification": "needs_review"
+      "classification": "needs_review",
+      "recentFinancials": {
+        "status": "not_available",
+        "reason": "No hay 10-Q posterior al último 10-K para CFO"
+      },
+      "adjustedRoic": {
+        "status": "insufficient",
+        "median3yPct": null,
+        "years": [],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     },
     "AMZN": {
       "ticker": "AMZN",
@@ -272,7 +289,7 @@
       "warnings": [],
       "fiscalEnd": "2026-08-30",
       "revenueCagrPct": 9.12,
-      "roicProxyMedianPct": 36.0,
+      "roicProxyMedianPct": null,
       "fcfPositiveYears": 5,
       "netDebtToFcf": -1.5,
       "normalizedFcfPerShare": 17.619,
@@ -318,7 +335,80 @@
       },
       "marginOfSafetyPct": -90.3,
       "fundamentalQualityGate": true,
-      "classification": "needs_review"
+      "classification": "needs_review",
+      "recentFinancials": {
+        "status": "not_available",
+        "reason": "No hay 10-Q posterior al último 10-K para CFO"
+      },
+      "adjustedRoic": {
+        "status": "available",
+        "median3yPct": 27.65,
+        "years": [
+          {
+            "fyEnd": "2022-08-28",
+            "roicAdjustedPct": 26.19,
+            "roicExGoodwillPct": 27.41,
+            "nopat": 5879540178.57,
+            "averageInvestedCapital": 22446830000.0,
+            "effectiveTaxPct": 24.55,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2023-09-03",
+            "roicAdjustedPct": 24.5,
+            "roicExGoodwillPct": 25.53,
+            "nopat": 6015469306.0,
+            "averageInvestedCapital": 24554940000.0,
+            "effectiveTaxPct": 25.86,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2024-09-01",
+            "roicAdjustedPct": 26.83,
+            "roicExGoodwillPct": 27.89,
+            "nopat": 7022853696.1,
+            "averageInvestedCapital": 26171930000.0,
+            "effectiveTaxPct": 24.36,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2025-08-31",
+            "roicAdjustedPct": 27.65,
+            "roicExGoodwillPct": 28.67,
+            "nopat": 7773333056.02,
+            "averageInvestedCapital": 28109880000.0,
+            "effectiveTaxPct": 25.13,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2026-08-30",
+            "roicAdjustedPct": 29.63,
+            "roicExGoodwillPct": 30.66,
+            "nopat": 8799755938.29,
+            "averageInvestedCapital": 29695390000.0,
+            "effectiveTaxPct": 24.69,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          }
+        ],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     },
     "ADBE": {
       "ticker": "ADBE",
@@ -416,10 +506,12 @@
         "blendedWeightDcfPct": 60,
         "historicalWeightPct": 40
       },
-      "warnings": [],
+      "warnings": [
+        "FCF TTM calculado; precio objetivo anterior aún basado en mediana anual. Revisar si difieren"
+      ],
       "fiscalEnd": "2025-11-28",
       "revenueCagrPct": 13.05,
-      "roicProxyMedianPct": 38.8,
+      "roicProxyMedianPct": null,
       "fcfPositiveYears": 5,
       "netDebtToFcf": 0.08,
       "normalizedFcfPerShare": 17.5072,
@@ -465,7 +557,93 @@
       },
       "marginOfSafetyPct": 29.2,
       "fundamentalQualityGate": true,
-      "classification": "possible_discount"
+      "classification": "possible_discount",
+      "recentFinancials": {
+        "status": "available",
+        "periodEnd": "2026-08-28",
+        "filedAt": "2026-09-22",
+        "fiscalYearEnd": "2025-11-28",
+        "method": "FY + YTD actual - YTD comparable (SEC 10-K/10-Q; filing dates verified)",
+        "values": {
+          "revenue": 25970000000.0,
+          "cfo": 10806000000.0,
+          "capex": 214000000.0,
+          "ebit": 9271000000.0,
+          "net_income": 7284000000.0
+        },
+        "sourceUrl": "https://www.sec.gov",
+        "tags": "Comparar CFO y CAPEX como flujos acumulados de exactamente el mismo periodo; ausencia = sin TTM",
+        "fcf": 10592000000.0
+      },
+      "adjustedRoic": {
+        "status": "available",
+        "median3yPct": 40.32,
+        "years": [
+          {
+            "fyEnd": "2021-12-03",
+            "roicAdjustedPct": 33.03,
+            "roicExGoodwillPct": 156.1,
+            "nopat": 4903986678.35,
+            "averageInvestedCapital": 14846530000.0,
+            "effectiveTaxPct": 15.48,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2022-12-02",
+            "roicAdjustedPct": 31.92,
+            "roicExGoodwillPct": 201.69,
+            "nopat": 4827245006.66,
+            "averageInvestedCapital": 15120910000.0,
+            "effectiveTaxPct": 20.84,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2023-12-01",
+            "roicAdjustedPct": 37.73,
+            "roicExGoodwillPct": null,
+            "nopat": 5309045447.86,
+            "averageInvestedCapital": 14072650000.0,
+            "effectiveTaxPct": 20.16,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2024-11-29",
+            "roicAdjustedPct": 40.32,
+            "roicExGoodwillPct": null,
+            "nopat": 5407583321.31,
+            "averageInvestedCapital": 13412140000.0,
+            "effectiveTaxPct": 19.78,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2025-11-28",
+            "roicAdjustedPct": 54.06,
+            "roicExGoodwillPct": null,
+            "nopat": 7107142202.89,
+            "averageInvestedCapital": 13147240000.0,
+            "effectiveTaxPct": 18.37,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          }
+        ],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     },
     "AAON": {
       "ticker": "AAON",
@@ -583,10 +761,12 @@
         "blendedWeightDcfPct": 60,
         "historicalWeightPct": 40
       },
-      "warnings": [],
+      "warnings": [
+        "FCF TTM calculado; precio objetivo anterior aún basado en mediana anual. Revisar si difieren"
+      ],
       "fiscalEnd": "2025-11-02",
       "revenueCagrPct": 5.15,
-      "roicProxyMedianPct": 45.5,
+      "roicProxyMedianPct": null,
       "fcfPositiveYears": 5,
       "netDebtToFcf": -1.36,
       "normalizedFcfPerShare": 24.1519,
@@ -631,8 +811,82 @@
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": -88.0,
-      "fundamentalQualityGate": true,
-      "classification": "needs_review"
+      "fundamentalQualityGate": false,
+      "classification": "needs_review",
+      "recentFinancials": {
+        "status": "available",
+        "periodEnd": "2026-08-02",
+        "filedAt": "2026-08-27",
+        "fiscalYearEnd": "2025-11-02",
+        "method": "FY + YTD actual - YTD comparable (SEC 10-K/10-Q; filing dates verified)",
+        "values": {
+          "revenue": 47983000000.0,
+          "cfo": 7245000000.0,
+          "capex": 1224000000.0,
+          "net_income": 4873000000.0
+        },
+        "sourceUrl": "https://www.sec.gov",
+        "tags": "Comparar CFO y CAPEX como flujos acumulados de exactamente el mismo periodo; ausencia = sin TTM",
+        "fcf": 6021000000.0
+      },
+      "adjustedRoic": {
+        "status": "insufficient",
+        "median3yPct": null,
+        "years": [
+          {
+            "fyEnd": "2021-10-31",
+            "roicAdjustedPct": 15.0,
+            "roicExGoodwillPct": 16.24,
+            "nopat": 6264578795.05,
+            "averageInvestedCapital": 41754140000.0,
+            "effectiveTaxPct": 21.81,
+            "taxRateMethod": "reported",
+            "leaseIncluded": false,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2022-10-30",
+            "roicAdjustedPct": 24.43,
+            "roicExGoodwillPct": 27.6,
+            "nopat": 7417219239.62,
+            "averageInvestedCapital": 30364010000.0,
+            "effectiveTaxPct": 21.99,
+            "taxRateMethod": "reported",
+            "leaseIncluded": false,
+            "partialDebtTags": true
+          },
+          {
+            "fyEnd": "2023-10-29",
+            "roicAdjustedPct": 62.93,
+            "roicExGoodwillPct": 82.41,
+            "nopat": 10100451954.84,
+            "averageInvestedCapital": 16049280000.0,
+            "effectiveTaxPct": 22.05,
+            "taxRateMethod": "reported",
+            "leaseIncluded": false,
+            "partialDebtTags": true
+          },
+          {
+            "fyEnd": "2024-10-27",
+            "roicAdjustedPct": 43.5,
+            "roicExGoodwillPct": 57.61,
+            "nopat": 6982985878.77,
+            "averageInvestedCapital": 16051170000.0,
+            "effectiveTaxPct": 22.75,
+            "taxRateMethod": "reported",
+            "leaseIncluded": false,
+            "partialDebtTags": true
+          }
+        ],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     },
     "DHR": {
       "ticker": "DHR",
@@ -731,7 +985,8 @@
         "historicalWeightPct": 40
       },
       "warnings": [
-        "ROIC proxy no disponible; no equivale a ROIC auditado"
+        "ROIC proxy no disponible; no equivale a ROIC auditado",
+        "FCF TTM calculado; precio objetivo anterior aún basado en mediana anual. Revisar si difieren"
       ],
       "fiscalEnd": "2025-12-31",
       "revenueCagrPct": 1.97,
@@ -781,7 +1036,37 @@
       },
       "marginOfSafetyPct": -63.3,
       "fundamentalQualityGate": false,
-      "classification": "needs_review"
+      "classification": "needs_review",
+      "recentFinancials": {
+        "status": "available",
+        "periodEnd": "2026-09-25",
+        "filedAt": "2026-10-21",
+        "fiscalYearEnd": "2025-12-31",
+        "method": "FY + YTD actual - YTD comparable (SEC 10-K/10-Q; filing dates verified)",
+        "values": {
+          "revenue": 25608000000.0,
+          "cfo": 6859000000.0,
+          "capex": 1132000000.0,
+          "ebit": 5218000000.0,
+          "net_income": 4331000000.0
+        },
+        "sourceUrl": "https://www.sec.gov",
+        "tags": "Comparar CFO y CAPEX como flujos acumulados de exactamente el mismo periodo; ausencia = sin TTM",
+        "fcf": 5727000000.0
+      },
+      "adjustedRoic": {
+        "status": "insufficient",
+        "median3yPct": null,
+        "years": [],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     },
     "FIVE": {
       "ticker": "FIVE",
@@ -880,7 +1165,8 @@
         "historicalWeightPct": 40
       },
       "warnings": [
-        "ROIC proxy no disponible; no equivale a ROIC auditado"
+        "ROIC proxy no disponible; no equivale a ROIC auditado",
+        "FCF TTM calculado; precio objetivo anterior aún basado en mediana anual. Revisar si difieren"
       ],
       "fiscalEnd": "2026-01-31",
       "revenueCagrPct": 19.4,
@@ -925,7 +1211,37 @@
       },
       "marginOfSafetyPct": -138.8,
       "fundamentalQualityGate": false,
-      "classification": "needs_review"
+      "classification": "needs_review",
+      "recentFinancials": {
+        "status": "available",
+        "periodEnd": "2026-08-01",
+        "filedAt": "2026-09-03",
+        "fiscalYearEnd": "2026-01-31",
+        "method": "FY + YTD actual - YTD comparable (SEC 10-K/10-Q; filing dates verified)",
+        "values": {
+          "revenue": 5313868000.0,
+          "cfo": 803480000.0,
+          "capex": 204230000.0,
+          "ebit": 783780000.0,
+          "net_income": 619182000.0
+        },
+        "sourceUrl": "https://www.sec.gov",
+        "tags": "Comparar CFO y CAPEX como flujos acumulados de exactamente el mismo periodo; ausencia = sin TTM",
+        "fcf": 599250000.0
+      },
+      "adjustedRoic": {
+        "status": "insufficient",
+        "median3yPct": null,
+        "years": [],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     },
     "FOUR": {
       "ticker": "FOUR",
@@ -1190,7 +1506,7 @@
       "warnings": [],
       "fiscalEnd": "2026-07-31",
       "revenueCagrPct": 17.36,
-      "roicProxyMedianPct": 13.2,
+      "roicProxyMedianPct": null,
       "fcfPositiveYears": 5,
       "netDebtToFcf": 0.34,
       "normalizedFcfPerShare": 21.636,
@@ -1235,8 +1551,81 @@
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": 30.7,
-      "fundamentalQualityGate": false,
-      "classification": "needs_review"
+      "fundamentalQualityGate": true,
+      "classification": "possible_discount",
+      "recentFinancials": {
+        "status": "not_available",
+        "reason": "No hay 10-Q posterior al último 10-K para CFO"
+      },
+      "adjustedRoic": {
+        "status": "available",
+        "median3yPct": 17.3,
+        "years": [
+          {
+            "fyEnd": "2022-07-31",
+            "roicAdjustedPct": 13.3,
+            "roicExGoodwillPct": 34.62,
+            "nopat": 2089569630.21,
+            "averageInvestedCapital": 15709590000.0,
+            "effectiveTaxPct": 18.73,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2023-07-31",
+            "roicAdjustedPct": 11.7,
+            "roicExGoodwillPct": 32.7,
+            "nopat": 2505233857.48,
+            "averageInvestedCapital": 21418440000.0,
+            "effectiveTaxPct": 20.24,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2024-07-31",
+            "roicAdjustedPct": 14.05,
+            "roicExGoodwillPct": 39.11,
+            "nopat": 3029771830.99,
+            "averageInvestedCapital": 21558530000.0,
+            "effectiveTaxPct": 16.54,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2025-07-31",
+            "roicAdjustedPct": 17.3,
+            "roicExGoodwillPct": 44.43,
+            "nopat": 3940233140.26,
+            "averageInvestedCapital": 22780660000.0,
+            "effectiveTaxPct": 19.96,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2026-07-31",
+            "roicAdjustedPct": 19.01,
+            "roicExGoodwillPct": 46.96,
+            "nopat": 4465072959.95,
+            "averageInvestedCapital": 23489290000.0,
+            "effectiveTaxPct": 24.12,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          }
+        ],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     },
     "KEYS": {
       "ticker": "KEYS",
@@ -1334,10 +1723,12 @@
         "blendedWeightDcfPct": 60,
         "historicalWeightPct": 40
       },
-      "warnings": [],
+      "warnings": [
+        "FCF TTM calculado; precio objetivo anterior aún basado en mediana anual. Revisar si difieren"
+      ],
       "fiscalEnd": "2025-10-31",
       "revenueCagrPct": 4.95,
-      "roicProxyMedianPct": 23.3,
+      "roicProxyMedianPct": null,
       "fcfPositiveYears": 5,
       "netDebtToFcf": 0.52,
       "normalizedFcfPerShare": 6.7654,
@@ -1382,8 +1773,94 @@
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": -140.1,
-      "fundamentalQualityGate": true,
-      "classification": "needs_review"
+      "fundamentalQualityGate": false,
+      "classification": "needs_review",
+      "recentFinancials": {
+        "status": "available",
+        "periodEnd": "2026-07-31",
+        "filedAt": "2026-09-02",
+        "fiscalYearEnd": "2025-10-31",
+        "method": "FY + YTD actual - YTD comparable (SEC 10-K/10-Q; filing dates verified)",
+        "values": {
+          "revenue": 6582000000.0,
+          "cfo": 1604000000.0,
+          "capex": 135000000.0,
+          "ebit": 1333000000.0,
+          "net_income": 1260000000.0
+        },
+        "sourceUrl": "https://www.sec.gov",
+        "tags": "Comparar CFO y CAPEX como flujos acumulados de exactamente el mismo periodo; ausencia = sin TTM",
+        "fcf": 1469000000.0
+      },
+      "adjustedRoic": {
+        "status": "available",
+        "median3yPct": 12.12,
+        "years": [
+          {
+            "fyEnd": "2021-10-31",
+            "roicAdjustedPct": 25.63,
+            "roicExGoodwillPct": 44.51,
+            "nopat": 955960396.04,
+            "averageInvestedCapital": 3730120000.0,
+            "effectiveTaxPct": 11.49,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2022-10-31",
+            "roicAdjustedPct": 28.81,
+            "roicExGoodwillPct": 47.73,
+            "nopat": 1166860700.39,
+            "averageInvestedCapital": 4049610000.0,
+            "effectiveTaxPct": 12.53,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2023-10-31",
+            "roicAdjustedPct": 24.71,
+            "roicExGoodwillPct": 39.61,
+            "nopat": 1057778924.1,
+            "averageInvestedCapital": 4281340000.0,
+            "effectiveTaxPct": 22.11,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2024-10-31",
+            "roicAdjustedPct": 12.12,
+            "roicExGoodwillPct": 20.65,
+            "nopat": 591285549.13,
+            "averageInvestedCapital": 4877930000.0,
+            "effectiveTaxPct": 29.02,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2025-10-31",
+            "roicAdjustedPct": 11.41,
+            "roicExGoodwillPct": 21.58,
+            "nopat": 703552680.22,
+            "averageInvestedCapital": 6166040000.0,
+            "effectiveTaxPct": 19.69,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          }
+        ],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     },
     "MEDP": {
       "ticker": "MEDP",
@@ -1482,7 +1959,8 @@
         "historicalWeightPct": 40
       },
       "warnings": [
-        "ROIC proxy no disponible; no equivale a ROIC auditado"
+        "ROIC proxy no disponible; no equivale a ROIC auditado",
+        "FCF TTM calculado; precio objetivo anterior aún basado en mediana anual. Revisar si difieren"
       ],
       "fiscalEnd": "2025-12-31",
       "revenueCagrPct": 22.27,
@@ -1532,7 +2010,93 @@
       },
       "marginOfSafetyPct": -85.2,
       "fundamentalQualityGate": false,
-      "classification": "needs_review"
+      "classification": "needs_review",
+      "recentFinancials": {
+        "status": "available",
+        "periodEnd": "2026-09-30",
+        "filedAt": "2026-10-22",
+        "fiscalYearEnd": "2025-12-31",
+        "method": "FY + YTD actual - YTD comparable (SEC 10-K/10-Q; filing dates verified)",
+        "values": {
+          "revenue": 2838385000.0,
+          "cfo": 723048000.0,
+          "capex": 55422000.0,
+          "ebit": 607136000.0,
+          "net_income": 517825000.0
+        },
+        "sourceUrl": "https://www.sec.gov",
+        "tags": "Comparar CFO y CAPEX como flujos acumulados de exactamente el mismo periodo; ausencia = sin TTM",
+        "fcf": 667626000.0
+      },
+      "adjustedRoic": {
+        "status": "insufficient",
+        "median3yPct": null,
+        "years": [
+          {
+            "fyEnd": "2021-12-31",
+            "roicAdjustedPct": 26.72,
+            "roicExGoodwillPct": null,
+            "nopat": 178931794.19,
+            "averageInvestedCapital": 669638520.0,
+            "effectiveTaxPct": 9.91,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": true
+          },
+          {
+            "fyEnd": "2022-12-31",
+            "roicAdjustedPct": 40.08,
+            "roicExGoodwillPct": null,
+            "nopat": 241756789.56,
+            "averageInvestedCapital": 603119270.0,
+            "effectiveTaxPct": 13.25,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": true
+          },
+          {
+            "fyEnd": "2023-12-31",
+            "roicAdjustedPct": 53.53,
+            "roicExGoodwillPct": null,
+            "nopat": 283772970.4,
+            "averageInvestedCapital": 530115420.0,
+            "effectiveTaxPct": 15.75,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": true
+          },
+          {
+            "fyEnd": "2024-12-31",
+            "roicAdjustedPct": 87.94,
+            "roicExGoodwillPct": null,
+            "nopat": 379700816.14,
+            "averageInvestedCapital": 431758960.0,
+            "effectiveTaxPct": 15.03,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": true
+          },
+          {
+            "fyEnd": "2025-12-31",
+            "roicAdjustedPct": 178.94,
+            "roicExGoodwillPct": null,
+            "nopat": 444933103.74,
+            "averageInvestedCapital": 248645880.0,
+            "effectiveTaxPct": 16.82,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": true
+          }
+        ],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     },
     "RMD": {
       "ticker": "RMD",
@@ -1633,7 +2197,7 @@
       "warnings": [],
       "fiscalEnd": "2026-06-30",
       "revenueCagrPct": 12.08,
-      "roicProxyMedianPct": 19.7,
+      "roicProxyMedianPct": null,
       "fcfPositiveYears": 5,
       "netDebtToFcf": -0.65,
       "normalizedFcfPerShare": 11.2782,
@@ -1679,7 +2243,80 @@
       },
       "marginOfSafetyPct": -17.0,
       "fundamentalQualityGate": true,
-      "classification": "needs_review"
+      "classification": "needs_review",
+      "recentFinancials": {
+        "status": "not_available",
+        "reason": "No hay 10-Q posterior al último 10-K para CFO"
+      },
+      "adjustedRoic": {
+        "status": "available",
+        "median3yPct": 24.94,
+        "years": [
+          {
+            "fyEnd": "2022-06-30",
+            "roicAdjustedPct": 21.64,
+            "roicExGoodwillPct": 44.63,
+            "nopat": 811737343.59,
+            "averageInvestedCapital": 3751145020.0,
+            "effectiveTaxPct": 18.85,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2023-06-30",
+            "roicAdjustedPct": 19.17,
+            "roicExGoodwillPct": 37.52,
+            "nopat": 922166474.78,
+            "averageInvestedCapital": 4811357700.0,
+            "effectiveTaxPct": 18.53,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2024-06-30",
+            "roicAdjustedPct": 19.13,
+            "roicExGoodwillPct": 38.55,
+            "nopat": 1065423947.73,
+            "averageInvestedCapital": 5569950400.0,
+            "effectiveTaxPct": 19.28,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2025-06-30",
+            "roicAdjustedPct": 24.94,
+            "roicExGoodwillPct": 52.14,
+            "nopat": 1407233287.66,
+            "averageInvestedCapital": 5643335740.0,
+            "effectiveTaxPct": 16.5,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2026-06-30",
+            "roicAdjustedPct": 26.04,
+            "roicExGoodwillPct": 54.03,
+            "nopat": 1497340728.9,
+            "averageInvestedCapital": 5749222700.0,
+            "effectiveTaxPct": 20.64,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          }
+        ],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     },
     "TXN": {
       "ticker": "TXN",
@@ -1778,11 +2415,12 @@
         "historicalWeightPct": 40
       },
       "warnings": [
-        "Deuda neta / FCF >4×; valorar estructura financiera"
+        "Deuda neta / FCF >4×; valorar estructura financiera",
+        "FCF TTM calculado; precio objetivo anterior aún basado en mediana anual. Revisar si difieren"
       ],
       "fiscalEnd": "2025-12-31",
       "revenueCagrPct": 4.1,
-      "roicProxyMedianPct": 22.1,
+      "roicProxyMedianPct": null,
       "fcfPositiveYears": 5,
       "netDebtToFcf": 4.16,
       "normalizedFcfPerShare": 1.63,
@@ -1828,7 +2466,93 @@
       },
       "marginOfSafetyPct": -441.9,
       "fundamentalQualityGate": false,
-      "classification": "needs_review"
+      "classification": "needs_review",
+      "recentFinancials": {
+        "status": "available",
+        "periodEnd": "2026-09-30",
+        "filedAt": "2026-10-23",
+        "fiscalYearEnd": "2025-12-31",
+        "method": "FY + YTD actual - YTD comparable (SEC 10-K/10-Q; filing dates verified)",
+        "values": {
+          "revenue": 20766000000.0,
+          "cfo": 9896000000.0,
+          "capex": 2578000000.0,
+          "ebit": 8465000000.0,
+          "net_income": 7113000000.0
+        },
+        "sourceUrl": "https://www.sec.gov",
+        "tags": "Comparar CFO y CAPEX como flujos acumulados de exactamente el mismo periodo; ausencia = sin TTM",
+        "fcf": 7318000000.0
+      },
+      "adjustedRoic": {
+        "status": "available",
+        "median3yPct": 18.65,
+        "years": [
+          {
+            "fyEnd": "2021-12-31",
+            "roicAdjustedPct": 50.74,
+            "roicExGoodwillPct": 70.83,
+            "nopat": 7804713532.91,
+            "averageInvestedCapital": 15381550000.0,
+            "effectiveTaxPct": 12.89,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2022-12-31",
+            "roicAdjustedPct": 46.11,
+            "roicExGoodwillPct": 59.69,
+            "nopat": 8843187799.04,
+            "averageInvestedCapital": 19178220000.0,
+            "effectiveTaxPct": 12.79,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2023-12-31",
+            "roicAdjustedPct": 27.29,
+            "roicExGoodwillPct": 33.48,
+            "nopat": 6433649231.6,
+            "averageInvestedCapital": 23576970000.0,
+            "effectiveTaxPct": 12.24,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2024-12-31",
+            "roicAdjustedPct": 17.66,
+            "roicExGoodwillPct": 21.03,
+            "nopat": 4809560792.22,
+            "averageInvestedCapital": 27232600000.0,
+            "effectiveTaxPct": 11.99,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          },
+          {
+            "fyEnd": "2025-12-31",
+            "roicAdjustedPct": 18.65,
+            "roicExGoodwillPct": 22.03,
+            "nopat": 5275135376.53,
+            "averageInvestedCapital": 28286730000.0,
+            "effectiveTaxPct": 12.42,
+            "taxRateMethod": "reported",
+            "leaseIncluded": true,
+            "partialDebtTags": false
+          }
+        ],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     },
     "ZTS": {
       "ticker": "ZTS",
@@ -1927,7 +2651,8 @@
         "historicalWeightPct": 40
       },
       "warnings": [
-        "ROIC proxy no disponible; no equivale a ROIC auditado"
+        "ROIC proxy no disponible; no equivale a ROIC auditado",
+        "FCF TTM calculado; precio objetivo anterior aún basado en mediana anual. Revisar si difieren"
       ],
       "fiscalEnd": "2025-12-31",
       "revenueCagrPct": 7.24,
@@ -1977,7 +2702,36 @@
       },
       "marginOfSafetyPct": 44.2,
       "fundamentalQualityGate": false,
-      "classification": "needs_review"
+      "classification": "needs_review",
+      "recentFinancials": {
+        "status": "available",
+        "periodEnd": "2026-06-30",
+        "filedAt": "2026-08-06",
+        "fiscalYearEnd": "2025-12-31",
+        "method": "FY + YTD actual - YTD comparable (SEC 10-K/10-Q; filing dates verified)",
+        "values": {
+          "revenue": 9525000000.0,
+          "cfo": 2840000000.0,
+          "capex": 524000000.0,
+          "net_income": 2637000000.0
+        },
+        "sourceUrl": "https://www.sec.gov",
+        "tags": "Comparar CFO y CAPEX como flujos acumulados de exactamente el mismo periodo; ausencia = sin TTM",
+        "fcf": 2316000000.0
+      },
+      "adjustedRoic": {
+        "status": "insufficient",
+        "median3yPct": null,
+        "years": [],
+        "definition": "NOPAT EBIT×(1−tasa fiscal efectiva) / media de capital invertido apertura/cierre",
+        "capitalDefinition": "Patrimonio + deuda financiera + arrendamientos revelados − caja excedentaria (caja operativa = 2% ventas)",
+        "roicExGoodwill": "Solo sensibilidad; no usado en el filtro",
+        "caveats": [
+          "SBC, adquisiciones y leasing pueden distorsionar el ratio",
+          "Tasa efectiva 8%-40% y fallback 25% cuando no hay tasa interpretable",
+          "No usar con entidades financieras; revisar estados contables para decisiones de compra"
+        ]
+      }
     }
   },
   "unavailable": {},
@@ -2010,5 +2764,12 @@
     "nonUS": "No financial model without verified comparable IFRS source."
   },
   "completed": 12,
-  "attempted": 16
+  "attempted": 16,
+  "enhancement": {
+    "version": "2.0",
+    "generatedAt": "2026-10-23T22:58:17.505742+00:00",
+    "period": "Anual SEC + último 10-Q compatible",
+    "roic": "NOPAT / capital invertido medio con tasa efectiva y arrendamientos si reportados",
+    "enriched": 12
+  }
 }
