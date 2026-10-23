@@ -21,6 +21,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Validate CIIP valuation JavaScript
         run: node --check valuation.js
+      - name: Validate Quality Value Radar syntax
+        run: |
+          node --check quality-value-radar/app.js
+          python -m py_compile quality-value-radar/scripts/build_intrinsic_radar.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
