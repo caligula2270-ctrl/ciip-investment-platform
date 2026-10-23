@@ -1,4 +1,4 @@
-/* CIIP DCF v1.0 — illustrative equity cash flow valuation. No trading or recommendation. */
+/* CIIP DCF v1.1 — illustrative equity cash flow valuation. No trading or recommendation. */
 const CIIP_DCF_DEFAULTS={
   prudente:{g1:3,g2:2,discount:12,terminal:2},
   base:{g1:7,g2:4,discount:10,terminal:2.5},
@@ -27,6 +27,15 @@ function ciipValChoose(ticker){
   if(!companies.some(c=>c.Ticker===ticker))return;
   ciipValSelected=ticker;
   if(state.tab==='valuation')render();
+}
+function ciipValUseSecShares(){
+ const q=ciipHistoricalQuality(ciipValSelected);
+ const sec=ciipHistorical(ciipValSelected);
+ if(!q?.diluted_shares_proxy_available||!q.latest_diluted_shares||!sec?.url)return;
+ if(!confirm('Las acciones SEC representan una media anual diluida, no las acciones actuales. Requieren comprobación de splits y clases antes de invertir. ¿Usarlas solo como supuesto provisional?'))return;
+ const el=document.getElementById('ciip-val-shares');
+ const src=document.getElementById('ciip-val-source');
+ if(el&&src){el.value=String(Math.round(q.latest_diluted_shares/10000)/100);src.value=sec.url;ciipValUpdatePreview();}
 }
 function ciipValInput(label,id,value,step='0.1',min='-30',max='40'){
   return '<label style="display:block;min-width:0"><span class="muted tiny">'+esc(label)+'</span><input class="input" style="width:100%;min-width:0;margin-top:5px" type="number" id="'+esc(id)+'" value="'+esc(value)+'" min="'+esc(min)+'" max="'+esc(max)+'" step="'+esc(step)+'" oninput="ciipValUpdatePreview()"></label>';
@@ -61,7 +70,15 @@ function ciipValDcf(fcfM,params){
 function ciipValCompute(ticker,values){
   const c=companies.find(x=>x.Ticker===ticker);
   const f=c?financialRecord(c):null;
-  if(!f||!Number.isFinite(f.fcf)||f.fcf<=0)return {reason:'No existe un FCF anual positivo y comparable (flujo operativo menos CAPEX) para esta empresa.',records:[]};
+  const historical=ciipHistorical(ticker);
+  const quality=ciipHistoricalQuality(ticker);
+  const baseline=quality?.status==='historical_ready'&&Number.isFinite(quality.normalized_fcf_3y_usd)&&quality.normalized_fcf_3y_usd>0
+    ?quality.normalized_fcf_3y_usd:null;
+  // Once SEC historical data exists, fail closed instead of reverting to the
+  // last annual FCF, which can overstate sustainable economic cash flow.
+  if(!f||!baseline)return {reason:quality?
+    'No hay tres ejercicios recientes con FCF positivo comparable y 10-K actualizado: se bloquea el DCF automático.':
+    'Histórico SEC de cinco años pendiente: no se emite una valoración avanzada hasta regenerarlo.',records:[],historyQuality:quality};
   const date=Date.parse(f.period+'T00:00:00Z');
   const ageMonths=Number.isFinite(date)?(Date.now()-date)/(86400000*30.44):Infinity;
   const price=ciipValSourcePrice(ticker);
@@ -70,7 +87,7 @@ function ciipValCompute(ticker,values){
   const sharesDocumented=Number.isFinite(shares)&&shares>0&&shares<=1000000&&/^https:\/\/\S+/i.test(source);
   const scenarios=[];
   for(const key of ['prudente','base','optimista']){
-    const dcf=ciipValDcf(f.fcf/1000000,values.scenarios[key]);
+    const dcf=ciipValDcf(baseline/1000000,values.scenarios[key]);
     if(!dcf)continue;
     const valuePerShare=sharesDocumented?dcf.equityM/shares:null;
     const priceComparable=!!(price?.upToDate&&valuePerShare&&ageMonths<=18);
@@ -78,7 +95,7 @@ function ciipValCompute(ticker,values){
       valuePerShare,marketPrice:priceComparable?Number(price.price):null,
       safety:priceComparable?(1-Number(price.price)/valuePerShare)*100:null});
   }
-  return {f,price,ageMonths,sharesDocumented,shares,source,scenarios,records:scenarios};
+  return {f,price,ageMonths,sharesDocumented,shares,source,scenarios,records:scenarios,baselineFcfUsd:baseline,historyQuality:quality};
 }
 function ciipValPersist(){
   const form=ciipValReadForm();
@@ -103,7 +120,7 @@ function ciipValExport(){
   const output={
     format:'CIIP_ILLUSTRATIVE_DCF_V1',ticker,exportedAt:new Date().toISOString(),
     assumptions:input,baseline:calc.f?{
-      fcfM:calc.f.fcf/1000000,fiscalYearEnd:calc.f.period,
+      fcfM:calc.baselineFcfUsd/1000000,fiscalYearEnd:calc.historyQuality?.latest_fy_end||calc.f.period,normalization:'3-year median SEC 10-K CFO minus CAPEX',
       operatingCashFlow:calc.f.metrics.operating_cash_flow,
       capex:calc.f.metrics.capex,
       secUrl:calc.f.filing.url
@@ -241,7 +258,10 @@ function valuationView(){
   return '<section class="panel"><h2>Valoración ilustrativa · flujos de caja del accionista</h2><p class="muted">Modelo a diez años con dos etapas y valor terminal (Gordon). Parte de CFO − CAPEX publicado para un mismo ejercicio fiscal, una aproximación de flujo atribuible al accionista. Se descuenta a una rentabilidad exigida al capital propio, por lo que NO se resta deuda ni se añade caja de nuevo. No es FCFF ni un DCF empresarial, no ajusta stock-based compensation, adquisiciones ni necesidades extraordinarias de caja.</p><div class="actions" style="align-items:center">'+select+button('Actualizar datos SEC','refreshFundamentals()')+button('Actualizar cotización','refreshAutoMarket()')+button('Ver resultados ↓','ciipValScrollToResults()')+'</div>'+warning+'<p class="muted tiny">Cotización para comparar: '+quote+'</p></section>'+
   '<section class="panel"><h2>Denominador por acción · aportación manual</h2><p class="muted tiny">Indica acciones diluidas (millones) del mismo emisor y clase económica. Para ADR y clases múltiples revisa sus conversiones y derechos. Si no hay un dato con fuente, el sistema solo mostrará importes agregados.</p><div class="grid ciip-share-fields" style="grid-template-columns:1fr 2fr;gap:12px">'+
   ciipValInput('Acciones diluidas (millones)','ciip-val-shares',vals.sharesM,'0.01','0','1000000')+
-  '<label style="display:block"><span class="muted tiny">Enlace HTTPS a la fuente de acciones</span><input class="input" id="ciip-val-source" type="url" style="width:100%;min-width:0;margin-top:5px" placeholder="https://..." value="'+esc(vals.sharesSource)+'" oninput="ciipValUpdatePreview()"></label></div></section>'+
+  '<label style="display:block"><span class="muted tiny">Enlace HTTPS a la fuente de acciones</span><input class="input" id="ciip-val-source" type="url" style="width:100%;min-width:0;margin-top:5px" placeholder="https://..." value="'+esc(vals.sharesSource)+'" oninput="ciipValUpdatePreview()"></label></div>'+
+  (ciipHistoricalQuality(ticker)?.diluted_shares_proxy_available?'<div class="actions" style="margin-top:10px">'+button('Usar acciones SEC (provisional)','ciipValUseSecShares()')+'</div>':'')+
+  '<p class="muted tiny">Dato SEC provisional: media ponderada diluida anual, sujeto a confirmación de clases, splits y acciones actuales. Se muestra el valor por acción solo tras introducir o aceptar explícitamente el denominador.</p></section>'+
+  '<details class="panel"><summary style="font-weight:750;cursor:pointer">Consultar cinco ejercicios SEC y controles de calidad</summary>'+ciipHistoryReadout(ticker)+'</details>'+
   '<div class="grid ciip-scenarios" style="grid-template-columns:repeat(3,minmax(0,1fr))">'+scenarios+'</div>'+
   '<section class="panel" id="ciip-valuation-results"><div class="actions" style="justify-content:space-between;align-items:center"><h2 style="margin:0">Resultados por escenario</h2><div class="actions">'+button('Guardar supuestos','ciipValPersist()','')+button('Restaurar','ciipValReset()')+button('Exportar análisis JSON','ciipValExport()')+'</div></div><p class="muted tiny" id="ciip-dcf-status">Los resultados se recalculan automáticamente al modificar los parámetros. «Guardar supuestos» conserva tus cambios en este dispositivo.</p><div id="ciip-dcf-preview" aria-live="polite" aria-atomic="true">'+preview+'</div></section>'+
   '<section class="panel"><h2>Alcance y limitaciones</h2><p class="muted">Las tres tasas son hipótesis iniciales ilustrativas, no previsiones del sistema. El flujo anual puede ser excepcional o estar distorsionado por capital circulante y compensación en acciones. La cifra de acciones procede exclusivamente del usuario; una fuente indicada no implica revisión documental. Este módulo NO clasifica empresas como READY, no genera órdenes ni emite recomendaciones de inversión. Antes de una decisión se requieren normalización plurianual, dilución, calidad de beneficio, deuda, sensibilidad y revisión de fuentes.</p></section>';
