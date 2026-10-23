@@ -15,6 +15,7 @@ const initial = {watch:['CPRT','AMZN','CSU.TO'],page:'overview',settings:{hurdle
 let state = load();
 let remoteQuotes = {};
 let autoAnalysis = {companies:{},unavailable:{},exclusions:{}};
+let internationalResearch = {companies:{}};
 let analysisStatus = 'Análisis fundamental todavía no cargado';
 let quotationsNotice = 'Referencias fechadas; no son cotizaciones en directo';
 let activeModal = null;
@@ -48,7 +49,7 @@ function shortCandidate(c){let v=valuation(c);return `<div class="candidate-row"
 function autoQualityPanel(){
   const entries=companies().map(c=>({c,a:autoAnalysis.companies?.[c.s]})).filter(x=>x.a);
   const ready=entries.filter(x=>x.a.status==='ready');
-  const opportunities=ready.filter(x=>x.a.classification==='possible_discount')
+  const opportunities=ready.filter(x=>x.a.classification==='possible_discount' && x.a.adjustedRoic?.status==='available')
     .sort((a,b)=>(b.a.marginOfSafetyPct||0)-(a.a.marginOfSafetyPct||0));
   const unsupported=companies().length-ready.length;
   const card=(c,a)=>'<article class="stock-card"><div class="stock-card-title"><div><div class="eyebrow">'+esc(c.s)+' · SEC 10-K</div><h3>'+esc(c.n)+'</h3></div><span class="pill '+(a.classification==='possible_discount'?'':'amber')+'">'+(a.classification==='possible_discount'?'Posible descuento':'Revisar')+'</span></div>'+
@@ -56,17 +57,19 @@ function autoQualityPanel(){
     '<p class="stock-desc">Margen estimado: <b>'+pct(a.marginOfSafetyPct)+'</b> · FCF/acción norm.: '+money(a.normalizedFcfPerShare,a.currency)+' · P/FCF histórico mediano: '+(a.historicalPfcfMedian?fmtN(a.historicalPfcfMedian,1)+'×':'—')+'</p>'+
     '<div class="card-footer"><button class="btn btn-quiet btn-sm" data-auto-detail="'+esc(c.s)+'">Ver cálculo y advertencias →</button></div></article>';
   return '<section class="panel" style="margin-bottom:20px"><div class="panel-head"><div><h3>Motor de valoración automática</h3><p>'+esc(analysisStatus)+'</p></div><span class="pill neutral">'+ready.length+' / '+companies().length+' modelos completos</span></div>'+
-    '<div class="info-note"><b>Filtro conservador:</b> flujo libre positivo en 3 ejercicios, mediana de P/FCF en al menos 3 cierres fiscales, ROIC proxy ≥15%, precio fechado ≤7 días y descuento estimado ≥25%. El ROIC es aproximado, no un dato auditado. Sin información suficiente, no se clasifica como barata.</div>'+
+    '<div class="info-note"><b>Filtro conservador:</b> flujo libre positivo en tres ejercicios, al menos tres múltiplos P/FCF históricos, ROIC ajustado NOPAT/capital invertido medio ≥15%, cotización reciente y margen mínimo del 25%. Si el cálculo es incompleto, no se clasifica como barata.</div>'+
     '<div class="stat-grid">'+
       statCard('Modelos completos',ready.length,'Comparables SEC 10-K y cotización fechada')+
       statCard('Posibles descuentos',opportunities.length,'Requieren revisión humana')+
       statCard('Sin cobertura completa',unsupported,'Excluidas o pendientes')+
       statCard('Tasa de descuento base','11,5 %','Hipótesis explícita, editable en código')+'</div>'+
     '<div class="cards-3">'+(opportunities.length?opportunities.map(({c,a})=>card(c,a)).join(''):'<div class="empty">Sin oportunidades que cumplan todos los requisitos. Esto no implica que las empresas estén caras.</div>')+'</div>'+
+    internationalPanel()+
     '<details class="collapsible"><summary>Ver todas las valoraciones automáticas y datos insuficientes</summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Empresa</th><th>Estado</th><th>Valor razonable*</th><th>Descuento</th><th></th></tr></thead><tbody>'+
     companies().map(c=>{const a=autoAnalysis.companies?.[c.s],reason=a?.reason||autoAnalysis.exclusions?.[c.s]||autoAnalysis.unavailable?.[c.s]||'Sin modelo verificable';return '<tr><td>'+esc(c.n)+' <small>'+esc(c.s)+'</small></td><td>'+(a?.status==='ready'?'Con modelo':esc(reason))+'</td><td>'+money(a?.fairValue,a?.currency)+'</td><td>'+pct(a?.status==='ready'?a.marginOfSafetyPct:null)+'</td><td>'+(a?'<button class="btn btn-quiet btn-sm" data-auto-detail="'+esc(c.s)+'">Detalles</button>':'—')+'</td></tr>'}).join('')+
     '</tbody></table></div></details><p class="tiny muted">* Mezcla 60% de DCF simplificado a 5 años sobre FCF normalizado y 40% de mediana histórica P/FCF, calculada con cotizaciones en fechas fiscales. No sustituye una valoración sectorial ni ajuste completo por deuda, SBC, adquisiciones o ciclo del capital de trabajo.</p></section>';
 }
+function internationalPanel(){const list=Object.entries(internationalResearch.companies||{});return '<section class="panel" style="margin:22px 0"><div class="panel-head"><div><h3>Seguimiento internacional</h3><p>Fuentes corporativas verificadas; todavía sin modelo comparable ni etiqueta de barata</p></div></div><div class="cards-3">'+list.map(([ticker,c])=>'<div class="stock-card"><div class="eyebrow">'+esc(ticker)+' · '+esc(c.reportPeriod)+'</div><h3>'+esc(c.name)+'</h3><p class="tiny muted">'+esc(c.country)+' · '+esc(c.standard)+' · '+esc(c.reportingCurrency)+'</p><p class="small">'+(c.reportedRevenueMillions!=null?'Ingresos período: '+money(c.reportedRevenueMillions,c.reportingCurrency)+' millones. ':'')+esc(c.reason)+'</p><a href="'+esc(c.sourceUrl)+'" rel="noopener noreferrer" target="_blank">Fuente corporativa ↗</a></div>').join('')+'</div></section>';}
 function showAutoDetail(ticker){
  const a=autoAnalysis.companies?.[ticker];if(!a)return toast('No hay análisis automático completo.');
  const c=issuer(ticker);
@@ -75,6 +78,7 @@ function showAutoDetail(ticker){
  const html='<div class="eyebrow">Modelo automático · análisis verificable</div><h2>'+esc(c?.n||ticker)+' · '+esc(ticker)+'</h2>'+
  '<div class="info-note"><b>Estado:</b> '+esc(a.status)+' · '+esc(a.reason||'Modelo disponible para revisión')+'</div>'+
  '<div class="stat-grid">'+statCard('Escenario prudente',money(a.dcfBear,'USD'),'DCF supuesto conservador')+statCard('DCF central',money(a.dcfBase,'USD'),'5 años')+statCard('Escenario optimista',money(a.dcfBull,'USD'),'DCF supuesto optimista')+statCard('Precio objetivo mixto',money(a.fairValue,'USD'),'60% DCF / 40% P/FCF')+'</div>'+
+ '<p>ROIC ajustado (mediana 3 años): <b>'+pct(a.adjustedRoic?.median3yPct)+'</b> · Trimestre/TTM: '+esc(a.recentFinancials?.periodEnd||'no disponible')+' ('+esc(a.recentFinancials?.status||'sin datos')+')</p>'+
  '<p>FCF/acción normalizado: <b>'+money(a.normalizedFcfPerShare,'USD')+'</b>. CAGR ingresos: '+pct(a.revenueCagrPct)+'. ROIC proxy mediano: '+pct(a.roicProxyMedianPct)+'. Deuda neta / FCF: '+(a.netDebtToFcf==null?'No comparable':fmtN(a.netDebtToFcf,2)+'×')+'.</p>'+
  '<p>Fecha último ejercicio: '+esc(a.fiscalEnd||'—')+'. Crecimiento base asumido: '+fmtN(a.assumptions?.baseGrowthPct||0,1)+'%; descuento 11,5%; crecimiento perpetuo 2,5%; descuento mínimo exigido 25%.</p>'+
  '<h3>Múltiplos históricos por cierre fiscal</h3><div class="table-wrap"><table class="data-table"><thead><tr><th>Ejercicio</th><th>Fecha cotización</th><th>P/FCF</th></tr></thead><tbody>'+hist+'</tbody></table></div>'+
@@ -84,6 +88,7 @@ function showAutoDetail(ticker){
  document.getElementById('modal-root').classList.remove('hidden');
  activeModal=null;
 }
+async function refreshInternational(){try{if(location.protocol==='file:')return;const r=await fetch('data/international.json',{cache:'no-store'});if(r.ok){const d=await r.json();if(d.schema==='qvr-international-v1')internationalResearch=d;}}catch(e){}render();}
 async function refreshAutoAnalysis(){
  try{
   if(location.protocol==='file:')return;
@@ -173,6 +178,6 @@ document.addEventListener('change',ev=>{const t=ev.target;if(t.id==='filter-sect
 document.addEventListener('input',ev=>{if(ev.target.id==='search-company'){state.filters.term=ev.target.value;persist();const pos=ev.target.selectionStart;render();const el=document.getElementById('search-company');if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&activeModal)closeModal();if(ev.key==='Escape'&&!document.getElementById('modal-root').classList.contains('hidden'))closeModal();});
 document.getElementById('modal-root').addEventListener('click',ev=>{if(ev.target.id==='modal-root')closeModal();});
-render();refreshQuotes();refreshAutoAnalysis();
+render();refreshQuotes();refreshAutoAnalysis();refreshInternational();
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 })();
