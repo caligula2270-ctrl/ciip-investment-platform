@@ -21,7 +21,7 @@
       "reason": "FCFA2S es definición no GAAP; CAD por cotización frente USD reportados, adquisición intensiva e IRGA exigen conciliación.",
       "valuation": {
         "status": "preliminary",
-        "model": "5Y DCF median 3Y issuer FCF",
+        "model": "5Y DCF median 3Y historical issuer FCF",
         "annualFcf": [
           {
             "year": 2023,
@@ -37,32 +37,31 @@
           }
         ],
         "normalizedFcfPerShare": 69.4617,
-        "sharesMillions": 21.19153,
         "reportingCurrency": "USD",
         "tradingCurrency": "CAD",
+        "sharesMillions": 21.19153,
         "fx": {
-          "rate": 1.4034,
-          "date": "2026-10-22",
-          "source": "https://exchangeratetool.com/historical/usd-cad"
+          "rate": 1.4002,
+          "date": "2026-10-23",
+          "source": "https://query1.finance.yahoo.com/v8/finance/chart/CAD%3DX?range=5d&interval=1d"
         },
-        "bear": 827.37,
-        "base": 1198.11,
-        "bull": 1635.91,
+        "bear": 825.48,
+        "base": 1195.38,
+        "bull": 1632.17,
         "quotePrice": 3408.5701,
         "quoteDate": "2026-10-22",
-        "quoteSource": "Yahoo Finance snapshot from repository quotes.json dated prior to research",
-        "indicativeMarginPct": -184.5,
+        "indicativeMarginPct": -185.1,
         "assumptions": {
           "baseGrowthPct": 7.000000000000001,
           "discountPct": 12.5,
           "terminalGrowthPct": 2.5
         },
-        "metric": "FCFA2S no IFRS; antes de adquisiciones",
+        "metric": "FCFA2S Non-IFRS, excludes acquisitions",
         "primarySources": [
           "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-fourth-quarter-and-year-ended-december-31-2025-and-declares-quarterly-dividend/",
           "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-fourth-quarter-and-year-ended-december-31-2024-and-declares-quarterly-dividend/"
         ],
-        "warning": "FCFA2S no descuenta adquisiciones; un DCF de FCF estático subestima potencialmente el valor de reinversión.",
+        "warning": "Adquisiciones consumen caja y crean crecimiento; FCFA2S no equivale a caja repartible después de adquisiciones.",
         "investmentSignal": "human_review_required",
         "historicalMultipleAvailable": false
       }
@@ -83,7 +82,7 @@
       "reason": "Cotización ADR USD frente resultados EUR y ausencia de serie normalizada FCF/ROIC para escenario prudente.",
       "valuation": {
         "status": "preliminary",
-        "model": "5Y DCF median 3Y issuer FCF",
+        "model": "5Y DCF median 3Y historical issuer FCF",
         "annualFcf": [
           {
             "year": 2023,
@@ -99,32 +98,31 @@
           }
         ],
         "normalizedFcfPerShare": 23.5669,
-        "sharesMillions": 385.417665,
         "reportingCurrency": "EUR",
         "tradingCurrency": "USD",
+        "sharesMillions": 385.417665,
         "fx": {
-          "rate": 1.1221,
-          "date": "2026-10-22",
-          "source": "https://www.investing.com/currencies/eur-usd-historical-data"
+          "rate": 1.120448,
+          "date": "2026-10-23",
+          "source": "https://query1.finance.yahoo.com/v8/finance/chart/EURUSD%3DX?range=5d&interval=1d"
         },
-        "bear": 244.11,
-        "base": 362.16,
-        "bull": 505.49,
+        "bear": 243.75,
+        "base": 361.63,
+        "bull": 504.74,
         "quotePrice": 1560.54,
         "quoteDate": "2026-10-22",
-        "quoteSource": "Yahoo Finance snapshot from repository quotes.json dated prior to research",
-        "indicativeMarginPct": -330.9,
+        "indicativeMarginPct": -331.5,
         "assumptions": {
           "baseGrowthPct": 7.000000000000001,
           "discountPct": 11.5,
           "terminalGrowthPct": 2.5
         },
-        "metric": "FCF no-GAAP; CFO menos capex material e intangible",
+        "metric": "FCF no-GAAP, CFO - capex + intangibles",
         "primarySources": [
           "https://www.sec.gov/Archives/edgar/data/937966/000162828026011378/asml-20251231.htm",
           "https://www.sec.gov/Archives/edgar/data/937966/000093796625000009/asml-20241231.htm"
         ],
-        "warning": "Flujos muy cíclicos, anticipos de clientes y transición High-NA; los escenarios no son valores razonables validados.",
+        "warning": "ASML cotiza en Nasdaq en USD; modelo parte de EUR. FCF sensible a anticipos de clientes y ciclo de semiconductores.",
         "investmentSignal": "human_review_required",
         "historicalMultipleAvailable": false
       }
@@ -142,7 +140,7 @@
       "reason": "Precisa extraer estados consolidados 2025/H1-2026 y conciliar expansión de tiendas y CAPEX; sin FCF normalizado no se emite precio objetivo.",
       "valuation": {
         "status": "preliminary",
-        "model": "5Y DCF median 3Y issuer FCF",
+        "model": "5Y DCF median 3Y historical issuer FCF",
         "annualFcf": [
           {
             "year": 2023,
@@ -158,36 +156,36 @@
           }
         ],
         "normalizedFcfPerShare": 0.6222,
-        "sharesMillions": 980.4,
         "reportingCurrency": "PLN",
         "tradingCurrency": "PLN",
+        "sharesMillions": 980.4,
         "fx": {
           "rate": 1,
           "date": "2026-10-21",
-          "source": "https://grupadino.pl/en/selected-financial-data/"
+          "source": "same currency"
         },
         "bear": 6.07,
         "base": 8.91,
         "bull": 12.28,
         "quotePrice": 39.06,
         "quoteDate": "2026-10-21",
-        "quoteSource": "Yahoo Finance snapshot from repository quotes.json dated prior to research",
         "indicativeMarginPct": -338.4,
         "assumptions": {
           "baseGrowthPct": 9.5,
-          "discountPct": 12,
+          "discountPct": 12.0,
           "terminalGrowthPct": 2.5
         },
-        "metric": "CFO-CAPEX; capex expansivo de tiendas",
+        "metric": "CFO - capex reportados",
         "primarySources": [
           "https://grupadino.pl/wp-content/uploads/2026/03/Dino-Polska-2025-results-presentation.pdf",
-          "https://grupadino.pl/en/selected-financial-data/"
+          "https://grupadino.pl/en/selected-financial-data/",
+          "https://grupadino.pl/raport-biezacy-nr-10-2025-oswiadczenie-kdpw-w-sprawie-wyznaczenia-dnia-podzialu-splitu-akcji-dino-polska-s-a/"
         ],
-        "warning": "El capex de nuevas tiendas reduce FCF normalizado y produce una infravaloración económica del crecimiento futuro.",
+        "warning": "Capex de expansión de tiendas elevado; FCF actual no mide plenamente valor de futuras aperturas. Split de 10:1 incorporado.",
         "investmentSignal": "human_review_required",
         "historicalMultipleAvailable": false
       }
     }
   },
-  "generatedAt": "2026-10-24"
+  "generatedAt": "2026-10-23T23:28:22.976076+00:00"
 }
