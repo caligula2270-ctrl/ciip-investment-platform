@@ -1,0 +1,51 @@
+{
+  "schema": "qvr-international-v1",
+  "asOf": "2026-10-24",
+  "note": "Datos primarios internacionales. No hay valoración intrínseca automática hasta conciliar balances, FCF diluido y moneda.",
+  "companies": {
+    "CSU.TO": {
+      "name": "Constellation Software",
+      "country": "Canadá",
+      "quoteCurrency": "CAD",
+      "reportingCurrency": "USD",
+      "standard": "IFRS",
+      "reportPeriod": "Q2 2026",
+      "reportedRevenueMillions": 3335,
+      "revenueYoYPct": 17,
+      "reportedOperatingCashFlowMillions": 477,
+      "reportedFcfAvailableToShareholdersMillions": 345,
+      "operatingCashFlowYoYPct": 10,
+      "source": "Constellation Software Q2 2026",
+      "sourceUrl": "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-second-quarter-ended-june-30-2026-and-declares-quarterly-dividend/",
+      "status": "source_verified_model_pending",
+      "reason": "FCFA2S es definición no GAAP; CAD por cotización frente USD reportados, adquisición intensiva e IRGA exigen conciliación."
+    },
+    "ASML": {
+      "name": "ASML",
+      "country": "Países Bajos",
+      "quoteCurrency": "USD",
+      "reportingCurrency": "EUR",
+      "standard": "US GAAP (informe de resultados)",
+      "reportPeriod": "Q3 2026",
+      "reportedRevenueMillions": 11662,
+      "reportedNetIncomeMillions": 4960,
+      "grossMarginPct": 57.5,
+      "source": "ASML Q3 2026",
+      "sourceUrl": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
+      "status": "source_verified_model_pending",
+      "reason": "Cotización ADR USD frente resultados EUR y ausencia de serie normalizada FCF/ROIC para escenario prudente."
+    },
+    "DNP.WA": {
+      "name": "Dino Polska",
+      "country": "Polonia",
+      "quoteCurrency": "PLN",
+      "reportingCurrency": "PLN",
+      "standard": "IFRS",
+      "reportPeriod": "H1 2026",
+      "source": "Dino Polska informes H1 2026 y cierre 2025",
+      "sourceUrl": "https://grupadino.pl/en/financial-reports/",
+      "status": "source_verified_model_pending",
+      "reason": "Precisa extraer estados consolidados 2025/H1-2026 y conciliar expansión de tiendas y CAPEX; sin FCF normalizado no se emite precio objetivo."
+    }
+  }
+}
