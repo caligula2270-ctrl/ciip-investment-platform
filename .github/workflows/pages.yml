@@ -23,7 +23,8 @@ jobs:
         run: |
           node --check valuation.js
           node --check history.js
-          python -m py_compile scripts/update_fundamentals.py
+          python -m py_compile scripts/update_fundamentals.py scripts/ciip_quality_controls.py
+          PYTHONPATH=scripts python -m unittest discover -s scripts -p 'test_ciip_quality_controls.py' -v
       - name: Validate Quality Value Radar syntax
         run: |
           node --check quality-value-radar/app.js
