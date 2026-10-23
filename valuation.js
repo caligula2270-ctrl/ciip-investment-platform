@@ -1,4 +1,4 @@
-/* CIIP DCF v1.1 — illustrative equity cash flow valuation. No trading or recommendation. */
+/* CIIP DCF v1.1a — illustrative equity cash flow valuation. No trading or recommendation. */
 const CIIP_DCF_DEFAULTS={
   prudente:{g1:3,g2:2,discount:12,terminal:2},
   base:{g1:7,g2:4,discount:10,terminal:2.5},
@@ -95,7 +95,13 @@ function ciipValCompute(ticker,values){
       valuePerShare,marketPrice:priceComparable?Number(price.price):null,
       safety:priceComparable?(1-Number(price.price)/valuePerShare)*100:null});
   }
-  return {f,price,ageMonths,sharesDocumented,shares,source,scenarios,records:scenarios,baselineFcfUsd:baseline,historyQuality:quality};
+  const hurdles=[12,15].map(rate=>{
+    const assumptions={...values.scenarios.base,discount:rate};
+    const dcf=ciipValDcf(baseline/1000000,assumptions);
+    return {rate,valueM:dcf?.equityM??null,
+      valuePerShare:dcf&&sharesDocumented?dcf.equityM/shares:null};
+  });
+  return {f,price,ageMonths,sharesDocumented,shares,source,scenarios,records:scenarios,baselineFcfUsd:baseline,historyQuality:quality,hurdles};
 }
 function ciipValPersist(){
   const form=ciipValReadForm();
@@ -171,7 +177,12 @@ function ciipValResults(calc){
   if(f&&calc.ageMonths>18)notices.push('FCF de ejercicio antiguo: no se muestra la comparación de precio.');
   if(f&&calc.scenarios.some(x=>x.terminalWeight>.75))notices.push('Uno o varios escenarios dependen en más de un 75 % del valor terminal.');
   const foot=notices.length?'<div class="notice">'+notices.map(esc).join(' ')+'</div>':'';
-  return foot+results;
+  const hurdle=calc.hurdles?.length?'<div class="ciip-result-cards ciip-return-hurdles" role="list" aria-label="Precios compatibles con rentabilidad exigida">'+
+     calc.hurdles.map(x=>'<article class="ciip-result-card" role="listitem"><div class="ciip-result-label">Rentabilidad exigida '+x.rate+' % anual</div>'+
+       '<strong class="ciip-result-primary">'+(x.valuePerShare===null?'—':ciipMoney(x.valuePerShare)+' USD/acción')+'</strong>'+
+       '<p class="muted tiny">Valor patrimonial: '+(x.valueM===null?'—':ciipMoney(x.valueM)+' M USD')+'</p></article>').join('')+
+     '</div><p class="muted tiny">Valores compatibles con tasas de descuento del 12 % y 15 %, según los supuestos editados del escenario Base. No son rentabilidades previstas ni garantizadas: requieren verificar acciones, estabilidad del FCF y crecimiento.</p>':'';
+  return foot+results+(hurdle?'<section style="margin-top:16px"><h3>Umbrales de valoración · rentabilidad exigida</h3>'+hurdle+'</section>':'');
 }
 function ciipValReadForm(){
   const ticker=ciipValSelected;
