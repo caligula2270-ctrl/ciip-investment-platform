@@ -1,4 +1,4 @@
-/* CIIP DCF v1.1a — illustrative equity cash flow valuation. No trading or recommendation. */
+/* CIIP DCF v1.2 — illustrative equity cash flow valuation. No trading or recommendation. */
 const CIIP_DCF_DEFAULTS={
   prudente:{g1:3,g2:2,discount:12,terminal:2},
   base:{g1:7,g2:4,discount:10,terminal:2.5},
@@ -29,13 +29,11 @@ function ciipValChoose(ticker){
   if(state.tab==='valuation')render();
 }
 function ciipValUseSecShares(){
- const q=ciipHistoricalQuality(ciipValSelected);
- const sec=ciipHistorical(ciipValSelected);
- if(!q?.diluted_shares_proxy_available||!q.latest_diluted_shares||!sec?.url)return;
- if(!confirm('Las acciones SEC representan una media anual diluida, no las acciones actuales. Requieren comprobación de splits y clases antes de invertir. ¿Usarlas solo como supuesto provisional?'))return;
- const el=document.getElementById('ciip-val-shares');
- const src=document.getElementById('ciip-val-source');
- if(el&&src){el.value=String(Math.round(q.latest_diluted_shares/10000)/100);src.value=sec.url;ciipValUpdatePreview();}
+ const sec=ciipHistorical(ciipValSelected),r=sec?.share_reconciliation;
+ if(r?.status!=='provisional_reconciled'||!r.provisional_diluted_shares||!sec.url)return;
+ if(!confirm('El dato SEC es la media diluida de un trimestre, NO acciones plenamente diluidas actuales. Se comparó con acciones básicas, pero requiere revisión de clases y emisiones posteriores. ¿Usarlo solo como hipótesis provisional?'))return;
+ const el=document.getElementById('ciip-val-shares'),src=document.getElementById('ciip-val-source');
+ if(el&&src){el.value=String(Math.round(r.provisional_diluted_shares/10000)/100);src.value=sec.url;ciipValUpdatePreview();}
 }
 function ciipValInput(label,id,value,step='0.1',min='-30',max='40'){
   return '<label style="display:block;min-width:0"><span class="muted tiny">'+esc(label)+'</span><input class="input" style="width:100%;min-width:0;margin-top:5px" type="number" id="'+esc(id)+'" value="'+esc(value)+'" min="'+esc(min)+'" max="'+esc(max)+'" step="'+esc(step)+'" oninput="ciipValUpdatePreview()"></label>';
@@ -72,13 +70,17 @@ function ciipValCompute(ticker,values){
   const f=c?financialRecord(c):null;
   const historical=ciipHistorical(ticker);
   const quality=ciipHistoricalQuality(ticker);
-  const baseline=quality?.status==='historical_ready'&&Number.isFinite(quality.normalized_fcf_3y_usd)&&quality.normalized_fcf_3y_usd>0
+  const sector=historical?.sector_control;
+  const baseline=quality?.normalized_fcf_status==='ready_with_caveats'&&
+    quality.status==='historical_ready'&&sector?.status!=='blocked'&&
+    Number.isFinite(quality.normalized_fcf_3y_usd)&&quality.normalized_fcf_3y_usd>0
     ?quality.normalized_fcf_3y_usd:null;
-  // Once SEC historical data exists, fail closed instead of reverting to the
-  // last annual FCF, which can overstate sustainable economic cash flow.
-  if(!f||!baseline)return {reason:quality?
-    'No hay tres ejercicios recientes con FCF positivo comparable y 10-K actualizado: se bloquea el DCF automático.':
-    'Histórico SEC de cinco años pendiente: no se emite una valoración avanzada hasta regenerarlo.',records:[],historyQuality:quality};
+  if(!f||!baseline)return {reason:sector?.status==='blocked'
+    ?'Modelo industrial bloqueado para este negocio: '+sector.reason
+    :quality?.normalized_fcf_status==='working_capital_review'
+      ?'Revisión pendiente: el circulante parcial muestra fluctuaciones materiales. No se genera DCF.'
+      :'Normalización o datos sectoriales insuficientes; no se emite valoración DCF.',records:[],
+    historyQuality:quality,sectorControl:sector};
   const date=Date.parse(f.period+'T00:00:00Z');
   const ageMonths=Number.isFinite(date)?(Date.now()-date)/(86400000*30.44):Infinity;
   const price=ciipValSourcePrice(ticker);
@@ -252,8 +254,8 @@ function valuationView(){
   const f=calc.f;
   const source=f?'<a class="link" href="'+esc(f.filing.url)+'" target="_blank" rel="noopener noreferrer">SEC Company Facts ↗</a>':'SEC sin datos comparables';
   const quote=price?(ciipMoney(Number(price.price))+' USD · '+esc(price.date)+' · '+esc(price.source)):'Sin precio USD automático';
-  const warning=!f?'<div class="notice">'+esc(calc.reason)+'</div>':
-    '<p class="muted tiny">Base histórica: '+ciipMoney(f.fcf/1000000)+' M USD de FCF aproximado, ejercicio terminado '+esc(f.period)+'. '+source+'.'+(calc.ageMonths>18?' Ejercicio anterior a 18 meses: comparación con cotización deshabilitada.':'')+'</p>';
+  const warning=!calc.f?'<div class="notice">'+esc(calc.reason||'Valoración no disponible')+'</div>':
+    '<p class="muted tiny">FCF normalizado: '+ciipMoney(f.fcf/1000000)+' M USD de FCF aproximado, ejercicio terminado '+esc(f.period)+'. '+source+'.'+(calc.ageMonths>18?' Ejercicio anterior a 18 meses: comparación con cotización deshabilitada.':'')+'</p>';
   let scenarios='';
   for(const key of ['prudente','base','optimista']){
     const p=vals.scenarios[key];
@@ -270,8 +272,9 @@ function valuationView(){
   '<section class="panel"><h2>Denominador por acción · aportación manual</h2><p class="muted tiny">Indica acciones diluidas (millones) del mismo emisor y clase económica. Para ADR y clases múltiples revisa sus conversiones y derechos. Si no hay un dato con fuente, el sistema solo mostrará importes agregados.</p><div class="grid ciip-share-fields" style="grid-template-columns:1fr 2fr;gap:12px">'+
   ciipValInput('Acciones diluidas (millones)','ciip-val-shares',vals.sharesM,'0.01','0','1000000')+
   '<label style="display:block"><span class="muted tiny">Enlace HTTPS a la fuente de acciones</span><input class="input" id="ciip-val-source" type="url" style="width:100%;min-width:0;margin-top:5px" placeholder="https://..." value="'+esc(vals.sharesSource)+'" oninput="ciipValUpdatePreview()"></label></div>'+
-  (ciipHistoricalQuality(ticker)?.diluted_shares_proxy_available?'<div class="actions" style="margin-top:10px">'+button('Usar acciones SEC (provisional)','ciipValUseSecShares()')+'</div>':'')+
-  '<p class="muted tiny">Dato SEC provisional: media ponderada diluida anual, sujeto a confirmación de clases, splits y acciones actuales. Se muestra el valor por acción solo tras introducir o aceptar explícitamente el denominador.</p></section>'+
+  (ciipHistorical(ticker)?.share_reconciliation?.status==='provisional_reconciled'?'<div class="actions" style="margin-top:10px">'+button('Usar acciones SEC (provisional)','ciipValUseSecShares()')+'</div>':'')+
+  '<p class="muted tiny">Dato SEC provisional: media ponderada diluida trimestral, cotejada con acciones básicas. No es una cifra actual plenamente diluida; requiere confirmar clases, splits y emisiones. Se muestra el valor por acción solo tras introducir o aceptar explícitamente el denominador.</p></section>'+
+  ciipQualityPanel(ticker)+
   '<details class="panel"><summary style="font-weight:750;cursor:pointer">Consultar cinco ejercicios SEC y controles de calidad</summary>'+ciipHistoryReadout(ticker)+'</details>'+
   '<div class="grid ciip-scenarios" style="grid-template-columns:repeat(3,minmax(0,1fr))">'+scenarios+'</div>'+
   '<section class="panel" id="ciip-valuation-results"><div class="actions" style="justify-content:space-between;align-items:center"><h2 style="margin:0">Resultados por escenario</h2><div class="actions">'+button('Guardar supuestos','ciipValPersist()','')+button('Restaurar','ciipValReset()')+button('Exportar análisis JSON','ciipValExport()')+'</div></div><p class="muted tiny" id="ciip-dcf-status">Los resultados se recalculan automáticamente al modificar los parámetros. «Guardar supuestos» conserva tus cambios en este dispositivo.</p><div id="ciip-dcf-preview" aria-live="polite" aria-atomic="true">'+preview+'</div></section>'+
