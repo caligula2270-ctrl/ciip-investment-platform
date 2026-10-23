@@ -30,6 +30,7 @@ jobs:
           node --check quality-value-radar/app.js
           python -m json.tool quality-value-radar/data/international.json > /dev/null
           python -m py_compile quality-value-radar/scripts/enrich_sec_metrics.py
+          python -m py_compile quality-value-radar/scripts/value_international.py
       - name: Generar análisis SEC y precios históricos
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
@@ -38,6 +39,8 @@ jobs:
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
         run: python quality-value-radar/scripts/enrich_sec_metrics.py
+      - name: Valorar compañías internacionales con fuente y cambio verificados
+        run: python quality-value-radar/scripts/value_international.py
       - name: Validar integridad del modelo
         run: |
           python - <<'PY'
@@ -59,7 +62,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add quality-value-radar/data/intrinsic.json
+          git add quality-value-radar/data/intrinsic.json quality-value-radar/data/international.json
           if ! git diff --cached --quiet; then
             git commit -m "data(qvr): actualizacion semanal de valoracion SEC"
             git pull --rebase origin main
