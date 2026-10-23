@@ -69,7 +69,16 @@ function autoQualityPanel(){
     companies().map(c=>{const a=autoAnalysis.companies?.[c.s],reason=a?.reason||autoAnalysis.exclusions?.[c.s]||autoAnalysis.unavailable?.[c.s]||'Sin modelo verificable';return '<tr><td>'+esc(c.n)+' <small>'+esc(c.s)+'</small></td><td>'+(a?.status==='ready'?'Con modelo':esc(reason))+'</td><td>'+money(a?.fairValue,a?.currency)+'</td><td>'+pct(a?.status==='ready'?a.marginOfSafetyPct:null)+'</td><td>'+(a?'<button class="btn btn-quiet btn-sm" data-auto-detail="'+esc(c.s)+'">Detalles</button>':'—')+'</td></tr>'}).join('')+
     '</tbody></table></div></details><p class="tiny muted">* Mezcla 60% de DCF simplificado a 5 años sobre FCF normalizado y 40% de mediana histórica P/FCF, calculada con cotizaciones en fechas fiscales. No sustituye una valoración sectorial ni ajuste completo por deuda, SBC, adquisiciones o ciclo del capital de trabajo.</p></section>';
 }
-function internationalPanel(){const list=Object.entries(internationalResearch.companies||{});return '<section class="panel" style="margin:22px 0"><div class="panel-head"><div><h3>Seguimiento internacional</h3><p>Fuentes corporativas verificadas; todavía sin modelo comparable ni etiqueta de barata</p></div></div><div class="cards-3">'+list.map(([ticker,c])=>'<div class="stock-card"><div class="eyebrow">'+esc(ticker)+' · '+esc(c.reportPeriod)+'</div><h3>'+esc(c.name)+'</h3><p class="tiny muted">'+esc(c.country)+' · '+esc(c.standard)+' · '+esc(c.reportingCurrency)+'</p><p class="small">'+(c.reportedRevenueMillions!=null?'Ingresos período: '+money(c.reportedRevenueMillions,c.reportingCurrency)+' millones. ':'')+esc(c.reason)+'</p><a href="'+esc(c.sourceUrl)+'" rel="noopener noreferrer" target="_blank">Fuente corporativa ↗</a></div>').join('')+'</div></section>';}
+function internationalPanel(){
+const list=Object.entries(internationalResearch.companies||{});
+return '<section class="panel" style="margin:22px 0"><div class="panel-head"><div><h3>Valoraciones internacionales</h3><p>DCF de 5 años con flujos reportados por emisor, conversiones de moneda fechadas y sin señales automáticas</p></div></div><div class="cards-3">'+list.map(([ticker,c])=>{
+ const v=c.valuation;
+ const details=v?.status==='preliminary'
+ ?'<div class="card-prices"><div><small>DCF base preliminar</small><b>'+money(v.base,v.tradingCurrency)+'</b></div><div><small>Cierre '+esc(v.quoteDate)+'</small><b>'+money(v.quotePrice,v.tradingCurrency)+'</b></div></div><p class="small">Distancia al valor base: '+pct(v.indicativeMarginPct)+'</p><p class="tiny muted">Prudente: '+money(v.bear,v.tradingCurrency)+' · Optimista: '+money(v.bull,v.tradingCurrency)+' · FX: '+fmtN(v.fx?.rate||1,4)+' ('+esc(v.fx?.date||'—')+')</p><div class="mini-note">Requiere revisión humana: '+esc(v.warning)+'</div>'
+ :'<p class="tiny muted">Pendiente de datos: '+esc(v?.reason||c.reason)+'</p>';
+ return '<div class="stock-card"><div class="eyebrow">'+esc(ticker)+' · '+esc(c.reportPeriod)+'</div><h3>'+esc(c.name)+'</h3><p class="tiny muted">'+esc(c.country)+' · '+esc(c.standard)+' · '+esc(c.reportingCurrency)+'</p>'+details+'<p><a href="'+esc(c.sourceUrl)+'" rel="noopener noreferrer" target="_blank">Informe oficial ↗</a></p></div>';
+}).join('')+'</div><p class="tiny muted">Los escenarios DCF internacionales no utilizan aún un P/FCF histórico independiente, y no califican automáticamente ninguna compañía como infravalorada.</p></section>';
+}
 function showAutoDetail(ticker){
  const a=autoAnalysis.companies?.[ticker];if(!a)return toast('No hay análisis automático completo.');
  const c=issuer(ticker);
