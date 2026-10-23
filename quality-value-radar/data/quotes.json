@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-22T22:16:37Z",
+  "generatedAt": "2026-10-23T06:56:43Z",
   "successfulSymbols": 45,
   "attemptedSymbols": 45,
   "quotes": {
     "0001.HK": {
-      "price": 64.6,
+      "price": 64.4,
       "currency": "HKD",
-      "date": "2026-10-22",
+      "date": "2026-10-23",
       "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
       "sourceUrl": "https://finance.yahoo.com/quote/0001.HK/history/",
       "kind": "cierre"
     },
     "7974.T": {
-      "price": 8699.0,
+      "price": 8539.0,
       "currency": "JPY",
-      "date": "2026-10-22",
+      "date": "2026-10-23",
       "source": "Yahoo Finance chart (sin garantía de disponibilidad)",
       "sourceUrl": "https://finance.yahoo.com/quote/7974.T/history/",
       "kind": "cierre"
