@@ -28,6 +28,7 @@ jobs:
         run: |
           python -m py_compile quality-value-radar/scripts/build_intrinsic_radar.py
           node --check quality-value-radar/app.js
+          python -m json.tool quality-value-radar/data/international.json > /dev/null
           python -m py_compile quality-value-radar/scripts/enrich_sec_metrics.py
       - name: Generar análisis SEC y precios históricos
         env:
@@ -45,6 +46,7 @@ jobs:
           p=Path('quality-value-radar/data/intrinsic.json')
           data=json.loads(p.read_text(encoding='utf-8'))
           assert data['schema']=='qvr-auto-v1'
+          assert data.get('enhancement',{}).get('version')=='2.0', 'TTM/ROIC v2 missing'
           for ticker,row in data['companies'].items():
               if row.get('classification')=='possible_discount':
                   assert row['status']=='ready' and row['fundamentalQualityGate'] and row['adjustedRoic']['status']=='available'
