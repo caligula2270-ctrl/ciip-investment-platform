@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """CIIP fundamentals from SEC EDGAR companyfacts. No financial estimates."""
 import datetime as dt, gzip, json, os, pathlib, sys, time, urllib.request, zlib
+from ciip_quality_controls import quality_normalize, current_share_reconciliation
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 AGENT=os.environ.get("SEC_USER_AGENT","").strip()
 if not AGENT or "@" not in AGENT:
@@ -198,7 +199,7 @@ def annual_history(facts, as_of, count=5):
 def main():
     mapping=get("https://www.sec.gov/files/company_tickers.json")
     cikmap={v["ticker"].upper():str(v["cik_str"]).zfill(10) for v in mapping.values()}
-    result={"schema":"ciip-fundamentals-v1","source":"SEC EDGAR companyfacts (US GAAP)","generated_at":dt.datetime.now(dt.timezone.utc).isoformat(),"companies":{},"unavailable":{},"caveat":"Annual flows: latest matching 10-K fiscal year, Form 10-Q year-to-date excluded. Balance sheet values can be later quarterly instants. Capex is a positive cash outflow. Reported long-term debt excludes current portion when tagged LongTermDebtNoncurrent. Annual 5-year history is shown as supplied by 10-K; three-year median CFO-CAPEX is a provisional normalization. Diluted shares are weighted-average and must be verified. No automatic audited ROIC or investment advice."}
+    result={"schema":"ciip-fundamentals-v1","source":"SEC EDGAR companyfacts (US GAAP)","generated_at":dt.datetime.now(dt.timezone.utc).isoformat(),"companies":{},"unavailable":{},"caveat":"Annual flows: latest matching 10-K fiscal year, Form 10-Q year-to-date excluded. Balance sheet values can be later quarterly instants. Capex is a positive cash outflow. Reported long-term debt excludes current portion when tagged LongTermDebtNoncurrent. Annual 5-year history is shown as supplied by 10-K; three-year median CFO-CAPEX is a provisional normalization. Diluted shares are weighted-average and must be verified. CAPEX normalized conservatively; working capital movements only partial. Share reconciliation is provisional and blocks multi-class situations. Sector-specific gates govern DCF. No audited ROIC or investment advice."}
     for ticker in TICKERS:
         cik=cikmap.get(ticker)
         if not cik:
@@ -211,6 +212,8 @@ def main():
             as_of=dt.datetime.now(dt.timezone.utc).date()
             metrics={k:select(facts,k,as_of) for k in TAGS}
             history,history_quality=annual_history(facts,as_of)
+            sector=quality_normalize(facts,history,history_quality,ticker,as_of)
+            shares=current_share_reconciliation(facts,ticker,history_quality,as_of)
             annual_ends=[m["end"] for name,m in metrics.items() if name in FLOW and m]
             annual_end=max(annual_ends) if annual_ends else None
             # Drop older annual metrics rather than mixing fiscal years in one row.
@@ -219,7 +222,7 @@ def main():
                 if metrics.get(name) and metrics[name]["end"]!=annual_end:
                     excluded.append({"metric":name,"latest_available_end":metrics[name]["end"],"reason":"different_fiscal_year"})
                     metrics[name]=None
-            result["companies"][ticker]={"cik":cik,"entity_name":obj.get("entityName"),"url":url,"annual_reference_end":annual_end,"excluded_annual_metrics":excluded,"metrics":metrics,"history":history,"history_quality":history_quality}
+            result["companies"][ticker]={"cik":cik,"entity_name":obj.get("entityName"),"url":url,"annual_reference_end":annual_end,"excluded_annual_metrics":excluded,"metrics":metrics,"history":history,"history_quality":history_quality,"sector_control":sector,"share_reconciliation":shares}
         except Exception as exc:
             result["unavailable"][ticker]=str(exc)[:180]
         time.sleep(0.16)
