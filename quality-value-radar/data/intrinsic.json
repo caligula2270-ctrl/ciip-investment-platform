@@ -1,0 +1,9 @@
+{
+  "schema": "qvr-auto-v1",
+  "generatedAt": null,
+  "companies": {},
+  "unavailable": {},
+  "exclusions": {},
+  "status": "pending_first_run",
+  "methodology": "SEC fundamental validation required"
+}
