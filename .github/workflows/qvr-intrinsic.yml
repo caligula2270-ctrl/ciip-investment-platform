@@ -56,6 +56,17 @@ jobs:
                   assert row['fairValue']>row['quote']['price']>0
                   assert row['historicalPfcfSamples']>=3
                   assert row['marginOfSafetyPct']>=25
+          intldata=json.loads(Path('quality-value-radar/data/international.json').read_text())
+          assert intldata['schema']=='qvr-international-v1'
+          for t in ['CSU.TO','ASML','DNP.WA']:
+              v=intldata['companies'][t].get('valuation',{})
+              if v.get('status')=='preliminary':
+                  assert 0<v['bear']<v['base']<v['bull']
+                  assert v['investmentSignal']=='human_review_required'
+                  assert v['fx']['date'] and v['quoteDate']
+                  assert len(v['annualFcf'])>=3
+              else:
+                  assert v.get('status') in ('unavailable',None)
           print('Validado',len(data['companies']),'análisis; completos',data['completed'])
           PY
       - name: Registrar datos de investigación
