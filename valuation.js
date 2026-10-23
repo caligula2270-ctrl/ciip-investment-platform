@@ -1,4 +1,4 @@
-/* CIIP DCF v0.9 — illustrative equity cash flow valuation. No trading or recommendation. */
+/* CIIP DCF v1.0 — illustrative equity cash flow valuation. No trading or recommendation. */
 const CIIP_DCF_DEFAULTS={
   prudente:{g1:3,g2:2,discount:12,terminal:2},
   base:{g1:7,g2:4,discount:10,terminal:2.5},
@@ -126,8 +126,27 @@ function ciipValResults(calc){
       const warning=x.terminalWeight>.75?'<div class="muted tiny">Terminal >75 % del valor</div>':'';
       return '<tr><td><b>'+esc(x.label)+'</b></td><td>'+ciipMoney(x.equityM)+'</td><td>'+ciipValuePct(x.terminalWeight*100)+warning+'</td><td>'+ (x.valuePerShare===null?'—':ciipMoney(x.valuePerShare)+' USD')+'</td><td>'+(x.safety===null?'—':ciipValuePct(x.safety))+'</td></tr>';
     });
-    results=table(['Escenario','Valor patrimonial M USD','Peso terminal','Valor por acción','Margen precio/valor'],tr)+
-    '<p class="muted tiny">Margen precio/valor = 100 × (1 − último precio / valor por acción). Negativo significa que el precio supera la valoración del escenario. Esta diferencia NO es una rentabilidad anual prevista.</p>';
+    const cards=calc.scenarios.map(x=>{
+      const perShare=x.valuePerShare===null?'—':ciipMoney(x.valuePerShare)+' USD';
+      const safety=x.safety===null?'—':ciipValuePct(x.safety);
+      const shareHint=x.valuePerShare===null?'Pendiente: acciones diluidas y fuente':'Según las acciones aportadas';
+      const safetyHint=x.safety===null?'Pendiente: precio reciente y valor por acción':'Diferencia entre el precio y el valor estimado';
+      const terminalNote=x.terminalWeight>.75?'<span class="ciip-result-warning">El valor terminal supera el 75 %</span>':'';
+      return '<article class="ciip-result-card" role="listitem">'+
+        '<div class="ciip-result-card-title"><h3>'+esc(x.label)+'</h3><span class="ciip-result-label">Escenario DCF</span></div>'+
+        '<div class="ciip-result-primary-block"><span class="ciip-result-label">Valor patrimonial estimado</span>'+
+        '<strong class="ciip-result-primary">'+ciipMoney(x.equityM)+'</strong>'+
+        '<span class="ciip-result-unit">millones USD</span></div>'+
+        '<div class="ciip-result-pairs">'+
+        '<div class="ciip-result-metric"><span class="ciip-result-label">Valor por acción</span><strong>'+perShare+'</strong><small>'+shareHint+'</small></div>'+
+        '<div class="ciip-result-metric"><span class="ciip-result-label">Margen precio/valor</span><strong>'+safety+'</strong><small>'+safetyHint+'</small></div>'+
+        '</div>'+
+        '<div class="ciip-result-terminal"><span>Peso del valor terminal</span><strong>'+ciipValuePct(x.terminalWeight*100)+'</strong></div>'+
+        terminalNote+'</article>';
+    }).join('');
+    results='<div class="ciip-result-cards" role="list" aria-label="Valoraciones por escenario">'+cards+'</div>'+
+      '<div class="ciip-result-desktop-table">'+table(['Escenario','Valor patrimonial M USD','Peso terminal','Valor por acción','Margen precio/valor'],tr)+'</div>'+
+      '<p class="muted tiny">Margen precio/valor = 100 × (1 − último precio / valor por acción). Negativo significa que el precio supera la valoración del escenario. Esta diferencia NO es una rentabilidad anual prevista.</p>';
   }
   const notices=[];
   if(f&&!calc.sharesDocumented)notices.push('Para calcular valores por acción introduce acciones diluidas en millones y URL de su fuente. El dato no se valida automáticamente.');
@@ -175,13 +194,24 @@ function ciipValUpdatePreview(){
   const target=document.getElementById('ciip-dcf-preview');
   if(!target||state.tab!=='valuation')return;
   const form=ciipValReadForm();
+  const calc=form.errors.length?null:ciipValCompute(form.ticker,form.values);
   if(form.errors.length){
     target.innerHTML='<div class="notice">'+form.errors.map(esc).join(' ')+'</div>';
   }else{
-    target.innerHTML=ciipValResults(ciipValCompute(form.ticker,form.values));
+    target.innerHTML=ciipValResults(calc);
+  }
+  for(const key of ['prudente','base','optimista']){
+    const el=document.getElementById('ciip-inline-value-'+key);
+    if(el){
+      const scenario=calc?.scenarios?.find(x=>x.key===key);
+      el.textContent=scenario?ciipMoney(scenario.equityM):'—';
+    }
   }
   const status=document.getElementById('ciip-dcf-status');
   if(status)status.textContent='Vista previa actualizada al modificar los parámetros. Estos cambios aún no están guardados.';
+}
+function ciipValScrollToResults(){
+  document.getElementById('ciip-valuation-results')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function valuationView(){
   const preferred=companies.find(c=>c.Ticker===ciipValSelected)?ciipValSelected:'MSFT';
@@ -199,19 +229,20 @@ function valuationView(){
   let scenarios='';
   for(const key of ['prudente','base','optimista']){
     const p=vals.scenarios[key];
-    scenarios+='<section class="panel"><h2>'+esc(CIIP_DCF_LABELS[key])+'</h2><div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">'+
+    const row=calc.scenarios?.find(x=>x.key===key);
+    scenarios+='<section class="panel ciip-scenario-panel"><h2>'+esc(CIIP_DCF_LABELS[key])+'</h2><div class="grid ciip-scenario-fields" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">'+
       ciipValInput('Crecimiento FCF años 1–5 (%)','ciip-'+key+'-g1',p.g1)+
       ciipValInput('Crecimiento FCF años 6–10 (%)','ciip-'+key+'-g2',p.g2)+
       ciipValInput('Rentabilidad exigida (%)','ciip-'+key+'-discount',p.discount,'0.1','5','30')+
       ciipValInput('Crecimiento perpetuo (%)','ciip-'+key+'-terminal',p.terminal,'0.1','-5','5')+
-    '</div></section>';
+    '</div><div class="ciip-scenario-inline"><span class="ciip-result-label">Valor patrimonial estimado (M USD)</span><strong id="ciip-inline-value-'+key+'">'+(row?ciipMoney(row.equityM):'—')+'</strong></div></section>';
   }
   const preview=ciipValResults(calc);
-  return '<section class="panel"><h2>Valoración ilustrativa · flujos de caja del accionista</h2><p class="muted">Modelo a diez años con dos etapas y valor terminal (Gordon). Parte de CFO − CAPEX publicado para un mismo ejercicio fiscal, una aproximación de flujo atribuible al accionista. Se descuenta a una rentabilidad exigida al capital propio, por lo que NO se resta deuda ni se añade caja de nuevo. No es FCFF ni un DCF empresarial, no ajusta stock-based compensation, adquisiciones ni necesidades extraordinarias de caja.</p><div class="actions" style="align-items:center">'+select+button('Actualizar datos SEC','refreshFundamentals()')+button('Actualizar cotización','refreshAutoMarket()')+'</div>'+warning+'<p class="muted tiny">Cotización para comparar: '+quote+'</p></section>'+
-  '<section class="panel"><h2>Denominador por acción · aportación manual</h2><p class="muted tiny">Indica acciones diluidas (millones) del mismo emisor y clase económica. Para ADR y clases múltiples revisa sus conversiones y derechos. Si no hay un dato con fuente, el sistema solo mostrará importes agregados.</p><div class="grid" style="grid-template-columns:1fr 2fr;gap:12px">'+
+  return '<section class="panel"><h2>Valoración ilustrativa · flujos de caja del accionista</h2><p class="muted">Modelo a diez años con dos etapas y valor terminal (Gordon). Parte de CFO − CAPEX publicado para un mismo ejercicio fiscal, una aproximación de flujo atribuible al accionista. Se descuenta a una rentabilidad exigida al capital propio, por lo que NO se resta deuda ni se añade caja de nuevo. No es FCFF ni un DCF empresarial, no ajusta stock-based compensation, adquisiciones ni necesidades extraordinarias de caja.</p><div class="actions" style="align-items:center">'+select+button('Actualizar datos SEC','refreshFundamentals()')+button('Actualizar cotización','refreshAutoMarket()')+button('Ver resultados ↓','ciipValScrollToResults()')+'</div>'+warning+'<p class="muted tiny">Cotización para comparar: '+quote+'</p></section>'+
+  '<section class="panel"><h2>Denominador por acción · aportación manual</h2><p class="muted tiny">Indica acciones diluidas (millones) del mismo emisor y clase económica. Para ADR y clases múltiples revisa sus conversiones y derechos. Si no hay un dato con fuente, el sistema solo mostrará importes agregados.</p><div class="grid ciip-share-fields" style="grid-template-columns:1fr 2fr;gap:12px">'+
   ciipValInput('Acciones diluidas (millones)','ciip-val-shares',vals.sharesM,'0.01','0','1000000')+
   '<label style="display:block"><span class="muted tiny">Enlace HTTPS a la fuente de acciones</span><input class="input" id="ciip-val-source" type="url" style="width:100%;min-width:0;margin-top:5px" placeholder="https://..." value="'+esc(vals.sharesSource)+'" oninput="ciipValUpdatePreview()"></label></div></section>'+
-  '<div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">'+scenarios+'</div>'+
-  '<section class="panel"><div class="actions" style="justify-content:space-between;align-items:center"><h2 style="margin:0">Resultados por escenario</h2><div class="actions">'+button('Guardar supuestos','ciipValPersist()','')+button('Restaurar','ciipValReset()')+button('Exportar análisis JSON','ciipValExport()')+'</div></div><p class="muted tiny" id="ciip-dcf-status">Los resultados se recalculan automáticamente al modificar los parámetros. «Guardar supuestos» conserva tus cambios en este dispositivo.</p><div id="ciip-dcf-preview">'+preview+'</div></section>'+
+  '<div class="grid ciip-scenarios" style="grid-template-columns:repeat(3,minmax(0,1fr))">'+scenarios+'</div>'+
+  '<section class="panel" id="ciip-valuation-results"><div class="actions" style="justify-content:space-between;align-items:center"><h2 style="margin:0">Resultados por escenario</h2><div class="actions">'+button('Guardar supuestos','ciipValPersist()','')+button('Restaurar','ciipValReset()')+button('Exportar análisis JSON','ciipValExport()')+'</div></div><p class="muted tiny" id="ciip-dcf-status">Los resultados se recalculan automáticamente al modificar los parámetros. «Guardar supuestos» conserva tus cambios en este dispositivo.</p><div id="ciip-dcf-preview" aria-live="polite" aria-atomic="true">'+preview+'</div></section>'+
   '<section class="panel"><h2>Alcance y limitaciones</h2><p class="muted">Las tres tasas son hipótesis iniciales ilustrativas, no previsiones del sistema. El flujo anual puede ser excepcional o estar distorsionado por capital circulante y compensación en acciones. La cifra de acciones procede exclusivamente del usuario; una fuente indicada no implica revisión documental. Este módulo NO clasifica empresas como READY, no genera órdenes ni emite recomendaciones de inversión. Antes de una decisión se requieren normalización plurianual, dilución, calidad de beneficio, deuda, sensibilidad y revisión de fuentes.</p></section>';
 }
