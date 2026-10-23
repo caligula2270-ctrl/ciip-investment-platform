@@ -19,8 +19,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Validate CIIP valuation JavaScript
-        run: node --check valuation.js
+      - name: Validate CIIP JavaScript and SEC historian
+        run: |
+          node --check valuation.js
+          node --check history.js
+          python -m py_compile scripts/update_fundamentals.py
       - name: Validate Quality Value Radar syntax
         run: |
           node --check quality-value-radar/app.js
