@@ -1,5 +1,10 @@
 name: CIIP Weekly SEC Fundamentals
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update_fundamentals.py'
+      - '.github/workflows/fundamentals.yml'
   schedule:
     - cron: '45 7 * * 2'
   workflow_dispatch:
