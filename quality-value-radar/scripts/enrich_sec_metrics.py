@@ -189,11 +189,19 @@ def run():
                 row["debtZeroPolicy"]="Borrowings zero only for named filing years; lease liabilities and excess cash treated separately"
                 # Subsequent purchase of ACV Auctions (Oct 2026) must be re-evaluated;
                 # historical return is not a pro-forma balance sheet for acquisition.
-                row.setdefault("warnings",[]).append("ROIC histórico no incorpora plenamente la adquisición posterior de ACV Auctions en octubre de 2026")
+                row.setdefault("warnings",[]).append("ROIC histórico NO incorpora la adquisición de ACV completada el 16 de octubre de 2026; señal bloqueada")
             # The old approximation is NOT an acceptable automated gate.
             row["roicProxyMedianPct"]=None
             good_r=r["status"]=="available" and r["median3yPct"]>=15
             gate=good_r and row.get("fcfPositiveYears",0)>=4 and (row.get("netDebtToFcf") is None or row["netDebtToFcf"]<=4)
+            # Copart completed the $1.9bn cash ACV acquisition on Oct 16, 2026.
+            # Legacy FY2026 balance/FCF do not include the transaction: do not
+            # issue an automated buy/discount signal before pro-forma review.
+            if ticker=="CPRT":
+                gate=False
+                row["materialEvent"]={"date":"2026-10-16","description":"Completed ~$1.9bn ACV cash acquisition; pro-forma invested capital / FCF pending",
+                    "sourceUrl":"https://www.sec.gov/Archives/edgar/data/900075/000119312526423478/d129535dex991.htm"}
+                row["modelProFormaStatus"]="not_adjusted";
             row["fundamentalQualityGate"]=bool(gate)
             qualifies=(row.get("status")=="ready" and gate and (row.get("historicalPfcfSamples") or 0)>=3
                 and (row.get("marginOfSafetyPct") or -999)>=25 and row.get("quote")
