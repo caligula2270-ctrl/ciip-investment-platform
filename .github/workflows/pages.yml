@@ -3,6 +3,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: ['CIIP Weekly SEC Fundamentals']
+    types: [completed]
 permissions:
   contents: read
   pages: write
@@ -12,6 +15,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -24,7 +28,8 @@ jobs:
           node --check valuation.js
           node --check history.js
           node --check sector.js
-          python -m py_compile scripts/update_fundamentals.py scripts/ciip_quality_controls.py scripts/ciip_sector_models.py scripts/ciip_capital_filings.py
+          node --check audit.js
+          python -m py_compile scripts/update_fundamentals.py scripts/ciip_quality_controls.py scripts/ciip_sector_models.py scripts/ciip_capital_filings.py scripts/build_ciip_audits.py
           PYTHONPATH=scripts python -m unittest discover -s scripts -p 'test_ciip_*.py' -v
       - name: Validate Quality Value Radar syntax
         run: |
