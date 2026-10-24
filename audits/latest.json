@@ -1,0 +1,1068 @@
+{
+  "schema": "ciip-issuer-research-audit-v1",
+  "generated_at": "2026-10-24T22:34:08.845912+00:00",
+  "sec_generated_at": "2026-10-24T22:33:49.303955+00:00",
+  "source_review_as_of": "2026-10-24",
+  "methodology": "See audits/PLAYBOOK.md; investment research, not an independent or statutory audit",
+  "companies": {
+    "MSFT": {
+      "ticker": "MSFT",
+      "company": "Microsoft Corporation",
+      "sector": "Cloud / enterprise software / AI datacenters",
+      "scope": "source-backed investment research audit, not a statutory or financial statement audit",
+      "generated_at": "2026-10-24T22:34:08.845912+00:00",
+      "reviewed_as_of": "2026-10-24",
+      "latest_official_filing": {
+        "form": "10-K",
+        "filed": "2026-07-29",
+        "fiscal_period_end": "2026-06-30",
+        "accession": "0001193125-26-323660",
+        "primary_document": "msft-20260630.htm",
+        "document_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+        "filing_index_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/0001193125-26-323660-index.html",
+        "document_review_status": "not_reviewed"
+      },
+      "reference_filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "filing_status": "latest_filing_metadata_matches",
+      "filing_date": "2026-07-29",
+      "financials_five_years": [
+        {
+          "fy_end": "2022-06-30",
+          "revenue_musd": 198270.0,
+          "operating_margin_pct": 42.055,
+          "net_margin_pct": 36.686,
+          "cfo_musd": 89035.0,
+          "capex_musd": 23886.0,
+          "sbc_musd": 7502.0,
+          "reported_fcf_musd": 65149.0,
+          "capex_to_cfo_pct": 26.828,
+          "sbc_to_cfo_pct": 8.426
+        },
+        {
+          "fy_end": "2023-06-30",
+          "revenue_musd": 211915.0,
+          "operating_margin_pct": 41.773,
+          "net_margin_pct": 34.146,
+          "cfo_musd": 87582.0,
+          "capex_musd": 28107.0,
+          "sbc_musd": 9611.0,
+          "reported_fcf_musd": 59475.0,
+          "capex_to_cfo_pct": 32.092,
+          "sbc_to_cfo_pct": 10.974
+        },
+        {
+          "fy_end": "2024-06-30",
+          "revenue_musd": 245122.0,
+          "operating_margin_pct": 44.644,
+          "net_margin_pct": 35.956,
+          "cfo_musd": 118548.0,
+          "capex_musd": 44477.0,
+          "sbc_musd": 10734.0,
+          "reported_fcf_musd": 74071.0,
+          "capex_to_cfo_pct": 37.518,
+          "sbc_to_cfo_pct": 9.055
+        },
+        {
+          "fy_end": "2025-06-30",
+          "revenue_musd": 281724.0,
+          "operating_margin_pct": 45.622,
+          "net_margin_pct": 36.146,
+          "cfo_musd": 136162.0,
+          "capex_musd": 64551.0,
+          "sbc_musd": 11974.0,
+          "reported_fcf_musd": 71611.0,
+          "capex_to_cfo_pct": 47.407,
+          "sbc_to_cfo_pct": 8.794
+        },
+        {
+          "fy_end": "2026-06-30",
+          "revenue_musd": 331839.0,
+          "operating_margin_pct": 46.781,
+          "net_margin_pct": 40.305,
+          "cfo_musd": 182935.0,
+          "capex_musd": 115948.0,
+          "sbc_musd": 12405.0,
+          "reported_fcf_musd": 66987.0,
+          "capex_to_cfo_pct": 63.382,
+          "sbc_to_cfo_pct": 6.781
+        }
+      ],
+      "annual_account_end": "2026-06-30",
+      "interim_account_end": null,
+      "reported_period_snapshot": {
+        "period": "FY2026",
+        "revenue_musd": 331839,
+        "operating_profit_musd": 155237,
+        "net_income_musd": 133749,
+        "cfo_musd": 182935,
+        "capex_musd": 115948,
+        "sbc_musd": 12405,
+        "fcf_cfo_minus_capex_musd": 66987
+      },
+      "quality_summary": {
+        "five_years": true,
+        "positive_fcf_years": 5,
+        "normalized_fcf_musd": 71611.0,
+        "capital_intensity": 64551000000,
+        "revenue_cagr_pct": 13.741147353015858,
+        "sector_gate": "review",
+        "normalization_status": "ready_with_caveats",
+        "shares_reconciliation_status": "manual_review"
+      },
+      "sector_valuation": {
+        "model": "capital_heavy_peak_capex_stress",
+        "status": "review_required",
+        "normalized_cash_musd": 20214.0,
+        "scenarios_aggregate": {
+          "conservador": {
+            "equity_value_usd": 153005081836.71,
+            "terminal_weight_pct": 27.63,
+            "explicit_value_usd": 110732892822.29,
+            "terminal_value_pv_usd": 42272189014.41,
+            "growth_1_5_pct": 2.75,
+            "growth_6_10_pct": 1.25,
+            "discount_pct": 15.5,
+            "terminal_pct": 1.5
+          },
+          "base": {
+            "equity_value_usd": 214376867830.72,
+            "terminal_weight_pct": 36.25,
+            "explicit_value_usd": 136659576900.21,
+            "terminal_value_pv_usd": 77717290930.51,
+            "growth_1_5_pct": 5.5,
+            "growth_6_10_pct": 2.5,
+            "discount_pct": 13.0,
+            "terminal_pct": 1.5
+          },
+          "optimista": {
+            "equity_value_usd": 253180901505.1,
+            "terminal_weight_pct": 40.41,
+            "explicit_value_usd": 150863565442.41,
+            "terminal_value_pv_usd": 102317336062.69,
+            "growth_1_5_pct": 6.88,
+            "growth_6_10_pct": 3.12,
+            "discount_pct": 12.0,
+            "terminal_pct": 1.5
+          }
+        },
+        "warnings": [
+          "CAPEX máximo trianual se usa como estrés; no es mantenimiento certificado ni normalización de un ciclo completo",
+          "Riesgo de ciclo/fase de inversión; el crecimiento e infraestructura deben modelarse por segmentos"
+        ]
+      },
+      "share_capital": {
+        "historical_diluted_shares": 7453000000,
+        "sec_basic_latest": {
+          "value": 7425545491,
+          "end": "2026-07-23",
+          "filed": "2026-07-29",
+          "form": "10-K",
+          "accession": "0001193125-26-323660",
+          "tag": "EntityCommonStockSharesOutstanding",
+          "taxonomy": "dei",
+          "unit": "shares"
+        },
+        "sec_quarter_weighted_diluted": {
+          "value": 7445000000,
+          "end": "2026-03-31",
+          "filed": "2026-04-29",
+          "form": "10-Q",
+          "accession": "0001193125-26-191507",
+          "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+          "taxonomy": "us-gaap",
+          "unit": "shares"
+        },
+        "reported_share_footnote": {
+          "status": "weighted_average_not_current_fully_diluted",
+          "diluted_weighted_average_mshares": 7453,
+          "current_basic_outstanding": null,
+          "current_basic_as_of": null,
+          "unvested_stock_awards_mshares": 78,
+          "unrecognized_sbc_musd": 24800
+        },
+        "notes_reviewed": false,
+        "current_fully_diluted_verified": null,
+        "value_per_share": null,
+        "reason": "Current fully diluted shares cannot be certified from cover/XBRL alone; review options, RSU, convertibles, exchangeability and subsequent events"
+      },
+      "evidence_ledger": [
+        {
+          "topic": "AI infrastructure / reinvestment",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+          "location": "MD&A Cash Flows and Other Planned Uses of Capital",
+          "fact": "FY2026 CFO $182.935bn; additions to property/equipment $115.948bn; management expects continued investment in datacenters, cloud and AI infrastructure",
+          "impact": "CFO-CAPEX ~$66.987bn; cash demand and finance leases require long-run maintenance/growth breakdown"
+        },
+        {
+          "topic": "Employee equity awards",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+          "location": "Note 17 — Employee Stock and Savings Plans",
+          "fact": "FY2026 SBC expense $12.405bn, 78m nonvested stock awards at 2026-06-30, $24.8bn unrecognized award expense",
+          "impact": "Expense and issuance/re-purchases need reconciliation; unvested awards are NOT simply additive one-for-one to all share classes"
+        },
+        {
+          "topic": "Capital allocation",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+          "location": "Liquidity and Capital Resources / debt and leases notes",
+          "fact": "Cash, equivalents and short-term investments $76.843bn at 2026-06-30; significant datacenter leases and capacity investment",
+          "impact": "Do not add all cash to shareholder DCF or assume lease-financed servers already included in cash CAPEX"
+        }
+      ],
+      "material_risks": [
+        "Datacenter/server replacement cycle and finance leases",
+        "AI infrastructure may absorb incremental CFO",
+        "Antitrust/enterprise customer concentration, cloud competition",
+        "Equity compensation and repurchases"
+      ],
+      "business_assessment": "Very high reported profit and cash generation; Azure and AI demand support a strong franchise, subject to infrastructure economics and competition",
+      "manual_review_checklist": [
+        "lease finance and datacenter replacement",
+        "full-year investment commitments",
+        "unvested stock awards and buybacks"
+      ],
+      "open_issues": [
+        "Sin conciliación siquiera provisional de acciones",
+        "Notas de capital no permiten confirmar acciones plenamente diluidas actuales"
+      ],
+      "signoff": {
+        "accounting_reconciliation": false,
+        "capital_notes_reconciled": false,
+        "valuation_approved": false,
+        "trade_recommendation": null
+      },
+      "quality_stage": "RESEARCH_REVIEW_REQUIRED",
+      "disclaimer": "No FY2027 Q1 results were yet due as of review date; management announcement for 28 Oct is future, not current actuals."
+    },
+    "ADBE": {
+      "ticker": "ADBE",
+      "company": "Adobe Inc.",
+      "sector": "Software subscription / creative and document tools",
+      "scope": "source-backed investment research audit, not a statutory or financial statement audit",
+      "generated_at": "2026-10-24T22:34:08.845912+00:00",
+      "reviewed_as_of": "2026-10-24",
+      "latest_official_filing": {
+        "form": "10-Q",
+        "filed": "2026-09-22",
+        "fiscal_period_end": "2026-08-28",
+        "accession": "0000796343-26-000156",
+        "primary_document": "adbe-20260828.htm",
+        "document_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+        "filing_index_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/0000796343-26-000156-index.html",
+        "document_review_status": "not_reviewed"
+      },
+      "reference_filing": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+      "filing_status": "latest_filing_metadata_matches",
+      "filing_date": "2026-09-22",
+      "financials_five_years": [
+        {
+          "fy_end": "2021-12-03",
+          "revenue_musd": 15785.0,
+          "operating_margin_pct": 36.756,
+          "net_margin_pct": 30.548,
+          "cfo_musd": 7230.0,
+          "capex_musd": 348.0,
+          "sbc_musd": 1069.0,
+          "reported_fcf_musd": 6882.0,
+          "capex_to_cfo_pct": 4.813,
+          "sbc_to_cfo_pct": 14.786
+        },
+        {
+          "fy_end": "2022-12-02",
+          "revenue_musd": 17606.0,
+          "operating_margin_pct": 34.636,
+          "net_margin_pct": 27.014,
+          "cfo_musd": 7838.0,
+          "capex_musd": 442.0,
+          "sbc_musd": 1440.0,
+          "reported_fcf_musd": 7396.0,
+          "capex_to_cfo_pct": 5.639,
+          "sbc_to_cfo_pct": 18.372
+        },
+        {
+          "fy_end": "2023-12-01",
+          "revenue_musd": 19409.0,
+          "operating_margin_pct": 34.262,
+          "net_margin_pct": 27.966,
+          "cfo_musd": 7302.0,
+          "capex_musd": 360.0,
+          "sbc_musd": 1718.0,
+          "reported_fcf_musd": 6942.0,
+          "capex_to_cfo_pct": 4.93,
+          "sbc_to_cfo_pct": 23.528
+        },
+        {
+          "fy_end": "2024-11-29",
+          "revenue_musd": 21505.0,
+          "operating_margin_pct": 31.346,
+          "net_margin_pct": 25.854,
+          "cfo_musd": 8056.0,
+          "capex_musd": 183.0,
+          "sbc_musd": 1833.0,
+          "reported_fcf_musd": 7873.0,
+          "capex_to_cfo_pct": 2.272,
+          "sbc_to_cfo_pct": 22.753
+        },
+        {
+          "fy_end": "2025-11-28",
+          "revenue_musd": 23769.0,
+          "operating_margin_pct": 36.628,
+          "net_margin_pct": 29.997,
+          "cfo_musd": 10031.0,
+          "capex_musd": 179.0,
+          "sbc_musd": 1942.0,
+          "reported_fcf_musd": 9852.0,
+          "capex_to_cfo_pct": 1.784,
+          "sbc_to_cfo_pct": 19.36
+        }
+      ],
+      "annual_account_end": "2025-11-28",
+      "interim_account_end": "2026-08-28",
+      "reported_period_snapshot": {
+        "period": "9M FY2026",
+        "revenue_musd": 19776,
+        "net_income_musd": 5428,
+        "cfo_musd": 7646,
+        "sbc_musd": 1584,
+        "arr_musd": 27500,
+        "repurchases_musd": 6820,
+        "repurchased_shares_m": 26.1
+      },
+      "quality_summary": {
+        "five_years": true,
+        "positive_fcf_years": 5,
+        "normalized_fcf_musd": 7873.0,
+        "capital_intensity": 183000000,
+        "revenue_cagr_pct": 10.81388894079578,
+        "sector_gate": "eligible",
+        "normalization_status": "ready_with_caveats",
+        "shares_reconciliation_status": "provisional_reconciled"
+      },
+      "sector_valuation": {
+        "model": "software_owner_cash_sbc_stress",
+        "status": "review_required",
+        "normalized_cash_musd": 6040.0,
+        "scenarios_aggregate": {
+          "conservador": {
+            "equity_value_usd": 54717487663.72,
+            "terminal_weight_pct": 33.48,
+            "explicit_value_usd": 36399530026.7,
+            "terminal_value_pv_usd": 18317957637.01,
+            "growth_1_5_pct": 3.51,
+            "growth_6_10_pct": 2.16,
+            "discount_pct": 14.0,
+            "terminal_pct": 2.0
+          },
+          "base": {
+            "equity_value_usd": 84903608540.08,
+            "terminal_weight_pct": 44.64,
+            "explicit_value_usd": 47004738201.64,
+            "terminal_value_pv_usd": 37898870338.43,
+            "growth_1_5_pct": 7.03,
+            "growth_6_10_pct": 4.33,
+            "discount_pct": 11.5,
+            "terminal_pct": 2.0
+          },
+          "optimista": {
+            "equity_value_usd": 106064135339.28,
+            "terminal_weight_pct": 49.92,
+            "explicit_value_usd": 53120683763.97,
+            "terminal_value_pv_usd": 52943451575.31,
+            "growth_1_5_pct": 8.79,
+            "growth_6_10_pct": 5.41,
+            "discount_pct": 10.5,
+            "terminal_pct": 2.0
+          }
+        },
+        "warnings": [
+          "SBC se resta como estrés económico; puede coexistir con dilución y exige evitar doble contabilización",
+          "R&D, ingresos diferidos, capitalización de software y recompras pendientes de análisis"
+        ]
+      },
+      "share_capital": {
+        "historical_diluted_shares": 427000000,
+        "sec_basic_latest": {
+          "value": 389200000,
+          "end": "2026-09-18",
+          "filed": "2026-09-22",
+          "form": "10-Q",
+          "accession": "0000796343-26-000156",
+          "tag": "EntityCommonStockSharesOutstanding",
+          "taxonomy": "dei",
+          "unit": "shares"
+        },
+        "sec_quarter_weighted_diluted": {
+          "value": 395500000,
+          "end": "2026-08-28",
+          "filed": "2026-09-22",
+          "form": "10-Q",
+          "accession": "0000796343-26-000156",
+          "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+          "taxonomy": "us-gaap",
+          "unit": "shares"
+        },
+        "reported_share_footnote": {
+          "status": "basic_current_only_not_fully_diluted",
+          "current_basic_outstanding_mshares": 389.2,
+          "current_basic_as_of": "2026-09-18",
+          "unrecognized_sbc_musd": 4030
+        },
+        "notes_reviewed": false,
+        "current_fully_diluted_verified": null,
+        "value_per_share": null,
+        "reason": "Current fully diluted shares cannot be certified from cover/XBRL alone; review options, RSU, convertibles, exchangeability and subsequent events"
+      },
+      "evidence_ledger": [
+        {
+          "topic": "Subscription growth",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "location": "MD&A Results of Operations",
+          "fact": "9M FY2026 revenue $19.776bn and CFO $7.646bn; Aug 2026 ARR $27.50bn",
+          "impact": "Subscription recurring revenue is material but ARR is not revenue, FCF or a GAAP valuation denominator"
+        },
+        {
+          "topic": "SBC and equity dilution",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "location": "Note 10 — Stock-Based Compensation; Note 12 — Net Income Per Share",
+          "fact": "9M FY2026 stock compensation $1.584bn; unrecognized stock awards cost $4.03bn; basic outstanding 389.2m at 2026-09-18",
+          "impact": "Basic count differs from treasury-stock diluted denominator; avoid treating basic count as fully diluted"
+        },
+        {
+          "topic": "Buybacks and acquisition",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "location": "Note 11 — Stock Repurchase Program; Note 3 — Business Combinations",
+          "fact": "9M FY2026 open-market share buybacks 26.1m shares for $6.820bn; Semrush acquisition referenced in financing and business combinations notes",
+          "impact": "Reconcile issuance versus repurchases and economic acquisitions omitted from simple CFO-CAPEX"
+        }
+      ],
+      "material_risks": [
+        "Generative AI commoditization or growth reallocation",
+        "SBC, large authorizations and price paid for buybacks",
+        "Acquisitions and customer churn",
+        "Annualized 9M financials must not be treated as FY audited figures"
+      ],
+      "business_assessment": "Profitable recurring software franchises with subscription base; competitive changes from generative AI need customer and pricing evidence",
+      "manual_review_checklist": [
+        "contract ARR versus GAAP cash generation",
+        "SBC settlement and equity awards",
+        "Semrush acquisition and repurchases"
+      ],
+      "open_issues": [
+        "Notas de capital no permiten confirmar acciones plenamente diluidas actuales"
+      ],
+      "signoff": {
+        "accounting_reconciliation": false,
+        "capital_notes_reconciled": false,
+        "valuation_approved": false,
+        "trade_recommendation": null
+      },
+      "quality_stage": "RESEARCH_REVIEW_REQUIRED",
+      "disclaimer": "389.2m is the basic shares outstanding at a dated point, not a current fully diluted denominator."
+    },
+    "V": {
+      "ticker": "V",
+      "company": "Visa Inc.",
+      "sector": "Global payments network",
+      "scope": "source-backed investment research audit, not a statutory or financial statement audit",
+      "generated_at": "2026-10-24T22:34:08.845912+00:00",
+      "reviewed_as_of": "2026-10-24",
+      "latest_official_filing": {
+        "form": "10-Q",
+        "filed": "2026-07-29",
+        "fiscal_period_end": "2026-06-30",
+        "accession": "0001403161-26-000104",
+        "primary_document": "v-20260630.htm",
+        "document_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+        "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/0001403161-26-000104-index.html",
+        "document_review_status": "not_reviewed"
+      },
+      "reference_filing": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+      "filing_status": "latest_filing_metadata_matches",
+      "filing_date": "2026-07-29",
+      "financials_five_years": [
+        {
+          "fy_end": "2021-09-30",
+          "revenue_musd": 24105.0,
+          "operating_margin_pct": 65.563,
+          "net_margin_pct": 51.072,
+          "cfo_musd": 15227.0,
+          "capex_musd": null,
+          "sbc_musd": 542.0,
+          "reported_fcf_musd": null,
+          "capex_to_cfo_pct": null,
+          "sbc_to_cfo_pct": 3.559
+        },
+        {
+          "fy_end": "2022-09-30",
+          "revenue_musd": 29310.0,
+          "operating_margin_pct": 64.186,
+          "net_margin_pct": 51.03,
+          "cfo_musd": 18849.0,
+          "capex_musd": null,
+          "sbc_musd": 602.0,
+          "reported_fcf_musd": null,
+          "capex_to_cfo_pct": null,
+          "sbc_to_cfo_pct": 3.194
+        },
+        {
+          "fy_end": "2023-09-30",
+          "revenue_musd": 32653.0,
+          "operating_margin_pct": 64.313,
+          "net_margin_pct": 52.899,
+          "cfo_musd": 20755.0,
+          "capex_musd": null,
+          "sbc_musd": 765.0,
+          "reported_fcf_musd": null,
+          "capex_to_cfo_pct": null,
+          "sbc_to_cfo_pct": 3.686
+        },
+        {
+          "fy_end": "2024-09-30",
+          "revenue_musd": 35926.0,
+          "operating_margin_pct": 65.677,
+          "net_margin_pct": 54.955,
+          "cfo_musd": 19950.0,
+          "capex_musd": null,
+          "sbc_musd": 850.0,
+          "reported_fcf_musd": null,
+          "capex_to_cfo_pct": null,
+          "sbc_to_cfo_pct": 4.261
+        },
+        {
+          "fy_end": "2025-09-30",
+          "revenue_musd": 40000.0,
+          "operating_margin_pct": 59.985,
+          "net_margin_pct": 50.145,
+          "cfo_musd": 23059.0,
+          "capex_musd": null,
+          "sbc_musd": 897.0,
+          "reported_fcf_musd": null,
+          "capex_to_cfo_pct": null,
+          "sbc_to_cfo_pct": 3.89
+        }
+      ],
+      "annual_account_end": "2025-09-30",
+      "interim_account_end": "2026-06-30",
+      "reported_period_snapshot": {
+        "period": "9M FY2026",
+        "revenue_musd": 33764,
+        "net_income_musd": 17502,
+        "cfo_musd": 16342,
+        "property_equipment_technology_musd": 1178,
+        "reported_cfo_less_property_technology_musd": 15164,
+        "repurchases_musd": 16430,
+        "us_litigation_escrow_end_musd": 888
+      },
+      "quality_summary": {
+        "five_years": true,
+        "positive_fcf_years": 0,
+        "normalized_fcf_musd": null,
+        "capital_intensity": null,
+        "revenue_cagr_pct": 13.498001354184396,
+        "sector_gate": "blocked",
+        "normalization_status": "sector_blocked",
+        "shares_reconciliation_status": "manual_review"
+      },
+      "sector_valuation": {
+        "model": "payments_income_capped_cashflow",
+        "status": "insufficient",
+        "normalized_cash_musd": null,
+        "scenarios_aggregate": {},
+        "warnings": [
+          "Falta CFO, CAPEX o FCF comparable en tres ejercicios"
+        ]
+      },
+      "share_capital": {
+        "historical_diluted_shares": null,
+        "sec_basic_latest": null,
+        "sec_quarter_weighted_diluted": null,
+        "reported_share_footnote": {
+          "status": "multiple_classes_not_converted",
+          "current_basic_as_of": "2026-07-21",
+          "classes_shares": {
+            "A": 1704112694,
+            "B1": 2180148,
+            "B2": 486669,
+            "B3": 60589871,
+            "C": 17059152
+          },
+          "verified_class_A_equivalent": null
+        },
+        "notes_reviewed": false,
+        "current_fully_diluted_verified": null,
+        "value_per_share": null,
+        "reason": "Current fully diluted shares cannot be certified from cover/XBRL alone; review options, RSU, convertibles, exchangeability and subsequent events"
+      },
+      "evidence_ledger": [
+        {
+          "topic": "Economic share classes",
+          "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+          "location": "Form 10-Q cover; Note 11 — Stockholders' Equity; Note 12 — EPS",
+          "fact": "As of 2026-07-21 shares A 1,704,112,694; B1 2,180,148; B2 486,669; B3 60,589,871; C 17,059,152",
+          "impact": "Share classes are not interchangeable one-to-one. Conversion and litigation adjustments required for an A-equivalent fully diluted count"
+        },
+        {
+          "topic": "Settlement cash and litigation",
+          "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+          "location": "Notes 5/16; 9M Cash Flows",
+          "fact": "US litigation escrow $888m as of 2026-06-30; $2.977bn payments to opt-out/class merchants, $875m additional deposits; 9M CFO $16.342bn",
+          "impact": "Separate settlement liabilities, escrow and trust restricted cash; do not capitalize unadjusted CFO as perpetuity"
+        },
+        {
+          "topic": "FY2026 upcoming",
+          "source": "https://visa.gcs-web.com/news-releases/news-release-details/visa-announce-fiscal-fourth-quarter-and-full-year-2026-financial",
+          "location": "Official release schedule",
+          "fact": "Fiscal Q4/full-year 2026 scheduled for 2026-10-27 after market close",
+          "impact": "Never mark FY2026 audited/available on 2026-10-24"
+        }
+      ],
+      "material_risks": [
+        "Interchange class actions and conversion protections",
+        "Price regulation, network competition and digital alternatives",
+        "Client incentive growth and gross-to-net revenue",
+        "Share class dilution and restricted escrow"
+      ],
+      "business_assessment": "Scale/network effects in global electronic payments, subject to regulation, client incentives, and cross-border volumes",
+      "manual_review_checklist": [
+        "Class B conversion rights and litigation escrow",
+        "multi-class Class A equivalent economic shares",
+        "client incentives and restricted settlement cash"
+      ],
+      "open_issues": [
+        "Sin conciliación siquiera provisional de acciones",
+        "Notas de capital no permiten confirmar acciones plenamente diluidas actuales",
+        "DCF industrial bloqueado por sector",
+        "CFO, CAPEX o capital circulante requieren normalización/revisión",
+        "Modelo sectorial sin flujos comparables suficientes"
+      ],
+      "signoff": {
+        "accounting_reconciliation": false,
+        "capital_notes_reconciled": false,
+        "valuation_approved": false,
+        "trade_recommendation": null
+      },
+      "quality_stage": "RESEARCH_REVIEW_REQUIRED",
+      "disclaimer": "Current equity A-equivalent share denominator unresolved; per-share fair price should remain blocked."
+    },
+    "MA": {
+      "ticker": "MA",
+      "company": "Mastercard Incorporated",
+      "sector": "Global payments network and value-added services",
+      "scope": "source-backed investment research audit, not a statutory or financial statement audit",
+      "generated_at": "2026-10-24T22:34:08.845912+00:00",
+      "reviewed_as_of": "2026-10-24",
+      "latest_official_filing": {
+        "form": "10-Q",
+        "filed": "2026-07-30",
+        "fiscal_period_end": "2026-06-30",
+        "accession": "0001141391-26-000083",
+        "primary_document": "ma-20260630.htm",
+        "document_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+        "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/0001141391-26-000083-index.html",
+        "document_review_status": "not_reviewed"
+      },
+      "reference_filing": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+      "filing_status": "latest_filing_metadata_matches",
+      "filing_date": "2026-07-30",
+      "financials_five_years": [
+        {
+          "fy_end": "2021-12-31",
+          "revenue_musd": 18884.0,
+          "operating_margin_pct": 53.389,
+          "net_margin_pct": null,
+          "cfo_musd": 9463.0,
+          "capex_musd": 407.0,
+          "sbc_musd": 273.0,
+          "reported_fcf_musd": 9056.0,
+          "capex_to_cfo_pct": 4.301,
+          "sbc_to_cfo_pct": 2.885
+        },
+        {
+          "fy_end": "2022-12-31",
+          "revenue_musd": 22237.0,
+          "operating_margin_pct": 55.151,
+          "net_margin_pct": null,
+          "cfo_musd": 11195.0,
+          "capex_musd": 442.0,
+          "sbc_musd": 295.0,
+          "reported_fcf_musd": 10753.0,
+          "capex_to_cfo_pct": 3.948,
+          "sbc_to_cfo_pct": 2.635
+        },
+        {
+          "fy_end": "2023-12-31",
+          "revenue_musd": 25098.0,
+          "operating_margin_pct": 55.813,
+          "net_margin_pct": null,
+          "cfo_musd": 11980.0,
+          "capex_musd": 371.0,
+          "sbc_musd": 460.0,
+          "reported_fcf_musd": 11609.0,
+          "capex_to_cfo_pct": 3.097,
+          "sbc_to_cfo_pct": 3.84
+        },
+        {
+          "fy_end": "2024-12-31",
+          "revenue_musd": 28167.0,
+          "operating_margin_pct": 55.32,
+          "net_margin_pct": null,
+          "cfo_musd": 14780.0,
+          "capex_musd": 474.0,
+          "sbc_musd": 526.0,
+          "reported_fcf_musd": 14306.0,
+          "capex_to_cfo_pct": 3.207,
+          "sbc_to_cfo_pct": 3.559
+        },
+        {
+          "fy_end": "2025-12-31",
+          "revenue_musd": 32791.0,
+          "operating_margin_pct": 57.629,
+          "net_margin_pct": null,
+          "cfo_musd": 17648.0,
+          "capex_musd": 489.0,
+          "sbc_musd": 597.0,
+          "reported_fcf_musd": 17159.0,
+          "capex_to_cfo_pct": 2.771,
+          "sbc_to_cfo_pct": 3.383
+        }
+      ],
+      "annual_account_end": "2025-12-31",
+      "interim_account_end": "2026-06-30",
+      "reported_period_snapshot": {
+        "period": "H1 FY2026",
+        "cfo_musd": 6772,
+        "cfo_prior_year_musd": 6983,
+        "repurchases_musd": 8933,
+        "settlement_obligations_cashflow_musd": 750,
+        "share_based_comp_musd": 326
+      },
+      "quality_summary": {
+        "five_years": true,
+        "positive_fcf_years": 5,
+        "normalized_fcf_musd": null,
+        "capital_intensity": 474000000,
+        "revenue_cagr_pct": 14.792936952721192,
+        "sector_gate": "blocked",
+        "normalization_status": "sector_blocked",
+        "shares_reconciliation_status": "manual_review"
+      },
+      "sector_valuation": {
+        "model": "payments_income_capped_cashflow",
+        "status": "insufficient",
+        "normalized_cash_musd": null,
+        "scenarios_aggregate": {},
+        "warnings": [
+          "Faltan tres ejercicios de beneficio neto positivo"
+        ]
+      },
+      "share_capital": {
+        "historical_diluted_shares": 906000000,
+        "sec_basic_latest": null,
+        "sec_quarter_weighted_diluted": {
+          "value": 883000000,
+          "end": "2026-06-30",
+          "filed": "2026-07-30",
+          "form": "10-Q",
+          "accession": "0001141391-26-000083",
+          "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+          "taxonomy": "us-gaap",
+          "unit": "shares"
+        },
+        "reported_share_footnote": {
+          "status": "multiple_classes_and_awards",
+          "current_basic_as_of": "2026-07-27",
+          "classes_shares": {
+            "A": 869464115,
+            "B": 6545825
+          },
+          "sum_basic_classes": 876009940,
+          "verified_current_fully_diluted": null
+        },
+        "notes_reviewed": false,
+        "current_fully_diluted_verified": null,
+        "value_per_share": null,
+        "reason": "Current fully diluted shares cannot be certified from cover/XBRL alone; review options, RSU, convertibles, exchangeability and subsequent events"
+      },
+      "evidence_ledger": [
+        {
+          "topic": "Equity class and treasury shares",
+          "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+          "location": "Form 10-Q cover; Note — Stockholders' Equity / Common Stock Activity",
+          "fact": "2026-07-27 common outstanding A 869,464,115 plus B 6,545,825, total basic counts 876,009,940 (arithmetical sum only); H1 shares repurchased 17.6m for $8.933bn",
+          "impact": "Basic class sum does not adjust share-based awards or anti-dilutive securities; review class conversion terms"
+        },
+        {
+          "topic": "Customer settlement/working capital",
+          "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+          "location": "Six-month cash flow statement",
+          "fact": "H1 2026 CFO $6.772bn vs $6.983bn H1 2025; settlement obligations +$750m, accrued legal settlements -$504m, prepaid expenses -$3.835bn",
+          "impact": "Business may grow while CFO moves with customer incentives and legal settlements; avoid direct annualization"
+        },
+        {
+          "topic": "Network and VAS",
+          "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+          "location": "FY2025 segment revenue disclosures",
+          "fact": "FY2025 net revenue $32.791bn; payment network $19.476bn and value-added services $13.315bn",
+          "impact": "Separate take-rate and VAS growth with incentive economics; do not assume identical margins"
+        }
+      ],
+      "material_risks": [
+        "US and international antitrust/interchange litigation",
+        "Customer rebates, incentives and prepayments",
+        "Class B conversion/re-purchases and equity award dilution",
+        "Revenue growth may not translate 1:1 to distributable CFO"
+      ],
+      "business_assessment": "Large global payment rails with growing value-added solutions; regulatory and merchant bargaining counterbalance network economics",
+      "manual_review_checklist": [
+        "Class B exchangeability and EPS notes",
+        "customer settlement balances and cash conversion",
+        "incentives and equity awards"
+      ],
+      "open_issues": [
+        "Sin conciliación siquiera provisional de acciones",
+        "Notas de capital no permiten confirmar acciones plenamente diluidas actuales",
+        "DCF industrial bloqueado por sector",
+        "CFO, CAPEX o capital circulante requieren normalización/revisión",
+        "Modelo sectorial sin flujos comparables suficientes"
+      ],
+      "signoff": {
+        "accounting_reconciliation": false,
+        "capital_notes_reconciled": false,
+        "valuation_approved": false,
+        "trade_recommendation": null
+      },
+      "quality_stage": "RESEARCH_REVIEW_REQUIRED",
+      "disclaimer": "The 876.01m figure is an arithmetic sum of class basic counts, not current fully diluted outstanding shares."
+    },
+    "TXN": {
+      "ticker": "TXN",
+      "company": "Texas Instruments Incorporated",
+      "sector": "Semiconductors / industrial manufacturing",
+      "scope": "source-backed investment research audit, not a statutory or financial statement audit",
+      "generated_at": "2026-10-24T22:34:08.845912+00:00",
+      "reviewed_as_of": "2026-10-24",
+      "latest_official_filing": {
+        "form": "10-Q",
+        "filed": "2026-10-23",
+        "fiscal_period_end": "2026-09-30",
+        "accession": "0000097476-26-000169",
+        "primary_document": "txn-20260930.htm",
+        "document_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+        "filing_index_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/0000097476-26-000169-index.html",
+        "document_review_status": "not_reviewed"
+      },
+      "reference_filing": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+      "filing_status": "latest_filing_metadata_matches",
+      "filing_date": "2026-10-23",
+      "financials_five_years": [
+        {
+          "fy_end": "2021-12-31",
+          "revenue_musd": 18344.0,
+          "operating_margin_pct": 48.844,
+          "net_margin_pct": 42.352,
+          "cfo_musd": 8756.0,
+          "capex_musd": 2462.0,
+          "sbc_musd": 230.0,
+          "reported_fcf_musd": 6294.0,
+          "capex_to_cfo_pct": 28.118,
+          "sbc_to_cfo_pct": 2.627
+        },
+        {
+          "fy_end": "2022-12-31",
+          "revenue_musd": 20028.0,
+          "operating_margin_pct": 50.629,
+          "net_margin_pct": 43.684,
+          "cfo_musd": 8720.0,
+          "capex_musd": 2797.0,
+          "sbc_musd": 289.0,
+          "reported_fcf_musd": 5923.0,
+          "capex_to_cfo_pct": 32.076,
+          "sbc_to_cfo_pct": 3.314
+        },
+        {
+          "fy_end": "2023-12-31",
+          "revenue_musd": 17519.0,
+          "operating_margin_pct": 41.846,
+          "net_margin_pct": 37.16,
+          "cfo_musd": 6420.0,
+          "capex_musd": 5071.0,
+          "sbc_musd": 362.0,
+          "reported_fcf_musd": 1349.0,
+          "capex_to_cfo_pct": 78.988,
+          "sbc_to_cfo_pct": 5.639
+        },
+        {
+          "fy_end": "2024-12-31",
+          "revenue_musd": 15641.0,
+          "operating_margin_pct": 34.94,
+          "net_margin_pct": 30.682,
+          "cfo_musd": 6318.0,
+          "capex_musd": 4820.0,
+          "sbc_musd": 387.0,
+          "reported_fcf_musd": 1498.0,
+          "capex_to_cfo_pct": 76.29,
+          "sbc_to_cfo_pct": 6.125
+        },
+        {
+          "fy_end": "2025-12-31",
+          "revenue_musd": 17682.0,
+          "operating_margin_pct": 34.063,
+          "net_margin_pct": 28.283,
+          "cfo_musd": 7153.0,
+          "capex_musd": 4550.0,
+          "sbc_musd": 419.0,
+          "reported_fcf_musd": 2603.0,
+          "capex_to_cfo_pct": 63.61,
+          "sbc_to_cfo_pct": 5.858
+        }
+      ],
+      "annual_account_end": "2025-12-31",
+      "interim_account_end": "2026-09-30",
+      "reported_period_snapshot": {
+        "period": "Q3 FY2026",
+        "revenue_musd": 6055,
+        "operating_profit_musd": 2874,
+        "net_income_musd": 2425,
+        "eps_diluted_usd": 2.62,
+        "latest_ltm_cfo_musd": 9900,
+        "latest_ltm_capex_musd": 2600,
+        "company_ltm_adjusted_fcf_musd": 8400,
+        "fy2026_9m_capex_musd": 1650,
+        "fy2025_9m_capex_musd": 3630,
+        "fy2026_9m_chips_cash_musd": 1100
+      },
+      "quality_summary": {
+        "five_years": true,
+        "positive_fcf_years": 5,
+        "normalized_fcf_musd": 1498.0,
+        "capital_intensity": 4820000000,
+        "revenue_cagr_pct": -0.914675473708515,
+        "sector_gate": "review",
+        "normalization_status": "ready_with_caveats",
+        "shares_reconciliation_status": "provisional_reconciled"
+      },
+      "sector_valuation": {
+        "model": "capital_heavy_peak_capex_stress",
+        "status": "review_required",
+        "normalized_cash_musd": 1349.0,
+        "scenarios_aggregate": {
+          "conservador": {
+            "equity_value_usd": 8887240566.26,
+            "terminal_weight_pct": 25.78,
+            "explicit_value_usd": 6596074461.28,
+            "terminal_value_pv_usd": 2291166104.99,
+            "growth_1_5_pct": -0.21,
+            "growth_6_10_pct": 0.0,
+            "discount_pct": 15.5,
+            "terminal_pct": 1.5
+          },
+          "base": {
+            "equity_value_usd": 10649756029.01,
+            "terminal_weight_pct": 32.26,
+            "explicit_value_usd": 7213864811.81,
+            "terminal_value_pv_usd": 3435891217.2,
+            "growth_1_5_pct": -0.41,
+            "growth_6_10_pct": 0,
+            "discount_pct": 13.0,
+            "terminal_pct": 1.5
+          },
+          "optimista": {
+            "equity_value_usd": 11574649452.59,
+            "terminal_weight_pct": 35.35,
+            "explicit_value_usd": 7482916393.79,
+            "terminal_value_pv_usd": 4091733058.8,
+            "growth_1_5_pct": -0.51,
+            "growth_6_10_pct": 0.0,
+            "discount_pct": 12.0,
+            "terminal_pct": 1.5
+          }
+        },
+        "warnings": [
+          "CAPEX máximo trianual se usa como estrés; no es mantenimiento certificado ni normalización de un ciclo completo",
+          "Riesgo de ciclo/fase de inversión; el crecimiento e infraestructura deben modelarse por segmentos"
+        ]
+      },
+      "share_capital": {
+        "historical_diluted_shares": 913000000,
+        "sec_basic_latest": {
+          "value": 913770316,
+          "end": "2026-10-14",
+          "filed": "2026-10-23",
+          "form": "10-Q",
+          "accession": "0000097476-26-000169",
+          "tag": "EntityCommonStockSharesOutstanding",
+          "taxonomy": "dei",
+          "unit": "shares"
+        },
+        "sec_quarter_weighted_diluted": {
+          "value": 921000000,
+          "end": "2026-09-30",
+          "filed": "2026-10-23",
+          "form": "10-Q",
+          "accession": "0000097476-26-000169",
+          "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+          "taxonomy": "us-gaap",
+          "unit": "shares"
+        },
+        "reported_share_footnote": {
+          "status": "recent_basic_not_current_fully_diluted",
+          "current_basic_outstanding_shares": 913770316,
+          "current_basic_as_of": "2026-10-14",
+          "verified_current_fully_diluted": null
+        },
+        "notes_reviewed": false,
+        "current_fully_diluted_verified": null,
+        "value_per_share": null,
+        "reason": "Current fully diluted shares cannot be certified from cover/XBRL alone; review options, RSU, convertibles, exchangeability and subsequent events"
+      },
+      "evidence_ledger": [
+        {
+          "topic": "Industrial manufacturing cycle",
+          "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+          "location": "Form 10-Q cover, operations and capital expenditures",
+          "fact": "Q3 2026 revenue $6.055bn, EBIT $2.874bn, net $2.425bn; 913,770,316 basic shares outstanding as of 2026-10-14",
+          "impact": "Current basic count != diluted share count; industrial cycle requires through-cycle margin/capex assumptions"
+        },
+        {
+          "topic": "US CHIPS incentives",
+          "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+          "location": "9M Cash Flows and MD&A",
+          "fact": "9M FY2026 CAPEX $1.65bn vs $3.63bn prior; CHIPS Act cash proceeds $1.10bn as of 9M 2026",
+          "impact": "Classify government receipts separately and avoid mixing GAAP CFO−CAPEX with adjusted management FCF"
+        },
+        {
+          "topic": "Non-GAAP adjusted free cash flow",
+          "source": "https://www.ti.com/about-ti/newsroom/news-releases/2026/2026-10-21-ti-reports-third-quarter-2026-financial-results-and-shareholder-returns.html",
+          "location": "Oct 21 2026 Q3 earnings / shareholder returns",
+          "fact": "Management reports LTM CFO ~$9.9bn and its own adjusted FCF ~$8.4bn including CHIPS Act incentive proceeds",
+          "impact": "The definition adds CHIPS proceeds; not identical to plain CFO−CAPEX; demonstrate bridge before valuation"
+        }
+      ],
+      "material_risks": [
+        "Factories and fixed-cost utilization sensitivity",
+        "Government subsidy timing and restrictions",
+        "Inventory turns / industrial and automotive cycles",
+        "Funding the fab program and capital returns through trough"
+      ],
+      "business_assessment": "Analog semiconductor economics with resilient industrial/auto product lifecycle but large fab commitments and cyclicality",
+      "manual_review_checklist": [
+        "CHIPS Act incentives receipt/conditions",
+        "gross fab CAPEX, depreciation, utilization",
+        "inventory cycle and split between GAAP and adjusted FCF"
+      ],
+      "open_issues": [
+        "Notas de capital no permiten confirmar acciones plenamente diluidas actuales"
+      ],
+      "signoff": {
+        "accounting_reconciliation": false,
+        "capital_notes_reconciled": false,
+        "valuation_approved": false,
+        "trade_recommendation": null
+      },
+      "quality_stage": "RESEARCH_REVIEW_REQUIRED",
+      "disclaimer": "Current fully diluted shares remain unverified despite the recent basic cover count; LTM FCF reported is non-GAAP adjusted."
+    }
+  },
+  "audit_complete": false,
+  "release_status": "provisional_research",
+  "reason": "Manual notes and current diluted shares still require documentary reconciliation."
+}
