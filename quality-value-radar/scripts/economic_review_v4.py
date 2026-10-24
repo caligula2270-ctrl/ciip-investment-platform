@@ -46,6 +46,33 @@ def check():
             owner=company_cash(facts,history)
         except Exception as err:
             owner={"status":"unavailable","reason":str(err)[:150]}
+        if owner.get("status")=="computed":
+            normalized=owner["normalizedOwnerFcfPerShare"]
+            median_p=median
+            # Historical FCF multipliers are restated to the owner-cash basis
+            # using each fiscal-year historical price, not forward guidance.
+            owner_multiples=[]
+            for y,obs in zip(history[-3:],owner["observations"]):
+                orig=y.get("fcfPerShare")
+                if orig and obs.get("ownerFcfPerShare") and y.get("historicalPfcf"):
+                    historical_price=y["historicalPfcf"]*orig
+                    owner_multiples.append(historical_price/obs["ownerFcfPerShare"])
+            owner_hist=statistics.median(owner_multiples) if len(owner_multiples)==3 else None
+            grow=min(.10,max(0,(cagr or 0)/100))
+            rate=.12
+            dcf=sum(normalized*(1+grow)**n/(1+rate)**n for n in range(1,6))
+            dcf+=normalized*(1+grow)**5*1.025/(rate-.025)/(1+rate)**5
+            relative=normalized*owner_hist if owner_hist else None
+            diff=abs(dcf-relative)/min(dcf,relative)*100 if relative else None
+            owner["normalizedDcfBase"]=round(dcf,2)
+            owner["historicalOwnerPfcfMedian"]=round(owner_hist,2) if owner_hist else None
+            owner["relativeHistoricalValue"]=round(relative,2) if relative else None
+            owner["modelsDifferencePct"]=round(diff,1) if diff is not None else None
+            owner["revenueGrowthHypothesisPct"]=round(grow*100,2)
+            owner["discountRatePct"]=12
+            owner["terminalGrowthPct"]=2.5
+            owner["illustrativeValue"]=round(.6*dcf+.4*relative,2) if relative else None
+            if diff is None or diff>65:blocking.append("Owner DCF and historical owner multiple disagree or missing")
         if owner.get("status")!="computed":blocking.append("Owner FCF cannot be normalized from disclosed SBC")
         if not owner.get("acquisitionHistoryComplete"):blocking.append("Acquisition cash-flow series not fully disclosed")
         if len(years)!=3:blocking.append("Historical FCF coverage insufficient")
