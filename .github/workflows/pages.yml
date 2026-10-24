@@ -29,6 +29,8 @@ jobs:
         run: |
           node --check quality-value-radar/app.js
           python -m py_compile quality-value-radar/scripts/build_intrinsic_radar.py
+          python -m py_compile quality-value-radar/scripts/economic_review_v4.py
+          python -m py_compile quality-value-radar/scripts/value_international.py
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
