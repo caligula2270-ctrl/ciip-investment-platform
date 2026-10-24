@@ -29,7 +29,8 @@ jobs:
           node --check history.js
           node --check sector.js
           node --check audit.js
-          python -m py_compile scripts/update_fundamentals.py scripts/ciip_quality_controls.py scripts/ciip_sector_models.py scripts/ciip_capital_filings.py scripts/build_ciip_audits.py
+          node --check per_share.js
+          python -m py_compile scripts/update_fundamentals.py scripts/ciip_quality_controls.py scripts/ciip_sector_models.py scripts/ciip_capital_filings.py scripts/build_ciip_audits.py scripts/build_ciip_per_share.py
           PYTHONPATH=scripts python -m unittest discover -s scripts -p 'test_ciip_*.py' -v
       - name: Validate Quality Value Radar syntax
         run: |
