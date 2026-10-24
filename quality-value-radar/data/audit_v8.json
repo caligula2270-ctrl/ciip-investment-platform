@@ -1,6 +1,444 @@
 {
   "schema": "qvr-v8-audit",
-  "status": "pending_execution",
-  "companies": {},
-  "signalsAllowed": false
+  "generatedAt": "2026-10-24T23:51:00.467580+00:00",
+  "signalsAllowed": false,
+  "sourceLedgerDate": "2026-10-25",
+  "companies": {
+    "ADBE": {
+      "status": "reconciliation_incomplete",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+      "lastFY": "2025-11-28",
+      "annualWeightedDilutedSharesMillions": 427.0,
+      "ledgerWeightedDilutedSharesMillions": 427,
+      "ledgerTieOutDifferencePct": 0.0,
+      "ledgerTieOut": "pass",
+      "outstandingSharesSnapshotMillions": 410.5,
+      "outstandingSnapshotDate": "2026-01-09",
+      "spotMinusWeightedAveragePct": -3.86,
+      "spotIsNotWeightedDiluted": true,
+      "repurchasedSharesMillions": 30.8,
+      "repurchaseCashUSDMillions": 11281,
+      "averageRepurchasePriceUSD": 366.27,
+      "capexSplit": "not_issuer_certified",
+      "acquisitionRealizedROIC": null,
+      "jointStressMatrix": [
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 448.6
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 427.96
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 408.5
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 381.35
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 356.43
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 445.12
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 424.64
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 405.33
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 378.39
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 353.66
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 441.65
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 421.33
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 402.17
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 375.44
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 350.9
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 438.18
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 418.02
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 399.01
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 372.49
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 348.15
+        }
+      ],
+      "stressIsNotInvestmentValuation": true,
+      "warnings": [
+        "Spot shares after fiscal year close are not diluted weighted average; ASR settlement makes repurchase cash versus issued share movements asynchronous",
+        "SBC was economically deducted from FCF; net share change may include SBC issuance and repurchases",
+        "Average repurchase price excludes settlement timing and withholding complexities; not necessarily fill price"
+      ]
+    },
+    "INTU": {
+      "status": "reconciliation_incomplete",
+      "sourceUrl": "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm",
+      "lastFY": "2026-07-31",
+      "annualWeightedDilutedSharesMillions": 277.0,
+      "ledgerWeightedDilutedSharesMillions": 277,
+      "ledgerTieOutDifferencePct": 0.0,
+      "ledgerTieOut": "pass",
+      "outstandingSharesSnapshotMillions": 267.236,
+      "outstandingSnapshotDate": "2026-08-31",
+      "spotMinusWeightedAveragePct": -3.52,
+      "spotIsNotWeightedDiluted": true,
+      "repurchasedSharesMillions": 13.4,
+      "repurchaseCashUSDMillions": 5500,
+      "averageRepurchasePriceUSD": 410.45,
+      "capexSplit": "not_issuer_certified",
+      "acquisitionRealizedROIC": null,
+      "jointStressMatrix": [
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 457.4
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 436.43
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 416.64
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 389.03
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 363.68
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 452.54
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 431.79
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 412.21
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 384.89
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 359.81
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 447.67
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 427.14
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 407.77
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 380.75
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 355.94
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 442.8
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 422.5
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 403.34
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 376.61
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 352.07
+        }
+      ],
+      "stressIsNotInvestmentValuation": true,
+      "warnings": [
+        "FY2026 treasury stock retirement changes issued-share accounting; do not mistake 233M treasury shares retired for 233M current buybacks",
+        "SBC was economically deducted from FCF; net share change may include SBC issuance and repurchases",
+        "Average repurchase price excludes settlement timing and withholding complexities; not necessarily fill price"
+      ]
+    },
+    "CPRT": {
+      "status": "reconciliation_incomplete",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
+      "lastFY": "2026-07-31",
+      "annualWeightedDilutedSharesMillions": 956.86,
+      "ledgerWeightedDilutedSharesMillions": 956.86,
+      "ledgerTieOutDifferencePct": 0.0,
+      "ledgerTieOut": "pass",
+      "outstandingSharesSnapshotMillions": 926.298293,
+      "outstandingSnapshotDate": "2026-07-31",
+      "spotMinusWeightedAveragePct": -3.19,
+      "spotIsNotWeightedDiluted": true,
+      "repurchasedSharesMillions": 43.433164,
+      "repurchaseCashUSDMillions": 1600,
+      "averageRepurchasePriceUSD": 36.84,
+      "capexSplit": "not_issuer_certified",
+      "acquisitionRealizedROIC": null,
+      "jointStressMatrix": [
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 38.55
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 36.79
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 35.14
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 32.81
+        },
+        {
+          "totalCapexChangePct": -25,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 30.69
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 34.81
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 33.22
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 31.73
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 29.63
+        },
+        {
+          "totalCapexChangePct": 0,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 27.71
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 31.08
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 29.66
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 28.33
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 26.45
+        },
+        {
+          "totalCapexChangePct": 25,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 24.74
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": -1.0,
+          "indicativeValuePerShare": 27.34
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 0,
+          "indicativeValuePerShare": 26.09
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 1.0,
+          "indicativeValuePerShare": 24.92
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 2.5,
+          "indicativeValuePerShare": 23.27
+        },
+        {
+          "totalCapexChangePct": 50,
+          "annualNetShareChangePct": 4.0,
+          "indicativeValuePerShare": 21.76
+        }
+      ],
+      "stressIsNotInvestmentValuation": true,
+      "warnings": [
+        "No post-ACV weighted-average or spot diluted share count confirmed; 2026 historical filing predates the transaction",
+        "SBC was economically deducted from FCF; net share change may include SBC issuance and repurchases",
+        "Average repurchase price excludes settlement timing and withholding complexities; not necessarily fill price"
+      ],
+      "acquisition": {
+        "name": "ACV Auctions",
+        "announcedUSDMillionsApprox": 1900,
+        "closingAggregateUSDMillions": 1801.021081,
+        "deltaAgainstAnnouncementUSDMillions": -98.979,
+        "closingCashCostPerHistoricalShareUSD": 1.8822,
+        "annualCashHurdle12PctUSDMillions": 216.123,
+        "cashReturnVerified": false,
+        "totalInvestedCapitalReconciled": false,
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm",
+        "note": "Announced 1.9bn and 8-K closing amount are not interchangeable. Full transaction EV, fees, debt and synergies not reconciled.",
+        "capitalDeploymentScenarios": [
+          {
+            "incrementalCashUSDMillions": 0,
+            "returnOnClosingConsiderationPct": 0.0,
+            "cashReturnRealized": false
+          },
+          {
+            "incrementalCashUSDMillions": 100,
+            "returnOnClosingConsiderationPct": 5.55,
+            "cashReturnRealized": false
+          },
+          {
+            "incrementalCashUSDMillions": 150,
+            "returnOnClosingConsiderationPct": 8.33,
+            "cashReturnRealized": false
+          },
+          {
+            "incrementalCashUSDMillions": 216.12252972,
+            "returnOnClosingConsiderationPct": 12.0,
+            "cashReturnRealized": false
+          },
+          {
+            "incrementalCashUSDMillions": 228,
+            "returnOnClosingConsiderationPct": 12.66,
+            "cashReturnRealized": false
+          },
+          {
+            "incrementalCashUSDMillions": 300,
+            "returnOnClosingConsiderationPct": 16.66,
+            "cashReturnRealized": false
+          },
+          {
+            "incrementalCashUSDMillions": 400,
+            "returnOnClosingConsiderationPct": 22.21,
+            "cashReturnRealized": false
+          }
+        ]
+      }
+    }
+  },
+  "verifiedBuyPrices": 0,
+  "verifiedAcquisitionReturns": 0,
+  "verifiedMaintenanceCapexSplits": 0,
+  "limitations": [
+    "Spot shares do not equal diluted annual weighted averages",
+    "Joint stress is ceteris paribus, not predictive; growth/CAPEX covariance unknown",
+    "No pro-forma ACV balance sheet or independently verified acquisition ROI",
+    "No maintenance CAPEX allocation certified by issuer"
+  ]
 }
