@@ -147,7 +147,7 @@
       "style": "payment_network_equity_conversion",
       "denominator": {
         "date_basic": "2026-07-21",
-        "date_conversion": "2026-06-30",
+        "date_conversion": "2026-09-18",
         "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
         "class_counts_m": {
           "A": 1704.112694,
@@ -158,9 +158,9 @@
         },
         "class_A_conversion_factors": {
           "A": 1,
-          "B1": 1.5445,
-          "B2": 1.5014,
-          "B3": 1.4953,
+          "B1": 1.54,
+          "B2": 1.4924,
+          "B3": 1.4773,
           "C": 4
         },
         "preferred_eq_asof_20260630_m": {
@@ -169,15 +169,15 @@
           "seriesC": 2.142
         },
         "employee_participating_equiv_m": 15,
-        "formula": "SUM(July21 ordinary share classes*June30 conversion rates) + June30 preferred as-converted 10.308m + provisional Q2 EPS participating instruments 15m",
-        "total_common_Aeq_m": 1867.0472595289,
+        "formula": "July 21 ordinary classes * September 18 conversion rates, plus June 30 preferred as-converted ~10.308m, plus 15m period-weighted participating instruments (assumption; not dated current)",
+        "total_common_Aeq_m": 1865.9424511639,
         "preferred_Aeq_m": 10.308,
-        "central_m": 1892.3552595289,
-        "low_m": 1877.3552595289,
-        "high_m": 1910,
-        "upper_stress_basis": "Timing mismatch July shares/June rates; participation and litigation-adjusted conversions. 15m earnings participating securities are period weighted, not exact current awards",
+        "central_m": 1891.2504511639,
+        "low_m": 1876.2504511639,
+        "high_m": 1909,
+        "upper_stress_basis": "Mixed measurement dates and speculative stock awards: July ordinary share amounts versus Sept exchange factors; no SEC-certified spot fully diluted denominator",
         "confidence": "provisional_class_equivalent",
-        "status": "class_factors_verified_different_dates",
+        "status": "updated_sep2026_8k_rates_mixed_dates",
         "evidence": [
           {
             "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
@@ -190,8 +190,20 @@
               "classCrate": 4,
               "participating_q2_m": 15
             }
+          },
+          {
+            "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm",
+            "location": "September 23 2026 Form 8-K, Item 8.01",
+            "values": {
+              "B1": 1.54,
+              "B2": 1.4924,
+              "B3": 1.4773,
+              "escrow_deposit_musd": 405
+            },
+            "note": "Supersedes 2026-06-25 conversion factors; exact class counts date July 21 not same as conversion date September 18"
           }
-        ]
+        ],
+        "conversion_source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm"
       },
       "cash_anchor": {
         "anchor": "FY2025 CFO−purchases of property equipment and technology",
