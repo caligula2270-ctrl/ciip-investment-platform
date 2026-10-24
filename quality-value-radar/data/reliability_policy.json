@@ -1,0 +1,104 @@
+{
+  "schema": "qvr-reliability-policy-v5",
+  "version": "5.0",
+  "lastReviewed": "2026-10-24",
+  "execution": "every successful scheduled or manually dispatched fundamental workflow",
+  "manualApprovalRequiredForBuySignals": true,
+  "gates": {
+    "guidanceMaxAgeDays": 400,
+    "marketDataMaxAgeDays": 7,
+    "acquisitionCohortMinimumPostClosePeriods": 2,
+    "discountMinimumPct": 25,
+    "capexSplitActualRequiresIssuerDisclosure": true,
+    "neverTreatMissingAcquisitionsAsZero": true,
+    "ownerCashRequiresSbcDisclosure": true,
+    "independentConsensusRequiredForConsensusLabel": true,
+    "blockSignalsIfAcquisitionRoiUnverified": true,
+    "blockSignalsIfCapexSplitUnverified": true,
+    "blockSignalsIfNoCashFlowForecastEvidence": true
+  },
+  "methodology": {
+    "ownerCashFlow": "CFO-CAPEX-SBC economic charge; SBC noncash and residual dilution must not be counted again",
+    "maintenanceCapex": "use disclosed maintenance/growth split only as actual; otherwise scenarios anchored to D&A, never a verified split",
+    "acquisitionReturn": "post-close incremental NOPAT or incremental owner FCF / all-in acquisition invested capital; requires target or segment data and ≥2 post-close periods",
+    "acquisitionHurdle": "consideration multiplied by required cash-on-capital return; hurdle not actual ROI",
+    "forwardCash": "management revenue guidance × independently observed historical owner cash conversion margin; scenario, never company FCF guidance",
+    "forecasts": "separate management_guidance, market_consensus, model_derived, market_implied; never relabel one as another",
+    "historicalMultiple": "same fiscal basis, share splits, currency; report divergence rather than force price target"
+  },
+  "officialGuidance": {
+    "ADBE": {
+      "issuer": "Adobe",
+      "asOf": "2026-09-10",
+      "fiscalYear": 2026,
+      "periodEnd": "2026-11-27",
+      "unit": "USD",
+      "scale": "millions",
+      "revenueLow": 26576,
+      "revenueHigh": 26626,
+      "sourceType": "management_guidance",
+      "forecastCashFlowProvided": false,
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+      "sourceLabel": "Adobe Q3 FY2026 earnings release"
+    },
+    "INTU": {
+      "issuer": "Intuit",
+      "asOf": "2026-08-25",
+      "fiscalYear": 2027,
+      "periodEnd": "2027-07-31",
+      "unit": "USD",
+      "scale": "millions",
+      "revenueLow": 23279,
+      "revenueHigh": 23512,
+      "sourceType": "management_guidance",
+      "forecastCashFlowProvided": false,
+      "sourceUrl": "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000029/fy26q4earningspressrelease.htm",
+      "sourceLabel": "Intuit FY2026 Q4 and FY2027 guidance"
+    },
+    "ASML": {
+      "issuer": "ASML",
+      "asOf": "2026-10-14",
+      "fiscalYear": 2026,
+      "periodEnd": "2026-12-31",
+      "unit": "EUR",
+      "scale": "millions",
+      "revenueLow": 44000,
+      "revenueHigh": 45000,
+      "sourceType": "management_guidance",
+      "forecastCashFlowProvided": false,
+      "sourceUrl": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
+      "sourceLabel": "ASML Q3 2026 earnings"
+    }
+  },
+  "acquisitions": {
+    "CPRT": [
+      {
+        "target": "ACV Auctions",
+        "announced": "2026-09-10",
+        "closed": "2026-10-16",
+        "considerationUSDMillions": 1900,
+        "considerationNature": "announced equity consideration, not confirmed enterprise purchase price",
+        "capitalRequiredRatePct": 12,
+        "standaloneIncrementalFcfUSDMillions": null,
+        "realizedIncrementalNopatUSDMillions": null,
+        "managementExpectation": "accretive to EPS FY2028 and beyond (not a realized return)",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/900075/000119312526423478/d129535dex991.htm",
+        "announcementUrl": "https://www.copart.com/content/us/en/press-releases/copart-to-acquire-acv"
+      }
+    ],
+    "CSU.TO": [
+      {
+        "target": "multiple vertical software acquisitions",
+        "closed": null,
+        "considerationUSDMillions": null,
+        "note": "Requires acquisition-cohort purchase cost and standalone post-close operating cash evidence; no realized ROI imputed",
+        "sourceUrl": "https://www.csisoftware.com/"
+      }
+    ]
+  },
+  "coverage": {
+    "maintenanceDisclosure": {},
+    "marketConsensus": {},
+    "internationalFinance": "Issuer historical FCF and revenue guidance alone do not meet investment-grade gating"
+  }
+}
