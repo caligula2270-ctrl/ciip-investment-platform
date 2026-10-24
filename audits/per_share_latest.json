@@ -1,6 +1,6 @@
 {
   "schema": "ciip-per-share-valuation-v1",
-  "generated_at": "2026-10-24T23:29:47.818314+00:00",
+  "generated_at": "2026-10-24T23:31:29.079461+00:00",
   "as_of": "2026-10-24",
   "source_review_as_of": "2026-10-24",
   "evidence_urls": {
@@ -9,6 +9,7 @@
     "market": "market-auto.json"
   },
   "readiness": "SCREEN_GRADE_NOT_DECISION_READY",
+  "not_yet_modelled": [],
   "methodology": "Discount future hypothetical owner-cash proxy at cost of equity; do not add cash or subtract debt a second time. Does not guarantee FCFE or make forecasts official.",
   "companies": {
     "MSFT": {
