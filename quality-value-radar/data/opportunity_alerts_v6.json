@@ -1,0 +1,6 @@
+{
+  "schema": "qvr-alerts-v6",
+  "status": "pending_first_run",
+  "alerts": [],
+  "action": "research_only"
+}
