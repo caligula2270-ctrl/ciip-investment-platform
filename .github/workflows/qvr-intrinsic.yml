@@ -44,6 +44,8 @@ jobs:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
         run: python quality-value-radar/scripts/enrich_sec_metrics.py
       - name: Verificar flujo de caja, adquisiciones y múltiplos
+        env:
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
         run: python quality-value-radar/scripts/economic_review_v4.py
       - name: Valorar compañías internacionales con fuente y cambio verificados
         run: python quality-value-radar/scripts/value_international.py
