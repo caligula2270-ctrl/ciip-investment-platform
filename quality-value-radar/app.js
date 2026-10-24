@@ -21,6 +21,7 @@ let opportunityV6 = {models:{},researchRank:[],status:'pending_first_run'};
 let backtestV6 = {tickers:{},status:'pending_first_run'};
 let alertsV6 = {alerts:[]};
 let sensitivityV7 = {models:{}};
+let auditV8 = {companies:{}};
 let analysisStatus = 'Análisis fundamental todavía no cargado';
 let quotationsNotice = 'Referencias fechadas; no son cotizaciones en directo';
 let activeModal = null;
@@ -63,6 +64,17 @@ function reliabilityPanel(){
 }
 async function refreshReliability(){
  try{const r=await fetch('data/reliability_v5.json',{cache:'no-store'});if(r.ok){const v=await r.json();if(v.schema==='qvr-v5-evidence')reliabilityV5=v;}}catch(e){}render();
+}
+
+function auditV8Panel(){
+ const m=auditV8.companies||{};
+ const tickers=['ADBE','INTU','CPRT'];
+ return '<section class="panel" style="margin:18px 0"><div class="panel-head"><div><h3>Conciliación documental v8</h3><p>Acciones diluidas, recompras y adquisición ACV, sin recomendación de compra</p></div></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Empresa</th><th>Media diluida (M)</th><th>Acciones puntuales (M)</th><th>Conciliación</th></tr></thead><tbody>'+tickers.map(t=>{const x=m[t];return '<tr><td>'+esc(t)+'</td><td>'+fmtN(x?.annualWeightedDilutedSharesMillions,2)+'</td><td>'+fmtN(x?.outstandingSharesSnapshotMillions,2)+'</td><td>'+esc(x?.ledgerTieOut||'Pendiente')+'</td></tr>'}).join('')+'</tbody></table></div>'+
+ '<p class="tiny muted">Las acciones puntuales y la media anual diluida no miden lo mismo. Las recompras consumen caja; las emisiones y la SBC requieren conciliación para evitar doble cómputo.</p>'+
+ '<div class="mini-note">Copart / ACV: pago agregado de control según fuente aportada '+(m.CPRT?.acquisition?fmtN(m.CPRT.acquisition.closingAggregateUSDMillions,2)+' MUSD':'pendiente')+'. Umbral teórico de caja al 12%: '+(m.CPRT?.acquisition?fmtN(m.CPRT.acquisition.annualCashHurdle12PctUSDMillions,2)+' MUSD/año':'pendiente')+'. Retorno realizado no validado.</div></section>';
+}
+async function refreshAuditV8(){
+ try{const r=await fetch('data/audit_v8.json',{cache:'no-store'});if(r.ok){const x=await r.json();if(x.schema==='qvr-v8-audit')auditV8=x}}catch(e){}render();
 }
 
 function sensitivityV7Panel(){
@@ -134,7 +146,7 @@ function autoQualityPanel(){
       statCard('Sin cobertura completa',unsupported,'Excluidas o pendientes')+
       statCard('Tasa de descuento base','11,5 %','Hipótesis explícita, editable en código')+'</div>'+
     '<div class="cards-3">'+(opportunities.length?opportunities.map(({c,a})=>card(c,a)).join(''):'<div class="empty">Sin oportunidades que cumplan todos los requisitos. Esto no implica que las empresas estén caras.</div>')+'</div>'+
-    opportunitiesV6Panel()+sensitivityV7Panel()+reliabilityPanel()+internationalPanel()+
+    opportunitiesV6Panel()+auditV8Panel()+sensitivityV7Panel()+reliabilityPanel()+internationalPanel()+
     '<details class="collapsible"><summary>Ver todas las valoraciones automáticas y datos insuficientes</summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Empresa</th><th>Estado</th><th>Valor razonable*</th><th>Descuento</th><th></th></tr></thead><tbody>'+
     companies().map(c=>{const a=autoAnalysis.companies?.[c.s],reason=a?.reason||autoAnalysis.exclusions?.[c.s]||autoAnalysis.unavailable?.[c.s]||'Sin modelo verificable';return '<tr><td>'+esc(c.n)+' <small>'+esc(c.s)+'</small></td><td>'+(a?.status==='ready'?'Con modelo':esc(reason))+'</td><td>'+money(a?.fairValue,a?.currency)+'</td><td>'+pct(a?.status==='ready'?a.marginOfSafetyPct:null)+'</td><td>'+(a?'<button class="btn btn-quiet btn-sm" data-auto-detail="'+esc(c.s)+'">Detalles</button>':'—')+'</td></tr>'}).join('')+
     '</tbody></table></div></details><p class="tiny muted">* Mezcla 60% de DCF simplificado a 5 años sobre FCF normalizado y 40% de mediana histórica P/FCF, calculada con cotizaciones en fechas fiscales. No sustituye una valoración sectorial ni ajuste completo por deuda, SBC, adquisiciones o ciclo del capital de trabajo.</p></section>';
@@ -257,6 +269,6 @@ document.addEventListener('change',ev=>{const t=ev.target;if(t.id==='filter-sect
 document.addEventListener('input',ev=>{if(ev.target.id==='search-company'){state.filters.term=ev.target.value;persist();const pos=ev.target.selectionStart;render();const el=document.getElementById('search-company');if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&activeModal)closeModal();if(ev.key==='Escape'&&!document.getElementById('modal-root').classList.contains('hidden'))closeModal();});
 document.getElementById('modal-root').addEventListener('click',ev=>{if(ev.target.id==='modal-root')closeModal();});
-render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();refreshOpportunityV6();refreshSensitivityV7();
+render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();refreshOpportunityV6();refreshSensitivityV7();refreshAuditV8();
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 })();
