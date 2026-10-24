@@ -1,6 +1,9 @@
 name: QVR Valoración Fundamental Semanal
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'quality-value-radar/scripts/economic_review_v4.py'
   schedule:
     - cron: '15 9 * * 3'
 permissions:
