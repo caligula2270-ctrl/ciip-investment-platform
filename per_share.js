@@ -36,7 +36,7 @@ function ciipPerShareView(){
    ' · Acciones estimadas: '+fmt(x.denominator?.central_m)+' M</p>'+
    '<p class="muted tiny">Denominador: '+esc(x.denominator?.status||'no conciliado')+
    ' · Estado: '+esc(x.status||'pendiente')+'</p>'+
-   '<button class="btn secondary" onclick="ciipPerShareSelect(\\''+esc(x.ticker)+'\\')">Consultar detalle</button></article>';
+   '<button class="btn secondary" data-ticker="'+esc(x.ticker)+'" onclick="ciipPerShareSelect(this.dataset.ticker)">Consultar detalle</button></article>';
  }).join('');
  const chosen=d.companies[ciipAuditSelected]||stocks[0];
  const v=chosen;
