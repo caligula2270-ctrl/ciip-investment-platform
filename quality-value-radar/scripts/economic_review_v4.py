@@ -15,7 +15,7 @@ def company_cash(facts, history):
         acquisitions=mna.get(end,{}).get("value")
         cash=y["fcf"]-stock if stock is not None else None
         rows.append({"year":end,"sbc":stock,"acquisitionOutlay":acquisitions,
-                     "ownerFcf":cash,"ownerFcfPerShare":cash/y["shares"] if cash is not None and y.get("shares") else None})
+                     "ownerFcf":cash,"ownerFcfPerShare":cash/y["fcf"]*y["fcfPerShare"] if cash is not None and y.get("fcf") and y.get("fcfPerShare") else None})
     valid=len(rows)==3 and all(r["ownerFcfPerShare"] is not None and r["ownerFcfPerShare"]>0 for r in rows)
     return {"status":"computed" if valid else "insufficient","observations":rows,
       "normalizedOwnerFcfPerShare":statistics.median(r["ownerFcfPerShare"] for r in rows) if valid else None,
