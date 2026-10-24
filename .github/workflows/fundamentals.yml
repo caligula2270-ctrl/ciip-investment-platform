@@ -9,6 +9,7 @@ on:
       - 'scripts/ciip_capital_filings.py'
       - 'scripts/build_ciip_audits.py'
       - 'scripts/build_ciip_per_share.py'
+      - 'scripts/test_ciip_*.py'
       - 'audits/per_share_inputs.json'
       - 'audits/evidence.json'
       - 'audits/PLAYBOOK.md'
