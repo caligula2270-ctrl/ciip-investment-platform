@@ -146,12 +146,55 @@ def build(evidence,facts,now):
       "release_status":"provisional_research",
       "reason":"Manual notes and current diluted shares still require documentary reconciliation."}
 
+def render_markdown(payload):
+    """Human-readable reproducible evidence note; source citations linked inline."""
+    lines=["# CIIP | Auditoría fundamental focalizada",
+           "",
+           f"Generado: {payload['generated_at']} · SEC: {payload.get('sec_generated_at')}",
+           "",
+           "**Alcance:** trabajo de investigación, no auditoría independiente. Los datos trimestrales y anuales no se mezclan, ni se emiten precios objetivo verificados.",
+           "",
+           "**Conclusión de control:** las cinco sociedades permanecen en RESEARCH_REVIEW_REQUIRED: quedan notas de capital, dilución actual y normalizaciones por contrastar.",
+           ""]
+    for ticker,item in payload["companies"].items():
+        lines += [f"## {ticker} | {item['company']}",
+                  f"Negocio: {item['sector']}. Modelo: {item['sector_valuation'].get('model', '—')} ({item['sector_valuation'].get('status', '—')}).",
+                  f"Presentación revisada: [{item['reference_filing']}]({item['reference_filing']})",
+                  f"Estado de presentación SEC: {item['filing_status']}.", ""]
+        h=item["financials_five_years"]
+        if h:
+            latest=h[-1]
+            fmt=lambda v: ("—" if v is None else f"{v:,.2f}")
+            lines += [f"Último FY {latest['fy_end']}: ingresos {fmt(latest['revenue_musd'])} M USD; CFO {fmt(latest['cfo_musd'])} M USD; CAPEX {fmt(latest['capex_musd'])} M USD; FCF simple {fmt(latest['reported_fcf_musd'])} M USD.",
+                      f"Margen operativo {fmt(latest['operating_margin_pct'])}% y SBC {fmt(latest['sbc_musd'])} M USD.", ""]
+        reported=item["reported_period_snapshot"]
+        if reported: lines += ["**Datos declarados de periodo reciente (no anualizar automáticamente):** "+", ".join(f"{k}: {v}" for k,v in reported.items())+"."]
+        lines += ["", "**Hallazgos contrastables y riesgos:**"]
+        for e in item["evidence_ledger"]:
+            url=e["source"]
+            lines.append(f"- {e['topic']}: {e['fact']} — {e['impact']} ([fuente oficial]({url}), {e['location']}).")
+        lines += ["","**Valoración agregada ilustrativa:**"]
+        scenarios=item["sector_valuation"].get("scenarios_aggregate",{})
+        if not scenarios:lines.append("Sin valoración calculable: insuficiencia de datos o controles sectoriales.")
+        else:
+            for name,v in scenarios.items():
+                lines.append(f"- {name}: {v['equity_value_usd']/1e9:.2f} miles de millones USD; terminal {v.get('terminal_weight_pct','—')}%.")
+        lines += ["",
+           "**Capital y dilución:** el recuento actual plenamente diluido no se ha verificado ni conciliado con todas las notas; sin valoración por acción.",
+           "**Pendientes:**"]+[f"- {x}" for x in item["open_issues"]]
+        lines += ["","**Revisión documental adicional:**"]+[f"- {x}" for x in item["manual_review_checklist"]]+[""]
+    lines += ["## Procedimiento",
+              "Ver [PLAYBOOK.md](PLAYBOOK.md) y [evidence.json](evidence.json). No se reutiliza una conclusión humana al cambiar el filing.",
+              ""]
+    return "\n".join(lines)
+
 def main():
     evidence=json.loads(MANIFEST.read_text(encoding="utf-8"))
     facts=json.loads(FACTS.read_text(encoding="utf-8"))
     payload=build(evidence,facts,dt.datetime.now(dt.timezone.utc))
     AUDITS.mkdir(exist_ok=True,parents=True)
     OUTPUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    (AUDITS/"REPORT.md").write_text(render_markdown(payload),encoding="utf-8")
     print("Audit research:",len(payload["companies"]),"companies.",
           sum(x["filing_status"]=="newer_or_different_filing_needs_review" for x in payload["companies"].values()),
           "filing source-change warnings; all five remain research-only.")
