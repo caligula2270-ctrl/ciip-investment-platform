@@ -128,14 +128,19 @@ def review_one(ticker,evidence,company,generated_date):
        "disclaimer":evidence.get("evidence_limit")}
 
 def build(evidence,facts,now):
-    required=set(TICKERS)
-    if set(evidence["entities"]) != required:
-        raise ValueError("Audit universe changed without explicit source ledger update")
+    required=set(evidence.get("entities",{}))
+    # Preserve original five audited companies, but allow additions supported by
+    # dated evidence. An arbitrary ticker without a dossier must not sneak in.
+    if not set(TICKERS).issubset(required):
+        raise ValueError("Cannot remove mandatory audited issuer without workflow review")
     if not all(t in facts.get("companies",{}) for t in required):
-        raise ValueError("Missing SEC companyfacts for mandatory five-company audit")
+        raise ValueError("Missing SEC companyfacts for one or more researched issuers")
+    for ticker,obj in evidence["entities"].items():
+        if not obj.get("evidence") or not obj.get("company") or not obj.get("annual_source"):
+            raise ValueError(f"Missing company identity, base filing or source-backed evidence for {ticker}")
     generated=now.isoformat()
     records={t:review_one(t,evidence["entities"][t],facts["companies"][t],generated)
-             for t in TICKERS}
+             for t in sorted(required)}
     return {
       "schema":"ciip-issuer-research-audit-v1",
       "generated_at":generated,"sec_generated_at":facts.get("generated_at"),
