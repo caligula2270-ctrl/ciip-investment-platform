@@ -12,7 +12,7 @@ class TestAudit(unittest.TestCase):
     def test_no_automatic_signoff_and_filing_change_flag(self):
         d={"review_as_of":"2026-10-24","entities":{
             t:{"company":t,"sector":"X","evidence":[{"topic":"a","source":"https://sec.gov","location":"Notes","fact":"x","impact":"y"}],
-                "interim_source":"https://www.sec.gov/old.htm"}
+                "interim_source":"https://www.sec.gov/old.htm","annual_source":"https://www.sec.gov/annual.htm"}
             for t in TICKERS}}
         facts={"companies":{t:{"history":[],"history_quality":{},"sector_control":{},
              "sector_valuation":{},"share_reconciliation":{},"capital_filings":{"filings":[{
