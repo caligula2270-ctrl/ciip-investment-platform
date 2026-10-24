@@ -39,6 +39,8 @@ jobs:
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
         run: python quality-value-radar/scripts/enrich_sec_metrics.py
+      - name: Verificar flujo de caja, adquisiciones y múltiplos
+        run: python quality-value-radar/scripts/economic_review_v4.py
       - name: Valorar compañías internacionales con fuente y cambio verificados
         run: python quality-value-radar/scripts/value_international.py
       - name: Validar integridad del modelo
@@ -49,7 +51,7 @@ jobs:
           p=Path('quality-value-radar/data/intrinsic.json')
           data=json.loads(p.read_text(encoding='utf-8'))
           assert data['schema']=='qvr-auto-v1'
-          assert data.get('enhancement',{}).get('version')=='2.0', 'TTM/ROIC v2 missing'
+          assert data.get('enhancement',{}).get('version')=='2.0', 'TTM/ROIC v2 missing'\n          assert data.get('economicUpgrade',{}).get('version')=='4.0-precheck'
           for ticker,row in data['companies'].items():
               if row.get('classification')=='possible_discount':
                   assert row['status']=='ready' and row['fundamentalQualityGate'] and row['adjustedRoic']['status']=='available'
