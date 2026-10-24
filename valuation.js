@@ -71,6 +71,8 @@ function ciipValCompute(ticker,values){
   const historical=ciipHistorical(ticker);
   const quality=ciipHistoricalQuality(ticker);
   const sector=historical?.sector_control;
+  const specialist=['software','payment_network','capital_intensive','cyclical_semis','cloud_capex'].includes(sector?.profile);
+  if(specialist)return {reason:'Esta compañía debe evaluarse mediante el modelo sectorial diferenciado (pestaña Sectores). El DCF genérico se deshabilita para evitar resultados contradictorios.',records:[],sectorControl:sector};
   const baseline=quality?.normalized_fcf_status==='ready_with_caveats'&&
     quality.status==='historical_ready'&&sector?.status!=='blocked'&&
     Number.isFinite(quality.normalized_fcf_3y_usd)&&quality.normalized_fcf_3y_usd>0
@@ -267,6 +269,8 @@ function valuationView(){
       ciipValInput('Crecimiento perpetuo (%)','ciip-'+key+'-terminal',p.terminal,'0.1','-5','5')+
     '</div><div class="ciip-scenario-inline"><span class="ciip-result-label">Valor patrimonial estimado (M USD)</span><strong id="ciip-inline-value-'+key+'">'+(row?ciipMoney(row.equityM):'—')+'</strong></div></section>';
   }
+  const sectorLink=calc.sectorControl?.profile&&['software','payment_network','capital_intensive','cyclical_semis','cloud_capex'].includes(calc.sectorControl.profile)
+    ?'<p>'+button('Abrir valoración sectorial','go(\\'sector\\')')+'</p>':'';
   const preview=ciipValResults(calc);
   return '<section class="panel"><h2>Valoración ilustrativa · flujos de caja del accionista</h2><p class="muted">Modelo a diez años con dos etapas y valor terminal (Gordon). Parte de CFO − CAPEX publicado para un mismo ejercicio fiscal, una aproximación de flujo atribuible al accionista. Se descuenta a una rentabilidad exigida al capital propio, por lo que NO se resta deuda ni se añade caja de nuevo. No es FCFF ni un DCF empresarial, no ajusta stock-based compensation, adquisiciones ni necesidades extraordinarias de caja.</p><div class="actions" style="align-items:center">'+select+button('Actualizar datos SEC','refreshFundamentals()')+button('Actualizar cotización','refreshAutoMarket()')+button('Ver resultados ↓','ciipValScrollToResults()')+'</div>'+warning+'<p class="muted tiny">Cotización para comparar: '+quote+'</p></section>'+
   '<section class="panel"><h2>Denominador por acción · aportación manual</h2><p class="muted tiny">Indica acciones diluidas (millones) del mismo emisor y clase económica. Para ADR y clases múltiples revisa sus conversiones y derechos. Si no hay un dato con fuente, el sistema solo mostrará importes agregados.</p><div class="grid ciip-share-fields" style="grid-template-columns:1fr 2fr;gap:12px">'+
