@@ -1,6 +1,6 @@
 # CIIP | Auditoría fundamental focalizada
 
-Generado: 2026-10-24T23:28:20.994438+00:00 · SEC: 2026-10-24T23:28:02.926050+00:00
+Generado: 2026-10-24T23:29:47.765334+00:00 · SEC: 2026-10-24T23:29:25.762266+00:00
 
 **Alcance:** trabajo de investigación, no auditoría independiente. Los datos trimestrales y anuales no se mezclan, ni se emiten precios objetivo verificados.
 
