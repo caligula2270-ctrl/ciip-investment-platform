@@ -1,0 +1,313 @@
+{
+  "schema": "ciip-official-equity-audit-evidence-v1",
+  "review_as_of": "2026-10-24",
+  "review_standard": "Focused cross-check of latest official 10-K/10-Q and selected notes; not an independent audit, no complete financial footnote reconciliation or verified target price",
+  "monitoring_policy": "Rebuild from newest SEC XBRL on every scheduled run. If a new filing is published after a reviewed report, flag source as superseded and block 'current' claims until reviewed. Never silently inherit a review conclusion.",
+  "universe": [
+    "MSFT",
+    "ADBE",
+    "V",
+    "MA",
+    "TXN"
+  ],
+  "entities": {
+    "MSFT": {
+      "company": "Microsoft Corporation",
+      "sector": "Cloud / enterprise software / AI datacenters",
+      "annual": "2026-06-30",
+      "interim": null,
+      "latest_form": "10-K",
+      "annual_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "interim_source": null,
+      "next_report_announced": "2026-10-28",
+      "next_report_source": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/",
+      "reported_snapshot": {
+        "period": "FY2026",
+        "revenue_musd": 331839,
+        "operating_profit_musd": 155237,
+        "net_income_musd": 133749,
+        "cfo_musd": 182935,
+        "capex_musd": 115948,
+        "sbc_musd": 12405,
+        "fcf_cfo_minus_capex_musd": 66987
+      },
+      "equity_snapshot": {
+        "status": "weighted_average_not_current_fully_diluted",
+        "diluted_weighted_average_mshares": 7453,
+        "current_basic_outstanding": null,
+        "current_basic_as_of": null,
+        "unvested_stock_awards_mshares": 78,
+        "unrecognized_sbc_musd": 24800
+      },
+      "evidence": [
+        {
+          "topic": "AI infrastructure / reinvestment",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+          "location": "MD&A Cash Flows and Other Planned Uses of Capital",
+          "fact": "FY2026 CFO $182.935bn; additions to property/equipment $115.948bn; management expects continued investment in datacenters, cloud and AI infrastructure",
+          "impact": "CFO-CAPEX ~$66.987bn; cash demand and finance leases require long-run maintenance/growth breakdown"
+        },
+        {
+          "topic": "Employee equity awards",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+          "location": "Note 17 — Employee Stock and Savings Plans",
+          "fact": "FY2026 SBC expense $12.405bn, 78m nonvested stock awards at 2026-06-30, $24.8bn unrecognized award expense",
+          "impact": "Expense and issuance/re-purchases need reconciliation; unvested awards are NOT simply additive one-for-one to all share classes"
+        },
+        {
+          "topic": "Capital allocation",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+          "location": "Liquidity and Capital Resources / debt and leases notes",
+          "fact": "Cash, equivalents and short-term investments $76.843bn at 2026-06-30; significant datacenter leases and capacity investment",
+          "impact": "Do not add all cash to shareholder DCF or assume lease-financed servers already included in cash CAPEX"
+        }
+      ],
+      "business_quality": "Very high reported profit and cash generation; Azure and AI demand support a strong franchise, subject to infrastructure economics and competition",
+      "key_risks": [
+        "Datacenter/server replacement cycle and finance leases",
+        "AI infrastructure may absorb incremental CFO",
+        "Antitrust/enterprise customer concentration, cloud competition",
+        "Equity compensation and repurchases"
+      ],
+      "evidence_limit": "No FY2027 Q1 results were yet due as of review date; management announcement for 28 Oct is future, not current actuals."
+    },
+    "ADBE": {
+      "company": "Adobe Inc.",
+      "sector": "Software subscription / creative and document tools",
+      "annual": "2025-11-28",
+      "interim": "2026-08-28",
+      "latest_form": "10-Q",
+      "annual_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+      "interim_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+      "reported_snapshot": {
+        "period": "9M FY2026",
+        "revenue_musd": 19776,
+        "net_income_musd": 5428,
+        "cfo_musd": 7646,
+        "sbc_musd": 1584,
+        "arr_musd": 27500,
+        "repurchases_musd": 6820,
+        "repurchased_shares_m": 26.1
+      },
+      "equity_snapshot": {
+        "status": "basic_current_only_not_fully_diluted",
+        "current_basic_outstanding_mshares": 389.2,
+        "current_basic_as_of": "2026-09-18",
+        "unrecognized_sbc_musd": 4030
+      },
+      "evidence": [
+        {
+          "topic": "Subscription growth",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "location": "MD&A Results of Operations",
+          "fact": "9M FY2026 revenue $19.776bn and CFO $7.646bn; Aug 2026 ARR $27.50bn",
+          "impact": "Subscription recurring revenue is material but ARR is not revenue, FCF or a GAAP valuation denominator"
+        },
+        {
+          "topic": "SBC and equity dilution",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "location": "Note 10 — Stock-Based Compensation; Note 12 — Net Income Per Share",
+          "fact": "9M FY2026 stock compensation $1.584bn; unrecognized stock awards cost $4.03bn; basic outstanding 389.2m at 2026-09-18",
+          "impact": "Basic count differs from treasury-stock diluted denominator; avoid treating basic count as fully diluted"
+        },
+        {
+          "topic": "Buybacks and acquisition",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "location": "Note 11 — Stock Repurchase Program; Note 3 — Business Combinations",
+          "fact": "9M FY2026 open-market share buybacks 26.1m shares for $6.820bn; Semrush acquisition referenced in financing and business combinations notes",
+          "impact": "Reconcile issuance versus repurchases and economic acquisitions omitted from simple CFO-CAPEX"
+        }
+      ],
+      "business_quality": "Profitable recurring software franchises with subscription base; competitive changes from generative AI need customer and pricing evidence",
+      "key_risks": [
+        "Generative AI commoditization or growth reallocation",
+        "SBC, large authorizations and price paid for buybacks",
+        "Acquisitions and customer churn",
+        "Annualized 9M financials must not be treated as FY audited figures"
+      ],
+      "evidence_limit": "389.2m is the basic shares outstanding at a dated point, not a current fully diluted denominator."
+    },
+    "V": {
+      "company": "Visa Inc.",
+      "sector": "Global payments network",
+      "annual": "2025-09-30",
+      "interim": "2026-06-30",
+      "latest_form": "10-Q",
+      "annual_source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+      "interim_source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+      "next_report_announced": "2026-10-27",
+      "next_report_source": "https://visa.gcs-web.com/news-releases/news-release-details/visa-announce-fiscal-fourth-quarter-and-full-year-2026-financial",
+      "reported_snapshot": {
+        "period": "9M FY2026",
+        "revenue_musd": 33764,
+        "net_income_musd": 17502,
+        "cfo_musd": 16342,
+        "property_equipment_technology_musd": 1178,
+        "reported_cfo_less_property_technology_musd": 15164,
+        "repurchases_musd": 16430,
+        "us_litigation_escrow_end_musd": 888
+      },
+      "equity_snapshot": {
+        "status": "multiple_classes_not_converted",
+        "current_basic_as_of": "2026-07-21",
+        "classes_shares": {
+          "A": 1704112694,
+          "B1": 2180148,
+          "B2": 486669,
+          "B3": 60589871,
+          "C": 17059152
+        },
+        "verified_class_A_equivalent": null
+      },
+      "evidence": [
+        {
+          "topic": "Economic share classes",
+          "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+          "location": "Form 10-Q cover; Note 11 — Stockholders' Equity; Note 12 — EPS",
+          "fact": "As of 2026-07-21 shares A 1,704,112,694; B1 2,180,148; B2 486,669; B3 60,589,871; C 17,059,152",
+          "impact": "Share classes are not interchangeable one-to-one. Conversion and litigation adjustments required for an A-equivalent fully diluted count"
+        },
+        {
+          "topic": "Settlement cash and litigation",
+          "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+          "location": "Notes 5/16; 9M Cash Flows",
+          "fact": "US litigation escrow $888m as of 2026-06-30; $2.977bn payments to opt-out/class merchants, $875m additional deposits; 9M CFO $16.342bn",
+          "impact": "Separate settlement liabilities, escrow and trust restricted cash; do not capitalize unadjusted CFO as perpetuity"
+        },
+        {
+          "topic": "FY2026 upcoming",
+          "source": "https://visa.gcs-web.com/news-releases/news-release-details/visa-announce-fiscal-fourth-quarter-and-full-year-2026-financial",
+          "location": "Official release schedule",
+          "fact": "Fiscal Q4/full-year 2026 scheduled for 2026-10-27 after market close",
+          "impact": "Never mark FY2026 audited/available on 2026-10-24"
+        }
+      ],
+      "business_quality": "Scale/network effects in global electronic payments, subject to regulation, client incentives, and cross-border volumes",
+      "key_risks": [
+        "Interchange class actions and conversion protections",
+        "Price regulation, network competition and digital alternatives",
+        "Client incentive growth and gross-to-net revenue",
+        "Share class dilution and restricted escrow"
+      ],
+      "evidence_limit": "Current equity A-equivalent share denominator unresolved; per-share fair price should remain blocked."
+    },
+    "MA": {
+      "company": "Mastercard Incorporated",
+      "sector": "Global payments network and value-added services",
+      "annual": "2025-12-31",
+      "interim": "2026-06-30",
+      "latest_form": "10-Q",
+      "annual_source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+      "interim_source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+      "reported_snapshot": {
+        "period": "H1 FY2026",
+        "cfo_musd": 6772,
+        "cfo_prior_year_musd": 6983,
+        "repurchases_musd": 8933,
+        "settlement_obligations_cashflow_musd": 750,
+        "share_based_comp_musd": 326
+      },
+      "equity_snapshot": {
+        "status": "multiple_classes_and_awards",
+        "current_basic_as_of": "2026-07-27",
+        "classes_shares": {
+          "A": 869464115,
+          "B": 6545825
+        },
+        "sum_basic_classes": 876009940,
+        "verified_current_fully_diluted": null
+      },
+      "evidence": [
+        {
+          "topic": "Equity class and treasury shares",
+          "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+          "location": "Form 10-Q cover; Note — Stockholders' Equity / Common Stock Activity",
+          "fact": "2026-07-27 common outstanding A 869,464,115 plus B 6,545,825, total basic counts 876,009,940 (arithmetical sum only); H1 shares repurchased 17.6m for $8.933bn",
+          "impact": "Basic class sum does not adjust share-based awards or anti-dilutive securities; review class conversion terms"
+        },
+        {
+          "topic": "Customer settlement/working capital",
+          "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+          "location": "Six-month cash flow statement",
+          "fact": "H1 2026 CFO $6.772bn vs $6.983bn H1 2025; settlement obligations +$750m, accrued legal settlements -$504m, prepaid expenses -$3.835bn",
+          "impact": "Business may grow while CFO moves with customer incentives and legal settlements; avoid direct annualization"
+        },
+        {
+          "topic": "Network and VAS",
+          "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+          "location": "FY2025 segment revenue disclosures",
+          "fact": "FY2025 net revenue $32.791bn; payment network $19.476bn and value-added services $13.315bn",
+          "impact": "Separate take-rate and VAS growth with incentive economics; do not assume identical margins"
+        }
+      ],
+      "business_quality": "Large global payment rails with growing value-added solutions; regulatory and merchant bargaining counterbalance network economics",
+      "key_risks": [
+        "US and international antitrust/interchange litigation",
+        "Customer rebates, incentives and prepayments",
+        "Class B conversion/re-purchases and equity award dilution",
+        "Revenue growth may not translate 1:1 to distributable CFO"
+      ],
+      "evidence_limit": "The 876.01m figure is an arithmetic sum of class basic counts, not current fully diluted outstanding shares."
+    },
+    "TXN": {
+      "company": "Texas Instruments Incorporated",
+      "sector": "Semiconductors / industrial manufacturing",
+      "annual": "2025-12-31",
+      "interim": "2026-09-30",
+      "latest_form": "10-Q",
+      "annual_source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000059/txn-20251231.htm",
+      "interim_source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+      "latest_ir": "https://www.ti.com/about-ti/newsroom/news-releases/2026/2026-10-21-ti-reports-third-quarter-2026-financial-results-and-shareholder-returns.html",
+      "reported_snapshot": {
+        "period": "Q3 FY2026",
+        "revenue_musd": 6055,
+        "operating_profit_musd": 2874,
+        "net_income_musd": 2425,
+        "eps_diluted_usd": 2.62,
+        "latest_ltm_cfo_musd": 9900,
+        "latest_ltm_capex_musd": 2600,
+        "company_ltm_adjusted_fcf_musd": 8400,
+        "fy2026_9m_capex_musd": 1650,
+        "fy2025_9m_capex_musd": 3630,
+        "fy2026_9m_chips_cash_musd": 1100
+      },
+      "equity_snapshot": {
+        "status": "recent_basic_not_current_fully_diluted",
+        "current_basic_outstanding_shares": 913770316,
+        "current_basic_as_of": "2026-10-14",
+        "verified_current_fully_diluted": null
+      },
+      "evidence": [
+        {
+          "topic": "Industrial manufacturing cycle",
+          "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+          "location": "Form 10-Q cover, operations and capital expenditures",
+          "fact": "Q3 2026 revenue $6.055bn, EBIT $2.874bn, net $2.425bn; 913,770,316 basic shares outstanding as of 2026-10-14",
+          "impact": "Current basic count != diluted share count; industrial cycle requires through-cycle margin/capex assumptions"
+        },
+        {
+          "topic": "US CHIPS incentives",
+          "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+          "location": "9M Cash Flows and MD&A",
+          "fact": "9M FY2026 CAPEX $1.65bn vs $3.63bn prior; CHIPS Act cash proceeds $1.10bn as of 9M 2026",
+          "impact": "Classify government receipts separately and avoid mixing GAAP CFO−CAPEX with adjusted management FCF"
+        },
+        {
+          "topic": "Non-GAAP adjusted free cash flow",
+          "source": "https://www.ti.com/about-ti/newsroom/news-releases/2026/2026-10-21-ti-reports-third-quarter-2026-financial-results-and-shareholder-returns.html",
+          "location": "Oct 21 2026 Q3 earnings / shareholder returns",
+          "fact": "Management reports LTM CFO ~$9.9bn and its own adjusted FCF ~$8.4bn including CHIPS Act incentive proceeds",
+          "impact": "The definition adds CHIPS proceeds; not identical to plain CFO−CAPEX; demonstrate bridge before valuation"
+        }
+      ],
+      "business_quality": "Analog semiconductor economics with resilient industrial/auto product lifecycle but large fab commitments and cyclicality",
+      "key_risks": [
+        "Factories and fixed-cost utilization sensitivity",
+        "Government subsidy timing and restrictions",
+        "Inventory turns / industrial and automotive cycles",
+        "Funding the fab program and capital returns through trough"
+      ],
+      "evidence_limit": "Current fully diluted shares remain unverified despite the recent basic cover count; LTM FCF reported is non-GAAP adjusted."
+    }
+  }
+}
