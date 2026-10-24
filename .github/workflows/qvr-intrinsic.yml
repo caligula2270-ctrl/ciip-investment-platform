@@ -42,6 +42,7 @@ jobs:
           python -m py_compile quality-value-radar/scripts/reliability_v5.py
           python -m py_compile quality-value-radar/scripts/opportunity_v6.py
           python -m py_compile quality-value-radar/scripts/opportunity_alerts_v6.py
+          python -m unittest discover -s quality-value-radar/scripts -p 'test_opportunity_v6.py' -v
       - name: Generar análisis SEC y precios históricos
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
