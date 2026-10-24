@@ -6,6 +6,7 @@ on:
       - 'quality-value-radar/scripts/economic_review_v4.py'
       - 'quality-value-radar/scripts/reliability_v5.py'
       - 'quality-value-radar/scripts/opportunity_v6.py'
+      - 'quality-value-radar/scripts/sensitivity_v7.py'
       - 'quality-value-radar/scripts/opportunity_alerts_v6.py'
       - 'quality-value-radar/scripts/test_opportunity_v6.py'
       - 'quality-value-radar/scripts/opportunity_v6.py'
@@ -42,6 +43,7 @@ jobs:
           python -m py_compile quality-value-radar/scripts/economic_review_v4.py
           python -m py_compile quality-value-radar/scripts/reliability_v5.py
           python -m py_compile quality-value-radar/scripts/opportunity_v6.py
+          python -m py_compile quality-value-radar/scripts/sensitivity_v7.py
           python -m py_compile quality-value-radar/scripts/opportunity_alerts_v6.py
           python -m unittest discover -s quality-value-radar/scripts -p 'test_opportunity_v6.py' -v
       - name: Generar análisis SEC y precios históricos
@@ -64,6 +66,8 @@ jobs:
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
         run: python quality-value-radar/scripts/opportunity_v6.py
+      - name: Sensibilidad del CAPEX, dilución y adquisiciones v7
+        run: python quality-value-radar/scripts/sensitivity_v7.py
       - name: Actualizar alertas de investigación
         run: python quality-value-radar/scripts/opportunity_alerts_v6.py
       - name: Validar integridad del modelo
@@ -91,6 +95,9 @@ jobs:
           backtest=json.loads(Path('quality-value-radar/data/backtest_v6.json').read_text())
           alerts=json.loads(Path('quality-value-radar/data/opportunity_alerts_v6.json').read_text())
           assert v6['schema']=='qvr-v6' and not v6['transactionSignals']
+          sensitivity=json.loads(Path('quality-value-radar/data/sensitivity_v7.json').read_text())
+          assert sensitivity['schema']=='qvr-sensitivity-v7' and not sensitivity['automaticBuyDecisions']
+          assert len(sensitivity['models'])==6
           assert backtest['schema']=='qvr-pit-backtest-v6' and not backtest['strategyPerformanceClaim']
           assert alerts['schema']=='qvr-alerts-v6' and alerts['action']=='research_only'
           assert all(m['investmentAction'] in ('research_only','watch_price_for_due_diligence') for m in v6['models'].values())
@@ -111,7 +118,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add quality-value-radar/data/intrinsic.json quality-value-radar/data/international.json quality-value-radar/data/reliability_v5.json quality-value-radar/data/opportunity_v6.json quality-value-radar/data/backtest_v6.json quality-value-radar/data/opportunity_alerts_v6.json
+          git add quality-value-radar/data/sensitivity_v7.json quality-value-radar/data/intrinsic.json quality-value-radar/data/international.json quality-value-radar/data/reliability_v5.json quality-value-radar/data/opportunity_v6.json quality-value-radar/data/backtest_v6.json quality-value-radar/data/opportunity_alerts_v6.json
           if ! git diff --cached --quiet; then
             git commit -m "data(qvr): actualizacion semanal de valoracion SEC"
             git pull --rebase origin main
