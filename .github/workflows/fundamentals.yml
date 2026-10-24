@@ -7,6 +7,9 @@ on:
       - 'scripts/ciip_quality_controls.py'
       - 'scripts/ciip_sector_models.py'
       - 'scripts/ciip_capital_filings.py'
+      - 'scripts/build_ciip_audits.py'
+      - 'audits/evidence.json'
+      - 'audits/PLAYBOOK.md'
       - '.github/workflows/fundamentals.yml'
   schedule:
     - cron: '45 7 * * 2'
@@ -32,13 +35,15 @@ jobs:
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
         run: python scripts/update_fundamentals.py
+      - name: Compile five-company financial audit dossiers
+        run: python scripts/build_ciip_audits.py
       - name: Commit source-linked facts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add fundamentals-auto.json
+          git add fundamentals-auto.json audits/latest.json
           if ! git diff --cached --quiet; then
-            git commit -m "data: update SEC fundamentals"
+            git commit -m "data: update SEC fundamentals and five issuer audits"
             for attempt in 1 2 3 4 5; do
               git fetch origin main
               git rebase origin/main
