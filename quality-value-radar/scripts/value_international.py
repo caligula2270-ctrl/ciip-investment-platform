@@ -52,7 +52,7 @@ def run():
       entry["valuation"]={"marketImpliedFiveYearFcfGrowthPct":round(market_implied*100,2),
         "growthReference":"Reverse DCF uses flat per-share terminal share count; NOT management guidance",
         "historicalPfcfCrossCheck":"unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
-        "reinvestmentAdjustment":"Not separately modeled: acquisitions / development CAPEX must be reviewed",,"model":"5Y DCF median 3Y historical issuer FCF","annualFcf":annual,
+        "reinvestmentAdjustment":"Not separately modeled: acquisitions / development CAPEX must be reviewed","status":"preliminary","model":"5Y DCF median 3Y historical issuer FCF","annualFcf":annual,
          "normalizedFcfPerShare":round(norm,4),"reportingCurrency":s["currency"],"tradingCurrency":s["stockCurrency"],
          "sharesMillions":s["sharesM"],"fx":fx,"bear":vals[0],"base":vals[1],"bull":vals[2],
          "quotePrice":q["price"],"quoteDate":q["date"],"indicativeMarginPct":round(100*(1-q["price"]/vals[1]),1),
