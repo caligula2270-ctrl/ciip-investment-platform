@@ -2,6 +2,8 @@
 """CIIP fundamentals from SEC EDGAR companyfacts. No financial estimates."""
 import datetime as dt, gzip, json, os, pathlib, sys, time, urllib.request, zlib
 from ciip_quality_controls import quality_normalize, current_share_reconciliation
+from ciip_sector_models import build_sector_valuation
+from ciip_capital_filings import latest_equity_filings
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 AGENT=os.environ.get("SEC_USER_AGENT","").strip()
 if not AGENT or "@" not in AGENT:
@@ -214,6 +216,15 @@ def main():
             history,history_quality=annual_history(facts,as_of)
             sector=quality_normalize(facts,history,history_quality,ticker,as_of)
             shares=current_share_reconciliation(facts,ticker,history_quality,as_of)
+            sector_valuation=build_sector_valuation(ticker,history,history_quality,shares)
+            try:
+                submissions=get(f"https://data.sec.gov/submissions/CIK{cik}.json")
+                capital_filings=latest_equity_filings(submissions,cik,as_of)
+            except Exception as filing_exc:
+                capital_filings={"status":"filings_unavailable","filings":[],
+                    "review_topics":[],"reviewed_notes":[],
+                    "verified_current_fully_diluted_shares":None,
+                    "warning":str(filing_exc)[:150]}
             annual_ends=[m["end"] for name,m in metrics.items() if name in FLOW and m]
             annual_end=max(annual_ends) if annual_ends else None
             # Drop older annual metrics rather than mixing fiscal years in one row.
@@ -222,10 +233,10 @@ def main():
                 if metrics.get(name) and metrics[name]["end"]!=annual_end:
                     excluded.append({"metric":name,"latest_available_end":metrics[name]["end"],"reason":"different_fiscal_year"})
                     metrics[name]=None
-            result["companies"][ticker]={"cik":cik,"entity_name":obj.get("entityName"),"url":url,"annual_reference_end":annual_end,"excluded_annual_metrics":excluded,"metrics":metrics,"history":history,"history_quality":history_quality,"sector_control":sector,"share_reconciliation":shares}
+            result["companies"][ticker]={"cik":cik,"entity_name":obj.get("entityName"),"url":url,"annual_reference_end":annual_end,"excluded_annual_metrics":excluded,"metrics":metrics,"history":history,"history_quality":history_quality,"sector_control":sector,"share_reconciliation":shares,"sector_valuation":sector_valuation,"capital_filings":capital_filings}
         except Exception as exc:
             result["unavailable"][ticker]=str(exc)[:180]
-        time.sleep(0.16)
+        time.sleep(0.25)
     out=ROOT/"fundamentals-auto.json"
     out.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     available=sum(any(x for x in c["metrics"].values()) for c in result["companies"].values())
