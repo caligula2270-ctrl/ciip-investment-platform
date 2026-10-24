@@ -1,0 +1,68 @@
+{
+  "schema": "qvr-source-ledger-v8",
+  "dataAsOf": "2026-10-25",
+  "policy": "Only source-labeled values; outstanding snapshot and historical diluted weighted average are not directly interchangeable",
+  "companies": {
+    "ADBE": {
+      "name": "Adobe",
+      "filing": "FY2025 10-K",
+      "fiscalYearEnd": "2025-11-28",
+      "filingUrl": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+      "dilutedWeightedAverageSharesMillions": 427,
+      "sharesOutstandingSnapshotMillions": 410.5,
+      "sharesOutstandingSnapshotDate": "2026-01-09",
+      "repurchasedSharesFYMillions": 30.8,
+      "repurchaseCashFYMillions": 11281,
+      "repurchaseCashCurrency": "USD",
+      "capitalExpenditureDescription": "10-K reports capex without audited maintenance/growth split in the extracted standard series",
+      "status": "source_crosschecked",
+      "caveat": "Spot shares after fiscal year close are not diluted weighted average; ASR settlement makes repurchase cash versus issued share movements asynchronous"
+    },
+    "INTU": {
+      "name": "Intuit",
+      "filing": "FY2026 10-K",
+      "fiscalYearEnd": "2026-07-31",
+      "filingUrl": "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm",
+      "dilutedWeightedAverageSharesMillions": 277,
+      "sharesOutstandingSnapshotMillions": 267.236,
+      "sharesOutstandingSnapshotDate": "2026-08-31",
+      "repurchasedSharesFYMillions": 13.4,
+      "repurchaseCashFYMillions": 5500,
+      "repurchaseCashCurrency": "USD",
+      "capitalExpenditureDescription": "Filing historical capex without issuer-certified maintenance/growth split in the model",
+      "status": "source_crosschecked",
+      "caveat": "FY2026 treasury stock retirement changes issued-share accounting; do not mistake 233M treasury shares retired for 233M current buybacks"
+    },
+    "CPRT": {
+      "name": "Copart",
+      "filing": "FY2026 10-K",
+      "fiscalYearEnd": "2026-07-31",
+      "filingUrl": "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
+      "dilutedWeightedAverageSharesMillions": 956.86,
+      "sharesOutstandingSnapshotMillions": 926.298293,
+      "sharesOutstandingSnapshotDate": "2026-07-31",
+      "repurchasedSharesFYMillions": 43.433164,
+      "repurchaseCashFYMillions": 1600,
+      "repurchaseCashCurrency": "USD",
+      "capitalExpenditureDescription": "Land, opening and improving yards, software and facility equipment; maintenance/growth not quantitatively separated in cited text",
+      "status": "source_crosschecked",
+      "caveat": "No post-ACV weighted-average or spot diluted share count confirmed; 2026 historical filing predates the transaction"
+    }
+  },
+  "transactions": {
+    "ACV": {
+      "buyer": "CPRT",
+      "target": "ACV Auctions",
+      "announced": "2026-09-10",
+      "completed": "2026-10-16",
+      "filingDate": "2026-10-19",
+      "announcedEquityValueUSDMillionsApprox": 1900,
+      "aggregateConsiderationPaidForControlUSDMillions": 1801.021081,
+      "costStatus": "aggregate_paid_for_control_not_full_enterprise_invested_capital",
+      "financing": "cash on hand and available cash resources, per ACV closing 8-K",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm",
+      "announcementSourceUrl": "https://www.copart.com/content/us/en/press-releases/copart-to-acquire-acv",
+      "note": "Acquisition cash paid is not enterprise value and excludes unverified transaction expenses and assumed debt. Do not add NPV to standalone equity value without a reconciled post-deal bridge."
+    }
+  }
+}
