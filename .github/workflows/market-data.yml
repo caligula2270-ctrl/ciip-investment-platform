@@ -21,12 +21,28 @@ jobs:
           python-version: '3.12'
       - name: Retrieve closing prices
         run: python scripts/update_market.py
-      - name: Commit observations
+      - name: Refresh per-share research against latest closing prices
         run: |
+          python scripts/build_ciip_per_share.py
+          PYTHONPATH=scripts python -m unittest discover -s scripts -p 'test_ciip_per_share.py' -v
+      - name: Publish prices and refreshed conditional valuation safely
+        run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add market-auto.json
-          if ! git diff --cached --quiet; then
-            git commit -m "data: refresh CIIP closing prices"
-            git push
-          fi
+          cp market-auto.json /tmp/ciip-market-auto.json
+          cp audits/per_share_latest.json /tmp/ciip-per-share-latest.json
+          cp audits/PER_SHARE_REPORT.md /tmp/ciip-per-share-report.md
+          for attempt in 1 2 3 4 5 6; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/ciip-market-auto.json market-auto.json
+            cp /tmp/ciip-per-share-latest.json audits/per_share_latest.json
+            cp /tmp/ciip-per-share-report.md audits/PER_SHARE_REPORT.md
+            git add market-auto.json audits/per_share_latest.json audits/PER_SHARE_REPORT.md
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "data: closing prices and conditional per-share valuation"
+            if git push origin HEAD:main; then exit 0; fi
+            sleep $((2 * attempt))
+          done
+          exit 1
