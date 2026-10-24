@@ -20,6 +20,10 @@
       "status": "preliminary_valuation",
       "reason": "FCFA2S es definición no GAAP; CAD por cotización frente USD reportados, adquisición intensiva e IRGA exigen conciliación.",
       "valuation": {
+        "marketImpliedFiveYearFcfGrowthPct": 35.52,
+        "growthReference": "Reverse DCF uses flat per-share terminal share count; NOT management guidance",
+        "historicalPfcfCrossCheck": "unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
+        "reinvestmentAdjustment": "Not separately modeled: acquisitions / development CAPEX must be reviewed",
         "status": "preliminary",
         "model": "5Y DCF median 3Y historical issuer FCF",
         "annualFcf": [
@@ -41,13 +45,13 @@
         "tradingCurrency": "CAD",
         "sharesMillions": 21.19153,
         "fx": {
-          "rate": 1.4002,
-          "date": "2026-10-23",
+          "rate": 1.4004,
+          "date": "2026-10-24",
           "source": "https://query1.finance.yahoo.com/v8/finance/chart/CAD%3DX?range=5d&interval=1d"
         },
-        "bear": 825.48,
-        "base": 1195.38,
-        "bull": 1632.17,
+        "bear": 825.6,
+        "base": 1195.55,
+        "bull": 1632.41,
         "quotePrice": 3408.5701,
         "quoteDate": "2026-10-22",
         "indicativeMarginPct": -185.1,
@@ -81,6 +85,10 @@
       "status": "preliminary_valuation",
       "reason": "Cotización ADR USD frente resultados EUR y ausencia de serie normalizada FCF/ROIC para escenario prudente.",
       "valuation": {
+        "marketImpliedFiveYearFcfGrowthPct": 40.0,
+        "growthReference": "Reverse DCF uses flat per-share terminal share count; NOT management guidance",
+        "historicalPfcfCrossCheck": "unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
+        "reinvestmentAdjustment": "Not separately modeled: acquisitions / development CAPEX must be reviewed",
         "status": "preliminary",
         "model": "5Y DCF median 3Y historical issuer FCF",
         "annualFcf": [
@@ -139,6 +147,10 @@
       "status": "preliminary_valuation",
       "reason": "Precisa extraer estados consolidados 2025/H1-2026 y conciliar expansión de tiendas y CAPEX; sin FCF normalizado no se emite precio objetivo.",
       "valuation": {
+        "marketImpliedFiveYearFcfGrowthPct": 40.0,
+        "growthReference": "Reverse DCF uses flat per-share terminal share count; NOT management guidance",
+        "historicalPfcfCrossCheck": "unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
+        "reinvestmentAdjustment": "Not separately modeled: acquisitions / development CAPEX must be reviewed",
         "status": "preliminary",
         "model": "5Y DCF median 3Y historical issuer FCF",
         "annualFcf": [
@@ -187,5 +199,5 @@
       }
     }
   },
-  "generatedAt": "2026-10-23T23:28:22.976076+00:00"
+  "generatedAt": "2026-10-24T21:42:47.032855+00:00"
 }
