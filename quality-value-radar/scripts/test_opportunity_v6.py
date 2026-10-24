@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Non-network regression tests for investment valuation assumptions."""
+"""Offline regression tests for valuation assumptions and safe research gates."""
 import importlib.util
 import pathlib
 import unittest
