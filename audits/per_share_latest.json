@@ -1,6 +1,6 @@
 {
   "schema": "ciip-per-share-valuation-v1",
-  "generated_at": "2026-10-24T23:27:32.827046+00:00",
+  "generated_at": "2026-10-24T23:28:21.030961+00:00",
   "as_of": "2026-10-24",
   "source_review_as_of": "2026-10-24",
   "evidence_urls": {
@@ -353,7 +353,7 @@
       "source_newer_than_assessed": false,
       "denominator": {
         "date_basic": "2026-07-21",
-        "date_conversion": "2026-06-30",
+        "date_conversion": "2026-09-18",
         "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
         "class_counts_m": {
           "A": 1704.112694,
@@ -364,9 +364,9 @@
         },
         "class_A_conversion_factors": {
           "A": 1,
-          "B1": 1.5445,
-          "B2": 1.5014,
-          "B3": 1.4953,
+          "B1": 1.54,
+          "B2": 1.4924,
+          "B3": 1.4773,
           "C": 4
         },
         "preferred_eq_asof_20260630_m": {
@@ -375,15 +375,15 @@
           "seriesC": 2.142
         },
         "employee_participating_equiv_m": 15,
-        "formula": "SUM(July21 ordinary share classes*June30 conversion rates) + June30 preferred as-converted 10.308m + provisional Q2 EPS participating instruments 15m",
-        "total_common_Aeq_m": 1867.0472595289,
+        "formula": "July 21 ordinary classes * September 18 conversion rates, plus June 30 preferred as-converted ~10.308m, plus 15m period-weighted participating instruments (assumption; not dated current)",
+        "total_common_Aeq_m": 1865.9424511639,
         "preferred_Aeq_m": 10.308,
-        "central_m": 1892.3552595289,
-        "low_m": 1877.3552595289,
-        "high_m": 1910,
-        "upper_stress_basis": "Timing mismatch July shares/June rates; participation and litigation-adjusted conversions. 15m earnings participating securities are period weighted, not exact current awards",
+        "central_m": 1891.2504511639,
+        "low_m": 1876.2504511639,
+        "high_m": 1909,
+        "upper_stress_basis": "Mixed measurement dates and speculative stock awards: July ordinary share amounts versus Sept exchange factors; no SEC-certified spot fully diluted denominator",
         "confidence": "provisional_class_equivalent",
-        "status": "class_factors_verified_different_dates",
+        "status": "updated_sep2026_8k_rates_mixed_dates",
         "evidence": [
           {
             "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
@@ -396,8 +396,20 @@
               "classCrate": 4,
               "participating_q2_m": 15
             }
+          },
+          {
+            "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm",
+            "location": "September 23 2026 Form 8-K, Item 8.01",
+            "values": {
+              "B1": 1.54,
+              "B2": 1.4924,
+              "B3": 1.4773,
+              "escrow_deposit_musd": 405
+            },
+            "note": "Supersedes 2026-06-25 conversion factors; exact class counts date July 21 not same as conversion date September 18"
           }
-        ]
+        ],
+        "conversion_source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm"
       },
       "cash_anchor": {
         "anchor": "FY2025 CFO−purchases of property equipment and technology",
@@ -420,14 +432,14 @@
             "t_pct": 2
           },
           "equity_aggregate_musd": 194930.44,
-          "equity_per_share_usd": 103.01,
+          "equity_per_share_usd": 103.07,
           "share_count_sensitivity": {
-            "low_dilution_value_usd": 103.83,
-            "high_dilution_value_usd": 102.06
+            "low_dilution_value_usd": 103.89,
+            "high_dilution_value_usd": 102.11
           },
           "terminal_weight_pct": 43.16,
-          "implied_price_to_value_pct": 396.0,
-          "margin_price_to_value_pct": -296.0,
+          "implied_price_to_value_pct": 395.8,
+          "margin_price_to_value_pct": -295.8,
           "cashflows": [
             15900.0,
             16854.0,
@@ -450,14 +462,14 @@
             "t_pct": 2.5
           },
           "equity_aggregate_musd": 399563.04,
-          "equity_per_share_usd": 211.15,
+          "equity_per_share_usd": 211.27,
           "share_count_sensitivity": {
-            "low_dilution_value_usd": 212.83,
-            "high_dilution_value_usd": 209.2
+            "low_dilution_value_usd": 212.96,
+            "high_dilution_value_usd": 209.3
           },
           "terminal_weight_pct": 53.88,
-          "implied_price_to_value_pct": 193.2,
-          "margin_price_to_value_pct": -93.2,
+          "implied_price_to_value_pct": 193.1,
+          "margin_price_to_value_pct": -93.1,
           "cashflows": [
             21090.0,
             23409.9,
@@ -480,14 +492,14 @@
             "t_pct": 3
           },
           "equity_aggregate_musd": 822379.6,
-          "equity_per_share_usd": 434.58,
+          "equity_per_share_usd": 434.83,
           "share_count_sensitivity": {
-            "low_dilution_value_usd": 438.05,
-            "high_dilution_value_usd": 430.57
+            "low_dilution_value_usd": 438.31,
+            "high_dilution_value_usd": 430.79
           },
           "terminal_weight_pct": 65.35,
-          "implied_price_to_value_pct": 93.9,
-          "margin_price_to_value_pct": 6.1,
+          "implied_price_to_value_pct": 93.8,
+          "margin_price_to_value_pct": 6.2,
           "cashflows": [
             26450.0,
             30417.5,
@@ -502,7 +514,7 @@
           ]
         }
       },
-      "base_cash_required_to_match_last_price_musd": 36706.0,
+      "base_cash_required_to_match_last_price_musd": 36685.2,
       "additional_issues": [
         "No completed FY2026 accounts as of Oct25",
         "Multiclass and litigation conversion rates change",
