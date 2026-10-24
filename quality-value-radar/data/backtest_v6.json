@@ -1,0 +1,7 @@
+{
+  "schema": "qvr-pit-backtest-v6",
+  "status": "pending_first_run",
+  "tickers": {},
+  "measuredCount": 0,
+  "strategyPerformanceClaim": false
+}
