@@ -24,8 +24,6 @@ def company_cash(facts, history):
 def check():
     data=json.loads(P.read_text())
     reviewed=0
-    directory=base.fetch_json("https://www.sec.gov/files/company_tickers.json")
-    ciks={v["ticker"].upper():str(v["cik_str"]).zfill(10) for v in directory.values()}
     for ticker, row in data.get("companies",{}).items():
         row["legacyFairValue"]=row.get("fairValue")
         row["legacyMarginPct"]=row.get("marginOfSafetyPct")
@@ -42,7 +40,8 @@ def check():
         divergence=abs(model-relative)/min(model,relative)*100 if model and relative else None
         blocking=[]
         try:
-            cik=ciks[ticker]
+            cik=row.get("cik")
+            if not cik:raise ValueError("Issuer CIK missing from annual data")
             facts=base.fetch_json("https://data.sec.gov/api/xbrl/companyfacts/CIK"+cik+".json")["facts"]
             owner=company_cash(facts,history)
         except Exception as err:
