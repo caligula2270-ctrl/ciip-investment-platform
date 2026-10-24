@@ -1,0 +1,383 @@
+{
+  "schema": "ciip-per-share-inputs-v1",
+  "as_of": "2026-10-25",
+  "currency": "USD",
+  "methodology": "10Y equity cash-flow proxy (after interest, no separate cash/debt bridge), discount at shareholder hurdle; owner cash normalized forward-year assumptions are estimates not guidance. No double count SBC once owner cash has been haircut.",
+  "validation": "Not statutory audit, not a fully verified future diluted share count. Point-in-time basic + contemporaneous EPS incremental dilution or class-conversion equation, with model uncertainty bands; all share inputs in millions.",
+  "companies": {
+    "MSFT": {
+      "name": "Microsoft",
+      "style": "cloud_and_ai_capex",
+      "denominator": {
+        "anchor_basic_m": 7425.545491,
+        "anchor_date": "2026-07-23",
+        "anchor_source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+        "incremental_earnings_dilution_m": 24,
+        "incremental_period": "FY2026",
+        "formula": "7425.545491 + 24 FY2026 treasury method stock-award equivalents",
+        "as_converted_m": null,
+        "central_m": 7449.545491,
+        "low_m": 7425.545491,
+        "high_m": 7503.545491,
+        "upper_stress_basis": "Nonvested awards 78m at 2026-06-30 are not all incremental; 24 FY diluted increase vs basic, upper bound adds 78m to basic, never both simultaneously",
+        "confidence": "modelled_not_certified",
+        "status": "dated_basic_and_annual_eps_reconciled",
+        "evidence": [
+          {
+            "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+            "location": "10-K cover, Note EPS, Note 17 employee plans",
+            "values": {
+              "basic_at_date": 7425545491,
+              "FY2026_dilutive_award_equivalents_m": 24,
+              "unvested_awards_m": 78
+            }
+          }
+        ]
+      },
+      "cash_anchor": {
+        "anchor": "FY2026 CFO−CAPEX−SBC economic cost",
+        "cfo_m": 182935,
+        "capex_m": 115948,
+        "sbc_m": 12405,
+        "derived_owner_cash_m": 54582,
+        "forward_base_justification": "FY2026 base 54.582bn after SBC; base forward 90bn requires lower net future datacenter reinvestment or higher CFO, neither management-guaranteed."
+      },
+      "scenarios": {
+        "conservador": {
+          "owner_cf1_m": 65000,
+          "g1_pct": 6,
+          "g2_pct": 3,
+          "ke_pct": 12,
+          "t_pct": 2
+        },
+        "base": {
+          "owner_cf1_m": 90000,
+          "g1_pct": 13,
+          "g2_pct": 7,
+          "ke_pct": 10,
+          "t_pct": 2.5
+        },
+        "optimista": {
+          "owner_cf1_m": 120000,
+          "g1_pct": 18,
+          "g2_pct": 9,
+          "ke_pct": 8.5,
+          "t_pct": 3
+        }
+      },
+      "red_flags": [
+        "CAPEX FY2026 is massive relative to CFO",
+        "Cash owner proxy assumes datacenter cycle change",
+        "Lease commitments and customer economics need model detail"
+      ],
+      "filing_ref": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "manual_signoff_required": true
+    },
+    "ADBE": {
+      "name": "Adobe",
+      "style": "software_sbc",
+      "denominator": {
+        "anchor_basic_m": 389.2,
+        "anchor_date": "2026-09-18",
+        "anchor_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+        "incremental_earnings_dilution_m": 0.5,
+        "incremental_period": "Q3 FY2026",
+        "formula": "389.2 dated basic + 0.5 Q3 FY2026 incremental diluted EPS",
+        "central_m": 389.7,
+        "low_m": 389.2,
+        "high_m": 400.1,
+        "upper_stress_basis": "10.4m FY2026 Q3 antidilutive potential shares are an extreme overhang stress, not automatically issuable at current spot",
+        "confidence": "modelled_not_certified",
+        "status": "dated_basic_and_quarter_eps_reconciled",
+        "evidence": [
+          {
+            "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+            "location": "10-Q cover; Note 12 EPS",
+            "values": {
+              "basic_at_date_m": 389.2,
+              "quarter_diluted_eps_shares_m": 395.5,
+              "quarter_basic_weighted_m": 395,
+              "incremental_m": 0.5,
+              "antidilutive_m": 10.4
+            }
+          }
+        ]
+      },
+      "cash_anchor": {
+        "anchor": "median 3Y CFO−CAPEX minus median SBC",
+        "fy2025_fcf_m": 9852,
+        "fcf_normalized_m": 7873,
+        "sbc_median_m": 1833,
+        "owner_cash_m": 6040,
+        "forward_base_justification": "Forward owner 6.5bn vs trailing normalized 6.04bn requires ~7.6% improvement; forecast not observed."
+      },
+      "scenarios": {
+        "conservador": {
+          "owner_cf1_m": 5000,
+          "g1_pct": 3,
+          "g2_pct": 2,
+          "ke_pct": 12,
+          "t_pct": 2
+        },
+        "base": {
+          "owner_cf1_m": 6500,
+          "g1_pct": 8,
+          "g2_pct": 4,
+          "ke_pct": 10.5,
+          "t_pct": 2.5
+        },
+        "optimista": {
+          "owner_cf1_m": 8000,
+          "g1_pct": 12,
+          "g2_pct": 6,
+          "ke_pct": 9,
+          "t_pct": 3
+        }
+      },
+      "red_flags": [
+        "SBC and repurchases need consistent economic treatment",
+        "Adobe AI retention/pricing needs verification",
+        "Current basic and quarterly weighted-average are different dates"
+      ],
+      "filing_ref": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+      "manual_signoff_required": true
+    },
+    "V": {
+      "name": "Visa",
+      "style": "payment_network_equity_conversion",
+      "denominator": {
+        "date_basic": "2026-07-21",
+        "date_conversion": "2026-06-30",
+        "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+        "class_counts_m": {
+          "A": 1704.112694,
+          "B1": 2.180148,
+          "B2": 0.486669,
+          "B3": 60.589871,
+          "C": 17.059152
+        },
+        "class_A_conversion_factors": {
+          "A": 1,
+          "B1": 1.5445,
+          "B2": 1.5014,
+          "B3": 1.4953,
+          "C": 4
+        },
+        "preferred_eq_asof_20260630_m": {
+          "seriesA": 7,
+          "seriesB": 1.166,
+          "seriesC": 2.142
+        },
+        "employee_participating_equiv_m": 15,
+        "formula": "SUM(July21 ordinary share classes*June30 conversion rates) + June30 preferred as-converted 10.308m + provisional Q2 EPS participating instruments 15m",
+        "total_common_Aeq_m": 1867.0472595289,
+        "preferred_Aeq_m": 10.308,
+        "central_m": 1892.3552595289,
+        "low_m": 1877.3552595289,
+        "high_m": 1910,
+        "upper_stress_basis": "Timing mismatch July shares/June rates; participation and litigation-adjusted conversions. 15m earnings participating securities are period weighted, not exact current awards",
+        "confidence": "provisional_class_equivalent",
+        "status": "class_factors_verified_different_dates",
+        "evidence": [
+          {
+            "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+            "location": "Form 10-Q cover; Note 11 share class conversion table; Note 12 weighted diluted EPS",
+            "values": {
+              "AsConvertedJune2026_m": 1880,
+              "classB1rate": 1.5445,
+              "classB2rate": 1.5014,
+              "classB3rate": 1.4953,
+              "classCrate": 4,
+              "participating_q2_m": 15
+            }
+          }
+        ]
+      },
+      "cash_anchor": {
+        "anchor": "FY2025 CFO−purchases of property equipment and technology",
+        "cfo2025_m": 23059,
+        "capex2025_m": 1482,
+        "fcf2025_m": 21577,
+        "fy2026_9m_cfo_m": 16342,
+        "fy2026_9m_capex_m": 1178,
+        "fy2026_9m_fcf_m": 15164,
+        "forward_base_justification": "Forward owner 19bn, haircut versus 21.577bn FY2025 for settlement/litigation and client incentive uncertainties; no FY2026 10-K at analysis date."
+      },
+      "scenarios": {
+        "conservador": {
+          "owner_cf1_m": 15000,
+          "g1_pct": 6,
+          "g2_pct": 3,
+          "ke_pct": 11.5,
+          "t_pct": 2
+        },
+        "base": {
+          "owner_cf1_m": 19000,
+          "g1_pct": 11,
+          "g2_pct": 5,
+          "ke_pct": 10,
+          "t_pct": 2.5
+        },
+        "optimista": {
+          "owner_cf1_m": 23000,
+          "g1_pct": 15,
+          "g2_pct": 7,
+          "ke_pct": 8.5,
+          "t_pct": 3
+        }
+      },
+      "red_flags": [
+        "No completed FY2026 accounts as of Oct25",
+        "Multiclass and litigation conversion rates change",
+        "Restricted litigation settlement cash and client incentive economics"
+      ],
+      "filing_ref": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+      "manual_signoff_required": true
+    },
+    "MA": {
+      "name": "Mastercard",
+      "style": "payment_network",
+      "denominator": {
+        "date_basic": "2026-07-27",
+        "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+        "class_counts_m": {
+          "A": 869.464115,
+          "B": 6.545825
+        },
+        "class_A_conversion_factors": {
+          "A": 1,
+          "B": 1
+        },
+        "basic_equivalent_m": 876.00994,
+        "eps_incremental_m": 1,
+        "eps_period": "Q2 FY2026",
+        "formula": "Class A 869.464115m + Class B 6.545825m (1:1 exchange) + 1m Q2 FY2026 incremental weighted-average stock awards",
+        "central_m": 877.00994,
+        "low_m": 876.00994,
+        "high_m": 885,
+        "upper_stress_basis": "7.99m future share-award or share-count change stress, not a presently outstanding number",
+        "confidence": "modelled_not_certified",
+        "status": "class_conversion_and_eps_reconciled",
+        "evidence": [
+          {
+            "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+            "location": "10-Q cover; Note 4 diluted EPS; Note 10 Common Stock Activity",
+            "values": {
+              "classA": 869464115,
+              "classB": 6545825,
+              "EPS_q2_2026_diluted_m": 883,
+              "EPS_q2_2026_basic_m": 882,
+              "incremental_options_m": 1
+            }
+          }
+        ]
+      },
+      "cash_anchor": {
+        "anchor": "FY2025 CFO−CAPEX",
+        "cfo2025_m": 17648,
+        "capex2025_m": 489,
+        "fcf2025_m": 17159,
+        "net_income2025_m": 14968,
+        "forward_base_justification": "Forward cash 16bn below FY25 CFO−CAPEX 17.159bn, but above FY25 net income; incentive settlement movements not fully normalized."
+      },
+      "scenarios": {
+        "conservador": {
+          "owner_cf1_m": 12000,
+          "g1_pct": 7,
+          "g2_pct": 3,
+          "ke_pct": 11.5,
+          "t_pct": 2
+        },
+        "base": {
+          "owner_cf1_m": 16000,
+          "g1_pct": 11,
+          "g2_pct": 5,
+          "ke_pct": 10,
+          "t_pct": 2.5
+        },
+        "optimista": {
+          "owner_cf1_m": 19000,
+          "g1_pct": 14,
+          "g2_pct": 7,
+          "ke_pct": 8.5,
+          "t_pct": 3
+        }
+      },
+      "red_flags": [
+        "Customer incentives and prepaid balances distort CFO timing",
+        "Litigation settlements and open antitrust cases",
+        "Economic class B conversion and RSU time drift"
+      ],
+      "filing_ref": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+      "manual_signoff_required": true
+    },
+    "TXN": {
+      "name": "Texas Instruments",
+      "style": "industrial_fab_semiconductor",
+      "denominator": {
+        "anchor_basic_m": 913.770316,
+        "anchor_date": "2026-10-14",
+        "anchor_source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+        "quarter_basic_weighted_m": 914,
+        "quarter_diluted_weighted_m": 921,
+        "quarterly_incremental_m": 7,
+        "formula": "913.770316 dated outstanding + 7m Q3 FY2026 incremental weighted-average dilution",
+        "central_m": 920.770316,
+        "low_m": 913.770316,
+        "high_m": 930,
+        "upper_stress_basis": "Additional 9.23m options/share-award and subsequent issue stress, not observed actual",
+        "confidence": "modelled_not_certified",
+        "status": "dated_basic_and_quarter_eps_reconciled",
+        "evidence": [
+          {
+            "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+            "location": "10-Q cover; Q3 2026 income statement diluted EPS",
+            "values": {
+              "basic_on_Oct14": 913770316,
+              "Q3_basic_weighted_m": 914,
+              "Q3_diluted_weighted_m": 921
+            }
+          }
+        ]
+      },
+      "cash_anchor": {
+        "anchor": "LTM CFO and industrial cycle stress; CHIPS grants stripped from normal owner cash",
+        "cfo_LTM_m": 9896,
+        "fy2025_fcf_m": 2603,
+        "fy2025_capex_m": 4550,
+        "company_adjusted_fcf_LTM_m": 8422,
+        "forward_base_justification": "Forward owner 5.5bn presumes continued 2026 fab CAPEX downshift and CFO resilience, excludes CHIPS receipts as recurring; FY2025 FCF only 2.603bn."
+      },
+      "scenarios": {
+        "conservador": {
+          "owner_cf1_m": 2200,
+          "g1_pct": 2,
+          "g2_pct": 1,
+          "ke_pct": 12,
+          "t_pct": 1.5
+        },
+        "base": {
+          "owner_cf1_m": 5500,
+          "g1_pct": 8,
+          "g2_pct": 4,
+          "ke_pct": 10.5,
+          "t_pct": 2
+        },
+        "optimista": {
+          "owner_cf1_m": 8000,
+          "g1_pct": 12,
+          "g2_pct": 5,
+          "ke_pct": 9,
+          "t_pct": 2.5
+        }
+      },
+      "red_flags": [
+        "CHIPS grants are not recurring operating cash",
+        "Industrial CAPEX and utilization cyclical",
+        "Inventory and customer end markets uncertain"
+      ],
+      "filing_ref": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+      "manual_signoff_required": true
+    }
+  }
+}
