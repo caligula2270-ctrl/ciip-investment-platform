@@ -98,5 +98,8 @@ def analyze():
         "automaticBuySignals":0}
     INTRINSIC.write_text(json.dumps(u,ensure_ascii=False,indent=2)+"\n")
     OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n")
+    assert not result["signalsAllowed"]
+    assert all(not x["automaticBuySignal"] for x in result["companies"].values())
+    assert result["counters"]["companies"]>=16
     print("v5 reliability run:",result["counters"])
 if __name__=="__main__":analyze()
