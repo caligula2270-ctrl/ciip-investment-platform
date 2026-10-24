@@ -31,6 +31,7 @@ jobs:
           python -m json.tool quality-value-radar/data/international.json > /dev/null
           python -m py_compile quality-value-radar/scripts/enrich_sec_metrics.py
           python -m py_compile quality-value-radar/scripts/value_international.py
+          python -m py_compile quality-value-radar/scripts/economic_review_v4.py
       - name: Generar análisis SEC y precios históricos
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
@@ -54,6 +55,8 @@ jobs:
           assert data.get('enhancement',{}).get('version')=='2.0', 'TTM/ROIC v2 missing'
           assert data.get('economicUpgrade',{}).get('version')=='4.0-precheck'
           for ticker,row in data['companies'].items():
+              assert row.get('economicReview',{}).get('status') in ('requires_reconciliation','pending_recalculation')
+              assert row.get('classification') != 'possible_discount', 'Economic review is not investment-grade'
               if row.get('classification')=='possible_discount':
                   assert row['status']=='ready' and row['fundamentalQualityGate'] and row['adjustedRoic']['status']=='available'
                   assert row['fairValue']>row['quote']['price']>0
