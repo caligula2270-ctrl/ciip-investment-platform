@@ -1,7 +1,7 @@
 {
   "schema": "ciip-issuer-research-audit-v1",
-  "generated_at": "2026-10-24T22:34:08.845912+00:00",
-  "sec_generated_at": "2026-10-24T22:33:49.303955+00:00",
+  "generated_at": "2026-10-24T22:35:59.621246+00:00",
+  "sec_generated_at": "2026-10-24T22:35:36.416225+00:00",
   "source_review_as_of": "2026-10-24",
   "methodology": "See audits/PLAYBOOK.md; investment research, not an independent or statutory audit",
   "companies": {
@@ -10,7 +10,7 @@
       "company": "Microsoft Corporation",
       "sector": "Cloud / enterprise software / AI datacenters",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-24T22:34:08.845912+00:00",
+      "generated_at": "2026-10-24T22:35:59.621246+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-K",
@@ -238,7 +238,7 @@
       "company": "Adobe Inc.",
       "sector": "Software subscription / creative and document tools",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-24T22:34:08.845912+00:00",
+      "generated_at": "2026-10-24T22:35:59.621246+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",
@@ -463,7 +463,7 @@
       "company": "Visa Inc.",
       "sector": "Global payments network",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-24T22:34:08.845912+00:00",
+      "generated_at": "2026-10-24T22:35:59.621246+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",
@@ -648,7 +648,7 @@
       "company": "Mastercard Incorporated",
       "sector": "Global payments network and value-added services",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-24T22:34:08.845912+00:00",
+      "generated_at": "2026-10-24T22:35:59.621246+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",
@@ -838,7 +838,7 @@
       "company": "Texas Instruments Incorporated",
       "sector": "Semiconductors / industrial manufacturing",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-24T22:34:08.845912+00:00",
+      "generated_at": "2026-10-24T22:35:59.621246+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",
