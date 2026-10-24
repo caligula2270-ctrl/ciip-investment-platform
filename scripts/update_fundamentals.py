@@ -198,11 +198,30 @@ def annual_history(facts, as_of, count=5):
         "status":"historical_ready" if normalized is not None and age is not None and age<=520 else "insufficient",
     }
 
+def requested_tickers():
+    """SEC coverage extends to any ticker added to the explicit audit manifest.
+
+    New names remain sector-blocked by default until their sector model and
+    capital share conversion are reviewed.
+    """
+    candidates=list(TICKERS)
+    manifest=ROOT/"audits"/"evidence.json"
+    if manifest.exists():
+        try:
+            obj=json.loads(manifest.read_text(encoding="utf-8"))
+            for ticker in obj.get("entities",{}):
+                if ticker.isascii() and ticker.isupper() and 1<=len(ticker)<=12 and ticker not in candidates:
+                    candidates.append(ticker)
+        except (ValueError,TypeError,OSError) as exc:
+            raise SystemExit(f"Invalid issuer audit manifest: {exc}")
+    return candidates
+
 def main():
+    tickers=requested_tickers()
     mapping=get("https://www.sec.gov/files/company_tickers.json")
     cikmap={v["ticker"].upper():str(v["cik_str"]).zfill(10) for v in mapping.values()}
     result={"schema":"ciip-fundamentals-v1","source":"SEC EDGAR companyfacts (US GAAP)","generated_at":dt.datetime.now(dt.timezone.utc).isoformat(),"companies":{},"unavailable":{},"caveat":"Annual flows: latest matching 10-K fiscal year, Form 10-Q year-to-date excluded. Balance sheet values can be later quarterly instants. Capex is a positive cash outflow. Reported long-term debt excludes current portion when tagged LongTermDebtNoncurrent. Annual 5-year history is shown as supplied by 10-K; three-year median CFO-CAPEX is a provisional normalization. Diluted shares are weighted-average and must be verified. CAPEX normalized conservatively; working capital movements only partial. Share reconciliation is provisional and blocks multi-class situations. Sector-specific gates govern DCF. No audited ROIC or investment advice."}
-    for ticker in TICKERS:
+    for ticker in tickers:
         cik=cikmap.get(ticker)
         if not cik:
             result["unavailable"][ticker]="Ticker not found in SEC mapping"
@@ -240,7 +259,7 @@ def main():
     out=ROOT/"fundamentals-auto.json"
     out.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     available=sum(any(x for x in c["metrics"].values()) for c in result["companies"].values())
-    print(f"SEC fundamentals: {available} entities with facts / {len(TICKERS)} targets; failures={len(result['unavailable'])}")
+    print(f"SEC fundamentals: {available} entities with facts / {len(tickers)} targets; failures={len(result['unavailable'])}")
     if available<5:
         print("ERROR: insufficient SEC fundamentals coverage",file=sys.stderr)
         sys.exit(1)
