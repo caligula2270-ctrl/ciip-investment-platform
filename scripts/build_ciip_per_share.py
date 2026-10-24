@@ -102,14 +102,17 @@ def audit_model(ticker,inputs,audit,market,as_of):
     }
 
 def build(config,audit,market,as_of):
-    if set(config["companies"])!=set(audit["companies"]):
-        raise ValueError("Configured and audited company universes differ")
+    configured=set(config["companies"])
+    audited=set(audit["companies"])
+    if not configured.issubset(audited):
+        raise ValueError("A valuation model cannot exist without an audited SEC company dossier")
     return {"schema":"ciip-per-share-valuation-v1",
             "generated_at":dt.datetime.now(dt.timezone.utc).isoformat(),
             "as_of":as_of.isoformat(),
             "source_review_as_of":audit.get("source_review_as_of"),
             "evidence_urls":{"inputs":"audits/per_share_inputs.json","audit":"audits/latest.json","market":"market-auto.json"},
             "readiness":"SCREEN_GRADE_NOT_DECISION_READY",
+            "not_yet_modelled":sorted(audited-configured),
             "methodology":"Discount future hypothetical owner-cash proxy at cost of equity; do not add cash or subtract debt a second time. Does not guarantee FCFE or make forecasts official.",
             "companies":{t:audit_model(t,config,audit,market,as_of) for t in config["companies"]}}
 
