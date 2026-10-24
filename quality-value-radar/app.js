@@ -20,6 +20,7 @@ let reliabilityV5 = {companies:{},counters:{},status:'pending_first_execution'};
 let opportunityV6 = {models:{},researchRank:[],status:'pending_first_run'};
 let backtestV6 = {tickers:{},status:'pending_first_run'};
 let alertsV6 = {alerts:[]};
+let sensitivityV7 = {models:{}};
 let analysisStatus = 'Análisis fundamental todavía no cargado';
 let quotationsNotice = 'Referencias fechadas; no son cotizaciones en directo';
 let activeModal = null;
@@ -62,6 +63,28 @@ function reliabilityPanel(){
 }
 async function refreshReliability(){
  try{const r=await fetch('data/reliability_v5.json',{cache:'no-store'});if(r.ok){const v=await r.json();if(v.schema==='qvr-v5-evidence')reliabilityV5=v;}}catch(e){}render();
+}
+
+function sensitivityV7Panel(){
+ const m=sensitivityV7.models||{};
+ const items=['ADBE','INTU','CPRT','CSU.TO','ASML','DNP.WA'];
+ const cards=items.filter(t=>m[t]).map(t=>{
+  const x=m[t],units=x.currency||'';
+  const cap=x.capex||{},dil=x.netShares||{},acq=x.acquisitions||{};
+  const impact=(cap.reportedCapexStress||[]).map(y=>'<span>'+fmtN(y.changeInTotalCapexPct,0)+'% CAPEX: '+money(y.valuePerShare,units)+'</span>').join(' · ');
+  const dilution=(dil.cases||[]).map(y=>'<span>'+fmtN(y.annualNetDilutedShareChangePct,1)+'%/año: '+money(y.valuePerShare,units)+'</span>').join(' · ');
+  return '<article class="stock-card"><div class="eyebrow">'+esc(t)+' · sensibilidad</div><h3>Base '+money(x.baselineIndicativeValue,units)+'</h3>'+
+  '<p class="small"><b>CAPEX (estrés, no desglose real):</b> '+(impact||esc(cap.reason||'No conciliado'))+'</p>'+
+  '<p class="small"><b>Acciones netas:</b> '+(dilution||'Sin base armonizada')+'</p>'+
+  '<p class="tiny muted"><b>Adquisiciones:</b> '+esc(acq.status||'Sin comprobación')+'</p>'+
+  '<div class="mini-note">Sin precio de compra validado. Los escenarios son contrafactuales, no datos de la empresa.</div></article>';
+ }).join('');
+ return '<section class="panel" style="margin:18px 0"><div class="panel-head"><div><h3>Sensibilidad de valoración v7</h3><p>Inversiones, dilución y retorno sobre capital adquirido</p></div><span class="pill neutral">Sin señal automática</span></div>'+
+ '<div class="cards-3">'+(cards||'<p>Resultados pendientes de primera ejecución</p>')+'</div>'+
+ '<p class="tiny muted">Al reducir CAPEX sin modificar crecimiento, los flujos se exageran; el análisis también calcula un escenario que reduce el crecimiento junto a la inversión. Las emisiones de acciones y la compensación en acciones pueden solaparse: no sumar todos los impactos.</p></section>';
+}
+async function refreshSensitivityV7(){
+ try{const r=await fetch('data/sensitivity_v7.json',{cache:'no-store'});if(r.ok){const d=await r.json();if(d.schema==='qvr-sensitivity-v7')sensitivityV7=d;}}catch(e){}render();
 }
 
 function opportunitiesV6Panel(){
@@ -111,7 +134,7 @@ function autoQualityPanel(){
       statCard('Sin cobertura completa',unsupported,'Excluidas o pendientes')+
       statCard('Tasa de descuento base','11,5 %','Hipótesis explícita, editable en código')+'</div>'+
     '<div class="cards-3">'+(opportunities.length?opportunities.map(({c,a})=>card(c,a)).join(''):'<div class="empty">Sin oportunidades que cumplan todos los requisitos. Esto no implica que las empresas estén caras.</div>')+'</div>'+
-    opportunitiesV6Panel()+reliabilityPanel()+internationalPanel()+
+    opportunitiesV6Panel()+sensitivityV7Panel()+reliabilityPanel()+internationalPanel()+
     '<details class="collapsible"><summary>Ver todas las valoraciones automáticas y datos insuficientes</summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Empresa</th><th>Estado</th><th>Valor razonable*</th><th>Descuento</th><th></th></tr></thead><tbody>'+
     companies().map(c=>{const a=autoAnalysis.companies?.[c.s],reason=a?.reason||autoAnalysis.exclusions?.[c.s]||autoAnalysis.unavailable?.[c.s]||'Sin modelo verificable';return '<tr><td>'+esc(c.n)+' <small>'+esc(c.s)+'</small></td><td>'+(a?.status==='ready'?'Con modelo':esc(reason))+'</td><td>'+money(a?.fairValue,a?.currency)+'</td><td>'+pct(a?.status==='ready'?a.marginOfSafetyPct:null)+'</td><td>'+(a?'<button class="btn btn-quiet btn-sm" data-auto-detail="'+esc(c.s)+'">Detalles</button>':'—')+'</td></tr>'}).join('')+
     '</tbody></table></div></details><p class="tiny muted">* Mezcla 60% de DCF simplificado a 5 años sobre FCF normalizado y 40% de mediana histórica P/FCF, calculada con cotizaciones en fechas fiscales. No sustituye una valoración sectorial ni ajuste completo por deuda, SBC, adquisiciones o ciclo del capital de trabajo.</p></section>';
@@ -234,6 +257,6 @@ document.addEventListener('change',ev=>{const t=ev.target;if(t.id==='filter-sect
 document.addEventListener('input',ev=>{if(ev.target.id==='search-company'){state.filters.term=ev.target.value;persist();const pos=ev.target.selectionStart;render();const el=document.getElementById('search-company');if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&activeModal)closeModal();if(ev.key==='Escape'&&!document.getElementById('modal-root').classList.contains('hidden'))closeModal();});
 document.getElementById('modal-root').addEventListener('click',ev=>{if(ev.target.id==='modal-root')closeModal();});
-render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();refreshOpportunityV6();
+render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();refreshOpportunityV6();refreshSensitivityV7();
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 })();
