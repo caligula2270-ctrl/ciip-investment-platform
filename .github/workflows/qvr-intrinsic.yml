@@ -6,6 +6,8 @@ on:
       - 'quality-value-radar/scripts/economic_review_v4.py'
       - 'quality-value-radar/scripts/reliability_v5.py'
       - 'quality-value-radar/scripts/opportunity_v6.py'
+      - 'quality-value-radar/scripts/opportunity_alerts_v6.py'
+      - 'quality-value-radar/scripts/opportunity_v6.py'
   schedule:
     - cron: '15 9 * * 3'
 permissions:
