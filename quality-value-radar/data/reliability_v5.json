@@ -1,7 +1,1544 @@
 {
   "schema": "qvr-v5-evidence",
-  "status": "pending_first_execution",
-  "companies": {},
-  "counters": {},
-  "signalsAllowed": false
+  "generatedAt": "2026-10-24T21:57:27.765995+00:00",
+  "policyVersion": "5.0",
+  "signalsAllowed": false,
+  "companies": {
+    "CPRT": {
+      "company": "CPRT",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2024-07-31",
+            "sbc": 35234000.0,
+            "acquisitionOutlay": -17662000.0,
+            "ownerFcf": 926340000.0,
+            "ownerFcfPerShare": 0.9502563255662071
+          },
+          {
+            "year": "2025-07-31",
+            "sbc": 38004000.0,
+            "acquisitionOutlay": 1223000.0,
+            "ownerFcf": 1192756000.0,
+            "ownerFcfPerShare": 1.2201239916799373
+          },
+          {
+            "year": "2026-07-31",
+            "sbc": 38818000.0,
+            "acquisitionOutlay": 5004000.0,
+            "ownerFcf": 1228311000.0,
+            "ownerFcfPerShare": 1.2837305888350752
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 1.2201239916799373,
+        "acquisitionHistoryComplete": true,
+        "normalizedDcfBase": 17.81,
+        "historicalOwnerPfcfMedian": 37.15,
+        "relativeHistoricalValue": 45.32,
+        "modelsDifferencePct": 154.5,
+        "revenueGrowthHypothesisPct": 10.0,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 28.82
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2024-07-31",
+          "reportedCapexUSD": 510990000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-07-31",
+          "reportedCapexUSD": 568990000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2026-07-31",
+          "reportedCapexUSD": 337363000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [
+        {
+          "target": "ACV Auctions",
+          "announced": "2026-09-10",
+          "closed": "2026-10-16",
+          "considerationUSDMillions": 1900,
+          "considerationNature": "announced equity consideration, not confirmed enterprise purchase price",
+          "capitalRequiredRatePct": 12,
+          "standaloneIncrementalFcfUSDMillions": null,
+          "realizedIncrementalNopatUSDMillions": null,
+          "managementExpectation": "accretive to EPS FY2028 and beyond (not a realized return)",
+          "sourceUrl": "https://www.sec.gov/Archives/edgar/data/900075/000119312526423478/d129535dex991.htm",
+          "announcementUrl": "https://www.copart.com/content/us/en/press-releases/copart-to-acquire-acv",
+          "minimumAnnualIncrementalOwnerCashMillions": 228.0,
+          "realizedReturnPct": null,
+          "returnStatus": "pending_post_close_evidence"
+        },
+        {
+          "period": "2024-07-31",
+          "reportedAcquisitionCashUSD": -17662000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2025-07-31",
+          "reportedAcquisitionCashUSD": 1223000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2026-07-31",
+          "reportedAcquisitionCashUSD": 5004000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        }
+      ],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 26.49,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "Acquisition realized ROI unverified",
+        "ROIC lacks complete comparable capital history"
+      ],
+      "automaticBuySignal": false
+    },
+    "AMZN": {
+      "company": "AMZN",
+      "ownerFcf": {
+        "status": "insufficient",
+        "observations": [],
+        "normalizedOwnerFcfPerShare": null,
+        "acquisitionHistoryComplete": false
+      },
+      "maintenanceGrowthCapex": [],
+      "acquisitionCohorts": [],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": null,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Owner FCF normalized from SBC is incomplete",
+        "ROIC lacks complete comparable capital history"
+      ],
+      "automaticBuySignal": false
+    },
+    "COST": {
+      "company": "COST",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2024-09-01",
+            "sbc": 818000000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 5811000000.0,
+            "ownerFcfPerShare": 13.06550184039825
+          },
+          {
+            "year": "2025-08-31",
+            "sbc": 860000000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 6977000000.0,
+            "ownerFcfPerShare": 15.685563736123516
+          },
+          {
+            "year": "2026-08-30",
+            "sbc": 924000000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 8458000000.0,
+            "ownerFcfPerShare": 19.031221210829248
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 15.685563736123516,
+        "acquisitionHistoryComplete": false,
+        "normalizedDcfBase": 221.15,
+        "historicalOwnerPfcfMedian": 60.14,
+        "relativeHistoricalValue": 943.32,
+        "modelsDifferencePct": 326.5,
+        "revenueGrowthHypothesisPct": 9.12,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 510.02
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2024-09-01",
+          "reportedCapexUSD": 4710000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-08-31",
+          "reportedCapexUSD": 5498000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2026-08-30",
+          "reportedCapexUSD": 6435000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 2.85,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated"
+      ],
+      "automaticBuySignal": false
+    },
+    "ADBE": {
+      "company": "ADBE",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2023-12-01",
+            "sbc": 1718000000.0,
+            "acquisitionOutlay": 0.0,
+            "ownerFcf": 5224000000.0,
+            "ownerFcfPerShare": 11.37879308556612
+          },
+          {
+            "year": "2024-11-29",
+            "sbc": 1833000000.0,
+            "acquisitionOutlay": 0.0,
+            "ownerFcf": 6040000000.0,
+            "ownerFcfPerShare": 13.431155595071765
+          },
+          {
+            "year": "2025-11-28",
+            "sbc": 1942000000.0,
+            "acquisitionOutlay": 17000000.0,
+            "ownerFcf": 7910000000.0,
+            "ownerFcfPerShare": 18.52459053999188
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 13.431155595071765,
+        "acquisitionHistoryComplete": true,
+        "normalizedDcfBase": 196.07,
+        "historicalOwnerPfcfMedian": 38.41,
+        "relativeHistoricalValue": 515.94,
+        "modelsDifferencePct": 163.1,
+        "revenueGrowthHypothesisPct": 10.0,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 324.02
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2023-12-01",
+          "reportedCapexUSD": 360000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2024-11-29",
+          "reportedCapexUSD": 183000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-11-28",
+          "reportedCapexUSD": 179000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [
+        {
+          "period": "2023-12-01",
+          "reportedAcquisitionCashUSD": 0.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2024-11-29",
+          "reportedAcquisitionCashUSD": 0.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2025-11-28",
+          "reportedAcquisitionCashUSD": 17000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        }
+      ],
+      "forwardCashDerived": {
+        "kind": "model_derived_not_consensus",
+        "basis": "management revenue range × median historical FCF/revenue",
+        "historicalFcfMarginPct": 36.61,
+        "forwardReportedFcfLowMillions": 9729.5,
+        "forwardReportedFcfHighMillions": 9747.8,
+        "forwardOwnerFcfLowMillions": null,
+        "forwardOwnerFcfHighMillions": null,
+        "warning": "Not management free-cash-flow guidance. SBC and acquisitions not forecast."
+      },
+      "guidance": {
+        "issuer": "Adobe",
+        "asOf": "2026-09-10",
+        "fiscalYear": 2026,
+        "periodEnd": "2026-11-27",
+        "unit": "USD",
+        "scale": "millions",
+        "revenueLow": 26576,
+        "revenueHigh": 26626,
+        "sourceType": "management_guidance",
+        "forecastCashFlowProvided": false,
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+        "sourceLabel": "Adobe Q3 FY2026 earnings release"
+      },
+      "forecastLabels": {
+        "management": true,
+        "consensusVerified": false,
+        "modelDerived": true,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 36.61,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "Forward owner FCF not independently guided or consensus-verified",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "Acquisition realized ROI unverified"
+      ],
+      "automaticBuySignal": false
+    },
+    "AAON": {
+      "company": "AAON",
+      "ownerFcf": {
+        "status": "insufficient",
+        "observations": [],
+        "normalizedOwnerFcfPerShare": null,
+        "acquisitionHistoryComplete": false
+      },
+      "maintenanceGrowthCapex": [],
+      "acquisitionCohorts": [],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": null,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Owner FCF normalized from SBC is incomplete",
+        "ROIC lacks complete comparable capital history"
+      ],
+      "automaticBuySignal": false
+    },
+    "DE": {
+      "company": "DE",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2023-10-29",
+            "sbc": 130000000.0,
+            "acquisitionOutlay": 82000000.0,
+            "ownerFcf": 6961000000.0,
+            "ownerFcfPerShare": 23.709120843322523
+          },
+          {
+            "year": "2024-10-27",
+            "sbc": 208000000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 7383000000.0,
+            "ownerFcfPerShare": 26.643769621920697
+          },
+          {
+            "year": "2025-11-02",
+            "sbc": 151000000.0,
+            "acquisitionOutlay": 101000000.0,
+            "ownerFcf": 5948000000.0,
+            "ownerFcfPerShare": 21.891838793244794
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 23.709120843322523,
+        "acquisitionHistoryComplete": false,
+        "normalizedDcfBase": 285.07,
+        "historicalOwnerPfcfMedian": 15.51,
+        "relativeHistoricalValue": 367.83,
+        "modelsDifferencePct": 29.0,
+        "revenueGrowthHypothesisPct": 5.15,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 318.18
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2023-10-29",
+          "reportedCapexUSD": 1498000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2024-10-27",
+          "reportedCapexUSD": 1640000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-11-02",
+          "reportedCapexUSD": 1360000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [
+        {
+          "period": "2023-10-29",
+          "reportedAcquisitionCashUSD": 82000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2025-11-02",
+          "reportedAcquisitionCashUSD": 101000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        }
+      ],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 13.35,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "Acquisition realized ROI unverified",
+        "ROIC lacks complete comparable capital history"
+      ],
+      "automaticBuySignal": false
+    },
+    "DHR": {
+      "company": "DHR",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2023-12-31",
+            "sbc": 306000000.0,
+            "acquisitionOutlay": 5610000000.0,
+            "ownerFcf": 5475000000.0,
+            "ownerFcfPerShare": 7.367810067462377
+          },
+          {
+            "year": "2024-12-31",
+            "sbc": 288000000.0,
+            "acquisitionOutlay": 558000000.0,
+            "ownerFcf": 5008000000.0,
+            "ownerFcfPerShare": 6.793234743202417
+          },
+          {
+            "year": "2025-12-31",
+            "sbc": 298000000.0,
+            "acquisitionOutlay": 0.0,
+            "ownerFcf": 4962000000.0,
+            "ownerFcfPerShare": 6.929159429657795
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 6.929159429657795,
+        "acquisitionHistoryComplete": true,
+        "normalizedDcfBase": 73.15,
+        "historicalOwnerPfcfMedian": 33.04,
+        "relativeHistoricalValue": 228.95,
+        "modelsDifferencePct": 213.0,
+        "revenueGrowthHypothesisPct": 1.97,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 135.47
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2023-12-31",
+          "reportedCapexUSD": 1383000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2024-12-31",
+          "reportedCapexUSD": 1392000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-12-31",
+          "reportedCapexUSD": 1156000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [
+        {
+          "period": "2023-12-31",
+          "reportedAcquisitionCashUSD": 5610000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2024-12-31",
+          "reportedAcquisitionCashUSD": 558000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2025-12-31",
+          "reportedAcquisitionCashUSD": 0.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        }
+      ],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 22.18,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "Acquisition realized ROI unverified",
+        "ROIC lacks complete comparable capital history"
+      ],
+      "automaticBuySignal": false
+    },
+    "FIVE": {
+      "company": "FIVE",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2024-02-03",
+            "sbc": 17859000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 146710000.0,
+            "ownerFcfPerShare": 2.637622377239942
+          },
+          {
+            "year": "2025-02-01",
+            "sbc": 15589000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 91065000.0,
+            "ownerFcfPerShare": 1.6510622245766684
+          },
+          {
+            "year": "2026-01-31",
+            "sbc": 34680000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 377007000.0,
+            "ownerFcfPerShare": 6.80062616356601
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 2.637622377239942,
+        "acquisitionHistoryComplete": false,
+        "normalizedDcfBase": 38.5,
+        "historicalOwnerPfcfMedian": 56.8,
+        "relativeHistoricalValue": 149.82,
+        "modelsDifferencePct": 289.1,
+        "revenueGrowthHypothesisPct": 10.0,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 83.03
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2024-02-03",
+          "reportedCapexUSD": 335050000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-02-01",
+          "reportedCapexUSD": 323994000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2026-01-31",
+          "reportedCapexUSD": 174741000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 4.62,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "ROIC lacks complete comparable capital history"
+      ],
+      "automaticBuySignal": false
+    },
+    "FOUR": {
+      "company": "FOUR",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2023-12-31",
+            "sbc": 57000000.0,
+            "acquisitionOutlay": 170000000.0,
+            "ownerFcf": 275000000.0,
+            "ownerFcfPerShare": 141.60263554216868
+          },
+          {
+            "year": "2024-12-31",
+            "sbc": 65000000.0,
+            "acquisitionOutlay": 555000000.0,
+            "ownerFcf": 428000000.0,
+            "ownerFcfPerShare": 256.46775740365115
+          },
+          {
+            "year": "2025-12-31",
+            "sbc": 82000000.0,
+            "acquisitionOutlay": 2745000000.0,
+            "ownerFcf": 542000000.0,
+            "ownerFcfPerShare": 406.3924685897436
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 256.46775740365115,
+        "acquisitionHistoryComplete": true,
+        "normalizedDcfBase": 2494.67,
+        "historicalOwnerPfcfMedian": 0.4,
+        "relativeHistoricalValue": 103.4,
+        "modelsDifferencePct": 2312.7,
+        "revenueGrowthHypothesisPct": 0,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 1538.16
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2023-12-31",
+          "reportedCapexUSD": 14000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2024-12-31",
+          "reportedCapexUSD": 7000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-12-31",
+          "reportedCapexUSD": 10000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [
+        {
+          "period": "2023-12-31",
+          "reportedAcquisitionCashUSD": 170000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2024-12-31",
+          "reportedAcquisitionCashUSD": 555000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2025-12-31",
+          "reportedAcquisitionCashUSD": 2745000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        }
+      ],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 14.8,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "Acquisition realized ROI unverified",
+        "ROIC lacks complete comparable capital history"
+      ],
+      "automaticBuySignal": false
+    },
+    "FRPH": {
+      "company": "FRPH",
+      "ownerFcf": {
+        "status": "insufficient",
+        "observations": [
+          {
+            "year": "2023-12-31",
+            "sbc": null,
+            "acquisitionOutlay": 0.0,
+            "ownerFcf": null,
+            "ownerFcfPerShare": null
+          },
+          {
+            "year": "2024-12-31",
+            "sbc": null,
+            "acquisitionOutlay": 0.0,
+            "ownerFcf": null,
+            "ownerFcfPerShare": null
+          },
+          {
+            "year": "2025-12-31",
+            "sbc": null,
+            "acquisitionOutlay": 23513000.0,
+            "ownerFcf": null,
+            "ownerFcfPerShare": null
+          }
+        ],
+        "normalizedOwnerFcfPerShare": null,
+        "acquisitionHistoryComplete": true
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2023-12-31",
+          "reportedCapexUSD": 11217000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2024-12-31",
+          "reportedCapexUSD": 51194000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-12-31",
+          "reportedCapexUSD": 51137000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [
+        {
+          "period": "2023-12-31",
+          "reportedAcquisitionCashUSD": 0.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2024-12-31",
+          "reportedAcquisitionCashUSD": 0.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2025-12-31",
+          "reportedAcquisitionCashUSD": 23513000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        }
+      ],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 52.41,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "Acquisition realized ROI unverified",
+        "Owner FCF normalized from SBC is incomplete",
+        "ROIC lacks complete comparable capital history"
+      ],
+      "automaticBuySignal": false
+    },
+    "INTU": {
+      "company": "INTU",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2024-07-31",
+            "sbc": 1940000000.0,
+            "acquisitionOutlay": 83000000.0,
+            "ownerFcf": 2753000000.0,
+            "ownerFcfPerShare": 9.693633880247177
+          },
+          {
+            "year": "2025-07-31",
+            "sbc": 1968000000.0,
+            "acquisitionOutlay": 184000000.0,
+            "ownerFcf": 4155000000.0,
+            "ownerFcfPerShare": 14.681950024497796
+          },
+          {
+            "year": "2026-07-31",
+            "sbc": 2056000000.0,
+            "acquisitionOutlay": 0.0,
+            "ownerFcf": 6607000000.0,
+            "ownerFcfPerShare": 23.85200978875678
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 14.681950024497796,
+        "acquisitionHistoryComplete": true,
+        "normalizedDcfBase": 214.33,
+        "historicalOwnerPfcfMedian": 53.48,
+        "relativeHistoricalValue": 785.17,
+        "modelsDifferencePct": 266.3,
+        "revenueGrowthHypothesisPct": 10.0,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 442.67
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2024-07-31",
+          "reportedCapexUSD": 191000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-07-31",
+          "reportedCapexUSD": 84000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2026-07-31",
+          "reportedCapexUSD": 175000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [
+        {
+          "period": "2024-07-31",
+          "reportedAcquisitionCashUSD": 83000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2025-07-31",
+          "reportedAcquisitionCashUSD": 184000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2026-07-31",
+          "reportedAcquisitionCashUSD": 0.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        }
+      ],
+      "forwardCashDerived": {
+        "kind": "model_derived_not_consensus",
+        "basis": "management revenue range × median historical FCF/revenue",
+        "historicalFcfMarginPct": 32.52,
+        "forwardReportedFcfLowMillions": 7569.29,
+        "forwardReportedFcfHighMillions": 7645.05,
+        "forwardOwnerFcfLowMillions": null,
+        "forwardOwnerFcfHighMillions": null,
+        "warning": "Not management free-cash-flow guidance. SBC and acquisitions not forecast."
+      },
+      "guidance": {
+        "issuer": "Intuit",
+        "asOf": "2026-08-25",
+        "fiscalYear": 2027,
+        "periodEnd": "2027-07-31",
+        "unit": "USD",
+        "scale": "millions",
+        "revenueLow": 23279,
+        "revenueHigh": 23512,
+        "sourceType": "management_guidance",
+        "forecastCashFlowProvided": false,
+        "sourceUrl": "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000029/fy26q4earningspressrelease.htm",
+        "sourceLabel": "Intuit FY2026 Q4 and FY2027 guidance"
+      },
+      "forecastLabels": {
+        "management": true,
+        "consensusVerified": false,
+        "modelDerived": true,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 32.52,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "Forward owner FCF not independently guided or consensus-verified",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "Acquisition realized ROI unverified"
+      ],
+      "automaticBuySignal": false
+    },
+    "KEYS": {
+      "company": "KEYS",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2023-10-31",
+            "sbc": 135000000.0,
+            "acquisitionOutlay": 85000000.0,
+            "ownerFcf": 1076000000.0,
+            "ownerFcfPerShare": 6.0112059454995865
+          },
+          {
+            "year": "2024-10-31",
+            "sbc": 137000000.0,
+            "acquisitionOutlay": 681000000.0,
+            "ownerFcf": 761000000.0,
+            "ownerFcfPerShare": 4.3485472160356355
+          },
+          {
+            "year": "2025-10-31",
+            "sbc": 162000000.0,
+            "acquisitionOutlay": 2022000000.0,
+            "ownerFcf": 1119000000.0,
+            "ownerFcfPerShare": 6.468186885245902
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 6.0112059454995865,
+        "acquisitionHistoryComplete": true,
+        "normalizedDcfBase": 71.69,
+        "historicalOwnerPfcfMedian": 28.29,
+        "relativeHistoricalValue": 170.04,
+        "modelsDifferencePct": 137.2,
+        "revenueGrowthHypothesisPct": 4.95,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 111.03
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2023-10-31",
+          "reportedCapexUSD": 197000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2024-10-31",
+          "reportedCapexUSD": 154000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-10-31",
+          "reportedCapexUSD": 128000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [
+        {
+          "period": "2023-10-31",
+          "reportedAcquisitionCashUSD": 85000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2024-10-31",
+          "reportedAcquisitionCashUSD": 681000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2025-10-31",
+          "reportedAcquisitionCashUSD": 2022000000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        }
+      ],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 22.16,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "Acquisition realized ROI unverified"
+      ],
+      "automaticBuySignal": false
+    },
+    "MEDP": {
+      "company": "MEDP",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2023-12-31",
+            "sbc": 20516000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 376210000.0,
+            "ownerFcfPerShare": 11.815273301976678
+          },
+          {
+            "year": "2024-12-31",
+            "sbc": 25514000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 546753000.0,
+            "ownerFcfPerShare": 17.078537206408896
+          },
+          {
+            "year": "2025-12-31",
+            "sbc": 34786000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 647081000.0,
+            "ownerFcfPerShare": 21.914891808813156
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 17.078537206408896,
+        "acquisitionHistoryComplete": false,
+        "normalizedDcfBase": 249.32,
+        "historicalOwnerPfcfMedian": 25.63,
+        "relativeHistoricalValue": 437.68,
+        "modelsDifferencePct": 75.5,
+        "revenueGrowthHypothesisPct": 10.0,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 324.66
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2023-12-31",
+          "reportedCapexUSD": 36648000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2024-12-31",
+          "reportedCapexUSD": 36548000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-12-31",
+          "reportedCapexUSD": 31356000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 26.95,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "ROIC lacks complete comparable capital history"
+      ],
+      "automaticBuySignal": false
+    },
+    "RMD": {
+      "company": "RMD",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2024-06-30",
+            "sbc": 80184000.0,
+            "acquisitionOutlay": 133464000.0,
+            "ownerFcf": 1221616000.0,
+            "ownerFcfPerShare": 8.279362148409895
+          },
+          {
+            "year": "2025-06-30",
+            "sbc": 91661000.0,
+            "acquisitionOutlay": 139248000.0,
+            "ownerFcf": 1570062000.0,
+            "ownerFcfPerShare": 10.656092049276564
+          },
+          {
+            "year": "2026-06-30",
+            "sbc": 104348000.0,
+            "acquisitionOutlay": 350724000.0,
+            "ownerFcf": 1545196000.0,
+            "ownerFcfPerShare": 10.579649978175787
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 10.579649978175787,
+        "acquisitionHistoryComplete": true,
+        "normalizedDcfBase": 154.45,
+        "historicalOwnerPfcfMedian": 22.58,
+        "relativeHistoricalValue": 238.9,
+        "modelsDifferencePct": 54.7,
+        "revenueGrowthHypothesisPct": 10.0,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 188.23
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2024-06-30",
+          "reportedCapexUSD": 99460000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-06-30",
+          "reportedCapexUSD": 89865000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2026-06-30",
+          "reportedCapexUSD": 156285000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [
+        {
+          "period": "2024-06-30",
+          "reportedAcquisitionCashUSD": 133464000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2025-06-30",
+          "reportedAcquisitionCashUSD": 139248000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        },
+        {
+          "period": "2026-06-30",
+          "reportedAcquisitionCashUSD": 350724000.0,
+          "realizedReturnPct": null,
+          "returnStatus": "unallocatable_to_cohort"
+        }
+      ],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 29.18,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "Acquisition realized ROI unverified"
+      ],
+      "automaticBuySignal": false
+    },
+    "TXN": {
+      "company": "TXN",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2023-12-31",
+            "sbc": 362000000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 987000000.0,
+            "ownerFcfPerShare": 1.0775054855448478
+          },
+          {
+            "year": "2024-12-31",
+            "sbc": 387000000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 1111000000.0,
+            "ownerFcfPerShare": 1.2088985313751668
+          },
+          {
+            "year": "2025-12-31",
+            "sbc": 419000000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 2184000000.0,
+            "ownerFcfPerShare": 2.392079907798694
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 1.2088985313751668,
+        "acquisitionHistoryComplete": false,
+        "normalizedDcfBase": 13.93,
+        "historicalOwnerPfcfMedian": 155.1,
+        "relativeHistoricalValue": 187.5,
+        "modelsDifferencePct": 1246.2,
+        "revenueGrowthHypothesisPct": 4.1,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 83.36
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2023-12-31",
+          "reportedCapexUSD": 5071000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2024-12-31",
+          "reportedCapexUSD": 4820000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-12-31",
+          "reportedCapexUSD": 4550000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 9.58,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated"
+      ],
+      "automaticBuySignal": false
+    },
+    "ZTS": {
+      "company": "ZTS",
+      "ownerFcf": {
+        "status": "computed",
+        "observations": [
+          {
+            "year": "2023-12-31",
+            "sbc": 60000000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 1561000000.0,
+            "ownerFcfPerShare": 3.376806045650833
+          },
+          {
+            "year": "2024-12-31",
+            "sbc": 74000000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 2224000000.0,
+            "ownerFcfPerShare": 4.889509486510009
+          },
+          {
+            "year": "2025-12-31",
+            "sbc": 83000000.0,
+            "acquisitionOutlay": null,
+            "ownerFcf": 2200000000.0,
+            "ownerFcfPerShare": 4.956793692509855
+          }
+        ],
+        "normalizedOwnerFcfPerShare": 4.889509486510009,
+        "acquisitionHistoryComplete": false,
+        "normalizedDcfBase": 63.96,
+        "historicalOwnerPfcfMedian": 33.32,
+        "relativeHistoricalValue": 162.93,
+        "modelsDifferencePct": 154.7,
+        "revenueGrowthHypothesisPct": 7.24,
+        "discountRatePct": 12,
+        "terminalGrowthPct": 2.5,
+        "illustrativeValue": 103.55
+      },
+      "maintenanceGrowthCapex": [
+        {
+          "fiscalYearEnd": "2023-12-31",
+          "reportedCapexUSD": 732000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2024-12-31",
+          "reportedCapexUSD": 655000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        },
+        {
+          "fiscalYearEnd": "2025-12-31",
+          "reportedCapexUSD": 621000000.0,
+          "maintenanceActualUSD": null,
+          "growthActualUSD": null,
+          "separationStatus": "not_disclosed",
+          "maintenanceProxyMinUSD": null,
+          "maintenanceProxyMaxUSD": null
+        }
+      ],
+      "acquisitionCohorts": [],
+      "forwardCashDerived": null,
+      "guidance": null,
+      "forecastLabels": {
+        "management": false,
+        "consensusVerified": false,
+        "modelDerived": false,
+        "marketImplied": false
+      },
+      "historicalFcfMarginPct": 24.12,
+      "investmentReadiness": "needs_evidence",
+      "blockers": [
+        "No dated primary management revenue/FCF guidance",
+        "Maintenance/growth CAPEX split is not disclosed and validated",
+        "ROIC lacks complete comparable capital history"
+      ],
+      "automaticBuySignal": false
+    },
+    "CSU.TO": {
+      "company": "CSU.TO",
+      "guidance": null,
+      "forwardCashDerived": null,
+      "acquisitionCohorts": [
+        {
+          "target": "multiple vertical software acquisitions",
+          "closed": null,
+          "considerationUSDMillions": null,
+          "note": "Requires acquisition-cohort purchase cost and standalone post-close operating cash evidence; no realized ROI imputed",
+          "sourceUrl": "https://www.csisoftware.com/"
+        }
+      ],
+      "maintenanceGrowthCapex": [],
+      "reverseDcfImpliedGrowth": 35.52,
+      "investmentReadiness": "needs_evidence",
+      "automaticBuySignal": false,
+      "blockers": [
+        "International FCF requires maintenance/growth CAPEX and acquisition cohort reconciliation",
+        "Comparable independent forward FCF consensus missing"
+      ]
+    },
+    "ASML": {
+      "company": "ASML",
+      "guidance": {
+        "issuer": "ASML",
+        "asOf": "2026-10-14",
+        "fiscalYear": 2026,
+        "periodEnd": "2026-12-31",
+        "unit": "EUR",
+        "scale": "millions",
+        "revenueLow": 44000,
+        "revenueHigh": 45000,
+        "sourceType": "management_guidance",
+        "forecastCashFlowProvided": false,
+        "sourceUrl": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
+        "sourceLabel": "ASML Q3 2026 earnings"
+      },
+      "forwardCashDerived": null,
+      "acquisitionCohorts": [],
+      "maintenanceGrowthCapex": [],
+      "reverseDcfImpliedGrowth": 40.0,
+      "investmentReadiness": "needs_evidence",
+      "automaticBuySignal": false,
+      "blockers": [
+        "International FCF requires maintenance/growth CAPEX and acquisition cohort reconciliation",
+        "Comparable independent forward FCF consensus missing"
+      ]
+    },
+    "DNP.WA": {
+      "company": "DNP.WA",
+      "guidance": null,
+      "forwardCashDerived": null,
+      "acquisitionCohorts": [],
+      "maintenanceGrowthCapex": [],
+      "reverseDcfImpliedGrowth": 40.0,
+      "investmentReadiness": "needs_evidence",
+      "automaticBuySignal": false,
+      "blockers": [
+        "International FCF requires maintenance/growth CAPEX and acquisition cohort reconciliation",
+        "Comparable independent forward FCF consensus missing"
+      ]
+    }
+  },
+  "counters": {
+    "companies": 19,
+    "withGuidance": 3,
+    "verifiedAcquisitionReturns": 0,
+    "verifiedCapexSplits": 0,
+    "automaticBuySignals": 0
+  },
+  "warnings": []
 }

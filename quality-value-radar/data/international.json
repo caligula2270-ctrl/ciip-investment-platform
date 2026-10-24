@@ -85,7 +85,7 @@
       "status": "preliminary_valuation",
       "reason": "Cotización ADR USD frente resultados EUR y ausencia de serie normalizada FCF/ROIC para escenario prudente.",
       "valuation": {
-        "marketImpliedFiveYearFcfGrowthPct": 40,
+        "marketImpliedFiveYearFcfGrowthPct": 40.0,
         "growthReference": "Reverse DCF uses flat per-share terminal share count; NOT management guidance",
         "historicalPfcfCrossCheck": "unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
         "reinvestmentAdjustment": "Not separately modeled: acquisitions / development CAPEX must be reviewed",
@@ -155,7 +155,7 @@
       "status": "preliminary_valuation",
       "reason": "Precisa extraer estados consolidados 2025/H1-2026 y conciliar expansión de tiendas y CAPEX; sin FCF normalizado no se emite precio objetivo.",
       "valuation": {
-        "marketImpliedFiveYearFcfGrowthPct": 40,
+        "marketImpliedFiveYearFcfGrowthPct": 40.0,
         "growthReference": "Reverse DCF uses flat per-share terminal share count; NOT management guidance",
         "historicalPfcfCrossCheck": "unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
         "reinvestmentAdjustment": "Not separately modeled: acquisitions / development CAPEX must be reviewed",
@@ -192,7 +192,7 @@
         "indicativeMarginPct": -338.4,
         "assumptions": {
           "baseGrowthPct": 9.5,
-          "discountPct": 12,
+          "discountPct": 12.0,
           "terminalGrowthPct": 2.5
         },
         "metric": "CFO - capex reportados",
@@ -207,5 +207,5 @@
       }
     }
   },
-  "generatedAt": "2026-10-24T21:44:02.209965+00:00"
+  "generatedAt": "2026-10-24T21:57:27.537756+00:00"
 }
