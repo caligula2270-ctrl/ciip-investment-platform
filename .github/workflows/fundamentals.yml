@@ -37,23 +37,34 @@ jobs:
         run: python scripts/update_fundamentals.py
       - name: Compile five-company financial audit dossiers
         run: python scripts/build_ciip_audits.py
-      - name: Commit source-linked facts
+      - name: Publish SEC facts and audit report safely
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add fundamentals-auto.json audits/latest.json audits/REPORT.md
-          if ! git diff --cached --quiet; then
-            git commit -m "data: update SEC fundamentals and five issuer audits"
-            for attempt in 1 2 3 4 5; do
-              git fetch origin main
-              git rebase origin/main
-              if git push origin HEAD:main; then
-                echo "Fundamentals published (attempt $attempt)"
-                exit 0
-              fi
-              echo "Concurrent push detected; retrying ($attempt)"
-              sleep $((2 * attempt))
-            done
-            echo "Could not publish fundamentals after 5 attempts" >&2
-            exit 1
-          fi
+          cp fundamentals-auto.json /tmp/ciip-fundamentals-auto.json
+          cp audits/latest.json /tmp/ciip-audit-latest.json
+          cp audits/REPORT.md /tmp/ciip-audit-report.md
+          for attempt in 1 2 3 4 5 6; do
+            git fetch origin main
+            # Generated artifacts must be reapplied on a fresh branch head.
+            # Do NOT rebase timestamped JSON files: concurrent bot writes conflict.
+            git reset --hard origin/main
+            cp /tmp/ciip-fundamentals-auto.json fundamentals-auto.json
+            cp /tmp/ciip-audit-latest.json audits/latest.json
+            cp /tmp/ciip-audit-report.md audits/REPORT.md
+            git add fundamentals-auto.json audits/latest.json audits/REPORT.md
+            if git diff --cached --quiet; then
+              echo "No changes in SEC fundamentals or audits"
+              exit 0
+            fi
+            git commit -m "data: publish SEC facts and five issuer research audits"
+            if git push origin HEAD:main; then
+              echo "Audit data published on attempt $attempt"
+              exit 0
+            fi
+            echo "Concurrent update; refreshing remote main and retrying"
+            sleep $((2 * attempt))
+          done
+          echo "Audit publication failed after six attempts" >&2
+          exit 1
