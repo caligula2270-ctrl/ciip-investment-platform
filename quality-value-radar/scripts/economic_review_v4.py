@@ -1,3 +1,4 @@
+# QVR v4 automatic deployment trigger
 #!/usr/bin/env python3
 """Conservative secondary analysis of SEC financial metrics."""
 import json, pathlib, statistics, datetime as dt, importlib.util
