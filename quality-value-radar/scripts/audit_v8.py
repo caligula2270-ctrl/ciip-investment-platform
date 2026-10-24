@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""QVR v8: SEC-linked share-base reconciliations and acquisition sensitivity.
+"""QVR v8: SEC-linked share-base reconciliations and acquisition sensitivity.\nThis file is included in the scheduled research process.
 No investment-ready targets; actual maintenance capex and ROI remain unverified.
 """
 import datetime as dt
