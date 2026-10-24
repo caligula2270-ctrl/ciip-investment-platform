@@ -1,6 +1,653 @@
 {
   "schema": "qvr-sensitivity-v7",
-  "status": "pending_first_execution",
-  "models": {},
-  "automaticBuyDecisions": false
+  "generatedAt": "2026-10-24T23:40:56.680848+00:00",
+  "sourceVersion": "qvr-v6",
+  "automaticBuyDecisions": false,
+  "allValuesIllustrative": true,
+  "models": {
+    "ADBE": {
+      "ticker": "ADBE",
+      "currency": "USD",
+      "sourcePrice": 270.55,
+      "quoteDate": "2026-10-22",
+      "asOf": "2026-10-24",
+      "baselineIndicativeValue": 424.73,
+      "baselineLevel": "indicative",
+      "verifiedMaintenanceGrowthSplit": false,
+      "verifiedAcquisitionReturn": false,
+      "assumptions": [],
+      "capex": {
+        "status": "stress_only_unverified_split",
+        "medianReportedCapexPerShare": 0.4192,
+        "medianReportedCapexToOwnerFcfPct": 3.12,
+        "reportedCapexStress": [
+          {
+            "changeInTotalCapexPct": -25,
+            "ownerFcfPerShare": 13.536,
+            "valuePerShare": 427.96,
+            "differenceFromBasePct": 0.8
+          },
+          {
+            "changeInTotalCapexPct": 0,
+            "ownerFcfPerShare": 13.4312,
+            "valuePerShare": 424.64,
+            "differenceFromBasePct": -0.0
+          },
+          {
+            "changeInTotalCapexPct": 25,
+            "ownerFcfPerShare": 13.3264,
+            "valuePerShare": 421.33,
+            "differenceFromBasePct": -0.8
+          },
+          {
+            "changeInTotalCapexPct": 50,
+            "ownerFcfPerShare": 13.2216,
+            "valuePerShare": 418.02,
+            "differenceFromBasePct": -1.6
+          }
+        ],
+        "sourceFyEnds": [
+          "2023-12-01",
+          "2024-11-29",
+          "2025-11-28"
+        ],
+        "maintenancePct": null,
+        "growthPct": null,
+        "note": "Total reported CAPEX varied independently while all growth assumptions remain FIXED. This is not evidence of maintenance CAPEX.",
+        "deferredGrowthTradeoff": [
+          {
+            "illustrativeCapexRetainedPct": 40,
+            "assumedGrowthRetainedPct": 40,
+            "valuePerShare": 317.82,
+            "label": "Counterfactual, not reported company maintenance/growth split"
+          },
+          {
+            "illustrativeCapexRetainedPct": 70,
+            "assumedGrowthRetainedPct": 75,
+            "valuePerShare": 377.69,
+            "label": "Counterfactual, not reported company maintenance/growth split"
+          },
+          {
+            "illustrativeCapexRetainedPct": 100,
+            "assumedGrowthRetainedPct": 100,
+            "valuePerShare": 424.64,
+            "label": "Counterfactual, not reported company maintenance/growth split"
+          }
+        ]
+      },
+      "netShares": {
+        "status": "sensitivity_not_projection",
+        "latestWeightedAvgDilutedShares": 427000000.0,
+        "priorWeightedAvgDilutedShares": 449700000.0,
+        "lastYearChangePct": -5.05,
+        "cases": [
+          {
+            "annualNetDilutedShareChangePct": -1.0,
+            "valuePerShare": 445.12,
+            "deltaPct": 4.8
+          },
+          {
+            "annualNetDilutedShareChangePct": 0,
+            "valuePerShare": 424.64,
+            "deltaPct": -0.0
+          },
+          {
+            "annualNetDilutedShareChangePct": 1.0,
+            "valuePerShare": 405.33,
+            "deltaPct": -4.6
+          },
+          {
+            "annualNetDilutedShareChangePct": 2.5,
+            "valuePerShare": 378.39,
+            "deltaPct": -10.9
+          },
+          {
+            "annualNetDilutedShareChangePct": 4.0,
+            "valuePerShare": 353.66,
+            "deltaPct": -16.7
+          }
+        ],
+        "stockCompAlreadyDeductedFromOwnerCash": true,
+        "note": "Net diluted-share change includes issuance and buybacks. SBC expense is already deducted in owner FCF: positive net issuance can overlap the economic SBC charge, so these are stresses not cumulative verified effects."
+      },
+      "acquisitions": {
+        "status": "cohort_returns_unverified",
+        "cashConsiderationDisclosedByYear": [
+          {
+            "fyEnd": "2023-12-01",
+            "cashOutflowUSD": 0.0
+          },
+          {
+            "fyEnd": "2024-11-29",
+            "cashOutflowUSD": 0.0
+          },
+          {
+            "fyEnd": "2025-11-28",
+            "cashOutflowUSD": 17000000.0
+          }
+        ],
+        "demonstratedIncrementalCashOrNOPAT": null,
+        "realizedROI": null,
+        "note": "Acquisition cash spending is NOT a proof of return. No cohort-level incremental ROIC, synergies or integration bridge is available."
+      },
+      "priceSignal": "no_automatic_buy",
+      "warnings": [],
+      "decision": {
+        "reliableBuyPrice": null,
+        "buyDecision": "unavailable",
+        "reason": "Sensitivity is exploratory; maintenance CAPEX and acquisition returns remain unverified."
+      }
+    },
+    "INTU": {
+      "ticker": "INTU",
+      "currency": "USD",
+      "sourcePrice": 354.9,
+      "quoteDate": "2026-10-22",
+      "asOf": "2026-10-24",
+      "baselineIndicativeValue": 431.82,
+      "baselineLevel": "indicative",
+      "verifiedMaintenanceGrowthSplit": false,
+      "verifiedAcquisitionReturn": false,
+      "assumptions": [],
+      "capex": {
+        "status": "stress_only_unverified_split",
+        "medianReportedCapexPerShare": 0.6318,
+        "medianReportedCapexToOwnerFcfPct": 4.3,
+        "reportedCapexStress": [
+          {
+            "changeInTotalCapexPct": -25,
+            "ownerFcfPerShare": 14.8399,
+            "valuePerShare": 436.43,
+            "differenceFromBasePct": 1.1
+          },
+          {
+            "changeInTotalCapexPct": 0,
+            "ownerFcfPerShare": 14.682,
+            "valuePerShare": 431.79,
+            "differenceFromBasePct": -0.0
+          },
+          {
+            "changeInTotalCapexPct": 25,
+            "ownerFcfPerShare": 14.524,
+            "valuePerShare": 427.14,
+            "differenceFromBasePct": -1.1
+          },
+          {
+            "changeInTotalCapexPct": 50,
+            "ownerFcfPerShare": 14.3661,
+            "valuePerShare": 422.5,
+            "differenceFromBasePct": -2.2
+          }
+        ],
+        "sourceFyEnds": [
+          "2024-07-31",
+          "2025-07-31",
+          "2026-07-31"
+        ],
+        "maintenancePct": null,
+        "growthPct": null,
+        "note": "Total reported CAPEX varied independently while all growth assumptions remain FIXED. This is not evidence of maintenance CAPEX.",
+        "deferredGrowthTradeoff": [
+          {
+            "illustrativeCapexRetainedPct": 40,
+            "assumedGrowthRetainedPct": 40,
+            "valuePerShare": 339.36,
+            "label": "Counterfactual, not reported company maintenance/growth split"
+          },
+          {
+            "illustrativeCapexRetainedPct": 70,
+            "assumedGrowthRetainedPct": 75,
+            "valuePerShare": 391.99,
+            "label": "Counterfactual, not reported company maintenance/growth split"
+          },
+          {
+            "illustrativeCapexRetainedPct": 100,
+            "assumedGrowthRetainedPct": 100,
+            "valuePerShare": 431.79,
+            "label": "Counterfactual, not reported company maintenance/growth split"
+          }
+        ]
+      },
+      "netShares": {
+        "status": "sensitivity_not_projection",
+        "latestWeightedAvgDilutedShares": 277000000.0,
+        "priorWeightedAvgDilutedShares": 283000000.0,
+        "lastYearChangePct": -2.12,
+        "cases": [
+          {
+            "annualNetDilutedShareChangePct": -1.0,
+            "valuePerShare": 452.54,
+            "deltaPct": 4.8
+          },
+          {
+            "annualNetDilutedShareChangePct": 0,
+            "valuePerShare": 431.79,
+            "deltaPct": -0.0
+          },
+          {
+            "annualNetDilutedShareChangePct": 1.0,
+            "valuePerShare": 412.21,
+            "deltaPct": -4.5
+          },
+          {
+            "annualNetDilutedShareChangePct": 2.5,
+            "valuePerShare": 384.89,
+            "deltaPct": -10.9
+          },
+          {
+            "annualNetDilutedShareChangePct": 4.0,
+            "valuePerShare": 359.81,
+            "deltaPct": -16.7
+          }
+        ],
+        "stockCompAlreadyDeductedFromOwnerCash": true,
+        "note": "Net diluted-share change includes issuance and buybacks. SBC expense is already deducted in owner FCF: positive net issuance can overlap the economic SBC charge, so these are stresses not cumulative verified effects."
+      },
+      "acquisitions": {
+        "status": "cohort_returns_unverified",
+        "cashConsiderationDisclosedByYear": [
+          {
+            "fyEnd": "2024-07-31",
+            "cashOutflowUSD": 83000000.0
+          },
+          {
+            "fyEnd": "2025-07-31",
+            "cashOutflowUSD": 184000000.0
+          },
+          {
+            "fyEnd": "2026-07-31",
+            "cashOutflowUSD": 0.0
+          }
+        ],
+        "demonstratedIncrementalCashOrNOPAT": null,
+        "realizedROI": null,
+        "note": "Acquisition cash spending is NOT a proof of return. No cohort-level incremental ROIC, synergies or integration bridge is available."
+      },
+      "priceSignal": "no_automatic_buy",
+      "warnings": [],
+      "decision": {
+        "reliableBuyPrice": null,
+        "buyDecision": "unavailable",
+        "reason": "Sensitivity is exploratory; maintenance CAPEX and acquisition returns remain unverified."
+      }
+    },
+    "CPRT": {
+      "ticker": "CPRT",
+      "currency": "USD",
+      "sourcePrice": 29.09,
+      "quoteDate": "2026-10-22",
+      "asOf": "2026-10-24",
+      "baselineIndicativeValue": 33.22,
+      "baselineLevel": "indicative",
+      "verifiedMaintenanceGrowthSplit": false,
+      "verifiedAcquisitionReturn": false,
+      "assumptions": [],
+      "capex": {
+        "status": "stress_only_unverified_split",
+        "medianReportedCapexPerShare": 0.5242,
+        "medianReportedCapexToOwnerFcfPct": 42.96,
+        "reportedCapexStress": [
+          {
+            "changeInTotalCapexPct": -25,
+            "ownerFcfPerShare": 1.3512,
+            "valuePerShare": 36.79,
+            "differenceFromBasePct": 10.7
+          },
+          {
+            "changeInTotalCapexPct": 0,
+            "ownerFcfPerShare": 1.2201,
+            "valuePerShare": 33.22,
+            "differenceFromBasePct": 0.0
+          },
+          {
+            "changeInTotalCapexPct": 25,
+            "ownerFcfPerShare": 1.0891,
+            "valuePerShare": 29.66,
+            "differenceFromBasePct": -10.7
+          },
+          {
+            "changeInTotalCapexPct": 50,
+            "ownerFcfPerShare": 0.958,
+            "valuePerShare": 26.09,
+            "differenceFromBasePct": -21.5
+          }
+        ],
+        "sourceFyEnds": [
+          "2024-07-31",
+          "2025-07-31",
+          "2026-07-31"
+        ],
+        "maintenancePct": null,
+        "growthPct": null,
+        "note": "Total reported CAPEX varied independently while all growth assumptions remain FIXED. This is not evidence of maintenance CAPEX.",
+        "deferredGrowthTradeoff": [
+          {
+            "illustrativeCapexRetainedPct": 40,
+            "assumedGrowthRetainedPct": 40,
+            "valuePerShare": 32.26,
+            "label": "Counterfactual, not reported company maintenance/growth split"
+          },
+          {
+            "illustrativeCapexRetainedPct": 70,
+            "assumedGrowthRetainedPct": 75,
+            "valuePerShare": 33.72,
+            "label": "Counterfactual, not reported company maintenance/growth split"
+          },
+          {
+            "illustrativeCapexRetainedPct": 100,
+            "assumedGrowthRetainedPct": 100,
+            "valuePerShare": 33.22,
+            "label": "Counterfactual, not reported company maintenance/growth split"
+          }
+        ]
+      },
+      "netShares": {
+        "status": "sensitivity_not_projection",
+        "latestWeightedAvgDilutedShares": 956860000.0,
+        "priorWeightedAvgDilutedShares": 977563000.0,
+        "lastYearChangePct": -2.12,
+        "cases": [
+          {
+            "annualNetDilutedShareChangePct": -1.0,
+            "valuePerShare": 34.81,
+            "deltaPct": 4.8
+          },
+          {
+            "annualNetDilutedShareChangePct": 0,
+            "valuePerShare": 33.22,
+            "deltaPct": 0.0
+          },
+          {
+            "annualNetDilutedShareChangePct": 1.0,
+            "valuePerShare": 31.73,
+            "deltaPct": -4.5
+          },
+          {
+            "annualNetDilutedShareChangePct": 2.5,
+            "valuePerShare": 29.63,
+            "deltaPct": -10.8
+          },
+          {
+            "annualNetDilutedShareChangePct": 4.0,
+            "valuePerShare": 27.71,
+            "deltaPct": -16.6
+          }
+        ],
+        "stockCompAlreadyDeductedFromOwnerCash": true,
+        "note": "Net diluted-share change includes issuance and buybacks. SBC expense is already deducted in owner FCF: positive net issuance can overlap the economic SBC charge, so these are stresses not cumulative verified effects.",
+        "assumedAcquiredPlanShareRegistration": {
+          "maximumRegisteredShares": 4500000,
+          "incrementalToFYWeightedDilutedPct": 0.47,
+          "status": "registered_not_necessarily_issued",
+          "sourceUrl": "https://www.sec.gov/Archives/edgar/data/900075/000119312526426897/d123686ds8.htm"
+        }
+      },
+      "acquisitions": {
+        "status": "transaction_return_unverified",
+        "event": "ACV October 2026",
+        "announcedConsiderationUSDMillions": 1900,
+        "considerationType": "announced equity consideration; total economic invested capital not yet reconciled",
+        "FY2026HistoricalDilutedShares": 956860000.0,
+        "capitalOutlayPerShare": 1.986,
+        "minimumCashAnnualAt12PctUSDMillions": 228.0,
+        "scenarios": [
+          {
+            "incrementalOwnerCashAnnualUSDMillions": 0,
+            "yearOneCashReturnOnEquityConsiderationPct": 0.0,
+            "acquisitionNPVPerShare": -1.99,
+            "investmentValueBeforeConsiderationPerShare": 0,
+            "yearOneCashReturnObserved": false
+          },
+          {
+            "incrementalOwnerCashAnnualUSDMillions": 100,
+            "yearOneCashReturnOnEquityConsiderationPct": 5.26,
+            "acquisitionNPVPerShare": -0.81,
+            "investmentValueBeforeConsiderationPerShare": 1.18,
+            "yearOneCashReturnObserved": false
+          },
+          {
+            "incrementalOwnerCashAnnualUSDMillions": 150,
+            "yearOneCashReturnOnEquityConsiderationPct": 7.89,
+            "acquisitionNPVPerShare": -0.21,
+            "investmentValueBeforeConsiderationPerShare": 1.78,
+            "yearOneCashReturnObserved": false
+          },
+          {
+            "incrementalOwnerCashAnnualUSDMillions": 228,
+            "yearOneCashReturnOnEquityConsiderationPct": 12.0,
+            "acquisitionNPVPerShare": 0.71,
+            "investmentValueBeforeConsiderationPerShare": 2.7,
+            "yearOneCashReturnObserved": false
+          },
+          {
+            "incrementalOwnerCashAnnualUSDMillions": 300,
+            "yearOneCashReturnOnEquityConsiderationPct": 15.79,
+            "acquisitionNPVPerShare": 1.56,
+            "investmentValueBeforeConsiderationPerShare": 3.55,
+            "yearOneCashReturnObserved": false
+          },
+          {
+            "incrementalOwnerCashAnnualUSDMillions": 400,
+            "yearOneCashReturnOnEquityConsiderationPct": 21.05,
+            "acquisitionNPVPerShare": 2.75,
+            "investmentValueBeforeConsiderationPerShare": 4.74,
+            "yearOneCashReturnObserved": false
+          }
+        ],
+        "incrementalCashGrowthAssumptionPct": 2,
+        "terminalMultipleForAcquiredCash": 12,
+        "discountPct": 12,
+        "integrationAndFinancingCosts": "not included",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/900075/000119312526423478/d129535dex991.htm",
+        "notAddedToStandaloneFairValue": true,
+        "note": "NPV = PV incremental cash AND exit − cash consideration. It is NOT a consolidated post-deal price target; FY2026 balance is pre-deal."
+      },
+      "priceSignal": "no_automatic_buy",
+      "warnings": [],
+      "decision": {
+        "reliableBuyPrice": null,
+        "buyDecision": "unavailable",
+        "reason": "Sensitivity is exploratory; maintenance CAPEX and acquisition returns remain unverified."
+      }
+    },
+    "CSU.TO": {
+      "ticker": "CSU.TO",
+      "currency": "CAD",
+      "sourcePrice": 3408.5701,
+      "quoteDate": "2026-10-22",
+      "asOf": "2026-10-24",
+      "baselineIndicativeValue": 1195.55,
+      "baselineLevel": "preliminary",
+      "verifiedMaintenanceGrowthSplit": false,
+      "verifiedAcquisitionReturn": false,
+      "assumptions": [],
+      "capex": {
+        "status": "insufficient_issuer_split",
+        "reason": "The imported historical FCF series does not have a filing-verified maintenance vs growth CAPEX reconciliation."
+      },
+      "netShares": {
+        "status": "illustrative_only",
+        "note": "Future net dilution ranges are hypothetical; foreign FX and non-GAAP flow definition not fully reconciled.",
+        "valueCases": [
+          {
+            "fiveYearNetShareCagrPct": -1,
+            "approximateDCFBase": 1257.16,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          },
+          {
+            "fiveYearNetShareCagrPct": 0,
+            "approximateDCFBase": 1195.55,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          },
+          {
+            "fiveYearNetShareCagrPct": 1,
+            "approximateDCFBase": 1137.52,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          },
+          {
+            "fiveYearNetShareCagrPct": 2.5,
+            "approximateDCFBase": 1056.69,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          }
+        ]
+      },
+      "acquisitions": {
+        "status": "acquisitions_core_to_business_no_cohort_ROI",
+        "fcfa2sBasis": "before investment in acquired businesses",
+        "nonAdditiveCashSpendSensitivity": [
+          {
+            "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 0,
+            "staticCashDistributionValuePerShare": 1195.55,
+            "growthHeldFixed": true,
+            "notValuation": true
+          },
+          {
+            "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 15,
+            "staticCashDistributionValuePerShare": 1016.22,
+            "growthHeldFixed": true,
+            "notValuation": true
+          },
+          {
+            "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 30,
+            "staticCashDistributionValuePerShare": 836.88,
+            "growthHeldFixed": true,
+            "notValuation": true
+          },
+          {
+            "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 50,
+            "staticCashDistributionValuePerShare": 597.77,
+            "growthHeldFixed": true,
+            "notValuation": true
+          },
+          {
+            "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 75,
+            "staticCashDistributionValuePerShare": 298.89,
+            "growthHeldFixed": true,
+            "notValuation": true
+          }
+        ],
+        "note": "Simply deducting future acquisition spend without modeling purchased cash flows is NOT an intrinsic value. These tests expose how sensitive naive FCFA2S valuations are."
+      },
+      "priceSignal": "no_automatic_buy",
+      "warnings": [],
+      "decision": {
+        "reliableBuyPrice": null,
+        "buyDecision": "unavailable",
+        "reason": "Sensitivity is exploratory; maintenance CAPEX and acquisition returns remain unverified."
+      }
+    },
+    "ASML": {
+      "ticker": "ASML",
+      "currency": "USD",
+      "sourcePrice": 1560.54,
+      "quoteDate": "2026-10-22",
+      "asOf": "2026-10-24",
+      "baselineIndicativeValue": 361.63,
+      "baselineLevel": "preliminary",
+      "verifiedMaintenanceGrowthSplit": false,
+      "verifiedAcquisitionReturn": false,
+      "assumptions": [],
+      "capex": {
+        "status": "insufficient_issuer_split",
+        "reason": "The imported historical FCF series does not have a filing-verified maintenance vs growth CAPEX reconciliation."
+      },
+      "netShares": {
+        "status": "illustrative_only",
+        "note": "Future net dilution ranges are hypothetical; foreign FX and non-GAAP flow definition not fully reconciled.",
+        "valueCases": [
+          {
+            "fiveYearNetShareCagrPct": -1,
+            "approximateDCFBase": 380.27,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          },
+          {
+            "fiveYearNetShareCagrPct": 0,
+            "approximateDCFBase": 361.63,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          },
+          {
+            "fiveYearNetShareCagrPct": 1,
+            "approximateDCFBase": 344.08,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          },
+          {
+            "fiveYearNetShareCagrPct": 2.5,
+            "approximateDCFBase": 319.63,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          }
+        ]
+      },
+      "acquisitions": {
+        "status": "no_incremental_acquisition_return_verified",
+        "note": "No disclosed acquired-cohort NOPAT / total invested capital, so acquired return sensitivity cannot be investment-grade."
+      },
+      "priceSignal": "no_automatic_buy",
+      "warnings": [],
+      "decision": {
+        "reliableBuyPrice": null,
+        "buyDecision": "unavailable",
+        "reason": "Sensitivity is exploratory; maintenance CAPEX and acquisition returns remain unverified."
+      }
+    },
+    "DNP.WA": {
+      "ticker": "DNP.WA",
+      "currency": "PLN",
+      "sourcePrice": 39.06,
+      "quoteDate": "2026-10-21",
+      "asOf": "2026-10-24",
+      "baselineIndicativeValue": 8.91,
+      "baselineLevel": "preliminary",
+      "verifiedMaintenanceGrowthSplit": false,
+      "verifiedAcquisitionReturn": false,
+      "assumptions": [],
+      "capex": {
+        "status": "insufficient_issuer_split",
+        "reason": "The imported historical FCF series does not have a filing-verified maintenance vs growth CAPEX reconciliation."
+      },
+      "netShares": {
+        "status": "illustrative_only",
+        "note": "Future net dilution ranges are hypothetical; foreign FX and non-GAAP flow definition not fully reconciled.",
+        "valueCases": [
+          {
+            "fiveYearNetShareCagrPct": -1,
+            "approximateDCFBase": 9.37,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          },
+          {
+            "fiveYearNetShareCagrPct": 0,
+            "approximateDCFBase": 8.91,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          },
+          {
+            "fiveYearNetShareCagrPct": 1,
+            "approximateDCFBase": 8.48,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          },
+          {
+            "fiveYearNetShareCagrPct": 2.5,
+            "approximateDCFBase": 7.88,
+            "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
+          }
+        ]
+      },
+      "acquisitions": {
+        "status": "no_incremental_acquisition_return_verified",
+        "note": "No disclosed acquired-cohort NOPAT / total invested capital, so acquired return sensitivity cannot be investment-grade."
+      },
+      "priceSignal": "no_automatic_buy",
+      "warnings": [],
+      "decision": {
+        "reliableBuyPrice": null,
+        "buyDecision": "unavailable",
+        "reason": "Sensitivity is exploratory; maintenance CAPEX and acquisition returns remain unverified."
+      }
+    }
+  },
+  "majorWarning": "A business reinvestment reduction without revised growth is a ceteris-paribus stress, not a valid fundamental value.",
+  "coverage": {
+    "capexStressUS": 3,
+    "dilutionStressUS": 3,
+    "fullyAuditedAcquisitionReturns": 0,
+    "verifiedMaintenanceCapexSplits": 0
+  }
 }
