@@ -1,31 +1,88 @@
 {
   "schema": "qvr-pit-backtest-v6",
-  "generatedAt": "2026-10-24T22:49:43.134389+00:00",
+  "generatedAt": "2026-10-24T22:50:57.799804+00:00",
   "historicalResearchAsOf": "2021-10-25",
   "tickers": {
     "ADBE": {
       "ticker": "ADBE",
-      "status": "insufficient_price_history",
-      "reason": "Existing 5Y Yahoo window does not reach the 2021 as-of date; no fabricated historical quote",
-      "neededAsOf": "2021-10-25",
-      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=5y&interval=1d&events=splits"
+      "status": "measured",
+      "asOf": "2021-10-25",
+      "startQuoteDate": "2021-10-25",
+      "startPriceSplitAdjusted": 646.97,
+      "historicalFairValue": 161.4,
+      "historicalEntryPrice": 59.62,
+      "wouldFlagForResearch": false,
+      "exitQuoteDate": "2026-10-22",
+      "exitPriceSplitAdjusted": 270.55,
+      "priceOnlyAnnualReturnPct": -16.03,
+      "years": 4.99,
+      "financialFY": [
+        "2018-11-30",
+        "2019-11-29",
+        "2020-11-27"
+      ],
+      "filingsAtOrBeforeAsOf": true,
+      "lookaheadChecked": true,
+      "warnings": [
+        "Not a randomized universe: retrospective selection/survivorship bias",
+        "Split-adjusted closing prices; does not include dividends or trading frictions",
+        "No retrospective guidance is used; historical model uses constant 6% forward growth"
+      ]
     },
     "INTU": {
       "ticker": "INTU",
-      "status": "insufficient_price_history",
-      "reason": "Existing 5Y Yahoo window does not reach the 2021 as-of date; no fabricated historical quote",
-      "neededAsOf": "2021-10-25",
-      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/INTU?range=5y&interval=1d&events=splits"
+      "status": "measured",
+      "asOf": "2021-10-25",
+      "startQuoteDate": "2021-10-25",
+      "startPriceSplitAdjusted": 602.56,
+      "historicalFairValue": 178.16,
+      "historicalEntryPrice": 65.81,
+      "wouldFlagForResearch": false,
+      "exitQuoteDate": "2026-10-22",
+      "exitPriceSplitAdjusted": 354.9,
+      "priceOnlyAnnualReturnPct": -10.06,
+      "years": 4.99,
+      "financialFY": [
+        "2019-07-31",
+        "2020-07-31",
+        "2021-07-31"
+      ],
+      "filingsAtOrBeforeAsOf": true,
+      "lookaheadChecked": true,
+      "warnings": [
+        "Not a randomized universe: retrospective selection/survivorship bias",
+        "Split-adjusted closing prices; does not include dividends or trading frictions",
+        "No retrospective guidance is used; historical model uses constant 6% forward growth"
+      ]
     },
     "CPRT": {
       "ticker": "CPRT",
-      "status": "insufficient_price_history",
-      "reason": "Existing 5Y Yahoo window does not reach the 2021 as-of date; no fabricated historical quote",
-      "neededAsOf": "2021-10-25",
-      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/CPRT?range=5y&interval=1d&events=splits"
+      "status": "measured",
+      "asOf": "2021-10-25",
+      "startQuoteDate": "2021-10-25",
+      "startPriceSplitAdjusted": 38.32,
+      "historicalFairValue": 7.27,
+      "historicalEntryPrice": 2.87,
+      "wouldFlagForResearch": false,
+      "exitQuoteDate": "2026-10-22",
+      "exitPriceSplitAdjusted": 29.09,
+      "priceOnlyAnnualReturnPct": -5.37,
+      "years": 4.99,
+      "financialFY": [
+        "2019-07-31",
+        "2020-07-31",
+        "2021-07-31"
+      ],
+      "filingsAtOrBeforeAsOf": true,
+      "lookaheadChecked": true,
+      "warnings": [
+        "Not a randomized universe: retrospective selection/survivorship bias",
+        "Split-adjusted closing prices; does not include dividends or trading frictions",
+        "No retrospective guidance is used; historical model uses constant 6% forward growth"
+      ]
     }
   },
-  "measuredCount": 0,
+  "measuredCount": 3,
   "requestedCount": 3,
   "strategyPerformanceClaim": false,
   "dataIntegrity": "No point-in-time price/SEC filings = NO backtest rather than a fabricated result",
