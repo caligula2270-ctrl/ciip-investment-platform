@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Write dated research alerts; never alert as if an unverified model were a buy."""
+"""Write dated research alerts; never alert as if an unverified model were a buy.\nGitHub Actions uses the resulting JSON as an in-app research feed.\n"""
 import datetime as dt,json,pathlib
 root=pathlib.Path(__file__).resolve().parents[1]/"data"
 m=json.loads((root/"opportunity_v6.json").read_text())
