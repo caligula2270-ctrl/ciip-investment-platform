@@ -1,6 +1,7 @@
 # QVR v4 standalone research deployment trigger
 #!/usr/bin/env python3
 """Conservative secondary analysis of SEC financial metrics."""
+# SEC_USER_AGENT is supplied by the workflow for SEC-compliant requests
 import json, pathlib, statistics, datetime as dt, importlib.util
 P=pathlib.Path(__file__).resolve().parents[1]/"data"/"intrinsic.json"
 spec=importlib.util.spec_from_file_location("base",pathlib.Path(__file__).with_name("build_intrinsic_radar.py"))
