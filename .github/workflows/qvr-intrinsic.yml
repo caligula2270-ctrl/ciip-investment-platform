@@ -7,6 +7,7 @@ on:
       - 'quality-value-radar/scripts/reliability_v5.py'
       - 'quality-value-radar/scripts/opportunity_v6.py'
       - 'quality-value-radar/scripts/opportunity_alerts_v6.py'
+      - 'quality-value-radar/scripts/test_opportunity_v6.py'
       - 'quality-value-radar/scripts/opportunity_v6.py'
   schedule:
     - cron: '15 9 * * 3'
