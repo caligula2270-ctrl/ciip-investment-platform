@@ -85,7 +85,7 @@
       "status": "preliminary_valuation",
       "reason": "Cotización ADR USD frente resultados EUR y ausencia de serie normalizada FCF/ROIC para escenario prudente.",
       "valuation": {
-        "marketImpliedFiveYearFcfGrowthPct": 40.0,
+        "marketImpliedFiveYearFcfGrowthPct": 40,
         "growthReference": "Reverse DCF uses flat per-share terminal share count; NOT management guidance",
         "historicalPfcfCrossCheck": "unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
         "reinvestmentAdjustment": "Not separately modeled: acquisitions / development CAPEX must be reviewed",
@@ -133,6 +133,14 @@
         "warning": "ASML cotiza en Nasdaq en USD; modelo parte de EUR. FCF sensible a anticipos de clientes y ciclo de semiconductores.",
         "investmentSignal": "human_review_required",
         "historicalMultipleAvailable": false
+      },
+      "managementOutlook": {
+        "asOf": "2026-10-14",
+        "revenue2026EURMillionsLow": 44000,
+        "revenue2026EURMillionsHigh": 45000,
+        "grossMarginApproxPct": 56,
+        "sourceUrl": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
+        "note": "Management revenue guidance, not a validated multi-year cash flow forecast"
       }
     },
     "DNP.WA": {
@@ -147,7 +155,7 @@
       "status": "preliminary_valuation",
       "reason": "Precisa extraer estados consolidados 2025/H1-2026 y conciliar expansión de tiendas y CAPEX; sin FCF normalizado no se emite precio objetivo.",
       "valuation": {
-        "marketImpliedFiveYearFcfGrowthPct": 40.0,
+        "marketImpliedFiveYearFcfGrowthPct": 40,
         "growthReference": "Reverse DCF uses flat per-share terminal share count; NOT management guidance",
         "historicalPfcfCrossCheck": "unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
         "reinvestmentAdjustment": "Not separately modeled: acquisitions / development CAPEX must be reviewed",
@@ -184,7 +192,7 @@
         "indicativeMarginPct": -338.4,
         "assumptions": {
           "baseGrowthPct": 9.5,
-          "discountPct": 12.0,
+          "discountPct": 12,
           "terminalGrowthPct": 2.5
         },
         "metric": "CFO - capex reportados",
