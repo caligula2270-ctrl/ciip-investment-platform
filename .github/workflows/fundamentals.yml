@@ -5,6 +5,8 @@ on:
     paths:
       - 'scripts/update_fundamentals.py'
       - 'scripts/ciip_quality_controls.py'
+      - 'scripts/ciip_sector_models.py'
+      - 'scripts/ciip_capital_filings.py'
       - '.github/workflows/fundamentals.yml'
   schedule:
     - cron: '45 7 * * 2'
@@ -25,7 +27,7 @@ jobs:
           python-version: '3.12'
       - name: Validate normalization and share reconciliation
         run: |
-          PYTHONPATH=scripts python -m unittest discover -s scripts -p 'test_ciip_quality_controls.py' -v
+          PYTHONPATH=scripts python -m unittest discover -s scripts -p 'test_ciip_*.py' -v
       - name: Download SEC reported fundamentals
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
