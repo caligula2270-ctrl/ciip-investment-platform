@@ -1,4 +1,4 @@
-# CIIP — Procedimiento persistente de auditoría fundamental v1.4
+# CIIP — Procedimiento persistente de auditoría fundamental v1.5
 
 ## Alcance
 Investigación de inversiones de MSFT, ADBE, V, MA y TXN. Nunca declarar que existe auditoría contable independiente ni que los precios objetivo están verificados.
@@ -30,7 +30,7 @@ Clasificar HECHO / CÁLCULO / HIPÓTESIS / INFERENCIA / NO VERIFICADO. Conservar
 - Modelos independientes de software, pagos e intensivo; escenarios claramente marcados como HIPÓTESIS.
 - Normalizar FCF y explicar descuento y valor terminal. Reconciliar deuda/caja y evitar doble contabilización.
 - READY solo tras calidad, reconciliación de capital, comparabilidad, análisis de riesgos, precio vigente y revisión humana.
-- No generar órdenes, recomendaciones categóricas ni precios por acción desde datos provisionales.
+- Se permiten VALORACIONES POR ACCIÓN CONDICIONADAS si el denominador es una fórmula explícita con fuentes y fecha, bandas de dilución y scenario assumptions. NO son precios objetivo aprobados ni fully diluted shares certificados. No generar órdenes ni recomendaciones categóricas.
 
 ## Ejecución reproducible
 1. scripts/update_fundamentals.py genera fundamentals-auto.json.
@@ -38,3 +38,14 @@ Clasificar HECHO / CÁLCULO / HIPÓTESIS / INFERENCIA / NO VERIFICADO. Conservar
 3. GitHub Actions ejecuta tests y estas fases con cron y publicación conjunta.
 4. App CIIP consulta fichero reciente sin caché y expone pendientes y fuentes.
 5. Cada auditoría futura reutiliza ESTE procedimiento del repositorio; ChatGPT Memory sola no sustituye esta persistencia.
+
+## Valoración individual por acción: procedimiento reutilizable v1.5
+1. Verificar 10-K, 10-Q y notas de capital (clases y conversiones, acciones básicas point-in-time, EPS trimestral diluido y antidilutivos, RSU/opciones, recompra y hechos posteriores).
+2. Escribir un bloque nuevo en audits/per_share_inputs.json: recuentos, fórmula de conversión en acciones económicamente equivalentes, denominador central, límites mínimo/máximo, fecha exacta, fuentes y estado. No copiar sin verificar los factores de conversión anteriores.
+3. Obtener flujo libre normalizado; diferenciar cifra SEC, ajuste propio y flujo forward. NO annualizar interinos automáticamente. Riesgo de doble contar SBC y dilución.
+4. Presentar tres casos con crecimiento años 1-5 y 6-10, tasa exigida, tasa terminal, valor explícito y terminal. La caja inicial del modelo se incrementa en el año 1. Los escenarios son hipótesis, no previsiones de la empresa.
+5. Dividir valor agregado del accionista entre acciones económicas equivalentes. No sumar caja/restar deuda si ya se descuentan flujos posteriores a intereses (FCFE proxy); si se usa FCFF, hacer puente EV-deuda-caja y excluir doble contabilización.
+6. Mostrar banda de dilución y cierre de mercado con fecha, divisa y estado de verificación. Calcular flujo implícito inverso para explicar qué descuenta el mercado.
+7. Aprobación: únicamente con conciliación independiente de capital, ajustes de caja/financiación, validación de los escenarios, sensibilidad y evidencia vigente. Estado intermedio SCREEN_GRADE_NOT_DECISION_READY y value_per_share_approved=false.
+8. Ejecutar scripts/build_ciip_per_share.py tras scripts/build_ciip_audits.py o refresco diario de market-auto.json. Validar scripts/test_ciip_per_share.py. Publicar audits/per_share_latest.json y audits/PER_SHARE_REPORT.md.
+9. Para ampliar el universo, añadir ticker al programa de adquisición SEC, expediente de evidencia con fuentes oficiales y parametrización por acción; ejecutar todos los tests y contrastar que no existan sustituciones silenciosas ni resultados READY automáticos.
