@@ -16,6 +16,7 @@ let state = load();
 let remoteQuotes = {};
 let autoAnalysis = {companies:{},unavailable:{},exclusions:{}};
 let internationalResearch = {companies:{}};
+let reliabilityV5 = {companies:{},counters:{},status:'pending_first_execution'};
 let analysisStatus = 'Análisis fundamental todavía no cargado';
 let quotationsNotice = 'Referencias fechadas; no son cotizaciones en directo';
 let activeModal = null;
@@ -46,6 +47,20 @@ function topHeading(kicker,title,sub,right=''){return `<div class="page-intro"><
 function statCard(label,value,extra,cl=''){return `<article class="stat-card"><div class="stat-label">${label}</div><div class="stat-number ${cl}">${value}</div><div class="stat-detail">${extra}</div></article>`;}
 function shortCandidate(c){let v=valuation(c);return `<div class="candidate-row"><div class="ticker-symbol">${esc(c.s.split('.')[0].slice(0,5))}</div><div><div class="candidate-name">${esc(c.n)}</div><div class="candidate-sub">${esc(c.sector)} · ${fullLinksCount(c)} fuentes no históricas${allLinksCount(c)>fullLinksCount(c)?' + histórica':''}</div></div><div class="candidate-right"><strong>${v.q?money(v.q.price,v.q.currency):'S/D'}</strong><small>${v.q?esc(v.q.date):'Sin cotización'}</small></div><button class="btn btn-quiet btn-sm" data-open="${esc(c.s)}">Ver</button></div>`;}
 
+function reliabilityPanel(){
+ const v=reliabilityV5;
+ const c=v.counters||{};
+ const examples=['CPRT','ADBE','INTU','ASML'];
+ return '<section class="panel" style="margin:16px 0"><div class="panel-head"><div><h3>Auditoría de evidencias · v5</h3><p>Comprobación de adquisiciones, CAPEX y perspectivas de caja; no confundir hipótesis con datos auditados</p></div></div>'+
+ '<div class="stat-grid">'+statCard('Empresas revisadas',c.companies??'—','US + cobertura internacional')+statCard('Guía financiera oficial',c.withGuidance??'—','Orientación de ingresos, no consenso')+statCard('ROI adquisiciones verificado',c.verifiedAcquisitionReturns??'—','Sin retorno inventado')+statCard('CAPEX desglosado acreditado',c.verifiedCapexSplits??'—','El no divulgado queda pendiente')+'</div>'+
+ '<div class="table-wrap"><table class="data-table"><thead><tr><th>Empresa</th><th>Previsión</th><th>Adquisiciones</th><th>CAPEX</th></tr></thead><tbody>'+
+ examples.map(t=>{const d=v.companies?.[t],m=d?.guidance,acq=d?.acquisitionCohorts||[];return '<tr><td><b>'+esc(t)+'</b></td><td>'+(m?'Ingresos '+fmtN(m.revenueLow,0)+'–'+fmtN(m.revenueHigh,0)+' M '+esc(m.unit)+' ('+m.fiscalYear+')':'Sin guía primaria validada')+'</td><td>'+(acq.length?'ROI realizado pendiente ('+acq.length+' eventos)':'Sin cohortes evaluables')+'</td><td>Sin desglose certificado</td></tr>'}).join('')+
+ '</tbody></table></div><p class="tiny muted">Cualquier estimación basada en ingresos × margen histórico se etiqueta «modelo derivado»; no equivale a consenso de analistas. El radar no emite señales de compra hasta verificar retornos e inversión de mantenimiento.</p></section>';
+}
+async function refreshReliability(){
+ try{const r=await fetch('data/reliability_v5.json',{cache:'no-store'});if(r.ok){const v=await r.json();if(v.schema==='qvr-v5-evidence')reliabilityV5=v;}}catch(e){}render();
+}
+
 function autoQualityPanel(){
   const entries=companies().map(c=>({c,a:autoAnalysis.companies?.[c.s]})).filter(x=>x.a);
   const ready=entries.filter(x=>x.a.status==='ready');
@@ -64,7 +79,7 @@ function autoQualityPanel(){
       statCard('Sin cobertura completa',unsupported,'Excluidas o pendientes')+
       statCard('Tasa de descuento base','11,5 %','Hipótesis explícita, editable en código')+'</div>'+
     '<div class="cards-3">'+(opportunities.length?opportunities.map(({c,a})=>card(c,a)).join(''):'<div class="empty">Sin oportunidades que cumplan todos los requisitos. Esto no implica que las empresas estén caras.</div>')+'</div>'+
-    internationalPanel()+
+    reliabilityPanel()+internationalPanel()+
     '<details class="collapsible"><summary>Ver todas las valoraciones automáticas y datos insuficientes</summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Empresa</th><th>Estado</th><th>Valor razonable*</th><th>Descuento</th><th></th></tr></thead><tbody>'+
     companies().map(c=>{const a=autoAnalysis.companies?.[c.s],reason=a?.reason||autoAnalysis.exclusions?.[c.s]||autoAnalysis.unavailable?.[c.s]||'Sin modelo verificable';return '<tr><td>'+esc(c.n)+' <small>'+esc(c.s)+'</small></td><td>'+(a?.status==='ready'?'Con modelo':esc(reason))+'</td><td>'+money(a?.fairValue,a?.currency)+'</td><td>'+pct(a?.status==='ready'?a.marginOfSafetyPct:null)+'</td><td>'+(a?'<button class="btn btn-quiet btn-sm" data-auto-detail="'+esc(c.s)+'">Detalles</button>':'—')+'</td></tr>'}).join('')+
     '</tbody></table></div></details><p class="tiny muted">* Mezcla 60% de DCF simplificado a 5 años sobre FCF normalizado y 40% de mediana histórica P/FCF, calculada con cotizaciones en fechas fiscales. No sustituye una valoración sectorial ni ajuste completo por deuda, SBC, adquisiciones o ciclo del capital de trabajo.</p></section>';
@@ -187,6 +202,6 @@ document.addEventListener('change',ev=>{const t=ev.target;if(t.id==='filter-sect
 document.addEventListener('input',ev=>{if(ev.target.id==='search-company'){state.filters.term=ev.target.value;persist();const pos=ev.target.selectionStart;render();const el=document.getElementById('search-company');if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&activeModal)closeModal();if(ev.key==='Escape'&&!document.getElementById('modal-root').classList.contains('hidden'))closeModal();});
 document.getElementById('modal-root').addEventListener('click',ev=>{if(ev.target.id==='modal-root')closeModal();});
-render();refreshQuotes();refreshAutoAnalysis();refreshInternational();
+render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 })();
