@@ -1,7 +1,596 @@
 {
   "schema": "qvr-v6",
-  "status": "pending_first_run",
-  "models": {},
-  "researchRank": [],
-  "transactionSignals": false
+  "generatedAt": "2026-10-24T22:49:43.134389+00:00",
+  "asOf": "2026-10-24",
+  "focus": [
+    "ADBE",
+    "INTU",
+    "CPRT",
+    "CSU.TO",
+    "ASML",
+    "DNP.WA"
+  ],
+  "models": {
+    "ADBE": {
+      "ticker": "ADBE",
+      "name": "Adobe",
+      "sector": "software",
+      "currency": "USD",
+      "confidence": {
+        "tier": "medium",
+        "score": 77,
+        "components": {
+          "cashSeries": 25,
+          "freshPrice": 10,
+          "managementOutlook": 12,
+          "roicComparable": 15,
+          "capexVerified": 0,
+          "acquisitionEvidence": 10,
+          "independentForwardFcf": 0,
+          "issuerComparability": 5
+        }
+      },
+      "qualityScore": 91,
+      "price": 270.55,
+      "quoteDate": "2026-10-22",
+      "fy": "2025-11-28",
+      "normalizedOwnerFcfPerShare": 13.431155595071765,
+      "historicalPownerFcf": 38.41,
+      "adjustedRoicPct": 40.32,
+      "growthBasis": {
+        "kind": "model_derived_from_management_revenue_guidance",
+        "officialRevenueGuideMillions": [
+          26576,
+          26626
+        ],
+        "fiscalYear": 2026,
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+        "guidedRevenueAnnualCagrPct": 11.96,
+        "historicalRevenueCagrPct": 12.0,
+        "note": "Forecast FCF growth is an assumption. Official guidance concerns REVENUE, not FCF."
+      },
+      "growthAssumptionPct": 11.97,
+      "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+      "blockers": [
+        "Maintenance/growth CAPEX split not issuer-verified"
+      ],
+      "valuationLevel": "indicative",
+      "investmentAction": "research_only",
+      "acquisitionMaterialEvent": false,
+      "scenarios": {
+        "bear": {
+          "value": 172.77,
+          "terminalPrice": 220.56,
+          "yearlyOwnerFcf": [
+            14.301,
+            15.227,
+            16.213,
+            17.262,
+            18.38
+          ],
+          "growthPct": 6.47,
+          "exitMultiple": 12,
+          "discountPct": 13.5
+        },
+        "base": {
+          "value": 424.73,
+          "terminalPrice": 614.73,
+          "yearlyOwnerFcf": [
+            15.04,
+            16.84,
+            18.857,
+            21.115,
+            23.644
+          ],
+          "growthPct": 11.97,
+          "exitMultiple": 26,
+          "discountPct": 11.5
+        },
+        "bull": {
+          "value": 656.94,
+          "terminalPrice": 941.29,
+          "yearlyOwnerFcf": [
+            15.711,
+            18.378,
+            21.498,
+            25.147,
+            29.415
+          ],
+          "growthPct": 16.97,
+          "exitMultiple": 32,
+          "discountPct": 10.3
+        }
+      },
+      "valueRange": [
+        172.77,
+        656.94
+      ],
+      "baseValue": 424.73,
+      "entryPrice": 155.49,
+      "priceToEntryGapPct": -42.5,
+      "marginVsBasePct": 36.3,
+      "tenYearIndicativePv": 403.92,
+      "projectedIrrPct": {
+        "fiveYear": 22.89,
+        "tenYear": 17.0
+      },
+      "valuationMethod": "Equity owner-FCF per share; DCF + historically capped P/owner-FCF exit; no balance-sheet EV bridge",
+      "warnings": [
+        "Historic FCF and SBC may not reflect future acquisition returns, working capital or AI competition",
+        "Exit P/FCF is an assumption, NOT the price to which a historical multiple must revert",
+        "Projections keep diluted share basis constant; future dilution must be audited"
+      ]
+    },
+    "INTU": {
+      "ticker": "INTU",
+      "name": "Intuit",
+      "sector": "software",
+      "currency": "USD",
+      "confidence": {
+        "tier": "medium",
+        "score": 77,
+        "components": {
+          "cashSeries": 25,
+          "freshPrice": 10,
+          "managementOutlook": 12,
+          "roicComparable": 15,
+          "capexVerified": 0,
+          "acquisitionEvidence": 10,
+          "independentForwardFcf": 0,
+          "issuerComparability": 5
+        }
+      },
+      "qualityScore": 87,
+      "price": 354.9,
+      "quoteDate": "2026-10-22",
+      "fy": "2026-07-31",
+      "normalizedOwnerFcfPerShare": 14.681950024497796,
+      "historicalPownerFcf": 53.48,
+      "adjustedRoicPct": 17.3,
+      "growthBasis": {
+        "kind": "model_derived_from_management_revenue_guidance",
+        "officialRevenueGuideMillions": [
+          23279,
+          23512
+        ],
+        "fiscalYear": 2027,
+        "sourceUrl": "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000029/fy26q4earningspressrelease.htm",
+        "guidedRevenueAnnualCagrPct": 9.09,
+        "historicalRevenueCagrPct": 12.0,
+        "note": "Forecast FCF growth is an assumption. Official guidance concerns REVENUE, not FCF."
+      },
+      "growthAssumptionPct": 10.25,
+      "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896878.json",
+      "blockers": [
+        "Maintenance/growth CAPEX split not issuer-verified"
+      ],
+      "valuationLevel": "indicative",
+      "investmentAction": "research_only",
+      "acquisitionMaterialEvent": false,
+      "scenarios": {
+        "bear": {
+          "value": 176.06,
+          "terminalPrice": 222.22,
+          "yearlyOwnerFcf": [
+            15.38,
+            16.11,
+            16.876,
+            17.678,
+            18.518
+          ],
+          "growthPct": 4.75,
+          "exitMultiple": 12,
+          "discountPct": 13.5
+        },
+        "base": {
+          "value": 431.82,
+          "terminalPrice": 621.85,
+          "yearlyOwnerFcf": [
+            16.187,
+            17.847,
+            19.676,
+            21.693,
+            23.917
+          ],
+          "growthPct": 10.25,
+          "exitMultiple": 26,
+          "discountPct": 11.5
+        },
+        "bull": {
+          "value": 669.1,
+          "terminalPrice": 955.38,
+          "yearlyOwnerFcf": [
+            16.921,
+            19.502,
+            22.476,
+            25.905,
+            29.856
+          ],
+          "growthPct": 15.25,
+          "exitMultiple": 32,
+          "discountPct": 10.3
+        }
+      },
+      "valueRange": [
+        176.06,
+        669.1
+      ],
+      "baseValue": 431.82,
+      "entryPrice": 158.45,
+      "priceToEntryGapPct": -55.4,
+      "marginVsBasePct": 17.8,
+      "tenYearIndicativePv": 398.18,
+      "projectedIrrPct": {
+        "fiveYear": 16.31,
+        "tenYear": 13.04
+      },
+      "valuationMethod": "Equity owner-FCF per share; DCF + historically capped P/owner-FCF exit; no balance-sheet EV bridge",
+      "warnings": [
+        "Historic FCF and SBC may not reflect future acquisition returns, working capital or AI competition",
+        "Exit P/FCF is an assumption, NOT the price to which a historical multiple must revert",
+        "Projections keep diluted share basis constant; future dilution must be audited"
+      ]
+    },
+    "CPRT": {
+      "ticker": "CPRT",
+      "name": "Copart",
+      "sector": "marketplace",
+      "currency": "USD",
+      "confidence": {
+        "tier": "low",
+        "score": 40,
+        "components": {
+          "cashSeries": 25,
+          "freshPrice": 10,
+          "managementOutlook": 0,
+          "roicComparable": 0,
+          "capexVerified": 0,
+          "acquisitionEvidence": 0,
+          "independentForwardFcf": 0,
+          "issuerComparability": 5
+        }
+      },
+      "qualityScore": 55,
+      "price": 29.09,
+      "quoteDate": "2026-10-22",
+      "fy": "2026-07-31",
+      "normalizedOwnerFcfPerShare": 1.2201239916799373,
+      "historicalPownerFcf": 37.15,
+      "adjustedRoicPct": null,
+      "growthBasis": {
+        "kind": "historical_growth_proxy",
+        "source": null,
+        "note": "CAGR revenue, NOT consensus"
+      },
+      "growthAssumptionPct": 10.0,
+      "sourceUrl": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000900075.json",
+      "blockers": [
+        "Maintenance/growth CAPEX split not issuer-verified",
+        "ACV acquisition requires pro-forma cash/debt and target ROI",
+        "No independent company growth guidance in policy",
+        "Forward owner FCF not independently verified"
+      ],
+      "valuationLevel": "indicative",
+      "investmentAction": "research_only",
+      "acquisitionMaterialEvent": true,
+      "scenarios": {
+        "bear": {
+          "value": 14.48,
+          "terminalPrice": 18.25,
+          "yearlyOwnerFcf": [
+            1.275,
+            1.332,
+            1.392,
+            1.455,
+            1.52
+          ],
+          "growthPct": 4.5,
+          "exitMultiple": 12,
+          "discountPct": 13.5
+        },
+        "base": {
+          "value": 33.22,
+          "terminalPrice": 47.16,
+          "yearlyOwnerFcf": [
+            1.342,
+            1.476,
+            1.624,
+            1.786,
+            1.965
+          ],
+          "growthPct": 10.0,
+          "exitMultiple": 24,
+          "discountPct": 11.5
+        },
+        "bull": {
+          "value": 52.02,
+          "terminalPrice": 73.62,
+          "yearlyOwnerFcf": [
+            1.403,
+            1.614,
+            1.856,
+            2.134,
+            2.454
+          ],
+          "growthPct": 15.0,
+          "exitMultiple": 30,
+          "discountPct": 10.3
+        }
+      },
+      "valueRange": [
+        14.48,
+        52.02
+      ],
+      "baseValue": 33.22,
+      "entryPrice": 13.03,
+      "priceToEntryGapPct": -55.2,
+      "marginVsBasePct": 12.4,
+      "tenYearIndicativePv": 30.9,
+      "projectedIrrPct": {
+        "fiveYear": 14.75,
+        "tenYear": 12.31
+      },
+      "valuationMethod": "Equity owner-FCF per share; DCF + historically capped P/owner-FCF exit; no balance-sheet EV bridge",
+      "warnings": [
+        "Historic FCF and SBC may not reflect future acquisition returns, working capital or AI competition",
+        "Exit P/FCF is an assumption, NOT the price to which a historical multiple must revert",
+        "Projections keep diluted share basis constant; future dilution must be audited"
+      ]
+    },
+    "CSU.TO": {
+      "ticker": "CSU.TO",
+      "name": "Constellation Software",
+      "sector": "acquisition_led_software",
+      "currency": "CAD",
+      "confidence": {
+        "score": 37,
+        "tier": "low",
+        "components": {
+          "cashSeries": 25,
+          "freshPrice": 10,
+          "managementOutlook": 0,
+          "roicComparable": 0,
+          "capexVerified": 0,
+          "acquisitionEvidence": 0,
+          "independentForwardFcf": 0,
+          "issuerComparability": 2
+        }
+      },
+      "qualityScore": null,
+      "quoteDate": "2026-10-22",
+      "price": 3408.5701,
+      "valuationLevel": "preliminary",
+      "investmentAction": "research_only",
+      "sourceUrl": "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-second-quarter-ended-june-30-2026-and-declares-quarterly-dividend/",
+      "blockers": [
+        "Historical P/owner-FCF comparison not split/currency reconciled",
+        "Maintenance vs growth CAPEX not independently audited",
+        "Cash return on acquisition/growth CAPEX not separately established",
+        "Management and independent forward owner FCF not reconciled"
+      ],
+      "growthBasis": {
+        "kind": "issuer_historical_scenario_not_consensus"
+      },
+      "scenarios": {
+        "bear": {
+          "value": 825.6
+        },
+        "base": {
+          "value": 1195.55
+        },
+        "bull": {
+          "value": 1632.41
+        }
+      },
+      "baseValue": 1195.55,
+      "entryPrice": 743.04,
+      "marginVsBasePct": -185.1,
+      "priceToEntryGapPct": -78.2,
+      "warnings": [
+        "Adquisiciones consumen caja y crean crecimiento; FCFA2S no equivale a caja repartible después de adquisiciones.",
+        "Entry threshold illustrative, not a recommendation",
+        "5Y/10Y IRRs withheld: acquisition economics, owner FCF and share bases not yet reconciled"
+      ]
+    },
+    "ASML": {
+      "ticker": "ASML",
+      "name": "ASML",
+      "sector": "capital_equipment",
+      "currency": "USD",
+      "confidence": {
+        "score": 37,
+        "tier": "low",
+        "components": {
+          "cashSeries": 25,
+          "freshPrice": 10,
+          "managementOutlook": 0,
+          "roicComparable": 0,
+          "capexVerified": 0,
+          "acquisitionEvidence": 0,
+          "independentForwardFcf": 0,
+          "issuerComparability": 2
+        }
+      },
+      "qualityScore": null,
+      "quoteDate": "2026-10-22",
+      "price": 1560.54,
+      "valuationLevel": "preliminary",
+      "investmentAction": "research_only",
+      "sourceUrl": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
+      "blockers": [
+        "Historical P/owner-FCF comparison not split/currency reconciled",
+        "Maintenance vs growth CAPEX not independently audited",
+        "Cash return on acquisition/growth CAPEX not separately established",
+        "Management and independent forward owner FCF not reconciled"
+      ],
+      "growthBasis": {
+        "kind": "issuer_historical_scenario_not_consensus"
+      },
+      "scenarios": {
+        "bear": {
+          "value": 243.75
+        },
+        "base": {
+          "value": 361.63
+        },
+        "bull": {
+          "value": 504.74
+        }
+      },
+      "baseValue": 361.63,
+      "entryPrice": 219.38,
+      "marginVsBasePct": -331.5,
+      "priceToEntryGapPct": -85.9,
+      "warnings": [
+        "ASML cotiza en Nasdaq en USD; modelo parte de EUR. FCF sensible a anticipos de clientes y ciclo de semiconductores.",
+        "Entry threshold illustrative, not a recommendation",
+        "5Y/10Y IRRs withheld: acquisition economics, owner FCF and share bases not yet reconciled"
+      ]
+    },
+    "DNP.WA": {
+      "ticker": "DNP.WA",
+      "name": "Dino Polska",
+      "sector": "store_expansion",
+      "currency": "PLN",
+      "confidence": {
+        "score": 37,
+        "tier": "low",
+        "components": {
+          "cashSeries": 25,
+          "freshPrice": 10,
+          "managementOutlook": 0,
+          "roicComparable": 0,
+          "capexVerified": 0,
+          "acquisitionEvidence": 0,
+          "independentForwardFcf": 0,
+          "issuerComparability": 2
+        }
+      },
+      "qualityScore": null,
+      "quoteDate": "2026-10-21",
+      "price": 39.06,
+      "valuationLevel": "preliminary",
+      "investmentAction": "research_only",
+      "sourceUrl": "https://grupadino.pl/en/financial-reports/",
+      "blockers": [
+        "Historical P/owner-FCF comparison not split/currency reconciled",
+        "Maintenance vs growth CAPEX not independently audited",
+        "Cash return on acquisition/growth CAPEX not separately established",
+        "Management and independent forward owner FCF not reconciled"
+      ],
+      "growthBasis": {
+        "kind": "issuer_historical_scenario_not_consensus"
+      },
+      "scenarios": {
+        "bear": {
+          "value": 6.07
+        },
+        "base": {
+          "value": 8.91
+        },
+        "bull": {
+          "value": 12.28
+        }
+      },
+      "baseValue": 8.91,
+      "entryPrice": 5.46,
+      "marginVsBasePct": -338.4,
+      "priceToEntryGapPct": -86.0,
+      "warnings": [
+        "Capex de expansión de tiendas elevado; FCF actual no mide plenamente valor de futuras aperturas. Split de 10:1 incorporado.",
+        "Entry threshold illustrative, not a recommendation",
+        "5Y/10Y IRRs withheld: acquisition economics, owner FCF and share bases not yet reconciled"
+      ]
+    }
+  },
+  "coverageBacklog": {
+    "AMZN": {
+      "ticker": "AMZN",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "COST": {
+      "ticker": "COST",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "AAON": {
+      "ticker": "AAON",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "DE": {
+      "ticker": "DE",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "DHR": {
+      "ticker": "DHR",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "FIVE": {
+      "ticker": "FIVE",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "FOUR": {
+      "ticker": "FOUR",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "FRPH": {
+      "ticker": "FRPH",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "KEYS": {
+      "ticker": "KEYS",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "MEDP": {
+      "ticker": "MEDP",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "RMD": {
+      "ticker": "RMD",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "TXN": {
+      "ticker": "TXN",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    },
+    "ZTS": {
+      "ticker": "ZTS",
+      "valuationLevel": "not_modeled",
+      "reason": "Await sector-appropriate owner's cash flow model"
+    }
+  },
+  "researchRank": [
+    "ADBE",
+    "INTU",
+    "CPRT",
+    "CSU.TO",
+    "ASML",
+    "DNP.WA"
+  ],
+  "researchOnly": true,
+  "transactionSignals": false,
+  "methodology": {
+    "horizonYears": [
+      5,
+      10
+    ],
+    "cash": "CFO - PPE capex - reported SBC, median three FY",
+    "growth": "Verified issuer revenue guidance used only as one growth input, never consensus FCF",
+    "entry": "MIN(75% base PV, 90% downside PV) using explicit cash and exit-multiple scenarios",
+    "irr": "Modeled annual owner cash payouts plus estimated terminal exit; not guaranteed return",
+    "confidence": "Evidence tier, not analyst conviction or probability of correctness",
+    "history": "Point-in-time historical filings only; excludes future facts and forward guidance",
+    "caveats": "No independent forward FCF consensus, maintenance CAPEX split or acquisition ROIC proven."
+  }
 }

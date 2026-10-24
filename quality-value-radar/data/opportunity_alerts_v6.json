@@ -1,6 +1,8 @@
 {
   "schema": "qvr-alerts-v6",
-  "status": "pending_first_run",
+  "generatedAt": "2026-10-24T22:49:43.710605+00:00",
+  "action": "research_only",
   "alerts": [],
-  "action": "research_only"
+  "notificationsDelivered": false,
+  "note": "No email, push or external alert service is enabled. Alerts are persisted in the app feed."
 }

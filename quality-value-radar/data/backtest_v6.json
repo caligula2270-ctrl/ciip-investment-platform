@@ -1,7 +1,37 @@
 {
   "schema": "qvr-pit-backtest-v6",
-  "status": "pending_first_run",
-  "tickers": {},
+  "generatedAt": "2026-10-24T22:49:43.134389+00:00",
+  "historicalResearchAsOf": "2021-10-25",
+  "tickers": {
+    "ADBE": {
+      "ticker": "ADBE",
+      "status": "insufficient_price_history",
+      "reason": "Existing 5Y Yahoo window does not reach the 2021 as-of date; no fabricated historical quote",
+      "neededAsOf": "2021-10-25",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=5y&interval=1d&events=splits"
+    },
+    "INTU": {
+      "ticker": "INTU",
+      "status": "insufficient_price_history",
+      "reason": "Existing 5Y Yahoo window does not reach the 2021 as-of date; no fabricated historical quote",
+      "neededAsOf": "2021-10-25",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/INTU?range=5y&interval=1d&events=splits"
+    },
+    "CPRT": {
+      "ticker": "CPRT",
+      "status": "insufficient_price_history",
+      "reason": "Existing 5Y Yahoo window does not reach the 2021 as-of date; no fabricated historical quote",
+      "neededAsOf": "2021-10-25",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/CPRT?range=5y&interval=1d&events=splits"
+    }
+  },
   "measuredCount": 0,
-  "strategyPerformanceClaim": false
+  "requestedCount": 3,
+  "strategyPerformanceClaim": false,
+  "dataIntegrity": "No point-in-time price/SEC filings = NO backtest rather than a fabricated result",
+  "limitations": [
+    "Three preselected present-day companies are not a valid representative backtest",
+    "No historical portfolio weights, fees, tax, dividends, survivorship or benchmark",
+    "Lookahead only checked for form filing dates and historical prices, not all accounting revisions"
+  ]
 }
