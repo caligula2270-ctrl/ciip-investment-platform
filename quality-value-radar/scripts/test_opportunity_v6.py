@@ -34,5 +34,5 @@ class ModelRegressionTests(unittest.TestCase):
                "fiscalYear":2027,"sourceUrl":"https://example.org"}
         grow,source=module.forecast_growth(guide,120_000_000,"2026-12-31",10,"software")
         self.assertEqual(source["kind"],"model_derived_from_management_revenue_guidance")
-        self.assertIn("not consensus",source["note"].lower())
+        self.assertIn("not fcf",source["note"].lower())
 if __name__=="__main__":unittest.main()
