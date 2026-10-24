@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """QVR v7 sensitivity tests: CAPEX, share count, and acquisition capital.
 Output is a CETERIS-PARIBUS stress test, never an investment-ready target.
-Exhaustive non-live data dependency: v6, SEC XBRL-derived files, issuer filing notes.
+Dependency: v6, SEC XBRL-derived files, issuer filing notes; missing numbers remain missing.
 """
 import datetime as dt
 import importlib.util
