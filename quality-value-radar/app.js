@@ -17,6 +17,9 @@ let remoteQuotes = {};
 let autoAnalysis = {companies:{},unavailable:{},exclusions:{}};
 let internationalResearch = {companies:{}};
 let reliabilityV5 = {companies:{},counters:{},status:'pending_first_execution'};
+let opportunityV6 = {models:{},researchRank:[],status:'pending_first_run'};
+let backtestV6 = {tickers:{},status:'pending_first_run'};
+let alertsV6 = {alerts:[]};
 let analysisStatus = 'Análisis fundamental todavía no cargado';
 let quotationsNotice = 'Referencias fechadas; no son cotizaciones en directo';
 let activeModal = null;
@@ -61,6 +64,35 @@ async function refreshReliability(){
  try{const r=await fetch('data/reliability_v5.json',{cache:'no-store'});if(r.ok){const v=await r.json();if(v.schema==='qvr-v5-evidence')reliabilityV5=v;}}catch(e){}render();
 }
 
+function opportunitiesV6Panel(){
+ const v=opportunityV6||{},m=v.models||{},rank=v.researchRank||[];
+ const cards=rank.map(t=>{
+ const x=m[t]||{},confidence=x.confidence||{},price=x.price,entry=x.entryPrice,base=x.baseValue;
+ const level=confidence.tier==='high'?'Alta':confidence.tier==='medium'?'Estimada':'Insuficiente';
+ return '<article class="stock-card"><div class="eyebrow">'+esc(t)+' · '+esc(x.sector||'')+'</div><h3>'+esc(x.name||t)+'</h3>'+
+ '<p class="tiny muted">Calidad: '+(x.qualityScore==null?'Sin puntuación':fmtN(x.qualityScore,0)+'/100')+' · Confianza: '+esc(level)+' ('+fmtN(confidence.score||0,0)+'/100)</p>'+
+ '<div class="card-prices"><div><small>Precio '+esc(x.quoteDate||'no fechado')+'</small><b>'+money(price,x.currency)+'</b></div><div><small>Entrada ilustrativa</small><b>'+money(entry,x.currency)+'</b></div></div>'+
+ '<p class="small">DCF base: '+money(base,x.currency)+' · margen vs base: '+pct(x.marginVsBasePct)+'</p>'+
+ '<p class="small">IRR hipótesis 5 años: '+pct(x.projectedIrrPct?.fiveYear)+' · 10 años: '+pct(x.projectedIrrPct?.tenYear)+'</p>'+
+ '<p class="tiny muted">Escenarios: '+money(x.scenarios?.bear?.value,x.currency)+' / '+money(x.scenarios?.base?.value,x.currency)+' / '+money(x.scenarios?.bull?.value,x.currency)+'</p>'+
+ '<div class="mini-note">'+esc((x.blockers||[]).slice(0,3).join('; ')||'Requiere revisión humana')+'</div></article>';
+ }).join('');
+ const tested=Object.values(backtestV6.tickers||{});
+ return '<section class="panel" style="margin-bottom:18px"><div class="panel-head"><div><h3>Radar de oportunidades v6</h3><p>Escenarios, precios de entrada y ranking de investigación; no son recomendaciones de compra</p></div><span class="pill neutral">'+rank.length+' empresas prioritarias</span></div>'+
+ '<div class="cards-3">'+(cards||'<p class="muted">Primera valoración en proceso</p>')+'</div>'+
+ '<p class="tiny muted">Backtest histórico: '+tested.filter(x=>x.status==='measured').length+' de '+tested.length+' compañías con evidencia temporal suficiente. '+esc((backtestV6.limitations||[]).slice(0,2).join('; '))+'</p>'+
+ '<p class="tiny muted">Alertas de estudio fechadas: '+(alertsV6.alerts||[]).length+'. Se registran dentro del radar; no se envían notificaciones externas.</p></section>';
+}
+async function refreshOpportunityV6(){
+ try{
+  const names=['opportunity_v6.json','backtest_v6.json','opportunity_alerts_v6.json'];
+  const data=await Promise.all(names.map(async n=>{const r=await fetch('data/'+n,{cache:'no-store'});return r.ok?await r.json():null}));
+  if(data[0]?.schema==='qvr-v6')opportunityV6=data[0];
+  if(data[1]?.schema==='qvr-pit-backtest-v6')backtestV6=data[1];
+  if(data[2]?.schema==='qvr-alerts-v6')alertsV6=data[2];
+ }catch(e){}render();
+}
+
 function autoQualityPanel(){
   const entries=companies().map(c=>({c,a:autoAnalysis.companies?.[c.s]})).filter(x=>x.a);
   const ready=entries.filter(x=>x.a.status==='ready');
@@ -79,7 +111,7 @@ function autoQualityPanel(){
       statCard('Sin cobertura completa',unsupported,'Excluidas o pendientes')+
       statCard('Tasa de descuento base','11,5 %','Hipótesis explícita, editable en código')+'</div>'+
     '<div class="cards-3">'+(opportunities.length?opportunities.map(({c,a})=>card(c,a)).join(''):'<div class="empty">Sin oportunidades que cumplan todos los requisitos. Esto no implica que las empresas estén caras.</div>')+'</div>'+
-    reliabilityPanel()+internationalPanel()+
+    opportunitiesV6Panel()+reliabilityPanel()+internationalPanel()+
     '<details class="collapsible"><summary>Ver todas las valoraciones automáticas y datos insuficientes</summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Empresa</th><th>Estado</th><th>Valor razonable*</th><th>Descuento</th><th></th></tr></thead><tbody>'+
     companies().map(c=>{const a=autoAnalysis.companies?.[c.s],reason=a?.reason||autoAnalysis.exclusions?.[c.s]||autoAnalysis.unavailable?.[c.s]||'Sin modelo verificable';return '<tr><td>'+esc(c.n)+' <small>'+esc(c.s)+'</small></td><td>'+(a?.status==='ready'?'Con modelo':esc(reason))+'</td><td>'+money(a?.fairValue,a?.currency)+'</td><td>'+pct(a?.status==='ready'?a.marginOfSafetyPct:null)+'</td><td>'+(a?'<button class="btn btn-quiet btn-sm" data-auto-detail="'+esc(c.s)+'">Detalles</button>':'—')+'</td></tr>'}).join('')+
     '</tbody></table></div></details><p class="tiny muted">* Mezcla 60% de DCF simplificado a 5 años sobre FCF normalizado y 40% de mediana histórica P/FCF, calculada con cotizaciones en fechas fiscales. No sustituye una valoración sectorial ni ajuste completo por deuda, SBC, adquisiciones o ciclo del capital de trabajo.</p></section>';
@@ -202,6 +234,6 @@ document.addEventListener('change',ev=>{const t=ev.target;if(t.id==='filter-sect
 document.addEventListener('input',ev=>{if(ev.target.id==='search-company'){state.filters.term=ev.target.value;persist();const pos=ev.target.selectionStart;render();const el=document.getElementById('search-company');if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&activeModal)closeModal();if(ev.key==='Escape'&&!document.getElementById('modal-root').classList.contains('hidden'))closeModal();});
 document.getElementById('modal-root').addEventListener('click',ev=>{if(ev.target.id==='modal-root')closeModal();});
-render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();
+render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();refreshOpportunityV6();
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 })();
