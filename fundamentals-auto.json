@@ -1,7 +1,7 @@
 {
   "schema": "ciip-fundamentals-v1",
   "source": "SEC EDGAR companyfacts (US GAAP)",
-  "generated_at": "2026-10-23T23:13:25.791054+00:00",
+  "generated_at": "2026-10-24T21:39:13.498178+00:00",
   "companies": {
     "MSFT": {
       "cik": "0000789019",
@@ -1033,7 +1033,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2026-06-30",
-        "latest_fy_age_days": 115,
+        "latest_fy_age_days": 116,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -1117,6 +1117,115 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "cloud_capex",
+        "model": "capital_heavy_peak_capex_stress",
+        "status": "review_required",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": 20214000000.0,
+        "adjustments": {
+          "fcf_3y_usd": 71611000000,
+          "median_cfo_3y_usd": 136162000000.0,
+          "median_capex_3y_usd": 64551000000.0,
+          "peak_capex_3y_usd": 115948000000,
+          "peak_capex_stress_cash_usd": 20214000000.0,
+          "owner_cash_proxy_usd": 20214000000.0
+        },
+        "scenarios": {
+          "conservador": {
+            "equity_value_usd": 153005081836.71,
+            "terminal_weight_pct": 27.63,
+            "explicit_value_usd": 110732892822.29,
+            "terminal_value_pv_usd": 42272189014.41,
+            "growth_1_5_pct": 2.75,
+            "growth_6_10_pct": 1.25,
+            "discount_pct": 15.5,
+            "terminal_pct": 1.5
+          },
+          "base": {
+            "equity_value_usd": 214376867830.72,
+            "terminal_weight_pct": 36.25,
+            "explicit_value_usd": 136659576900.21,
+            "terminal_value_pv_usd": 77717290930.51,
+            "growth_1_5_pct": 5.5,
+            "growth_6_10_pct": 2.5,
+            "discount_pct": 13.0,
+            "terminal_pct": 1.5
+          },
+          "optimista": {
+            "equity_value_usd": 253180901505.1,
+            "terminal_weight_pct": 40.41,
+            "explicit_value_usd": 150863565442.41,
+            "terminal_value_pv_usd": 102317336062.69,
+            "growth_1_5_pct": 6.88,
+            "growth_6_10_pct": 3.12,
+            "discount_pct": 12.0,
+            "terminal_pct": 1.5
+          }
+        },
+        "warnings": [
+          "CAPEX máximo trianual se usa como estrés; no es mantenimiento certificado ni normalización de un ciclo completo",
+          "Riesgo de ciclo/fase de inversión; el crecimiento e infraestructura deben modelarse por segmentos"
+        ],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed",
+        "assumptions": {
+          "first_growth": 5.5,
+          "later_growth": 2.5,
+          "discount_rate": 13.0,
+          "terminal_growth": 1.5
+        }
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-K",
+            "filed": "2026-07-29",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001193125-26-323660",
+            "primary_document": "msft-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/0001193125-26-323660-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-29",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001193125-26-191507",
+            "primary_document": "msft-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/0001193125-26-191507-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-01-28",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001193125-26-027207",
+            "primary_document": "msft-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/msft-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/0001193125-26-027207-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "GOOGL": {
@@ -2101,7 +2210,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -2176,6 +2285,115 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "cloud_capex",
+        "model": "capital_heavy_peak_capex_stress",
+        "status": "review_required",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": 33852000000.0,
+        "adjustments": {
+          "fcf_3y_usd": 72764000000,
+          "median_cfo_3y_usd": 125299000000.0,
+          "median_capex_3y_usd": 52535000000.0,
+          "peak_capex_3y_usd": 91447000000,
+          "peak_capex_stress_cash_usd": 33852000000.0,
+          "owner_cash_proxy_usd": 33852000000.0
+        },
+        "scenarios": {
+          "conservador": {
+            "equity_value_usd": 254997933565.52,
+            "terminal_weight_pct": 27.55,
+            "explicit_value_usd": 184750052871.01,
+            "terminal_value_pv_usd": 70247880694.51,
+            "growth_1_5_pct": 2.66,
+            "growth_6_10_pct": 1.18,
+            "discount_pct": 15.5,
+            "terminal_pct": 1.5
+          },
+          "base": {
+            "equity_value_usd": 355283286734.59,
+            "terminal_weight_pct": 36.08,
+            "explicit_value_usd": 227087247945.12,
+            "terminal_value_pv_usd": 128196038789.47,
+            "growth_1_5_pct": 5.32,
+            "growth_6_10_pct": 2.36,
+            "discount_pct": 13.0,
+            "terminal_pct": 1.5
+          },
+          "optimista": {
+            "equity_value_usd": 418331764533.48,
+            "terminal_weight_pct": 40.2,
+            "explicit_value_usd": 250164203141.75,
+            "terminal_value_pv_usd": 168167561391.73,
+            "growth_1_5_pct": 6.65,
+            "growth_6_10_pct": 2.96,
+            "discount_pct": 12.0,
+            "terminal_pct": 1.5
+          }
+        },
+        "warnings": [
+          "CAPEX máximo trianual se usa como estrés; no es mantenimiento certificado ni normalización de un ciclo completo",
+          "Riesgo de ciclo/fase de inversión; el crecimiento e infraestructura deben modelarse por segmentos"
+        ],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed",
+        "assumptions": {
+          "first_growth": 5.32,
+          "later_growth": 2.365,
+          "discount_rate": 13.0,
+          "terminal_growth": 1.5
+        }
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-07-23",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001652044-26-000071",
+            "primary_document": "goog-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/0001652044-26-000071-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-30",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001652044-26-000048",
+            "primary_document": "goog-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/0001652044-26-000048-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-05",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001652044-26-000018",
+            "primary_document": "goog-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/0001652044-26-000018-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "AMZN": {
@@ -3186,7 +3404,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -3270,6 +3488,68 @@
         "notes": [],
         "provisional_diluted_shares": 10903000000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "mixed_operations",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-07-31",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001018724-26-000026",
+            "primary_document": "amzn-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/0001018724-26-000026-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-30",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001018724-26-000014",
+            "primary_document": "amzn-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/0001018724-26-000014-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-06",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001018724-26-000004",
+            "primary_document": "amzn-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/0001018724-26-000004-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "META": {
@@ -4182,7 +4462,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -4240,6 +4520,115 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "cloud_capex",
+        "model": "capital_heavy_peak_capex_stress",
+        "status": "review_required",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": 21637000000.0,
+        "adjustments": {
+          "fcf_3y_usd": 46109000000,
+          "median_cfo_3y_usd": 91328000000.0,
+          "median_capex_3y_usd": 37256000000.0,
+          "peak_capex_3y_usd": 69691000000,
+          "peak_capex_stress_cash_usd": 21637000000.0,
+          "owner_cash_proxy_usd": 21637000000.0
+        },
+        "scenarios": {
+          "conservador": {
+            "equity_value_usd": 163776143054.36,
+            "terminal_weight_pct": 27.63,
+            "explicit_value_usd": 118528129118.23,
+            "terminal_value_pv_usd": 45248013936.13,
+            "growth_1_5_pct": 2.75,
+            "growth_6_10_pct": 1.25,
+            "discount_pct": 15.5,
+            "terminal_pct": 1.5
+          },
+          "base": {
+            "equity_value_usd": 229468303613.99,
+            "terminal_weight_pct": 36.25,
+            "explicit_value_usd": 146279967616.0,
+            "terminal_value_pv_usd": 83188335997.99,
+            "growth_1_5_pct": 5.5,
+            "growth_6_10_pct": 2.5,
+            "discount_pct": 13.0,
+            "terminal_pct": 1.5
+          },
+          "optimista": {
+            "equity_value_usd": 271004015329.27,
+            "terminal_weight_pct": 40.41,
+            "explicit_value_usd": 161483870855.72,
+            "terminal_value_pv_usd": 109520144473.55,
+            "growth_1_5_pct": 6.88,
+            "growth_6_10_pct": 3.12,
+            "discount_pct": 12.0,
+            "terminal_pct": 1.5
+          }
+        },
+        "warnings": [
+          "CAPEX máximo trianual se usa como estrés; no es mantenimiento certificado ni normalización de un ciclo completo",
+          "Riesgo de ciclo/fase de inversión; el crecimiento e infraestructura deben modelarse por segmentos"
+        ],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed",
+        "assumptions": {
+          "first_growth": 5.5,
+          "later_growth": 2.5,
+          "discount_rate": 13.0,
+          "terminal_growth": 1.5
+        }
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-10-22",
+            "fiscal_period_end": "2026-09-30",
+            "accession": "0001628280-26-066773",
+            "primary_document": "meta-20260930.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/0001628280-26-066773-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-07-30",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001628280-26-050705",
+            "primary_document": "meta-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/0001628280-26-050705-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-30",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001628280-26-028526",
+            "primary_document": "meta-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/meta-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/0001628280-26-028526-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "V": {
@@ -5081,7 +5470,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-09-30",
-        "latest_fy_age_days": 388,
+        "latest_fy_age_days": 389,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -5135,6 +5524,70 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "payment_network",
+        "model": "payments_income_capped_cashflow",
+        "status": "insufficient",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [
+          "Falta CFO, CAPEX o FCF comparable en tres ejercicios"
+        ],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-07-29",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001403161-26-000104",
+            "primary_document": "v-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/0001403161-26-000104-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-29",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001403161-26-000079",
+            "primary_document": "v-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000079/v-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000079/0001403161-26-000079-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-01-30",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001403161-26-000045",
+            "primary_document": "v-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000045/v-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000045/0001403161-26-000045-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "MA": {
@@ -6096,7 +6549,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -6153,6 +6606,70 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "payment_network",
+        "model": "payments_income_capped_cashflow",
+        "status": "insufficient",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [
+          "Faltan tres ejercicios de beneficio neto positivo"
+        ],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-07-30",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001141391-26-000083",
+            "primary_document": "ma-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/0001141391-26-000083-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-30",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001141391-26-000031",
+            "primary_document": "ma-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000031/ma-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000031/0001141391-26-000031-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-11",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001141391-26-000013",
+            "primary_document": "ma-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/0001141391-26-000013-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "SPGI": {
@@ -7114,7 +7631,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -7201,6 +7718,68 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "financial_data",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-07-28",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0000064040-26-000045",
+            "primary_document": "spgi-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/64040/000006404026000045/spgi-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/64040/000006404026000045/0000064040-26-000045-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-28",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0000064040-26-000024",
+            "primary_document": "spgi-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/64040/000006404026000024/spgi-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/64040/000006404026000024/0000064040-26-000024-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-11",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0000064040-26-000013",
+            "primary_document": "spgi-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/64040/000006404026000013/spgi-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/64040/000006404026000013/0000064040-26-000013-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "MCO": {
@@ -8209,7 +8788,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -8281,6 +8860,68 @@
         "notes": [],
         "provisional_diluted_shares": 173300000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "financial_data",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-10-21",
+            "fiscal_period_end": "2026-09-30",
+            "accession": "0001628280-26-066731",
+            "primary_document": "mco-20260930.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026066731/mco-20260930.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026066731/0001628280-26-066731-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-07-23",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001628280-26-049398",
+            "primary_document": "mco-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026049398/mco-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026049398/0001628280-26-049398-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-23",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001628280-26-026848",
+            "primary_document": "mco-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026026848/mco-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026026848/0001628280-26-026848-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "COST": {
@@ -9313,7 +9954,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2026-08-30",
-        "latest_fy_age_days": 54,
+        "latest_fy_age_days": 55,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -9396,6 +10037,68 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "retail",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-K",
+            "filed": "2026-10-07",
+            "fiscal_period_end": "2026-08-30",
+            "accession": "0000909832-26-000093",
+            "primary_document": "cost-20260830.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000093/cost-20260830.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000093/0000909832-26-000093-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-06-03",
+            "fiscal_period_end": "2026-05-10",
+            "accession": "0000909832-26-000051",
+            "primary_document": "cost-20260510.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/cost-20260510.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000051/0000909832-26-000051-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-03-11",
+            "fiscal_period_end": "2026-02-15",
+            "accession": "0000909832-26-000029",
+            "primary_document": "cost-20260215.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000029/cost-20260215.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983226000029/0000909832-26-000029-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "CPRT": {
@@ -10274,7 +10977,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2026-07-31",
-        "latest_fy_age_days": 84,
+        "latest_fy_age_days": 85,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -10357,6 +11060,68 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "standard",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-K",
+            "filed": "2026-09-29",
+            "fiscal_period_end": "2026-07-31",
+            "accession": "0001193125-26-405731",
+            "primary_document": "cprt-20260731.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/0001193125-26-405731-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-29",
+            "fiscal_period_end": "2026-04-30",
+            "accession": "0001193125-26-245578",
+            "primary_document": "cprt-20260430.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/900075/000119312526245578/cprt-20260430.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/900075/000119312526245578/0001193125-26-245578-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-03-03",
+            "fiscal_period_end": "2026-01-31",
+            "accession": "0001193125-26-088593",
+            "primary_document": "cprt-20260131.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/900075/000119312526088593/cprt-20260131.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/900075/000119312526088593/0001193125-26-088593-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "FICO": {
@@ -11365,7 +12130,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-09-30",
-        "latest_fy_age_days": 388,
+        "latest_fy_age_days": 389,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -11446,6 +12211,113 @@
         "notes": [],
         "provisional_diluted_shares": 22703000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "software",
+        "model": "software_owner_cash_sbc_stress",
+        "status": "review_required",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": 474641000.0,
+        "adjustments": {
+          "fcf_3y_usd": 624080000,
+          "median_sbc_3y_usd": 149439000.0,
+          "owner_cash_proxy_usd": 474641000.0,
+          "sbc_policy": "100% median GAAP stock compensation subtracted as economic-cost stress; do not extrapolate share dilution as an additional charge"
+        },
+        "scenarios": {
+          "conservador": {
+            "equity_value_usd": 4305772128.15,
+            "terminal_weight_pct": 33.5,
+            "explicit_value_usd": 2863403486.03,
+            "terminal_value_pv_usd": 1442368642.12,
+            "growth_1_5_pct": 3.54,
+            "growth_6_10_pct": 2.18,
+            "discount_pct": 14.0,
+            "terminal_pct": 2.0
+          },
+          "base": {
+            "equity_value_usd": 6691725516.14,
+            "terminal_weight_pct": 44.68,
+            "explicit_value_usd": 3701891138.95,
+            "terminal_value_pv_usd": 2989834377.19,
+            "growth_1_5_pct": 7.08,
+            "growth_6_10_pct": 4.36,
+            "discount_pct": 11.5,
+            "terminal_pct": 2.0
+          },
+          "optimista": {
+            "equity_value_usd": 8366516716.74,
+            "terminal_weight_pct": 49.97,
+            "explicit_value_usd": 4186030387.08,
+            "terminal_value_pv_usd": 4180486329.66,
+            "growth_1_5_pct": 8.85,
+            "growth_6_10_pct": 5.45,
+            "discount_pct": 10.5,
+            "terminal_pct": 2.0
+          }
+        },
+        "warnings": [
+          "SBC se resta como estrés económico; puede coexistir con dilución y exige evitar doble contabilización",
+          "R&D, ingresos diferidos, capitalización de software y recompras pendientes de análisis"
+        ],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed",
+        "assumptions": {
+          "first_growth": 7.08,
+          "later_growth": 4.357,
+          "discount_rate": 11.5,
+          "terminal_growth": 2.0
+        }
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-07-29",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0000814547-26-000030",
+            "primary_document": "fico-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/814547/000081454726000030/fico-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/814547/000081454726000030/0000814547-26-000030-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-28",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0000814547-26-000021",
+            "primary_document": "fico-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/814547/000081454726000021/fico-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/814547/000081454726000021/0000814547-26-000021-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-01-28",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0000814547-26-000011",
+            "primary_document": "fico-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/814547/000081454726000011/fico-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/814547/000081454726000011/0000814547-26-000011-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "ROP": {
@@ -12467,7 +13339,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -12551,6 +13423,68 @@
         "notes": [],
         "provisional_diluted_shares": 100600000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "serial_acquirer",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-07-31",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0000882835-26-000036",
+            "primary_document": "rop-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/882835/000088283526000036/rop-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/882835/000088283526000036/0000882835-26-000036-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-01",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0000882835-26-000019",
+            "primary_document": "rop-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/882835/000088283526000019/rop-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/882835/000088283526000019/0000882835-26-000019-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-24",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0000882835-26-000009",
+            "primary_document": "rop-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/882835/000088283526000009/rop-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/882835/000088283526000009/0000882835-26-000009-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "HEI": {
@@ -13464,7 +14398,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-10-31",
-        "latest_fy_age_days": 357,
+        "latest_fy_age_days": 358,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -13541,6 +14475,68 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "serial_acquirer",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-08-27",
+            "fiscal_period_end": "2026-07-31",
+            "accession": "0000046619-26-000020",
+            "primary_document": "hei-20260731.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/46619/000004661926000020/hei-20260731.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/46619/000004661926000020/0000046619-26-000020-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-29",
+            "fiscal_period_end": "2026-04-30",
+            "accession": "0000046619-26-000016",
+            "primary_document": "hei-20260430.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/46619/000004661926000016/hei-20260430.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/46619/000004661926000016/0000046619-26-000016-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-02-27",
+            "fiscal_period_end": "2026-01-31",
+            "accession": "0000046619-26-000005",
+            "primary_document": "hei-20260131.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/46619/000004661926000005/hei-20260131.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/46619/000004661926000005/0000046619-26-000005-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "TDG": {
@@ -14693,7 +15689,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-09-30",
-        "latest_fy_age_days": 388,
+        "latest_fy_age_days": 389,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -14765,6 +15761,68 @@
         "notes": [],
         "provisional_diluted_shares": 57400000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "serial_acquirer",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-08-04",
+            "fiscal_period_end": "2026-06-27",
+            "accession": "0001260221-26-000053",
+            "primary_document": "tdg-20260627.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1260221/000126022126000053/tdg-20260627.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1260221/000126022126000053/0001260221-26-000053-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-05",
+            "fiscal_period_end": "2026-03-28",
+            "accession": "0001260221-26-000040",
+            "primary_document": "tdg-20260328.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1260221/000126022126000040/tdg-20260328.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1260221/000126022126000040/0001260221-26-000040-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-02-03",
+            "fiscal_period_end": "2025-12-27",
+            "accession": "0001260221-26-000017",
+            "primary_document": "tdg-20251227.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1260221/000126022126000017/tdg-20251227.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1260221/000126022126000017/0001260221-26-000017-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "INTU": {
@@ -15797,7 +16855,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2026-07-31",
-        "latest_fy_age_days": 84,
+        "latest_fy_age_days": 85,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -15880,6 +16938,113 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "software",
+        "model": "software_owner_cash_sbc_stress",
+        "status": "review_required",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": 4064000000.0,
+        "adjustments": {
+          "fcf_3y_usd": 6032000000,
+          "median_sbc_3y_usd": 1968000000.0,
+          "owner_cash_proxy_usd": 4064000000.0,
+          "sbc_policy": "100% median GAAP stock compensation subtracted as economic-cost stress; do not extrapolate share dilution as an additional charge"
+        },
+        "scenarios": {
+          "conservador": {
+            "equity_value_usd": 38351204826.22,
+            "terminal_weight_pct": 33.84,
+            "explicit_value_usd": 25372775178.94,
+            "terminal_value_pv_usd": 12978429647.27,
+            "growth_1_5_pct": 4.5,
+            "growth_6_10_pct": 2.25,
+            "discount_pct": 14.0,
+            "terminal_pct": 2.0
+          },
+          "base": {
+            "equity_value_usd": 62161818964.42,
+            "terminal_weight_pct": 45.32,
+            "explicit_value_usd": 33991255495.85,
+            "terminal_value_pv_usd": 28170563468.57,
+            "growth_1_5_pct": 9.0,
+            "growth_6_10_pct": 4.5,
+            "discount_pct": 11.5,
+            "terminal_pct": 2.0
+          },
+          "optimista": {
+            "equity_value_usd": 79390344880.52,
+            "terminal_weight_pct": 50.71,
+            "explicit_value_usd": 39132930943.13,
+            "terminal_value_pv_usd": 40257413937.39,
+            "growth_1_5_pct": 11.25,
+            "growth_6_10_pct": 5.62,
+            "discount_pct": 10.5,
+            "terminal_pct": 2.0
+          }
+        },
+        "warnings": [
+          "SBC se resta como estrés económico; puede coexistir con dilución y exige evitar doble contabilización",
+          "R&D, ingresos diferidos, capitalización de software y recompras pendientes de análisis"
+        ],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed",
+        "assumptions": {
+          "first_growth": 9.0,
+          "later_growth": 4.5,
+          "discount_rate": 11.5,
+          "terminal_growth": 2.0
+        }
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-K",
+            "filed": "2026-09-09",
+            "fiscal_period_end": "2026-07-31",
+            "accession": "0000896878-26-000037",
+            "primary_document": "intu-20260731.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/intu-20260731.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000037/0000896878-26-000037-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-20",
+            "fiscal_period_end": "2026-04-30",
+            "accession": "0000896878-26-000025",
+            "primary_document": "intu-20260430.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000025/intu-20260430.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000025/0000896878-26-000025-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-02-26",
+            "fiscal_period_end": "2026-01-31",
+            "accession": "0000896878-26-000014",
+            "primary_document": "intu-20260131.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000014/intu-20260131.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687826000014/0000896878-26-000014-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "ADBE": {
@@ -16936,7 +18101,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-11-28",
-        "latest_fy_age_days": 329,
+        "latest_fy_age_days": 330,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -17017,6 +18182,113 @@
         "notes": [],
         "provisional_diluted_shares": 395500000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "software",
+        "model": "software_owner_cash_sbc_stress",
+        "status": "review_required",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": 6040000000.0,
+        "adjustments": {
+          "fcf_3y_usd": 7873000000,
+          "median_sbc_3y_usd": 1833000000.0,
+          "owner_cash_proxy_usd": 6040000000.0,
+          "sbc_policy": "100% median GAAP stock compensation subtracted as economic-cost stress; do not extrapolate share dilution as an additional charge"
+        },
+        "scenarios": {
+          "conservador": {
+            "equity_value_usd": 54717487663.72,
+            "terminal_weight_pct": 33.48,
+            "explicit_value_usd": 36399530026.7,
+            "terminal_value_pv_usd": 18317957637.01,
+            "growth_1_5_pct": 3.51,
+            "growth_6_10_pct": 2.16,
+            "discount_pct": 14.0,
+            "terminal_pct": 2.0
+          },
+          "base": {
+            "equity_value_usd": 84903608540.08,
+            "terminal_weight_pct": 44.64,
+            "explicit_value_usd": 47004738201.64,
+            "terminal_value_pv_usd": 37898870338.43,
+            "growth_1_5_pct": 7.03,
+            "growth_6_10_pct": 4.33,
+            "discount_pct": 11.5,
+            "terminal_pct": 2.0
+          },
+          "optimista": {
+            "equity_value_usd": 106064135339.28,
+            "terminal_weight_pct": 49.92,
+            "explicit_value_usd": 53120683763.97,
+            "terminal_value_pv_usd": 52943451575.31,
+            "growth_1_5_pct": 8.79,
+            "growth_6_10_pct": 5.41,
+            "discount_pct": 10.5,
+            "terminal_pct": 2.0
+          }
+        },
+        "warnings": [
+          "SBC se resta como estrés económico; puede coexistir con dilución y exige evitar doble contabilización",
+          "R&D, ingresos diferidos, capitalización de software y recompras pendientes de análisis"
+        ],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed",
+        "assumptions": {
+          "first_growth": 7.029,
+          "later_growth": 4.326,
+          "discount_rate": 11.5,
+          "terminal_growth": 2.0
+        }
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-09-22",
+            "fiscal_period_end": "2026-08-28",
+            "accession": "0000796343-26-000156",
+            "primary_document": "adbe-20260828.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/0000796343-26-000156-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-06-15",
+            "fiscal_period_end": "2026-05-29",
+            "accession": "0000796343-26-000112",
+            "primary_document": "adbe-20260529.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000112/adbe-20260529.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000112/0000796343-26-000112-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-03-25",
+            "fiscal_period_end": "2026-02-27",
+            "accession": "0000796343-26-000056",
+            "primary_document": "adbe-20260227.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000056/adbe-20260227.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000056/0000796343-26-000056-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "TXN": {
@@ -18049,7 +19321,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -18122,6 +19394,115 @@
         "notes": [],
         "provisional_diluted_shares": 921000000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "cyclical_semis",
+        "model": "capital_heavy_peak_capex_stress",
+        "status": "review_required",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": 1349000000.0,
+        "adjustments": {
+          "fcf_3y_usd": 1498000000,
+          "median_cfo_3y_usd": 6420000000.0,
+          "median_capex_3y_usd": 4820000000.0,
+          "peak_capex_3y_usd": 5071000000,
+          "peak_capex_stress_cash_usd": 1349000000.0,
+          "owner_cash_proxy_usd": 1349000000.0
+        },
+        "scenarios": {
+          "conservador": {
+            "equity_value_usd": 8887240566.26,
+            "terminal_weight_pct": 25.78,
+            "explicit_value_usd": 6596074461.28,
+            "terminal_value_pv_usd": 2291166104.99,
+            "growth_1_5_pct": -0.21,
+            "growth_6_10_pct": 0.0,
+            "discount_pct": 15.5,
+            "terminal_pct": 1.5
+          },
+          "base": {
+            "equity_value_usd": 10649756029.01,
+            "terminal_weight_pct": 32.26,
+            "explicit_value_usd": 7213864811.81,
+            "terminal_value_pv_usd": 3435891217.2,
+            "growth_1_5_pct": -0.41,
+            "growth_6_10_pct": 0,
+            "discount_pct": 13.0,
+            "terminal_pct": 1.5
+          },
+          "optimista": {
+            "equity_value_usd": 11574649452.59,
+            "terminal_weight_pct": 35.35,
+            "explicit_value_usd": 7482916393.79,
+            "terminal_value_pv_usd": 4091733058.8,
+            "growth_1_5_pct": -0.51,
+            "growth_6_10_pct": 0.0,
+            "discount_pct": 12.0,
+            "terminal_pct": 1.5
+          }
+        },
+        "warnings": [
+          "CAPEX máximo trianual se usa como estrés; no es mantenimiento certificado ni normalización de un ciclo completo",
+          "Riesgo de ciclo/fase de inversión; el crecimiento e infraestructura deben modelarse por segmentos"
+        ],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed",
+        "assumptions": {
+          "first_growth": -0.412,
+          "later_growth": 0,
+          "discount_rate": 13.0,
+          "terminal_growth": 1.5
+        }
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-10-23",
+            "fiscal_period_end": "2026-09-30",
+            "accession": "0000097476-26-000169",
+            "primary_document": "txn-20260930.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/0000097476-26-000169-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-07-24",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0000097476-26-000152",
+            "primary_document": "txn-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/0000097476-26-000152-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-24",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0000097476-26-000101",
+            "primary_document": "txn-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000101/txn-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000101/0000097476-26-000101-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "LRCX": {
@@ -19131,7 +20512,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2026-06-28",
-        "latest_fy_age_days": 117,
+        "latest_fy_age_days": 118,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -19215,6 +20596,70 @@
         "notes": [],
         "provisional_diluted_shares": 1255768000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "cyclical_semis",
+        "model": "capital_heavy_peak_capex_stress",
+        "status": "insufficient",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [
+          "Falta CFO, CAPEX o FCF comparable en tres ejercicios"
+        ],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-10-22",
+            "fiscal_period_end": "2026-09-27",
+            "accession": "0000707549-26-000054",
+            "primary_document": "lrcx-20260927.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000054/lrcx-20260927.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000054/0000707549-26-000054-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-08-07",
+            "fiscal_period_end": "2026-06-28",
+            "accession": "0000707549-26-000037",
+            "primary_document": "lrcx-20260628.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/lrcx-20260628.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000037/0000707549-26-000037-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-23",
+            "fiscal_period_end": "2026-03-29",
+            "accession": "0000707549-26-000022",
+            "primary_document": "lrcx-20260329.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000022/lrcx-20260329.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/707549/000070754926000022/0000707549-26-000022-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "BKNG": {
@@ -20092,7 +21537,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -20166,6 +21611,68 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "travel_platform",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-08-04",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001075531-26-000037",
+            "primary_document": "bkng-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000037/bkng-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000037/0001075531-26-000037-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-28",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001075531-26-000025",
+            "primary_document": "bkng-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000025/bkng-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000025/0001075531-26-000025-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-18",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001075531-26-000009",
+            "primary_document": "bkng-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000009/bkng-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1075531/000107553126000009/0001075531-26-000009-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "MELI": {
@@ -21043,7 +22550,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 3,
         "complete_fcf_years": 3,
@@ -21127,6 +22634,68 @@
         "notes": [],
         "provisional_diluted_shares": 50697301,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "mixed_operations",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-08-06",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001099590-26-000023",
+            "primary_document": "meli-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000023/meli-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000023/0001099590-26-000023-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-08",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001099590-26-000017",
+            "primary_document": "meli-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000017/meli-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000017/0001099590-26-000017-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-25",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001099590-26-000006",
+            "primary_document": "meli-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000006/meli-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000006/0001099590-26-000006-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "AZO": {
@@ -22028,7 +23597,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-08-30",
-        "latest_fy_age_days": 419,
+        "latest_fy_age_days": 420,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -22100,6 +23669,68 @@
         "notes": [],
         "provisional_diluted_shares": 16852000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "retail",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-06-12",
+            "fiscal_period_end": "2026-05-09",
+            "accession": "0001104659-26-073525",
+            "primary_document": "azo-20260509x10q.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/866787/000110465926073525/azo-20260509x10q.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/866787/000110465926073525/0001104659-26-073525-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-03-20",
+            "fiscal_period_end": "2026-02-14",
+            "accession": "0001104659-26-032757",
+            "primary_document": "azo-20260214x10q.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/866787/000110465926032757/azo-20260214x10q.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/866787/000110465926032757/0001104659-26-032757-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2025-12-19",
+            "fiscal_period_end": "2025-11-22",
+            "accession": "0001104659-25-123222",
+            "primary_document": "azo-20251122x10q.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/866787/000110465925123222/azo-20251122x10q.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/866787/000110465925123222/0001104659-25-123222-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "ORLY": {
@@ -23121,7 +24752,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -23202,6 +24833,68 @@
         "notes": [],
         "provisional_diluted_shares": 828875000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "retail",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-08-07",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0000898173-26-000045",
+            "primary_document": "orly-20260630x10q.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000045/orly-20260630x10q.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000045/0000898173-26-000045-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-08",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0000898173-26-000027",
+            "primary_document": "orly-20260331x10q.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000027/orly-20260331x10q.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000027/0000898173-26-000027-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-27",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0000898173-26-000009",
+            "primary_document": "orly-20251231x10k.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000009/orly-20251231x10k.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000009/0000898173-26-000009-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "ODFL": {
@@ -24031,7 +25724,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -24115,6 +25808,70 @@
         "notes": [],
         "provisional_diluted_shares": 208715000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "capital_intensive",
+        "model": "capital_heavy_peak_capex_stress",
+        "status": "insufficient",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [
+          "Falta CFO, CAPEX o FCF comparable en tres ejercicios"
+        ],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-08-05",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0000878927-26-000023",
+            "primary_document": "odfl-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/878927/000087892726000023/odfl-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/878927/000087892726000023/0000878927-26-000023-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-06",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0000878927-26-000011",
+            "primary_document": "odfl-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/878927/000087892726000011/odfl-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/878927/000087892726000011/0000878927-26-000011-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-24",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001193125-26-067161",
+            "primary_document": "odfl-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/878927/000119312526067161/odfl-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/878927/000119312526067161/0001193125-26-067161-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "VRSK": {
@@ -25063,7 +26820,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -25146,6 +26903,113 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "software",
+        "model": "software_owner_cash_sbc_stress",
+        "status": "review_required",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": 860000000.0,
+        "adjustments": {
+          "fcf_3y_usd": 914000000,
+          "median_sbc_3y_usd": 54000000.0,
+          "owner_cash_proxy_usd": 860000000.0,
+          "sbc_policy": "100% median GAAP stock compensation subtracted as economic-cost stress; do not extrapolate share dilution as an additional charge"
+        },
+        "scenarios": {
+          "conservador": {
+            "equity_value_usd": 7126022999.14,
+            "terminal_weight_pct": 32.09,
+            "explicit_value_usd": 4839184295.72,
+            "terminal_value_pv_usd": 2286838703.43,
+            "growth_1_5_pct": 1.85,
+            "growth_6_10_pct": 1.14,
+            "discount_pct": 14.0,
+            "terminal_pct": 2.0
+          },
+          "base": {
+            "equity_value_usd": 9976036780.77,
+            "terminal_weight_pct": 41.82,
+            "explicit_value_usd": 5803803434.79,
+            "terminal_value_pv_usd": 4172233345.98,
+            "growth_1_5_pct": 3.7,
+            "growth_6_10_pct": 2.28,
+            "discount_pct": 11.5,
+            "terminal_pct": 2.0
+          },
+          "optimista": {
+            "equity_value_usd": 11796651126.12,
+            "terminal_weight_pct": 46.49,
+            "explicit_value_usd": 6312301096.34,
+            "terminal_value_pv_usd": 5484350029.78,
+            "growth_1_5_pct": 4.62,
+            "growth_6_10_pct": 2.85,
+            "discount_pct": 10.5,
+            "terminal_pct": 2.0
+          }
+        },
+        "warnings": [
+          "SBC se resta como estrés económico; puede coexistir con dilución y exige evitar doble contabilización",
+          "R&D, ingresos diferidos, capitalización de software y recompras pendientes de análisis"
+        ],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed",
+        "assumptions": {
+          "first_growth": 3.699,
+          "later_growth": 2.276,
+          "discount_rate": 11.5,
+          "terminal_growth": 2.0
+        }
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-07-29",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001437749-26-024749",
+            "primary_document": "vrsk20260630_10q.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024749/vrsk20260630_10q.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926024749/0001437749-26-024749-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-29",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001437749-26-013729",
+            "primary_document": "vrsk20260331_10q.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926013729/vrsk20260331_10q.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926013729/0001437749-26-013729-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-18",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001437749-26-004452",
+            "primary_document": "vrsk20251231_10k.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926004452/vrsk20251231_10k.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1442145/000143774926004452/0001437749-26-004452-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "AON": {
@@ -26058,7 +27922,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -26130,6 +27994,68 @@
         "notes": [],
         "provisional_diluted_shares": 213900000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "insurance_broker",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-07-29",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001628280-26-050610",
+            "primary_document": "aon-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/315293/000162828026050610/aon-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/315293/000162828026050610/0001628280-26-050610-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-01",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001628280-26-029322",
+            "primary_document": "aon-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/315293/000162828026029322/aon-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/315293/000162828026029322/0001628280-26-029322-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-13",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001628280-26-008116",
+            "primary_document": "aon-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/315293/000162828026008116/aon-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/315293/000162828026008116/0001628280-26-008116-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "DHR": {
@@ -27056,7 +28982,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -27137,6 +29063,68 @@
         "notes": [],
         "provisional_diluted_shares": 706800000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "serial_acquirer",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-10-21",
+            "fiscal_period_end": "2026-09-25",
+            "accession": "0000313616-26-000199",
+            "primary_document": "dhr-20260925.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/313616/000031361626000199/dhr-20260925.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/313616/000031361626000199/0000313616-26-000199-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-07-21",
+            "fiscal_period_end": "2026-06-26",
+            "accession": "0000313616-26-000161",
+            "primary_document": "dhr-20260626.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/313616/000031361626000161/dhr-20260626.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/313616/000031361626000161/0000313616-26-000161-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-21",
+            "fiscal_period_end": "2026-03-27",
+            "accession": "0000313616-26-000107",
+            "primary_document": "dhr-20260327.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/313616/000031361626000107/dhr-20260327.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/313616/000031361626000107/0000313616-26-000107-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "MEDP": {
@@ -27918,7 +29906,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -27999,6 +29987,68 @@
         "notes": [],
         "provisional_diluted_shares": 28372000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "contract_research",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-10-22",
+            "fiscal_period_end": "2026-09-30",
+            "accession": "0001668397-26-000036",
+            "primary_document": "medp-20260930.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1668397/000166839726000036/medp-20260930.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1668397/000166839726000036/0001668397-26-000036-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-07-23",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001668397-26-000025",
+            "primary_document": "medp-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1668397/000166839726000025/medp-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1668397/000166839726000025/0001668397-26-000025-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-23",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001668397-26-000019",
+            "primary_document": "medp-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1668397/000166839726000019/medp-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1668397/000166839726000019/0001668397-26-000019-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "OXY": {
@@ -28854,7 +30904,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -28935,6 +30985,68 @@
         "notes": [],
         "provisional_diluted_shares": 1012200000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "energy",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-08-05",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001628280-26-053388",
+            "primary_document": "oxy-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026053388/oxy-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026053388/0001628280-26-053388-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-05",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001628280-26-030584",
+            "primary_document": "oxy-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026030584/oxy-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026030584/0001628280-26-030584-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-18",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001628280-26-009059",
+            "primary_document": "oxy-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/0001628280-26-009059-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "AAON": {
@@ -29802,7 +31914,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -29886,6 +31998,70 @@
         "notes": [],
         "provisional_diluted_shares": 83721199,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "capital_intensive",
+        "model": "capital_heavy_peak_capex_stress",
+        "status": "insufficient",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [
+          "Falta CFO, CAPEX o FCF comparable en tres ejercicios"
+        ],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-08-10",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0000824142-26-000055",
+            "primary_document": "aaon-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/aaon-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000055/0000824142-26-000055-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-07",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0000824142-26-000036",
+            "primary_document": "aaon-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000036/aaon-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000036/0000824142-26-000036-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-03-02",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0000824142-26-000005",
+            "primary_document": "aaon-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000005/aaon-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/824142/000082414226000005/0000824142-26-000005-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "TRUP": {
@@ -30835,7 +33011,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 3,
         "complete_fcf_years": 5,
@@ -30917,6 +33093,68 @@
         "notes": [],
         "provisional_diluted_shares": 43821061,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "insurer",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-08-05",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0001371285-26-000172",
+            "primary_document": "trup-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1371285/000137128526000172/trup-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1371285/000137128526000172/0001371285-26-000172-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-04-30",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0001371285-26-000096",
+            "primary_document": "trup-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1371285/000137128526000096/trup-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1371285/000137128526000096/0001371285-26-000096-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-02-13",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0001371285-26-000018",
+            "primary_document": "trup-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/1371285/000137128526000018/trup-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/1371285/000137128526000018/0001371285-26-000018-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "TBBB": {
@@ -30995,6 +33233,37 @@
         ],
         "provisional_diluted_shares": null,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "foreign_special",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "manual_review",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     },
     "FRPH": {
@@ -31811,7 +34080,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 296,
+        "latest_fy_age_days": 297,
         "available_years": 5,
         "positive_fcf_years": 2,
         "complete_fcf_years": 5,
@@ -31896,6 +34165,68 @@
         "notes": [],
         "provisional_diluted_shares": 19058000,
         "provisional_source_type": "SEC XBRL 10-Q weighted-average diluted shares, NOT shares outstanding"
+      },
+      "sector_valuation": {
+        "schema": "ciip-sector-valuation-v1",
+        "sector": "real_estate",
+        "model": "standard_dcf",
+        "status": "not_applicable",
+        "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
+        "methodology": "Research-only; not a price target or audited FCFE.",
+        "normalized_cash_usd": null,
+        "adjustments": {},
+        "scenarios": {},
+        "warnings": [],
+        "shares_review": "provisional_reconciled",
+        "capital_notes_status": "not_reviewed"
+      },
+      "capital_filings": {
+        "schema": "ciip-capital-notes-v1",
+        "status": "document_links_only_manual_review",
+        "filings": [
+          {
+            "form": "10-Q",
+            "filed": "2026-08-06",
+            "fiscal_period_end": "2026-06-30",
+            "accession": "0000844059-26-000086",
+            "primary_document": "frph-20260630.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/844059/000084405926000086/frph-20260630.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/844059/000084405926000086/0000844059-26-000086-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-Q",
+            "filed": "2026-05-14",
+            "fiscal_period_end": "2026-03-31",
+            "accession": "0000844059-26-000069",
+            "primary_document": "frph-20260331.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/844059/000084405926000069/frph-20260331.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/844059/000084405926000069/0000844059-26-000069-index.html",
+            "document_review_status": "not_reviewed"
+          },
+          {
+            "form": "10-K",
+            "filed": "2026-04-15",
+            "fiscal_period_end": "2025-12-31",
+            "accession": "0000844059-26-000037",
+            "primary_document": "frph-20251231.htm",
+            "document_url": "https://www.sec.gov/Archives/edgar/data/844059/000084405926000037/frph-20251231.htm",
+            "filing_index_url": "https://www.sec.gov/Archives/edgar/data/844059/000084405926000037/0000844059-26-000037-index.html",
+            "document_review_status": "not_reviewed"
+          }
+        ],
+        "review_topics": [
+          "Consolidated statements of stockholders' equity",
+          "Earnings per share / weighted average diluted shares",
+          "Stock-based compensation and anti-dilutive awards",
+          "Share repurchase authorizations and subsequent repurchases",
+          "Convertible or exchangeable classes and noncontrolling interests",
+          "Subsequent events, splits and share issuances"
+        ],
+        "reviewed_notes": [],
+        "notes_conclusion": null,
+        "verified_current_fully_diluted_shares": null,
+        "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
       }
     }
   },
