@@ -261,13 +261,25 @@ def backtest_one(ticker, asof, base):
     if "@" not in impl.AGENT:return {"ticker":ticker,"status":"unavailable","reason":"SEC identity missing"}
     try:
         fact=impl.fetch_json("https://data.sec.gov/api/xbrl/companyfacts/CIK"+str(cik)+".json")["facts"]
-        daily,splits,link=impl.fetch_prices(ticker) # 5Y default cannot reach October 2021 consistently
+        # 10-year daily closes, avoiding the rolling five-year window truncation.
+        link="https://query1.finance.yahoo.com/v8/finance/chart/"+ticker+"?range=10y&interval=1d&events=splits"
+        obj=impl.fetch_json(link,"Mozilla/5.0 QVR-Historical/1.0",25)["chart"]["result"][0]
+        daily={}
+        for unix,px in zip(obj.get("timestamp",[]),obj.get("indicators",{}).get("quote",[{}])[0].get("close",[])):
+            if px is not None and px>0:
+                daily[dt.datetime.fromtimestamp(unix,dt.timezone.utc).date()]=float(px)
+        splits=[]
+        for x in obj.get("events",{}).get("splits",{}).values():
+            try:
+                ratio=float(x["numerator"])/float(x["denominator"])
+                if .01<ratio<100:splits.append((dt.datetime.fromtimestamp(x["date"],dt.timezone.utc).date(),ratio))
+            except (KeyError,TypeError,ValueError):pass
     except Exception as exc:
         return {"ticker":ticker,"status":"unavailable","reason":"Historical source failure: "+str(exc)[:130]}
     # Need a FULL historical sample including as-of date before calculating a backtest.
     if min(daily,default=TODAY)>asof-dt.timedelta(days=25):
         return {"ticker":ticker,"status":"insufficient_price_history",
-                "reason":"Existing 5Y Yahoo window does not reach the 2021 as-of date; no fabricated historical quote",
+                "reason":"Historical quote series does not reach the 2021 cutoff; no return calculated",
                 "neededAsOf":str(asof),"sourceUrl":link}
     # Full point-in-time companyfacts remains fetched but if prices unavailable,
     # historical annual numbers are not used in any future-looking result.
