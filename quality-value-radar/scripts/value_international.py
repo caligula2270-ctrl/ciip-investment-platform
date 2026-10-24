@@ -41,7 +41,18 @@ def run():
       high=value(norm,min(.18,s["growth"]+.04),max(.095,s["discount"]-.01),.03)
       if not all(v and v>0 for v in (low,mid,high)):raise ValueError("Invalid model")
       vals=[round(x*fx["rate"],2) for x in (low,mid,high)]
-      entry["valuation"]={"status":"preliminary","model":"5Y DCF median 3Y historical issuer FCF","annualFcf":annual,
+      # Reverse DCF: revenue/FCF growth needed to support observed price.
+      target=q["price"]/fx["rate"]
+      lo,hi=-.20,.40
+      for _ in range(65):
+        guess=(lo+hi)/2
+        if value(norm,guess,s["discount"],s["terminal"])<target:lo=guess
+        else:hi=guess
+      market_implied=(lo+hi)/2
+      entry["valuation"]={"marketImpliedFiveYearFcfGrowthPct":round(market_implied*100,2),
+        "growthReference":"Reverse DCF uses flat per-share terminal share count; NOT management guidance",
+        "historicalPfcfCrossCheck":"unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
+        "reinvestmentAdjustment":"Not separately modeled: acquisitions / development CAPEX must be reviewed",,"model":"5Y DCF median 3Y historical issuer FCF","annualFcf":annual,
          "normalizedFcfPerShare":round(norm,4),"reportingCurrency":s["currency"],"tradingCurrency":s["stockCurrency"],
          "sharesMillions":s["sharesM"],"fx":fx,"bear":vals[0],"base":vals[1],"bull":vals[2],
          "quotePrice":q["price"],"quoteDate":q["date"],"indicativeMarginPct":round(100*(1-q["price"]/vals[1]),1),
