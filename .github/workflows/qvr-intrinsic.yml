@@ -13,6 +13,7 @@ on:
       - 'quality-value-radar/scripts/reconciliation_v11.py'
       - 'quality-value-radar/scripts/closeout_v12.py'
       - 'quality-value-radar/scripts/evidence_audit_v13.py'
+      - 'quality-value-radar/scripts/build_production_snapshot.py'
       - 'quality-value-radar/scripts/opportunity_alerts_v6.py'
       - 'quality-value-radar/scripts/test_opportunity_v6.py'
       - 'quality-value-radar/scripts/opportunity_v6.py'
@@ -56,6 +57,7 @@ jobs:
           python -m py_compile quality-value-radar/scripts/reconciliation_v11.py
           python -m py_compile quality-value-radar/scripts/closeout_v12.py
           python -m py_compile quality-value-radar/scripts/evidence_audit_v13.py
+          python -m py_compile quality-value-radar/scripts/build_production_snapshot.py
           python -m py_compile quality-value-radar/scripts/opportunity_alerts_v6.py
           python -m unittest discover -s quality-value-radar/scripts -p 'test_opportunity_v6.py' -v
       - name: Generar análisis SEC y precios históricos
@@ -92,6 +94,8 @@ jobs:
         run: python quality-value-radar/scripts/closeout_v12.py
       - name: Auditar contabilidad y evidencias v13
         run: python quality-value-radar/scripts/evidence_audit_v13.py
+      - name: Consolidar datos para la web operativa
+        run: python quality-value-radar/scripts/build_production_snapshot.py
       - name: Actualizar alertas de investigación
         run: python quality-value-radar/scripts/opportunity_alerts_v6.py
       - name: Validar integridad del modelo
@@ -140,6 +144,11 @@ jobs:
           v13=json.loads(Path('quality-value-radar/data/evidence_audit_v13.json').read_text())
           assert v13['schema']=='qvr-evidence-audit-v13' and not v13['modelSignalsEnabled']
           assert len(v13['models'])==6 and all(x['verifiedBuyPrice'] is None for x in v13['models'].values())
+          production=json.loads(Path('quality-value-radar/data/production_status.json').read_text())
+          assert production['schema']=='qvr-production-v1' and len(production['companies'])==6
+          assert production['coverage']['investmentGradePriceCount']==0
+          assert production['state'] in ('operational','degraded')
+          assert all(not x['buyApproved'] and x['investmentGradeValue'] is None for x in production['companies'].values())
           assert all(m['approvedEquityTarget'] is None for f in fin['models'].values() for m in f['scenarioBridge'].values())
           assert all(m['verifiedBuyPrice'] is None and len(m['scenarios'])==3 for m in economic['models'].values())
           assert all(v['ledgerTieOut']=='pass' for v in audit['companies'].values())
@@ -163,7 +172,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add quality-value-radar/data/evidence_audit_v13.json quality-value-radar/data/closeout_v12.json quality-value-radar/data/reconciliation_v11.json quality-value-radar/data/financial_audit_v10.json quality-value-radar/data/economic_v9.json quality-value-radar/data/audit_v8.json quality-value-radar/data/sensitivity_v7.json quality-value-radar/data/intrinsic.json quality-value-radar/data/international.json quality-value-radar/data/reliability_v5.json quality-value-radar/data/opportunity_v6.json quality-value-radar/data/backtest_v6.json quality-value-radar/data/opportunity_alerts_v6.json
+          git add quality-value-radar/data/production_status.json quality-value-radar/data/evidence_audit_v13.json quality-value-radar/data/closeout_v12.json quality-value-radar/data/reconciliation_v11.json quality-value-radar/data/financial_audit_v10.json quality-value-radar/data/economic_v9.json quality-value-radar/data/audit_v8.json quality-value-radar/data/sensitivity_v7.json quality-value-radar/data/intrinsic.json quality-value-radar/data/international.json quality-value-radar/data/reliability_v5.json quality-value-radar/data/opportunity_v6.json quality-value-radar/data/backtest_v6.json quality-value-radar/data/opportunity_alerts_v6.json
           if ! git diff --cached --quiet; then
             git commit -m "data(qvr): actualizacion semanal de valoracion SEC"
             git pull --rebase origin main
