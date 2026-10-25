@@ -38,6 +38,20 @@ def dcf(cash_m, g1, g2, r, t):
             "terminal_weight_pct":round(terminal/v*100,2),
             "projected_annual_cash_musd":flows}
 
+def net_owner_cash(case):
+    """Deduct an explicit analyst recurring acquisition reinvestment reserve.
+
+    The cash already paid for past acquisitions is sunk. An analyst-selected
+    forward reserve is a future growth-maintenance stress, distinct from
+    historical CAPEX; do not expense the same cash twice.
+    """
+    gross=case["owner_cf1_m"]
+    reserve=case.get("annual_acquisition_reinvestment_m",0)
+    if not all(isinstance(x,(int,float)) and math.isfinite(x) for x in (gross,reserve)):
+        raise ValueError("Nonfinite owner cash/reinvestment assumptions")
+    if reserve<0 or reserve>=gross:raise ValueError("Recurring acquisition reserve must be >=0 and less than cash")
+    return gross-reserve
+
 def audit_model(ticker,inputs,audit,market,as_of):
     rec=audit["companies"][ticker]
     info=inputs["companies"][ticker]
@@ -59,13 +73,14 @@ def audit_model(ticker,inputs,audit,market,as_of):
     newly_filed=(rec.get("filing_status")!="latest_filing_metadata_matches")
     vals={}
     for name,sc in info["scenarios"].items():
-        base=dcf(sc["owner_cf1_m"],sc["g1_pct"]/100,sc["g2_pct"]/100,
+        owner_net=net_owner_cash(sc)
+        base=dcf(owner_net,sc["g1_pct"]/100,sc["g2_pct"]/100,
                  sc["ke_pct"]/100,sc["t_pct"]/100)
         ev=base["equity_value_musd"]
         # Different denominator alternatives are not free cash changes.
         equity_per_share=ev/mid
         vals[name]={
-            "analyst_assumptions":sc,"equity_aggregate_musd":ev,
+            "analyst_assumptions":sc,"owner_cash_after_recurring_reinvestment_m":owner_net,"equity_aggregate_musd":ev,
             "equity_per_share_usd":round(equity_per_share,2),
             "share_count_sensitivity":{"low_dilution_value_usd":round(ev/low,2),
                                        "high_dilution_value_usd":round(ev/high,2)},
@@ -77,8 +92,9 @@ def audit_model(ticker,inputs,audit,market,as_of):
     if not base:raise ValueError("No base case for "+ticker)
     # Solve for year-1 cash needed to justify market value with fixed base-case
     # growth, discount and terminal parameters. Model is homogeneous in cash.
-    cf_required=(info["scenarios"]["base"]["owner_cf1_m"]*
-                 spot/base["equity_per_share_usd"]) if fresh else None
+    cf_required=(net_owner_cash(info["scenarios"]["base"])*
+                 spot/base["equity_per_share_usd"]+
+                 info["scenarios"]["base"].get("annual_acquisition_reinvestment_m",0)) if fresh else None
     return {
         "ticker":ticker,"company":info["name"],
         "as_of":as_of.isoformat(),"quote":quote if fresh else None,
@@ -87,7 +103,7 @@ def audit_model(ticker,inputs,audit,market,as_of):
         "source_newer_than_assessed":newly_filed,
         "denominator":eq,
         "cash_anchor":info["cash_anchor"],
-        "forward_convention":"owner_cf1_m is pre-projection annual cash baseline; year 1 applies g1 to this baseline",
+        "forward_convention":"owner_cf1_m is gross pre-projection annual cash; deduct analyst recurring acquisition reserve before applying g1; this is not subtracting prior spent acquisition cash twice",
         "scenario_values":vals,
         "base_cash_required_to_match_last_price_musd":round(cf_required,1) if cf_required else None,
         "additional_issues":info.get("red_flags",[]),
@@ -113,7 +129,7 @@ def build(config,audit,market,as_of):
             "evidence_urls":{"inputs":"audits/per_share_inputs.json","audit":"audits/latest.json","market":"market-auto.json"},
             "readiness":"SCREEN_GRADE_NOT_DECISION_READY",
             "not_yet_modelled":sorted(audited-configured),
-            "methodology":"Discount future hypothetical owner-cash proxy at cost of equity; do not add cash or subtract debt a second time. Does not guarantee FCFE or make forecasts official.",
+            "methodology":"Discount future hypothetical owner cash after stated strategic acquisition reinvestment reserve, at cost of equity; do not double subtract past acquisition cash, SBC, cash or debt. No guaranteed FCFE or official issuer forecast.",
             "companies":{t:audit_model(t,config,audit,market,as_of) for t in config["companies"]}}
 
 def report(d):
@@ -134,11 +150,11 @@ def report(d):
            f"Fuentes: {x['denominator'].get('anchor_source') or x['denominator'].get('source')}.",
            f"Comparación con cierre de mercado: {x['data_price_status']}.",
            f"Flujo base: {x['cash_anchor'].get('forward_base_justification', 'Supuesto sin validar')}.",
-           "", "| Escenario | FCF inicial M USD | Crec. 1-5 | Crec. 6-10 | Ke | Terminal | Valor USD | Banda dilución USD | Terminal % |",
+           "", "| Escenario | FCF neto después de reserva M USD | Crec. 1-5 | Crec. 6-10 | Ke | Terminal | Valor USD | Banda dilución USD | Terminal % |",
            "|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
         for key,val in x["scenario_values"].items():
             a=val["analyst_assumptions"];band=val["share_count_sensitivity"]
-            lines.append(f"| {key} | {a['owner_cf1_m']:,.0f} | {a['g1_pct']:.1f}% | {a['g2_pct']:.1f}% | {a['ke_pct']:.1f}% | {a['t_pct']:.1f}% | {val['equity_per_share_usd']:,.2f} | {band['high_dilution_value_usd']:,.2f}–{band['low_dilution_value_usd']:,.2f} | {val['terminal_weight_pct']:.1f}% |")
+            lines.append(f"| {key} | {val['owner_cash_after_recurring_reinvestment_m']:,.0f} | {a['g1_pct']:.1f}% | {a['g2_pct']:.1f}% | {a['ke_pct']:.1f}% | {a['t_pct']:.1f}% | {val['equity_per_share_usd']:,.2f} | {band['high_dilution_value_usd']:,.2f}–{band['low_dilution_value_usd']:,.2f} | {val['terminal_weight_pct']:.1f}% |")
         required=x["base_cash_required_to_match_last_price_musd"]
         if required is not None:lines.append(f"Flujo anual de partida requerido para justificar el precio con hipótesis base: {required:,.1f} M USD (valor implícito inverso, no previsión).")
         lines.extend(["","Pendientes:"]+["- "+z for z in x["next_required_checks"]])
