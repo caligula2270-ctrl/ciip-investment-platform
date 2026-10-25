@@ -1,6 +1,407 @@
 {
   "schema": "qvr-financial-bridge-v10",
-  "status": "pending_first_execution",
-  "models": {},
-  "signalsAllowed": false
+  "generatedAt": "2026-10-25T18:45:56.739809+00:00",
+  "signalsAllowed": false,
+  "verifiedEquityTargets": 0,
+  "models": {
+    "ADBE": {
+      "ticker": "ADBE",
+      "basis": "fcfe",
+      "balanceAsOf": "2025-11-28",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+      "dataConfidence": "filing_snapshot_with_open_items",
+      "unresolvedItems": [
+        "Acquisition of Semrush completed April 2026; FY2025 debt/cash not pro forma",
+        "Q3 FY2026 10-Q more recent than FY2025 financial close",
+        "FCFE-like metric requires excess cash/enterprise assets and funding of buybacks/acquisitions tie-out"
+      ],
+      "purchaseReady": false,
+      "approvedTarget": null,
+      "scenarioBridge": {
+        "bear": {
+          "FCFEProxyPerShare": 151.97,
+          "approvedEquityTarget": null,
+          "status": "cash_and_operating_assets_not_reconciled"
+        },
+        "base": {
+          "FCFEProxyPerShare": 335.4,
+          "approvedEquityTarget": null,
+          "status": "cash_and_operating_assets_not_reconciled"
+        },
+        "bull": {
+          "FCFEProxyPerShare": 575.16,
+          "approvedEquityTarget": null,
+          "status": "cash_and_operating_assets_not_reconciled"
+        }
+      },
+      "reinvestmentCheck": {
+        "bear": {
+          "forecastOwnerCashMarginShiftPpt": -4,
+          "sbcAndBuybackCostsDoubleCountRisk": true,
+          "CAPEXMaintenanceSplitVerified": false
+        },
+        "base": {
+          "forecastOwnerCashMarginShiftPpt": 0,
+          "sbcAndBuybackCostsDoubleCountRisk": true,
+          "CAPEXMaintenanceSplitVerified": false
+        },
+        "bull": {
+          "forecastOwnerCashMarginShiftPpt": 3,
+          "sbcAndBuybackCostsDoubleCountRisk": true,
+          "CAPEXMaintenanceSplitVerified": false
+        }
+      },
+      "sourceObservations": [
+        "FY2025 10-K balance sheet cash 5431 and short investments 1164",
+        "FY2025 10-K long-term debt carrying 6210"
+      ],
+      "cashDefinition": {
+        "metric": "CFO - CAPEX - SBC",
+        "basis": "FCFE-like owner cash proxy",
+        "netDebtSubtractedAgain": false,
+        "needsSbcShareCountReconciliation": true
+      }
+    },
+    "INTU": {
+      "ticker": "INTU",
+      "basis": "fcfe",
+      "balanceAsOf": "2026-07-31",
+      "sourceUrl": "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm",
+      "dataConfidence": "filing_snapshot_with_open_items",
+      "unresolvedItems": [
+        "Debt maturity/repayment subsequent August 2026",
+        "Custodial funds are mirrored by liabilities; not free corporate cash",
+        "FCFE-like metric requires excess cash/enterprise assets and funding of buybacks/acquisitions tie-out"
+      ],
+      "purchaseReady": false,
+      "approvedTarget": null,
+      "scenarioBridge": {
+        "bear": {
+          "FCFEProxyPerShare": 152.16,
+          "approvedEquityTarget": null,
+          "status": "cash_and_operating_assets_not_reconciled"
+        },
+        "base": {
+          "FCFEProxyPerShare": 345.44,
+          "approvedEquityTarget": null,
+          "status": "cash_and_operating_assets_not_reconciled"
+        },
+        "bull": {
+          "FCFEProxyPerShare": 611.88,
+          "approvedEquityTarget": null,
+          "status": "cash_and_operating_assets_not_reconciled"
+        }
+      },
+      "reinvestmentCheck": {
+        "bear": {
+          "forecastOwnerCashMarginShiftPpt": -4,
+          "sbcAndBuybackCostsDoubleCountRisk": true,
+          "CAPEXMaintenanceSplitVerified": false
+        },
+        "base": {
+          "forecastOwnerCashMarginShiftPpt": 0,
+          "sbcAndBuybackCostsDoubleCountRisk": true,
+          "CAPEXMaintenanceSplitVerified": false
+        },
+        "bull": {
+          "forecastOwnerCashMarginShiftPpt": 3,
+          "sbcAndBuybackCostsDoubleCountRisk": true,
+          "CAPEXMaintenanceSplitVerified": false
+        }
+      },
+      "sourceObservations": [
+        "FY2026 10-K July 31 cash 4705, investments 2495 and LT 248",
+        "FY2026 debt current 1249 plus LT 6420",
+        "Customer funds 5038 with matching amounts payable; excluded from corporate cash",
+        "Operating leases total 752 reported separately"
+      ],
+      "cashDefinition": {
+        "metric": "CFO - CAPEX - SBC",
+        "basis": "FCFE-like owner cash proxy",
+        "netDebtSubtractedAgain": false,
+        "needsSbcShareCountReconciliation": true
+      }
+    },
+    "CPRT": {
+      "ticker": "CPRT",
+      "basis": "fcfe_post_acquisition",
+      "balanceAsOf": "2026-07-31",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
+      "dataConfidence": "filing_snapshot_with_open_items",
+      "unresolvedItems": [
+        "FY2026 balance predates Oct 2026 ACV closing",
+        "Post-deal cash/debt/working capital and acquisition cash return not yet tied out",
+        "FCFE-like metric requires excess cash/enterprise assets and funding of buybacks/acquisitions tie-out"
+      ],
+      "purchaseReady": false,
+      "approvedTarget": null,
+      "scenarioBridge": {
+        "bear": {
+          "FCFEProxyPerShare": 8.49,
+          "approvedEquityTarget": null,
+          "status": "cash_and_operating_assets_not_reconciled"
+        },
+        "base": {
+          "FCFEProxyPerShare": 22.34,
+          "approvedEquityTarget": null,
+          "status": "cash_and_operating_assets_not_reconciled"
+        },
+        "bull": {
+          "FCFEProxyPerShare": 42.15,
+          "approvedEquityTarget": null,
+          "status": "cash_and_operating_assets_not_reconciled"
+        }
+      },
+      "reinvestmentCheck": {
+        "bear": {
+          "postAcquisitionBalanceAvailable": false,
+          "acquiredIncrementalOwnerCashUSDMillionsFirstYearAssumed": -75,
+          "reportedRealizedAcquisitionROI": null,
+          "leaseAndWorkingCapitalReconciled": false
+        },
+        "base": {
+          "postAcquisitionBalanceAvailable": false,
+          "acquiredIncrementalOwnerCashUSDMillionsFirstYearAssumed": 50,
+          "reportedRealizedAcquisitionROI": null,
+          "leaseAndWorkingCapitalReconciled": false
+        },
+        "bull": {
+          "postAcquisitionBalanceAvailable": false,
+          "acquiredIncrementalOwnerCashUSDMillionsFirstYearAssumed": 200,
+          "reportedRealizedAcquisitionROI": null,
+          "leaseAndWorkingCapitalReconciled": false
+        }
+      },
+      "sourceObservations": [],
+      "cashDefinition": {
+        "metric": "CFO - CAPEX - SBC",
+        "basis": "FCFE-like owner cash proxy",
+        "netDebtSubtractedAgain": false,
+        "needsSbcShareCountReconciliation": true
+      }
+    },
+    "CSU.TO": {
+      "ticker": "CSU.TO",
+      "basis": "shareholder_fcfa2s",
+      "balanceAsOf": "2025-12-31",
+      "sourceUrl": "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-fourth-quarter-and-year-ended-december-31-2025-and-declares-quarterly-dividend/",
+      "dataConfidence": "filing_snapshot_with_open_items",
+      "unresolvedItems": [
+        "Shareholder metric is already after minority interests, leases and debt service, not FCFF",
+        "Investment commitments and non-controlling claims require quarter end reconciliation"
+      ],
+      "purchaseReady": false,
+      "approvedTarget": null,
+      "scenarioBridge": {
+        "bear": {
+          "FCFEProxyPerShare": 607.42,
+          "approvedEquityTarget": null,
+          "status": "acquisition_cohort_yields_unvalidated"
+        },
+        "base": {
+          "FCFEProxyPerShare": 890.58,
+          "approvedEquityTarget": null,
+          "status": "acquisition_cohort_yields_unvalidated"
+        },
+        "bull": {
+          "FCFEProxyPerShare": 1007.12,
+          "approvedEquityTarget": null,
+          "status": "acquisition_cohort_yields_unvalidated"
+        }
+      },
+      "reinvestmentCheck": {
+        "bear": {
+          "retentionForFutureAcquisitionsPct": 45,
+          "assumedIncrementalAcquisitionCashYieldPct": 5,
+          "incrementalRealizedYieldCertified": false,
+          "operatingGrossFCFA2SAlreadyAfterDebtService": true
+        },
+        "base": {
+          "retentionForFutureAcquisitionsPct": 60,
+          "assumedIncrementalAcquisitionCashYieldPct": 11,
+          "incrementalRealizedYieldCertified": false,
+          "operatingGrossFCFA2SAlreadyAfterDebtService": true
+        },
+        "bull": {
+          "retentionForFutureAcquisitionsPct": 75,
+          "assumedIncrementalAcquisitionCashYieldPct": 16,
+          "incrementalRealizedYieldCertified": false,
+          "operatingGrossFCFA2SAlreadyAfterDebtService": true
+        }
+      },
+      "sourceObservations": [],
+      "cashDefinition": {
+        "metric": "FCFA2S",
+        "valueUSDMillions": 1683,
+        "alreadyInterestDebtAndLeaseAdjusted": true,
+        "alreadyNoncontrollingAdjusted": true,
+        "leaseOrDebtReDeductionForbidden": true,
+        "manualCashFlowSourceTieoutRequired": true,
+        "reportedComponents": {
+          "cfo": 2732,
+          "interestOnLease": 16,
+          "interestOnDebt": 196,
+          "debtCosts": 13,
+          "principalLeases": 131,
+          "irgaMembershipCharge": 440,
+          "capitalAssets": 68,
+          "interestAndDividendsReceived": 56,
+          "noncontrollingInterests": 243,
+          "fcfa2s": 1683
+        }
+      }
+    },
+    "ASML": {
+      "ticker": "ASML",
+      "basis": "fcff",
+      "balanceAsOf": "2025-12-31",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/937966/000162828026011378/asml-20251231.htm",
+      "dataConfidence": "filing_snapshot_with_open_items",
+      "unresolvedItems": [
+        "ASML Q3 2026 available; FY2025 net debt is dated and subsequent cash/debt may differ",
+        "Contract liabilities/customer prepayments can change working capital markedly",
+        "Financing bridge is FY2025 while DCF uses FY2026 onward: roll-forward required"
+      ],
+      "purchaseReady": false,
+      "approvedTarget": null,
+      "scenarioBridge": {
+        "bear": {
+          "operatingEnterpriseValuePerShare": 144.53,
+          "equityProxyExcludingLeasesPerShare": 170.53,
+          "equityProxyIncludingLeasesPerShare": 169.79,
+          "approvedEquityTarget": null,
+          "status": "illustrative_mismatched_filing_dates"
+        },
+        "base": {
+          "operatingEnterpriseValuePerShare": 443.59,
+          "equityProxyExcludingLeasesPerShare": 469.59,
+          "equityProxyIncludingLeasesPerShare": 468.85,
+          "approvedEquityTarget": null,
+          "status": "illustrative_mismatched_filing_dates"
+        },
+        "bull": {
+          "operatingEnterpriseValuePerShare": 876.31,
+          "equityProxyExcludingLeasesPerShare": 902.31,
+          "equityProxyIncludingLeasesPerShare": 901.57,
+          "approvedEquityTarget": null,
+          "status": "illustrative_mismatched_filing_dates"
+        }
+      },
+      "reinvestmentCheck": {
+        "bear": {
+          "reportedOrAssumed": "model_assumption",
+          "allInReinvestmentPercentRevenue": 11,
+          "ebitMarginPct": 29,
+          "taxPct": 20,
+          "workingCapitalCycleNormalized": false
+        },
+        "base": {
+          "reportedOrAssumed": "model_assumption",
+          "allInReinvestmentPercentRevenue": 8,
+          "ebitMarginPct": 35,
+          "taxPct": 20,
+          "workingCapitalCycleNormalized": false
+        },
+        "bull": {
+          "reportedOrAssumed": "model_assumption",
+          "allInReinvestmentPercentRevenue": 6,
+          "ebitMarginPct": 39,
+          "taxPct": 19,
+          "workingCapitalCycleNormalized": false
+        }
+      },
+      "sourceObservations": [
+        "FY2025 20-F cash 12916 and short investments 405.9",
+        "Current debt 1681.9 long-term debt 2709.0 and leases 251.4",
+        "R&D is in EBIT: no duplicate subtraction"
+      ],
+      "balanceBridge": {
+        "cashAndLiquidInvestmentsEURMillions": 13321.9,
+        "financialDebtEURMillions": 4390.9,
+        "leaseLiabilitiesEURMillions": 251.4,
+        "equityAdjustmentExcludingLeasesEURMillions": 8931.0,
+        "equityAdjustmentIncludingLeasesEURMillions": 8679.6,
+        "leasePolicy": "unresolved; show both alternatives; do not approve either",
+        "nonOperatingInvestmentValue": null
+      }
+    },
+    "DNP.WA": {
+      "ticker": "DNP.WA",
+      "basis": "fcff",
+      "balanceAsOf": "2025-12-31",
+      "sourceUrl": "https://grupadino.pl/en/selected-financial-data/",
+      "dataConfidence": "filing_snapshot_with_open_items",
+      "unresolvedItems": [
+        "FY2026 half-year reports available; end-2025 balance is stale",
+        "Lease liability double-counting requires cash flow definition agreement",
+        "CAPEX for DC, refurbishment and new stores not separately verified",
+        "Finance leases already in issuer reported net debt: naive subtraction risks duplicate deduction"
+      ],
+      "purchaseReady": false,
+      "approvedTarget": null,
+      "scenarioBridge": {
+        "bear": {
+          "operatingEnterpriseProxyPerShare": -2.89,
+          "leaseInclusiveNetDebtPerShare": -0.203,
+          "equityProxyNaivePerShare": -2.69,
+          "approvedEquityTarget": null,
+          "status": "unapproved_lease_inconsistency"
+        },
+        "base": {
+          "operatingEnterpriseProxyPerShare": 8.82,
+          "leaseInclusiveNetDebtPerShare": -0.203,
+          "equityProxyNaivePerShare": 9.02,
+          "approvedEquityTarget": null,
+          "status": "unapproved_lease_inconsistency"
+        },
+        "bull": {
+          "operatingEnterpriseProxyPerShare": 28.33,
+          "leaseInclusiveNetDebtPerShare": -0.203,
+          "equityProxyNaivePerShare": 28.53,
+          "approvedEquityTarget": null,
+          "status": "unapproved_lease_inconsistency"
+        }
+      },
+      "reinvestmentCheck": {
+        "bear": {
+          "annualOpeningsAssumed": 200,
+          "assumedCapexPerNewStorePLNMillions": 5.3,
+          "annualStoreExpansionCapexPLNMillions": 1060.0,
+          "additionalLogisticsCapexPLNMillions": 300,
+          "maintenanceCapexPctSalesHypothesis": 1.4,
+          "FY2025TotalCapexPLNMillions": 2087,
+          "totalCapexPerNewStoreUpperBoundMillions": 6.049,
+          "historicalDepreciationProxyPLNMillions": 505,
+          "note": "CAPEX / opened stores is an aggregate arithmetic UPPER-BOUND proxy, not per-store cost; D&A not necessarily maintenance"
+        },
+        "base": {
+          "annualOpeningsAssumed": 300,
+          "assumedCapexPerNewStorePLNMillions": 4.2,
+          "annualStoreExpansionCapexPLNMillions": 1260.0,
+          "additionalLogisticsCapexPLNMillions": 300,
+          "maintenanceCapexPctSalesHypothesis": 1,
+          "FY2025TotalCapexPLNMillions": 2087,
+          "totalCapexPerNewStoreUpperBoundMillions": 6.049,
+          "historicalDepreciationProxyPLNMillions": 505,
+          "note": "CAPEX / opened stores is an aggregate arithmetic UPPER-BOUND proxy, not per-store cost; D&A not necessarily maintenance"
+        },
+        "bull": {
+          "annualOpeningsAssumed": 390,
+          "assumedCapexPerNewStorePLNMillions": 3.8,
+          "annualStoreExpansionCapexPLNMillions": 1482.0,
+          "additionalLogisticsCapexPLNMillions": 300,
+          "maintenanceCapexPctSalesHypothesis": 0.8,
+          "FY2025TotalCapexPLNMillions": 2087,
+          "totalCapexPerNewStoreUpperBoundMillions": 6.049,
+          "historicalDepreciationProxyPLNMillions": 505,
+          "note": "CAPEX / opened stores is an aggregate arithmetic UPPER-BOUND proxy, not per-store cost; D&A not necessarily maintenance"
+        }
+      },
+      "sourceObservations": [
+        "Official selected data 2025 net debt -199 includes loans and lease liabilities",
+        "2025 EBITDA 2546.3 less EBIT 2041.3 = depreciation/amortization proxy 505",
+        "CAPEX 2087 and 345 openings (unit spend 2087/345 not pure store capex)"
+      ]
+    }
+  }
 }

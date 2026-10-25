@@ -1,6 +1,6 @@
 {
   "schema": "qvr-economic-model-v9",
-  "generatedAt": "2026-10-25T00:16:12.538735+00:00",
+  "generatedAt": "2026-10-25T18:45:56.676586+00:00",
   "assumptionsAsOf": "2026-10-25",
   "companyCount": 6,
   "models": {
@@ -344,7 +344,7 @@
       "scenarios": {
         "bear": {
           "status": "acquisition_cohort_hypothesis",
-          "valuePerShare": 606.74,
+          "valuePerShare": 607.42,
           "annualCashAfterNewAcquisitionsMillions": [
             934.9,
             944.3,
@@ -363,7 +363,7 @@
         },
         "base": {
           "status": "acquisition_cohort_hypothesis",
-          "valuePerShare": 889.58,
+          "valuePerShare": 890.58,
           "annualCashAfterNewAcquisitionsMillions": [
             700.1,
             774.3,
@@ -382,7 +382,7 @@
         },
         "bull": {
           "status": "acquisition_cohort_hypothesis",
-          "valuePerShare": 1005.99,
+          "valuePerShare": 1007.12,
           "annualCashAfterNewAcquisitionsMillions": [
             446.0,
             526.3,
@@ -406,11 +406,11 @@
         "h1OrganicRevenueGrowthPct": 4,
         "reportingCurrency": "USD",
         "tradingCurrency": "CAD",
-        "fxFromIssuerDataset": 1.4004
+        "fxFromIssuerDataset": 1.40197
       },
       "currentQuote": 3408.5701,
       "currentQuoteDate": "2026-10-22",
-      "legacyModelBaseValue": 1195.55,
+      "legacyModelBaseValue": 1196.89,
       "scenarioInputs": {
         "bear": {
           "organicFcfGrowthPct": 1,
@@ -440,8 +440,8 @@
       "comparisonOnly": true,
       "verifiedBuyPrice": null,
       "range": {
-        "low": 606.74,
-        "high": 1005.99
+        "low": 607.42,
+        "high": 1007.12
       }
     },
     "ASML": {
@@ -462,8 +462,8 @@
       "scenarios": {
         "bear": {
           "status": "illustrative_unreconciled_equity_proxy",
-          "valuePerShare": 144.35,
-          "rawDiscountedCashPerShare": 144.35,
+          "valuePerShare": 144.53,
+          "rawDiscountedCashPerShare": 144.53,
           "fundingGapPerShare": 0,
           "annualCashMillions": [
             5429.0,
@@ -481,8 +481,8 @@
         },
         "base": {
           "status": "illustrative_unreconciled_equity_proxy",
-          "valuePerShare": 443.05,
-          "rawDiscountedCashPerShare": 443.05,
+          "valuePerShare": 443.59,
+          "rawDiscountedCashPerShare": 443.59,
           "fundingGapPerShare": 0,
           "annualCashMillions": [
             8900.0,
@@ -500,8 +500,8 @@
         },
         "bull": {
           "status": "illustrative_unreconciled_equity_proxy",
-          "valuePerShare": 875.23,
-          "rawDiscountedCashPerShare": 875.23,
+          "valuePerShare": 876.31,
+          "rawDiscountedCashPerShare": 876.31,
           "fundingGapPerShare": 0,
           "annualCashMillions": [
             11387.55,
@@ -528,11 +528,11 @@
         "sharesMillions": 385.417665,
         "reportingCurrency": "EUR",
         "quoteCurrency": "USD",
-        "fx": 1.120448
+        "fx": 1.121831
       },
       "currentQuote": 1560.54,
       "currentQuoteDate": "2026-10-22",
-      "legacyModelBaseValue": 361.63,
+      "legacyModelBaseValue": 362.07,
       "scenarioInputs": {
         "bear": {
           "salesGrowthAfterFY2026Pct": 0,
@@ -562,8 +562,8 @@
       "comparisonOnly": true,
       "verifiedBuyPrice": null,
       "range": {
-        "low": 144.35,
-        "high": 875.23
+        "low": 144.53,
+        "high": 876.31
       }
     },
     "DNP.WA": {
