@@ -34,6 +34,7 @@ function ciipPerShareView(){
    '</div>'+
    '<p class="muted tiny">Margen precio/valor base: '+(margins===null||margins===undefined?'—':fmt(margins)+'%')+
    ' · Acciones estimadas: '+fmt(x.denominator?.central_m)+' M</p>'+
+   ciipAuditVerdict(x.ticker)+
    '<p class="muted tiny">Denominador: '+esc(x.denominator?.status||'no conciliado')+
    ' · Estado: '+esc(x.status||'pendiente')+'</p>'+
    '<button class="btn secondary" data-ticker="'+esc(x.ticker)+'" onclick="ciipPerShareSelect(this.dataset.ticker)">Consultar detalle</button></article>';
