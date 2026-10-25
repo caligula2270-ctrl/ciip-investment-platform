@@ -1,0 +1,290 @@
+{
+  "schema": "ciip-economic-bridges-v2",
+  "as_of": "2026-10-25",
+  "existing_dcf_immutable": true,
+  "overall_status": "ECONOMIC_BRIDGES_PARTIAL_FORECAST_NOT_SIGNED",
+  "companies": {
+    "ADBE": {
+      "legacy_base_per_share_unchanged_usd": 265.78,
+      "valuation_approved": false,
+      "portfolio_action_allowed": false,
+      "hard_data_checks": [
+        {
+          "check": "FY25 CFO-PPE CAPEX-SBC",
+          "pass": true,
+          "actual_musd": 7910,
+          "expected_musd": 7910
+        },
+        {
+          "check": "9M26 CFO-PPE CAPEX-SBC",
+          "pass": true,
+          "actual_musd": 5884,
+          "expected_musd": 5884
+        }
+      ],
+      "forward_economic_gaps": [
+        {
+          "issue": "M&A recurrence and organic growth",
+          "blocking_reason": "No disclosed annual recurring acquisition programme substantiates $350m/yr."
+        },
+        {
+          "issue": "Topaz conditional completion",
+          "blocking_reason": "As-of filing disclosed $340m pending; do not assume close or future contribution."
+        },
+        {
+          "issue": "Economic SBC compensation",
+          "blocking_reason": "SBC-as-cash proxy and diluted share awards jointly require checks for double charge."
+        }
+      ],
+      "no_double_count_controls": [
+        "Semrush historical purchase is spent, do not subtract again from FY2025 cash anchor.",
+        "The legacy model grows net initial cash; a fixed annual M&A reserve would instead be a separate annual deduction, not algebraically identical."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+      ],
+      "organic_vs_acquired_cash_diagnostic": {
+        "FY2025_owner_proxy_m": 7910,
+        "9m_2026_owner_proxy_m": 5884,
+        "9m_2025_owner_proxy_m": 5273,
+        "unexplained_yoy_change_m": 611,
+        "FY2026_acquisition_cash_9m_m": 1560,
+        "baseline_gross_owner_cash_m": 6500,
+        "assumed_annual_ma_reserve_m": 350,
+        "original_model_net_cash_m": 6150
+      },
+      "hard_data_pass": true,
+      "economic_issues_open": 3
+    },
+    "MSFT": {
+      "legacy_base_per_share_unchanged_usd": 167.99,
+      "valuation_approved": false,
+      "portfolio_action_allowed": false,
+      "hard_data_checks": [
+        {
+          "check": "FY26 full historical owner proxy",
+          "pass": true,
+          "actual_musd": 51481,
+          "expected_musd": 51481
+        },
+        {
+          "check": "Finance lease payment face vs liabilities plus undiscounted interest",
+          "pass": true,
+          "actual_musd": 89686,
+          "expected_musd": 89686
+        }
+      ],
+      "forward_economic_gaps": [
+        {
+          "issue": "Lease commencement calendar",
+          "blocking_reason": "No exact years, financing type and incremental margin for $329.1bn uncommenced arrangements."
+        },
+        {
+          "issue": "AI/data center reinvestment economics",
+          "blocking_reason": "13% 5Y annual growth of lease-adjusted owner cash requires segment profitability and server renewal forecasts."
+        }
+      ],
+      "no_double_count_controls": [
+        "Exclude finance lease interest from additional FCFE subtraction if already inside CFO.",
+        "Never deduct 24,608m ROU noncash additions as if current-period cash CAPEX.",
+        "Uncommenced leases are not the same as $329.1bn currently drawn debt."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+      ],
+      "lease_commitment_economics": {
+        "finance_lease_cash_principal_fy2026_m": 3101,
+        "new_non_cash_finance_rou_fy2026_m": 24608,
+        "finance_lease_future_undiscounted_payments_m": {
+          "2027": 7121,
+          "2028": 7294,
+          "2029": 6668,
+          "2030": 6570,
+          "2031": 6543,
+          "thereafter": 55490
+        },
+        "not_commenced_future_undiscounted_leases_m": 329100,
+        "uncommenced_are_not_current_borrowings": true
+      },
+      "hard_data_pass": true,
+      "economic_issues_open": 2
+    },
+    "V": {
+      "legacy_base_per_share_unchanged_usd": 210.64,
+      "valuation_approved": false,
+      "portfolio_action_allowed": false,
+      "hard_data_checks": [
+        {
+          "check": "9M26 PPE cash FCF proxy",
+          "pass": true,
+          "actual_musd": 15164,
+          "expected_musd": 15164
+        },
+        {
+          "check": "9M26 incentives accrual/cash movement",
+          "pass": true,
+          "actual_musd": 73,
+          "expected_musd": 73
+        },
+        {
+          "check": "9M25 incentives accrual/cash movement",
+          "pass": true,
+          "actual_musd": 250,
+          "expected_musd": 250
+        }
+      ],
+      "forward_economic_gaps": [
+        {
+          "issue": "5Y incentive timing",
+          "blocking_reason": "Only two comparable nine-month observations here; five full audited annual schedules not reconstructed."
+        },
+        {
+          "issue": "Current fully diluted Class A equivalents",
+          "blocking_reason": "Date-mixed September conversion and Q2 weighted shares remain a diagnostic denominator."
+        }
+      ],
+      "no_double_count_controls": [
+        "Litigation accrual movements already embedded in reported CFO must not be independently deducted twice.",
+        "Do not include restricted cash in shareholder distributable cash."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm"
+      ],
+      "period_specific_reconciliation": {
+        "2026_9m_net_client_incentive_bridge_m": 73,
+        "2025_9m_net_client_incentive_bridge_m": 250,
+        "2026_9m_settlement_receivables_change_m": 1761,
+        "2026_9m_settlement_payables_change_m": -1436,
+        "2026_9m_accrued_litigation_cash_change_m": -1758,
+        "restricted_litigation_cash_20260630_m": 888
+      },
+      "hard_data_pass": true,
+      "economic_issues_open": 2
+    },
+    "MA": {
+      "legacy_base_per_share_unchanged_usd": 383.66,
+      "valuation_approved": false,
+      "portfolio_action_allowed": false,
+      "hard_data_checks": [
+        {
+          "check": "FY25 PPE+capitalized software FCF",
+          "pass": true,
+          "actual_musd": 16433,
+          "expected_musd": 16433
+        },
+        {
+          "check": "H1 2026 PPE+capitalized software FCF",
+          "pass": true,
+          "actual_musd": 5959,
+          "expected_musd": 5959
+        },
+        {
+          "check": "H1 2025 PPE+capitalized software FCF",
+          "pass": true,
+          "actual_musd": 6417,
+          "expected_musd": 6417
+        }
+      ],
+      "forward_economic_gaps": [
+        {
+          "issue": "Customer incentives/settlement normalization",
+          "blocking_reason": "Prepaid incentives and settlement liability cash schedules need 5Y annual tie-outs."
+        },
+        {
+          "issue": "BVNK deal and return on capital",
+          "blocking_reason": "Closed acquisition, but exact post-close cash paid, funding and cash contribution are not established."
+        },
+        {
+          "issue": "Sector income cap discrepancy",
+          "blocking_reason": "Sector model uses 12,230m vs per-share 16,000m initial owner cash, requiring explicit common methodology."
+        }
+      ],
+      "no_double_count_controls": [
+        "Capitalized software is an investing cash expense, do not report PPE-only as all-in FCF.",
+        "BVNK $1.5bn contractual price is not evidence for $1.5bn actual closing cash outflow."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+        "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+        "https://investor.mastercard.com/investor-news/investor-news-details/2026/Mastercard-completes-acquisition-of-BVNK-to-advance-global-stablecoin-capabilities/default.aspx"
+      ],
+      "reported_2025_comparability": {
+        "legacy_omitting_software_capex_m": 17159,
+        "reconciled_2025_investing_FCF_m": 16433,
+        "cash_difference_m": 726,
+        "legacy_base_cash_assumption_m": 16000,
+        "base_vs_corrected_reported_fcf_m": -433
+      },
+      "bvnk": {
+        "closed_date": "2026-08-03",
+        "initial_contract_price_m": 1500,
+        "contingent_cap_m": 300,
+        "actual_cash_paid_m": null,
+        "incremental_earnings_m": null
+      },
+      "hard_data_pass": true,
+      "economic_issues_open": 3
+    },
+    "TXN": {
+      "legacy_base_per_share_unchanged_usd": 97.4,
+      "valuation_approved": false,
+      "portfolio_action_allowed": false,
+      "hard_data_checks": [
+        {
+          "check": "GAAP LTM CFO-CAPEX",
+          "pass": true,
+          "actual_musd": 7318,
+          "expected_musd": 7318
+        },
+        {
+          "check": "Company adjusted FCF bridge direct government cash",
+          "pass": true,
+          "actual_musd": 8422,
+          "expected_musd": 8422
+        },
+        {
+          "check": "Legacy analyst reserve reconciliation",
+          "pass": true,
+          "actual_musd": 5500,
+          "expected_musd": 5500
+        }
+      ],
+      "forward_economic_gaps": [
+        {
+          "issue": "Fab capacity and sustaining CAPEX",
+          "blocking_reason": "No facility-level replacement CAPEX, utilization cycle or 2030 demand schedule validating $1.818bn reserve."
+        },
+        {
+          "issue": "Silicon Labs pending acquisition",
+          "blocking_reason": "No approved post-close transaction sources/uses, financing expense or acquired operating cash forecast."
+        }
+      ],
+      "no_double_count_controls": [
+        "GAAP CFO includes $469m credit benefit; do not add it to historical cash a second time.",
+        "$1,104m direct grant investing cash appears only in adjusted measure, not GAAP CFO minus gross CAPEX.",
+        "An undrawn $5bn credit facility does not represent debt until borrowed."
+      ],
+      "source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+        "https://investor.ti.com/news-releases/news-release-details/ti-reports-third-quarter-2026-financial-results-and-shareholder"
+      ],
+      "cycle_cash": {
+        "reported_GAAP_FCF_m": 7318,
+        "direct_grants_in_investing_m": 1104,
+        "investment_tax_credits_already_in_CFO_m": 469,
+        "analyst_cycle_reserve_not_maintenance_capex_m": 1818,
+        "legacy_model_owner_cash_m": 5500,
+        "guidance_CAPEX_2026_low_m": 2000,
+        "guidance_CAPEX_2026_high_m": 3000
+      },
+      "silicon_labs": {
+        "pending_enterprise_value_approx_m": 7500,
+        "committed_term_loan_capacity_m": 5000,
+        "loan_drawn_at_disclosure_m": 0,
+        "purchase_equity_cash_check_m": null
+      },
+      "hard_data_pass": true,
+      "economic_issues_open": 2
+    }
+  }
+}
