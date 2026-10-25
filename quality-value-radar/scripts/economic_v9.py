@@ -140,6 +140,12 @@ def main():
   elif ticker=="DNP.WA":
    shares=intl["companies"][ticker]["valuation"]["sharesMillions"]
    begin_stores=c["fy2025"]["storesAtEnd"];per_store=c["fy2025"]["revenueMillions"]/((begin_stores+c["fy2025"]["storesAtBeginning"])/2)
+   # Correct FCFF: NOPAT + D&A - CAPEX - incremental operating working capital.
+   # The reported 2025 EBITDA-EBIT difference includes any lease/ROU
+   # depreciation; as a result NO lease-inclusive equity bridge is approved.
+   reported_da=c["fy2025"]["ebitdaMillions"]-c["fy2025"]["ebitMillions"]
+   if reported_da<=0:raise ValueError("Dino FY2025 D&A source reconciliation failed")
+   depreciation_to_sales=reported_da/c["fy2025"]["revenueMillions"]
    for k,a in c["scenarios"].items():
     stores=begin_stores;rev_per=per_store;old_revenue=c["fy2025"]["revenueMillions"];cash=[]
     rows=[]
@@ -152,18 +158,26 @@ def main():
      openings=a["newStoresPerYear"]*a["expansionCostPerNewStoreMillions"]
      logistics=a["logisticsCapexMillions"]
      working=(rev-old_revenue)*a["workingCapitalPerIncrementalRevenuePct"]/100
-     owner=nopat-upkeep-openings-logistics-working
+     depreciation=rev*depreciation_to_sales
+     owner=nopat+depreciation-upkeep-openings-logistics-working
      cash.append(owner)
      rows.append({"year":year,"endStores":stores+a["newStoresPerYear"],"revenueMillions":round(rev,1),
        "maintenanceCapexAssumedMillions":round(upkeep,1),"storeExpansionCapexAssumedMillions":round(openings,1),
        "logisticsCapexAssumedMillions":round(logistics,1),"workingCapitalReinvestmentMillions":round(working,1),
+       "depreciationAddbackMillions":round(depreciation,1),
+       "operatingCashBeforeInvestmentMillions":round(nopat+depreciation,1),
        "ownerCashMillions":round(owner,1)})
      stores+=a["newStoresPerYear"];old_revenue=rev
     out["scenarios"][k]=record(c,cash,a["discountPct"]/100,a["exitCashMultiple"],shares)
     out["scenarios"][k]["storeBuild"]=rows
    out.update({"keyDrivers":{"FY2025Stores":begin_stores,"FY2025OpenedStores":c["fy2025"]["openedStores"],
-     "FY2025RevenuePerAverageStoreMillions":round(per_store,2),"splitAdjustedSharesMillions":shares},
-     "missingEvidence":["Store-age cohort productivity and actual spend per store not independently reconciled",
+     "FY2025RevenuePerAverageStoreMillions":round(per_store,2),"splitAdjustedSharesMillions":shares,
+     "FY2025EbitdaLessEbitDepreciationMillions":round(reported_da,2),
+     "depreciationToSalesPctAssumption":round(depreciation_to_sales*100,3),
+     "leaseROUDepreciationNotSeparatelyDisclosedHere":True,
+     "cashFormula":"NOPAT + estimated EBITDA-EBIT D&A - maintenance CAPEX - new store CAPEX - logistics CAPEX - delta NWC"},
+     "missingEvidence":["D&A add-back includes any IFRS 16 right-of-use amortization; lease cash/finance bridge still required",
+                        "Store-age cohort productivity and actual spend per store not independently reconciled",
                         "Opening cadence, costs and working capital not management guidance",
                         "Lease liabilities and debt-to-equity bridge"]})
   out["currentQuote"]=v6["models"][ticker].get("price")
