@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """QVR production snapshot: one conservative source of truth for public UI.
 
-This is a read-only investing research product. It does not place trades.
+This is a read-only investing research product. It does not place trades.\nIt is required by the scheduled production integration checks.
 An indicative DCF is NEVER promoted to a verified equity value.
 """
 from __future__ import annotations
