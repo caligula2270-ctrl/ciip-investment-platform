@@ -21,6 +21,9 @@ class TestModelAudit(unittest.TestCase):
     def test_5_models_formula_recalculation_and_0_fixed_P0(self):
         r=build(self.fixture(),dt.date(2026,10,25))
         self.assertEqual(set(r["issuers"]),{"ADBE","MSFT","V","MA","TXN"})
+        self.assertEqual(r["original_P0_corrected"],6)
+        self.assertEqual(r["original_P0_total"],6)
+        self.assertEqual(r["new_material_issues"],0)
         for ticker,x in r["issuers"].items():
             checks=[c for c in x["checks"] if c["name"].startswith("DCF arithmetic")]
             self.assertEqual(len(checks),3)
@@ -51,6 +54,13 @@ class TestModelAudit(unittest.TestCase):
         d["inputs"]["companies"]["V"]["denominator"]["sept_Bdrop_total_m"]=.7
         r=build(d,dt.date(2026,10,25))
         self.assertGreater(r["issuers"]["V"]["P0"],0)
+    def test_new_pending_acquisitions_flagged_without_ignoring_original_p0_fixes(self):
+        r=build(self.fixture(),dt.date(2026,10,25))
+        self.assertTrue(any("Topaz" in x["detail"] for x in r["issuers"]["ADBE"]["findings"]))
+        self.assertTrue(any("Silicon Labs" in x["detail"] for x in r["issuers"]["TXN"]["findings"]))
+    def test_mastercard_sector_cash_gap_is_visible(self):
+        r=build(self.fixture(),dt.date(2026,10,25))
+        self.assertTrue(any("exceeds payment sector" in x["detail"] for x in r["issuers"]["MA"]["findings"]))
     def test_microsoft_unsupported_cash_uplift_blocks(self):
         d=self.fixture()
         d["inputs"]["companies"]["MSFT"]["scenarios"]["base"]["owner_cf1_m"]=90000
