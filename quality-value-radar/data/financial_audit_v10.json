@@ -1,0 +1,6 @@
+{
+  "schema": "qvr-financial-bridge-v10",
+  "status": "pending_first_execution",
+  "models": {},
+  "signalsAllowed": false
+}
