@@ -1,0 +1,371 @@
+{
+  "schema": "qvr-economic-drivers-v9",
+  "version": "9.0",
+  "asOf": "2026-10-25",
+  "fundamentalsBasis": "Official latest fiscal reports and dated investor earnings releases, complemented by v4-v8 normalized cash facts. Estimates are explicitly model assumptions.",
+  "global": {
+    "years": 5,
+    "valuationDiscountRangePct": [
+      11,
+      15
+    ],
+    "marginOfSafetyPct": 25,
+    "automaticBuySignalsAllowed": false
+  },
+  "companies": {
+    "ADBE": {
+      "name": "Adobe",
+      "archetype": "subscription_software",
+      "reportingCurrency": "USD",
+      "stockCurrency": "USD",
+      "latestFiscalYearEnd": "2025-11-28",
+      "latestOfficialRevenueGuidance": {
+        "year": 2026,
+        "revenueLowMillions": 26576,
+        "revenueHighMillions": 26626,
+        "dilutedFY2026GuideMillions": 400,
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+      },
+      "officialKpis": {
+        "q3FY26ARRMillions": 27500,
+        "subscriptionRevenueQ3Millions": 6560,
+        "customerGroupSubscriptionGrowthPct": 14
+      },
+      "latestAcquisition": {
+        "name": "Semrush",
+        "closed": "2026-04-28",
+        "purchasePriceMillions": 1874,
+        "reportingCurrency": "USD",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+        "realizedROI": null
+      },
+      "scenarios": {
+        "bear": {
+          "salesGrowthAfterGuidancePct": 3,
+          "ownerCashMarginShiftPpt": -4,
+          "netShareGrowthPct": 1,
+          "exitOwnerFcfMultiple": 13,
+          "discountPct": 13.5
+        },
+        "base": {
+          "salesGrowthAfterGuidancePct": 8,
+          "ownerCashMarginShiftPpt": 0,
+          "netShareGrowthPct": 0,
+          "exitOwnerFcfMultiple": 21,
+          "discountPct": 12
+        },
+        "bull": {
+          "salesGrowthAfterGuidancePct": 12,
+          "ownerCashMarginShiftPpt": 3,
+          "netShareGrowthPct": -1,
+          "exitOwnerFcfMultiple": 27,
+          "discountPct": 11
+        }
+      },
+      "risks": [
+        "AI substitution/freemium conversion",
+        "Semrush integration not verified",
+        "SBC counted as economic cost, net-share change only residual sensitivity"
+      ],
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+      ]
+    },
+    "INTU": {
+      "name": "Intuit",
+      "archetype": "multi_segment_software",
+      "reportingCurrency": "USD",
+      "stockCurrency": "USD",
+      "latestFiscalYearEnd": "2026-07-31",
+      "latestOfficialRevenueGuidance": {
+        "year": 2027,
+        "revenueLowMillions": 23279,
+        "revenueHighMillions": 23512,
+        "sourceUrl": "https://investors.intuit.com/news-events/press-releases/detail/1323/intuit-hosts-investor-day-reaffirms-first-quarter-and-fiscal-2027-guidance"
+      },
+      "officialKpis": {
+        "FY2026BusinessSolutionsRevenueMillions": 12864,
+        "FY2026ConsumerRevenueMillions": 8584,
+        "FY2026OnlineEcosystemRevenueMillions": 9918,
+        "FY2026OnlineEcosystemGrowthPct": 19,
+        "FY2027GlobalBusinessSolutionsRevenueGuidanceMillions": [
+          13068,
+          13158
+        ],
+        "FY2027ConsumerRevenueGuidanceMillions": [
+          8955,
+          9088
+        ]
+      },
+      "scenarios": {
+        "bear": {
+          "salesGrowthAfterGuidancePct": 4,
+          "ownerCashMarginShiftPpt": -4,
+          "netShareGrowthPct": 1,
+          "exitOwnerFcfMultiple": 13,
+          "discountPct": 13.5
+        },
+        "base": {
+          "salesGrowthAfterGuidancePct": 8,
+          "ownerCashMarginShiftPpt": 0,
+          "netShareGrowthPct": 0,
+          "exitOwnerFcfMultiple": 21,
+          "discountPct": 12
+        },
+        "bull": {
+          "salesGrowthAfterGuidancePct": 12,
+          "ownerCashMarginShiftPpt": 3,
+          "netShareGrowthPct": -1,
+          "exitOwnerFcfMultiple": 27,
+          "discountPct": 11
+        }
+      },
+      "risks": [
+        "Tax seasonality",
+        "Credit Karma cycle",
+        "Mailchimp growth",
+        "SBC expenses and stock repurchase funding"
+      ],
+      "sources": [
+        "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm",
+        "https://investors.intuit.com/news-events/press-releases/detail/1323/intuit-hosts-investor-day-reaffirms-first-quarter-and-fiscal-2027-guidance"
+      ]
+    },
+    "CPRT": {
+      "name": "Copart",
+      "archetype": "salvage_marketplace_plus_acquisition",
+      "reportingCurrency": "USD",
+      "stockCurrency": "USD",
+      "latestFiscalYearEnd": "2026-07-31",
+      "acquisition": {
+        "name": "ACV Auctions",
+        "closed": "2026-10-16",
+        "paidForControlMillions": 1801.021081,
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm",
+        "realizedROI": null
+      },
+      "scenarios": {
+        "bear": {
+          "organicRevenueGrowthPct": 0,
+          "capexAnnualVs3YMedianPct": 25,
+          "acquiredOwnerFcfFirstFullYearMillions": -75,
+          "acquiredOwnerCashGrowthPct": 0,
+          "netShareGrowthPct": 1,
+          "exitOwnerFcfMultiple": 13,
+          "discountPct": 14
+        },
+        "base": {
+          "organicRevenueGrowthPct": 4,
+          "capexAnnualVs3YMedianPct": 0,
+          "acquiredOwnerFcfFirstFullYearMillions": 50,
+          "acquiredOwnerCashGrowthPct": 3,
+          "netShareGrowthPct": 0,
+          "exitOwnerFcfMultiple": 21,
+          "discountPct": 12.5
+        },
+        "bull": {
+          "organicRevenueGrowthPct": 8,
+          "capexAnnualVs3YMedianPct": -10,
+          "acquiredOwnerFcfFirstFullYearMillions": 200,
+          "acquiredOwnerCashGrowthPct": 8,
+          "netShareGrowthPct": -1,
+          "exitOwnerFcfMultiple": 27,
+          "discountPct": 11.5
+        }
+      },
+      "risks": [
+        "Unreported ACV incremental cash and goodwill",
+        "FY2026 historical balance predates ACV close",
+        "Land/yards growth CAPEX not separately certified",
+        "Reconditioning wholesale marketplace economics differ from salvage"
+      ],
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
+        "https://www.sec.gov/Archives/edgar/data/900075/000119312526423478/d129535dex991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm"
+      ]
+    },
+    "CSU.TO": {
+      "name": "Constellation Software",
+      "archetype": "acquisition_compounder",
+      "reportingCurrency": "USD",
+      "stockCurrency": "CAD",
+      "fy2025": {
+        "revenueMillions": 11623,
+        "fcfa2sMillions": 1683,
+        "acquisitionConsiderationMillions": 1579,
+        "otherNetInvestmentsMillions": 530,
+        "organicRevenueGrowthPct": 4,
+        "totalRevenueGrowthPct": 15
+      },
+      "h12026": {
+        "revenueMillions": 6516,
+        "organicRevenueGrowthPct": 4,
+        "totalRevenueGrowthPct": 19,
+        "fcfa2sMillions": 1078
+      },
+      "scenarios": {
+        "bear": {
+          "organicFcfGrowthPct": 1,
+          "acquisitionReinvestmentPct": 45,
+          "incrementalCashYieldOnPurchasePct": 5,
+          "cohortLagYears": 2,
+          "discountPct": 15,
+          "exitCashMultiple": 11
+        },
+        "base": {
+          "organicFcfGrowthPct": 4,
+          "acquisitionReinvestmentPct": 60,
+          "incrementalCashYieldOnPurchasePct": 11,
+          "cohortLagYears": 1,
+          "discountPct": 13.5,
+          "exitCashMultiple": 18
+        },
+        "bull": {
+          "organicFcfGrowthPct": 6,
+          "acquisitionReinvestmentPct": 75,
+          "incrementalCashYieldOnPurchasePct": 16,
+          "cohortLagYears": 1,
+          "discountPct": 12.5,
+          "exitCashMultiple": 25
+        }
+      },
+      "risks": [
+        "Acquisition return by cohort unreported",
+        "FCFA2S is before acquisition financing",
+        "Deferred/earnout costs and minority rights",
+        "CAD/USD translation"
+      ],
+      "sources": [
+        "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-fourth-quarter-and-year-ended-december-31-2025-and-declares-quarterly-dividend/",
+        "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-second-quarter-ended-june-30-2026-and-declares-quarterly-dividend/"
+      ]
+    },
+    "ASML": {
+      "name": "ASML",
+      "archetype": "lithography_equipment_and_services",
+      "reportingCurrency": "EUR",
+      "stockCurrency": "USD",
+      "fy2025": {
+        "revenueMillions": 32700,
+        "grossMarginPct": 52.8,
+        "operatingIncomeMillions": 11300,
+        "rdMillions": 4700,
+        "fcfMillions": 11027.3,
+        "installedBaseRevenueMillions": 8200
+      },
+      "fy2026Guidance": {
+        "revenueLowMillions": 44000,
+        "revenueHighMillions": 45000,
+        "grossMarginPct": 56,
+        "sourceUrl": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026"
+      },
+      "scenarios": {
+        "bear": {
+          "salesGrowthAfterFY2026Pct": 0,
+          "ebitMarginPct": 29,
+          "taxPct": 20,
+          "netReinvestmentAsPctRevenue": 11,
+          "exitCashMultiple": 11,
+          "discountPct": 14
+        },
+        "base": {
+          "salesGrowthAfterFY2026Pct": 7,
+          "ebitMarginPct": 35,
+          "taxPct": 20,
+          "netReinvestmentAsPctRevenue": 8,
+          "exitCashMultiple": 18,
+          "discountPct": 12.5
+        },
+        "bull": {
+          "salesGrowthAfterFY2026Pct": 12,
+          "ebitMarginPct": 39,
+          "taxPct": 19,
+          "netReinvestmentAsPctRevenue": 6,
+          "exitCashMultiple": 24,
+          "discountPct": 11.5
+        }
+      },
+      "risks": [
+        "Working capital prepayments can distort 2025 FCF margin",
+        "New High NA systems, supply capacity and 2028 production",
+        "R&D already included in operating income, avoid double subtraction",
+        "FCFF-to-equity net-debt bridge not independently reconciled"
+      ],
+      "sources": [
+        "https://www.asml.com/investors/annual-report/2025/financials",
+        "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026"
+      ]
+    },
+    "DNP.WA": {
+      "name": "Dino Polska",
+      "archetype": "store_cohort_expansion",
+      "reportingCurrency": "PLN",
+      "stockCurrency": "PLN",
+      "fy2025": {
+        "revenueMillions": 33634.2,
+        "storesAtEnd": 3033,
+        "storesAtBeginning": 2688,
+        "openedStores": 345,
+        "ebitMillions": 2041.3,
+        "ebitdaMillions": 2546.3,
+        "capexMillions": 2087,
+        "likeForLikeGrowthPct": 4.4
+      },
+      "h12026": {
+        "storesAtEnd": 3176,
+        "openedStores": 148
+      },
+      "scenarios": {
+        "bear": {
+          "newStoresPerYear": 200,
+          "lflGrowthPct": 1,
+          "ebitMarginPct": 5,
+          "taxPct": 19,
+          "maintenanceCapexToRevenuePct": 1.4,
+          "expansionCostPerNewStoreMillions": 5.3,
+          "logisticsCapexMillions": 300,
+          "workingCapitalPerIncrementalRevenuePct": 5,
+          "exitCashMultiple": 13,
+          "discountPct": 14
+        },
+        "base": {
+          "newStoresPerYear": 300,
+          "lflGrowthPct": 4,
+          "ebitMarginPct": 6.1,
+          "taxPct": 19,
+          "maintenanceCapexToRevenuePct": 1,
+          "expansionCostPerNewStoreMillions": 4.2,
+          "logisticsCapexMillions": 300,
+          "workingCapitalPerIncrementalRevenuePct": 3,
+          "exitCashMultiple": 20,
+          "discountPct": 12.5
+        },
+        "bull": {
+          "newStoresPerYear": 390,
+          "lflGrowthPct": 6,
+          "ebitMarginPct": 6.8,
+          "taxPct": 19,
+          "maintenanceCapexToRevenuePct": 0.8,
+          "expansionCostPerNewStoreMillions": 3.8,
+          "logisticsCapexMillions": 300,
+          "workingCapitalPerIncrementalRevenuePct": 1,
+          "exitCashMultiple": 26,
+          "discountPct": 11.5
+        }
+      },
+      "risks": [
+        "Store maturation ramp not available by cohort",
+        "Full CAPEX includes logistics, PV and refurbishments",
+        "Net working capital historical release must not be extrapolated",
+        "Revenue per average store approximates mature/young mix"
+      ],
+      "sources": [
+        "https://grupadino.pl/en/selected-financial-data/",
+        "https://grupadino.pl/en/dino-polska-recaps-business-performance-in-2025/",
+        "https://grupadino.pl/en/press-releases/"
+      ]
+    }
+  }
+}
