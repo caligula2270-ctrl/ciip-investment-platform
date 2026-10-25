@@ -61,3 +61,18 @@ Clasificar HECHO / CÁLCULO / HIPÓTESIS / INFERENCIA / NO VERIFICADO. Conservar
 - Visa/Mastercard: taxonomía de inversiones, incentivos comerciales, litigios, cuentas de liquidación y clases convertibles con misma fecha de referencia.
 - Texas Instruments: CAPEX y utilización fab a través del ciclo, puentes CHIPS y GAAP, duración de incentivos y obligaciones de inversión.
 - **Ámbito cerrado:** exactamente ADBE, MSFT, V, MA, TXN durante este mandato; no añadir emisores aunque el motor pueda ampliarse en el futuro.
+
+
+## CIIP v2 — Puentes económicos prospectivos independientes (25-10-2026)
+- Fuente de hechos económicos con fechas y partidas: `audits/economic_evidence_v2.json`.
+- Motor separado y de solo lectura sobre las valoraciones existentes: `scripts/ciip_economic_bridge_v2.py`.
+- Pruebas de conciliación, scope y bloqueo: `scripts/test_ciip_economic_bridge_v2.py`.
+- Salidas de la ejecución semanal SEC: `audits/economic_bridge_latest.json` y `audits/ECONOMIC_BRIDGE_REPORT.md`. Una salida no generada o prueba fallida impide declarar resultado validado.
+- La revisión v2 NO cambia las 15 hipótesis DCF anteriores ni los denominadores; deja audit trail del valor de base legado. Nunca transformar cambios en contingencias de inversión en un cambio silencioso de la valoración.
+- Corregir en MA el FCF comparable FY2025 para incluir tanto `PP&E 489m` como `software capitalizado 726m`; `CFO 17648m - 489m - 726m = 16433m`. Mantener FCFE prospectivo base 16000m hasta elaboración de proyecciones.
+- En MSFT el flujo inicial 51481m cuadra con FY2026 CFO-CAPEX-SBC-principal de arrendamientos; pagos futuros nominales de arrendamientos (incluyendo interés) no son deuda corriente y la nueva ROU no es salida de caja contemporánea. No restar doble interés ni ROU.
+- En V conciliar incentivos contables y pagos, así como cuentas de settlement, litigios y escrow por ejercicios homogéneos. No deducir cambios incluidos en CFO por segunda vez.
+- En ADBE separar Semrush cerrada, Topaz condicional y reserva anual M&A hipotética. Revisar el código DCF: restar una reserva una sola vez del efectivo inicial y después crecer el neto equivale a una reserva que crece con el negocio, no a una reserva plana anual. Documentar la política antes de activar cualquier DCF revisado.
+- En TXN FCF GAAP LTM 7318m, subvención directa CHIPS en inversión 1104m y crédito fiscal dentro CFO 469m son tres conceptos diferentes; la reserva de ciclo 1818m no es CAPEX de mantenimiento probado. EV aproximado Silicon Labs y facility comprometida no equivalen a cash check o a deuda dispuesta.
+- Los datos históricos conciliados cierran incidencias de procedencia y aritmética; la aprobación económica prospectiva requiere unidades de negocio, crecimiento, ciclos de CAPEX, litigios, financiación y eventos posteriores sustentados por notas.
+- Política de resultado: nunca emitir `READY` ni una decisión de cartera hasta completar estos puentes, revisar nuevas presentaciones y reconciliar capital diluido actual.
