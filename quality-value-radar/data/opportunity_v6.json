@@ -1,6 +1,6 @@
 {
   "schema": "qvr-v6",
-  "generatedAt": "2026-10-25T20:45:01.936365+00:00",
+  "generatedAt": "2026-10-25T23:27:06.434767+00:00",
   "asOf": "2026-10-25",
   "focus": [
     "ADBE",
@@ -373,19 +373,19 @@
       },
       "scenarios": {
         "bear": {
-          "value": 828.0
+          "value": 826.3
         },
         "base": {
-          "value": 1199.02
+          "value": 1196.57
         },
         "bull": {
-          "value": 1637.15
+          "value": 1633.81
         }
       },
-      "baseValue": 1199.02,
-      "entryPrice": 745.2,
-      "marginVsBasePct": -184.3,
-      "priceToEntryGapPct": -78.1,
+      "baseValue": 1196.57,
+      "entryPrice": 743.67,
+      "marginVsBasePct": -184.9,
+      "priceToEntryGapPct": -78.2,
       "warnings": [
         "Adquisiciones consumen caja y crean crecimiento; FCFA2S no equivale a caja repartible después de adquisiciones.",
         "Entry threshold illustrative, not a recommendation",
@@ -428,18 +428,18 @@
       },
       "scenarios": {
         "bear": {
-          "value": 244.05
+          "value": 243.8
         },
         "base": {
-          "value": 362.07
+          "value": 361.71
         },
         "bull": {
-          "value": 505.37
+          "value": 504.86
         }
       },
-      "baseValue": 362.07,
-      "entryPrice": 219.65,
-      "marginVsBasePct": -331.0,
+      "baseValue": 361.71,
+      "entryPrice": 219.42,
+      "marginVsBasePct": -331.4,
       "priceToEntryGapPct": -85.9,
       "warnings": [
         "ASML cotiza en Nasdaq en USD; modelo parte de EUR. FCF sensible a anticipos de clientes y ciclo de semiconductores.",

@@ -1,6 +1,6 @@
 {
   "schema": "qvr-reconciliation-v11",
-  "generatedAt": "2026-10-25T20:45:02.915974+00:00",
+  "generatedAt": "2026-10-25T23:27:07.715639+00:00",
   "models": {
     "ADBE": {
       "status": "partially_corrected",
@@ -81,7 +81,7 @@
       "outstanding": [
         "No verified realized return on purchased cohorts"
       ],
-      "illustrativeBase": 892.17,
+      "illustrativeBase": 890.34,
       "approvedTarget": null,
       "sourceURLs": [
         "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-fourth-quarter-and-year-ended-december-31-2025-and-declares-quarterly-dividend/",
@@ -101,7 +101,7 @@
         "2026 Q3 equity bridge not reconciled item-by-item",
         "FY2025 balance cannot be contemporaneous equity bridge"
       ],
-      "illustrativeBase": 443.59,
+      "illustrativeBase": 443.15,
       "approvedTarget": null,
       "sourceURLs": [
         "https://www.asml.com/investors/annual-report/2025/financials",

@@ -1,6 +1,6 @@
 {
   "schema": "qvr-sensitivity-v7",
-  "generatedAt": "2026-10-25T20:45:02.711341+00:00",
+  "generatedAt": "2026-10-25T23:27:07.568781+00:00",
   "sourceVersion": "qvr-v6",
   "automaticBuyDecisions": false,
   "allValuesIllustrative": true,
@@ -456,7 +456,7 @@
       "sourcePrice": 3408.5701,
       "quoteDate": "2026-10-22",
       "asOf": "2026-10-25",
-      "baselineIndicativeValue": 1199.02,
+      "baselineIndicativeValue": 1196.57,
       "baselineLevel": "preliminary",
       "verifiedMaintenanceGrowthSplit": false,
       "verifiedAcquisitionReturn": false,
@@ -471,22 +471,22 @@
         "valueCases": [
           {
             "fiveYearNetShareCagrPct": -1,
-            "approximateDCFBase": 1260.81,
+            "approximateDCFBase": 1258.24,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 0,
-            "approximateDCFBase": 1199.02,
+            "approximateDCFBase": 1196.57,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 1,
-            "approximateDCFBase": 1140.83,
+            "approximateDCFBase": 1138.5,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 2.5,
-            "approximateDCFBase": 1059.76,
+            "approximateDCFBase": 1057.59,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           }
         ]
@@ -497,31 +497,31 @@
         "nonAdditiveCashSpendSensitivity": [
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 0,
-            "staticCashDistributionValuePerShare": 1199.02,
+            "staticCashDistributionValuePerShare": 1196.57,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 15,
-            "staticCashDistributionValuePerShare": 1019.17,
+            "staticCashDistributionValuePerShare": 1017.08,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 30,
-            "staticCashDistributionValuePerShare": 839.31,
+            "staticCashDistributionValuePerShare": 837.6,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 50,
-            "staticCashDistributionValuePerShare": 599.51,
+            "staticCashDistributionValuePerShare": 598.28,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 75,
-            "staticCashDistributionValuePerShare": 299.75,
+            "staticCashDistributionValuePerShare": 299.14,
             "growthHeldFixed": true,
             "notValuation": true
           }
@@ -542,7 +542,7 @@
       "sourcePrice": 1560.54,
       "quoteDate": "2026-10-22",
       "asOf": "2026-10-25",
-      "baselineIndicativeValue": 362.07,
+      "baselineIndicativeValue": 361.71,
       "baselineLevel": "preliminary",
       "verifiedMaintenanceGrowthSplit": false,
       "verifiedAcquisitionReturn": false,
@@ -557,22 +557,22 @@
         "valueCases": [
           {
             "fiveYearNetShareCagrPct": -1,
-            "approximateDCFBase": 380.73,
+            "approximateDCFBase": 380.35,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 0,
-            "approximateDCFBase": 362.07,
+            "approximateDCFBase": 361.71,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 1,
-            "approximateDCFBase": 344.5,
+            "approximateDCFBase": 344.15,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 2.5,
-            "approximateDCFBase": 320.02,
+            "approximateDCFBase": 319.7,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           }
         ]

@@ -20,7 +20,7 @@
       "status": "preliminary_valuation",
       "reason": "FCFA2S es definición no GAAP; CAD por cotización frente USD reportados, adquisición intensiva e IRGA exigen conciliación.",
       "valuation": {
-        "marketImpliedFiveYearFcfGrowthPct": 35.43,
+        "marketImpliedFiveYearFcfGrowthPct": 35.49,
         "growthReference": "Reverse DCF uses flat per-share terminal share count; NOT management guidance",
         "historicalPfcfCrossCheck": "unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
         "reinvestmentAdjustment": "Not separately modeled: acquisitions / development CAPEX must be reviewed",
@@ -45,16 +45,16 @@
         "tradingCurrency": "CAD",
         "sharesMillions": 21.19153,
         "fx": {
-          "rate": 1.40447,
+          "rate": 1.4016,
           "date": "2026-10-25",
           "source": "https://query1.finance.yahoo.com/v8/finance/chart/CAD%3DX?range=5d&interval=1d"
         },
-        "bear": 828.0,
-        "base": 1199.02,
-        "bull": 1637.15,
+        "bear": 826.3,
+        "base": 1196.57,
+        "bull": 1633.81,
         "quotePrice": 3408.5701,
         "quoteDate": "2026-10-22",
-        "indicativeMarginPct": -184.3,
+        "indicativeMarginPct": -184.9,
         "assumptions": {
           "baseGrowthPct": 7.000000000000001,
           "discountPct": 12.5,
@@ -110,16 +110,16 @@
         "tradingCurrency": "USD",
         "sharesMillions": 385.417665,
         "fx": {
-          "rate": 1.121831,
+          "rate": 1.120699,
           "date": "2026-10-25",
           "source": "https://query1.finance.yahoo.com/v8/finance/chart/EURUSD%3DX?range=5d&interval=1d"
         },
-        "bear": 244.05,
-        "base": 362.07,
-        "bull": 505.37,
+        "bear": 243.8,
+        "base": 361.71,
+        "bull": 504.86,
         "quotePrice": 1560.54,
         "quoteDate": "2026-10-22",
-        "indicativeMarginPct": -331.0,
+        "indicativeMarginPct": -331.4,
         "assumptions": {
           "baseGrowthPct": 7.000000000000001,
           "discountPct": 11.5,
@@ -207,5 +207,5 @@
       }
     }
   },
-  "generatedAt": "2026-10-25T20:45:01.663817+00:00"
+  "generatedAt": "2026-10-25T23:27:06.084889+00:00"
 }
