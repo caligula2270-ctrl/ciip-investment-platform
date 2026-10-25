@@ -125,11 +125,28 @@ def audit_ticker(t,c,notes,sec,record,model):
   flag("P1","Not comparable without bridge","CHIPS subsidy receipts are not necessarily recurring",
        "Cannot treat management adjusted FCF as perpetual owner cash",
        "Keep GAAP CFO-CAPEX separate from government grant proceeds",notes["ir"])
+ # Independent audit sensitivities are diagnostics, NOT revised forecasts.
+ base_assumptions=scenarios["base"]
+ def stress(cash_factor,required_return_shift):
+  cash=base_assumptions["owner_cf1_m"]*cash_factor
+  r=base_assumptions["ke_pct"]/100+required_return_shift
+  return round(dcf(cash,base_assumptions["g1_pct"]/100,base_assumptions["g2_pct"]/100,
+                   r,base_assumptions["t_pct"]/100)["equity_value_musd"]/den["central_m"],2)
+ sensitivity={
+  "status":"illustrative_audit_sensitivity_not_forecast",
+  "cash_80pct_usd":stress(.8,0),
+  "cash_120pct_usd":stress(1.2,0),
+  "cost_of_equity_plus_2pp_usd":stress(1,.02),
+  "cost_of_equity_minus_2pp_usd":stress(1,-.02),
+  "cost_of_equity_12pct_usd":stress(1,.12-base_assumptions["ke_pct"]/100),
+  "cost_of_equity_15pct_usd":stress(1,.15-base_assumptions["ke_pct"]/100),
+  "caveat":"No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
+ }
  priority=sum(x["severity"]=="P0" for x in findings)
  return {"ticker":t,"name":c["name"],"verdict":"Not ready" if priority else "Ready with caveats",
         "portfolio_use":False,"valuation_approved":False,
         "source":primary,"source_date":dt.date.today().isoformat(),
-        "checks":checks,"findings":findings,
+        "checks":checks,"findings":findings,"sensitivity":sensitivity,
         "P0":priority,"P1":sum(x["severity"]=="P1" for x in findings),
         "base_model_value_usd":model["scenario_values"]["base"]["equity_per_share_usd"]}
 def build(d,as_of):
@@ -152,6 +169,9 @@ def markdown(d):
   lines.extend(["","## "+a["name"],"Dictamen: "+a["verdict"],"","### Hallazgos y medidas"])
   for i in a["findings"]:
    lines.append("- **"+i["severity"]+" "+i["kind"]+"**: "+i["detail"]+". Impacto: "+i["impact"]+". Acción: "+i["required_fix"]+((". [Fuente]("+i["source"]+")") if i.get("source") else "")+".")
+  lines.extend(["","### Sensibilidad independiente (solo diagnóstico)"])
+  for key,val in a["sensitivity"].items():
+   if isinstance(val,(int,float)):lines.append("- "+key+": "+str(val)+" USD/acción")
   lines.extend(["","### Controles realizados"])
   for c in a["checks"]:
    lines.append("- "+("PASS" if c["pass"] else "FLAG")+": "+c["name"])
