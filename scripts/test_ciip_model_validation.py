@@ -41,9 +41,9 @@ class TestModelAudit(unittest.TestCase):
                             ("MA","Mastercard 5Y reported GAAP"),
                             ("TXN","TI LTM 2026 GAAP")):
             self.assertTrue(any(text in x["name"] and x["pass"] for x in r["issuers"][ticker]["checks"]),(ticker,r["issuers"][ticker]["checks"]))
-    def test_missing_visa_bridge_blocks(self):
+    def test_corrupted_visa_official_amount_blocks(self):
         d=self.fixture()
-        d["sec"]["companies"]["V"]["official_filing_bridge"]={"status":"not_applicable","filled":[],"conflicts":[]}
+        d["sec"]["companies"]["V"]["history"][-1]["metrics"]["capex"]["value"]+=50_000_000
         r=build(d,dt.date(2026,10,25))
         self.assertGreater(r["issuers"]["V"]["P0"],0)
     def test_visa_share_delta_must_tie(self):
