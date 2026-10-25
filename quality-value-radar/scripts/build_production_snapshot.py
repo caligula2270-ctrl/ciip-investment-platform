@@ -20,7 +20,7 @@ LABEL={"ADBE":"Adobe","INTU":"Intuit","CPRT":"Copart","CSU.TO":"Constellation So
 
 def read(name, expected):
     obj=json.loads((DATA/name).read_text(encoding="utf-8"))
-    if obj.get("schema")!=expected:
+    if expected is not None and obj.get("schema")!=expected:
         raise RuntimeError(f"Missing or invalid source {name}: expected schema {expected}")
     return obj
 
