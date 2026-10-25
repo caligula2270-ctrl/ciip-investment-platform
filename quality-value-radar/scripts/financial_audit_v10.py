@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """v10 financial audit: prevent FCFF/FCFE confusion, reconcile sourced balance claims,
+Runs in the recurring CIIP quality valuation pipeline, with permanent scenario-blocks.
 maintenance-capex proxy and scenario re-investment. This is NOT certified target price.
 """
 import json,math,datetime as dt,pathlib,statistics
