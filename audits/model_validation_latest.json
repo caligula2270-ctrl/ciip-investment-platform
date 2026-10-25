@@ -81,6 +81,16 @@
           "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
         }
       ],
+      "sensitivity": {
+        "status": "illustrative_audit_sensitivity_not_forecast",
+        "cash_80pct_usd": 224.72,
+        "cash_120pct_usd": 337.09,
+        "cost_of_equity_plus_2pp_usd": 222.08,
+        "cost_of_equity_minus_2pp_usd": 379.44,
+        "cost_of_equity_12pct_usd": 234.44,
+        "cost_of_equity_15pct_usd": 175.3,
+        "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
+      },
       "P0": 1,
       "P1": 2,
       "base_model_value_usd": 280.9
@@ -159,6 +169,16 @@
           "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
         }
       ],
+      "sensitivity": {
+        "status": "illustrative_audit_sensitivity_not_forecast",
+        "cash_80pct_usd": 234.95,
+        "cash_120pct_usd": 352.42,
+        "cost_of_equity_plus_2pp_usd": 225.68,
+        "cost_of_equity_minus_2pp_usd": 412.49,
+        "cost_of_equity_12pct_usd": 225.68,
+        "cost_of_equity_15pct_usd": 165.41,
+        "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
+      },
       "P0": 1,
       "P1": 3,
       "base_model_value_usd": 293.68
@@ -242,6 +262,16 @@
           "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm"
         }
       ],
+      "sensitivity": {
+        "status": "illustrative_audit_sensitivity_not_forecast",
+        "cash_80pct_usd": 169.02,
+        "cash_120pct_usd": 253.52,
+        "cost_of_equity_plus_2pp_usd": 163.7,
+        "cost_of_equity_minus_2pp_usd": 294.06,
+        "cost_of_equity_12pct_usd": 163.7,
+        "cost_of_equity_15pct_usd": 121.32,
+        "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
+      },
       "P0": 2,
       "P1": 3,
       "base_model_value_usd": 211.27
@@ -316,6 +346,16 @@
           "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
         }
       ],
+      "sensitivity": {
+        "status": "illustrative_audit_sensitivity_not_forecast",
+        "cash_80pct_usd": 306.93,
+        "cash_120pct_usd": 460.39,
+        "cost_of_equity_plus_2pp_usd": 297.27,
+        "cost_of_equity_minus_2pp_usd": 534.01,
+        "cost_of_equity_12pct_usd": 297.27,
+        "cost_of_equity_15pct_usd": 220.31,
+        "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
+      },
       "P0": 1,
       "P1": 3,
       "base_model_value_usd": 383.66
@@ -388,6 +428,16 @@
           "source": "https://www.ti.com/about-ti/newsroom/news-releases/2026/2026-10-21-ti-reports-third-quarter-2026-financial-results-and-shareholder-returns.html"
         }
       ],
+      "sensitivity": {
+        "status": "illustrative_audit_sensitivity_not_forecast",
+        "cash_80pct_usd": 77.92,
+        "cash_120pct_usd": 116.88,
+        "cost_of_equity_plus_2pp_usd": 77.77,
+        "cost_of_equity_minus_2pp_usd": 129.32,
+        "cost_of_equity_12pct_usd": 81.93,
+        "cost_of_equity_15pct_usd": 61.85,
+        "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
+      },
       "P0": 1,
       "P1": 2,
       "base_model_value_usd": 97.4
