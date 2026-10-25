@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""V11 strict financial corrections: matched FY cash ratios, no ACV double count, lease gates."""
+"""V11 strict financial corrections: matched FY cash ratios, no ACV double count, lease gates.\nAutomatically run in CIIP weekly workflow.\n"""
 import json,datetime as dt,pathlib,math
 D=pathlib.Path(__file__).resolve().parents[1]/"data"
 def run():
