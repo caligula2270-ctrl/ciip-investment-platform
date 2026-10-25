@@ -22,8 +22,6 @@ on:
     - cron: '15 9 * * 3'
 permissions:
   contents: write
-  pages: write
-  id-token: write
 concurrency:
   group: qvr-fundamental-research
   cancel-in-progress: false
@@ -31,9 +29,6 @@ jobs:
   research:
     runs-on: ubuntu-latest
     timeout-minutes: 25
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Obtener código
         uses: actions/checkout@v4
@@ -180,14 +175,3 @@ jobs:
             git pull --rebase origin main
             git push origin HEAD:main
           fi
-      - name: Preparar GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-      - name: Empaquetar web
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - name: Publicar
-        id: deployment
-        uses: actions/deploy-pages@v4
