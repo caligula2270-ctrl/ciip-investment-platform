@@ -1,0 +1,158 @@
+{
+  "schema": "ciip-model-validation-evidence-v1",
+  "as_of": "2026-10-25",
+  "kind": "official_disclosure_manual_tieouts",
+  "evidence_basis": "Extracted from issuer SEC 10-K/10-Q and company earnings disclosure; items marked reported distinct from analyst judgments",
+  "universe": [
+    "ADBE",
+    "MSFT",
+    "V",
+    "MA",
+    "TXN"
+  ],
+  "companies": {
+    "ADBE": {
+      "primary": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+      "earlier": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+      "statement": "9M ended 2026-08-28 cash flows; compare 9M ended 2025-08-29 in same statement",
+      "source_section": "10-Q condensed statement of cash flows; Note 3 Semrush; Note 9 SBC; Note 12 EPS",
+      "observations": {
+        "cashflow_9m_2026_m": {
+          "cfo": 7646,
+          "capex": 180,
+          "sbc": 1582,
+          "acquisitions_net": 1560,
+          "stock_repurchase_cash": 6821
+        },
+        "cashflow_9m_2025_m": {
+          "cfo": 6871,
+          "capex": 145,
+          "sbc": 1453
+        },
+        "annual_fy2025_m": {
+          "cfo": 10031,
+          "capex": 179,
+          "sbc": 1942
+        },
+        "dilution_q3_2026_m": {
+          "basic_weighted": 395,
+          "diluted_weighted": 395.5,
+          "antidilutive": 10.4,
+          "stock_awards_outstanding": 12.8,
+          "stock_awards_expected_to_vest": 11.7
+        },
+        "dated_basic_outstanding_m": 389.2,
+        "acquired_semrush_purchase_price_m": 1874
+      },
+      "risks": [
+        "M&A not recognized as recurring maintenance CAPEX",
+        "9M YTD cash bridge includes SBC; cost must not double count after forecast share path",
+        "M&A integration and AI hosting costs, capitalized commissions",
+        "Buybacks are financing cash flow and should not be subtracted from FCFE as operating capex"
+      ],
+      "required_action": "A recurring acquired-business reinvestment policy and share rollforward must be included for investment decision"
+    },
+    "MSFT": {
+      "primary": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "statement": "FY ended 2026-06-30 10-K, cash flow and lease disclosures",
+      "source_section": "Part II Item 7 cash flows; Note 13 Leases; Note 17 Equity",
+      "observations": {
+        "fy2026_m": {
+          "cfo": 182935,
+          "capex": 115948,
+          "sbc": 12405,
+          "finance_lease_principal_cash": 3101,
+          "finance_lease_new_ro_assets_non_cash": 24608,
+          "operating_lease_cash": 6443,
+          "finance_lease_interest_cash": 2547
+        },
+        "current_basic_20260723_m": 7425.545491,
+        "dilutive_stock_award_equiv_fy2026_m": 24
+      },
+      "risks": [
+        "Server replacement/leases financing cash flows not captured in cash capex",
+        "Unproven speed of FCF recovery implied by 90bn case",
+        "FY2026 equity and minority claims in investment portfolio not fully integrated"
+      ],
+      "required_action": "Explicit datacenter maintenance, lease principal and growth investments schedule"
+    },
+    "V": {
+      "primary": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+      "interim": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+      "rate_update": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm",
+      "statement": "FY ended 2025-09-30 operating / investing cash flows and Sep 2026 exchange conversion amendment",
+      "source_section": "FY2025 statement of cash flows, Notes on Litigation/Stockholders' Equity; 2026-09-23 8-K Item 8.01",
+      "observations": {
+        "fy2025_m": {
+          "cfo": 23059,
+          "capex": 1482,
+          "acquisitions_net": 887,
+          "client_incentives_working_capital_cash_use": 15314,
+          "litigation_liability_change": 1303
+        },
+        "sep2026_class_B_conversion_factors": {
+          "B1": 1.54,
+          "B2": 1.4924,
+          "B3": 1.4773
+        }
+      },
+      "risks": [
+        "Missing Visa-specific capex taxonomy in XBRL; source evidence has 1482m",
+        "Litigation class-B A-equivalent conversion changes with escrow",
+        "Operating CFO includes client-incentive timing and litigation accruals",
+        "Preferred share equivalents and participating-securities conversion need independent reconciliation"
+      ],
+      "required_action": "Document full dated class-equivalent share waterfall and client-incentive/litigation cash normalization"
+    },
+    "MA": {
+      "primary": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+      "interim": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+      "statement": "FY2025 audited 10-K cash flows and Q2 2026 diluted EPS note",
+      "source_section": "FY2025 statement of operations and cash flows; 2026 Q2 Note 4 EPS",
+      "observations": {
+        "fy2025_m": {
+          "revenue": 32791,
+          "net_income": 14968,
+          "cfo": 17648,
+          "capex": 489
+        },
+        "diluted_eps_q2_2026_m": {
+          "basic_weighted": 882,
+          "diluted_weighted": 883
+        },
+        "basic_class_A_plus_B_july2026_m": 876.00994
+      },
+      "risks": [
+        "SEC annual net_income extraction incorrectly empty while audited statement states 14968m",
+        "Customer incentives/settlement and acquisitions affect cash conversion",
+        "Capital class B and total dilution require dated economic equivalent reconciliation"
+      ],
+      "required_action": "Fix missing annual EPS/net income taxonomy and reconcile settlement cash before sector valuation"
+    },
+    "TXN": {
+      "primary": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+      "ir": "https://www.ti.com/about-ti/newsroom/news-releases/2026/2026-10-21-ti-reports-third-quarter-2026-financial-results-and-shareholder-returns.html",
+      "statement": "12 months ended 2026-09-30 liquidity and non-GAAP bridge",
+      "source_section": "2026 Q3 Form 10-Q MD&A and reconciliation of FCF",
+      "observations": {
+        "ltm_20260930_m": {
+          "gaap_cfo": 9896,
+          "capex": 2578,
+          "CHIPS_direct_incentive_cash": 1104,
+          "issuer_adjusted_fcf": 8422
+        },
+        "capex_2026_guidance_range_m": {
+          "low": 2000,
+          "high": 3000
+        },
+        "shares_basic_20261014_m": 913.770316
+      },
+      "risks": [
+        "CHIPS direct cash should not be capitalized as recurrent operating FCFE",
+        "CHIPS tax credit already in CFO: avoid subtracting grant twice",
+        "Capacity utilization, depreciation, and maintenance cannot be inferred from 1 or 3 years alone"
+      ],
+      "required_action": "Bridge gross CAPEX, grants, GAAP CFO and owner cash with through-cycle operating model"
+    }
+  }
+}
