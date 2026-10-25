@@ -1,6 +1,134 @@
 {
   "schema": "qvr-reconciliation-v11",
-  "status": "pending_execution",
-  "models": {},
-  "automatedBuySignals": false
+  "generatedAt": "2026-10-25T19:22:09.237015+00:00",
+  "models": {
+    "ADBE": {
+      "status": "partially_corrected",
+      "checks": {
+        "cashMarginPolicy": "median of matched FY owner cash divided by same-year revenue",
+        "matchedFy": [
+          "2023-12-01",
+          "2024-11-29",
+          "2025-11-28"
+        ],
+        "medianOwnerCashMarginPct": 28.09
+      },
+      "outstanding": [
+        "Current-period balance and buybacks/stock-plan funding bridge incomplete",
+        "Forward SBC/diluted-share double-count control remains assumption"
+      ],
+      "illustrativeBase": 370.71,
+      "approvedTarget": null,
+      "sourceURLs": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+      ]
+    },
+    "INTU": {
+      "status": "partially_corrected",
+      "checks": {
+        "cashMarginPolicy": "median of matched FY owner cash divided by same-year revenue",
+        "matchedFy": [
+          "2024-07-31",
+          "2025-07-31",
+          "2026-07-31"
+        ],
+        "medianOwnerCashMarginPct": 22.06,
+        "capexFY2026": {
+          "ppeCapexUSDMillionsFY2026": 175,
+          "managementBroadCapexUSDMillionsFY2026": 221,
+          "differenceUSDMillions": 46,
+          "sourceUrl": "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm",
+          "policy": "PPE capex comparable in SEC historical owner cash; optional intangible purchase reconciliation required before replacing baseline"
+        }
+      },
+      "outstanding": [
+        "Current-period balance and buybacks/stock-plan funding bridge incomplete",
+        "Forward SBC/diluted-share double-count control remains assumption"
+      ],
+      "illustrativeBase": 393.45,
+      "approvedTarget": null,
+      "sourceURLs": [
+        "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm",
+        "https://investors.intuit.com/news-events/press-releases/detail/1323/intuit-hosts-investor-day-reaffirms-first-quarter-and-fiscal-2027-guidance"
+      ]
+    },
+    "CPRT": {
+      "status": "partially_corrected",
+      "checks": {
+        "acquisitionCostRemovedFromDCFStream": true,
+        "postCloseBalanceSheetAvailable": false,
+        "costMustBeReflectedInPostCloseLiquidityExactlyOnce": true
+      },
+      "outstanding": [
+        "Post-close liquidity, debt, assumed obligations and operating target cash unreported",
+        "ACV post-close incremental FCF not available for return verification"
+      ],
+      "illustrativeBase": 24.29,
+      "approvedTarget": null,
+      "sourceURLs": [
+        "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
+        "https://www.sec.gov/Archives/edgar/data/900075/000119312526423478/d129535dex991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm"
+      ]
+    },
+    "CSU.TO": {
+      "status": "blocked_until_filing_reconciliation",
+      "checks": {
+        "fcfa2sAlreadyAfterDebtService": true,
+        "noDuplicateLeaseDebtDeduction": true
+      },
+      "outstanding": [
+        "No verified realized return on purchased cohorts"
+      ],
+      "illustrativeBase": 890.72,
+      "approvedTarget": null,
+      "sourceURLs": [
+        "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-fourth-quarter-and-year-ended-december-31-2025-and-declares-quarterly-dividend/",
+        "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-second-quarter-ended-june-30-2026-and-declares-quarterly-dividend/"
+      ]
+    },
+    "ASML": {
+      "status": "blocked_until_filing_reconciliation",
+      "checks": {
+        "twoHistoricLeaseAlternativesCalculated": true,
+        "balanceAsOf": "2025-12-31",
+        "leaseDeductedOnlyInExplicitAlternative": true,
+        "nonOperatingInvestments": null,
+        "updated2026Q3Bridge": null
+      },
+      "outstanding": [
+        "2026 Q3 equity bridge not reconciled item-by-item",
+        "FY2025 balance cannot be contemporaneous equity bridge"
+      ],
+      "illustrativeBase": 443.59,
+      "approvedTarget": null,
+      "sourceURLs": [
+        "https://www.asml.com/investors/annual-report/2025/financials",
+        "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026"
+      ]
+    },
+    "DNP.WA": {
+      "status": "blocked_until_filing_reconciliation",
+      "checks": {
+        "leaseAccountingPolicy": "Two exclusive frameworks: (a) cash flow after lease payments with lease debt excluded; (b) pre-lease FCFF with lease debt included, and lease interest/principal recast. Cannot mix.",
+        "reportedIssuerNetDebtIncludesLeases": true,
+        "approvedLeaseConsistentBridge": null
+      },
+      "outstanding": [
+        "Recast lease cash flows to match leasing liability treatment",
+        "FY2026 H1 financial net debt and growth capex not tied out"
+      ],
+      "illustrativeBase": 8.82,
+      "approvedTarget": null,
+      "sourceURLs": [
+        "https://grupadino.pl/en/selected-financial-data/",
+        "https://grupadino.pl/en/dino-polska-recaps-business-performance-in-2025/",
+        "https://grupadino.pl/en/press-releases/"
+      ]
+    }
+  },
+  "verifiedPrices": 0,
+  "automatedBuySignals": false,
+  "rule": "Correct numbers and accounting treatment, but never treat an absent audited document as resolved"
 }
