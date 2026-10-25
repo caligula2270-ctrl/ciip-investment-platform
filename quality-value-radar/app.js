@@ -22,6 +22,7 @@ let backtestV6 = {tickers:{},status:'pending_first_run'};
 let alertsV6 = {alerts:[]};
 let sensitivityV7 = {models:{}};
 let auditV8 = {companies:{}};
+let economicV9 = {models:{}};
 let analysisStatus = 'Análisis fundamental todavía no cargado';
 let quotationsNotice = 'Referencias fechadas; no son cotizaciones en directo';
 let activeModal = null;
@@ -64,6 +65,22 @@ function reliabilityPanel(){
 }
 async function refreshReliability(){
  try{const r=await fetch('data/reliability_v5.json',{cache:'no-store'});if(r.ok){const v=await r.json();if(v.schema==='qvr-v5-evidence')reliabilityV5=v;}}catch(e){}render();
+}
+
+function economicV9Panel(){
+ const m=economicV9.models||{},ticks=['ADBE','INTU','CPRT','CSU.TO','ASML','DNP.WA'];
+ return '<section class="panel" style="margin:18px 0"><div class="panel-head"><div><h3>Economía del negocio · modelos sectoriales v9</h3><p>Escenarios derivados de indicadores operativos y de reinversión, no precios objetivo auditados</p></div></div><div class="cards-3">'+ticks.filter(t=>m[t]).map(t=>{
+ const x=m[t],v=x.scenarios||{},old=x.legacyModelBaseValue;
+ const cur=t==='CSU.TO'?'CAD':t==='DNP.WA'?'PLN':t==='ASML'?'USD':'USD';
+ return '<article class="stock-card"><div class="eyebrow">'+esc(t)+' · '+esc(x.archetype)+'</div>'+
+ '<div class="card-prices"><div><small>Modelo anterior</small><b>'+money(old,cur)+'</b></div><div><small>Escenario central v9</small><b>'+money(v.base?.valuePerShare,cur)+'</b></div></div>'+
+ '<p class="small">Prudente '+money(v.bear?.valuePerShare,cur)+' · optimista '+money(v.bull?.valuePerShare,cur)+'</p>'+
+ '<p class="tiny muted">Precio fechado '+esc(x.currentQuoteDate||'—')+': '+money(x.currentQuote,cur)+'</p>'+
+ '<div class="mini-note">No aprobado para inversión: '+esc((x.missingEvidence||[]).slice(0,2).join('; '))+'</div></article>';
+ }).join('')+'</div><p class="tiny muted">Hipótesis configuradas por negocio: ingresos y margen de caja de software; flujo incremental ACV; cohortes de adquisiciones CSU; margen operativo y reinversión de ASML; aperturas, productividad, CAPEX y circulante de Dino. Falta conciliar la estructura financiera y los retornos realizados.</p></section>';
+}
+async function refreshEconomicV9(){
+ try{const r=await fetch('data/economic_v9.json',{cache:'no-store'});if(r.ok){const d=await r.json();if(d.schema==='qvr-economic-model-v9')economicV9=d;}}catch(e){}render();
 }
 
 function auditV8Panel(){
@@ -146,7 +163,7 @@ function autoQualityPanel(){
       statCard('Sin cobertura completa',unsupported,'Excluidas o pendientes')+
       statCard('Tasa de descuento base','11,5 %','Hipótesis explícita, editable en código')+'</div>'+
     '<div class="cards-3">'+(opportunities.length?opportunities.map(({c,a})=>card(c,a)).join(''):'<div class="empty">Sin oportunidades que cumplan todos los requisitos. Esto no implica que las empresas estén caras.</div>')+'</div>'+
-    opportunitiesV6Panel()+auditV8Panel()+sensitivityV7Panel()+reliabilityPanel()+internationalPanel()+
+    economicV9Panel()+opportunitiesV6Panel()+auditV8Panel()+sensitivityV7Panel()+reliabilityPanel()+internationalPanel()+
     '<details class="collapsible"><summary>Ver todas las valoraciones automáticas y datos insuficientes</summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Empresa</th><th>Estado</th><th>Valor razonable*</th><th>Descuento</th><th></th></tr></thead><tbody>'+
     companies().map(c=>{const a=autoAnalysis.companies?.[c.s],reason=a?.reason||autoAnalysis.exclusions?.[c.s]||autoAnalysis.unavailable?.[c.s]||'Sin modelo verificable';return '<tr><td>'+esc(c.n)+' <small>'+esc(c.s)+'</small></td><td>'+(a?.status==='ready'?'Con modelo':esc(reason))+'</td><td>'+money(a?.fairValue,a?.currency)+'</td><td>'+pct(a?.status==='ready'?a.marginOfSafetyPct:null)+'</td><td>'+(a?'<button class="btn btn-quiet btn-sm" data-auto-detail="'+esc(c.s)+'">Detalles</button>':'—')+'</td></tr>'}).join('')+
     '</tbody></table></div></details><p class="tiny muted">* Mezcla 60% de DCF simplificado a 5 años sobre FCF normalizado y 40% de mediana histórica P/FCF, calculada con cotizaciones en fechas fiscales. No sustituye una valoración sectorial ni ajuste completo por deuda, SBC, adquisiciones o ciclo del capital de trabajo.</p></section>';
@@ -269,6 +286,6 @@ document.addEventListener('change',ev=>{const t=ev.target;if(t.id==='filter-sect
 document.addEventListener('input',ev=>{if(ev.target.id==='search-company'){state.filters.term=ev.target.value;persist();const pos=ev.target.selectionStart;render();const el=document.getElementById('search-company');if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&activeModal)closeModal();if(ev.key==='Escape'&&!document.getElementById('modal-root').classList.contains('hidden'))closeModal();});
 document.getElementById('modal-root').addEventListener('click',ev=>{if(ev.target.id==='modal-root')closeModal();});
-render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();refreshOpportunityV6();refreshSensitivityV7();refreshAuditV8();
+render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();refreshOpportunityV6();refreshSensitivityV7();refreshAuditV8();refreshEconomicV9();
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 })();
