@@ -1,6 +1,6 @@
 {
   "schema": "qvr-economic-model-v9",
-  "generatedAt": "2026-10-25T00:15:21.188126+00:00",
+  "generatedAt": "2026-10-25T00:16:12.538735+00:00",
   "assumptionsAsOf": "2026-10-25",
   "companyCount": 6,
   "models": {
@@ -463,6 +463,8 @@
         "bear": {
           "status": "illustrative_unreconciled_equity_proxy",
           "valuePerShare": 144.35,
+          "rawDiscountedCashPerShare": 144.35,
+          "fundingGapPerShare": 0,
           "annualCashMillions": [
             5429.0,
             5429.0,
@@ -480,6 +482,8 @@
         "base": {
           "status": "illustrative_unreconciled_equity_proxy",
           "valuePerShare": 443.05,
+          "rawDiscountedCashPerShare": 443.05,
+          "fundingGapPerShare": 0,
           "annualCashMillions": [
             8900.0,
             9523.0,
@@ -497,6 +501,8 @@
         "bull": {
           "status": "illustrative_unreconciled_equity_proxy",
           "valuePerShare": 875.23,
+          "rawDiscountedCashPerShare": 875.23,
+          "fundingGapPerShare": 0,
           "annualCashMillions": [
             11387.55,
             12754.06,
@@ -578,8 +584,10 @@
       ],
       "scenarios": {
         "bear": {
-          "status": "illustrative_unreconciled_equity_proxy",
-          "valuePerShare": -2.89,
+          "status": "funding_gap_negative_equity_proxy",
+          "valuePerShare": 0,
+          "rawDiscountedCashPerShare": -2.89,
+          "fundingGapPerShare": 2.89,
           "annualCashMillions": [
             -552.65,
             -439.14,
@@ -649,6 +657,8 @@
         "base": {
           "status": "illustrative_unreconciled_equity_proxy",
           "valuePerShare": 8.82,
+          "rawDiscountedCashPerShare": 8.82,
+          "fundingGapPerShare": 0,
           "annualCashMillions": [
             -184.71,
             24.52,
@@ -718,6 +728,8 @@
         "bull": {
           "status": "illustrative_unreconciled_equity_proxy",
           "valuePerShare": 28.33,
+          "rawDiscountedCashPerShare": 28.33,
+          "fundingGapPerShare": 0,
           "annualCashMillions": [
             46.17,
             392.72,
@@ -835,7 +847,7 @@
       "comparisonOnly": true,
       "verifiedBuyPrice": null,
       "range": {
-        "low": -2.89,
+        "low": 0,
         "high": 28.33
       }
     }
