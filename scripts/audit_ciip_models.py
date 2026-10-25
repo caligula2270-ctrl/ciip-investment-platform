@@ -12,6 +12,15 @@ SOURCES={
  "models":"audits/per_share_latest.json"
 }
 FIVE=("ADBE","MSFT","V","MA","TXN")
+ORIGINAL_P0_CONTROLS={
+ "ADBE":[("ADBE-MA","Adobe acquisition separate strategic reinvestment bridge")],
+ "MSFT":[("MSFT-CASH","Microsoft FY2026 CFO less CAPEX SBC and lease principal owner-cash bridge")],
+ "V":[("V-CAPEX","Visa 5Y issuer-filed CAPEX reconciled to source separate from SEC taxonomy"),
+      ("V-SHARES","Visa June Class A diluted EPS denominator less September documented B conversion reduction")],
+ "MA":[("MA-EARNINGS","Mastercard 5Y reported GAAP net income cash-to-earnings source bridge")],
+ "TXN":[("TXN-CYCLE","TI LTM 2026 GAAP CFO-CAPEX less through-cycle analyst reserve")]
+}
+
 def load():
  return {k:json.loads((ROOT/path).read_text(encoding="utf-8")) for k,path in SOURCES.items()}
 def issue(t,severity,kind,detail,impact,fix,source=None):
@@ -86,6 +95,12 @@ def audit_ticker(t,c,notes,sec,record,model):
        "Adobe base cash "+str(base)+"m vs FY2025 CFO-CAPEX-SBC "+str(anchor)+"m",
        "Forecast SBC, AI economics and M&A not connected to operating schedules",
        "Forecast revenue/margins/SBC/acquisition reinvestment separately",primary)
+  pending=vals.get("pending_topaz_acquisition_m",{})
+  if pending.get("expected_cash"):
+   flag("P1","Not comparable without bridge",
+        "Adobe has a pending "+str(pending["expected_cash"])+"m Topaz Labs acquisition, separate from spent 9M Semrush",
+        "Cash timing and incremental earnings are contingent on closing",
+        "Scenario-model closing quarter, payment, acquisition contribution and effect on recurring reserve",pending.get("source",primary))
  elif t=="MSFT":
   a=notes["observations"]["fy2026_m"]
   ok=passed(cfo_m,a["cfo"]) and passed(capex_m,a["capex"])
@@ -182,6 +197,13 @@ def audit_ticker(t,c,notes,sec,record,model):
   flag("P1","Not comparable without bridge","Settlement and client incentive payments drive CFO",
        "Unadjusted FCF may not represent cash to shareholders",
        "Reconcile 5Y payments incentives and accrued settlement",primary)
+  screened=record.get("sector_valuation",{}).get("normalized_cash_musd")
+  model_start=scenarios["base"]["owner_cf1_m"]
+  if screened and model_start>screened*1.2:
+   flag("P1","Not comparable without bridge",
+        "Mastercard per-share base cash "+str(model_start)+"m exceeds payment sector cash/earnings cap "+str(round(screened))+"m",
+        "Two CIIP methods yield materially different starting values",
+        "Reconcile historical income cap versus prospectively distributable cash and choose one sourced method",primary)
  elif t=="TXN":
   ltm=notes["observations"]["ltm_20260930_m"]
   gaap=ltm["gaap_cfo"]-ltm["capex"]
@@ -215,6 +237,12 @@ def audit_ticker(t,c,notes,sec,record,model):
   flag("P1","Not comparable without bridge","CHIPS subsidy receipts are not necessarily recurring",
        "Cannot treat management adjusted FCF as perpetual owner cash",
        "Keep GAAP CFO-CAPEX separate from government grant proceeds",notes["ir"])
+  pending=notes["observations"].get("pending_silicon_labs_acquisition_m",{})
+  if pending.get("enterprise_value_approx"):
+   flag("P1","Not comparable without bridge",
+        "Texas Instruments pending Silicon Labs enterprise value ~"+str(pending["enterprise_value_approx"])+"m and potential financing of "+str(pending.get("financing_term_loan_committed"))+"m",
+        "Forecast future debt service, acquisition payment and acquired cash are not in FY2025/LTM starting FCFE",
+        "Add deal/no-deal and funded closing scenarios, acquisition purchase price and forward debt bridge",pending.get("source",primary))
  # Independent audit sensitivities are diagnostics, NOT revised forecasts.
  base_assumptions=scenarios["base"]
  def stress(cash_factor,required_return_shift):
@@ -232,11 +260,17 @@ def audit_ticker(t,c,notes,sec,record,model):
   "cost_of_equity_15pct_usd":stress(1,.15-base_assumptions["ke_pct"]/100),
   "caveat":"No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
  }
+ remediation_checks=[]
+ for rem_id,rem_control in ORIGINAL_P0_CONTROLS[t]:
+  control=next((x for x in checks if x["name"]==rem_control),None)
+  remediation_checks.append({"id":rem_id,"name":rem_control,
+      "resolved":bool(control is not None and control["pass"]),"check":control})
  priority=sum(x["severity"]=="P0" for x in findings)
- return {"ticker":t,"name":c["name"],"verdict":"Not ready" if priority else "Ready with caveats",
+ return {"ticker":t,"name":c["name"],"verdict":"Not ready" if findings else "Ready with caveats",
         "portfolio_use":False,"valuation_approved":False,
         "source":primary,"source_date":dt.date.today().isoformat(),
         "checks":checks,"findings":findings,"sensitivity":sensitivity,
+        "original_P0_remediations":remediation_checks,
         "P0":priority,"P1":sum(x["severity"]=="P1" for x in findings),
         "base_model_value_usd":model["scenario_values"]["base"]["equity_per_share_usd"]}
 def build(d,as_of):
@@ -248,12 +282,16 @@ def build(d,as_of):
      d["notes"]["companies"][ticker],d["sec"]["companies"][ticker],
      d["audits"]["companies"][ticker],d["models"]["companies"][ticker])
  issues=sorted((f for a in audits.values() for f in a["findings"]),key=lambda x:({"P0":0,"P1":1,"P2":2}[x["severity"]],FIVE.index(x["ticker"])))
+ corrected=sum(r["resolved"] for x in audits.values() for r in x["original_P0_remediations"])
  return {"schema":"ciip-model-audit-v1","as_of":as_of.isoformat(),"scope":list(FIVE),
  "overall_verdict":"Not ready for portfolio action","issuers":audits,"issue_log":issues,
+ "original_P0_total":6,"original_P0_corrected":corrected,
+ "new_material_issues":sum(x["severity"]=="P0" for x in issues),
  "method":"Independent recomputation and reported-cash check; does not approve forecast cash, future equity claims or stock prices"}
 def markdown(d):
- lines=["# CIIP | Auditoría y validación de cinco DCF","","**Veredicto global: Not ready.** No utilizar estos modelos para órdenes de inversión hasta resolver P0, revisar denominadores, sensibilidad y caja.","",
+ lines=["# CIIP | Auditoría y validación de cinco DCF","","**Veredicto global: Not ready.** La corrección de los P0 originales se registra por control independiente. Aun si se corrigen todos, las reservas económicas y las notas de capital P1 pueden impedir decisiones de inversión.","",
  "| Compañía | Veredicto | P0 | P1 | DCF base USD |","|---|---|---:|---:|---:|"]
+ lines += ["", "**P0 originales subsanados con prueba:** "+str(d["original_P0_corrected"])+"/"+str(d["original_P0_total"])+". **Cuestiones P0 nuevas:** "+str(d["new_material_issues"])+".",""]
  for t,a in d["issuers"].items():lines.append("| "+t+" | "+a["verdict"]+" | "+str(a["P0"])+" | "+str(a["P1"])+" | "+str(a["base_model_value_usd"])+" |")
  for t,a in d["issuers"].items():
   lines.extend(["","## "+a["name"],"Dictamen: "+a["verdict"],"","### Hallazgos y medidas"])
