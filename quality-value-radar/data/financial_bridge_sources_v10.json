@@ -30,7 +30,12 @@
         "FY2025 10-K balance sheet cash 5431 and short investments 1164",
         "FY2025 10-K long-term debt carrying 6210"
       ],
-      "investedCapitalClaimsStatus": "income and treasury instruments not independently valued at market"
+      "investedCapitalClaimsStatus": "income and treasury instruments not independently valued at market",
+      "quarterlyCrossCheck": {
+        "asOf": "2026-08-28",
+        "status": "quarterly_statement_available_pending_normalization",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+      }
     },
     "INTU": {
       "fiscalEnd": "2026-07-31",
@@ -56,7 +61,14 @@
         "FY2026 debt current 1249 plus LT 6420",
         "Customer funds 5038 with matching amounts payable; excluded from corporate cash",
         "Operating leases total 752 reported separately"
-      ]
+      ],
+      "capexDefinitions": {
+        "ppeCapexUSDMillionsFY2026": 175,
+        "managementBroadCapexUSDMillionsFY2026": 221,
+        "differenceUSDMillions": 46,
+        "sourceUrl": "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm",
+        "policy": "PPE capex comparable in SEC historical owner cash; optional intangible purchase reconciliation required before replacing baseline"
+      }
     },
     "CPRT": {
       "fiscalEnd": "2026-07-31",
@@ -75,7 +87,8 @@
         "Post-deal cash/debt/working capital and acquisition cash return not yet tied out"
       ],
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
-      "purchaseSourceUrl": "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm"
+      "purchaseSourceUrl": "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm",
+      "liquidityStatus": "Pre-acquisition FY2026 source available; post-close pro-forma liquidity not issuer-verified"
     },
     "CSU.TO": {
       "fiscalEnd": "2025-12-31",
@@ -133,7 +146,12 @@
         "FY2025 20-F cash 12916 and short investments 405.9",
         "Current debt 1681.9 long-term debt 2709.0 and leases 251.4",
         "R&D is in EBIT: no duplicate subtraction"
-      ]
+      ],
+      "quarterlyCrossCheck": {
+        "asOf": "2026-09-27",
+        "status": "newer_quarterly_balance_available_requires_exact_cash_debt_lease_source_reconciliation",
+        "sourceUrl": "https://www.asml.com/en/investors/financial-results"
+      }
     },
     "DNP.WA": {
       "fiscalEnd": "2025-12-31",
@@ -158,7 +176,8 @@
         "Official selected data 2025 net debt -199 includes loans and lease liabilities",
         "2025 EBITDA 2546.3 less EBIT 2041.3 = depreciation/amortization proxy 505",
         "CAPEX 2087 and 345 openings (unit spend 2087/345 not pure store capex)"
-      ]
+      ],
+      "leasePolicy": "Two exclusive frameworks: (a) cash flow after lease payments with lease debt excluded; (b) pre-lease FCFF with lease debt included, and lease interest/principal recast. Cannot mix."
     }
   }
 }
