@@ -45,7 +45,7 @@ function ciipPerShareView(){
   const t=v.denominator;
   const notes=(v.additional_issues||[]).map(s=>'<li>'+esc(s)+'</li>').join('');
   const tableRows=Object.entries(v.scenario_values||{}).map(([label,s])=>'<tr><td>'+esc(label)+'</td>'+
-    '<td>'+ciipMoney(s.analyst_assumptions.owner_cf1_m)+'</td>'+
+    '<td>'+ciipMoney(s.owner_cash_after_recurring_reinvestment_m)+'</td>'+
     '<td>'+ciipValuePct(s.analyst_assumptions.g1_pct)+'</td>'+
     '<td>'+ciipValuePct(s.analyst_assumptions.ke_pct)+'</td>'+
     '<td>'+ciipMoney(s.equity_per_share_usd)+'</td>'+
@@ -56,7 +56,8 @@ function ciipPerShareView(){
    '<p><b>Puente de acciones:</b> '+esc(t.formula)+'</p>'+
    '<p><b>Banda de dilución (millones):</b> '+ciipMoney(t.low_m)+' – '+ciipMoney(t.high_m)+
    ' · central '+ciipMoney(t.central_m)+'</p>'+
-   table(['Caso','Caja inicial M USD','Crecimiento 1-5','Retorno exigido','USD por acción','Banda dilución USD'],tableRows)+
+   table(['Caso','Caja neta inicial M USD','Crecimiento 1-5','Retorno exigido','USD por acción','Banda dilución USD'],tableRows)+
+   '<p class="muted tiny">Caja inicial neta después de deducir una sola vez la reserva de reinversión para adquisiciones futuras, cuando está definida. Los desembolsos por adquisiciones anteriores no se vuelven a deducir.</p>'+
    '<p class="muted tiny">Las cifras del flujo inicial, crecimiento y coste de capital son hipótesis de analista, NO guidance. Cada FCF se incrementa ya en el primer año por el crecimiento asignado.</p>'+
    '<p><b>Caja inicial necesaria para justificar cotización manteniendo el caso base:</b> '+
    (v.base_cash_required_to_match_last_price_musd==null?'—':ciipMoney(v.base_cash_required_to_match_last_price_musd)+' M USD')+'</p>'+
