@@ -1,6 +1,6 @@
 {
   "schema": "qvr-v6",
-  "generatedAt": "2026-10-25T19:22:08.065838+00:00",
+  "generatedAt": "2026-10-25T20:20:58.022158+00:00",
   "asOf": "2026-10-25",
   "focus": [
     "ADBE",
@@ -373,18 +373,18 @@
       },
       "scenarios": {
         "bear": {
-          "value": 826.66
+          "value": 827.37
         },
         "base": {
-          "value": 1197.08
+          "value": 1198.11
         },
         "bull": {
-          "value": 1634.51
+          "value": 1635.91
         }
       },
-      "baseValue": 1197.08,
-      "entryPrice": 743.99,
-      "marginVsBasePct": -184.7,
+      "baseValue": 1198.11,
+      "entryPrice": 744.63,
+      "marginVsBasePct": -184.5,
       "priceToEntryGapPct": -78.2,
       "warnings": [
         "Adquisiciones consumen caja y crean crecimiento; FCFA2S no equivale a caja repartible después de adquisiciones.",

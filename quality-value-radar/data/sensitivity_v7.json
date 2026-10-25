@@ -1,6 +1,6 @@
 {
   "schema": "qvr-sensitivity-v7",
-  "generatedAt": "2026-10-25T19:22:09.021869+00:00",
+  "generatedAt": "2026-10-25T20:20:59.151823+00:00",
   "sourceVersion": "qvr-v6",
   "automaticBuyDecisions": false,
   "allValuesIllustrative": true,
@@ -456,7 +456,7 @@
       "sourcePrice": 3408.5701,
       "quoteDate": "2026-10-22",
       "asOf": "2026-10-25",
-      "baselineIndicativeValue": 1197.08,
+      "baselineIndicativeValue": 1198.11,
       "baselineLevel": "preliminary",
       "verifiedMaintenanceGrowthSplit": false,
       "verifiedAcquisitionReturn": false,
@@ -471,22 +471,22 @@
         "valueCases": [
           {
             "fiveYearNetShareCagrPct": -1,
-            "approximateDCFBase": 1258.77,
+            "approximateDCFBase": 1259.86,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 0,
-            "approximateDCFBase": 1197.08,
+            "approximateDCFBase": 1198.11,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 1,
-            "approximateDCFBase": 1138.98,
+            "approximateDCFBase": 1139.96,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 2.5,
-            "approximateDCFBase": 1058.04,
+            "approximateDCFBase": 1058.95,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           }
         ]
@@ -497,31 +497,31 @@
         "nonAdditiveCashSpendSensitivity": [
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 0,
-            "staticCashDistributionValuePerShare": 1197.08,
+            "staticCashDistributionValuePerShare": 1198.11,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 15,
-            "staticCashDistributionValuePerShare": 1017.52,
+            "staticCashDistributionValuePerShare": 1018.39,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 30,
-            "staticCashDistributionValuePerShare": 837.96,
+            "staticCashDistributionValuePerShare": 838.68,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 50,
-            "staticCashDistributionValuePerShare": 598.54,
+            "staticCashDistributionValuePerShare": 599.05,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 75,
-            "staticCashDistributionValuePerShare": 299.27,
+            "staticCashDistributionValuePerShare": 299.53,
             "growthHeldFixed": true,
             "notValuation": true
           }

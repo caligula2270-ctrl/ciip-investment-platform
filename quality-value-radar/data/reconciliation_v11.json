@@ -1,6 +1,6 @@
 {
   "schema": "qvr-reconciliation-v11",
-  "generatedAt": "2026-10-25T19:22:09.237015+00:00",
+  "generatedAt": "2026-10-25T20:20:59.294920+00:00",
   "models": {
     "ADBE": {
       "status": "partially_corrected",
@@ -81,7 +81,7 @@
       "outstanding": [
         "No verified realized return on purchased cohorts"
       ],
-      "illustrativeBase": 890.72,
+      "illustrativeBase": 891.49,
       "approvedTarget": null,
       "sourceURLs": [
         "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-fourth-quarter-and-year-ended-december-31-2025-and-declares-quarterly-dividend/",

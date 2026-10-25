@@ -1,6 +1,180 @@
 {
   "schema": "qvr-closeout-v12",
-  "status": "pending_first_run",
-  "models": {},
-  "signalsAllowed": false
+  "generatedAt": "2026-10-25T20:20:59.325716+00:00",
+  "models": {
+    "ADBE": {
+      "company": "ADBE",
+      "balanceDate": "2026-08-28",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+      ],
+      "validatedValuation": null,
+      "buySignal": false,
+      "remaining": [
+        "Cash operating minimum",
+        "Cash reconciliation with 2026 Semrush purchase",
+        "Current diluted share count and repurchase financing",
+        "Incremental Semrush earnings and organic vs inorganic"
+      ],
+      "previousResearchBase": 370.71,
+      "status": "documentary_closed_conditional",
+      "liquidity": {
+        "cashPlusShortInvestmentsUSDMillions": 5639,
+        "financialDebtUSDMillions": 6363,
+        "arithmeticNetLiquidityUSDMillions": -724,
+        "notAnAdditiveFCFEValuationBridge": true
+      },
+      "marginReconciledPct": 28.09,
+      "checks": {
+        "yearMatchedMargins": true,
+        "SBCAlreadyDeducted": true,
+        "SemrushROI": false
+      }
+    },
+    "INTU": {
+      "company": "INTU",
+      "balanceDate": "2026-07-31",
+      "sourceUrls": [
+        "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm"
+      ],
+      "validatedValuation": null,
+      "buySignal": false,
+      "remaining": [
+        "Remaining finance commitments, customer funds excluded",
+        "Intangibles PPE capex 46m bridge",
+        "Buybacks stock awards net shares and leverage funded operations"
+      ],
+      "previousResearchBase": 393.45,
+      "status": "documentary_closed_conditional",
+      "liquidity": {
+        "corporateLiquidUSDMillions": 7448,
+        "customerFundsExcludedUSDMillions": 5038,
+        "financialDebtUSDMillions": 7669,
+        "arithmeticNetLiquidityUSDMillions": -221,
+        "leasesUSDMillions": 752,
+        "notAnAdditiveFCFEValuationBridge": true
+      },
+      "capexReconciliation": {
+        "ppeUSDMillions": 175,
+        "managementBroadUSDMillions": 221,
+        "unreconciledDifferenceUSDMillions": 46
+      }
+    },
+    "CPRT": {
+      "company": "CPRT",
+      "balanceDate": "2026-07-31",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
+        "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/900075/000119312526423478/d129535d8k.htm"
+      ],
+      "validatedValuation": null,
+      "buySignal": false,
+      "remaining": [
+        "Post-ACV 10-Q or pro forma consolidated cash, debt, restricted cash, securities",
+        "ACV acquired normalized cash generation and purchased intangible amortization",
+        "FCF attribution without purchase price double count"
+      ],
+      "previousResearchBase": 24.29,
+      "status": "material_claims_missing",
+      "preCloseLiquidAssets": {
+        "cashIncludesRestrictedUSDMillions": 1907.901,
+        "heldToMaturityUSDMillions": 2581.901,
+        "sumNotEquivalentToAvailableCashUSDMillions": 4489.802
+      },
+      "transaction": {
+        "pricePaidControlUSDMillions": 1801.021081,
+        "postCloseCashAndDebt": null,
+        "costAlreadyRemovedFromProjectedCashFlows": true,
+        "historicalBalanceMustNotBeAddedToPostCloseValue": true
+      }
+    },
+    "CSU.TO": {
+      "company": "CSU.TO",
+      "balanceDate": "2026-06-30",
+      "sourceUrls": [
+        "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-second-quarter-ended-june-30-2026-and-declares-quarterly-dividend/"
+      ],
+      "validatedValuation": null,
+      "buySignal": false,
+      "remaining": [
+        "Realized cohort cash yield, acquisition debt, earnouts and parent vs minority sources",
+        "Terminal value after acquisition funding",
+        "Latest acquisition ROIC and available capital"
+      ],
+      "previousResearchBase": 891.49,
+      "status": "material_claims_missing",
+      "acquisitionCommitments": {
+        "cashConsiderationUSDMillions": 669,
+        "deferredConsiderationUSDMillions": 149,
+        "totalConsiderationUSDMillions": 818,
+        "acquisitionRealizedCashYield": null,
+        "balanceClaimsNotDuplicated": true
+      }
+    },
+    "ASML": {
+      "company": "ASML",
+      "balanceDate": "2026-09-27",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/937966/000162828026065813/financial_statementsxusx.htm"
+      ],
+      "validatedValuation": null,
+      "buySignal": false,
+      "remaining": [
+        "Current financial debt breakdown",
+        "Leases and restricted liquidity to same quarter",
+        "Nonoperating portfolio marks and financing consistency",
+        "Working capital customer prepayment normalization"
+      ],
+      "previousResearchBase": 443.59,
+      "status": "material_claims_missing",
+      "interimBalancePartial": {
+        "liquidAssetsEURMillions": 12735.1,
+        "verifiedLongTermDebtEURMillions": 1963,
+        "cashMinusLongTermDebtEURMillions_NOT_NET_CASH": 10772.1,
+        "currentDebt": null,
+        "leaseLiabilities": null,
+        "verifiedCompleteEquityBridge": false
+      }
+    },
+    "DNP.WA": {
+      "company": "DNP.WA",
+      "balanceDate": "2026-06-30",
+      "sourceUrls": [
+        "https://grupadino.pl/dino-polska-podsumowuje-dzialalnosc-w-pierwszym-polroczu-2026-r/",
+        "https://www.bankier.pl/wiadomosc/Dino-Polska-mialo-w-II-kw-400-1-mln-zl-zysku-netto-j-d-zgodnie-z-oczekiwaniami-opis-9185193.html",
+        "https://grupadino.pl/raporty-gpw/raporty-okresowe/"
+      ],
+      "validatedValuation": null,
+      "buySignal": false,
+      "remaining": [
+        "Choose one lease framework, cash flow lease principal and rent recast",
+        "Capital expenditure total versus opening stores, logistics, bottle machines",
+        "Historical store maturation cohorts / NWC and shareholder equity bridge"
+      ],
+      "previousResearchBase": 8.82,
+      "status": "material_claims_missing",
+      "leaseInclusiveNetDebt": {
+        "h1FY2026PLNMillions": 81.1,
+        "FY2025PLNMillions": -199.4,
+        "changePLNMillions": 280.5,
+        "leaseCashRecastAvailable": false,
+        "cannotDeductDebtFromAfterLeaseFCFE": true
+      },
+      "investment": {
+        "H1NetInvestingOutflowPLNMillions": 976.1,
+        "FY2026ManagementCapexGuidanceApproxPLNMillions": 2500,
+        "FY2026BottleMachinesCapexRangePLNMillions": [
+          250,
+          300
+        ],
+        "storeOnlyCapexNotSeparatelyVerified": true
+      }
+    }
+  },
+  "total": 6,
+  "documentaryImprovements": 6,
+  "investmentGradePrices": 0,
+  "signalsAllowed": false,
+  "policy": "Never automatically approve a price until after-close balance, financing, and cash conversion are consistent"
 }

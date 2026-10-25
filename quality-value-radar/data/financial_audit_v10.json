@@ -1,6 +1,6 @@
 {
   "schema": "qvr-financial-bridge-v10",
-  "generatedAt": "2026-10-25T19:22:09.188579+00:00",
+  "generatedAt": "2026-10-25T20:20:59.263685+00:00",
   "signalsAllowed": false,
   "verifiedEquityTargets": 0,
   "models": {
@@ -194,17 +194,17 @@
       "approvedTarget": null,
       "scenarioBridge": {
         "bear": {
-          "FCFEProxyPerShare": 607.52,
+          "FCFEProxyPerShare": 608.04,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         },
         "base": {
-          "FCFEProxyPerShare": 890.72,
+          "FCFEProxyPerShare": 891.49,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         },
         "bull": {
-          "FCFEProxyPerShare": 1007.28,
+          "FCFEProxyPerShare": 1008.14,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         }

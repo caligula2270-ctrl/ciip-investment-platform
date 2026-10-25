@@ -1,6 +1,6 @@
 {
   "schema": "qvr-economic-model-v9",
-  "generatedAt": "2026-10-25T19:22:09.131503+00:00",
+  "generatedAt": "2026-10-25T20:20:59.222859+00:00",
   "assumptionsAsOf": "2026-10-25",
   "companyCount": 6,
   "models": {
@@ -401,7 +401,7 @@
       "scenarios": {
         "bear": {
           "status": "acquisition_cohort_hypothesis",
-          "valuePerShare": 607.52,
+          "valuePerShare": 608.04,
           "annualCashAfterNewAcquisitionsMillions": [
             934.9,
             944.3,
@@ -420,7 +420,7 @@
         },
         "base": {
           "status": "acquisition_cohort_hypothesis",
-          "valuePerShare": 890.72,
+          "valuePerShare": 891.49,
           "annualCashAfterNewAcquisitionsMillions": [
             700.1,
             774.3,
@@ -439,7 +439,7 @@
         },
         "bull": {
           "status": "acquisition_cohort_hypothesis",
-          "valuePerShare": 1007.28,
+          "valuePerShare": 1008.14,
           "annualCashAfterNewAcquisitionsMillions": [
             446.0,
             526.3,
@@ -463,11 +463,11 @@
         "h1OrganicRevenueGrowthPct": 4,
         "reportingCurrency": "USD",
         "tradingCurrency": "CAD",
-        "fxFromIssuerDataset": 1.4022
+        "fxFromIssuerDataset": 1.4034
       },
       "currentQuote": 3408.5701,
       "currentQuoteDate": "2026-10-22",
-      "legacyModelBaseValue": 1197.08,
+      "legacyModelBaseValue": 1198.11,
       "scenarioInputs": {
         "bear": {
           "organicFcfGrowthPct": 1,
@@ -497,8 +497,8 @@
       "comparisonOnly": true,
       "verifiedBuyPrice": null,
       "range": {
-        "low": 607.52,
-        "high": 1007.28
+        "low": 608.04,
+        "high": 1008.14
       }
     },
     "ASML": {
