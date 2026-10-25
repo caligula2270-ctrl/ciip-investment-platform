@@ -1,6 +1,851 @@
 {
   "schema": "qvr-economic-model-v9",
-  "status": "pending_first_execution",
-  "models": {},
-  "signalsAllowed": false
+  "generatedAt": "2026-10-25T00:15:21.188126+00:00",
+  "assumptionsAsOf": "2026-10-25",
+  "companyCount": 6,
+  "models": {
+    "ADBE": {
+      "ticker": "ADBE",
+      "archetype": "subscription_software",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+      ],
+      "verifiedReturnOnNewCapital": false,
+      "actualMaintenanceCapexSplit": false,
+      "approval": "research_only",
+      "missingEvidence": [
+        "Reinvestment in software/product IP and Semrush integration ROI",
+        "Spot shares lack full future treasury and dilution bridge"
+      ],
+      "scenarios": {
+        "bear": {
+          "status": "illustrative",
+          "valuePerShare": 151.97,
+          "operatingCashMarginPct": 21.41,
+          "futureRevenueMillions": 29939.7,
+          "annualOwnerCashPerShare": [
+            13.74,
+            14.01,
+            14.29,
+            14.57,
+            14.86
+          ],
+          "source": "management revenue guidance × modeled owner cash conversion"
+        },
+        "base": {
+          "status": "illustrative",
+          "valuePerShare": 335.4,
+          "operatingCashMarginPct": 25.41,
+          "futureRevenueMillions": 36190.4,
+          "annualOwnerCashPerShare": [
+            16.47,
+            17.78,
+            19.21,
+            20.74,
+            22.4
+          ],
+          "source": "management revenue guidance × modeled owner cash conversion"
+        },
+        "bull": {
+          "status": "illustrative",
+          "valuePerShare": 575.16,
+          "operatingCashMarginPct": 28.41,
+          "futureRevenueMillions": 41857.2,
+          "annualOwnerCashPerShare": [
+            18.6,
+            21.04,
+            23.8,
+            26.93,
+            30.46
+          ],
+          "source": "management revenue guidance × modeled owner cash conversion"
+        }
+      },
+      "keyDrivers": {
+        "historicalMedianFcfMillions": 7873.0,
+        "historicalMedianSbcMillions": 1833.0,
+        "historicalMedianCapexMillions": 183.0,
+        "ownerCashMarginObservedPct": 25.41,
+        "guideRevenueMidMillions": 26601.0,
+        "spotShareBaseMillions": 410.5
+      },
+      "currentQuote": 270.55,
+      "currentQuoteDate": "2026-10-22",
+      "legacyModelBaseValue": 424.73,
+      "scenarioInputs": {
+        "bear": {
+          "salesGrowthAfterGuidancePct": 3,
+          "ownerCashMarginShiftPpt": -4,
+          "netShareGrowthPct": 1,
+          "exitOwnerFcfMultiple": 13,
+          "discountPct": 13.5
+        },
+        "base": {
+          "salesGrowthAfterGuidancePct": 8,
+          "ownerCashMarginShiftPpt": 0,
+          "netShareGrowthPct": 0,
+          "exitOwnerFcfMultiple": 21,
+          "discountPct": 12
+        },
+        "bull": {
+          "salesGrowthAfterGuidancePct": 12,
+          "ownerCashMarginShiftPpt": 3,
+          "netShareGrowthPct": -1,
+          "exitOwnerFcfMultiple": 27,
+          "discountPct": 11
+        }
+      },
+      "comparisonOnly": true,
+      "verifiedBuyPrice": null,
+      "range": {
+        "low": 151.97,
+        "high": 575.16
+      }
+    },
+    "INTU": {
+      "ticker": "INTU",
+      "archetype": "multi_segment_software",
+      "sourceUrls": [
+        "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm",
+        "https://investors.intuit.com/news-events/press-releases/detail/1323/intuit-hosts-investor-day-reaffirms-first-quarter-and-fiscal-2027-guidance"
+      ],
+      "verifiedReturnOnNewCapital": false,
+      "actualMaintenanceCapexSplit": false,
+      "approval": "research_only",
+      "missingEvidence": [
+        "Separately validated consumer vs business owner cash conversion",
+        "Spot shares lack full future treasury and dilution bridge"
+      ],
+      "scenarios": {
+        "bear": {
+          "status": "illustrative",
+          "valuePerShare": 152.16,
+          "operatingCashMarginPct": 15.37,
+          "futureRevenueMillions": 27369.4,
+          "annualOwnerCashPerShare": [
+            13.32,
+            13.72,
+            14.13,
+            14.55,
+            14.98
+          ],
+          "source": "management revenue guidance × modeled owner cash conversion"
+        },
+        "base": {
+          "status": "illustrative",
+          "valuePerShare": 345.44,
+          "operatingCashMarginPct": 19.37,
+          "futureRevenueMillions": 31829.3,
+          "annualOwnerCashPerShare": [
+            16.96,
+            18.32,
+            19.78,
+            21.36,
+            23.07
+          ],
+          "source": "management revenue guidance × modeled owner cash conversion"
+        },
+        "bull": {
+          "status": "illustrative",
+          "valuePerShare": 611.88,
+          "operatingCashMarginPct": 22.37,
+          "futureRevenueMillions": 36813.3,
+          "annualOwnerCashPerShare": [
+            19.78,
+            22.38,
+            25.32,
+            28.65,
+            32.41
+          ],
+          "source": "management revenue guidance × modeled owner cash conversion"
+        }
+      },
+      "keyDrivers": {
+        "historicalMedianFcfMillions": 6123.0,
+        "historicalMedianSbcMillions": 1968.0,
+        "historicalMedianCapexMillions": 175.0,
+        "ownerCashMarginObservedPct": 19.37,
+        "guideRevenueMidMillions": 23395.5,
+        "spotShareBaseMillions": 267.236
+      },
+      "currentQuote": 354.9,
+      "currentQuoteDate": "2026-10-22",
+      "legacyModelBaseValue": 431.82,
+      "scenarioInputs": {
+        "bear": {
+          "salesGrowthAfterGuidancePct": 4,
+          "ownerCashMarginShiftPpt": -4,
+          "netShareGrowthPct": 1,
+          "exitOwnerFcfMultiple": 13,
+          "discountPct": 13.5
+        },
+        "base": {
+          "salesGrowthAfterGuidancePct": 8,
+          "ownerCashMarginShiftPpt": 0,
+          "netShareGrowthPct": 0,
+          "exitOwnerFcfMultiple": 21,
+          "discountPct": 12
+        },
+        "bull": {
+          "salesGrowthAfterGuidancePct": 12,
+          "ownerCashMarginShiftPpt": 3,
+          "netShareGrowthPct": -1,
+          "exitOwnerFcfMultiple": 27,
+          "discountPct": 11
+        }
+      },
+      "comparisonOnly": true,
+      "verifiedBuyPrice": null,
+      "range": {
+        "low": 152.16,
+        "high": 611.88
+      }
+    },
+    "CPRT": {
+      "ticker": "CPRT",
+      "archetype": "salvage_marketplace_plus_acquisition",
+      "sourceUrls": [
+        "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
+        "https://www.sec.gov/Archives/edgar/data/900075/000119312526423478/d129535dex991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm"
+      ],
+      "verifiedReturnOnNewCapital": false,
+      "actualMaintenanceCapexSplit": false,
+      "approval": "research_only",
+      "missingEvidence": [
+        "ACV independent post-close owner cash and proforma working capital",
+        "Proforma cash/debt and acquisition related compensation",
+        "Yard maintenance and growth investment split"
+      ],
+      "scenarios": {
+        "bear": {
+          "status": "illustrative_post_deal_cash_net_of_close_consideration",
+          "valuePerShare": 8.49,
+          "annualOrganicCashMillions": [
+            1065.01,
+            1065.01,
+            1065.01,
+            1065.01,
+            1065.01
+          ],
+          "annualAcquiredCashMillions": [
+            -75.0,
+            -75.0,
+            -75.0,
+            -75.0,
+            -75.0
+          ],
+          "acvUpfrontPerSpotShare": 1.94,
+          "warning": "Assumes acquisition financed out of historic liquid assets; no financing, working-capital or net-debt bridge"
+        },
+        "base": {
+          "status": "illustrative_post_deal_cash_net_of_close_consideration",
+          "valuePerShare": 22.34,
+          "annualOrganicCashMillions": [
+            1240.47,
+            1290.08,
+            1341.69,
+            1395.36,
+            1451.17
+          ],
+          "annualAcquiredCashMillions": [
+            50.0,
+            51.5,
+            53.04,
+            54.64,
+            56.28
+          ],
+          "acvUpfrontPerSpotShare": 1.94,
+          "warning": "Assumes acquisition financed out of historic liquid assets; no financing, working-capital or net-debt bridge"
+        },
+        "bull": {
+          "status": "illustrative_post_deal_cash_net_of_close_consideration",
+          "valuePerShare": 42.15,
+          "annualOrganicCashMillions": [
+            1339.28,
+            1442.33,
+            1553.63,
+            1673.83,
+            1803.65
+          ],
+          "annualAcquiredCashMillions": [
+            200.0,
+            216.0,
+            233.28,
+            251.94,
+            272.1
+          ],
+          "acvUpfrontPerSpotShare": 1.94,
+          "warning": "Assumes acquisition financed out of historic liquid assets; no financing, working-capital or net-debt bridge"
+        }
+      },
+      "keyDrivers": {
+        "organicOwnerCashMedianMillions": 1192.8,
+        "reportedCapex3yMedianMillions": 511.0,
+        "latestRevenueMillions": 4666.209,
+        "historicalSpotSharesMillions": 926.298293,
+        "acvControlConsiderationMillions": 1801.021081
+      },
+      "currentQuote": 29.09,
+      "currentQuoteDate": "2026-10-22",
+      "legacyModelBaseValue": 33.22,
+      "scenarioInputs": {
+        "bear": {
+          "organicRevenueGrowthPct": 0,
+          "capexAnnualVs3YMedianPct": 25,
+          "acquiredOwnerFcfFirstFullYearMillions": -75,
+          "acquiredOwnerCashGrowthPct": 0,
+          "netShareGrowthPct": 1,
+          "exitOwnerFcfMultiple": 13,
+          "discountPct": 14
+        },
+        "base": {
+          "organicRevenueGrowthPct": 4,
+          "capexAnnualVs3YMedianPct": 0,
+          "acquiredOwnerFcfFirstFullYearMillions": 50,
+          "acquiredOwnerCashGrowthPct": 3,
+          "netShareGrowthPct": 0,
+          "exitOwnerFcfMultiple": 21,
+          "discountPct": 12.5
+        },
+        "bull": {
+          "organicRevenueGrowthPct": 8,
+          "capexAnnualVs3YMedianPct": -10,
+          "acquiredOwnerFcfFirstFullYearMillions": 200,
+          "acquiredOwnerCashGrowthPct": 8,
+          "netShareGrowthPct": -1,
+          "exitOwnerFcfMultiple": 27,
+          "discountPct": 11.5
+        }
+      },
+      "comparisonOnly": true,
+      "verifiedBuyPrice": null,
+      "range": {
+        "low": 8.49,
+        "high": 42.15
+      }
+    },
+    "CSU.TO": {
+      "ticker": "CSU.TO",
+      "archetype": "acquisition_compounder",
+      "sourceUrls": [
+        "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-fourth-quarter-and-year-ended-december-31-2025-and-declares-quarterly-dividend/",
+        "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-second-quarter-ended-june-30-2026-and-declares-quarterly-dividend/"
+      ],
+      "verifiedReturnOnNewCapital": false,
+      "actualMaintenanceCapexSplit": false,
+      "approval": "research_only",
+      "missingEvidence": [
+        "Actual historic cohort acquisition cash yields, earnouts, organic/FX effects",
+        "Gross vs net purchase consideration and terminal acquisition obligations",
+        "Minority capital and consolidated acquisition returns"
+      ],
+      "scenarios": {
+        "bear": {
+          "status": "acquisition_cohort_hypothesis",
+          "valuePerShare": 606.74,
+          "annualCashAfterNewAcquisitionsMillions": [
+            934.9,
+            944.3,
+            974.7,
+            1005.5,
+            1037.1
+          ],
+          "newAcquisitionSpendMillions": [
+            764.9,
+            772.6,
+            797.5,
+            822.7,
+            848.5
+          ],
+          "modeledIncrementalCashYieldPct": 5
+        },
+        "base": {
+          "status": "acquisition_cohort_hypothesis",
+          "valuePerShare": 889.58,
+          "annualCashAfterNewAcquisitionsMillions": [
+            700.1,
+            774.3,
+            854.6,
+            941.3,
+            1034.9
+          ],
+          "newAcquisitionSpendMillions": [
+            1050.2,
+            1161.5,
+            1281.9,
+            1411.9,
+            1552.3
+          ],
+          "modeledIncrementalCashYieldPct": 11
+        },
+        "bull": {
+          "status": "acquisition_cohort_hypothesis",
+          "valuePerShare": 1005.99,
+          "annualCashAfterNewAcquisitionsMillions": [
+            446.0,
+            526.3,
+            617.8,
+            722.0,
+            840.5
+          ],
+          "newAcquisitionSpendMillions": [
+            1338.0,
+            1578.8,
+            1853.4,
+            2166.0,
+            2521.5
+          ],
+          "modeledIncrementalCashYieldPct": 16
+        }
+      },
+      "keyDrivers": {
+        "fcfa2s2025Millions": 1683,
+        "acquisitions2025Millions": 1579,
+        "h1OrganicRevenueGrowthPct": 4,
+        "reportingCurrency": "USD",
+        "tradingCurrency": "CAD",
+        "fxFromIssuerDataset": 1.4004
+      },
+      "currentQuote": 3408.5701,
+      "currentQuoteDate": "2026-10-22",
+      "legacyModelBaseValue": 1195.55,
+      "scenarioInputs": {
+        "bear": {
+          "organicFcfGrowthPct": 1,
+          "acquisitionReinvestmentPct": 45,
+          "incrementalCashYieldOnPurchasePct": 5,
+          "cohortLagYears": 2,
+          "discountPct": 15,
+          "exitCashMultiple": 11
+        },
+        "base": {
+          "organicFcfGrowthPct": 4,
+          "acquisitionReinvestmentPct": 60,
+          "incrementalCashYieldOnPurchasePct": 11,
+          "cohortLagYears": 1,
+          "discountPct": 13.5,
+          "exitCashMultiple": 18
+        },
+        "bull": {
+          "organicFcfGrowthPct": 6,
+          "acquisitionReinvestmentPct": 75,
+          "incrementalCashYieldOnPurchasePct": 16,
+          "cohortLagYears": 1,
+          "discountPct": 12.5,
+          "exitCashMultiple": 25
+        }
+      },
+      "comparisonOnly": true,
+      "verifiedBuyPrice": null,
+      "range": {
+        "low": 606.74,
+        "high": 1005.99
+      }
+    },
+    "ASML": {
+      "ticker": "ASML",
+      "archetype": "lithography_equipment_and_services",
+      "sourceUrls": [
+        "https://www.asml.com/investors/annual-report/2025/financials",
+        "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026"
+      ],
+      "verifiedReturnOnNewCapital": false,
+      "actualMaintenanceCapexSplit": false,
+      "approval": "research_only",
+      "missingEvidence": [
+        "Quarterly working capital and installed-base margins normalized over full order cycle",
+        "FCFF to equity net debt and other obligations bridge",
+        "Reinvestment depreciation/capex and expansion funding tie-out"
+      ],
+      "scenarios": {
+        "bear": {
+          "status": "illustrative_unreconciled_equity_proxy",
+          "valuePerShare": 144.35,
+          "annualCashMillions": [
+            5429.0,
+            5429.0,
+            5429.0,
+            5429.0,
+            5429.0
+          ],
+          "discountPct": 14.000000000000002,
+          "terminalMultiple": 11,
+          "warnings": [
+            "DCF does not reconcile a fully verified net-debt bridge",
+            "Cash reinvestment and share denominator are assumptions, not issuer forecasts"
+          ]
+        },
+        "base": {
+          "status": "illustrative_unreconciled_equity_proxy",
+          "valuePerShare": 443.05,
+          "annualCashMillions": [
+            8900.0,
+            9523.0,
+            10189.61,
+            10902.88,
+            11666.08
+          ],
+          "discountPct": 12.5,
+          "terminalMultiple": 18,
+          "warnings": [
+            "DCF does not reconcile a fully verified net-debt bridge",
+            "Cash reinvestment and share denominator are assumptions, not issuer forecasts"
+          ]
+        },
+        "bull": {
+          "status": "illustrative_unreconciled_equity_proxy",
+          "valuePerShare": 875.23,
+          "annualCashMillions": [
+            11387.55,
+            12754.06,
+            14284.54,
+            15998.69,
+            17918.53
+          ],
+          "discountPct": 11.5,
+          "terminalMultiple": 24,
+          "warnings": [
+            "DCF does not reconcile a fully verified net-debt bridge",
+            "Cash reinvestment and share denominator are assumptions, not issuer forecasts"
+          ]
+        }
+      },
+      "keyDrivers": {
+        "FY2026GuidanceRevenueMillions": {
+          "revenueLowMillions": 44000,
+          "revenueHighMillions": 45000,
+          "grossMarginPct": 56,
+          "sourceUrl": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026"
+        },
+        "sharesMillions": 385.417665,
+        "reportingCurrency": "EUR",
+        "quoteCurrency": "USD",
+        "fx": 1.120448
+      },
+      "currentQuote": 1560.54,
+      "currentQuoteDate": "2026-10-22",
+      "legacyModelBaseValue": 361.63,
+      "scenarioInputs": {
+        "bear": {
+          "salesGrowthAfterFY2026Pct": 0,
+          "ebitMarginPct": 29,
+          "taxPct": 20,
+          "netReinvestmentAsPctRevenue": 11,
+          "exitCashMultiple": 11,
+          "discountPct": 14
+        },
+        "base": {
+          "salesGrowthAfterFY2026Pct": 7,
+          "ebitMarginPct": 35,
+          "taxPct": 20,
+          "netReinvestmentAsPctRevenue": 8,
+          "exitCashMultiple": 18,
+          "discountPct": 12.5
+        },
+        "bull": {
+          "salesGrowthAfterFY2026Pct": 12,
+          "ebitMarginPct": 39,
+          "taxPct": 19,
+          "netReinvestmentAsPctRevenue": 6,
+          "exitCashMultiple": 24,
+          "discountPct": 11.5
+        }
+      },
+      "comparisonOnly": true,
+      "verifiedBuyPrice": null,
+      "range": {
+        "low": 144.35,
+        "high": 875.23
+      }
+    },
+    "DNP.WA": {
+      "ticker": "DNP.WA",
+      "archetype": "store_cohort_expansion",
+      "sourceUrls": [
+        "https://grupadino.pl/en/selected-financial-data/",
+        "https://grupadino.pl/en/dino-polska-recaps-business-performance-in-2025/",
+        "https://grupadino.pl/en/press-releases/"
+      ],
+      "verifiedReturnOnNewCapital": false,
+      "actualMaintenanceCapexSplit": false,
+      "approval": "research_only",
+      "missingEvidence": [
+        "Store-age cohort productivity and actual spend per store not independently reconciled",
+        "Opening cadence, costs and working capital not management guidance",
+        "Lease liabilities and debt-to-equity bridge"
+      ],
+      "scenarios": {
+        "bear": {
+          "status": "illustrative_unreconciled_equity_proxy",
+          "valuePerShare": -2.89,
+          "annualCashMillions": [
+            -552.65,
+            -439.14,
+            -366.93,
+            -293.36,
+            -218.42
+          ],
+          "discountPct": 14.000000000000002,
+          "terminalMultiple": 13,
+          "warnings": [
+            "DCF does not reconcile a fully verified net-debt bridge",
+            "Cash reinvestment and share denominator are assumptions, not issuer forecasts"
+          ],
+          "storeBuild": [
+            {
+              "year": 1,
+              "endStores": 3233,
+              "revenueMillions": 37206.7,
+              "maintenanceCapexAssumedMillions": 520.9,
+              "storeExpansionCapexAssumedMillions": 1060.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 178.6,
+              "ownerCashMillions": -552.6
+            },
+            {
+              "year": 2,
+              "endStores": 3433,
+              "revenueMillions": 39977.6,
+              "maintenanceCapexAssumedMillions": 559.7,
+              "storeExpansionCapexAssumedMillions": 1060.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 138.5,
+              "ownerCashMillions": -439.1
+            },
+            {
+              "year": 3,
+              "endStores": 3633,
+              "revenueMillions": 42800.3,
+              "maintenanceCapexAssumedMillions": 599.2,
+              "storeExpansionCapexAssumedMillions": 1060.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 141.1,
+              "ownerCashMillions": -366.9
+            },
+            {
+              "year": 4,
+              "endStores": 3833,
+              "revenueMillions": 45675.4,
+              "maintenanceCapexAssumedMillions": 639.5,
+              "storeExpansionCapexAssumedMillions": 1060.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 143.8,
+              "ownerCashMillions": -293.4
+            },
+            {
+              "year": 5,
+              "endStores": 4033,
+              "revenueMillions": 48603.8,
+              "maintenanceCapexAssumedMillions": 680.5,
+              "storeExpansionCapexAssumedMillions": 1060.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 146.4,
+              "ownerCashMillions": -218.4
+            }
+          ]
+        },
+        "base": {
+          "status": "illustrative_unreconciled_equity_proxy",
+          "valuePerShare": 8.82,
+          "annualCashMillions": [
+            -184.71,
+            24.52,
+            239.7,
+            469.55,
+            714.92
+          ],
+          "discountPct": 12.5,
+          "terminalMultiple": 20,
+          "warnings": [
+            "DCF does not reconcile a fully verified net-debt bridge",
+            "Cash reinvestment and share denominator are assumptions, not issuer forecasts"
+          ],
+          "storeBuild": [
+            {
+              "year": 1,
+              "endStores": 3333,
+              "revenueMillions": 38923.3,
+              "maintenanceCapexAssumedMillions": 389.2,
+              "storeExpansionCapexAssumedMillions": 1260.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 158.7,
+              "ownerCashMillions": -184.7
+            },
+            {
+              "year": 2,
+              "endStores": 3633,
+              "revenueMillions": 44295.5,
+              "maintenanceCapexAssumedMillions": 443.0,
+              "storeExpansionCapexAssumedMillions": 1260.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 161.2,
+              "ownerCashMillions": 24.5
+            },
+            {
+              "year": 3,
+              "endStores": 3933,
+              "revenueMillions": 50035.2,
+              "maintenanceCapexAssumedMillions": 500.4,
+              "storeExpansionCapexAssumedMillions": 1260.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 172.2,
+              "ownerCashMillions": 239.7
+            },
+            {
+              "year": 4,
+              "endStores": 4233,
+              "revenueMillions": 56163.2,
+              "maintenanceCapexAssumedMillions": 561.6,
+              "storeExpansionCapexAssumedMillions": 1260.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 183.8,
+              "ownerCashMillions": 469.6
+            },
+            {
+              "year": 5,
+              "endStores": 4533,
+              "revenueMillions": 62701.4,
+              "maintenanceCapexAssumedMillions": 627.0,
+              "storeExpansionCapexAssumedMillions": 1260.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 196.1,
+              "ownerCashMillions": 714.9
+            }
+          ]
+        },
+        "bull": {
+          "status": "illustrative_unreconciled_equity_proxy",
+          "valuePerShare": 28.33,
+          "annualCashMillions": [
+            46.17,
+            392.72,
+            777.24,
+            1200.08,
+            1664.44
+          ],
+          "discountPct": 11.5,
+          "terminalMultiple": 26,
+          "warnings": [
+            "DCF does not reconcile a fully verified net-debt bridge",
+            "Cash reinvestment and share denominator are assumptions, not issuer forecasts"
+          ],
+          "storeBuild": [
+            {
+              "year": 1,
+              "endStores": 3423,
+              "revenueMillions": 40232.6,
+              "maintenanceCapexAssumedMillions": 321.9,
+              "storeExpansionCapexAssumedMillions": 1482.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 66.0,
+              "ownerCashMillions": 46.2
+            },
+            {
+              "year": 2,
+              "endStores": 3813,
+              "revenueMillions": 47799.1,
+              "maintenanceCapexAssumedMillions": 382.4,
+              "storeExpansionCapexAssumedMillions": 1482.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 75.7,
+              "ownerCashMillions": 392.7
+            },
+            {
+              "year": 3,
+              "endStores": 4203,
+              "revenueMillions": 56128.6,
+              "maintenanceCapexAssumedMillions": 449.0,
+              "storeExpansionCapexAssumedMillions": 1482.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 83.3,
+              "ownerCashMillions": 777.2
+            },
+            {
+              "year": 4,
+              "endStores": 4593,
+              "revenueMillions": 65285.7,
+              "maintenanceCapexAssumedMillions": 522.3,
+              "storeExpansionCapexAssumedMillions": 1482.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 91.6,
+              "ownerCashMillions": 1200.1
+            },
+            {
+              "year": 5,
+              "endStores": 4983,
+              "revenueMillions": 75339.5,
+              "maintenanceCapexAssumedMillions": 602.7,
+              "storeExpansionCapexAssumedMillions": 1482.0,
+              "logisticsCapexAssumedMillions": 300,
+              "workingCapitalReinvestmentMillions": 100.5,
+              "ownerCashMillions": 1664.4
+            }
+          ]
+        }
+      },
+      "keyDrivers": {
+        "FY2025Stores": 3033,
+        "FY2025OpenedStores": 345,
+        "FY2025RevenuePerAverageStoreMillions": 11.76,
+        "splitAdjustedSharesMillions": 980.4
+      },
+      "currentQuote": 39.06,
+      "currentQuoteDate": "2026-10-21",
+      "legacyModelBaseValue": 8.91,
+      "scenarioInputs": {
+        "bear": {
+          "newStoresPerYear": 200,
+          "lflGrowthPct": 1,
+          "ebitMarginPct": 5,
+          "taxPct": 19,
+          "maintenanceCapexToRevenuePct": 1.4,
+          "expansionCostPerNewStoreMillions": 5.3,
+          "logisticsCapexMillions": 300,
+          "workingCapitalPerIncrementalRevenuePct": 5,
+          "exitCashMultiple": 13,
+          "discountPct": 14
+        },
+        "base": {
+          "newStoresPerYear": 300,
+          "lflGrowthPct": 4,
+          "ebitMarginPct": 6.1,
+          "taxPct": 19,
+          "maintenanceCapexToRevenuePct": 1,
+          "expansionCostPerNewStoreMillions": 4.2,
+          "logisticsCapexMillions": 300,
+          "workingCapitalPerIncrementalRevenuePct": 3,
+          "exitCashMultiple": 20,
+          "discountPct": 12.5
+        },
+        "bull": {
+          "newStoresPerYear": 390,
+          "lflGrowthPct": 6,
+          "ebitMarginPct": 6.8,
+          "taxPct": 19,
+          "maintenanceCapexToRevenuePct": 0.8,
+          "expansionCostPerNewStoreMillions": 3.8,
+          "logisticsCapexMillions": 300,
+          "workingCapitalPerIncrementalRevenuePct": 1,
+          "exitCashMultiple": 26,
+          "discountPct": 11.5
+        }
+      },
+      "comparisonOnly": true,
+      "verifiedBuyPrice": null,
+      "range": {
+        "low": -2.89,
+        "high": 28.33
+      }
+    }
+  },
+  "signalsAllowed": false,
+  "modelNature": "What-if sector economics with issuer-anchored FY snapshots, NOT audited enterprise-to-equity DCF",
+  "safeguards": [
+    "No automatic buy recommendation",
+    "Do not interchange FCFF and equity owner cash without net-debt bridge",
+    "Acquisitions counted as prospective purchase funding and acquired incremental cash, never as free growth",
+    "Unverified inputs remain as assumptions with open evidence gaps"
+  ]
 }
