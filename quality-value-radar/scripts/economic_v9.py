@@ -32,12 +32,23 @@ def main():
   if ticker in ("ADBE","INTU"):
    old=intrinsic["companies"][ticker]
    annual=old["years"][-3:]
-   observed_fcf=med([y["fcf"] for y in annual])/1e6
-   cash=old["economicReview"]["ownerCashFlow"]["observations"]
-   sbc=med([x["sbc"] for x in cash])/1e6
-   capex=med([x["capex"] for x in annual])/1e6
-   revenue=annual[-1]["revenue"]/1e6
-   fcf_margin=(observed_fcf-sbc)/revenue
+   obs={x["year"]:x for x in old["economicReview"]["ownerCashFlow"]["observations"]}
+   paired=[]
+   for y in annual:
+    o=obs.get(y["fyEnd"])
+    if not o or not y.get("revenue") or o.get("sbc") is None or o.get("ownerFcf") is None:
+     raise ValueError("Financial year cash/SBC/revenue mismatch: "+ticker+" "+y["fyEnd"])
+    if abs(o["ownerFcf"]-(y["fcf"]-o["sbc"]))>1:
+     raise ValueError("Owner cash does not reconcile to same year FCF less SBC")
+    paired.append({"fyEnd":y["fyEnd"],"revenueMillions":y["revenue"]/1e6,
+      "reportedFcfMillions":y["fcf"]/1e6,"sbcMillions":o["sbc"]/1e6,
+      "ownerFcfMillions":o["ownerFcf"]/1e6,
+      "ownerCashToRevenuePct":round(100*o["ownerFcf"]/y["revenue"],4)})
+   if len(paired)!=3:raise ValueError("Require three paired FY cash flow margins")
+   observed_fcf=med([y["reportedFcfMillions"] for y in paired])
+   sbc=med([y["sbcMillions"] for y in paired])
+   capex=med([y["capex"] for y in annual])/1e6
+   fcf_margin=med([p["ownerCashToRevenuePct"] for p in paired])/100
    g=c["latestOfficialRevenueGuidance"]
    guide_mid=(g["revenueLowMillions"]+g["revenueHighMillions"])/2
    shares=(v8["companies"][ticker]["outstandingSharesSnapshotMillions"])
@@ -55,7 +66,9 @@ def main():
       "annualOwnerCashPerShare":[round(x,2) for x in per],"source":"management revenue guidance × modeled owner cash conversion"}
    out.update({"keyDrivers":{"historicalMedianFcfMillions":round(observed_fcf,1),
     "historicalMedianSbcMillions":round(sbc,1),"historicalMedianCapexMillions":round(capex,1),
-    "ownerCashMarginObservedPct":round(fcf_margin*100,2),"guideRevenueMidMillions":guide_mid,
+    "ownerCashMarginObservedPct":round(fcf_margin*100,2),"pairedFiscalYearMargins":paired,
+    "normalizedMethod":"median of three matched FY (CFO−PPE CAPEX−SBC)/revenue ratios",
+    "guideRevenueMidMillions":guide_mid,
     "spotShareBaseMillions":shares},
     "missingEvidence":["Reinvestment in software/product IP and Semrush integration ROI" if ticker=="ADBE" else "Separately validated consumer vs business owner cash conversion","Spot shares lack full future treasury and dilution bridge"]})
   elif ticker=="CPRT":
