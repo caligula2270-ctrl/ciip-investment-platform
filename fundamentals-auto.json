@@ -1,7 +1,7 @@
 {
   "schema": "ciip-fundamentals-v1",
   "source": "SEC EDGAR companyfacts (US GAAP)",
-  "generated_at": "2026-10-25T00:11:22.893814+00:00",
+  "generated_at": "2026-10-25T12:10:12.764084+00:00",
   "companies": {
     "MSFT": {
       "cik": "0000789019",
@@ -1226,6 +1226,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "MSFT",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "GOOGL": {
@@ -2394,6 +2402,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "GOOGL",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "AMZN": {
@@ -3550,6 +3566,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "AMZN",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "META": {
@@ -4629,6 +4653,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "META",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "V": {
@@ -4824,6 +4856,18 @@
               "period": "instant",
               "taxonomy": "us-gaap"
             },
+            "capex": {
+              "value": 705000000,
+              "unit": "USD",
+              "end": "2021-09-30",
+              "start": null,
+              "period": "FY",
+              "tag": "FY2022 10-K cash flows (2021 comparative)",
+              "taxonomy": "issuer_reported_10k",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316122000081/v-20220930.htm",
+              "source_location": "FY2022 10-K cash flows (2021 comparative)",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
             "stock_compensation": {
               "value": 542000000,
               "end": "2021-09-30",
@@ -4873,7 +4917,7 @@
               "period": "FY"
             }
           },
-          "fcf_usd": null,
+          "fcf_usd": 14522000000,
           "fcf_per_diluted_share": null,
           "operating_margin_pct": 65.56316116988177,
           "net_margin_pct": 51.07239161999585,
@@ -4970,6 +5014,18 @@
               "period": "instant",
               "taxonomy": "us-gaap"
             },
+            "capex": {
+              "value": 970000000,
+              "unit": "USD",
+              "end": "2022-09-30",
+              "start": null,
+              "period": "FY",
+              "tag": "FY2022 10-K investing cash flows",
+              "taxonomy": "issuer_reported_10k",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316122000081/v-20220930.htm",
+              "source_location": "FY2022 10-K investing cash flows",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
             "stock_compensation": {
               "value": 602000000,
               "end": "2022-09-30",
@@ -5019,7 +5075,7 @@
               "period": "FY"
             }
           },
-          "fcf_usd": null,
+          "fcf_usd": 17879000000,
           "fcf_per_diluted_share": null,
           "operating_margin_pct": 64.18628454452406,
           "net_margin_pct": 51.03036506311839,
@@ -5116,6 +5172,18 @@
               "period": "instant",
               "taxonomy": "us-gaap"
             },
+            "capex": {
+              "value": 1059000000,
+              "unit": "USD",
+              "end": "2023-09-30",
+              "start": null,
+              "period": "FY",
+              "tag": "FY2025 10-K investing cash flows (2023 comparative)",
+              "taxonomy": "issuer_reported_10k",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+              "source_location": "FY2025 10-K investing cash flows (2023 comparative)",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
             "stock_compensation": {
               "value": 765000000,
               "end": "2023-09-30",
@@ -5165,7 +5233,7 @@
               "period": "FY"
             }
           },
-          "fcf_usd": null,
+          "fcf_usd": 19696000000,
           "fcf_per_diluted_share": null,
           "operating_margin_pct": 64.3126205861636,
           "net_margin_pct": 52.89866168499066,
@@ -5262,6 +5330,18 @@
               "period": "instant",
               "taxonomy": "us-gaap"
             },
+            "capex": {
+              "value": 1257000000,
+              "unit": "USD",
+              "end": "2024-09-30",
+              "start": null,
+              "period": "FY",
+              "tag": "FY2025 10-K investing cash flows (2024 comparative)",
+              "taxonomy": "issuer_reported_10k",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+              "source_location": "FY2025 10-K investing cash flows (2024 comparative)",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
             "stock_compensation": {
               "value": 850000000,
               "end": "2024-09-30",
@@ -5311,7 +5391,7 @@
               "period": "FY"
             }
           },
-          "fcf_usd": null,
+          "fcf_usd": 18693000000,
           "fcf_per_diluted_share": null,
           "operating_margin_pct": 65.67666870789957,
           "net_margin_pct": 54.954628959527916,
@@ -5408,6 +5488,18 @@
               "period": "instant",
               "taxonomy": "us-gaap"
             },
+            "capex": {
+              "value": 1482000000,
+              "unit": "USD",
+              "end": "2025-09-30",
+              "start": null,
+              "period": "FY",
+              "tag": "FY2025 10-K investing cash flows",
+              "taxonomy": "issuer_reported_10k",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+              "source_location": "FY2025 10-K investing cash flows",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
             "stock_compensation": {
               "value": 897000000,
               "end": "2025-09-30",
@@ -5457,7 +5549,7 @@
               "period": "FY"
             }
           },
-          "fcf_usd": null,
+          "fcf_usd": 21577000000,
           "fcf_per_diluted_share": null,
           "operating_margin_pct": 59.985,
           "net_margin_pct": 50.145,
@@ -5472,8 +5564,8 @@
         "latest_fy_end": "2025-09-30",
         "latest_fy_age_days": 390,
         "available_years": 5,
-        "positive_fcf_years": 0,
-        "complete_fcf_years": 0,
+        "positive_fcf_years": 5,
+        "complete_fcf_years": 5,
         "normalized_fcf_3y_usd": null,
         "revenue_cagr_pct": 13.498001354184396,
         "latest_diluted_shares": null,
@@ -5483,18 +5575,17 @@
           "Faltan tres años consecutivos con CFO-CAPEX positivo y comparable",
           "Acciones diluidas anuales no verificadas o variación entre años superior al 35 %"
         ],
-        "status": "insufficient",
-        "reported_fcf_median_3y_usd": null,
-        "median_cfo_3y_usd": null,
-        "median_capex_3y_usd": null,
-        "separate_medians_fcf_3y_usd": null,
+        "status": "historical_ready",
+        "reported_fcf_median_3y_usd": 19696000000,
+        "median_cfo_3y_usd": 20755000000,
+        "median_capex_3y_usd": 1257000000,
+        "separate_medians_fcf_3y_usd": 19498000000,
         "normalized_fcf_status": "sector_blocked",
         "partial_wc_largest_annual_cash_effect_usd": null,
         "partial_wc_has_complete_3y": false,
         "median_sbc_3y_usd": 850000000,
         "sector_profile": "payment_network",
         "normalization_notes": [
-          "Sin tres ejercicios completos de CFO y CAPEX para normalizar reinversión",
           "Sin datos suficientes para conciliar cuentas a cobrar, existencias y proveedores",
           "DCF genérico bloqueado por controles sectoriales"
         ]
@@ -5529,17 +5620,62 @@
         "schema": "ciip-sector-valuation-v1",
         "sector": "payment_network",
         "model": "payments_income_capped_cashflow",
-        "status": "insufficient",
+        "status": "aggregate_research_only",
         "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
         "methodology": "Research-only; not a price target or audited FCFE.",
-        "normalized_cash_usd": null,
-        "adjustments": {},
-        "scenarios": {},
+        "normalized_cash_usd": 18755850000.0,
+        "adjustments": {
+          "fcf_3y_usd": 19498000000.0,
+          "net_income_median_3y_usd": 19743000000.0,
+          "income_haircut_pct": 5,
+          "cash_cap_usd": 18755850000.0,
+          "owner_cash_proxy_usd": 18755850000.0
+        },
+        "scenarios": {
+          "conservador": {
+            "equity_value_usd": 163688637386.33,
+            "terminal_weight_pct": 31.98,
+            "explicit_value_usd": 111338610472.16,
+            "terminal_value_pv_usd": 52350026914.17,
+            "growth_1_5_pct": 3.71,
+            "growth_6_10_pct": 2.0,
+            "discount_pct": 14.5,
+            "terminal_pct": 2.0
+          },
+          "base": {
+            "equity_value_usd": 251384210472.1,
+            "terminal_weight_pct": 42.65,
+            "explicit_value_usd": 144176015537.57,
+            "terminal_value_pv_usd": 107208194934.53,
+            "growth_1_5_pct": 7.42,
+            "growth_6_10_pct": 4.0,
+            "discount_pct": 12.0,
+            "terminal_pct": 2.0
+          },
+          "optimista": {
+            "equity_value_usd": 312057560813.58,
+            "terminal_weight_pct": 47.72,
+            "explicit_value_usd": 163151598718.88,
+            "terminal_value_pv_usd": 148905962094.7,
+            "growth_1_5_pct": 9.28,
+            "growth_6_10_pct": 5.0,
+            "discount_pct": 11.0,
+            "terminal_pct": 2.0
+          }
+        },
         "warnings": [
-          "Falta CFO, CAPEX o FCF comparable en tres ejercicios"
+          "Las liquidaciones con participantes y reservas regulatorias no están normalizadas con XBRL consolidado",
+          "Valores patrimoniales SOLO indicativos: acciones clase B/C, conversiones y notas de capital requieren verificación manual",
+          "No emitir señal de compra ni valoración por acción automática para redes de pagos"
         ],
         "shares_review": "manual_review",
-        "capital_notes_status": "not_reviewed"
+        "capital_notes_status": "not_reviewed",
+        "assumptions": {
+          "first_growth": 7.424,
+          "later_growth": 4.0,
+          "discount_rate": 12.0,
+          "terminal_growth": 2.0
+        }
       },
       "capital_filings": {
         "schema": "ciip-capital-notes-v1",
@@ -5588,6 +5724,55 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "V",
+        "filled": [
+          {
+            "fy_end": "2021-09-30",
+            "metric": "capex",
+            "value": 705000000,
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316122000081/v-20220930.htm",
+            "source_location": "FY2022 10-K cash flows (2021 comparative)",
+            "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+          },
+          {
+            "fy_end": "2022-09-30",
+            "metric": "capex",
+            "value": 970000000,
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316122000081/v-20220930.htm",
+            "source_location": "FY2022 10-K investing cash flows",
+            "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+          },
+          {
+            "fy_end": "2023-09-30",
+            "metric": "capex",
+            "value": 1059000000,
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+            "source_location": "FY2025 10-K investing cash flows (2023 comparative)",
+            "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+          },
+          {
+            "fy_end": "2024-09-30",
+            "metric": "capex",
+            "value": 1257000000,
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+            "source_location": "FY2025 10-K investing cash flows (2024 comparative)",
+            "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+          },
+          {
+            "fy_end": "2025-09-30",
+            "metric": "capex",
+            "value": 1482000000,
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+            "source_location": "FY2025 10-K investing cash flows",
+            "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+          }
+        ],
+        "conflicts": [],
+        "no_additions": false,
+        "status": "crosswalk_validated"
       }
     },
     "MA": {
@@ -5807,6 +5992,18 @@
               "period": "instant",
               "taxonomy": "us-gaap"
             },
+            "net_income": {
+              "value": 8687000000,
+              "unit": "USD",
+              "end": "2021-12-31",
+              "start": null,
+              "period": "FY",
+              "tag": "FY2022 10-K consolidated operations (2021 comparative)",
+              "taxonomy": "issuer_reported_10k",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139123000020/ma-20221231.htm",
+              "source_location": "FY2022 10-K consolidated operations (2021 comparative)",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
             "stock_compensation": {
               "value": 273000000,
               "end": "2021-12-31",
@@ -5859,7 +6056,7 @@
           "fcf_usd": 9056000000,
           "fcf_per_diluted_share": 9.129032258064516,
           "operating_margin_pct": 53.389112476170304,
-          "net_margin_pct": null,
+          "net_margin_pct": 46.001906375767845,
           "cash_conversion": null,
           "partial_operating_wc_usd": null,
           "capex_to_depreciation_ratio": null,
@@ -5977,6 +6174,18 @@
               "period": "instant",
               "taxonomy": "us-gaap"
             },
+            "net_income": {
+              "value": 9930000000,
+              "unit": "USD",
+              "end": "2022-12-31",
+              "start": null,
+              "period": "FY",
+              "tag": "FY2022 10-K consolidated operations",
+              "taxonomy": "issuer_reported_10k",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139123000020/ma-20221231.htm",
+              "source_location": "FY2022 10-K consolidated operations",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
             "stock_compensation": {
               "value": 295000000,
               "end": "2022-12-31",
@@ -6029,7 +6238,7 @@
           "fcf_usd": 10753000000,
           "fcf_per_diluted_share": 11.07415036045314,
           "operating_margin_pct": 55.15132436929442,
-          "net_margin_pct": null,
+          "net_margin_pct": 44.65530422269191,
           "cash_conversion": null,
           "partial_operating_wc_usd": null,
           "capex_to_depreciation_ratio": null,
@@ -6147,6 +6356,18 @@
               "period": "instant",
               "taxonomy": "us-gaap"
             },
+            "net_income": {
+              "value": 11195000000,
+              "unit": "USD",
+              "end": "2023-12-31",
+              "start": null,
+              "period": "FY",
+              "tag": "FY2025 10-K consolidated operations (2023 comparative)",
+              "taxonomy": "issuer_reported_10k",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+              "source_location": "FY2025 10-K consolidated operations (2023 comparative)",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
             "stock_compensation": {
               "value": 460000000,
               "end": "2023-12-31",
@@ -6199,7 +6420,7 @@
           "fcf_usd": 11609000000,
           "fcf_per_diluted_share": 12.271670190274842,
           "operating_margin_pct": 55.81321220814407,
-          "net_margin_pct": null,
+          "net_margin_pct": 44.60514782054347,
           "cash_conversion": null,
           "partial_operating_wc_usd": null,
           "capex_to_depreciation_ratio": null,
@@ -6317,6 +6538,18 @@
               "period": "instant",
               "taxonomy": "us-gaap"
             },
+            "net_income": {
+              "value": 12874000000,
+              "unit": "USD",
+              "end": "2024-12-31",
+              "start": null,
+              "period": "FY",
+              "tag": "FY2025 10-K consolidated operations (2024 comparative)",
+              "taxonomy": "issuer_reported_10k",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+              "source_location": "FY2025 10-K consolidated operations (2024 comparative)",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
             "stock_compensation": {
               "value": 526000000,
               "end": "2024-12-31",
@@ -6369,7 +6602,7 @@
           "fcf_usd": 14306000000,
           "fcf_per_diluted_share": 15.432578209277239,
           "operating_margin_pct": 55.320055383959954,
-          "net_margin_pct": null,
+          "net_margin_pct": 45.70596797671033,
           "cash_conversion": null,
           "partial_operating_wc_usd": null,
           "capex_to_depreciation_ratio": null,
@@ -6487,6 +6720,18 @@
               "period": "instant",
               "taxonomy": "us-gaap"
             },
+            "net_income": {
+              "value": 14968000000,
+              "unit": "USD",
+              "end": "2025-12-31",
+              "start": null,
+              "period": "FY",
+              "tag": "FY2025 10-K consolidated operations",
+              "taxonomy": "issuer_reported_10k",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+              "source_location": "FY2025 10-K consolidated operations",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
             "stock_compensation": {
               "value": 597000000,
               "end": "2025-12-31",
@@ -6539,7 +6784,7 @@
           "fcf_usd": 17159000000,
           "fcf_per_diluted_share": 18.939293598233995,
           "operating_margin_pct": 57.62861760849013,
-          "net_margin_pct": null,
+          "net_margin_pct": 45.64667134274649,
           "cash_conversion": null,
           "partial_operating_wc_usd": null,
           "capex_to_depreciation_ratio": null,
@@ -6611,17 +6856,62 @@
         "schema": "ciip-sector-valuation-v1",
         "sector": "payment_network",
         "model": "payments_income_capped_cashflow",
-        "status": "insufficient",
+        "status": "aggregate_research_only",
         "source": "SEC 10-K, CFO, CAPEX and US GAAP concepts",
         "methodology": "Research-only; not a price target or audited FCFE.",
-        "normalized_cash_usd": null,
-        "adjustments": {},
-        "scenarios": {},
+        "normalized_cash_usd": 12230300000.0,
+        "adjustments": {
+          "fcf_3y_usd": 14306000000.0,
+          "net_income_median_3y_usd": 12874000000.0,
+          "income_haircut_pct": 5,
+          "cash_cap_usd": 12230300000.0,
+          "owner_cash_proxy_usd": 12230300000.0
+        },
+        "scenarios": {
+          "conservador": {
+            "equity_value_usd": 106896870965.81,
+            "terminal_weight_pct": 31.99,
+            "explicit_value_usd": 72697840994.6,
+            "terminal_value_pv_usd": 34199029971.21,
+            "growth_1_5_pct": 3.75,
+            "growth_6_10_pct": 2.0,
+            "discount_pct": 14.5,
+            "terminal_pct": 2.0
+          },
+          "base": {
+            "equity_value_usd": 164423915307.43,
+            "terminal_weight_pct": 42.67,
+            "explicit_value_usd": 94267712820.67,
+            "terminal_value_pv_usd": 70156202486.76,
+            "growth_1_5_pct": 7.5,
+            "growth_6_10_pct": 4.0,
+            "discount_pct": 12.0,
+            "terminal_pct": 2.0
+          },
+          "optimista": {
+            "equity_value_usd": 204269961609.43,
+            "terminal_weight_pct": 47.74,
+            "explicit_value_usd": 106748138839.15,
+            "terminal_value_pv_usd": 97521822770.29,
+            "growth_1_5_pct": 9.38,
+            "growth_6_10_pct": 5.0,
+            "discount_pct": 11.0,
+            "terminal_pct": 2.0
+          }
+        },
         "warnings": [
-          "Faltan tres ejercicios de beneficio neto positivo"
+          "Las liquidaciones con participantes y reservas regulatorias no están normalizadas con XBRL consolidado",
+          "Valores patrimoniales SOLO indicativos: acciones clase B/C, conversiones y notas de capital requieren verificación manual",
+          "No emitir señal de compra ni valoración por acción automática para redes de pagos"
         ],
         "shares_review": "manual_review",
-        "capital_notes_status": "not_reviewed"
+        "capital_notes_status": "not_reviewed",
+        "assumptions": {
+          "first_growth": 7.5,
+          "later_growth": 4.0,
+          "discount_rate": 12.0,
+          "terminal_growth": 2.0
+        }
       },
       "capital_filings": {
         "schema": "ciip-capital-notes-v1",
@@ -6670,6 +6960,55 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "MA",
+        "filled": [
+          {
+            "fy_end": "2021-12-31",
+            "metric": "net_income",
+            "value": 8687000000,
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139123000020/ma-20221231.htm",
+            "source_location": "FY2022 10-K consolidated operations (2021 comparative)",
+            "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+          },
+          {
+            "fy_end": "2022-12-31",
+            "metric": "net_income",
+            "value": 9930000000,
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139123000020/ma-20221231.htm",
+            "source_location": "FY2022 10-K consolidated operations",
+            "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+          },
+          {
+            "fy_end": "2023-12-31",
+            "metric": "net_income",
+            "value": 11195000000,
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+            "source_location": "FY2025 10-K consolidated operations (2023 comparative)",
+            "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+          },
+          {
+            "fy_end": "2024-12-31",
+            "metric": "net_income",
+            "value": 12874000000,
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+            "source_location": "FY2025 10-K consolidated operations (2024 comparative)",
+            "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+          },
+          {
+            "fy_end": "2025-12-31",
+            "metric": "net_income",
+            "value": 14968000000,
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+            "source_location": "FY2025 10-K consolidated operations",
+            "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+          }
+        ],
+        "conflicts": [],
+        "no_additions": false,
+        "status": "crosswalk_validated"
       }
     },
     "SPGI": {
@@ -7780,6 +8119,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "SPGI",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "MCO": {
@@ -8922,6 +9269,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "MCO",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "COST": {
@@ -10099,6 +10454,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "COST",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "CPRT": {
@@ -11122,6 +11485,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "CPRT",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "FICO": {
@@ -12318,6 +12689,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "FICO",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "ROP": {
@@ -13485,6 +13864,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "ROP",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "HEI": {
@@ -14537,6 +14924,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "HEI",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "TDG": {
@@ -15823,6 +16218,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "TDG",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "INTU": {
@@ -17045,6 +17448,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "INTU",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "ADBE": {
@@ -18289,6 +18700,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "ADBE",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "TXN": {
@@ -19503,6 +19922,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "TXN",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "LRCX": {
@@ -20660,6 +21087,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "LRCX",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "BKNG": {
@@ -21673,6 +22108,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "BKNG",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "MELI": {
@@ -22696,6 +23139,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "MELI",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "AZO": {
@@ -23731,6 +24182,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "AZO",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "ORLY": {
@@ -24895,6 +25354,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "ORLY",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "ODFL": {
@@ -25872,6 +26339,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "ODFL",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "VRSK": {
@@ -27010,6 +27485,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "VRSK",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "AON": {
@@ -28056,6 +28539,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "AON",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "DHR": {
@@ -29125,6 +29616,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "DHR",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "MEDP": {
@@ -30049,6 +30548,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "MEDP",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "OXY": {
@@ -31047,6 +31554,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "OXY",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "AAON": {
@@ -32062,6 +32577,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "AAON",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "TRUP": {
@@ -33155,6 +33678,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "TRUP",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "TBBB": {
@@ -33264,6 +33795,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "TBBB",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     },
     "FRPH": {
@@ -34227,6 +34766,14 @@
         "notes_conclusion": null,
         "verified_current_fully_diluted_shares": null,
         "warning": "SEC filing pointers are verified against submissions metadata only. No equity/option/convertible notes were extracted or legally/accountingly reconciled; current fully diluted shares MUST NOT be represented as verified."
+      },
+      "official_filing_bridge": {
+        "schema": "ciip-official-reported-bridge-v1",
+        "ticker": "FRPH",
+        "filled": [],
+        "conflicts": [],
+        "no_additions": true,
+        "status": "not_applicable"
       }
     }
   },

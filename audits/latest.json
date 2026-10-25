@@ -1,7 +1,7 @@
 {
   "schema": "ciip-issuer-research-audit-v1",
-  "generated_at": "2026-10-25T00:11:39.822803+00:00",
-  "sec_generated_at": "2026-10-25T00:11:22.893814+00:00",
+  "generated_at": "2026-10-25T12:10:35.038209+00:00",
+  "sec_generated_at": "2026-10-25T12:10:12.764084+00:00",
   "source_review_as_of": "2026-10-24",
   "methodology": "See audits/PLAYBOOK.md; investment research, not an independent or statutory audit",
   "companies": {
@@ -10,7 +10,7 @@
       "company": "Adobe Inc.",
       "sector": "Software subscription / creative and document tools",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-25T00:11:39.822803+00:00",
+      "generated_at": "2026-10-25T12:10:35.038209+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",
@@ -235,7 +235,7 @@
       "company": "Mastercard Incorporated",
       "sector": "Global payments network and value-added services",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-25T00:11:39.822803+00:00",
+      "generated_at": "2026-10-25T12:10:35.038209+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",
@@ -255,7 +255,7 @@
           "fy_end": "2021-12-31",
           "revenue_musd": 18884.0,
           "operating_margin_pct": 53.389,
-          "net_margin_pct": null,
+          "net_margin_pct": 46.002,
           "cfo_musd": 9463.0,
           "capex_musd": 407.0,
           "sbc_musd": 273.0,
@@ -267,7 +267,7 @@
           "fy_end": "2022-12-31",
           "revenue_musd": 22237.0,
           "operating_margin_pct": 55.151,
-          "net_margin_pct": null,
+          "net_margin_pct": 44.655,
           "cfo_musd": 11195.0,
           "capex_musd": 442.0,
           "sbc_musd": 295.0,
@@ -279,7 +279,7 @@
           "fy_end": "2023-12-31",
           "revenue_musd": 25098.0,
           "operating_margin_pct": 55.813,
-          "net_margin_pct": null,
+          "net_margin_pct": 44.605,
           "cfo_musd": 11980.0,
           "capex_musd": 371.0,
           "sbc_musd": 460.0,
@@ -291,7 +291,7 @@
           "fy_end": "2024-12-31",
           "revenue_musd": 28167.0,
           "operating_margin_pct": 55.32,
-          "net_margin_pct": null,
+          "net_margin_pct": 45.706,
           "cfo_musd": 14780.0,
           "capex_musd": 474.0,
           "sbc_musd": 526.0,
@@ -303,7 +303,7 @@
           "fy_end": "2025-12-31",
           "revenue_musd": 32791.0,
           "operating_margin_pct": 57.629,
-          "net_margin_pct": null,
+          "net_margin_pct": 45.647,
           "cfo_musd": 17648.0,
           "capex_musd": 489.0,
           "sbc_musd": 597.0,
@@ -334,11 +334,44 @@
       },
       "sector_valuation": {
         "model": "payments_income_capped_cashflow",
-        "status": "insufficient",
-        "normalized_cash_musd": null,
-        "scenarios_aggregate": {},
+        "status": "aggregate_research_only",
+        "normalized_cash_musd": 12230.3,
+        "scenarios_aggregate": {
+          "conservador": {
+            "equity_value_usd": 106896870965.81,
+            "terminal_weight_pct": 31.99,
+            "explicit_value_usd": 72697840994.6,
+            "terminal_value_pv_usd": 34199029971.21,
+            "growth_1_5_pct": 3.75,
+            "growth_6_10_pct": 2.0,
+            "discount_pct": 14.5,
+            "terminal_pct": 2.0
+          },
+          "base": {
+            "equity_value_usd": 164423915307.43,
+            "terminal_weight_pct": 42.67,
+            "explicit_value_usd": 94267712820.67,
+            "terminal_value_pv_usd": 70156202486.76,
+            "growth_1_5_pct": 7.5,
+            "growth_6_10_pct": 4.0,
+            "discount_pct": 12.0,
+            "terminal_pct": 2.0
+          },
+          "optimista": {
+            "equity_value_usd": 204269961609.43,
+            "terminal_weight_pct": 47.74,
+            "explicit_value_usd": 106748138839.15,
+            "terminal_value_pv_usd": 97521822770.29,
+            "growth_1_5_pct": 9.38,
+            "growth_6_10_pct": 5.0,
+            "discount_pct": 11.0,
+            "terminal_pct": 2.0
+          }
+        },
         "warnings": [
-          "Faltan tres ejercicios de beneficio neto positivo"
+          "Las liquidaciones con participantes y reservas regulatorias no están normalizadas con XBRL consolidado",
+          "Valores patrimoniales SOLO indicativos: acciones clase B/C, conversiones y notas de capital requieren verificación manual",
+          "No emitir señal de compra ni valoración por acción automática para redes de pagos"
         ]
       },
       "share_capital": {
@@ -408,8 +441,7 @@
         "Sin conciliación siquiera provisional de acciones",
         "Notas de capital no permiten confirmar acciones plenamente diluidas actuales",
         "DCF industrial bloqueado por sector",
-        "CFO, CAPEX o capital circulante requieren normalización/revisión",
-        "Modelo sectorial sin flujos comparables suficientes"
+        "CFO, CAPEX o capital circulante requieren normalización/revisión"
       ],
       "signoff": {
         "accounting_reconciliation": false,
@@ -425,7 +457,7 @@
       "company": "Microsoft Corporation",
       "sector": "Cloud / enterprise software / AI datacenters",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-25T00:11:39.822803+00:00",
+      "generated_at": "2026-10-25T12:10:35.038209+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-K",
@@ -653,7 +685,7 @@
       "company": "Texas Instruments Incorporated",
       "sector": "Semiconductors / industrial manufacturing",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-25T00:11:39.822803+00:00",
+      "generated_at": "2026-10-25T12:10:35.038209+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",
@@ -881,7 +913,7 @@
       "company": "Visa Inc.",
       "sector": "Global payments network",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-25T00:11:39.822803+00:00",
+      "generated_at": "2026-10-25T12:10:35.038209+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",
@@ -903,10 +935,10 @@
           "operating_margin_pct": 65.563,
           "net_margin_pct": 51.072,
           "cfo_musd": 15227.0,
-          "capex_musd": null,
+          "capex_musd": 705.0,
           "sbc_musd": 542.0,
-          "reported_fcf_musd": null,
-          "capex_to_cfo_pct": null,
+          "reported_fcf_musd": 14522.0,
+          "capex_to_cfo_pct": 4.63,
           "sbc_to_cfo_pct": 3.559
         },
         {
@@ -915,10 +947,10 @@
           "operating_margin_pct": 64.186,
           "net_margin_pct": 51.03,
           "cfo_musd": 18849.0,
-          "capex_musd": null,
+          "capex_musd": 970.0,
           "sbc_musd": 602.0,
-          "reported_fcf_musd": null,
-          "capex_to_cfo_pct": null,
+          "reported_fcf_musd": 17879.0,
+          "capex_to_cfo_pct": 5.146,
           "sbc_to_cfo_pct": 3.194
         },
         {
@@ -927,10 +959,10 @@
           "operating_margin_pct": 64.313,
           "net_margin_pct": 52.899,
           "cfo_musd": 20755.0,
-          "capex_musd": null,
+          "capex_musd": 1059.0,
           "sbc_musd": 765.0,
-          "reported_fcf_musd": null,
-          "capex_to_cfo_pct": null,
+          "reported_fcf_musd": 19696.0,
+          "capex_to_cfo_pct": 5.102,
           "sbc_to_cfo_pct": 3.686
         },
         {
@@ -939,10 +971,10 @@
           "operating_margin_pct": 65.677,
           "net_margin_pct": 54.955,
           "cfo_musd": 19950.0,
-          "capex_musd": null,
+          "capex_musd": 1257.0,
           "sbc_musd": 850.0,
-          "reported_fcf_musd": null,
-          "capex_to_cfo_pct": null,
+          "reported_fcf_musd": 18693.0,
+          "capex_to_cfo_pct": 6.301,
           "sbc_to_cfo_pct": 4.261
         },
         {
@@ -951,10 +983,10 @@
           "operating_margin_pct": 59.985,
           "net_margin_pct": 50.145,
           "cfo_musd": 23059.0,
-          "capex_musd": null,
+          "capex_musd": 1482.0,
           "sbc_musd": 897.0,
-          "reported_fcf_musd": null,
-          "capex_to_cfo_pct": null,
+          "reported_fcf_musd": 21577.0,
+          "capex_to_cfo_pct": 6.427,
           "sbc_to_cfo_pct": 3.89
         }
       ],
@@ -972,9 +1004,9 @@
       },
       "quality_summary": {
         "five_years": true,
-        "positive_fcf_years": 0,
+        "positive_fcf_years": 5,
         "normalized_fcf_musd": null,
-        "capital_intensity": null,
+        "capital_intensity": 1257000000,
         "revenue_cagr_pct": 13.498001354184396,
         "sector_gate": "blocked",
         "normalization_status": "sector_blocked",
@@ -982,11 +1014,44 @@
       },
       "sector_valuation": {
         "model": "payments_income_capped_cashflow",
-        "status": "insufficient",
-        "normalized_cash_musd": null,
-        "scenarios_aggregate": {},
+        "status": "aggregate_research_only",
+        "normalized_cash_musd": 18755.85,
+        "scenarios_aggregate": {
+          "conservador": {
+            "equity_value_usd": 163688637386.33,
+            "terminal_weight_pct": 31.98,
+            "explicit_value_usd": 111338610472.16,
+            "terminal_value_pv_usd": 52350026914.17,
+            "growth_1_5_pct": 3.71,
+            "growth_6_10_pct": 2.0,
+            "discount_pct": 14.5,
+            "terminal_pct": 2.0
+          },
+          "base": {
+            "equity_value_usd": 251384210472.1,
+            "terminal_weight_pct": 42.65,
+            "explicit_value_usd": 144176015537.57,
+            "terminal_value_pv_usd": 107208194934.53,
+            "growth_1_5_pct": 7.42,
+            "growth_6_10_pct": 4.0,
+            "discount_pct": 12.0,
+            "terminal_pct": 2.0
+          },
+          "optimista": {
+            "equity_value_usd": 312057560813.58,
+            "terminal_weight_pct": 47.72,
+            "explicit_value_usd": 163151598718.88,
+            "terminal_value_pv_usd": 148905962094.7,
+            "growth_1_5_pct": 9.28,
+            "growth_6_10_pct": 5.0,
+            "discount_pct": 11.0,
+            "terminal_pct": 2.0
+          }
+        },
         "warnings": [
-          "Falta CFO, CAPEX o FCF comparable en tres ejercicios"
+          "Las liquidaciones con participantes y reservas regulatorias no están normalizadas con XBRL consolidado",
+          "Valores patrimoniales SOLO indicativos: acciones clase B/C, conversiones y notas de capital requieren verificación manual",
+          "No emitir señal de compra ni valoración por acción automática para redes de pagos"
         ]
       },
       "share_capital": {
@@ -1049,8 +1114,7 @@
         "Sin conciliación siquiera provisional de acciones",
         "Notas de capital no permiten confirmar acciones plenamente diluidas actuales",
         "DCF industrial bloqueado por sector",
-        "CFO, CAPEX o capital circulante requieren normalización/revisión",
-        "Modelo sectorial sin flujos comparables suficientes"
+        "CFO, CAPEX o capital circulante requieren normalización/revisión"
       ],
       "signoff": {
         "accounting_reconciliation": false,

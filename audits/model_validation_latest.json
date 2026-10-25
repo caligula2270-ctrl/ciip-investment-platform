@@ -238,15 +238,6 @@
           "ticker": "V",
           "severity": "P0",
           "kind": "Not comparable without bridge",
-          "detail": "Visa lacks comparable annual CAPEX in generic SEC facts",
-          "impact": "FCF series is missing, cash normalization is not reproducible",
-          "required_fix": "Implement issuer-specific XBRL/footnote mapping for property and technology spend",
-          "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm"
-        },
-        {
-          "ticker": "V",
-          "severity": "P0",
-          "kind": "Not comparable without bridge",
           "detail": "Visa B-class, preferred and participating-security denominator mixes different dates",
           "impact": "A-equivalent fully diluted share count unapproved",
           "required_fix": "Reconcile September 2026 8-K class factors with same-date counts and litigation rights",
@@ -272,14 +263,14 @@
         "cost_of_equity_15pct_usd": 121.32,
         "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
       },
-      "P0": 2,
+      "P0": 1,
       "P1": 3,
       "base_model_value_usd": 211.27
     },
     "MA": {
       "ticker": "MA",
       "name": "Mastercard",
-      "verdict": "Not ready",
+      "verdict": "Ready with caveats",
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
@@ -329,15 +320,6 @@
         },
         {
           "ticker": "MA",
-          "severity": "P0",
-          "kind": "Source contradiction",
-          "detail": "Mastercard SEC normalized net income missing; audited FY2025 note cites 14968m",
-          "impact": "Cash/earnings normalization and sector payment model blocked",
-          "required_fix": "Map issuer-specific net income US-GAAP concept with filing year matching",
-          "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
-        },
-        {
-          "ticker": "MA",
           "severity": "P1",
           "kind": "Not comparable without bridge",
           "detail": "Settlement and client incentive payments drive CFO",
@@ -356,7 +338,7 @@
         "cost_of_equity_15pct_usd": 220.31,
         "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
       },
-      "P0": 1,
+      "P0": 0,
       "P1": 3,
       "base_model_value_usd": 383.66
     },
@@ -466,28 +448,10 @@
       "ticker": "V",
       "severity": "P0",
       "kind": "Not comparable without bridge",
-      "detail": "Visa lacks comparable annual CAPEX in generic SEC facts",
-      "impact": "FCF series is missing, cash normalization is not reproducible",
-      "required_fix": "Implement issuer-specific XBRL/footnote mapping for property and technology spend",
-      "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm"
-    },
-    {
-      "ticker": "V",
-      "severity": "P0",
-      "kind": "Not comparable without bridge",
       "detail": "Visa B-class, preferred and participating-security denominator mixes different dates",
       "impact": "A-equivalent fully diluted share count unapproved",
       "required_fix": "Reconcile September 2026 8-K class factors with same-date counts and litigation rights",
       "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm"
-    },
-    {
-      "ticker": "MA",
-      "severity": "P0",
-      "kind": "Source contradiction",
-      "detail": "Mastercard SEC normalized net income missing; audited FY2025 note cites 14968m",
-      "impact": "Cash/earnings normalization and sector payment model blocked",
-      "required_fix": "Map issuer-specific net income US-GAAP concept with filing year matching",
-      "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
     },
     {
       "ticker": "TXN",

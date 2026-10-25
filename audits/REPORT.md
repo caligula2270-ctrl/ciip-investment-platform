@@ -1,6 +1,6 @@
 # CIIP | Auditoría fundamental focalizada
 
-Generado: 2026-10-25T00:11:39.822803+00:00 · SEC: 2026-10-25T00:11:22.893814+00:00
+Generado: 2026-10-25T12:10:35.038209+00:00 · SEC: 2026-10-25T12:10:12.764084+00:00
 
 **Alcance:** trabajo de investigación, no auditoría independiente. Los datos trimestrales y anuales no se mezclan, ni se emiten precios objetivo verificados.
 
@@ -36,7 +36,7 @@ Margen operativo 36.63% y SBC 1,942.00 M USD.
 - Semrush acquisition and repurchases
 
 ## MA | Mastercard Incorporated
-Negocio: Global payments network and value-added services. Modelo: payments_income_capped_cashflow (insufficient).
+Negocio: Global payments network and value-added services. Modelo: payments_income_capped_cashflow (aggregate_research_only).
 Presentación revisada: [https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm](https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm)
 Estado de presentación SEC: latest_filing_metadata_matches.
 
@@ -51,7 +51,9 @@ Margen operativo 57.63% y SBC 597.00 M USD.
 - Network and VAS: FY2025 net revenue $32.791bn; payment network $19.476bn and value-added services $13.315bn — Separate take-rate and VAS growth with incentive economics; do not assume identical margins ([fuente oficial](https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm), FY2025 segment revenue disclosures).
 
 **Valoración agregada ilustrativa:**
-Sin valoración calculable: insuficiencia de datos o controles sectoriales.
+- conservador: 106.90 miles de millones USD; terminal 31.99%.
+- base: 164.42 miles de millones USD; terminal 42.67%.
+- optimista: 204.27 miles de millones USD; terminal 47.74%.
 
 **Capital y dilución:** el recuento actual plenamente diluido no se ha verificado ni conciliado con todas las notas; sin valoración por acción.
 **Pendientes:**
@@ -59,7 +61,6 @@ Sin valoración calculable: insuficiencia de datos o controles sectoriales.
 - Notas de capital no permiten confirmar acciones plenamente diluidas actuales
 - DCF industrial bloqueado por sector
 - CFO, CAPEX o capital circulante requieren normalización/revisión
-- Modelo sectorial sin flujos comparables suficientes
 
 **Revisión documental adicional:**
 - Class B exchangeability and EPS notes
@@ -126,11 +127,11 @@ Margen operativo 34.06% y SBC 419.00 M USD.
 - inventory cycle and split between GAAP and adjusted FCF
 
 ## V | Visa Inc.
-Negocio: Global payments network. Modelo: payments_income_capped_cashflow (insufficient).
+Negocio: Global payments network. Modelo: payments_income_capped_cashflow (aggregate_research_only).
 Presentación revisada: [https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm](https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm)
 Estado de presentación SEC: latest_filing_metadata_matches.
 
-Último FY 2025-09-30: ingresos 40,000.00 M USD; CFO 23,059.00 M USD; CAPEX — M USD; FCF simple — M USD.
+Último FY 2025-09-30: ingresos 40,000.00 M USD; CFO 23,059.00 M USD; CAPEX 1,482.00 M USD; FCF simple 21,577.00 M USD.
 Margen operativo 59.98% y SBC 897.00 M USD.
 
 **Datos declarados de periodo reciente (no anualizar automáticamente):** period: 9M FY2026, revenue_musd: 33764, net_income_musd: 17502, cfo_musd: 16342, property_equipment_technology_musd: 1178, reported_cfo_less_property_technology_musd: 15164, repurchases_musd: 16430, us_litigation_escrow_end_musd: 888.
@@ -141,7 +142,9 @@ Margen operativo 59.98% y SBC 897.00 M USD.
 - FY2026 upcoming: Fiscal Q4/full-year 2026 scheduled for 2026-10-27 after market close — Never mark FY2026 audited/available on 2026-10-24 ([fuente oficial](https://visa.gcs-web.com/news-releases/news-release-details/visa-announce-fiscal-fourth-quarter-and-full-year-2026-financial), Official release schedule).
 
 **Valoración agregada ilustrativa:**
-Sin valoración calculable: insuficiencia de datos o controles sectoriales.
+- conservador: 163.69 miles de millones USD; terminal 31.98%.
+- base: 251.38 miles de millones USD; terminal 42.65%.
+- optimista: 312.06 miles de millones USD; terminal 47.72%.
 
 **Capital y dilución:** el recuento actual plenamente diluido no se ha verificado ni conciliado con todas las notas; sin valoración por acción.
 **Pendientes:**
@@ -149,7 +152,6 @@ Sin valoración calculable: insuficiencia de datos o controles sectoriales.
 - Notas de capital no permiten confirmar acciones plenamente diluidas actuales
 - DCF industrial bloqueado por sector
 - CFO, CAPEX o capital circulante requieren normalización/revisión
-- Modelo sectorial sin flujos comparables suficientes
 
 **Revisión documental adicional:**
 - Class B conversion rights and litigation escrow
