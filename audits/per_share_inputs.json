@@ -40,25 +40,27 @@
         "capex_m": 115948,
         "sbc_m": 12405,
         "derived_owner_cash_m": 54582,
-        "forward_base_justification": "FY2026 base 54.582bn after SBC; base forward 90bn requires lower net future datacenter reinvestment or higher CFO, neither management-guaranteed."
+        "forward_base_justification": "Start with FY2026 CFO 182,935 − CAPEX 115,948 − SBC 12,405 − finance lease principal cash 3,101 = 51,481m, preserving economic maintenance/growth CAPEX and avoiding a 65% unexplained starting uplift. Forecast 13% annual first stage is explicitly a stress assumption, not reported guidance.",
+        "finance_lease_principal_2026_m": 3101,
+        "forward_owner_cash_2026_m": 51481
       },
       "scenarios": {
         "conservador": {
-          "owner_cf1_m": 65000,
+          "owner_cf1_m": 45000,
           "g1_pct": 6,
           "g2_pct": 3,
           "ke_pct": 12,
           "t_pct": 2
         },
         "base": {
-          "owner_cf1_m": 90000,
+          "owner_cf1_m": 51481,
           "g1_pct": 13,
           "g2_pct": 7,
           "ke_pct": 10,
           "t_pct": 2.5
         },
         "optimista": {
-          "owner_cf1_m": 120000,
+          "owner_cf1_m": 67000,
           "g1_pct": 18,
           "g2_pct": 9,
           "ke_pct": 8.5,
@@ -68,7 +70,8 @@
       "red_flags": [
         "CAPEX FY2026 is massive relative to CFO",
         "Cash owner proxy assumes datacenter cycle change",
-        "Lease commitments and customer economics need model detail"
+        "Lease commitments and customer economics need model detail",
+        "Finance lease principal deducted once, new capitalized lease assets NOT added to current cash CAPEX if future principal handled."
       ],
       "filing_ref": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
       "manual_signoff_required": true
@@ -109,7 +112,11 @@
         "fcf_normalized_m": 7873,
         "sbc_median_m": 1833,
         "owner_cash_m": 6040,
-        "forward_base_justification": "Forward owner 6.5bn vs trailing normalized 6.04bn requires ~7.6% improvement; forecast not observed."
+        "forward_base_justification": "FY2025 source cash CFO 10,031 − CAPEX 179 − SBC 1,942 = $7,910m. Forward gross base $6,500m, less $350m annual strategic M&A reinvestment stress = $6,150m pre-growth, below FY2025; FY2026 Semrush acquisition paid $1,560m in 9M is a separate sunk transaction.",
+        "acquisition_cash_9m2026_m": 1560,
+        "acquisition_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+        "acquisition_reinvestment_policy": "Past 9M26 Semrush M&A cash is sunk; not subtracted again as already paid. Analyst chooses annual recurring future M&A reserve ($350m base, $700m bear, $0 bull) as continuing strategic reinvestment stress rather than representing all acquisitions as maintenance CAPEX.",
+        "owner_cash_2025_after_sbc_m": 7910
       },
       "scenarios": {
         "conservador": {
@@ -117,27 +124,31 @@
           "g1_pct": 3,
           "g2_pct": 2,
           "ke_pct": 12,
-          "t_pct": 2
+          "t_pct": 2,
+          "annual_acquisition_reinvestment_m": 700
         },
         "base": {
           "owner_cf1_m": 6500,
           "g1_pct": 8,
           "g2_pct": 4,
           "ke_pct": 10.5,
-          "t_pct": 2.5
+          "t_pct": 2.5,
+          "annual_acquisition_reinvestment_m": 350
         },
         "optimista": {
           "owner_cf1_m": 8000,
           "g1_pct": 12,
           "g2_pct": 6,
           "ke_pct": 9,
-          "t_pct": 3
+          "t_pct": 3,
+          "annual_acquisition_reinvestment_m": 0
         }
       },
       "red_flags": [
         "SBC and repurchases need consistent economic treatment",
         "Adobe AI retention/pricing needs verification",
-        "Current basic and quarterly weighted-average are different dates"
+        "Current basic and quarterly weighted-average are different dates",
+        "M&A cost ($1.56bn acquired 9M2026) is distinguished from forecast analyst recurring reinvestment reserve; not subtracted twice."
       ],
       "filing_ref": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
       "manual_signoff_required": true
@@ -169,15 +180,15 @@
           "seriesC": 2.142
         },
         "employee_participating_equiv_m": 15,
-        "formula": "July 21 ordinary classes * September 18 conversion rates, plus June 30 preferred as-converted ~10.308m, plus 15m period-weighted participating instruments (assumption; not dated current)",
+        "formula": "Q2 2026 10-Q Note 12 Class A diluted weighted average 1,898m including assumed B/C conversion + participating securities + employee awards, minus 1.104107m (B1/B2/B3 Class A equivalents lost under Sept 23 8-K). No second addition of preferred/participating or B shares.",
         "total_common_Aeq_m": 1865.9424511639,
         "preferred_Aeq_m": 10.308,
-        "central_m": 1891.2504511639,
-        "low_m": 1876.2504511639,
-        "high_m": 1909,
-        "upper_stress_basis": "Mixed measurement dates and speculative stock awards: July ordinary share amounts versus Sept exchange factors; no SEC-certified spot fully diluted denominator",
-        "confidence": "provisional_class_equivalent",
-        "status": "updated_sep2026_8k_rates_mixed_dates",
+        "central_m": 1896.895893,
+        "low_m": 1878.895893,
+        "high_m": 1917,
+        "upper_stress_basis": "18m share haircut and 20.1m extra dilution stress over 1,896.896m base. 10-Q weighted count is not currently outstanding; not certified for investment.",
+        "confidence": "reported_eps_denominator_with_documented_8k_adjustment_not_current_shares",
+        "status": "single_quarter_eps_diluted_with_september_class_B_event_adjustment",
         "evidence": [
           {
             "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
@@ -201,9 +212,25 @@
               "escrow_deposit_musd": 405
             },
             "note": "Supersedes 2026-06-25 conversion factors; exact class counts date July 21 not same as conversion date September 18"
+          },
+          {
+            "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+            "location": "Note 12 Earnings Per Share, 3M June 30 2026 diluted Class A common stock: 1,898m",
+            "values": {
+              "diluted_Aeq_m": 1898
+            },
+            "note": "Includes equivalent B, C, participating and employee awards already. The Sept event is a finite overlay; share buybacks after June and subsequent issuances not confirmed"
           }
         ],
-        "conversion_source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm"
+        "conversion_source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm",
+        "method": "SEC Q2 diluted weighted-average class A economic equivalent shares, adjusted by exact disclosed September 2026 8-K conversion decrease",
+        "date_common_equivalent": "2026-06-30",
+        "date_conversion_adjustment": "2026-09-18",
+        "september_B1_drop_m": 0.009804,
+        "september_B2_drop_m": 0.004377,
+        "september_B3_drop_m": 1.089926,
+        "june_diluted_Aeq_weighted_m": 1898,
+        "sept_Bdrop_total_m": 1.104107
       },
       "cash_anchor": {
         "anchor": "FY2025 CFO−purchases of property equipment and technology",
@@ -213,7 +240,15 @@
         "fy2026_9m_cfo_m": 16342,
         "fy2026_9m_capex_m": 1178,
         "fy2026_9m_fcf_m": 15164,
-        "forward_base_justification": "Forward owner 19bn, haircut versus 21.577bn FY2025 for settlement/litigation and client incentive uncertainties; no FY2026 10-K at analysis date."
+        "forward_base_justification": "FY2025 10-K CFO 23,059 − property/equipment/technology CAPEX 1,482 = FCF proxy 21,577m. Forward base 19,000m includes discretionary $2,577m conservatism for litigation escrow/incentive volatility; this is not GAAP recurring FCFE.",
+        "capex_source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+        "capex_five_years_m": {
+          "2021": 705,
+          "2022": 970,
+          "2023": 1059,
+          "2024": 1257,
+          "2025": 1482
+        }
       },
       "scenarios": {
         "conservador": {
@@ -241,7 +276,8 @@
       "red_flags": [
         "No completed FY2026 accounts as of Oct25",
         "Multiclass and litigation conversion rates change",
-        "Restricted litigation settlement cash and client incentive economics"
+        "Restricted litigation settlement cash and client incentive economics",
+        "The September 8-K reduces B-equivalent shares; Q2 EPS denominator already includes B/C and participating securities, which must not be added twice."
       ],
       "filing_ref": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
       "manual_signoff_required": true
@@ -290,7 +326,15 @@
         "capex2025_m": 489,
         "fcf2025_m": 17159,
         "net_income2025_m": 14968,
-        "forward_base_justification": "Forward cash 16bn below FY25 CFO−CAPEX 17.159bn, but above FY25 net income; incentive settlement movements not fully normalized."
+        "forward_base_justification": "FY2025 10-K net income $14,968m, CFO $17,648m, CAPEX $489m. Forward FCF owner $16,000m is 7% below CFO-CAPEX; test settlement/incentive timing and 95% income cap separately.",
+        "official_10k_net_income_series_m": {
+          "2021": 8687,
+          "2022": 9930,
+          "2023": 11195,
+          "2024": 12874,
+          "2025": 14968
+        },
+        "net_income_10k_source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
       },
       "scenarios": {
         "conservador": {
@@ -318,7 +362,8 @@
       "red_flags": [
         "Customer incentives and prepaid balances distort CFO timing",
         "Litigation settlements and open antitrust cases",
-        "Economic class B conversion and RSU time drift"
+        "Economic class B conversion and RSU time drift",
+        "The sector model income cap is a stress, not a direct owner-FCFE accounting identity."
       ],
       "filing_ref": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
       "manual_signoff_required": true
@@ -358,7 +403,11 @@
         "fy2025_fcf_m": 2603,
         "fy2025_capex_m": 4550,
         "company_adjusted_fcf_LTM_m": 8422,
-        "forward_base_justification": "Forward owner 5.5bn presumes continued 2026 fab CAPEX downshift and CFO resilience, excludes CHIPS receipts as recurring; FY2025 FCF only 2.603bn."
+        "forward_base_justification": "Q3 2026 LTM GAAP CFO 9,896 − CAPEX 2,578 = FCF proxy 7,318m. Forward base uses $5,500m after an explicit analyst $1,818m through-cycle CAPEX/cash normalization reserve. Separate CHIPS direct cash $1,104m added to issuer adjusted FCF ($8,422m); exclude it from owner recurring base.",
+        "ltm_fcf_gaap_proxy_m": 7318,
+        "ltm_owner_after_cycle_reserve_m": 5500,
+        "cycle_reserve_model_m": 1818,
+        "ltm_incentive_cash_nonrecurring_m": 1104
       },
       "scenarios": {
         "conservador": {
@@ -386,7 +435,8 @@
       "red_flags": [
         "CHIPS grants are not recurring operating cash",
         "Industrial CAPEX and utilization cyclical",
-        "Inventory and customer end markets uncertain"
+        "Inventory and customer end markets uncertain",
+        "Cyclical normalization reserve $1.818bn is illustrative and must be recalculated with fab utilization and maintenance CAPEX detail."
       ],
       "filing_ref": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
       "manual_signoff_required": true
