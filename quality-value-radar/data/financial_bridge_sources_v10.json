@@ -1,0 +1,164 @@
+{
+  "schema": "qvr-financial-bridge-sources-v10",
+  "version": "10.0",
+  "reviewDate": "2026-10-25",
+  "units": "millions of indicated reporting currency except shares, margins and price per share",
+  "methods": {
+    "fcfe": "CFO−CAPEX−SBC approximation already after financing interest cash flow: no additional net-debt deduction by default; validate non-operating balances and excess cash separately",
+    "fcff": "Operating NOPAT−reinvestment is financing-neutral; convert EV to equity using liquidity minus financial debt, lease liabilities where consistent, noncontrolling interests and other claims",
+    "cashRestriction": "Funds held for customers are not enterprise excess cash; financing / client money cannot be used as available company surplus",
+    "shareCapital": "Share snapshot, average diluted shares and future dilutive obligations are different denominators; do not mix without reconciliation"
+  },
+  "companies": {
+    "ADBE": {
+      "fiscalEnd": "2025-11-28",
+      "reportingCurrency": "USD",
+      "basis": "fcfe",
+      "cashMillions": 5431,
+      "shortInvestmentsMillions": 1164,
+      "debtCarryingMillions": 6210,
+      "leasesMillions": null,
+      "customerRestrictedFundsExcluded": true,
+      "reportedNoExtraDebtAdjustment": true,
+      "subsequentEventRecheckNeeded": true,
+      "fiscalSnapshotOutdatedReasons": [
+        "Acquisition of Semrush completed April 2026; FY2025 debt/cash not pro forma",
+        "Q3 FY2026 10-Q more recent than FY2025 financial close"
+      ],
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+      "factRefs": [
+        "FY2025 10-K balance sheet cash 5431 and short investments 1164",
+        "FY2025 10-K long-term debt carrying 6210"
+      ],
+      "investedCapitalClaimsStatus": "income and treasury instruments not independently valued at market"
+    },
+    "INTU": {
+      "fiscalEnd": "2026-07-31",
+      "reportingCurrency": "USD",
+      "basis": "fcfe",
+      "cashMillions": 4705,
+      "shortInvestmentsMillions": 2495,
+      "longInvestmentsMillions": 248,
+      "debtCurrentMillions": 1249,
+      "debtLongMillions": 6420,
+      "leasesMillions": 752,
+      "customerRestrictedFundsExcluded": true,
+      "excludedCustomerFundsMillions": 5038,
+      "reportedNoExtraDebtAdjustment": true,
+      "subsequentEventRecheckNeeded": true,
+      "fiscalSnapshotOutdatedReasons": [
+        "Debt maturity/repayment subsequent August 2026",
+        "Custodial funds are mirrored by liabilities; not free corporate cash"
+      ],
+      "sourceUrl": "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm",
+      "factRefs": [
+        "FY2026 10-K July 31 cash 4705, investments 2495 and LT 248",
+        "FY2026 debt current 1249 plus LT 6420",
+        "Customer funds 5038 with matching amounts payable; excluded from corporate cash",
+        "Operating leases total 752 reported separately"
+      ]
+    },
+    "CPRT": {
+      "fiscalEnd": "2026-07-31",
+      "reportingCurrency": "USD",
+      "basis": "fcfe_post_acquisition",
+      "cashMillions": null,
+      "debtCarryingMillions": null,
+      "proFormaPostACVCashMillions": null,
+      "proFormaPostACVDebtMillions": null,
+      "acquisitionConsiderationMillions": 1801.021081,
+      "acquisitionClose": "2026-10-16",
+      "reportedNoExtraDebtAdjustment": true,
+      "subsequentEventRecheckNeeded": true,
+      "fiscalSnapshotOutdatedReasons": [
+        "FY2026 balance predates Oct 2026 ACV closing",
+        "Post-deal cash/debt/working capital and acquisition cash return not yet tied out"
+      ],
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
+      "purchaseSourceUrl": "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm"
+    },
+    "CSU.TO": {
+      "fiscalEnd": "2025-12-31",
+      "reportingCurrency": "USD",
+      "basis": "shareholder_fcfa2s",
+      "cashMillions": null,
+      "debtCarryingMillions": null,
+      "leasesMillions": null,
+      "noncontrollingClaimsAlreadyAdjusted": true,
+      "interestPaidOnDebtAndLeasesAlreadyAdjusted": true,
+      "reportedNoExtraDebtAdjustment": true,
+      "reconciliationFY2025": {
+        "cfo": 2732,
+        "interestOnLease": 16,
+        "interestOnDebt": 196,
+        "debtCosts": 13,
+        "principalLeases": 131,
+        "irgaMembershipCharge": 440,
+        "capitalAssets": 68,
+        "interestAndDividendsReceived": 56,
+        "noncontrollingInterests": 243,
+        "fcfa2s": 1683
+      },
+      "latestAcquisitionConsiderationMillions": 1579,
+      "otherNetInvestmentsMillions": 530,
+      "subsequentEventRecheckNeeded": true,
+      "fiscalSnapshotOutdatedReasons": [
+        "Shareholder metric is already after minority interests, leases and debt service, not FCFF",
+        "Investment commitments and non-controlling claims require quarter end reconciliation"
+      ],
+      "sourceUrl": "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-fourth-quarter-and-year-ended-december-31-2025-and-declares-quarterly-dividend/"
+    },
+    "ASML": {
+      "fiscalEnd": "2025-12-31",
+      "reportingCurrency": "EUR",
+      "basis": "fcff",
+      "cashMillions": 12916,
+      "shortInvestmentsMillions": 405.9,
+      "currentDebtMillions": 1681.9,
+      "longDebtMillions": 2709,
+      "leasesMillions": 251.4,
+      "minorityInterestsMillions": 0,
+      "otherNonOperatingClaimsMillions": null,
+      "corporateCashIsAvailableForEquityBridge": true,
+      "otherNonOperatingAssetsValuationStatus": "Mistral, Zeiss and other investments require independent separate valuation / risk discounts",
+      "issuerNonOperatingAssetsMillionsExcludedFromBridge": true,
+      "operatingLeaseTreatmentConsistent": false,
+      "subsequentEventRecheckNeeded": true,
+      "fiscalSnapshotOutdatedReasons": [
+        "ASML Q3 2026 available; FY2025 net debt is dated and subsequent cash/debt may differ",
+        "Contract liabilities/customer prepayments can change working capital markedly"
+      ],
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/937966/000162828026011378/asml-20251231.htm",
+      "factRefs": [
+        "FY2025 20-F cash 12916 and short investments 405.9",
+        "Current debt 1681.9 long-term debt 2709.0 and leases 251.4",
+        "R&D is in EBIT: no duplicate subtraction"
+      ]
+    },
+    "DNP.WA": {
+      "fiscalEnd": "2025-12-31",
+      "reportingCurrency": "PLN",
+      "basis": "fcff",
+      "reportedNetDebtMillions": -199,
+      "issuerNetDebtIncludesOperatingLeases": true,
+      "leasesConsistentWithModeledOperatingCashFlow": false,
+      "issuerLfl2025Pct": 4.4,
+      "fy2025CapexMillions": 2087,
+      "fy2025DepreciationProxyMillions": 505,
+      "fy2025OpenedStores": 345,
+      "issuerStoreMaintenanceGrowthSplitVerified": false,
+      "subsequentEventRecheckNeeded": true,
+      "fiscalSnapshotOutdatedReasons": [
+        "FY2026 half-year reports available; end-2025 balance is stale",
+        "Lease liability double-counting requires cash flow definition agreement",
+        "CAPEX for DC, refurbishment and new stores not separately verified"
+      ],
+      "sourceUrl": "https://grupadino.pl/en/selected-financial-data/",
+      "factRefs": [
+        "Official selected data 2025 net debt -199 includes loans and lease liabilities",
+        "2025 EBITDA 2546.3 less EBIT 2041.3 = depreciation/amortization proxy 505",
+        "CAPEX 2087 and 345 openings (unit spend 2087/345 not pure store capex)"
+      ]
+    }
+  }
+}
