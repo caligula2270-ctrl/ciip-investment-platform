@@ -31,6 +31,8 @@ function ciipValidationView(){
   (x.source?'<a class="link tiny" rel="noopener noreferrer" target="_blank" href="'+esc(x.source)+'">Fuente oficial ↗</a>':'')+
   '</article>').join(''):'';
  const tests=c?c.checks.map(x=>'<li>'+ (x.pass?'✓':'✕')+' '+esc(x.name)+'</li>').join(''):'';
+ const originals=c?.original_P0_remediations||[];
+ const fixes=originals.map(x=>'<li>'+(x.resolved?'✓ ':'✕ ')+esc(x.id)+' · '+esc(x.name)+'</li>').join('');
  const sens=c?.sensitivity||{};
  const stressKeys=[['cash_80pct_usd','FCF base −20 %'],['cash_120pct_usd','FCF base +20 %'],
   ['cost_of_equity_plus_2pp_usd','Rentabilidad exigida +2 puntos'],
@@ -40,6 +42,7 @@ function ciipValidationView(){
  const sensRows=stressKeys.map(([k,title])=>'<tr><td>'+esc(title)+'</td><td>'+ciipMoney(sens[k])+' USD</td></tr>');
  return '<section class="panel"><h2>Auditoría de cinco valoraciones</h2><p><b>Dictamen global: no preparadas para decisiones de cartera.</b></p>'+
   '<p class="muted">Validación independiente de fórmulas, conciliación de CFO, CAPEX, adquisiciones, clases de acciones e hipótesis. Un cálculo correcto no valida el precio de compra.</p>'+
+  '<p><b>Correcciones P0 originales:</b> '+(d.original_P0_corrected??'—')+' de '+(d.original_P0_total??6)+' verificadas. Quedan '+p1+' incidencias P1 que requieren criterio financiero.</p>'+
   '<div class="ciip-history-cards"><article class="panel"><span class="muted tiny">Compañías auditadas</span><h2>'+firms.length+'</h2></article>'+
   '<article class="panel"><span class="muted tiny">Incidencias críticas P0</span><h2>'+p0+'</h2></article>'+
   '<article class="panel"><span class="muted tiny">Incidencias mayores P1</span><h2>'+p1+'</h2></article></div>'+
@@ -47,7 +50,8 @@ function ciipValidationView(){
   '<p class="muted tiny">Última comprobación '+esc(d.as_of)+'. Los P0 bloquean el uso de los precios por acción como recomendaciones.</p></section>'+
   '<section class="panel"><h2>'+esc(ticker||'')+' · Incidencias y controles</h2>'+
   '<p class="muted">El modelo conserva los supuestos originales hasta superar las pruebas. Ninguna valoración está aprobada para comprar.</p>'+
-  detailed+'<h3>Sensibilidad de auditoría (no es nuevo escenario base)</h3>'+
+  '<h3>Correcciones críticas originales</h3><ul>'+fixes+'</ul>'+detailed+
+   '<h3>Sensibilidad de auditoría (no es nuevo escenario base)</h3>'+
    table(['Estrés del modelo','USD por acción'],sensRows)+
    '<p class="muted tiny">Estreses ilustrativos sobre el flujo de caja inicial y la tasa de descuento. No corrigen por sí mismos CAPEX, adquisiciones ni dilución.</p>'+
    '<h3>Pruebas de cálculo y conciliación</h3><ul>'+tests+'</ul></section>';
