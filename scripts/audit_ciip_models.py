@@ -2,6 +2,7 @@
 """Five-issuer CIIP model audit: source tie-out, math and assumptions."""
 import datetime as dt, json, pathlib, math
 from build_ciip_per_share import dcf, net_owner_cash
+from ciip_official_filing_bridges import OFFICIAL_ANNUAL
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 SOURCES={
  "inputs":"audits/per_share_inputs.json",
@@ -114,10 +115,16 @@ def audit_ticker(t,c,notes,sec,record,model):
   official=sec.get("official_filing_bridge",{})
   reported_capex=notes["observations"]["fy2025_m"]["capex"]
   five_years=sec.get("history",[])
-  all_five=all(v.get("metrics",{}).get("capex",{}).get("value") is not None for v in five_years)
-  capex_ok=bool(all_five and official.get("status")=="crosswalk_validated"
-    and not official.get("conflicts") and passed(capex_m,reported_capex,.001)
-    and len([i for i in official.get("filled",[]) if i["metric"]=="capex"])>=3)
+  by_end=OFFICIAL_ANNUAL["V"]["capex"]
+  all_five=all(v.get("metrics",{}).get("capex",{}).get("value") is not None
+    and v["fy_end"] in by_end
+    and passed(v["metrics"]["capex"]["value"]/1e6,by_end[v["fy_end"]][0],.001)
+    and (v["metrics"]["capex"].get("taxonomy")=="us-gaap" and v["metrics"]["capex"].get("accession")
+       or v["metrics"]["capex"].get("taxonomy")=="issuer_reported_10k" and v["metrics"]["capex"].get("source_url"))
+    for v in five_years)
+  capex_ok=bool(len(five_years)==5 and all_five
+    and official.get("status") in ("crosswalk_validated","not_applicable")
+    and not official.get("conflicts") and passed(capex_m,reported_capex,.001))
   checks.append({"name":"Visa 5Y issuer-filed CAPEX reconciled to source separate from SEC taxonomy",
     "pass":capex_ok,"five_years":all_five,"FY2025_capex_m":capex_m,
     "bridge_status":official.get("status"),"filled_count":len(official.get("filled",[])),
@@ -154,9 +161,17 @@ def audit_ticker(t,c,notes,sec,record,model):
   fy=notes["observations"]["fy2025_m"]
   bridge=sec.get("official_filing_bridge",{})
   incomes=[row.get("metrics",{}).get("net_income",{}).get("value") for row in sec["history"]]
-  net_ok=bool(len(incomes)==5 and all(x is not None for x in incomes)
+  expected=OFFICIAL_ANNUAL["MA"]["net_income"]
+  all_earnings=all(row["fy_end"] in expected
+     and row.get("metrics",{}).get("net_income",{}).get("value") is not None
+     and passed(row["metrics"]["net_income"]["value"]/1e6,expected[row["fy_end"]][0],.001)
+     and (row["metrics"]["net_income"].get("taxonomy")=="us-gaap" and row["metrics"]["net_income"].get("accession")
+       or row["metrics"]["net_income"].get("taxonomy")=="issuer_reported_10k" and row["metrics"]["net_income"].get("source_url"))
+      for row in sec["history"])
+  net_ok=bool(len(incomes)==5 and all_earnings
       and passed(incomes[-1]/1e6,fy["net_income"],.001)
-      and bridge.get("status")=="crosswalk_validated" and not bridge.get("conflicts"))
+      and bridge.get("status") in ("crosswalk_validated","not_applicable")
+      and not bridge.get("conflicts"))
   checks.append({"name":"Mastercard 5Y reported GAAP net income cash-to-earnings source bridge",
     "pass":net_ok,"five_year_net_income_m":[v/1e6 if v else None for v in incomes]})
   if not net_ok:
