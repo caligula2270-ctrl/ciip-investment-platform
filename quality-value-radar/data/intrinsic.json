@@ -1,6 +1,6 @@
 {
   "schema": "qvr-auto-v1",
-  "generatedAt": "2026-10-25T20:20:39.022627+00:00",
+  "generatedAt": "2026-10-25T20:43:31.948239+00:00",
   "source": "US SEC companyfacts; historical daily prices from Yahoo Finance",
   "methodology": "Conservative research screen, not a transaction recommendation.",
   "companies": {
@@ -3690,14 +3690,14 @@
   "attempted": 16,
   "enhancement": {
     "version": "2.0",
-    "generatedAt": "2026-10-25T20:20:55.088509+00:00",
+    "generatedAt": "2026-10-25T20:43:47.213629+00:00",
     "period": "Anual SEC + último 10-Q compatible",
     "roic": "NOPAT / capital invertido medio con tasa efectiva y arrendamientos si reportados",
     "enriched": 12
   },
   "economicUpgrade": {
     "version": "4.0-precheck",
-    "generatedAt": "2026-10-25T20:20:57.619848+00:00",
+    "generatedAt": "2026-10-25T20:43:49.043372+00:00",
     "reviewed": 16,
     "status": "No automatic discounts until owner FCF and M&A are reconciled"
   }

@@ -1,6 +1,6 @@
 {
   "schema": "qvr-financial-bridge-v10",
-  "generatedAt": "2026-10-25T20:20:59.263685+00:00",
+  "generatedAt": "2026-10-25T20:43:50.349441+00:00",
   "signalsAllowed": false,
   "verifiedEquityTargets": 0,
   "models": {
@@ -194,17 +194,17 @@
       "approvedTarget": null,
       "scenarioBridge": {
         "bear": {
-          "FCFEProxyPerShare": 608.04,
+          "FCFEProxyPerShare": 608.43,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         },
         "base": {
-          "FCFEProxyPerShare": 891.49,
+          "FCFEProxyPerShare": 892.06,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         },
         "bull": {
-          "FCFEProxyPerShare": 1008.14,
+          "FCFEProxyPerShare": 1008.79,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         }
@@ -341,23 +341,23 @@
       "approvedTarget": null,
       "scenarioBridge": {
         "bear": {
-          "operatingEnterpriseProxyPerShare": -2.89,
+          "operatingEnterpriseProxyPerShare": 4.35,
           "leaseInclusiveNetDebtPerShare": -0.203,
-          "equityProxyNaivePerShare": -2.69,
+          "equityProxyNaivePerShare": 4.55,
           "approvedEquityTarget": null,
           "status": "unapproved_lease_inconsistency"
         },
         "base": {
-          "operatingEnterpriseProxyPerShare": 8.82,
+          "operatingEnterpriseProxyPerShare": 22.15,
           "leaseInclusiveNetDebtPerShare": -0.203,
-          "equityProxyNaivePerShare": 9.02,
+          "equityProxyNaivePerShare": 22.35,
           "approvedEquityTarget": null,
           "status": "unapproved_lease_inconsistency"
         },
         "bull": {
-          "operatingEnterpriseProxyPerShare": 28.33,
+          "operatingEnterpriseProxyPerShare": 48.81,
           "leaseInclusiveNetDebtPerShare": -0.203,
-          "equityProxyNaivePerShare": 28.53,
+          "equityProxyNaivePerShare": 49.01,
           "approvedEquityTarget": null,
           "status": "unapproved_lease_inconsistency"
         }

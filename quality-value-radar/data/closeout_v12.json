@@ -1,6 +1,6 @@
 {
   "schema": "qvr-closeout-v12",
-  "generatedAt": "2026-10-25T20:20:59.325716+00:00",
+  "generatedAt": "2026-10-25T20:43:50.448356+00:00",
   "models": {
     "ADBE": {
       "company": "ADBE",
@@ -102,7 +102,7 @@
         "Terminal value after acquisition funding",
         "Latest acquisition ROIC and available capital"
       ],
-      "previousResearchBase": 891.49,
+      "previousResearchBase": 892.06,
       "status": "material_claims_missing",
       "acquisitionCommitments": {
         "cashConsiderationUSDMillions": 669,
@@ -152,7 +152,7 @@
         "Capital expenditure total versus opening stores, logistics, bottle machines",
         "Historical store maturation cohorts / NWC and shareholder equity bridge"
       ],
-      "previousResearchBase": 8.82,
+      "previousResearchBase": 22.15,
       "status": "material_claims_missing",
       "leaseInclusiveNetDebt": {
         "h1FY2026PLNMillions": 81.1,

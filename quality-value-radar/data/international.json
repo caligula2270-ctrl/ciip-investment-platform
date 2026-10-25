@@ -20,7 +20,7 @@
       "status": "preliminary_valuation",
       "reason": "FCFA2S es definición no GAAP; CAD por cotización frente USD reportados, adquisición intensiva e IRGA exigen conciliación.",
       "valuation": {
-        "marketImpliedFiveYearFcfGrowthPct": 35.45,
+        "marketImpliedFiveYearFcfGrowthPct": 35.43,
         "growthReference": "Reverse DCF uses flat per-share terminal share count; NOT management guidance",
         "historicalPfcfCrossCheck": "unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
         "reinvestmentAdjustment": "Not separately modeled: acquisitions / development CAPEX must be reviewed",
@@ -45,16 +45,16 @@
         "tradingCurrency": "CAD",
         "sharesMillions": 21.19153,
         "fx": {
-          "rate": 1.4034,
+          "rate": 1.4043,
           "date": "2026-10-25",
           "source": "https://query1.finance.yahoo.com/v8/finance/chart/CAD%3DX?range=5d&interval=1d"
         },
-        "bear": 827.37,
-        "base": 1198.11,
-        "bull": 1635.91,
+        "bear": 827.9,
+        "base": 1198.88,
+        "bull": 1636.95,
         "quotePrice": 3408.5701,
         "quoteDate": "2026-10-22",
-        "indicativeMarginPct": -184.5,
+        "indicativeMarginPct": -184.3,
         "assumptions": {
           "baseGrowthPct": 7.000000000000001,
           "discountPct": 12.5,
@@ -207,5 +207,5 @@
       }
     }
   },
-  "generatedAt": "2026-10-25T20:20:57.686971+00:00"
+  "generatedAt": "2026-10-25T20:43:49.142303+00:00"
 }
