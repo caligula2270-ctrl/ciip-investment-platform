@@ -26,7 +26,7 @@ class TestModelAudit(unittest.TestCase):
             self.assertEqual(len(checks),3)
             self.assertTrue(all(c["pass"] for c in checks),ticker)
             self.assertFalse(x["valuation_approved"])
-            self.assertEqual(x["P0"],0,ticker)
+            self.assertEqual(x["P0"],0,(ticker,x["findings"],x["checks"]))
     def test_adobe_acquisition_reserve_is_enforced(self):
         d=self.fixture()
         d["inputs"]["companies"]["ADBE"]["scenarios"]["base"].pop("annual_acquisition_reinvestment_m")
@@ -40,7 +40,7 @@ class TestModelAudit(unittest.TestCase):
                             ("V","Visa 5Y issuer-filed CAPEX"),
                             ("MA","Mastercard 5Y reported GAAP"),
                             ("TXN","TI LTM 2026 GAAP")):
-            self.assertTrue(any(text in x["name"] and x["pass"] for x in r["issuers"][ticker]["checks"]),ticker)
+            self.assertTrue(any(text in x["name"] and x["pass"] for x in r["issuers"][ticker]["checks"]),(ticker,r["issuers"][ticker]["checks"]))
     def test_missing_visa_bridge_blocks(self):
         d=self.fixture()
         d["sec"]["companies"]["V"]["official_filing_bridge"]={"status":"not_applicable","filled":[],"conflicts":[]}
