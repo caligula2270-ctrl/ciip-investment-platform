@@ -14,6 +14,7 @@ on:
       - 'quality-value-radar/scripts/closeout_v12.py'
       - 'quality-value-radar/scripts/evidence_audit_v13.py'
       - 'quality-value-radar/scripts/build_production_snapshot.py'
+      - 'quality-value-radar/scripts/test_production.py'
       - 'quality-value-radar/scripts/opportunity_alerts_v6.py'
       - 'quality-value-radar/scripts/test_opportunity_v6.py'
       - 'quality-value-radar/scripts/opportunity_v6.py'
@@ -60,6 +61,7 @@ jobs:
           python -m py_compile quality-value-radar/scripts/build_production_snapshot.py
           python -m py_compile quality-value-radar/scripts/opportunity_alerts_v6.py
           python -m unittest discover -s quality-value-radar/scripts -p 'test_opportunity_v6.py' -v
+          python -m unittest discover -s quality-value-radar/scripts -p 'test_production.py' -v
       - name: Generar análisis SEC y precios históricos
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
