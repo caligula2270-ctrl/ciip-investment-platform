@@ -1,0 +1,203 @@
+{
+  "schema": "qvr-v12-source-evidence",
+  "asOf": "2026-10-25",
+  "principles": [
+    "No conflate audited historical, interim unaudited, company outlook, third-party report or inference",
+    "Never infer acquisition pro forma balance from preclose cash less purchase price",
+    "Never treat published gross liquidity as available excess cash",
+    "No EV to equity adjustment with unverified current debt, leases or noncontrolling claims"
+  ],
+  "companies": {
+    "ADBE": {
+      "balanceDate": "2026-08-28",
+      "currency": "USD",
+      "unit": "millions",
+      "cash": 4359,
+      "shortTermInvestments": 1280,
+      "currentDebt": 1597,
+      "longTermDebt": 4766,
+      "sources": [
+        {
+          "kind": "issuer_10q",
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "field": "FY2026 Q3 balance: cash, ST investments, debt current / long-term"
+        }
+      ],
+      "acquisition": {
+        "name": "Semrush",
+        "date": "2026-04-28",
+        "purchasePrice": 1874,
+        "netInvestingCashOutflowNineMonths": 1560,
+        "source": "same SEC 10-Q",
+        "integrationReturn": null
+      },
+      "FCFDefinition": "FCFE-like CFO minus capex minus equity compensation; subtracting net debt again is not authorized",
+      "needs": [
+        "Cash operating minimum",
+        "Cash reconciliation with 2026 Semrush purchase",
+        "Current diluted share count and repurchase financing",
+        "Incremental Semrush earnings and organic vs inorganic"
+      ]
+    },
+    "INTU": {
+      "balanceDate": "2026-07-31",
+      "currency": "USD",
+      "unit": "millions",
+      "cash": 4705,
+      "shortTermInvestments": 2495,
+      "longTermInvestments": 248,
+      "currentDebt": 1249,
+      "longTermDebt": 6420,
+      "custodialCustomerFunds": 5038,
+      "operatingLeaseLiabilities": 752,
+      "capexPropertyPurchases": 175,
+      "managementCapexBroader": 221,
+      "sources": [
+        {
+          "kind": "issuer_10k",
+          "url": "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm",
+          "field": "FY2026 financing, cash, custodied funds and capex definitions"
+        }
+      ],
+      "FCFDefinition": "FCFE-like CFO minus PPE capex minus equity compensation; management broader capex is an explicit sensitivity only",
+      "needs": [
+        "Remaining finance commitments, customer funds excluded",
+        "Intangibles PPE capex 46m bridge",
+        "Buybacks stock awards net shares and leverage funded operations"
+      ]
+    },
+    "CPRT": {
+      "balanceDate": "2026-07-31",
+      "acquisitionClose": "2026-10-16",
+      "currency": "USD",
+      "unit": "millions",
+      "preCloseCashRestrictedIncluded": 1907.901,
+      "preCloseHeldToMaturityInvestments": 2581.901,
+      "postCloseCash": null,
+      "postCloseFinancialDebt": null,
+      "postCloseAssumedDebt": null,
+      "purchasePricePaidControl": 1801.021081,
+      "announcedPurchaseValueApprox": 1900,
+      "sources": [
+        {
+          "kind": "issuer_10k",
+          "url": "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
+          "field": "2026-07-31 cash includes restricted; held-to-maturity investments"
+        },
+        {
+          "kind": "closing_8k",
+          "url": "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm",
+          "field": "aggregate consideration paid for control 2026-10-16"
+        },
+        {
+          "kind": "acquirer_8k",
+          "url": "https://www.sec.gov/Archives/edgar/data/900075/000119312526423478/d129535d8k.htm",
+          "field": "closing announcement, not pro forma audited balance"
+        }
+      ],
+      "FCFDefinition": "Equity-like operating owner cash; acquisition incremental modeled first, closing cash effect reflected in same-date post-deal balance only",
+      "needs": [
+        "Post-ACV 10-Q or pro forma consolidated cash, debt, restricted cash, securities",
+        "ACV acquired normalized cash generation and purchased intangible amortization",
+        "FCF attribution without purchase price double count"
+      ]
+    },
+    "CSU.TO": {
+      "balanceDate": "2026-06-30",
+      "currency": "USD",
+      "unit": "millions",
+      "sourceCurrencyFCFA2S": "USD",
+      "acquisitionCommittedSinceQuarterCashAtClosing": 669,
+      "acquisitionCommittedDeferredConsideration": 149,
+      "totalCommittedConsideration": 818,
+      "fy2025FCFA2S": 1683,
+      "fy2025CashAcquisitions": 1579,
+      "acquisitionCohortROI": null,
+      "sources": [
+        {
+          "kind": "issuer_earnings_release",
+          "url": "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-second-quarter-ended-june-30-2026-and-declares-quarterly-dividend/",
+          "field": "Post-Q2 acquisitions completed or committed, cash and deferred amounts"
+        }
+      ],
+      "FCFDefinition": "FCFA2S already deducts interest, lease, noncontrolling claims per defined non-IFRS methodology; exclude business purchase consideration separately",
+      "needs": [
+        "Realized cohort cash yield, acquisition debt, earnouts and parent vs minority sources",
+        "Terminal value after acquisition funding",
+        "Latest acquisition ROIC and available capital"
+      ]
+    },
+    "ASML": {
+      "balanceDate": "2026-09-27",
+      "currency": "EUR",
+      "unit": "millions",
+      "cash": 8030.9,
+      "shortTermInvestments": 4704.2,
+      "longTermFinancialDebt": 1963,
+      "currentFinancialDebt": null,
+      "leaseLiabilitiesCurrent": null,
+      "leaseLiabilitiesNoncurrent": null,
+      "otherNonOperatingInvestmentsValuation": null,
+      "nonControllingInterests": null,
+      "source": "https://www.sec.gov/Archives/edgar/data/937966/000162828026065813/financial_statementsxusx.htm",
+      "sources": [
+        {
+          "kind": "issuer_6k_financial_statements",
+          "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026065813/financial_statementsxusx.htm",
+          "field": "Q3 2026 cash 8030.9 ST investments 4704.2 LT debt 1963.0; current liabilities aggregate only"
+        }
+      ],
+      "cashFlowBasis": "FCFF-like NOPAT after reinvestment, equity claims deducted once only; latest partial debt cannot be declared zero",
+      "needs": [
+        "Current financial debt breakdown",
+        "Leases and restricted liquidity to same quarter",
+        "Nonoperating portfolio marks and financing consistency",
+        "Working capital customer prepayment normalization"
+      ]
+    },
+    "DNP.WA": {
+      "balanceDate": "2026-06-30",
+      "currency": "PLN",
+      "unit": "millions",
+      "netDebtIncludingLeases": 81.1,
+      "netDebt2025IncludingLeases": -199.4,
+      "h1Revenue": 17971,
+      "h1OperatingCash": 769.7,
+      "h1NetInvestingCashFlow": -976.1,
+      "h1StoresOpened": 148,
+      "h1EndStores": 3176,
+      "managementFY2026CapexApprox": 2500,
+      "managementFY2026BottleCollectionCapexRange": [
+        250,
+        300
+      ],
+      "capexSourceKind": "reported_management_outlook_by_PAP_Biznes",
+      "sources": [
+        {
+          "kind": "issuer_h1_press",
+          "url": "https://grupadino.pl/dino-polska-podsumowuje-dzialalnosc-w-pierwszym-polroczu-2026-r/",
+          "field": "H1 2026 revenue and store openings, expansion spending"
+        },
+        {
+          "kind": "secondary_report_of_management",
+          "url": "https://www.bankier.pl/wiadomosc/Dino-Polska-mialo-w-II-kw-400-1-mln-zl-zysku-netto-j-d-zgodnie-z-oczekiwaniami-opis-9185193.html",
+          "field": "Reported H1 net debt and outlook FY2026 capex and bottle-collection infrastructure"
+        },
+        {
+          "kind": "issuer_ir_index",
+          "url": "https://grupadino.pl/raporty-gpw/raporty-okresowe/",
+          "field": "Links to H1 consolidated IFRS interim statements"
+        }
+      ],
+      "FCFFFrameworks": [
+        "Pre-lease operating cash and lease debt included in claims",
+        "After-lease shareholder cash and lease liabilities excluded from debt reconciliation"
+      ],
+      "needs": [
+        "Choose one lease framework, cash flow lease principal and rent recast",
+        "Capital expenditure total versus opening stores, logistics, bottle machines",
+        "Historical store maturation cohorts / NWC and shareholder equity bridge"
+      ]
+    }
+  }
+}
