@@ -87,11 +87,15 @@ def main():
      organic.append(ops-diff);acv.append(acquired);total.append(ops-diff+acquired)
     per=[x/(shares*(1+a["netShareGrowthPct"]/100)**i) for i,x in enumerate(total,1)]
     # Deal cost is deducted ONCE on valuation date. Acquisition flows are ADDED once.
-    value=dcf(per,a["discountPct"]/100,a["exitOwnerFcfMultiple"])-acquired_cost/shares
-    out["scenarios"][k]={"status":"illustrative_post_deal_cash_net_of_close_consideration","valuePerShare":round(value,2),
+    # Cash spent at close is already absent from a POST-CLOSE cash balance. This
+    # stream-only valuation assumes the deal is included in opening capital;
+    # any net cash / financing bridge is handled separately in the audit.
+    value=dcf(per,a["discountPct"]/100,a["exitOwnerFcfMultiple"])
+    out["scenarios"][k]={"status":"illustrative_post_deal_cash_before_balance_bridge","valuePerShare":round(value,2),
        "annualOrganicCashMillions":[round(x,2) for x in organic],"annualAcquiredCashMillions":[round(x,2) for x in acv],
        "acvUpfrontPerSpotShare":round(acquired_cost/shares,2),
-       "warning":"Assumes acquisition financed out of historic liquid assets; no financing, working-capital or net-debt bridge"}
+       "acquisitionCostDeductedFromProjectedFCF":False,
+       "warning":"Opening post-close cash/debt unverified: do NOT subtract consideration again or add pre-close liquid balances"}
    out.update({"keyDrivers":{"organicOwnerCashMedianMillions":round(base,1),"reportedCapex3yMedianMillions":round(capex,1),
     "latestRevenueMillions":rev,"historicalSpotSharesMillions":shares,"acvControlConsiderationMillions":acquired_cost},
     "missingEvidence":["ACV independent post-close owner cash and proforma working capital","Proforma cash/debt and acquisition related compensation","Yard maintenance and growth investment split"]})
