@@ -49,3 +49,15 @@ Clasificar HECHO / CÁLCULO / HIPÓTESIS / INFERENCIA / NO VERIFICADO. Conservar
 7. Aprobación: únicamente con conciliación independiente de capital, ajustes de caja/financiación, validación de los escenarios, sensibilidad y evidencia vigente. Estado intermedio SCREEN_GRADE_NOT_DECISION_READY y value_per_share_approved=false.
 8. Ejecutar scripts/build_ciip_per_share.py tras scripts/build_ciip_audits.py o refresco diario de market-auto.json. Validar scripts/test_ciip_per_share.py. Publicar audits/per_share_latest.json y audits/PER_SHARE_REPORT.md.
 9. Para ampliar el universo, añadir ticker al programa de adquisición SEC, expediente de evidencia con fuentes oficiales y parametrización por acción; ejecutar todos los tests y contrastar que no existan sustituciones silenciosas ni resultados READY automáticos.
+
+## CIIP v1.6 — Auditoría independiente de supuestos y fuentes
+- Antes de considerar cualquiera de las cinco valoraciones apta para invertir, reejecutar `scripts/audit_ciip_models.py` y sus pruebas en `scripts/test_ciip_model_validation.py`.
+- Auditoría separada de (i) integridad matemática por escenario, (ii) puente contable SEC de CFO y CAPEX, (iii) adquisiciones, stock compensation y capital circulante, (iv) cambios en acciones y derechos económicos, (v) hipótesis forward y concentración de valor terminal.
+- Generar `audits/model_validation_latest.json` y `audits/MODEL_VALIDATION_REPORT.md` con severidad P0/P1/P2, fuente, impacto, corrección exigida y veredicto.
+- Los valores DCF publicados originalmente quedan inmutables hasta revisión justificada: la prueba de sensibilidad de `±20 %` en caja, `±2 puntos` en tasa exigida y tasas del 12 %/15 % es **Illustrative audit sensitivity**, no un nuevo precio objetivo.
+- Si P0>0: `Not ready`, decisión de cartera bloqueada. Un P0 cerrado requiere sustitución explícita de fuente y código más un test nuevo, no cambio de etiqueta.
+- Adobe: comprobar M&A recurrente versus extraordinario, dilución, SBC, riesgo de IA y reconcilación trimestral/anual.
+- Microsoft: CAPEX de nube/IA, infraestructura financiada en leasing, caja inicial real, sustitución de activos y riesgo de extrapolación.
+- Visa/Mastercard: taxonomía de inversiones, incentivos comerciales, litigios, cuentas de liquidación y clases convertibles con misma fecha de referencia.
+- Texas Instruments: CAPEX y utilización fab a través del ciclo, puentes CHIPS y GAAP, duración de incentivos y obligaciones de inversión.
+- **Ámbito cerrado:** exactamente ADBE, MSFT, V, MA, TXN durante este mandato; no añadir emisores aunque el motor pueda ampliarse en el futuro.
