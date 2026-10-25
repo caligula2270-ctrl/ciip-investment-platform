@@ -1,6 +1,6 @@
 {
   "schema": "qvr-financial-bridge-v10",
-  "generatedAt": "2026-10-25T18:45:56.739809+00:00",
+  "generatedAt": "2026-10-25T19:20:13.515381+00:00",
   "signalsAllowed": false,
   "verifiedEquityTargets": 0,
   "models": {
@@ -19,17 +19,17 @@
       "approvedTarget": null,
       "scenarioBridge": {
         "bear": {
-          "FCFEProxyPerShare": 151.97,
+          "FCFEProxyPerShare": 170.95,
           "approvedEquityTarget": null,
           "status": "cash_and_operating_assets_not_reconciled"
         },
         "base": {
-          "FCFEProxyPerShare": 335.4,
+          "FCFEProxyPerShare": 370.71,
           "approvedEquityTarget": null,
           "status": "cash_and_operating_assets_not_reconciled"
         },
         "bull": {
-          "FCFEProxyPerShare": 575.16,
+          "FCFEProxyPerShare": 629.32,
           "approvedEquityTarget": null,
           "status": "cash_and_operating_assets_not_reconciled"
         }
@@ -77,17 +77,17 @@
       "approvedTarget": null,
       "scenarioBridge": {
         "bear": {
-          "FCFEProxyPerShare": 152.16,
+          "FCFEProxyPerShare": 178.81,
           "approvedEquityTarget": null,
           "status": "cash_and_operating_assets_not_reconciled"
         },
         "base": {
-          "FCFEProxyPerShare": 345.44,
+          "FCFEProxyPerShare": 393.45,
           "approvedEquityTarget": null,
           "status": "cash_and_operating_assets_not_reconciled"
         },
         "bull": {
-          "FCFEProxyPerShare": 611.88,
+          "FCFEProxyPerShare": 685.51,
           "approvedEquityTarget": null,
           "status": "cash_and_operating_assets_not_reconciled"
         }
@@ -194,17 +194,17 @@
       "approvedTarget": null,
       "scenarioBridge": {
         "bear": {
-          "FCFEProxyPerShare": 607.42,
+          "FCFEProxyPerShare": 607.52,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         },
         "base": {
-          "FCFEProxyPerShare": 890.58,
+          "FCFEProxyPerShare": 890.72,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         },
         "bull": {
-          "FCFEProxyPerShare": 1007.12,
+          "FCFEProxyPerShare": 1007.28,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         }

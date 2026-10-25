@@ -1,6 +1,6 @@
 {
   "schema": "qvr-economic-model-v9",
-  "generatedAt": "2026-10-25T18:45:56.676586+00:00",
+  "generatedAt": "2026-10-25T19:20:13.460351+00:00",
   "assumptionsAsOf": "2026-10-25",
   "companyCount": 6,
   "models": {
@@ -21,43 +21,43 @@
       "scenarios": {
         "bear": {
           "status": "illustrative",
-          "valuePerShare": 151.97,
-          "operatingCashMarginPct": 21.41,
+          "valuePerShare": 170.95,
+          "operatingCashMarginPct": 24.09,
           "futureRevenueMillions": 29939.7,
           "annualOwnerCashPerShare": [
-            13.74,
-            14.01,
-            14.29,
-            14.57,
-            14.86
+            15.45,
+            15.76,
+            16.07,
+            16.39,
+            16.71
           ],
           "source": "management revenue guidance × modeled owner cash conversion"
         },
         "base": {
           "status": "illustrative",
-          "valuePerShare": 335.4,
-          "operatingCashMarginPct": 25.41,
+          "valuePerShare": 370.71,
+          "operatingCashMarginPct": 28.09,
           "futureRevenueMillions": 36190.4,
           "annualOwnerCashPerShare": [
-            16.47,
-            17.78,
-            19.21,
-            20.74,
-            22.4
+            18.2,
+            19.66,
+            21.23,
+            22.93,
+            24.76
           ],
           "source": "management revenue guidance × modeled owner cash conversion"
         },
         "bull": {
           "status": "illustrative",
-          "valuePerShare": 575.16,
-          "operatingCashMarginPct": 28.41,
+          "valuePerShare": 629.32,
+          "operatingCashMarginPct": 31.09,
           "futureRevenueMillions": 41857.2,
           "annualOwnerCashPerShare": [
-            18.6,
-            21.04,
-            23.8,
-            26.93,
-            30.46
+            20.35,
+            23.02,
+            26.04,
+            29.46,
+            33.33
           ],
           "source": "management revenue guidance × modeled owner cash conversion"
         }
@@ -66,7 +66,34 @@
         "historicalMedianFcfMillions": 7873.0,
         "historicalMedianSbcMillions": 1833.0,
         "historicalMedianCapexMillions": 183.0,
-        "ownerCashMarginObservedPct": 25.41,
+        "ownerCashMarginObservedPct": 28.09,
+        "pairedFiscalYearMargins": [
+          {
+            "fyEnd": "2023-12-01",
+            "revenueMillions": 19409.0,
+            "reportedFcfMillions": 6942.0,
+            "sbcMillions": 1718.0,
+            "ownerFcfMillions": 5224.0,
+            "ownerCashToRevenuePct": 26.9153
+          },
+          {
+            "fyEnd": "2024-11-29",
+            "revenueMillions": 21505.0,
+            "reportedFcfMillions": 7873.0,
+            "sbcMillions": 1833.0,
+            "ownerFcfMillions": 6040.0,
+            "ownerCashToRevenuePct": 28.0865
+          },
+          {
+            "fyEnd": "2025-11-28",
+            "revenueMillions": 23769.0,
+            "reportedFcfMillions": 9852.0,
+            "sbcMillions": 1942.0,
+            "ownerFcfMillions": 7910.0,
+            "ownerCashToRevenuePct": 33.2786
+          }
+        ],
+        "normalizedMethod": "median of three matched FY (CFO−PPE CAPEX−SBC)/revenue ratios",
         "guideRevenueMidMillions": 26601.0,
         "spotShareBaseMillions": 410.5
       },
@@ -99,8 +126,8 @@
       "comparisonOnly": true,
       "verifiedBuyPrice": null,
       "range": {
-        "low": 151.97,
-        "high": 575.16
+        "low": 170.95,
+        "high": 629.32
       }
     },
     "INTU": {
@@ -120,43 +147,43 @@
       "scenarios": {
         "bear": {
           "status": "illustrative",
-          "valuePerShare": 152.16,
-          "operatingCashMarginPct": 15.37,
+          "valuePerShare": 178.81,
+          "operatingCashMarginPct": 18.06,
           "futureRevenueMillions": 27369.4,
           "annualOwnerCashPerShare": [
-            13.32,
-            13.72,
-            14.13,
-            14.55,
-            14.98
+            15.66,
+            16.12,
+            16.6,
+            17.1,
+            17.6
           ],
           "source": "management revenue guidance × modeled owner cash conversion"
         },
         "base": {
           "status": "illustrative",
-          "valuePerShare": 345.44,
-          "operatingCashMarginPct": 19.37,
+          "valuePerShare": 393.45,
+          "operatingCashMarginPct": 22.06,
           "futureRevenueMillions": 31829.3,
           "annualOwnerCashPerShare": [
-            16.96,
-            18.32,
-            19.78,
-            21.36,
-            23.07
+            19.32,
+            20.86,
+            22.53,
+            24.33,
+            26.28
           ],
           "source": "management revenue guidance × modeled owner cash conversion"
         },
         "bull": {
           "status": "illustrative",
-          "valuePerShare": 611.88,
-          "operatingCashMarginPct": 22.37,
+          "valuePerShare": 685.51,
+          "operatingCashMarginPct": 25.06,
           "futureRevenueMillions": 36813.3,
           "annualOwnerCashPerShare": [
-            19.78,
-            22.38,
-            25.32,
-            28.65,
-            32.41
+            22.16,
+            25.08,
+            28.37,
+            32.09,
+            36.31
           ],
           "source": "management revenue guidance × modeled owner cash conversion"
         }
@@ -165,7 +192,34 @@
         "historicalMedianFcfMillions": 6123.0,
         "historicalMedianSbcMillions": 1968.0,
         "historicalMedianCapexMillions": 175.0,
-        "ownerCashMarginObservedPct": 19.37,
+        "ownerCashMarginObservedPct": 22.06,
+        "pairedFiscalYearMargins": [
+          {
+            "fyEnd": "2024-07-31",
+            "revenueMillions": 16285.0,
+            "reportedFcfMillions": 4693.0,
+            "sbcMillions": 1940.0,
+            "ownerFcfMillions": 2753.0,
+            "ownerCashToRevenuePct": 16.9051
+          },
+          {
+            "fyEnd": "2025-07-31",
+            "revenueMillions": 18831.0,
+            "reportedFcfMillions": 6123.0,
+            "sbcMillions": 1968.0,
+            "ownerFcfMillions": 4155.0,
+            "ownerCashToRevenuePct": 22.0647
+          },
+          {
+            "fyEnd": "2026-07-31",
+            "revenueMillions": 21448.0,
+            "reportedFcfMillions": 8663.0,
+            "sbcMillions": 2056.0,
+            "ownerFcfMillions": 6607.0,
+            "ownerCashToRevenuePct": 30.8047
+          }
+        ],
+        "normalizedMethod": "median of three matched FY (CFO−PPE CAPEX−SBC)/revenue ratios",
         "guideRevenueMidMillions": 23395.5,
         "spotShareBaseMillions": 267.236
       },
@@ -198,8 +252,8 @@
       "comparisonOnly": true,
       "verifiedBuyPrice": null,
       "range": {
-        "low": 152.16,
-        "high": 611.88
+        "low": 178.81,
+        "high": 685.51
       }
     },
     "CPRT": {
@@ -344,7 +398,7 @@
       "scenarios": {
         "bear": {
           "status": "acquisition_cohort_hypothesis",
-          "valuePerShare": 607.42,
+          "valuePerShare": 607.52,
           "annualCashAfterNewAcquisitionsMillions": [
             934.9,
             944.3,
@@ -363,7 +417,7 @@
         },
         "base": {
           "status": "acquisition_cohort_hypothesis",
-          "valuePerShare": 890.58,
+          "valuePerShare": 890.72,
           "annualCashAfterNewAcquisitionsMillions": [
             700.1,
             774.3,
@@ -382,7 +436,7 @@
         },
         "bull": {
           "status": "acquisition_cohort_hypothesis",
-          "valuePerShare": 1007.12,
+          "valuePerShare": 1007.28,
           "annualCashAfterNewAcquisitionsMillions": [
             446.0,
             526.3,
@@ -406,11 +460,11 @@
         "h1OrganicRevenueGrowthPct": 4,
         "reportingCurrency": "USD",
         "tradingCurrency": "CAD",
-        "fxFromIssuerDataset": 1.40197
+        "fxFromIssuerDataset": 1.4022
       },
       "currentQuote": 3408.5701,
       "currentQuoteDate": "2026-10-22",
-      "legacyModelBaseValue": 1196.89,
+      "legacyModelBaseValue": 1197.08,
       "scenarioInputs": {
         "bear": {
           "organicFcfGrowthPct": 1,
@@ -440,8 +494,8 @@
       "comparisonOnly": true,
       "verifiedBuyPrice": null,
       "range": {
-        "low": 607.42,
-        "high": 1007.12
+        "low": 607.52,
+        "high": 1007.28
       }
     },
     "ASML": {
