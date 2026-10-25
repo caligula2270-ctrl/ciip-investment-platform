@@ -13,7 +13,7 @@
     "ADBE": {
       "ticker": "ADBE",
       "name": "Adobe",
-      "verdict": "Ready with caveats",
+      "verdict": "Not ready",
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
@@ -85,6 +85,15 @@
           "impact": "Forecast SBC, AI economics and M&A not connected to operating schedules",
           "required_fix": "Forecast revenue/margins/SBC/acquisition reinvestment separately",
           "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+        },
+        {
+          "ticker": "ADBE",
+          "severity": "P1",
+          "kind": "Not comparable without bridge",
+          "detail": "Adobe has a pending 340m Topaz Labs acquisition, separate from spent 9M Semrush",
+          "impact": "Cash timing and incremental earnings are contingent on closing",
+          "required_fix": "Scenario-model closing quarter, payment, acquisition contribution and effect on recurring reserve",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
         }
       ],
       "sensitivity": {
@@ -97,14 +106,27 @@
         "cost_of_equity_15pct_usd": 165.86,
         "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
       },
+      "original_P0_remediations": [
+        {
+          "id": "ADBE-MA",
+          "name": "Adobe acquisition separate strategic reinvestment bridge",
+          "resolved": true,
+          "check": {
+            "name": "Adobe acquisition separate strategic reinvestment bridge",
+            "pass": true,
+            "historical_acquisition_cash_m": 1560,
+            "forward_analyst_reserve_m": 350
+          }
+        }
+      ],
       "P0": 0,
-      "P1": 3,
+      "P1": 4,
       "base_model_value_usd": 265.78
     },
     "MSFT": {
       "ticker": "MSFT",
       "name": "Microsoft",
-      "verdict": "Ready with caveats",
+      "verdict": "Not ready",
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
@@ -191,6 +213,19 @@
         "cost_of_equity_15pct_usd": 94.62,
         "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
       },
+      "original_P0_remediations": [
+        {
+          "id": "MSFT-CASH",
+          "name": "Microsoft FY2026 CFO less CAPEX SBC and lease principal owner-cash bridge",
+          "resolved": true,
+          "check": {
+            "name": "Microsoft FY2026 CFO less CAPEX SBC and lease principal owner-cash bridge",
+            "pass": true,
+            "source_cash_m": 51481,
+            "base_owner_cash_m": 51481
+          }
+        }
+      ],
       "P0": 0,
       "P1": 4,
       "base_model_value_usd": 167.99
@@ -198,7 +233,7 @@
     "V": {
       "ticker": "V",
       "name": "Visa",
-      "verdict": "Ready with caveats",
+      "verdict": "Not ready",
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
@@ -333,6 +368,76 @@
         "cost_of_equity_15pct_usd": 120.96,
         "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
       },
+      "original_P0_remediations": [
+        {
+          "id": "V-CAPEX",
+          "name": "Visa 5Y issuer-filed CAPEX reconciled to source separate from SEC taxonomy",
+          "resolved": true,
+          "check": {
+            "name": "Visa 5Y issuer-filed CAPEX reconciled to source separate from SEC taxonomy",
+            "pass": true,
+            "five_years": true,
+            "FY2025_capex_m": 1482.0,
+            "bridge_status": "crosswalk_validated",
+            "filled_count": 5,
+            "conflicts": [],
+            "filled": [
+              {
+                "fy_end": "2021-09-30",
+                "metric": "capex",
+                "value": 705000000,
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316122000081/v-20220930.htm",
+                "source_location": "FY2022 10-K cash flows (2021 comparative)",
+                "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+              },
+              {
+                "fy_end": "2022-09-30",
+                "metric": "capex",
+                "value": 970000000,
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316122000081/v-20220930.htm",
+                "source_location": "FY2022 10-K investing cash flows",
+                "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+              },
+              {
+                "fy_end": "2023-09-30",
+                "metric": "capex",
+                "value": 1059000000,
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+                "source_location": "FY2025 10-K investing cash flows (2023 comparative)",
+                "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+              },
+              {
+                "fy_end": "2024-09-30",
+                "metric": "capex",
+                "value": 1257000000,
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+                "source_location": "FY2025 10-K investing cash flows (2024 comparative)",
+                "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+              },
+              {
+                "fy_end": "2025-09-30",
+                "metric": "capex",
+                "value": 1482000000,
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+                "source_location": "FY2025 10-K investing cash flows",
+                "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+              }
+            ]
+          }
+        },
+        {
+          "id": "V-SHARES",
+          "name": "Visa June Class A diluted EPS denominator less September documented B conversion reduction",
+          "resolved": true,
+          "check": {
+            "name": "Visa June Class A diluted EPS denominator less September documented B conversion reduction",
+            "pass": true,
+            "june_weighted_diluted_Aeq_m": 1898,
+            "sept_loss_Aeq_m": 1.104107,
+            "provisional_denominator_m": 1896.895893
+          }
+        }
+      ],
       "P0": 0,
       "P1": 4,
       "base_model_value_usd": 210.64
@@ -340,7 +445,7 @@
     "MA": {
       "ticker": "MA",
       "name": "Mastercard",
-      "verdict": "Ready with caveats",
+      "verdict": "Not ready",
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
@@ -407,6 +512,15 @@
           "impact": "Unadjusted FCF may not represent cash to shareholders",
           "required_fix": "Reconcile 5Y payments incentives and accrued settlement",
           "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
+        },
+        {
+          "ticker": "MA",
+          "severity": "P1",
+          "kind": "Not comparable without bridge",
+          "detail": "Mastercard per-share base cash 16000m exceeds payment sector cash/earnings cap 12230m",
+          "impact": "Two CIIP methods yield materially different starting values",
+          "required_fix": "Reconcile historical income cap versus prospectively distributable cash and choose one sourced method",
+          "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
         }
       ],
       "sensitivity": {
@@ -419,14 +533,32 @@
         "cost_of_equity_15pct_usd": 220.31,
         "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
       },
+      "original_P0_remediations": [
+        {
+          "id": "MA-EARNINGS",
+          "name": "Mastercard 5Y reported GAAP net income cash-to-earnings source bridge",
+          "resolved": true,
+          "check": {
+            "name": "Mastercard 5Y reported GAAP net income cash-to-earnings source bridge",
+            "pass": true,
+            "five_year_net_income_m": [
+              8687.0,
+              9930.0,
+              11195.0,
+              12874.0,
+              14968.0
+            ]
+          }
+        }
+      ],
       "P0": 0,
-      "P1": 3,
+      "P1": 4,
       "base_model_value_usd": 383.66
     },
     "TXN": {
       "ticker": "TXN",
       "name": "Texas Instruments",
-      "verdict": "Ready with caveats",
+      "verdict": "Not ready",
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
@@ -496,6 +628,15 @@
           "impact": "Cannot treat management adjusted FCF as perpetual owner cash",
           "required_fix": "Keep GAAP CFO-CAPEX separate from government grant proceeds",
           "source": "https://www.ti.com/about-ti/newsroom/news-releases/2026/2026-10-21-ti-reports-third-quarter-2026-financial-results-and-shareholder-returns.html"
+        },
+        {
+          "ticker": "TXN",
+          "severity": "P1",
+          "kind": "Not comparable without bridge",
+          "detail": "Texas Instruments pending Silicon Labs enterprise value ~7500m and potential financing of 5000m",
+          "impact": "Forecast future debt service, acquisition payment and acquired cash are not in FY2025/LTM starting FCFE",
+          "required_fix": "Add deal/no-deal and funded closing scenarios, acquisition purchase price and forward debt bridge",
+          "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm"
         }
       ],
       "sensitivity": {
@@ -508,8 +649,22 @@
         "cost_of_equity_15pct_usd": 61.85,
         "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
       },
+      "original_P0_remediations": [
+        {
+          "id": "TXN-CYCLE",
+          "name": "TI LTM 2026 GAAP CFO-CAPEX less through-cycle analyst reserve",
+          "resolved": true,
+          "check": {
+            "name": "TI LTM 2026 GAAP CFO-CAPEX less through-cycle analyst reserve",
+            "pass": true,
+            "ltm_gaap_cash_m": 7318,
+            "illustrative_cycle_reserve_m": 1818,
+            "model_base_cash_m": 5500
+          }
+        }
+      ],
       "P0": 0,
-      "P1": 3,
+      "P1": 4,
       "base_model_value_usd": 97.4
     }
   },
@@ -539,6 +694,15 @@
       "detail": "Adobe base cash 6500m vs FY2025 CFO-CAPEX-SBC 7910m",
       "impact": "Forecast SBC, AI economics and M&A not connected to operating schedules",
       "required_fix": "Forecast revenue/margins/SBC/acquisition reinvestment separately",
+      "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+    },
+    {
+      "ticker": "ADBE",
+      "severity": "P1",
+      "kind": "Not comparable without bridge",
+      "detail": "Adobe has a pending 340m Topaz Labs acquisition, separate from spent 9M Semrush",
+      "impact": "Cash timing and incremental earnings are contingent on closing",
+      "required_fix": "Scenario-model closing quarter, payment, acquisition contribution and effect on recurring reserve",
       "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
     },
     {
@@ -641,6 +805,15 @@
       "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
     },
     {
+      "ticker": "MA",
+      "severity": "P1",
+      "kind": "Not comparable without bridge",
+      "detail": "Mastercard per-share base cash 16000m exceeds payment sector cash/earnings cap 12230m",
+      "impact": "Two CIIP methods yield materially different starting values",
+      "required_fix": "Reconcile historical income cap versus prospectively distributable cash and choose one sourced method",
+      "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
+    },
+    {
       "ticker": "TXN",
       "severity": "P1",
       "kind": "Not comparable without bridge",
@@ -666,7 +839,19 @@
       "impact": "Cannot treat management adjusted FCF as perpetual owner cash",
       "required_fix": "Keep GAAP CFO-CAPEX separate from government grant proceeds",
       "source": "https://www.ti.com/about-ti/newsroom/news-releases/2026/2026-10-21-ti-reports-third-quarter-2026-financial-results-and-shareholder-returns.html"
+    },
+    {
+      "ticker": "TXN",
+      "severity": "P1",
+      "kind": "Not comparable without bridge",
+      "detail": "Texas Instruments pending Silicon Labs enterprise value ~7500m and potential financing of 5000m",
+      "impact": "Forecast future debt service, acquisition payment and acquired cash are not in FY2025/LTM starting FCFE",
+      "required_fix": "Add deal/no-deal and funded closing scenarios, acquisition purchase price and forward debt bridge",
+      "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm"
     }
   ],
+  "original_P0_total": 6,
+  "original_P0_corrected": 6,
+  "new_material_issues": 0,
   "method": "Independent recomputation and reported-cash check; does not approve forecast cash, future equity claims or stock prices"
 }

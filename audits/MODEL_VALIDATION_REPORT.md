@@ -1,22 +1,26 @@
 # CIIP | Auditoría y validación de cinco DCF
 
-**Veredicto global: Not ready.** No utilizar estos modelos para órdenes de inversión hasta resolver P0, revisar denominadores, sensibilidad y caja.
+**Veredicto global: Not ready.** La corrección de los P0 originales se registra por control independiente. Aun si se corrigen todos, las reservas económicas y las notas de capital P1 pueden impedir decisiones de inversión.
 
 | Compañía | Veredicto | P0 | P1 | DCF base USD |
 |---|---|---:|---:|---:|
-| ADBE | Ready with caveats | 0 | 3 | 265.78 |
-| MSFT | Ready with caveats | 0 | 4 | 167.99 |
-| V | Ready with caveats | 0 | 4 | 210.64 |
-| MA | Ready with caveats | 0 | 3 | 383.66 |
-| TXN | Ready with caveats | 0 | 3 | 97.4 |
+
+**P0 originales subsanados con prueba:** 6/6. **Cuestiones P0 nuevas:** 0.
+
+| ADBE | Not ready | 0 | 4 | 265.78 |
+| MSFT | Not ready | 0 | 4 | 167.99 |
+| V | Not ready | 0 | 4 | 210.64 |
+| MA | Not ready | 0 | 4 | 383.66 |
+| TXN | Not ready | 0 | 4 | 97.4 |
 
 ## Adobe
-Dictamen: Ready with caveats
+Dictamen: Not ready
 
 ### Hallazgos y medidas
 - **P1 Not comparable without bridge**: Current diluted shares assembled from dated basic outstanding and weighted-average EPS dilution. Impacto: Forward share count can depart from observed EPS weighted average. Acción: Reconcile outstanding classes, options, RSUs, convertibles and subsequent events. [Fuente](https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm).
 - **P1 Unsupported assumption**: Adobe recurring future M&A reserve 350m is an analyst stress, not proved recurring. Impacto: Revenue growth and acquisition cadence must be connected. Acción: Build explicit business acquisition dependence scenarios and reconcile organic growth. [Fuente](https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm).
 - **P1 Unsupported assumption**: Adobe base cash 6500m vs FY2025 CFO-CAPEX-SBC 7910m. Impacto: Forecast SBC, AI economics and M&A not connected to operating schedules. Acción: Forecast revenue/margins/SBC/acquisition reinvestment separately. [Fuente](https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm).
+- **P1 Not comparable without bridge**: Adobe has a pending 340m Topaz Labs acquisition, separate from spent 9M Semrush. Impacto: Cash timing and incremental earnings are contingent on closing. Acción: Scenario-model closing quarter, payment, acquisition contribution and effect on recurring reserve. [Fuente](https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm).
 
 ### Sensibilidad independiente (solo diagnóstico)
 - cash_80pct_usd: 212.62 USD/acción
@@ -36,7 +40,7 @@ Dictamen: Ready with caveats
 - PASS: Adobe source CFO-CAPEX-SBC bridge
 
 ## Microsoft
-Dictamen: Ready with caveats
+Dictamen: Not ready
 
 ### Hallazgos y medidas
 - **P1 Unsupported assumption**: optimista terminal weight 67.26%. Impacto: High sensitivity to long-run economics. Acción: Stress terminal spread and exit economics.
@@ -61,7 +65,7 @@ Dictamen: Ready with caveats
 - PASS: Microsoft FY2026 CFO less CAPEX SBC and lease principal owner-cash bridge
 
 ## Visa
-Dictamen: Ready with caveats
+Dictamen: Not ready
 
 ### Hallazgos y medidas
 - **P1 Unsupported assumption**: optimista terminal weight 65.35%. Impacto: High sensitivity to long-run economics. Acción: Stress terminal spread and exit economics.
@@ -86,12 +90,13 @@ Dictamen: Ready with caveats
 - PASS: Visa June Class A diluted EPS denominator less September documented B conversion reduction
 
 ## Mastercard
-Dictamen: Ready with caveats
+Dictamen: Not ready
 
 ### Hallazgos y medidas
 - **P1 Unsupported assumption**: optimista terminal weight 65.17%. Impacto: High sensitivity to long-run economics. Acción: Stress terminal spread and exit economics.
 - **P1 Not comparable without bridge**: Current diluted shares assembled from dated basic outstanding and weighted-average EPS dilution. Impacto: Forward share count can depart from observed EPS weighted average. Acción: Reconcile outstanding classes, options, RSUs, convertibles and subsequent events. [Fuente](https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm).
 - **P1 Not comparable without bridge**: Settlement and client incentive payments drive CFO. Impacto: Unadjusted FCF may not represent cash to shareholders. Acción: Reconcile 5Y payments incentives and accrued settlement. [Fuente](https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm).
+- **P1 Not comparable without bridge**: Mastercard per-share base cash 16000m exceeds payment sector cash/earnings cap 12230m. Impacto: Two CIIP methods yield materially different starting values. Acción: Reconcile historical income cap versus prospectively distributable cash and choose one sourced method. [Fuente](https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm).
 
 ### Sensibilidad independiente (solo diagnóstico)
 - cash_80pct_usd: 306.93 USD/acción
@@ -109,12 +114,13 @@ Dictamen: Ready with caveats
 - PASS: Mastercard 5Y reported GAAP net income cash-to-earnings source bridge
 
 ## Texas Instruments
-Dictamen: Ready with caveats
+Dictamen: Not ready
 
 ### Hallazgos y medidas
 - **P1 Not comparable without bridge**: Current diluted shares assembled from dated basic outstanding and weighted-average EPS dilution. Impacto: Forward share count can depart from observed EPS weighted average. Acción: Reconcile outstanding classes, options, RSUs, convertibles and subsequent events. [Fuente](https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm).
 - **P1 Unsupported assumption**: TXN analyst cycle reserve $1.818bn used to adjust 2026 LTM GAAP FCF is not equivalent to audited maintenance CAPEX. Impacto: Longer-run fab utilization and capital replacement schedule not demonstrated. Acción: Reconcile utilization, inventory and facility CAPEX commitments through 2030. [Fuente](https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm).
 - **P1 Not comparable without bridge**: CHIPS subsidy receipts are not necessarily recurring. Impacto: Cannot treat management adjusted FCF as perpetual owner cash. Acción: Keep GAAP CFO-CAPEX separate from government grant proceeds. [Fuente](https://www.ti.com/about-ti/newsroom/news-releases/2026/2026-10-21-ti-reports-third-quarter-2026-financial-results-and-shareholder-returns.html).
+- **P1 Not comparable without bridge**: Texas Instruments pending Silicon Labs enterprise value ~7500m and potential financing of 5000m. Impacto: Forecast future debt service, acquisition payment and acquired cash are not in FY2025/LTM starting FCFE. Acción: Add deal/no-deal and funded closing scenarios, acquisition purchase price and forward debt bridge. [Fuente](https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm).
 
 ### Sensibilidad independiente (solo diagnóstico)
 - cash_80pct_usd: 77.92 USD/acción
