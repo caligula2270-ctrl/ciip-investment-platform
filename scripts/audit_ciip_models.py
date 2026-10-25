@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Five-issuer CIIP model audit: source tie-out, math and assumptions."""
 import datetime as dt, json, pathlib, math
-from build_ciip_per_share import dcf
+from build_ciip_per_share import dcf, net_owner_cash
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 SOURCES={
  "inputs":"audits/per_share_inputs.json",
@@ -29,7 +29,7 @@ def audit_ticker(t,c,notes,sec,record,model):
  if not shares_ok:flag("P0","Formula/control defect","Invalid denominator range",
                          "Values per share unreliable","Reconcile share classes and awards",primary)
  for case,assumptions in scenarios.items():
-  v=dcf(assumptions["owner_cf1_m"],assumptions["g1_pct"]/100,
+  v=dcf(net_owner_cash(assumptions),assumptions["g1_pct"]/100,
         assumptions["g2_pct"]/100,assumptions["ke_pct"]/100,
         assumptions["t_pct"]/100)["equity_value_musd"]/den["central_m"]
   pub=model["scenario_values"][case]["equity_per_share_usd"]
@@ -60,11 +60,23 @@ def audit_ticker(t,c,notes,sec,record,model):
   checks.append({"name":"Adobe FY2025 CFO and CAPEX tie-out","pass":ok})
   if not ok:flag("P0","Source contradiction","Adobe FY annual CFO or CAPEX does not tie",
                  "Historical owner cash unreliable","Reconcile filing table and SEC companyfacts",primary)
-  if nine["acquisitions_net"]>0:
+  reserve=scenarios["base"].get("annual_acquisition_reinvestment_m")
+  acq_source=c["cash_anchor"].get("acquisition_source")
+  reinvest_policy=c["cash_anchor"].get("acquisition_reinvestment_policy")
+  acquisition_control=bool(nine.get("acquisitions_net",0)>0 and acq_source==primary
+      and reinvest_policy and isinstance(reserve,(int,float)) and 0<reserve<scenarios["base"]["owner_cf1_m"]
+      and model["scenario_values"]["base"].get("owner_cash_after_recurring_reinvestment_m")==scenarios["base"]["owner_cf1_m"]-reserve)
+  checks.append({"name":"Adobe acquisition separate strategic reinvestment bridge","pass":acquisition_control,
+    "historical_acquisition_cash_m":nine["acquisitions_net"],"forward_analyst_reserve_m":reserve})
+  if not acquisition_control:
    flag("P0","Unsupported assumption",
-        "Adobe 9M2026 acquisitions cash "+str(nine["acquisitions_net"])+"m omitted from normalized owner cash",
-        "If acquisitions sustain growth, cost of reinvestment understated",
-        "Model acquisitions separately from ordinary CAPEX, without assuming every acquisition repeats",primary)
+        "Adobe historical acquired-business investment excluded without a future reinvestment policy",
+        "M&A-driven growth may overstate owner cash","Document source and a distinct forecast reinvestment policy",primary)
+  else:
+   flag("P1","Unsupported assumption",
+        "Adobe recurring future M&A reserve "+str(reserve)+"m is an analyst stress, not proved recurring",
+        "Revenue growth and acquisition cadence must be connected",
+        "Build explicit business acquisition dependence scenarios and reconcile organic growth",primary)
   anchor=fy["cfo"]-fy["capex"]-fy["sbc"]
   base=scenarios["base"]["owner_cf1_m"]
   checks.append({"name":"Adobe source CFO-CAPEX-SBC bridge","pass":passed(anchor,7910),
@@ -77,33 +89,79 @@ def audit_ticker(t,c,notes,sec,record,model):
   a=notes["observations"]["fy2026_m"]
   ok=passed(cfo_m,a["cfo"]) and passed(capex_m,a["capex"])
   checks.append({"name":"Microsoft reported FY2026 CFO CAPEX","pass":ok})
-  owner=a["cfo"]-a["capex"]-a["sbc"];base=scenarios["base"]["owner_cf1_m"]
-  if base>owner*1.2:
+  owner=a["cfo"]-a["capex"]-a["sbc"]
+  lease_principal=a["finance_lease_principal_cash"]
+  owner_after_lease=owner-lease_principal
+  base=scenarios["base"]["owner_cf1_m"]
+  lease_ok=(c["cash_anchor"].get("finance_lease_principal_2026_m")==lease_principal
+    and passed(base,owner_after_lease,.001))
+  checks.append({"name":"Microsoft FY2026 CFO less CAPEX SBC and lease principal owner-cash bridge",
+    "pass":lease_ok,"source_cash_m":owner_after_lease,"base_owner_cash_m":base})
+  if not lease_ok:
    flag("P0","Unsupported assumption",
-      "Base cash "+str(base)+"m vs FY2026 CFO-CAPEX-SBC "+str(owner)+"m",
-      "Large unverified increase before first forecast growth year",
-      "Build five-year AI capacity, renewal, finance lease principal and cloud margins bridge",primary)
-  flag("P1","Not comparable without bridge","Finance lease principal/new financed datacenter assets omitted from simplistic cash CAPEX",
-       "Reinvestment understates capital intensity","Bridge leases, depreciation, server capacity and cash/noncash investment",primary)
+      "Microsoft base cash does not tie to reported cash less CAPEX, SBC and finance leases",
+      "Excess cash inflates value before forecasting",
+      "Use documented FY2026 full reinvestment bridge",primary)
+  else:
+   flag("P1","Unsupported assumption",
+      "Microsoft first-stage 13% growth applied to a lease-adjusted $51.481bn base is not justified by a five-year datacenter segment forecast",
+      "Uncertain server replacement economics and growth spending",
+      "Build asset replacement, cloud margin and AI return-on-capital forecasts",primary)
+  flag("P1","Not comparable without bridge",
+       "New finance-lease datacenter assets and future server renewal not captured as current cash CAPEX",
+       "Long-run owner cash still uncertain","Model lease principal beyond FY2026 and noncash server investment commitments",primary)
  elif t=="V":
-  if capex is None:
-   flag("P0","Not comparable without bridge","Visa lacks comparable annual CAPEX in generic SEC facts",
-        "FCF series is missing, cash normalization is not reproducible",
-        "Implement issuer-specific XBRL/footnote mapping for property and technology spend",primary)
-  flag("P0","Not comparable without bridge","Visa B-class, preferred and participating-security denominator mixes different dates",
-       "A-equivalent fully diluted share count unapproved",
-       "Reconcile September 2026 8-K class factors with same-date counts and litigation rights",
-       notes["rate_update"])
+  official=sec.get("official_filing_bridge",{})
+  reported_capex=notes["observations"]["fy2025_m"]["capex"]
+  five_years=sec.get("history",[])
+  all_five=all(v.get("metrics",{}).get("capex",{}).get("value") is not None for v in five_years)
+  capex_ok=bool(all_five and official.get("status")=="crosswalk_validated"
+    and not official.get("conflicts") and passed(capex_m,reported_capex,.001)
+    and len([i for i in official.get("filled",[]) if i["metric"]=="capex"])>=3)
+  checks.append({"name":"Visa 5Y issuer-filed CAPEX reconciled to source separate from SEC taxonomy",
+    "pass":capex_ok,"five_years":all_five,"FY2025_capex_m":capex_m})
+  if not capex_ok:
+   flag("P0","Not comparable without bridge",
+        "Visa FY2021–2025 reported investments not reconciled across original 10-K cash flow tables",
+        "Normalized FCF remains unreliable","Validate 10-K capex crosswalk and all five annual periods",primary)
+  sep=den.get("sept_Bdrop_total_m")
+  bchanges=[den.get(x) for x in ("september_B1_drop_m","september_B2_drop_m","september_B3_drop_m")]
+  conversion_ok=bool(den.get("june_diluted_Aeq_weighted_m")==1898
+     and isinstance(sep,(int,float)) and all(isinstance(x,(int,float)) for x in bchanges)
+     and passed(sum(bchanges),sep,.00001)
+     and passed(den["central_m"],1898-sep,.00001)
+     and den.get("date_common_equivalent")=="2026-06-30"
+     and den.get("date_conversion_adjustment")=="2026-09-18"
+     and den.get("status")=="single_quarter_eps_diluted_with_september_class_B_event_adjustment")
+  checks.append({"name":"Visa June Class A diluted EPS denominator less September documented B conversion reduction",
+     "pass":conversion_ok,"june_weighted_diluted_Aeq_m":1898,"sept_loss_Aeq_m":sep,
+     "provisional_denominator_m":den["central_m"]})
+  if not conversion_ok:
+   flag("P0","Not comparable without bridge",
+        "Visa economic diluted class A denominator still mixes dates and double counts participating securities",
+        "Model count not credible","Use Note12 EPS diluted shares as one basis, apply 8-K delta once",notes["rate_update"])
+  else:
+   flag("P1","Not comparable without bridge",
+        "Visa 1,898m weighted diluted Q2 EPS less 1.104m Sep conversion reduction is not shares currently outstanding",
+        "Open-market repurchases and awards between June and October remain unverified",
+        "Update subsequent event/share-repurchase rollforward before approving price per share",notes["rate_update"])
   flag("P1","Unsupported assumption","Visa CFO depends on client incentives, litigation and escrow",
        "Recurring cash can depart from operating CFO-CAPEX",
        "Bridge 5Y incentive payments, litigation cash and restricted funds",primary)
  elif t=="MA":
   fy=notes["observations"]["fy2025_m"]
-  if latest["metrics"].get("net_income") is None:
+  bridge=sec.get("official_filing_bridge",{})
+  incomes=[row.get("metrics",{}).get("net_income",{}).get("value") for row in sec["history"]]
+  net_ok=bool(len(incomes)==5 and all(x is not None for x in incomes)
+      and passed(incomes[-1]/1e6,fy["net_income"],.001)
+      and bridge.get("status")=="crosswalk_validated" and not bridge.get("conflicts"))
+  checks.append({"name":"Mastercard 5Y reported GAAP net income cash-to-earnings source bridge",
+    "pass":net_ok,"five_year_net_income_m":[v/1e6 if v else None for v in incomes]})
+  if not net_ok:
    flag("P0","Source contradiction",
-        "Mastercard SEC normalized net income missing; audited FY2025 note cites "+str(fy["net_income"])+"m",
-        "Cash/earnings normalization and sector payment model blocked",
-        "Map issuer-specific net income US-GAAP concept with filing year matching",primary)
+        "Mastercard FY2021–2025 annual net income remains missing or inconsistent with 10-K",
+        "Earnings cross-check and payment model are unsupported",
+        "Map the issuer-specific income concept and compare all five fiscal ends",primary)
   flag("P1","Not comparable without bridge","Settlement and client incentive payments drive CFO",
        "Unadjusted FCF may not represent cash to shareholders",
        "Reconcile 5Y payments incentives and accrued settlement",primary)
@@ -117,18 +175,33 @@ def audit_ticker(t,c,notes,sec,record,model):
    flag("P0","Source contradiction","TI adjusted non-GAAP FCF does not tie to source",
         "Reinvestment bridge inconsistent","Reconcile disclosures and subsidy line",notes["ir"])
   fyfcf=latest["fcf_usd"]/1e6 if latest.get("fcf_usd") is not None else None
-  if fyfcf and scenarios["base"]["owner_cf1_m"]>fyfcf*1.5:
+  cash_anchor=c["cash_anchor"]
+  ltm_gaap=gaap
+  reserve=cash_anchor.get("cycle_reserve_model_m")
+  bcase=scenarios["base"]["owner_cf1_m"]
+  cycle_ok=bool(reserve is not None and reserve>=0
+    and passed(ltm_gaap-reserve,bcase,.001)
+    and cash_anchor.get("ltm_fcf_gaap_proxy_m")==ltm_gaap
+    and cash_anchor.get("ltm_incentive_cash_nonrecurring_m")==ltm["CHIPS_direct_incentive_cash"])
+  checks.append({"name":"TI LTM 2026 GAAP CFO-CAPEX less through-cycle analyst reserve",
+    "pass":cycle_ok,"ltm_gaap_cash_m":ltm_gaap,"illustrative_cycle_reserve_m":reserve,
+    "model_base_cash_m":bcase})
+  if not cycle_ok:
    flag("P0","Unsupported assumption",
-        "TI base cash "+str(scenarios["base"]["owner_cf1_m"])+"m vs FY2025 FCF "+str(fyfcf)+"m",
-        "High assumption for fab utilization and CAPEX reset",
-        "Construct through-cycle capacity utilization, CHIPS, depreciation and CAPEX plan",primary)
+       "TI baseline cash does not reconcile to latest LTM GAAP CFO less gross CAPEX and a separately tagged cycle reserve",
+       "Current FCF jump unsupported by reported data","Bridge LTM and operating cycle without adding CHIPS subsidy twice",primary)
+  else:
+   flag("P1","Unsupported assumption",
+        "TXN analyst cycle reserve $1.818bn used to adjust 2026 LTM GAAP FCF is not equivalent to audited maintenance CAPEX",
+        "Longer-run fab utilization and capital replacement schedule not demonstrated",
+        "Reconcile utilization, inventory and facility CAPEX commitments through 2030",primary)
   flag("P1","Not comparable without bridge","CHIPS subsidy receipts are not necessarily recurring",
        "Cannot treat management adjusted FCF as perpetual owner cash",
        "Keep GAAP CFO-CAPEX separate from government grant proceeds",notes["ir"])
  # Independent audit sensitivities are diagnostics, NOT revised forecasts.
  base_assumptions=scenarios["base"]
  def stress(cash_factor,required_return_shift):
-  cash=base_assumptions["owner_cf1_m"]*cash_factor
+  cash=net_owner_cash(base_assumptions)*cash_factor
   r=base_assumptions["ke_pct"]/100+required_return_shift
   return round(dcf(cash,base_assumptions["g1_pct"]/100,base_assumptions["g2_pct"]/100,
                    r,base_assumptions["t_pct"]/100)["equity_value_musd"]/den["central_m"],2)
