@@ -11,6 +11,8 @@ on:
       - 'scripts/build_ciip_audits.py'
       - 'scripts/build_ciip_per_share.py'
       - 'scripts/audit_ciip_models.py'
+      - 'scripts/ciip_economic_bridge_v2.py'
+      - 'audits/economic_evidence_v2.json'
       - 'audits/validation_evidence.json'
       - 'scripts/test_ciip_*.py'
       - 'audits/per_share_inputs.json'
@@ -47,6 +49,8 @@ jobs:
         run: python scripts/build_ciip_per_share.py
       - name: Independently audit all five valuation models
         run: python scripts/audit_ciip_models.py
+      - name: Build independently reconciled economic bridge (no valuation overwrite)
+        run: python scripts/ciip_economic_bridge_v2.py
       - name: Publish SEC facts and audit report safely
         run: |
           set -euo pipefail
@@ -57,6 +61,8 @@ jobs:
           cp audits/REPORT.md /tmp/ciip-audit-report.md
           cp audits/per_share_latest.json /tmp/ciip-per-share-latest.json
           cp audits/PER_SHARE_REPORT.md /tmp/ciip-per-share-report.md
+          cp audits/economic_bridge_latest.json /tmp/ciip-economic-latest.json
+          cp audits/ECONOMIC_BRIDGE_REPORT.md /tmp/ciip-economic-report.md
           cp audits/model_validation_latest.json /tmp/ciip-validation-latest.json
           cp audits/MODEL_VALIDATION_REPORT.md /tmp/ciip-validation-report.md
           for attempt in 1 2 3 4 5 6; do
@@ -69,9 +75,11 @@ jobs:
             cp /tmp/ciip-audit-report.md audits/REPORT.md
             cp /tmp/ciip-per-share-latest.json audits/per_share_latest.json
             cp /tmp/ciip-per-share-report.md audits/PER_SHARE_REPORT.md
+            cp /tmp/ciip-economic-latest.json audits/economic_bridge_latest.json
+            cp /tmp/ciip-economic-report.md audits/ECONOMIC_BRIDGE_REPORT.md
             cp /tmp/ciip-validation-latest.json audits/model_validation_latest.json
             cp /tmp/ciip-validation-report.md audits/MODEL_VALIDATION_REPORT.md
-            git add fundamentals-auto.json audits/latest.json audits/REPORT.md audits/per_share_latest.json audits/PER_SHARE_REPORT.md audits/model_validation_latest.json audits/MODEL_VALIDATION_REPORT.md
+            git add fundamentals-auto.json audits/latest.json audits/REPORT.md audits/per_share_latest.json audits/PER_SHARE_REPORT.md audits/model_validation_latest.json audits/MODEL_VALIDATION_REPORT.md audits/economic_bridge_latest.json audits/ECONOMIC_BRIDGE_REPORT.md
             if git diff --cached --quiet; then
               echo "No changes in SEC fundamentals or audits"
               exit 0
