@@ -1,7 +1,7 @@
 {
   "schema": "ciip-fundamentals-v1",
   "source": "SEC EDGAR companyfacts (US GAAP)",
-  "generated_at": "2026-10-25T12:20:21.185954+00:00",
+  "generated_at": "2026-10-25T12:23:33.490584+00:00",
   "companies": {
     "MSFT": {
       "cik": "0000789019",
