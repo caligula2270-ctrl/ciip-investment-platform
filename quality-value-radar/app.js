@@ -27,6 +27,7 @@ let auditV10 = {models:{}};
 let reconciliationV11 = {models:{}};
 let closeoutV12 = {models:{}};
 let evidenceV13 = {models:{}};
+let production = {state:'initializing',companies:{},coverage:{}};
 let analysisStatus = 'Análisis fundamental todavía no cargado';
 let quotationsNotice = 'Referencias fechadas; no son cotizaciones en directo';
 let activeModal = null;
@@ -69,6 +70,31 @@ function reliabilityPanel(){
 }
 async function refreshReliability(){
  try{const r=await fetch('data/reliability_v5.json',{cache:'no-store'});if(r.ok){const v=await r.json();if(v.schema==='qvr-v5-evidence')reliabilityV5=v;}}catch(e){}render();
+}
+
+function productionPanel(){
+ const p=production||{},c=p.coverage||{},items=(p.focus||[]);
+ const age=x=>x==null?'Sin datos':x===0?'Hoy':x+' días';
+ const status=p.state==='operational'?'Operativo':p.state==='degraded'?'Datos parciales':'Inicializando';
+ return '<section class="panel" style="margin-bottom:20px"><div class="panel-head"><div><h3>Estado operativo del radar</h3><p>Última sincronización '+esc(p.generatedAt||'pendiente')+' · '+esc(status)+'</p></div><span class="pill '+(p.state==='operational'?'':'amber')+'">'+esc(status)+'</span></div>'+
+ '<div class="stat-grid">'+statCard('Cotizaciones recientes',c.quotesCurrent7d??'—','De '+(c.universe??'—')+' símbolos')+
+ statCard('Modelos SEC',c.USSECModelAttempted??'—','Cobertura de investigación')+
+ statCard('Modelos económicos',c.economicModels??'—','Escenarios sectoriales')+
+ statCard('Precios certificados',c.investmentGradePriceCount??0,'Ninguna señal de compra automática')+'</div>'+
+ '<div class="table-wrap"><table class="data-table"><thead><tr><th>Empresa</th><th>Último precio</th><th>Escenarios de estudio</th><th>Estado</th></tr></thead><tbody>'+
+ items.map(t=>{const x=p.companies?.[t];if(!x)return '';
+ const v=x.scenariosIllustrative||{};
+ return '<tr><td><b>'+esc(t)+'</b><small> '+esc(x.name||'')+'</small></td>'+
+ '<td>'+money(x.price,x.currency)+'<small> '+esc(x.priceDate||'—')+' · '+age(x.quoteAgeDays)+'</small></td>'+
+ '<td>'+money(v.bear,x.currency)+' / '+money(v.base,x.currency)+' / '+money(v.bull,x.currency)+'</td>'+
+ '<td><span class="pill amber">Revisión pendiente</span><small>'+esc(x.openEvidenceCount)+' incidencias documentales</small></td></tr>'
+ }).join('')+'</tbody></table></div>'+
+ '<p class="tiny muted">Los precios son cierres con fecha, no cotizaciones en tiempo real. Los escenarios no son valores de compra aprobados. La app no realiza operaciones ni envía avisos externos.</p></section>';
+}
+async function refreshProduction(){
+ try{const r=await fetch('data/production_status.json',{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);
+ const d=await r.json();if(d.schema!=='qvr-production-v1')throw Error('Formato no válido');production=d;
+ }catch(e){production={state:'degraded',companies:{},coverage:{},generatedAt:null};}render();
 }
 
 function evidenceV13Panel(){
@@ -177,7 +203,7 @@ function opportunitiesV6Panel(){
  '<p class="tiny muted">Calidad: '+(x.qualityScore==null?'Sin puntuación':fmtN(x.qualityScore,0)+'/100')+' · Confianza: '+esc(level)+' ('+fmtN(confidence.score||0,0)+'/100)</p>'+
  '<div class="card-prices"><div><small>Precio '+esc(x.quoteDate||'no fechado')+'</small><b>'+money(price,x.currency)+'</b></div><div><small>Entrada ilustrativa</small><b>'+money(entry,x.currency)+'</b></div></div>'+
  '<p class="small">DCF base: '+money(base,x.currency)+' · margen vs base: '+pct(x.marginVsBasePct)+'</p>'+
- '<p class="small">IRR hipótesis 5 años: '+pct(x.projectedIrrPct?.fiveYear)+' · 10 años: '+pct(x.projectedIrrPct?.tenYear)+'</p>'+
+ '<p class="small">IRR hipotética 5 años: '+pct(x.projectedIrrPct?.fiveYear)+' · 10 años: '+pct(x.projectedIrrPct?.tenYear)+'</p>'+
  '<p class="tiny muted">Escenarios: '+money(x.scenarios?.bear?.value,x.currency)+' / '+money(x.scenarios?.base?.value,x.currency)+' / '+money(x.scenarios?.bull?.value,x.currency)+'</p>'+
  '<div class="mini-note">'+esc((x.blockers||[]).slice(0,3).join('; ')||'Requiere revisión humana')+'</div></article>';
  }).join('');
@@ -215,7 +241,7 @@ function autoQualityPanel(){
       statCard('Sin cobertura completa',unsupported,'Excluidas o pendientes')+
       statCard('Tasa de descuento base','11,5 %','Hipótesis explícita, editable en código')+'</div>'+
     '<div class="cards-3">'+(opportunities.length?opportunities.map(({c,a})=>card(c,a)).join(''):'<div class="empty">Sin oportunidades que cumplan todos los requisitos. Esto no implica que las empresas estén caras.</div>')+'</div>'+
-    evidenceV13Panel()+closeoutV12Panel()+reconciliationV11Panel()+financialAuditV10Panel()+economicV9Panel()+opportunitiesV6Panel()+auditV8Panel()+sensitivityV7Panel()+reliabilityPanel()+internationalPanel()+
+    productionPanel()+evidenceV13Panel()+closeoutV12Panel()+reconciliationV11Panel()+financialAuditV10Panel()+economicV9Panel()+opportunitiesV6Panel()+auditV8Panel()+sensitivityV7Panel()+reliabilityPanel()+internationalPanel()+
     '<details class="collapsible"><summary>Ver todas las valoraciones automáticas y datos insuficientes</summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Empresa</th><th>Estado</th><th>Valor razonable*</th><th>Descuento</th><th></th></tr></thead><tbody>'+
     companies().map(c=>{const a=autoAnalysis.companies?.[c.s],reason=a?.reason||autoAnalysis.exclusions?.[c.s]||autoAnalysis.unavailable?.[c.s]||'Sin modelo verificable';return '<tr><td>'+esc(c.n)+' <small>'+esc(c.s)+'</small></td><td>'+(a?.status==='ready'?'Con modelo':esc(reason))+'</td><td>'+money(a?.fairValue,a?.currency)+'</td><td>'+pct(a?.status==='ready'?a.marginOfSafetyPct:null)+'</td><td>'+(a?'<button class="btn btn-quiet btn-sm" data-auto-detail="'+esc(c.s)+'">Detalles</button>':'—')+'</td></tr>'}).join('')+
     '</tbody></table></div></details><p class="tiny muted">* Mezcla 60% de DCF simplificado a 5 años sobre FCF normalizado y 40% de mediana histórica P/FCF, calculada con cotizaciones en fechas fiscales. No sustituye una valoración sectorial ni ajuste completo por deuda, SBC, adquisiciones o ciclo del capital de trabajo.</p></section>';
@@ -264,7 +290,7 @@ async function refreshAutoAnalysis(){
 
 function pageOverview(){const countAll=companies().length;const multi=companies().filter(overlap);
 const focus=['CPRT','AMZN','CSU.TO'].map(issuer).filter(Boolean);
-return `${topHeading('Visión general · 22 octubre 2026','Un mapa para invertir con criterio','Rastrea empresas seguidas por inversores de calidad y valor, separando coincidencia, calidad y precio.','<button class="btn" data-page="radar">Abrir radar <span aria-hidden="true">↗</span></button>')}
+return `${topHeading('Visión general · '+TODAY(),'Un mapa para invertir con criterio','Rastrea empresas seguidas por inversores de calidad y valor, separando coincidencia, calidad y precio.','<button class="btn" data-page="radar">Abrir radar <span aria-hidden="true">↗</span></button>')}
 <section class="hero"><div><div class="eyebrow">QUALITY FIRST · PRICE ALWAYS</div><h2>Grandes negocios.<br>Solo a precios que tengan sentido.</h2><p>Una coincidencia entre inversores es una pista para investigar, no una señal automática de compra. Antes de clasificar una empresa como barata, calcula un valor razonable propio y verifica su cotización.</p><div class="hero-highlight"><span class="pill">◈ Prioridad: Copart</span><span class="pill neutral">Inversión 5–10 años</span><span class="pill amber">Fuentes y fechas visibles</span></div></div><div style="min-width:205px;align-self:center"><div class="eyebrow">Proceso</div><div class="interactive-spark" aria-hidden="true">${[35,60,44,69,61,82,70,100,76].map(n=>`<i style="height:${n}%"></i>`).join('')}</div><div class="year-note" style="margin-top:9px">Investigación → valoración → disciplina</div></div></section>
 <div class="stat-grid">${statCard('Empresas identificadas',countAll,'Universo proporcionado por el usuario')}${statCard('Fuentes / inversores',seed.investors.length,'Referencias actuales e históricas')}${statCard('Coincidencias no históricas',multi.length,'Sin contar dos fondos de una gestora','accent')}${statCard('Con precio fechado',companies().filter(c=>!!quote(c.s)).length,'Solo algunas cotizaciones verificadas')}</div>
 <div class="twocol"><section class="panel"><div class="panel-head"><div><h3>Empresas prioritarias para estudiar</h3><p>Ordenadas por la convergencia de referencias y el interés cualitativo</p></div><button class="mini-action" data-page="radar">Ver radar →</button></div>${focus.map(shortCandidate).join('')}<div class="info-note" style="margin-top:18px">La posición de Amazon en Nick Sleep es <b>histórica</b>. Para Constellation Software no se ha acreditado una segunda posición. Solo Copart aparece expresamente en dos listas no históricas del material suministrado.</div></section><section class="panel"><div class="panel-head"><div><h3>Marco de decisión</h3><p>Seis comprobaciones antes de invertir</p></div></div><div class="method-list">${[
@@ -338,6 +364,6 @@ document.addEventListener('change',ev=>{const t=ev.target;if(t.id==='filter-sect
 document.addEventListener('input',ev=>{if(ev.target.id==='search-company'){state.filters.term=ev.target.value;persist();const pos=ev.target.selectionStart;render();const el=document.getElementById('search-company');if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&activeModal)closeModal();if(ev.key==='Escape'&&!document.getElementById('modal-root').classList.contains('hidden'))closeModal();});
 document.getElementById('modal-root').addEventListener('click',ev=>{if(ev.target.id==='modal-root')closeModal();});
-render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();refreshOpportunityV6();refreshSensitivityV7();refreshAuditV8();refreshEconomicV9();refreshFinancialAuditV10();refreshReconciliationV11();refreshCloseoutV12();refreshEvidenceV13();
+render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();refreshOpportunityV6();refreshSensitivityV7();refreshAuditV8();refreshEconomicV9();refreshFinancialAuditV10();refreshReconciliationV11();refreshCloseoutV12();refreshEvidenceV13();refreshProduction();
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 })();
