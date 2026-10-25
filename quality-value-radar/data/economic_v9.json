@@ -1,6 +1,6 @@
 {
   "schema": "qvr-economic-model-v9",
-  "generatedAt": "2026-10-25T19:20:13.460351+00:00",
+  "generatedAt": "2026-10-25T19:21:00.439074+00:00",
   "assumptionsAsOf": "2026-10-25",
   "companyCount": 6,
   "models": {
@@ -274,8 +274,8 @@
       ],
       "scenarios": {
         "bear": {
-          "status": "illustrative_post_deal_cash_net_of_close_consideration",
-          "valuePerShare": 8.49,
+          "status": "illustrative_post_deal_cash_before_balance_bridge",
+          "valuePerShare": 10.44,
           "annualOrganicCashMillions": [
             1065.01,
             1065.01,
@@ -291,11 +291,12 @@
             -75.0
           ],
           "acvUpfrontPerSpotShare": 1.94,
-          "warning": "Assumes acquisition financed out of historic liquid assets; no financing, working-capital or net-debt bridge"
+          "acquisitionCostDeductedFromProjectedFCF": false,
+          "warning": "Opening post-close cash/debt unverified: do NOT subtract consideration again or add pre-close liquid balances"
         },
         "base": {
-          "status": "illustrative_post_deal_cash_net_of_close_consideration",
-          "valuePerShare": 22.34,
+          "status": "illustrative_post_deal_cash_before_balance_bridge",
+          "valuePerShare": 24.29,
           "annualOrganicCashMillions": [
             1240.47,
             1290.08,
@@ -311,11 +312,12 @@
             56.28
           ],
           "acvUpfrontPerSpotShare": 1.94,
-          "warning": "Assumes acquisition financed out of historic liquid assets; no financing, working-capital or net-debt bridge"
+          "acquisitionCostDeductedFromProjectedFCF": false,
+          "warning": "Opening post-close cash/debt unverified: do NOT subtract consideration again or add pre-close liquid balances"
         },
         "bull": {
-          "status": "illustrative_post_deal_cash_net_of_close_consideration",
-          "valuePerShare": 42.15,
+          "status": "illustrative_post_deal_cash_before_balance_bridge",
+          "valuePerShare": 44.09,
           "annualOrganicCashMillions": [
             1339.28,
             1442.33,
@@ -331,7 +333,8 @@
             272.1
           ],
           "acvUpfrontPerSpotShare": 1.94,
-          "warning": "Assumes acquisition financed out of historic liquid assets; no financing, working-capital or net-debt bridge"
+          "acquisitionCostDeductedFromProjectedFCF": false,
+          "warning": "Opening post-close cash/debt unverified: do NOT subtract consideration again or add pre-close liquid balances"
         }
       },
       "keyDrivers": {
@@ -376,8 +379,8 @@
       "comparisonOnly": true,
       "verifiedBuyPrice": null,
       "range": {
-        "low": 8.49,
-        "high": 42.15
+        "low": 10.44,
+        "high": 44.09
       }
     },
     "CSU.TO": {
