@@ -42,13 +42,21 @@
           "stock_awards_expected_to_vest": 11.7
         },
         "dated_basic_outstanding_m": 389.2,
-        "acquired_semrush_purchase_price_m": 1874
+        "acquired_semrush_purchase_price_m": 1874,
+        "pending_topaz_acquisition_m": {
+          "expected_cash": 340,
+          "agreement_date": "2026-06-24",
+          "expected_closing": "FY2026 Q4 (subject to approvals)",
+          "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "section": "Note 13 — Commitments and Contingencies"
+        }
       },
       "risks": [
         "M&A not recognized as recurring maintenance CAPEX",
         "9M YTD cash bridge includes SBC; cost must not double count after forecast share path",
         "M&A integration and AI hosting costs, capitalized commissions",
-        "Buybacks are financing cash flow and should not be subtracted from FCFE as operating capex"
+        "Buybacks are financing cash flow and should not be subtracted from FCFE as operating capex",
+        "Pending Topaz Labs deal (~$340m) is forward contingent cash, distinct from $1.56bn YTD already acquired and $350m analyst annual reinvestment reserve; no double-count."
       ],
       "required_action": "A recurring acquired-business reinvestment policy and share rollforward must be included for investment decision"
     },
@@ -145,12 +153,21 @@
           "low": 2000,
           "high": 3000
         },
-        "shares_basic_20261014_m": 913.770316
+        "shares_basic_20261014_m": 913.770316,
+        "pending_silicon_labs_acquisition_m": {
+          "enterprise_value_approx": 7500,
+          "financing_term_loan_committed": 5000,
+          "as_of": "2026-09-30",
+          "closing_expected": "H1 2027 subject to approvals",
+          "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+          "section": "Management Discussion — Acquisition of Silicon Labs and Financing"
+        }
       },
       "risks": [
         "CHIPS direct cash should not be capitalized as recurrent operating FCFE",
         "CHIPS tax credit already in CFO: avoid subtracting grant twice",
-        "Capacity utilization, depreciation, and maintenance cannot be inferred from 1 or 3 years alone"
+        "Capacity utilization, depreciation, and maintenance cannot be inferred from 1 or 3 years alone",
+        "Prospective $7.5bn Silicon Labs acquisition and potential $5bn debt financing not included in static LTM FCFE proxy; funding and acquisition cash flows require scenario-specific bridge."
       ],
       "required_action": "Bridge gross CAPEX, grants, GAAP CFO and owner cash with through-cycle operating model"
     }
