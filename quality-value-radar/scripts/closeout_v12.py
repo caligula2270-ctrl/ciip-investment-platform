@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """V12 closeout: source-locked balance tie-outs, consistent equity-cash classification.
+Scheduled investment diligence stage with validated provenance and audit flags.
 No FY2026 Q3/H1 partial balance may be presented as a verified complete EV/equity bridge.
 """
 import json,datetime as dt,pathlib,math
