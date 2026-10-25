@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """v9 business-specific operating economics: separate issuer observations and model hypotheses.
+Registered in the weekly SEC and international company research workflow.
 No trading recommendations; values are exploratory cash-equity proxies, not audited DCF.
 """
 import json, pathlib, datetime as dt, math, statistics
