@@ -25,6 +25,7 @@ let auditV8 = {companies:{}};
 let economicV9 = {models:{}};
 let auditV10 = {models:{}};
 let reconciliationV11 = {models:{}};
+let closeoutV12 = {models:{}};
 let analysisStatus = 'Análisis fundamental todavía no cargado';
 let quotationsNotice = 'Referencias fechadas; no son cotizaciones en directo';
 let activeModal = null;
@@ -67,6 +68,18 @@ function reliabilityPanel(){
 }
 async function refreshReliability(){
  try{const r=await fetch('data/reliability_v5.json',{cache:'no-store'});if(r.ok){const v=await r.json();if(v.schema==='qvr-v5-evidence')reliabilityV5=v;}}catch(e){}render();
+}
+
+function closeoutV12Panel(){
+ const m=closeoutV12.models||{};
+ return '<section class="panel" style="margin:18px 0"><div class="panel-head"><div><h3>Cierre documental v12</h3><p>Partidas verificadas, balance de la fecha y discrepancias que impiden certificar el precio</p></div></div><div class="cards-3">'+['ADBE','INTU','CPRT','CSU.TO','ASML','DNP.WA'].filter(t=>m[t]).map(t=>{
+ const x=m[t],status=x.status==='documentary_closed_conditional'?'Conciliación parcial':'Faltan datos materiales';
+ return '<article class="stock-card"><div class="eyebrow">'+esc(t)+'</div><h3>'+status+'</h3><p class="small">Balance: '+esc(x.balanceDate||'—')+'</p>'+
+ '<div class="mini-note">'+esc((x.remaining||[]).slice(0,3).join('; '))+'</div><p class="tiny muted">Precio aprobado: ninguno</p></article>';}).join('')+'</div>'+
+ '<p class="tiny muted">No equivale a una valoración validada: nunca se combina deuda actual parcial con flujos antiguos sin conciliación, ni se suman saldos restringidos como caja del accionista.</p></section>';
+}
+async function refreshCloseoutV12(){
+ try{const r=await fetch('data/closeout_v12.json',{cache:'no-store'});if(r.ok){const j=await r.json();if(j.schema==='qvr-closeout-v12')closeoutV12=j}}catch(e){}render();
 }
 
 function reconciliationV11Panel(){
@@ -190,7 +203,7 @@ function autoQualityPanel(){
       statCard('Sin cobertura completa',unsupported,'Excluidas o pendientes')+
       statCard('Tasa de descuento base','11,5 %','Hipótesis explícita, editable en código')+'</div>'+
     '<div class="cards-3">'+(opportunities.length?opportunities.map(({c,a})=>card(c,a)).join(''):'<div class="empty">Sin oportunidades que cumplan todos los requisitos. Esto no implica que las empresas estén caras.</div>')+'</div>'+
-    reconciliationV11Panel()+financialAuditV10Panel()+economicV9Panel()+opportunitiesV6Panel()+auditV8Panel()+sensitivityV7Panel()+reliabilityPanel()+internationalPanel()+
+    closeoutV12Panel()+reconciliationV11Panel()+financialAuditV10Panel()+economicV9Panel()+opportunitiesV6Panel()+auditV8Panel()+sensitivityV7Panel()+reliabilityPanel()+internationalPanel()+
     '<details class="collapsible"><summary>Ver todas las valoraciones automáticas y datos insuficientes</summary><div class="table-wrap"><table class="data-table"><thead><tr><th>Empresa</th><th>Estado</th><th>Valor razonable*</th><th>Descuento</th><th></th></tr></thead><tbody>'+
     companies().map(c=>{const a=autoAnalysis.companies?.[c.s],reason=a?.reason||autoAnalysis.exclusions?.[c.s]||autoAnalysis.unavailable?.[c.s]||'Sin modelo verificable';return '<tr><td>'+esc(c.n)+' <small>'+esc(c.s)+'</small></td><td>'+(a?.status==='ready'?'Con modelo':esc(reason))+'</td><td>'+money(a?.fairValue,a?.currency)+'</td><td>'+pct(a?.status==='ready'?a.marginOfSafetyPct:null)+'</td><td>'+(a?'<button class="btn btn-quiet btn-sm" data-auto-detail="'+esc(c.s)+'">Detalles</button>':'—')+'</td></tr>'}).join('')+
     '</tbody></table></div></details><p class="tiny muted">* Mezcla 60% de DCF simplificado a 5 años sobre FCF normalizado y 40% de mediana histórica P/FCF, calculada con cotizaciones en fechas fiscales. No sustituye una valoración sectorial ni ajuste completo por deuda, SBC, adquisiciones o ciclo del capital de trabajo.</p></section>';
@@ -313,6 +326,6 @@ document.addEventListener('change',ev=>{const t=ev.target;if(t.id==='filter-sect
 document.addEventListener('input',ev=>{if(ev.target.id==='search-company'){state.filters.term=ev.target.value;persist();const pos=ev.target.selectionStart;render();const el=document.getElementById('search-company');if(el){el.focus();el.setSelectionRange(pos,pos);}}});
 document.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&activeModal)closeModal();if(ev.key==='Escape'&&!document.getElementById('modal-root').classList.contains('hidden'))closeModal();});
 document.getElementById('modal-root').addEventListener('click',ev=>{if(ev.target.id==='modal-root')closeModal();});
-render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();refreshOpportunityV6();refreshSensitivityV7();refreshAuditV8();refreshEconomicV9();refreshFinancialAuditV10();refreshReconciliationV11();
+render();refreshQuotes();refreshAutoAnalysis();refreshInternational();refreshReliability();refreshOpportunityV6();refreshSensitivityV7();refreshAuditV8();refreshEconomicV9();refreshFinancialAuditV10();refreshReconciliationV11();refreshCloseoutV12();
 if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 })();
