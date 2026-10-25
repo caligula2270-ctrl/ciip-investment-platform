@@ -1,7 +1,7 @@
 {
   "schema": "ciip-fundamentals-v1",
   "source": "SEC EDGAR companyfacts (US GAAP)",
-  "generated_at": "2026-10-24T23:31:06.605058+00:00",
+  "generated_at": "2026-10-25T00:07:01.363381+00:00",
   "companies": {
     "MSFT": {
       "cik": "0000789019",
@@ -1033,7 +1033,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2026-06-30",
-        "latest_fy_age_days": 116,
+        "latest_fy_age_days": 117,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -2210,7 +2210,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -3404,7 +3404,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -4462,7 +4462,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -5470,7 +5470,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-09-30",
-        "latest_fy_age_days": 389,
+        "latest_fy_age_days": 390,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -6549,7 +6549,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -7631,7 +7631,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -8788,7 +8788,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -9954,7 +9954,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2026-08-30",
-        "latest_fy_age_days": 55,
+        "latest_fy_age_days": 56,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -10977,7 +10977,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2026-07-31",
-        "latest_fy_age_days": 85,
+        "latest_fy_age_days": 86,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -12130,7 +12130,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-09-30",
-        "latest_fy_age_days": 389,
+        "latest_fy_age_days": 390,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -13339,7 +13339,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -14398,7 +14398,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-10-31",
-        "latest_fy_age_days": 358,
+        "latest_fy_age_days": 359,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -15689,7 +15689,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-09-30",
-        "latest_fy_age_days": 389,
+        "latest_fy_age_days": 390,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -16855,7 +16855,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2026-07-31",
-        "latest_fy_age_days": 85,
+        "latest_fy_age_days": 86,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -18101,7 +18101,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-11-28",
-        "latest_fy_age_days": 330,
+        "latest_fy_age_days": 331,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -19321,7 +19321,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -20512,7 +20512,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2026-06-28",
-        "latest_fy_age_days": 118,
+        "latest_fy_age_days": 119,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -21537,7 +21537,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -22550,7 +22550,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 3,
         "complete_fcf_years": 3,
@@ -23597,7 +23597,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-08-30",
-        "latest_fy_age_days": 420,
+        "latest_fy_age_days": 421,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -24752,7 +24752,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -25724,7 +25724,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -26820,7 +26820,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -27922,7 +27922,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -28982,7 +28982,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -29906,7 +29906,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -30904,7 +30904,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 5,
         "complete_fcf_years": 5,
@@ -31914,7 +31914,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 0,
         "complete_fcf_years": 0,
@@ -33011,7 +33011,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 3,
         "complete_fcf_years": 5,
@@ -34080,7 +34080,7 @@
       ],
       "history_quality": {
         "latest_fy_end": "2025-12-31",
-        "latest_fy_age_days": 297,
+        "latest_fy_age_days": 298,
         "available_years": 5,
         "positive_fcf_years": 2,
         "complete_fcf_years": 5,
