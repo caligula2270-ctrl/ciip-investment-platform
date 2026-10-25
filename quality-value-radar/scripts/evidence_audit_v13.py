@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""v13: detect genuine accounting remediation, explicit documentary gaps, and dates."""
+"""v13: detect genuine accounting remediation, explicit documentary gaps, and dates.\nScheduled by the weekly research workflow.\n"""
 import json, pathlib, datetime as dt
 D=pathlib.Path(__file__).resolve().parents[1]/"data"
 def main():
