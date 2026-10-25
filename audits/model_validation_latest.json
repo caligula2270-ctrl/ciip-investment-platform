@@ -13,7 +13,7 @@
     "ADBE": {
       "ticker": "ADBE",
       "name": "Adobe",
-      "verdict": "Not ready",
+      "verdict": "Ready with caveats",
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
@@ -26,14 +26,14 @@
         {
           "name": "DCF arithmetic conservador",
           "pass": true,
-          "computed": 136.3336,
-          "published": 136.33
+          "computed": 117.2469,
+          "published": 117.25
         },
         {
           "name": "DCF arithmetic base",
           "pass": true,
-          "computed": 280.9048,
-          "published": 280.9
+          "computed": 265.7792,
+          "published": 265.78
         },
         {
           "name": "DCF arithmetic optimista",
@@ -44,6 +44,12 @@
         {
           "name": "Adobe FY2025 CFO and CAPEX tie-out",
           "pass": true
+        },
+        {
+          "name": "Adobe acquisition separate strategic reinvestment bridge",
+          "pass": true,
+          "historical_acquisition_cash_m": 1560,
+          "forward_analyst_reserve_m": 350
         },
         {
           "name": "Adobe source CFO-CAPEX-SBC bridge",
@@ -64,11 +70,11 @@
         },
         {
           "ticker": "ADBE",
-          "severity": "P0",
+          "severity": "P1",
           "kind": "Unsupported assumption",
-          "detail": "Adobe 9M2026 acquisitions cash 1560m omitted from normalized owner cash",
-          "impact": "If acquisitions sustain growth, cost of reinvestment understated",
-          "required_fix": "Model acquisitions separately from ordinary CAPEX, without assuming every acquisition repeats",
+          "detail": "Adobe recurring future M&A reserve 350m is an analyst stress, not proved recurring",
+          "impact": "Revenue growth and acquisition cadence must be connected",
+          "required_fix": "Build explicit business acquisition dependence scenarios and reconcile organic growth",
           "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
         },
         {
@@ -83,22 +89,22 @@
       ],
       "sensitivity": {
         "status": "illustrative_audit_sensitivity_not_forecast",
-        "cash_80pct_usd": 224.72,
-        "cash_120pct_usd": 337.09,
-        "cost_of_equity_plus_2pp_usd": 222.08,
-        "cost_of_equity_minus_2pp_usd": 379.44,
-        "cost_of_equity_12pct_usd": 234.44,
-        "cost_of_equity_15pct_usd": 175.3,
+        "cash_80pct_usd": 212.62,
+        "cash_120pct_usd": 318.94,
+        "cost_of_equity_plus_2pp_usd": 210.12,
+        "cost_of_equity_minus_2pp_usd": 359.01,
+        "cost_of_equity_12pct_usd": 221.81,
+        "cost_of_equity_15pct_usd": 165.86,
         "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
       },
-      "P0": 1,
-      "P1": 2,
-      "base_model_value_usd": 280.9
+      "P0": 0,
+      "P1": 3,
+      "base_model_value_usd": 265.78
     },
     "MSFT": {
       "ticker": "MSFT",
       "name": "Microsoft",
-      "verdict": "Not ready",
+      "verdict": "Ready with caveats",
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
@@ -111,24 +117,30 @@
         {
           "name": "DCF arithmetic conservador",
           "pass": true,
-          "computed": 107.4987,
-          "published": 107.5
+          "computed": 74.4222,
+          "published": 74.42
         },
         {
           "name": "DCF arithmetic base",
           "pass": true,
-          "computed": 293.6825,
-          "published": 293.68
+          "computed": 167.9896,
+          "published": 167.99
         },
         {
           "name": "DCF arithmetic optimista",
           "pass": true,
-          "computed": 698.2283,
-          "published": 698.23
+          "computed": 389.8441,
+          "published": 389.84
         },
         {
           "name": "Microsoft reported FY2026 CFO CAPEX",
           "pass": true
+        },
+        {
+          "name": "Microsoft FY2026 CFO less CAPEX SBC and lease principal owner-cash bridge",
+          "pass": true,
+          "source_cash_m": 51481,
+          "base_owner_cash_m": 51481
         }
       ],
       "findings": [
@@ -152,41 +164,41 @@
         },
         {
           "ticker": "MSFT",
-          "severity": "P0",
+          "severity": "P1",
           "kind": "Unsupported assumption",
-          "detail": "Base cash 90000m vs FY2026 CFO-CAPEX-SBC 54582m",
-          "impact": "Large unverified increase before first forecast growth year",
-          "required_fix": "Build five-year AI capacity, renewal, finance lease principal and cloud margins bridge",
+          "detail": "Microsoft first-stage 13% growth applied to a lease-adjusted $51.481bn base is not justified by a five-year datacenter segment forecast",
+          "impact": "Uncertain server replacement economics and growth spending",
+          "required_fix": "Build asset replacement, cloud margin and AI return-on-capital forecasts",
           "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
         },
         {
           "ticker": "MSFT",
           "severity": "P1",
           "kind": "Not comparable without bridge",
-          "detail": "Finance lease principal/new financed datacenter assets omitted from simplistic cash CAPEX",
-          "impact": "Reinvestment understates capital intensity",
-          "required_fix": "Bridge leases, depreciation, server capacity and cash/noncash investment",
+          "detail": "New finance-lease datacenter assets and future server renewal not captured as current cash CAPEX",
+          "impact": "Long-run owner cash still uncertain",
+          "required_fix": "Model lease principal beyond FY2026 and noncash server investment commitments",
           "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
         }
       ],
       "sensitivity": {
         "status": "illustrative_audit_sensitivity_not_forecast",
-        "cash_80pct_usd": 234.95,
-        "cash_120pct_usd": 352.42,
-        "cost_of_equity_plus_2pp_usd": 225.68,
-        "cost_of_equity_minus_2pp_usd": 412.49,
-        "cost_of_equity_12pct_usd": 225.68,
-        "cost_of_equity_15pct_usd": 165.41,
+        "cash_80pct_usd": 134.39,
+        "cash_120pct_usd": 201.59,
+        "cost_of_equity_plus_2pp_usd": 129.09,
+        "cost_of_equity_minus_2pp_usd": 235.95,
+        "cost_of_equity_12pct_usd": 129.09,
+        "cost_of_equity_15pct_usd": 94.62,
         "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
       },
-      "P0": 1,
-      "P1": 3,
-      "base_model_value_usd": 293.68
+      "P0": 0,
+      "P1": 4,
+      "base_model_value_usd": 167.99
     },
     "V": {
       "ticker": "V",
       "name": "Visa",
-      "verdict": "Not ready",
+      "verdict": "Ready with caveats",
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
@@ -199,20 +211,78 @@
         {
           "name": "DCF arithmetic conservador",
           "pass": true,
-          "computed": 103.0696,
-          "published": 103.07
+          "computed": 102.7629,
+          "published": 102.76
         },
         {
           "name": "DCF arithmetic base",
           "pass": true,
-          "computed": 211.2692,
-          "published": 211.27
+          "computed": 210.6405,
+          "published": 210.64
         },
         {
           "name": "DCF arithmetic optimista",
           "pass": true,
-          "computed": 434.8338,
-          "published": 434.83
+          "computed": 433.5397,
+          "published": 433.54
+        },
+        {
+          "name": "Visa 5Y issuer-filed CAPEX reconciled to source separate from SEC taxonomy",
+          "pass": true,
+          "five_years": true,
+          "FY2025_capex_m": 1482.0,
+          "bridge_status": "crosswalk_validated",
+          "filled_count": 5,
+          "conflicts": [],
+          "filled": [
+            {
+              "fy_end": "2021-09-30",
+              "metric": "capex",
+              "value": 705000000,
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316122000081/v-20220930.htm",
+              "source_location": "FY2022 10-K cash flows (2021 comparative)",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
+            {
+              "fy_end": "2022-09-30",
+              "metric": "capex",
+              "value": 970000000,
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316122000081/v-20220930.htm",
+              "source_location": "FY2022 10-K investing cash flows",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
+            {
+              "fy_end": "2023-09-30",
+              "metric": "capex",
+              "value": 1059000000,
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+              "source_location": "FY2025 10-K investing cash flows (2023 comparative)",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
+            {
+              "fy_end": "2024-09-30",
+              "metric": "capex",
+              "value": 1257000000,
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+              "source_location": "FY2025 10-K investing cash flows (2024 comparative)",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            },
+            {
+              "fy_end": "2025-09-30",
+              "metric": "capex",
+              "value": 1482000000,
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+              "source_location": "FY2025 10-K investing cash flows",
+              "provenance": "manual_issuer_reported_cash_flow_tieout_not_xbrl"
+            }
+          ]
+        },
+        {
+          "name": "Visa June Class A diluted EPS denominator less September documented B conversion reduction",
+          "pass": true,
+          "june_weighted_diluted_Aeq_m": 1898,
+          "sept_loss_Aeq_m": 1.104107,
+          "provisional_denominator_m": 1896.895893
         }
       ],
       "findings": [
@@ -236,11 +306,11 @@
         },
         {
           "ticker": "V",
-          "severity": "P0",
+          "severity": "P1",
           "kind": "Not comparable without bridge",
-          "detail": "Visa B-class, preferred and participating-security denominator mixes different dates",
-          "impact": "A-equivalent fully diluted share count unapproved",
-          "required_fix": "Reconcile September 2026 8-K class factors with same-date counts and litigation rights",
+          "detail": "Visa 1,898m weighted diluted Q2 EPS less 1.104m Sep conversion reduction is not shares currently outstanding",
+          "impact": "Open-market repurchases and awards between June and October remain unverified",
+          "required_fix": "Update subsequent event/share-repurchase rollforward before approving price per share",
           "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm"
         },
         {
@@ -255,17 +325,17 @@
       ],
       "sensitivity": {
         "status": "illustrative_audit_sensitivity_not_forecast",
-        "cash_80pct_usd": 169.02,
-        "cash_120pct_usd": 253.52,
-        "cost_of_equity_plus_2pp_usd": 163.7,
-        "cost_of_equity_minus_2pp_usd": 294.06,
-        "cost_of_equity_12pct_usd": 163.7,
-        "cost_of_equity_15pct_usd": 121.32,
+        "cash_80pct_usd": 168.51,
+        "cash_120pct_usd": 252.77,
+        "cost_of_equity_plus_2pp_usd": 163.21,
+        "cost_of_equity_minus_2pp_usd": 293.18,
+        "cost_of_equity_12pct_usd": 163.21,
+        "cost_of_equity_15pct_usd": 120.96,
         "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
       },
-      "P0": 1,
-      "P1": 3,
-      "base_model_value_usd": 211.27
+      "P0": 0,
+      "P1": 4,
+      "base_model_value_usd": 210.64
     },
     "MA": {
       "ticker": "MA",
@@ -297,6 +367,17 @@
           "pass": true,
           "computed": 743.5945,
           "published": 743.59
+        },
+        {
+          "name": "Mastercard 5Y reported GAAP net income cash-to-earnings source bridge",
+          "pass": true,
+          "five_year_net_income_m": [
+            8687.0,
+            9930.0,
+            11195.0,
+            12874.0,
+            14968.0
+          ]
         }
       ],
       "findings": [
@@ -345,7 +426,7 @@
     "TXN": {
       "ticker": "TXN",
       "name": "Texas Instruments",
-      "verdict": "Not ready",
+      "verdict": "Ready with caveats",
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
@@ -379,6 +460,13 @@
           "gaap_proxy_m": 7318,
           "subsidy_m": 1104,
           "adjusted_m": 8422
+        },
+        {
+          "name": "TI LTM 2026 GAAP CFO-CAPEX less through-cycle analyst reserve",
+          "pass": true,
+          "ltm_gaap_cash_m": 7318,
+          "illustrative_cycle_reserve_m": 1818,
+          "model_base_cash_m": 5500
         }
       ],
       "findings": [
@@ -393,11 +481,11 @@
         },
         {
           "ticker": "TXN",
-          "severity": "P0",
+          "severity": "P1",
           "kind": "Unsupported assumption",
-          "detail": "TI base cash 5500m vs FY2025 FCF 2603.0m",
-          "impact": "High assumption for fab utilization and CAPEX reset",
-          "required_fix": "Construct through-cycle capacity utilization, CHIPS, depreciation and CAPEX plan",
+          "detail": "TXN analyst cycle reserve $1.818bn used to adjust 2026 LTM GAAP FCF is not equivalent to audited maintenance CAPEX",
+          "impact": "Longer-run fab utilization and capital replacement schedule not demonstrated",
+          "required_fix": "Reconcile utilization, inventory and facility CAPEX commitments through 2030",
           "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm"
         },
         {
@@ -420,48 +508,12 @@
         "cost_of_equity_15pct_usd": 61.85,
         "caveat": "No changes to source scenario; sensitivity of the original cash baseline only. Does not incorporate operating-stage or accounting bridge changes."
       },
-      "P0": 1,
-      "P1": 2,
+      "P0": 0,
+      "P1": 3,
       "base_model_value_usd": 97.4
     }
   },
   "issue_log": [
-    {
-      "ticker": "ADBE",
-      "severity": "P0",
-      "kind": "Unsupported assumption",
-      "detail": "Adobe 9M2026 acquisitions cash 1560m omitted from normalized owner cash",
-      "impact": "If acquisitions sustain growth, cost of reinvestment understated",
-      "required_fix": "Model acquisitions separately from ordinary CAPEX, without assuming every acquisition repeats",
-      "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
-    },
-    {
-      "ticker": "MSFT",
-      "severity": "P0",
-      "kind": "Unsupported assumption",
-      "detail": "Base cash 90000m vs FY2026 CFO-CAPEX-SBC 54582m",
-      "impact": "Large unverified increase before first forecast growth year",
-      "required_fix": "Build five-year AI capacity, renewal, finance lease principal and cloud margins bridge",
-      "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
-    },
-    {
-      "ticker": "V",
-      "severity": "P0",
-      "kind": "Not comparable without bridge",
-      "detail": "Visa B-class, preferred and participating-security denominator mixes different dates",
-      "impact": "A-equivalent fully diluted share count unapproved",
-      "required_fix": "Reconcile September 2026 8-K class factors with same-date counts and litigation rights",
-      "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm"
-    },
-    {
-      "ticker": "TXN",
-      "severity": "P0",
-      "kind": "Unsupported assumption",
-      "detail": "TI base cash 5500m vs FY2025 FCF 2603.0m",
-      "impact": "High assumption for fab utilization and CAPEX reset",
-      "required_fix": "Construct through-cycle capacity utilization, CHIPS, depreciation and CAPEX plan",
-      "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm"
-    },
     {
       "ticker": "ADBE",
       "severity": "P1",
@@ -469,6 +521,15 @@
       "detail": "Current diluted shares assembled from dated basic outstanding and weighted-average EPS dilution",
       "impact": "Forward share count can depart from observed EPS weighted average",
       "required_fix": "Reconcile outstanding classes, options, RSUs, convertibles and subsequent events",
+      "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+    },
+    {
+      "ticker": "ADBE",
+      "severity": "P1",
+      "kind": "Unsupported assumption",
+      "detail": "Adobe recurring future M&A reserve 350m is an analyst stress, not proved recurring",
+      "impact": "Revenue growth and acquisition cadence must be connected",
+      "required_fix": "Build explicit business acquisition dependence scenarios and reconcile organic growth",
       "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
     },
     {
@@ -501,10 +562,19 @@
     {
       "ticker": "MSFT",
       "severity": "P1",
+      "kind": "Unsupported assumption",
+      "detail": "Microsoft first-stage 13% growth applied to a lease-adjusted $51.481bn base is not justified by a five-year datacenter segment forecast",
+      "impact": "Uncertain server replacement economics and growth spending",
+      "required_fix": "Build asset replacement, cloud margin and AI return-on-capital forecasts",
+      "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+    },
+    {
+      "ticker": "MSFT",
+      "severity": "P1",
       "kind": "Not comparable without bridge",
-      "detail": "Finance lease principal/new financed datacenter assets omitted from simplistic cash CAPEX",
-      "impact": "Reinvestment understates capital intensity",
-      "required_fix": "Bridge leases, depreciation, server capacity and cash/noncash investment",
+      "detail": "New finance-lease datacenter assets and future server renewal not captured as current cash CAPEX",
+      "impact": "Long-run owner cash still uncertain",
+      "required_fix": "Model lease principal beyond FY2026 and noncash server investment commitments",
       "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
     },
     {
@@ -524,6 +594,15 @@
       "impact": "Forward share count can depart from observed EPS weighted average",
       "required_fix": "Reconcile outstanding classes, options, RSUs, convertibles and subsequent events",
       "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm"
+    },
+    {
+      "ticker": "V",
+      "severity": "P1",
+      "kind": "Not comparable without bridge",
+      "detail": "Visa 1,898m weighted diluted Q2 EPS less 1.104m Sep conversion reduction is not shares currently outstanding",
+      "impact": "Open-market repurchases and awards between June and October remain unverified",
+      "required_fix": "Update subsequent event/share-repurchase rollforward before approving price per share",
+      "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm"
     },
     {
       "ticker": "V",
@@ -568,6 +647,15 @@
       "detail": "Current diluted shares assembled from dated basic outstanding and weighted-average EPS dilution",
       "impact": "Forward share count can depart from observed EPS weighted average",
       "required_fix": "Reconcile outstanding classes, options, RSUs, convertibles and subsequent events",
+      "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm"
+    },
+    {
+      "ticker": "TXN",
+      "severity": "P1",
+      "kind": "Unsupported assumption",
+      "detail": "TXN analyst cycle reserve $1.818bn used to adjust 2026 LTM GAAP FCF is not equivalent to audited maintenance CAPEX",
+      "impact": "Longer-run fab utilization and capital replacement schedule not demonstrated",
+      "required_fix": "Reconcile utilization, inventory and facility CAPEX commitments through 2030",
       "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm"
     },
     {

@@ -1,6 +1,6 @@
 {
   "schema": "ciip-per-share-valuation-v1",
-  "generated_at": "2026-10-25T12:10:35.074437+00:00",
+  "generated_at": "2026-10-25T12:20:40.572974+00:00",
   "as_of": "2026-10-25",
   "source_review_as_of": "2026-10-24",
   "evidence_urls": {
@@ -10,7 +10,7 @@
   },
   "readiness": "SCREEN_GRADE_NOT_DECISION_READY",
   "not_yet_modelled": [],
-  "methodology": "Discount future hypothetical owner-cash proxy at cost of equity; do not add cash or subtract debt a second time. Does not guarantee FCFE or make forecasts official.",
+  "methodology": "Discount future hypothetical owner cash after stated strategic acquisition reinvestment reserve, at cost of equity; do not double subtract past acquisition cash, SBC, cash or debt. No guaranteed FCFE or official issuer forecast.",
   "companies": {
     "MSFT": {
       "ticker": "MSFT",
@@ -61,106 +61,112 @@
         "capex_m": 115948,
         "sbc_m": 12405,
         "derived_owner_cash_m": 54582,
-        "forward_base_justification": "FY2026 base 54.582bn after SBC; base forward 90bn requires lower net future datacenter reinvestment or higher CFO, neither management-guaranteed."
+        "forward_base_justification": "Start with FY2026 CFO 182,935 − CAPEX 115,948 − SBC 12,405 − finance lease principal cash 3,101 = 51,481m, preserving economic maintenance/growth CAPEX and avoiding a 65% unexplained starting uplift. Forecast 13% annual first stage is explicitly a stress assumption, not reported guidance.",
+        "finance_lease_principal_2026_m": 3101,
+        "forward_owner_cash_2026_m": 51481
       },
-      "forward_convention": "owner_cf1_m is pre-projection annual cash baseline; year 1 applies g1 to this baseline",
+      "forward_convention": "owner_cf1_m is gross pre-projection annual cash; deduct analyst recurring acquisition reserve before applying g1; this is not subtracting prior spent acquisition cash twice",
       "scenario_values": {
         "conservador": {
           "analyst_assumptions": {
-            "owner_cf1_m": 65000,
+            "owner_cf1_m": 45000,
             "g1_pct": 6,
             "g2_pct": 3,
             "ke_pct": 12,
             "t_pct": 2
           },
-          "equity_aggregate_musd": 800816.44,
-          "equity_per_share_usd": 107.5,
+          "owner_cash_after_recurring_reinvestment_m": 45000,
+          "equity_aggregate_musd": 554411.38,
+          "equity_per_share_usd": 74.42,
           "share_count_sensitivity": {
-            "low_dilution_value_usd": 107.85,
-            "high_dilution_value_usd": 106.73
+            "low_dilution_value_usd": 74.66,
+            "high_dilution_value_usd": 73.89
           },
           "terminal_weight_pct": 41.35,
-          "implied_price_to_value_pct": 487.9,
-          "margin_price_to_value_pct": -387.9,
+          "implied_price_to_value_pct": 704.8,
+          "margin_price_to_value_pct": -604.8,
           "cashflows": [
-            68900.0,
-            73034.0,
-            77416.04,
-            82061.002,
-            86984.663,
-            89594.202,
-            92282.028,
-            95050.489,
-            97902.004,
-            100839.064
+            47700.0,
+            50562.0,
+            53595.72,
+            56811.463,
+            60220.151,
+            62026.756,
+            63887.558,
+            65804.185,
+            67778.31,
+            69811.66
           ]
         },
         "base": {
           "analyst_assumptions": {
-            "owner_cf1_m": 90000,
+            "owner_cf1_m": 51481,
             "g1_pct": 13,
             "g2_pct": 7,
             "ke_pct": 10,
             "t_pct": 2.5
           },
-          "equity_aggregate_musd": 2187800.8,
-          "equity_per_share_usd": 293.68,
+          "owner_cash_after_recurring_reinvestment_m": 51481,
+          "equity_aggregate_musd": 1251446.37,
+          "equity_per_share_usd": 167.99,
           "share_count_sensitivity": {
-            "low_dilution_value_usd": 294.63,
-            "high_dilution_value_usd": 291.57
+            "low_dilution_value_usd": 168.53,
+            "high_dilution_value_usd": 166.78
           },
           "terminal_weight_pct": 56.01,
-          "implied_price_to_value_pct": 178.6,
-          "margin_price_to_value_pct": -78.6,
+          "implied_price_to_value_pct": 312.2,
+          "margin_price_to_value_pct": -212.2,
           "cashflows": [
-            101700.0,
-            114921.0,
-            129860.73,
-            146742.625,
-            165819.166,
-            177426.508,
-            189846.363,
-            203135.609,
-            217355.101,
-            232569.958
+            58173.53,
+            65736.089,
+            74281.78,
+            83938.412,
+            94850.405,
+            101489.934,
+            108594.229,
+            116195.825,
+            124329.533,
+            133032.6
           ]
         },
         "optimista": {
           "analyst_assumptions": {
-            "owner_cf1_m": 120000,
+            "owner_cf1_m": 67000,
             "g1_pct": 18,
             "g2_pct": 9,
             "ke_pct": 8.5,
             "t_pct": 3
           },
-          "equity_aggregate_musd": 5201483.44,
-          "equity_per_share_usd": 698.23,
+          "owner_cash_after_recurring_reinvestment_m": 67000,
+          "equity_aggregate_musd": 2904161.59,
+          "equity_per_share_usd": 389.84,
           "share_count_sensitivity": {
-            "low_dilution_value_usd": 700.49,
-            "high_dilution_value_usd": 693.2
+            "low_dilution_value_usd": 391.1,
+            "high_dilution_value_usd": 387.04
           },
           "terminal_weight_pct": 67.26,
-          "implied_price_to_value_pct": 75.1,
-          "margin_price_to_value_pct": 24.9,
+          "implied_price_to_value_pct": 134.5,
+          "margin_price_to_value_pct": -34.5,
           "cashflows": [
-            141600.0,
-            167088.0,
-            197163.84,
-            232653.331,
-            274530.931,
-            299238.715,
-            326170.199,
-            355525.517,
-            387522.813,
-            422399.867
+            79060.0,
+            93290.8,
+            110083.144,
+            129898.11,
+            153279.77,
+            167074.949,
+            182111.694,
+            198501.747,
+            216366.904,
+            235839.925
           ]
         }
       },
-      "base_cash_required_to_match_last_price_musd": 160739.2,
+      "base_cash_required_to_match_last_price_musd": 160737.5,
       "additional_issues": [
         "CAPEX FY2026 is massive relative to CFO",
         "Cash owner proxy assumes datacenter cycle change",
-        "Lease commitments and customer economics need model detail"
+        "Lease commitments and customer economics need model detail",
+        "Finance lease principal deducted once, new capitalized lease assets NOT added to current cash CAPEX if future principal handled."
       ],
       "next_required_checks": [
         "Current fully diluted share count has not been certified",
@@ -223,9 +229,13 @@
         "fcf_normalized_m": 7873,
         "sbc_median_m": 1833,
         "owner_cash_m": 6040,
-        "forward_base_justification": "Forward owner 6.5bn vs trailing normalized 6.04bn requires ~7.6% improvement; forecast not observed."
+        "forward_base_justification": "FY2025 source cash CFO 10,031 − CAPEX 179 − SBC 1,942 = $7,910m. Forward gross base $6,500m, less $350m annual strategic M&A reinvestment stress = $6,150m pre-growth, below FY2025; FY2026 Semrush acquisition paid $1,560m in 9M is a separate sunk transaction.",
+        "acquisition_cash_9m2026_m": 1560,
+        "acquisition_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+        "acquisition_reinvestment_policy": "Past 9M26 Semrush M&A cash is sunk; not subtracted again as already paid. Analyst chooses annual recurring future M&A reserve ($350m base, $700m bear, $0 bull) as continuing strategic reinvestment stress rather than representing all acquisitions as maintenance CAPEX.",
+        "owner_cash_2025_after_sbc_m": 7910
       },
-      "forward_convention": "owner_cf1_m is pre-projection annual cash baseline; year 1 applies g1 to this baseline",
+      "forward_convention": "owner_cf1_m is gross pre-projection annual cash; deduct analyst recurring acquisition reserve before applying g1; this is not subtracting prior spent acquisition cash twice",
       "scenario_values": {
         "conservador": {
           "analyst_assumptions": {
@@ -233,28 +243,30 @@
             "g1_pct": 3,
             "g2_pct": 2,
             "ke_pct": 12,
-            "t_pct": 2
+            "t_pct": 2,
+            "annual_acquisition_reinvestment_m": 700
           },
-          "equity_aggregate_musd": 53129.22,
-          "equity_per_share_usd": 136.33,
+          "owner_cash_after_recurring_reinvestment_m": 4300,
+          "equity_aggregate_musd": 45691.13,
+          "equity_per_share_usd": 117.25,
           "share_count_sensitivity": {
-            "low_dilution_value_usd": 136.51,
-            "high_dilution_value_usd": 132.79
+            "low_dilution_value_usd": 117.4,
+            "high_dilution_value_usd": 114.2
           },
           "terminal_weight_pct": 39.56,
-          "implied_price_to_value_pct": 193.5,
-          "margin_price_to_value_pct": -93.5,
+          "implied_price_to_value_pct": 225.0,
+          "margin_price_to_value_pct": -125.0,
           "cashflows": [
-            5150.0,
-            5304.5,
-            5463.635,
-            5627.544,
-            5796.37,
-            5912.298,
-            6030.544,
-            6151.155,
-            6274.178,
-            6399.661
+            4429.0,
+            4561.87,
+            4698.726,
+            4839.688,
+            4984.879,
+            5084.576,
+            5186.268,
+            5289.993,
+            5395.793,
+            5503.709
           ]
         },
         "base": {
@@ -263,28 +275,30 @@
             "g1_pct": 8,
             "g2_pct": 4,
             "ke_pct": 10.5,
-            "t_pct": 2.5
+            "t_pct": 2.5,
+            "annual_acquisition_reinvestment_m": 350
           },
-          "equity_aggregate_musd": 109468.61,
-          "equity_per_share_usd": 280.9,
+          "owner_cash_after_recurring_reinvestment_m": 6150,
+          "equity_aggregate_musd": 103574.15,
+          "equity_per_share_usd": 265.78,
           "share_count_sensitivity": {
-            "low_dilution_value_usd": 281.27,
-            "high_dilution_value_usd": 273.6
+            "low_dilution_value_usd": 266.12,
+            "high_dilution_value_usd": 258.87
           },
           "terminal_weight_pct": 50.11,
-          "implied_price_to_value_pct": 93.9,
-          "margin_price_to_value_pct": 6.1,
+          "implied_price_to_value_pct": 99.3,
+          "margin_price_to_value_pct": 0.7,
           "cashflows": [
-            7020.0,
-            7581.6,
-            8188.128,
-            8843.178,
-            9550.632,
-            9932.658,
-            10329.964,
-            10743.163,
-            11172.889,
-            11619.805
+            6642.0,
+            7173.36,
+            7747.229,
+            8367.007,
+            9036.368,
+            9397.822,
+            9773.735,
+            10164.685,
+            10571.272,
+            10994.123
           ]
         },
         "optimista": {
@@ -293,8 +307,10 @@
             "g1_pct": 12,
             "g2_pct": 6,
             "ke_pct": 9,
-            "t_pct": 3
+            "t_pct": 3,
+            "annual_acquisition_reinvestment_m": 0
           },
+          "owner_cash_after_recurring_reinvestment_m": 8000,
           "equity_aggregate_musd": 222409.51,
           "equity_per_share_usd": 570.72,
           "share_count_sensitivity": {
@@ -318,11 +334,12 @@
           ]
         }
       },
-      "base_cash_required_to_match_last_price_musd": 6104.8,
+      "base_cash_required_to_match_last_price_musd": 6454.6,
       "additional_issues": [
         "SBC and repurchases need consistent economic treatment",
         "Adobe AI retention/pricing needs verification",
-        "Current basic and quarterly weighted-average are different dates"
+        "Current basic and quarterly weighted-average are different dates",
+        "M&A cost ($1.56bn acquired 9M2026) is distinguished from forecast analyst recurring reinvestment reserve; not subtracted twice."
       ],
       "next_required_checks": [
         "Current fully diluted share count has not been certified",
@@ -376,15 +393,15 @@
           "seriesC": 2.142
         },
         "employee_participating_equiv_m": 15,
-        "formula": "July 21 ordinary classes * September 18 conversion rates, plus June 30 preferred as-converted ~10.308m, plus 15m period-weighted participating instruments (assumption; not dated current)",
+        "formula": "Q2 2026 10-Q Note 12 Class A diluted weighted average 1,898m including assumed B/C conversion + participating securities + employee awards, minus 1.104107m (B1/B2/B3 Class A equivalents lost under Sept 23 8-K). No second addition of preferred/participating or B shares.",
         "total_common_Aeq_m": 1865.9424511639,
         "preferred_Aeq_m": 10.308,
-        "central_m": 1891.2504511639,
-        "low_m": 1876.2504511639,
-        "high_m": 1909,
-        "upper_stress_basis": "Mixed measurement dates and speculative stock awards: July ordinary share amounts versus Sept exchange factors; no SEC-certified spot fully diluted denominator",
-        "confidence": "provisional_class_equivalent",
-        "status": "updated_sep2026_8k_rates_mixed_dates",
+        "central_m": 1896.895893,
+        "low_m": 1878.895893,
+        "high_m": 1917,
+        "upper_stress_basis": "18m share haircut and 20.1m extra dilution stress over 1,896.896m base. 10-Q weighted count is not currently outstanding; not certified for investment.",
+        "confidence": "reported_eps_denominator_with_documented_8k_adjustment_not_current_shares",
+        "status": "single_quarter_eps_diluted_with_september_class_B_event_adjustment",
         "evidence": [
           {
             "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
@@ -408,9 +425,25 @@
               "escrow_deposit_musd": 405
             },
             "note": "Supersedes 2026-06-25 conversion factors; exact class counts date July 21 not same as conversion date September 18"
+          },
+          {
+            "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+            "location": "Note 12 Earnings Per Share, 3M June 30 2026 diluted Class A common stock: 1,898m",
+            "values": {
+              "diluted_Aeq_m": 1898
+            },
+            "note": "Includes equivalent B, C, participating and employee awards already. The Sept event is a finite overlay; share buybacks after June and subsequent issuances not confirmed"
           }
         ],
-        "conversion_source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm"
+        "conversion_source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000121/v-20260918.htm",
+        "method": "SEC Q2 diluted weighted-average class A economic equivalent shares, adjusted by exact disclosed September 2026 8-K conversion decrease",
+        "date_common_equivalent": "2026-06-30",
+        "date_conversion_adjustment": "2026-09-18",
+        "september_B1_drop_m": 0.009804,
+        "september_B2_drop_m": 0.004377,
+        "september_B3_drop_m": 1.089926,
+        "june_diluted_Aeq_weighted_m": 1898,
+        "sept_Bdrop_total_m": 1.104107
       },
       "cash_anchor": {
         "anchor": "FY2025 CFO−purchases of property equipment and technology",
@@ -420,9 +453,17 @@
         "fy2026_9m_cfo_m": 16342,
         "fy2026_9m_capex_m": 1178,
         "fy2026_9m_fcf_m": 15164,
-        "forward_base_justification": "Forward owner 19bn, haircut versus 21.577bn FY2025 for settlement/litigation and client incentive uncertainties; no FY2026 10-K at analysis date."
+        "forward_base_justification": "FY2025 10-K CFO 23,059 − property/equipment/technology CAPEX 1,482 = FCF proxy 21,577m. Forward base 19,000m includes discretionary $2,577m conservatism for litigation escrow/incentive volatility; this is not GAAP recurring FCFE.",
+        "capex_source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+        "capex_five_years_m": {
+          "2021": 705,
+          "2022": 970,
+          "2023": 1059,
+          "2024": 1257,
+          "2025": 1482
+        }
       },
-      "forward_convention": "owner_cf1_m is pre-projection annual cash baseline; year 1 applies g1 to this baseline",
+      "forward_convention": "owner_cf1_m is gross pre-projection annual cash; deduct analyst recurring acquisition reserve before applying g1; this is not subtracting prior spent acquisition cash twice",
       "scenario_values": {
         "conservador": {
           "analyst_assumptions": {
@@ -432,15 +473,16 @@
             "ke_pct": 11.5,
             "t_pct": 2
           },
+          "owner_cash_after_recurring_reinvestment_m": 15000,
           "equity_aggregate_musd": 194930.44,
-          "equity_per_share_usd": 103.07,
+          "equity_per_share_usd": 102.76,
           "share_count_sensitivity": {
-            "low_dilution_value_usd": 103.89,
-            "high_dilution_value_usd": 102.11
+            "low_dilution_value_usd": 103.75,
+            "high_dilution_value_usd": 101.69
           },
           "terminal_weight_pct": 43.16,
-          "implied_price_to_value_pct": 395.8,
-          "margin_price_to_value_pct": -295.8,
+          "implied_price_to_value_pct": 397.0,
+          "margin_price_to_value_pct": -297.0,
           "cashflows": [
             15900.0,
             16854.0,
@@ -462,15 +504,16 @@
             "ke_pct": 10,
             "t_pct": 2.5
           },
+          "owner_cash_after_recurring_reinvestment_m": 19000,
           "equity_aggregate_musd": 399563.04,
-          "equity_per_share_usd": 211.27,
+          "equity_per_share_usd": 210.64,
           "share_count_sensitivity": {
-            "low_dilution_value_usd": 212.96,
-            "high_dilution_value_usd": 209.3
+            "low_dilution_value_usd": 212.66,
+            "high_dilution_value_usd": 208.43
           },
           "terminal_weight_pct": 53.88,
-          "implied_price_to_value_pct": 193.1,
-          "margin_price_to_value_pct": -93.1,
+          "implied_price_to_value_pct": 193.7,
+          "margin_price_to_value_pct": -93.7,
           "cashflows": [
             21090.0,
             23409.9,
@@ -492,15 +535,16 @@
             "ke_pct": 8.5,
             "t_pct": 3
           },
+          "owner_cash_after_recurring_reinvestment_m": 23000,
           "equity_aggregate_musd": 822379.6,
-          "equity_per_share_usd": 434.83,
+          "equity_per_share_usd": 433.54,
           "share_count_sensitivity": {
-            "low_dilution_value_usd": 438.31,
-            "high_dilution_value_usd": 430.79
+            "low_dilution_value_usd": 437.69,
+            "high_dilution_value_usd": 428.99
           },
           "terminal_weight_pct": 65.35,
-          "implied_price_to_value_pct": 93.8,
-          "margin_price_to_value_pct": 6.2,
+          "implied_price_to_value_pct": 94.1,
+          "margin_price_to_value_pct": 5.9,
           "cashflows": [
             26450.0,
             30417.5,
@@ -515,11 +559,12 @@
           ]
         }
       },
-      "base_cash_required_to_match_last_price_musd": 36685.2,
+      "base_cash_required_to_match_last_price_musd": 36794.9,
       "additional_issues": [
         "No completed FY2026 accounts as of Oct25",
         "Multiclass and litigation conversion rates change",
-        "Restricted litigation settlement cash and client incentive economics"
+        "Restricted litigation settlement cash and client incentive economics",
+        "The September 8-K reduces B-equivalent shares; Q2 EPS denominator already includes B/C and participating securities, which must not be added twice."
       ],
       "next_required_checks": [
         "Current fully diluted share count has not been certified",
@@ -590,9 +635,17 @@
         "capex2025_m": 489,
         "fcf2025_m": 17159,
         "net_income2025_m": 14968,
-        "forward_base_justification": "Forward cash 16bn below FY25 CFO−CAPEX 17.159bn, but above FY25 net income; incentive settlement movements not fully normalized."
+        "forward_base_justification": "FY2025 10-K net income $14,968m, CFO $17,648m, CAPEX $489m. Forward FCF owner $16,000m is 7% below CFO-CAPEX; test settlement/incentive timing and 95% income cap separately.",
+        "official_10k_net_income_series_m": {
+          "2021": 8687,
+          "2022": 9930,
+          "2023": 11195,
+          "2024": 12874,
+          "2025": 14968
+        },
+        "net_income_10k_source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
       },
-      "forward_convention": "owner_cf1_m is pre-projection annual cash baseline; year 1 applies g1 to this baseline",
+      "forward_convention": "owner_cf1_m is gross pre-projection annual cash; deduct analyst recurring acquisition reserve before applying g1; this is not subtracting prior spent acquisition cash twice",
       "scenario_values": {
         "conservador": {
           "analyst_assumptions": {
@@ -602,6 +655,7 @@
             "ke_pct": 11.5,
             "t_pct": 2
           },
+          "owner_cash_after_recurring_reinvestment_m": 12000,
           "equity_aggregate_musd": 162386.81,
           "equity_per_share_usd": 185.16,
           "share_count_sensitivity": {
@@ -632,6 +686,7 @@
             "ke_pct": 10,
             "t_pct": 2.5
           },
+          "owner_cash_after_recurring_reinvestment_m": 16000,
           "equity_aggregate_musd": 336474.14,
           "equity_per_share_usd": 383.66,
           "share_count_sensitivity": {
@@ -662,6 +717,7 @@
             "ke_pct": 8.5,
             "t_pct": 3
           },
+          "owner_cash_after_recurring_reinvestment_m": 19000,
           "equity_aggregate_musd": 652139.8,
           "equity_per_share_usd": 743.59,
           "share_count_sensitivity": {
@@ -689,7 +745,8 @@
       "additional_issues": [
         "Customer incentives and prepaid balances distort CFO timing",
         "Litigation settlements and open antitrust cases",
-        "Economic class B conversion and RSU time drift"
+        "Economic class B conversion and RSU time drift",
+        "The sector model income cap is a stress, not a direct owner-FCFE accounting identity."
       ],
       "next_required_checks": [
         "Current fully diluted share count has not been certified",
@@ -751,9 +808,13 @@
         "fy2025_fcf_m": 2603,
         "fy2025_capex_m": 4550,
         "company_adjusted_fcf_LTM_m": 8422,
-        "forward_base_justification": "Forward owner 5.5bn presumes continued 2026 fab CAPEX downshift and CFO resilience, excludes CHIPS receipts as recurring; FY2025 FCF only 2.603bn."
+        "forward_base_justification": "Q3 2026 LTM GAAP CFO 9,896 − CAPEX 2,578 = FCF proxy 7,318m. Forward base uses $5,500m after an explicit analyst $1,818m through-cycle CAPEX/cash normalization reserve. Separate CHIPS direct cash $1,104m added to issuer adjusted FCF ($8,422m); exclude it from owner recurring base.",
+        "ltm_fcf_gaap_proxy_m": 7318,
+        "ltm_owner_after_cycle_reserve_m": 5500,
+        "cycle_reserve_model_m": 1818,
+        "ltm_incentive_cash_nonrecurring_m": 1104
       },
-      "forward_convention": "owner_cf1_m is pre-projection annual cash baseline; year 1 applies g1 to this baseline",
+      "forward_convention": "owner_cf1_m is gross pre-projection annual cash; deduct analyst recurring acquisition reserve before applying g1; this is not subtracting prior spent acquisition cash twice",
       "scenario_values": {
         "conservador": {
           "analyst_assumptions": {
@@ -763,6 +824,7 @@
             "ke_pct": 12,
             "t_pct": 1.5
           },
+          "owner_cash_after_recurring_reinvestment_m": 2200,
           "equity_aggregate_musd": 21435.2,
           "equity_per_share_usd": 23.28,
           "share_count_sensitivity": {
@@ -793,6 +855,7 @@
             "ke_pct": 10.5,
             "t_pct": 2
           },
+          "owner_cash_after_recurring_reinvestment_m": 5500,
           "equity_aggregate_musd": 89683.89,
           "equity_per_share_usd": 97.4,
           "share_count_sensitivity": {
@@ -823,6 +886,7 @@
             "ke_pct": 9,
             "t_pct": 2.5
           },
+          "owner_cash_after_recurring_reinvestment_m": 8000,
           "equity_aggregate_musd": 204298.08,
           "equity_per_share_usd": 221.88,
           "share_count_sensitivity": {
@@ -850,7 +914,8 @@
       "additional_issues": [
         "CHIPS grants are not recurring operating cash",
         "Industrial CAPEX and utilization cyclical",
-        "Inventory and customer end markets uncertain"
+        "Inventory and customer end markets uncertain",
+        "Cyclical normalization reserve $1.818bn is illustrative and must be recalculated with fab utilization and maintenance CAPEX detail."
       ],
       "next_required_checks": [
         "Current fully diluted share count has not been certified",
