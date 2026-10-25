@@ -119,7 +119,9 @@ def audit_ticker(t,c,notes,sec,record,model):
     and not official.get("conflicts") and passed(capex_m,reported_capex,.001)
     and len([i for i in official.get("filled",[]) if i["metric"]=="capex"])>=3)
   checks.append({"name":"Visa 5Y issuer-filed CAPEX reconciled to source separate from SEC taxonomy",
-    "pass":capex_ok,"five_years":all_five,"FY2025_capex_m":capex_m})
+    "pass":capex_ok,"five_years":all_five,"FY2025_capex_m":capex_m,
+    "bridge_status":official.get("status"),"filled_count":len(official.get("filled",[])),
+    "conflicts":official.get("conflicts"),"filled":official.get("filled")})
   if not capex_ok:
    flag("P0","Not comparable without bridge",
         "Visa FY2021–2025 reported investments not reconciled across original 10-K cash flow tables",
