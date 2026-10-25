@@ -149,8 +149,14 @@
       ],
       "quarterlyCrossCheck": {
         "asOf": "2026-09-27",
-        "status": "newer_quarterly_balance_available_requires_exact_cash_debt_lease_source_reconciliation",
-        "sourceUrl": "https://www.asml.com/en/investors/financial-results"
+        "cashAndEquivalentsEURMillions": 8030.9,
+        "shortTermInvestmentsEURMillions": 4704.2,
+        "totalLiquidityEURMillions": 12735.1,
+        "longTermDebtEURMillions": 1963,
+        "currentDebtEURMillions": null,
+        "currentDebtVerification": "pending precise statement subrow",
+        "updatedEquityBridgeStatus": "blocked until current debt, lease and other claims reconciled",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/937966/000162828026065813/financial_statementsxusx.htm"
       }
     },
     "DNP.WA": {
