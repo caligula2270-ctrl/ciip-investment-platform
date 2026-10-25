@@ -1,6 +1,6 @@
 {
   "schema": "qvr-closeout-v12",
-  "generatedAt": "2026-10-25T20:43:50.448356+00:00",
+  "generatedAt": "2026-10-25T20:45:02.968008+00:00",
   "models": {
     "ADBE": {
       "company": "ADBE",
@@ -102,7 +102,7 @@
         "Terminal value after acquisition funding",
         "Latest acquisition ROIC and available capital"
       ],
-      "previousResearchBase": 892.06,
+      "previousResearchBase": 892.17,
       "status": "material_claims_missing",
       "acquisitionCommitments": {
         "cashConsiderationUSDMillions": 669,

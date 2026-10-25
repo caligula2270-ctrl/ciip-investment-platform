@@ -45,13 +45,13 @@
         "tradingCurrency": "CAD",
         "sharesMillions": 21.19153,
         "fx": {
-          "rate": 1.4043,
+          "rate": 1.40447,
           "date": "2026-10-25",
           "source": "https://query1.finance.yahoo.com/v8/finance/chart/CAD%3DX?range=5d&interval=1d"
         },
-        "bear": 827.9,
-        "base": 1198.88,
-        "bull": 1636.95,
+        "bear": 828.0,
+        "base": 1199.02,
+        "bull": 1637.15,
         "quotePrice": 3408.5701,
         "quoteDate": "2026-10-22",
         "indicativeMarginPct": -184.3,
@@ -207,5 +207,5 @@
       }
     }
   },
-  "generatedAt": "2026-10-25T20:43:49.142303+00:00"
+  "generatedAt": "2026-10-25T20:45:01.663817+00:00"
 }

@@ -1,6 +1,119 @@
 {
   "schema": "qvr-evidence-audit-v13",
-  "status": "pending_first_execution",
-  "models": {},
-  "modelSignalsEnabled": false
+  "generatedAt": "2026-10-25T20:45:03.024764+00:00",
+  "modelSignalsEnabled": false,
+  "models": {
+    "ADBE": {
+      "ticker": "ADBE",
+      "verifiedBuyPrice": null,
+      "reviewStatus": "requires_further_filing_evidence",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+      ],
+      "missingSourceItems": [
+        "Cash operating minimum",
+        "Cash reconciliation with 2026 Semrush purchase",
+        "Current diluted share count and repurchase financing",
+        "Incremental Semrush earnings and organic vs inorganic"
+      ],
+      "cashFlowFramework": "FCFE-like CFO minus capex minus equity compensation; subtracting net debt again is not authorized",
+      "inputAsOf": "2026-08-28",
+      "normalizationCheck": "matched FY FCF and revenue; historical methodology corrected"
+    },
+    "INTU": {
+      "ticker": "INTU",
+      "verifiedBuyPrice": null,
+      "reviewStatus": "requires_further_filing_evidence",
+      "sources": [
+        "https://investors.intuit.com/sec-filings/all-sec-filings/content/0000896878-26-000037/intu-20260731.htm"
+      ],
+      "missingSourceItems": [
+        "Remaining finance commitments, customer funds excluded",
+        "Intangibles PPE capex 46m bridge",
+        "Buybacks stock awards net shares and leverage funded operations"
+      ],
+      "cashFlowFramework": "FCFE-like CFO minus PPE capex minus equity compensation; management broader capex is an explicit sensitivity only",
+      "inputAsOf": "2026-07-31",
+      "normalizationCheck": "matched FY FCF and revenue; historical methodology corrected"
+    },
+    "CPRT": {
+      "ticker": "CPRT",
+      "verifiedBuyPrice": null,
+      "reviewStatus": "requires_further_filing_evidence",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/900075/000119312526405731/cprt-20260731.htm",
+        "https://www.sec.gov/Archives/edgar/data/1637873/000119312526425225/d139534d8k.htm",
+        "https://www.sec.gov/Archives/edgar/data/900075/000119312526423478/d129535d8k.htm"
+      ],
+      "missingSourceItems": [
+        "Post-ACV 10-Q or pro forma consolidated cash, debt, restricted cash, securities",
+        "ACV acquired normalized cash generation and purchased intangible amortization",
+        "FCF attribution without purchase price double count"
+      ],
+      "cashFlowFramework": "Equity-like operating owner cash; acquisition incremental modeled first, closing cash effect reflected in same-date post-deal balance only",
+      "inputAsOf": "2026-07-31",
+      "remediation": "No double count purchase consideration",
+      "proformaPostAcquisitionBalance": null,
+      "acvROIStatus": "not independently evidenced"
+    },
+    "CSU.TO": {
+      "ticker": "CSU.TO",
+      "verifiedBuyPrice": null,
+      "reviewStatus": "requires_further_filing_evidence",
+      "sources": [
+        "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-second-quarter-ended-june-30-2026-and-declares-quarterly-dividend/"
+      ],
+      "missingSourceItems": [
+        "Realized cohort cash yield, acquisition debt, earnouts and parent vs minority sources",
+        "Terminal value after acquisition funding",
+        "Latest acquisition ROIC and available capital"
+      ],
+      "cashFlowFramework": "FCFA2S already deducts interest, lease, noncontrolling claims per defined non-IFRS methodology; exclude business purchase consideration separately",
+      "inputAsOf": "2026-06-30",
+      "realizedAcquisitionCohortReturns": null,
+      "futureInvestmentBudgetModeledNotObserved": true
+    },
+    "ASML": {
+      "ticker": "ASML",
+      "verifiedBuyPrice": null,
+      "reviewStatus": "requires_further_filing_evidence",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/937966/000162828026065813/financial_statementsxusx.htm"
+      ],
+      "missingSourceItems": [
+        "Current financial debt breakdown",
+        "Leases and restricted liquidity to same quarter",
+        "Nonoperating portfolio marks and financing consistency",
+        "Working capital customer prepayment normalization"
+      ],
+      "cashFlowFramework": "FCFF-like NOPAT after reinvestment, equity claims deducted once only; latest partial debt cannot be declared zero",
+      "inputAsOf": "2026-09-27",
+      "financialDebtCurrent": null,
+      "leaseObligations": null,
+      "proformaEquityBridge": null
+    },
+    "DNP.WA": {
+      "ticker": "DNP.WA",
+      "verifiedBuyPrice": null,
+      "reviewStatus": "requires_further_filing_evidence",
+      "sources": [
+        "https://grupadino.pl/dino-polska-podsumowuje-dzialalnosc-w-pierwszym-polroczu-2026-r/",
+        "https://www.bankier.pl/wiadomosc/Dino-Polska-mialo-w-II-kw-400-1-mln-zl-zysku-netto-j-d-zgodnie-z-oczekiwaniami-opis-9185193.html",
+        "https://grupadino.pl/raporty-gpw/raporty-okresowe/"
+      ],
+      "missingSourceItems": [
+        "Choose one lease framework, cash flow lease principal and rent recast",
+        "Capital expenditure total versus opening stores, logistics, bottle machines",
+        "Historical store maturation cohorts / NWC and shareholder equity bridge"
+      ],
+      "cashFlowFramework": [
+        "Pre-lease operating cash and lease debt included in claims",
+        "After-lease shareholder cash and lease liabilities excluded from debt reconciliation"
+      ],
+      "inputAsOf": "2026-06-30",
+      "remediation": "NOPAT + D&A - reinvestment; provisional D&A based on EBITDA less EBIT",
+      "leaseBridgeStatus": "blocked: IFRS16 ROU depreciation and lease debt/payout alignment",
+      "baseModelAfterDepreciationFix": 22.15
+    }
+  }
 }

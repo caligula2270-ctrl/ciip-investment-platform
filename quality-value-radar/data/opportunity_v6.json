@@ -1,6 +1,6 @@
 {
   "schema": "qvr-v6",
-  "generatedAt": "2026-10-25T20:43:49.386305+00:00",
+  "generatedAt": "2026-10-25T20:45:01.936365+00:00",
   "asOf": "2026-10-25",
   "focus": [
     "ADBE",
@@ -373,17 +373,17 @@
       },
       "scenarios": {
         "bear": {
-          "value": 827.9
+          "value": 828.0
         },
         "base": {
-          "value": 1198.88
+          "value": 1199.02
         },
         "bull": {
-          "value": 1636.95
+          "value": 1637.15
         }
       },
-      "baseValue": 1198.88,
-      "entryPrice": 745.11,
+      "baseValue": 1199.02,
+      "entryPrice": 745.2,
       "marginVsBasePct": -184.3,
       "priceToEntryGapPct": -78.1,
       "warnings": [
