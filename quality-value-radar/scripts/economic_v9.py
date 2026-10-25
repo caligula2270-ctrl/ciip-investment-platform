@@ -12,7 +12,10 @@ def dcf(cash,rate,multiple):
 def record(values, cash,rate,multiple,shares,fx=1):
  enterprise=dcf(cash,rate,multiple)
  if not enterprise or shares<=0:return {"status":"insufficient"}
- return {"status":"illustrative_unreconciled_equity_proxy","valuePerShare":round(enterprise/shares*fx,2),
+ return {"status":"illustrative_unreconciled_equity_proxy" if enterprise>0 else "funding_gap_negative_equity_proxy",
+  "valuePerShare":round(max(0,enterprise/shares*fx),2),
+  "rawDiscountedCashPerShare":round(enterprise/shares*fx,2),
+  "fundingGapPerShare":round(abs(enterprise/shares*fx),2) if enterprise<0 else 0,
   "annualCashMillions":[round(v,2) for v in cash],"discountPct":rate*100,"terminalMultiple":multiple,
   "warnings":["DCF does not reconcile a fully verified net-debt bridge","Cash reinvestment and share denominator are assumptions, not issuer forecasts"]}
 def main():
