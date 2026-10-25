@@ -4,6 +4,7 @@ import datetime as dt, gzip, json, os, pathlib, sys, time, urllib.request, zlib
 from ciip_quality_controls import quality_normalize, current_share_reconciliation
 from ciip_sector_models import build_sector_valuation
 from ciip_capital_filings import latest_equity_filings
+from ciip_official_filing_bridges import bridge_history
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 AGENT=os.environ.get("SEC_USER_AGENT","").strip()
 if not AGENT or "@" not in AGENT:
@@ -233,7 +234,12 @@ def main():
             as_of=dt.datetime.now(dt.timezone.utc).date()
             metrics={k:select(facts,k,as_of) for k in TAGS}
             history,history_quality=annual_history(facts,as_of)
+            filing_bridge=bridge_history(ticker,history,history_quality,as_of)
             sector=quality_normalize(facts,history,history_quality,ticker,as_of)
+            if filing_bridge['conflicts']:
+                history_quality['normalized_fcf_3y_usd']=None
+                history_quality['normalized_fcf_status']='source_conflict'
+                history_quality.setdefault('normalization_notes',[]).append('SEC XBRL/issuer 10-K source conflict blocks model')
             shares=current_share_reconciliation(facts,ticker,history_quality,as_of)
             sector_valuation=build_sector_valuation(ticker,history,history_quality,shares)
             try:
@@ -252,7 +258,7 @@ def main():
                 if metrics.get(name) and metrics[name]["end"]!=annual_end:
                     excluded.append({"metric":name,"latest_available_end":metrics[name]["end"],"reason":"different_fiscal_year"})
                     metrics[name]=None
-            result["companies"][ticker]={"cik":cik,"entity_name":obj.get("entityName"),"url":url,"annual_reference_end":annual_end,"excluded_annual_metrics":excluded,"metrics":metrics,"history":history,"history_quality":history_quality,"sector_control":sector,"share_reconciliation":shares,"sector_valuation":sector_valuation,"capital_filings":capital_filings}
+            result["companies"][ticker]={"cik":cik,"entity_name":obj.get("entityName"),"url":url,"annual_reference_end":annual_end,"excluded_annual_metrics":excluded,"metrics":metrics,"history":history,"history_quality":history_quality,"sector_control":sector,"share_reconciliation":shares,"sector_valuation":sector_valuation,"capital_filings":capital_filings,"official_filing_bridge":filing_bridge}
         except Exception as exc:
             result["unavailable"][ticker]=str(exc)[:180]
         time.sleep(0.25)
