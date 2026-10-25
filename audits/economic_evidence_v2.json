@@ -1,0 +1,186 @@
+{
+  "schema": "ciip-economic-evidence-v2",
+  "as_of": "2026-10-25",
+  "integrity_rules": [
+    "Existing DCF scenario assumptions and source valuations are immutable in this review",
+    "All amounts in USD millions unless explicitly specified",
+    "Cash-flow statement paid cash, earnings accrual, future contractual payments and pending deal EV are different concepts",
+    "Comparative interim figures must never be annualized without a seasonality bridge",
+    "No analyst stress is allowed to become an issuer-reported fact",
+    "A resolved data tie-out is not an approved prospective economic valuation"
+  ],
+  "companies": {
+    "ADBE": {
+      "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+      "fy2025": {
+        "cfo": 10031,
+        "capex_ppe": 179,
+        "sbc_non_cash": 1942
+      },
+      "nine_months_2026": {
+        "cfo": 7646,
+        "capex_ppe": 180,
+        "sbc_non_cash": 1582,
+        "acquisition_cash_net": 1560
+      },
+      "nine_months_2025": {
+        "cfo": 6871,
+        "capex_ppe": 145,
+        "sbc_non_cash": 1453
+      },
+      "semrush": {
+        "completed": "2026-04-28",
+        "purchase_price": 1874,
+        "acquired_cash_reported": 262,
+        "operating_contribution": "not_material_proforma_not_disclosed",
+        "capital_cash_status": "spent"
+      },
+      "topaz": {
+        "agreement_date": "2026-06-24",
+        "disclosed_estimated_consideration": 340,
+        "expected_closing": "2026 Q4 fiscal conditional",
+        "status": "pending_at_last_10q",
+        "earnings_contribution": null
+      },
+      "notes": [
+        "Do not deduct Semrush spent acquisition cash again from FY2025 owner cash.",
+        "Analyst recurring M&A reserve is not sourced to a recurring pipeline.",
+        "Original code grows the entire initial net cash including deducted reserve; an annual flat reserve is a different schedule.",
+        "Topaz closing transaction may be covered by assumed reinvestment reserve; avoid counting $340 twice."
+      ]
+    },
+    "MSFT": {
+      "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "fy2026": {
+        "cfo": 182935,
+        "capex_cash": 115948,
+        "sbc_non_cash": 12405,
+        "finance_lease_principal_cash": 3101,
+        "noncash_new_finance_lease_ro_assets": 24608
+      },
+      "reported_finance_lease_liability": 66594,
+      "reported_undiscounted_finance_lease_payments": {
+        "2027": 7121,
+        "2028": 7294,
+        "2029": 6668,
+        "2030": 6570,
+        "2031": 6543,
+        "thereafter": 55490
+      },
+      "finance_lease_imputed_interest_total": 23092,
+      "finance_lease_weighted_discount_rate_pct": 4.5,
+      "finance_lease_not_yet_commenced": 329100,
+      "status": "lease_cash_bridge_quantified_but_new_capacity_not_scheduled",
+      "notes": [
+        "Scheduled future lease payments include principal and interest; interest may already be in CFO and cannot be deducted again.",
+        "Uncommenced lease amount is disclosed payments for arrangements not yet commenced, not cash debt repayable today; some conditions may apply.",
+        "Noncash ROU recognition is not a second cash CAPEX outlay.",
+        "13% 5Y cash growth assumption needs Azure margin/replacement CAPEX and lease starts evidence."
+      ]
+    },
+    "V": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316126000104/v-20260630.htm",
+      "nine_months_2026": {
+        "cfo": 16342,
+        "capex_ppe_technology": 1178,
+        "client_incentive_non_cash": 13194,
+        "client_incentive_cash_change": -13121,
+        "settlement_receivable_cash_change": 1761,
+        "settlement_payable_cash_change": -1436,
+        "accrued_litigation_cash_change": -1758,
+        "litigation_payments": 3142,
+        "share_based_compensation": 728,
+        "acquisitions_cash": 705
+      },
+      "nine_months_2025": {
+        "cfo": 16821,
+        "capex_ppe_technology": 1093,
+        "client_incentive_non_cash": 11503,
+        "client_incentive_cash_change": -11253,
+        "settlement_receivable_cash_change": -211,
+        "settlement_payable_cash_change": 619,
+        "accrued_litigation_cash_change": 622
+      },
+      "restricted_litigation_cash_20260630": 888,
+      "next_release_announced": "2026-10-27",
+      "notes": [
+        "Litigation cash changes are included within CFO and should not be deducted a second time.",
+        "Unrestricted owner cash is not interchangeable with litigation escrow.",
+        "Client incentives are not simply a discretionary expense: accrual and cash prepayment create temporal timing effects.",
+        "FY2026 is not public by 2026-10-25."
+      ]
+    },
+    "MA": {
+      "annual_source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+      "interim_source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000083/ma-20260630.htm",
+      "bvnk_source": "https://investor.mastercard.com/investor-news/investor-news-details/2026/Mastercard-completes-acquisition-of-BVNK-to-advance-global-stablecoin-capabilities/default.aspx",
+      "fy2025": {
+        "cfo": 17648,
+        "capex_ppe": 489,
+        "capitalized_software": 726,
+        "net_income": 14968,
+        "stock_compensation": 597
+      },
+      "six_months_2026": {
+        "cfo": 6772,
+        "capex_ppe": 445,
+        "capitalized_software": 368,
+        "net_income": 8270,
+        "customer_incentive_amortization": 1310,
+        "prepaid_expenses_change": -3835,
+        "litigation_cash_change": -504
+      },
+      "six_months_2025": {
+        "cfo": 6983,
+        "capex_ppe": 199,
+        "capitalized_software": 367,
+        "net_income": 6981,
+        "customer_incentive_amortization": 993,
+        "prepaid_expenses_change": -2238,
+        "litigation_cash_change": 81
+      },
+      "bvnk": {
+        "deal_complete_date": "2026-08-03",
+        "contract_initial_price": 1500,
+        "contingent_consideration_cap": 300,
+        "actual_closing_cash_paid": null,
+        "incremental_fcfe": null,
+        "status": "closed_per_company_release_cash_and_earnout_unknown"
+      },
+      "next_release_announced": "2026-10-29",
+      "notes": [
+        "Previously CFO less PPE alone excluded capitalized software cash outlay.",
+        "Amortization of customer incentives and prepaid asset cash changes are different cash flow components; not a pure same-label net figure.",
+        "An earnings-derived payment industry cap is a valuation stress, not a GAAP cash identity.",
+        "BVNK paid purchase consideration and contingent outcomes must not be conflated with recurring owner free cash."
+      ]
+    },
+    "TXN": {
+      "sec_source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
+      "release_source": "https://investor.ti.com/news-releases/news-release-details/ti-reports-third-quarter-2026-financial-results-and-shareholder",
+      "ltm_20260930": {
+        "cfo": 9896,
+        "capex_cash": 2578,
+        "direct_chips_investing_receipts": 1104,
+        "ips_chips_tax_credit_in_cfo": 469,
+        "reported_adjusted_fcf": 8422
+      },
+      "capex_2026_guidance_low": 2000,
+      "capex_2026_guidance_high": 3000,
+      "silicon_labs": {
+        "status": "pending_as_of_20260930",
+        "ev_approx": 7500,
+        "term_loan_facility_capacity": 5000,
+        "facility_drawn_as_of_20260930": 0,
+        "expected_close": "H1 2027 conditional",
+        "target_cash_flows": null
+      },
+      "notes": [
+        "Direct CHIPS grants of 1,104m are investing cash and added to management adjusted FCF, not to GAAP CFO-CAPEX.",
+        "A separate $469m investment tax credit benefit is already reflected in LTM GAAP operating cash: stressing its recurrence is distinct.",
+        "Analyst capital cycle reserve of 1,818m is not issuer-reported maintenance CAPEX.",
+        "Acquisition EV is not necessarily equity check and committed loan capacity is not drawn debt."
+      ]
+    }
+  }
+}
