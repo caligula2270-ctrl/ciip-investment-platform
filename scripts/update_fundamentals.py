@@ -249,6 +249,7 @@ def main():
                 history_quality.setdefault('normalization_notes',[]).append('SEC XBRL/issuer 10-K source conflict blocks model')
             shares=current_share_reconciliation(facts,ticker,history_quality,as_of)
             sector_valuation=build_sector_valuation(ticker,history,history_quality,shares)
+            submissions=None
             try:
                 submissions=get(f"https://data.sec.gov/submissions/CIK{cik}.json")
                 capital_filings=latest_equity_filings(submissions,cik,as_of)
@@ -265,7 +266,7 @@ def main():
                 if metrics.get(name) and metrics[name]["end"]!=annual_end:
                     excluded.append({"metric":name,"latest_available_end":metrics[name]["end"],"reason":"different_fiscal_year"})
                     metrics[name]=None
-            result["companies"][ticker]={"cik":cik,"entity_name":obj.get("entityName"),"url":url,"annual_reference_end":annual_end,"excluded_annual_metrics":excluded,"metrics":metrics,"history":history,"history_quality":history_quality,"sector_control":sector,"share_reconciliation":shares,"sector_valuation":sector_valuation,"capital_filings":capital_filings,"official_filing_bridge":filing_bridge}
+            result["companies"][ticker]={"cik":cik,"entity_name":obj.get("entityName"),"url":url,"sic":submissions.get("sic") if submissions else None,"sic_description":submissions.get("sicDescription") if submissions else None,"annual_reference_end":annual_end,"excluded_annual_metrics":excluded,"metrics":metrics,"history":history,"history_quality":history_quality,"sector_control":sector,"share_reconciliation":shares,"sector_valuation":sector_valuation,"capital_filings":capital_filings,"official_filing_bridge":filing_bridge}
         except Exception as exc:
             result["unavailable"][ticker]=str(exc)[:180]
         time.sleep(0.25)
