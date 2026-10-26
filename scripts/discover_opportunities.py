@@ -25,7 +25,7 @@ STATE=DIR/"state.json"
 RADAR=DIR/"radar.json"
 TICKER_RE=re.compile(r"^[A-Z][A-Z0-9.\-]{0,11}$")
 EXCHANGES={"Nasdaq","NYSE","NYSE American","NASDAQ","New York Stock Exchange"}
-FUND_WORDS=(" ETF"," ETF "," EXCHANGE TRADED"," FUND"," TRUST"," ETN"," SPDR"," ISHARES"," PROSHARES")
+FUND_WORDS=(" ETF"," ETF "," EXCHANGE TRADED"," FUND"," TRUST"," ETN"," SPDR"," ISHARES"," PROSHARES"," ACQUISITION CORP"," ACQUISITION CO"," SPAC ")
 STAGES={"RESEARCH_PRIORITY","WATCHLIST","SPECIALIST_REVIEW","INSUFFICIENT_DATA"}
 MAX_PER_RUN=36
 REVISIT_DAYS=120
@@ -160,6 +160,23 @@ def metric(row,key):
     v=x.get("value") if isinstance(x,dict) else None
     return float(v) if isinstance(v,(float,int)) and not isinstance(v,bool) and math.isfinite(v) else None
 
+def provisional_sic_bucket(sic):
+    """SEC SIC gives a cautious sector ROUTE, not a verified moat or DCF model."""
+    try:n=int(sic)
+    except (TypeError,ValueError):return "unclassified"
+    if 6000 <= n < 6800:return "financial_specialist"
+    if 6300 <= n < 6400:return "insurance_specialist"
+    if 6500 <= n < 6600:return "real_estate_specialist"
+    if 2830 <= n <= 2839:return "pharma_specialist"
+    if 7370 <= n <= 7379:return "software_candidate"
+    if 3500 <= n < 3700:return "manufacturing_specialist"
+    if 4800 <= n < 4900:return "telecom_specialist"
+    if 5000 <= n < 6000:return "distribution_specialist"
+    if 7000 <= n < 7300:return "service_specialist"
+    if 7300 <= n < 7400:return "service_specialist"
+    if 2000 <= n < 4000:return "industrial_specialist"
+    return "unclassified"
+
 def evaluate(q,company,today):
     record={"ticker":q["ticker"],"cik":q["cik"],"name":q["name"],
             "exchange":q.get("exchange"),"detected_at":today.isoformat(),
@@ -190,7 +207,13 @@ def evaluate(q,company,today):
                        "fcf_positive_years":positive,"years_available":len(history),
                        "normalized_3y_fcf_usd":quality.get("normalized_fcf_3y_usd")}
     gate=company.get("sector_control",{})
-    record["sector_profile"]=gate.get("profile","unclassified")
+    sector=gate.get("profile","unclassified")
+    if sector=="unclassified":sector=provisional_sic_bucket(company.get("sic"))
+    record["sector_profile"]=sector
+    record["sic"]=company.get("sic")
+    record["sic_description"]=company.get("sic_description")
+    if gate.get("profile")=="unclassified" and sector!="unclassified":
+        record["limitations"].append("SIC sector classification provisional; specialist model not audited")
     record["sector_model_status"]=company.get("sector_valuation",{}).get("status","not_applicable")
     if len(history)<3 or fcf is None or cagr is None or rev is None or net is None or op is None or cfo is None:
         record["limitations"].append("Incomparable/incomplete annual 10-K metrics")
@@ -207,12 +230,14 @@ def evaluate(q,company,today):
     score+=10 if fcf>0 and cfo>0 and fcf/cfo>=.50 else 5 if fcf>0 else 0
     score+=10 if quality.get("normalized_fcf_3y_usd") is not None else 0
     record["quality_score_screen"]=score
-    if gate.get("status")=="blocked" or record["sector_profile"] in (
-        "unclassified","insurer","real_estate","foreign_special","mixed_operations","payment_network","energy"):
+    if gate.get("status")=="blocked" and sector=="unclassified" or record["sector_profile"] in (
+        "unclassified","insurer","real_estate","foreign_special","mixed_operations","payment_network","energy",
+        "financial_specialist","insurance_specialist","real_estate_specialist","pharma_specialist") or sector.endswith("_specialist"):
         record["status"]="SPECIALIST_REVIEW"
         record["limitations"].append("Sector-specific accounting and valuation model not yet validated")
     elif score>=70:
         record["status"]="RESEARCH_PRIORITY"
+        record["limitations"].append("Priority to research only; no sector DCF approved")
     else:
         record["status"]="WATCHLIST"
     if company.get("share_reconciliation",{}).get("status")!="provisional_reconciled":
