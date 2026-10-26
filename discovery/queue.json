@@ -1,157 +1,7 @@
 {
   "candidates": [
     {
-      "cik": "0001657853",
-      "exchange": "Nasdaq",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/13f/000117266126002336-pershing-square-capital-management-l-p-q1-2026"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "HERTZ GLOBAL HOLDINGS, INC",
-      "seed_reason": "historical_13f",
-      "ticker": "HTZ"
-    },
-    {
-      "cik": "0001104506",
-      "exchange": "Nasdaq",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/13f/000153641126000004-duquesne-family-office-llc-q1-2026"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "INSMED Inc",
-      "seed_reason": "historical_13f",
-      "ticker": "INSM"
-    },
-    {
-      "cik": "0001637459",
-      "exchange": "NYSE",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/13f/000119312526226661-berkshire-hathaway-inc-q1-2026"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "Kraft Heinz Co",
-      "seed_reason": "historical_13f",
-      "ticker": "KHC"
-    },
-    {
-      "cik": "0001404912",
-      "exchange": "NYSE",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/manager/0001112520-akre-capital-management-llc"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "KKR & Co. Inc.",
-      "seed_reason": "historical_13f",
-      "ticker": "KKR"
-    },
-    {
-      "cik": "0000021344",
-      "exchange": "NYSE",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/13f/000119312526226661-berkshire-hathaway-inc-q1-2026"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "COCA COLA CO",
-      "seed_reason": "historical_13f",
-      "ticker": "KO"
-    },
-    {
-      "cik": "0000723125",
-      "exchange": "Nasdaq",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/manager/0001656456-appaloosa-lp"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "MICRON TECHNOLOGY INC",
-      "seed_reason": "historical_13f",
-      "ticker": "MU"
-    },
-    {
-      "cik": "0001936258",
-      "exchange": "Nasdaq",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/13f/000153641126000004-duquesne-family-office-llc-q1-2026"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "NewAmsterdam Pharma Co N.V.",
-      "seed_reason": "historical_13f",
-      "ticker": "NAMS"
-    },
-    {
-      "cik": "0001013871",
-      "exchange": "NYSE",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/manager/0001656456-appaloosa-lp"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "NRG ENERGY, INC.",
-      "seed_reason": "historical_13f",
-      "ticker": "NRG"
-    },
-    {
-      "cik": "0001604821",
-      "exchange": "Nasdaq",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/13f/000153641126000004-duquesne-family-office-llc-q1-2026"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "Natera, Inc.",
-      "seed_reason": "historical_13f",
-      "ticker": "NTRA"
-    },
-    {
-      "cik": "0001045810",
-      "exchange": "Nasdaq",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/manager/0001656456-appaloosa-lp"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "NVIDIA CORP",
-      "seed_reason": "historical_13f",
-      "ticker": "NVDA"
-    },
-    {
-      "cik": "0001618756",
+      "cik": "0002009684",
       "exchange": "NYSE",
       "historical_13f": {
         "latest_reported_holdings_date": "2026-03-31",
@@ -161,12 +11,27 @@
         ],
         "status": "historical_snapshot_not_current_13f"
       },
-      "name": "Restaurant Brands International Inc.",
+      "name": "Seaport Entertainment Group Inc.",
       "seed_reason": "historical_13f",
-      "ticker": "QSR"
+      "ticker": "SEG"
     },
     {
-      "cik": "0001703399",
+      "cik": "0001692819",
+      "exchange": "NYSE",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 1,
+        "reference_urls": [
+          "https://13f.info/manager/0001656456-appaloosa-lp"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "name": "Vistra Corp.",
+      "seed_reason": "historical_13f",
+      "ticker": "VST"
+    },
+    {
+      "cik": "0000904851",
       "exchange": "NYSE",
       "historical_13f": {
         "latest_reported_holdings_date": "2026-03-31",
@@ -176,105 +41,177 @@
         ],
         "status": "historical_snapshot_not_current_13f"
       },
-      "name": "Sea Ltd",
+      "name": "YPF SOCIEDAD ANONIMA",
       "seed_reason": "historical_13f",
-      "ticker": "SE"
+      "ticker": "YPF"
     },
     {
-      "cik": "0000825313",
+      "cik": "0000001800",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ALLIANCEBERNSTEIN HOLDING L.P.",
+      "name": "ABBOTT LABORATORIES",
       "seed_reason": "rotation",
-      "ticker": "AB"
+      "ticker": "ABT"
     },
     {
-      "cik": "0001576873",
+      "cik": "0001755953",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "AMERICAN BATTERY TECHNOLOGY Co",
+      "name": "American Bitcoin Corp.",
       "seed_reason": "rotation",
-      "ticker": "ABAT"
+      "ticker": "ABTC"
     },
     {
-      "cik": "0001551152",
+      "cik": "0001864055",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Abits Group Inc",
+      "seed_reason": "rotation",
+      "ticker": "ABTS"
+    },
+    {
+      "cik": "0001447028",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Arbutus Biopharma Corp",
+      "seed_reason": "rotation",
+      "ticker": "ABUS"
+    },
+    {
+      "cik": "0001173313",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "ABVC BIOPHARMA, INC.",
+      "seed_reason": "rotation",
+      "ticker": "ABVC"
+    },
+    {
+      "cik": "0001956827",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Abivax S.A.",
+      "seed_reason": "rotation",
+      "ticker": "ABVX"
+    },
+    {
+      "cik": "0001814287",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "AbbVie Inc.",
+      "name": "Abacus Global Management, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ABBV"
+      "ticker": "ABX"
     },
     {
-      "cik": "0000351569",
+      "cik": "0001739445",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "Ameris Bancorp",
+      "name": "Arcosa, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ABCB"
+      "ticker": "ACA"
     },
     {
-      "cik": "0001703057",
+      "cik": "0001070494",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "AbCellera Biologics Inc.",
+      "name": "ACADIA PHARMACEUTICALS INC",
       "seed_reason": "rotation",
-      "ticker": "ABCL"
+      "ticker": "ACAD"
     },
     {
-      "cik": "0000318306",
+      "cik": "0001683541",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "ABEONA THERAPEUTICS INC.",
+      "name": "AURORA CANNABIS INC",
       "seed_reason": "rotation",
-      "ticker": "ABEO"
+      "ticker": "ACB"
     },
     {
-      "cik": "0001565025",
+      "cik": "0002038378",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Acco Group Holdings Ltd",
+      "seed_reason": "rotation",
+      "ticker": "ACCL"
+    },
+    {
+      "cik": "0000712034",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "AMBEV S.A.",
+      "name": "ACCO BRANDS Corp",
       "seed_reason": "rotation",
-      "ticker": "ABEV"
+      "ticker": "ACCO"
     },
     {
-      "cik": "0001144980",
+      "cik": "0000843006",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ASBURY AUTOMOTIVE GROUP INC",
+      "name": "ACCESS Newswire Inc.",
       "seed_reason": "rotation",
-      "ticker": "ABG"
+      "ticker": "ACCS"
     },
     {
-      "cik": "0001957489",
+      "cik": "0002141406",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "Able View Global Inc.",
+      "name": "Accelevation Holdings Corp.",
       "seed_reason": "rotation",
-      "ticker": "ABLV"
+      "ticker": "ACCV"
     },
     {
-      "cik": "0000771497",
+      "cik": "0001881487",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "ProFrac Holding Corp.",
+      "seed_reason": "rotation",
+      "ticker": "ACDC"
+    },
+    {
+      "cik": "0001698991",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ABM INDUSTRIES INC /DE/",
+      "name": "Accel Entertainment, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ABM"
+      "ticker": "ACEL"
     },
     {
-      "cik": "0001559720",
+      "cik": "0001720580",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "Airbnb, Inc.",
+      "name": "Adicet Bio, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ABNB"
+      "ticker": "ACET"
     },
     {
-      "cik": "0001576885",
+      "cik": "0000880984",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "Acumen Pharmaceuticals, Inc.",
+      "name": "ACORN ENERGY, INC.",
       "seed_reason": "rotation",
-      "ticker": "ABOS"
+      "ticker": "ACFN"
+    },
+    {
+      "cik": "0000947484",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "ARCH CAPITAL GROUP LTD.",
+      "seed_reason": "rotation",
+      "ticker": "ACGL"
+    },
+    {
+      "cik": "0000075252",
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "name": "ACCENDRA HEALTH INC/VA/",
+      "seed_reason": "rotation",
+      "ticker": "ACH"
+    },
+    {
+      "cik": "0001520697",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Acadia Healthcare Company, Inc.",
+      "seed_reason": "rotation",
+      "ticker": "ACHC"
     }
   ],
   "generated_on": "2026-10-26",
