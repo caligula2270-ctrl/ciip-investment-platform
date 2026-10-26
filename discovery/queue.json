@@ -181,38 +181,6 @@
       "ticker": "SE"
     },
     {
-      "cik": "0002023311",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "ASCENTAGE PHARMA GROUP INTERNATIONAL",
-      "seed_reason": "rotation",
-      "ticker": "AAPG"
-    },
-    {
-      "cik": "0001134982",
-      "exchange": "unverified",
-      "historical_13f": null,
-      "name": "Apple iSports Group, Inc.",
-      "seed_reason": "rotation",
-      "ticker": "AAPI"
-    },
-    {
-      "cik": "0001774857",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "Aardvark Therapeutics, Inc.",
-      "seed_reason": "rotation",
-      "ticker": "AARD"
-    },
-    {
-      "cik": "0001993344",
-      "exchange": "NYSE",
-      "historical_13f": null,
-      "name": "Allied Gold Corp",
-      "seed_reason": "rotation",
-      "ticker": "AAUC"
-    },
-    {
       "cik": "0000825313",
       "exchange": "NYSE",
       "historical_13f": null,
@@ -275,10 +243,42 @@
       "name": "ASBURY AUTOMOTIVE GROUP INC",
       "seed_reason": "rotation",
       "ticker": "ABG"
+    },
+    {
+      "cik": "0001957489",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Able View Global Inc.",
+      "seed_reason": "rotation",
+      "ticker": "ABLV"
+    },
+    {
+      "cik": "0000771497",
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "name": "ABM INDUSTRIES INC /DE/",
+      "seed_reason": "rotation",
+      "ticker": "ABM"
+    },
+    {
+      "cik": "0001559720",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Airbnb, Inc.",
+      "seed_reason": "rotation",
+      "ticker": "ABNB"
+    },
+    {
+      "cik": "0001576885",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Acumen Pharmaceuticals, Inc.",
+      "seed_reason": "rotation",
+      "ticker": "ABOS"
     }
   ],
   "generated_on": "2026-10-26",
-  "listed_issuer_count": 5665,
+  "listed_issuer_count": 5412,
   "no_universe_completeness_claim": true,
   "scan_budget": 24,
   "schema": "ciip-discovery-queue-v1",

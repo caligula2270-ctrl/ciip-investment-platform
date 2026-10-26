@@ -61,6 +61,7 @@
       },
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Sector-specific accounting and valuation model not yet validated",
         "No checked live price, intrinsic value, debt/cash bridge or forecast"
       ],
@@ -79,7 +80,9 @@
       "price_target_usd": null,
       "quality_score_screen": 84,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "manufacturing_specialist",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
       "status": "SPECIALIST_REVIEW",
       "ticker": "MU"
     },
@@ -127,6 +130,7 @@
       "historical_13f": null,
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Sector-specific accounting and valuation model not yet validated",
         "No checked live price, intrinsic value, debt/cash bridge or forecast"
       ],
@@ -145,7 +149,9 @@
       "price_target_usd": null,
       "quality_score_screen": 80,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
       "status": "SPECIALIST_REVIEW",
       "ticker": "ABBV"
     },
@@ -208,6 +214,7 @@
       },
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Sector-specific accounting and valuation model not yet validated",
         "Current diluted share capital not reconciled",
         "No checked live price, intrinsic value, debt/cash bridge or forecast"
@@ -227,7 +234,9 @@
       "price_target_usd": null,
       "quality_score_screen": 77,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "industrial_specialist",
+      "sic": "2080",
+      "sic_description": "Beverages",
       "status": "SPECIALIST_REVIEW",
       "ticker": "KO"
     },
@@ -306,6 +315,42 @@
       "ticker": "AAME"
     },
     {
+      "cik": "0000771497",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000771497.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 4,
+        "fiscal_year_end": "2025-10-31",
+        "net_margin_pct": 1.86,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 3.56,
+        "revenue_cagr_pct": 8.86,
+        "years_available": 5
+      },
+      "name": "ABM INDUSTRIES INC /DE/",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 66,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "service_specialist",
+      "sic": "7340",
+      "sic_description": "Services-To Dwellings & Other Buildings",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ABM"
+    },
+    {
       "cik": "0001013871",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -342,6 +387,8 @@
       "quality_score_screen": 50,
       "sector_model_status": "not_applicable",
       "sector_profile": "unclassified",
+      "sic": "4911",
+      "sic_description": "Electric Services",
       "status": "SPECIALIST_REVIEW",
       "ticker": "NRG"
     },
@@ -363,6 +410,7 @@
       },
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Sector-specific accounting and valuation model not yet validated",
         "No checked live price, intrinsic value, debt/cash bridge or forecast"
       ],
@@ -381,7 +429,9 @@
       "price_target_usd": null,
       "quality_score_screen": 40,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "industrial_specialist",
+      "sic": "2030",
+      "sic_description": "Canned, Frozen & Preservd Fruit, Veg & Food Specialties",
       "status": "SPECIALIST_REVIEW",
       "ticker": "KHC"
     },
@@ -422,6 +472,8 @@
       "quality_score_screen": 37,
       "sector_model_status": "not_applicable",
       "sector_profile": "unclassified",
+      "sic": "8071",
+      "sic_description": "Services-Medical Laboratories",
       "status": "SPECIALIST_REVIEW",
       "ticker": "NTRA"
     },
@@ -503,6 +555,7 @@
       "historical_13f": null,
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Sector-specific accounting and valuation model not yet validated",
         "Current diluted share capital not reconciled",
         "No checked live price, intrinsic value, debt/cash bridge or forecast"
@@ -522,7 +575,9 @@
       "price_target_usd": null,
       "quality_score_screen": 15,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
       "status": "SPECIALIST_REVIEW",
       "ticker": "ABEO"
     },
@@ -544,6 +599,7 @@
       },
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Sector-specific accounting and valuation model not yet validated",
         "Current diluted share capital not reconciled",
         "No checked live price, intrinsic value, debt/cash bridge or forecast"
@@ -563,7 +619,9 @@
       "price_target_usd": null,
       "quality_score_screen": 15,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
       "status": "SPECIALIST_REVIEW",
       "ticker": "INSM"
     },
@@ -578,6 +636,7 @@
       "historical_13f": null,
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Sector-specific accounting and valuation model not yet validated",
         "No checked live price, intrinsic value, debt/cash bridge or forecast"
       ],
@@ -596,7 +655,9 @@
       "price_target_usd": null,
       "quality_score_screen": 12,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
       "status": "SPECIALIST_REVIEW",
       "ticker": "ABCL"
     },
@@ -896,134 +957,6 @@
       "ticker": "AAMI"
     },
     {
-      "cik": "0002023311",
-      "decision_ready": false,
-      "detected_at": "2026-10-26",
-      "evidence": [
-        "https://data.sec.gov/api/xbrl/companyfacts/CIK0002023311.json"
-      ],
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "investment_signal": null,
-      "limitations": [
-        "Incomparable/incomplete annual 10-K metrics"
-      ],
-      "metrics": {
-        "fcf_positive_years": 0,
-        "fiscal_year_end": null,
-        "net_margin_pct": null,
-        "normalized_3y_fcf_usd": null,
-        "operating_margin_pct": null,
-        "revenue_cagr_pct": null,
-        "years_available": 0
-      },
-      "name": "ASCENTAGE PHARMA GROUP INTERNATIONAL",
-      "origin": "rotation",
-      "price_data_verified": false,
-      "price_target_usd": null,
-      "quality_score_screen": null,
-      "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
-      "status": "INSUFFICIENT_DATA",
-      "ticker": "AAPG"
-    },
-    {
-      "cik": "0001134982",
-      "decision_ready": false,
-      "detected_at": "2026-10-26",
-      "evidence": [
-        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001134982.json"
-      ],
-      "exchange": "unverified",
-      "historical_13f": null,
-      "investment_signal": null,
-      "limitations": [
-        "Incomparable/incomplete annual 10-K metrics"
-      ],
-      "metrics": {
-        "fcf_positive_years": 0,
-        "fiscal_year_end": "2025-12-31",
-        "net_margin_pct": null,
-        "normalized_3y_fcf_usd": null,
-        "operating_margin_pct": null,
-        "revenue_cagr_pct": null,
-        "years_available": 4
-      },
-      "name": "Apple iSports Group, Inc.",
-      "origin": "rotation",
-      "price_data_verified": false,
-      "price_target_usd": null,
-      "quality_score_screen": null,
-      "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
-      "status": "INSUFFICIENT_DATA",
-      "ticker": "AAPI"
-    },
-    {
-      "cik": "0001774857",
-      "decision_ready": false,
-      "detected_at": "2026-10-26",
-      "evidence": [
-        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001774857.json"
-      ],
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "investment_signal": null,
-      "limitations": [
-        "Incomparable/incomplete annual 10-K metrics"
-      ],
-      "metrics": {
-        "fcf_positive_years": 0,
-        "fiscal_year_end": "2025-12-31",
-        "net_margin_pct": null,
-        "normalized_3y_fcf_usd": null,
-        "operating_margin_pct": null,
-        "revenue_cagr_pct": null,
-        "years_available": 2
-      },
-      "name": "Aardvark Therapeutics, Inc.",
-      "origin": "rotation",
-      "price_data_verified": false,
-      "price_target_usd": null,
-      "quality_score_screen": null,
-      "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
-      "status": "INSUFFICIENT_DATA",
-      "ticker": "AARD"
-    },
-    {
-      "cik": "0001993344",
-      "decision_ready": false,
-      "detected_at": "2026-10-26",
-      "evidence": [
-        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001993344.json"
-      ],
-      "exchange": "NYSE",
-      "historical_13f": null,
-      "investment_signal": null,
-      "limitations": [
-        "Incomparable/incomplete annual 10-K metrics"
-      ],
-      "metrics": {
-        "fcf_positive_years": 0,
-        "fiscal_year_end": null,
-        "net_margin_pct": null,
-        "normalized_3y_fcf_usd": null,
-        "operating_margin_pct": null,
-        "revenue_cagr_pct": null,
-        "years_available": 0
-      },
-      "name": "Allied Gold Corp",
-      "origin": "rotation",
-      "price_data_verified": false,
-      "price_target_usd": null,
-      "quality_score_screen": null,
-      "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
-      "status": "INSUFFICIENT_DATA",
-      "ticker": "AAUC"
-    },
-    {
       "cik": "0000825313",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -1034,6 +967,7 @@
       "historical_13f": null,
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Incomparable/incomplete annual 10-K metrics"
       ],
       "metrics": {
@@ -1051,7 +985,9 @@
       "price_target_usd": null,
       "quality_score_screen": null,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "financial_specialist",
+      "sic": "6282",
+      "sic_description": "Investment Advice",
       "status": "INSUFFICIENT_DATA",
       "ticker": "AB"
     },
@@ -1084,6 +1020,8 @@
       "quality_score_screen": null,
       "sector_model_status": "not_applicable",
       "sector_profile": "unclassified",
+      "sic": "1400",
+      "sic_description": "Mining & Quarrying of  Nonmetallic Minerals (No Fuels)",
       "status": "INSUFFICIENT_DATA",
       "ticker": "ABAT"
     },
@@ -1098,6 +1036,7 @@
       "historical_13f": null,
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Incomparable/incomplete annual 10-K metrics"
       ],
       "metrics": {
@@ -1115,7 +1054,9 @@
       "price_target_usd": null,
       "quality_score_screen": null,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "financial_specialist",
+      "sic": "6022",
+      "sic_description": "State Commercial Banks",
       "status": "INSUFFICIENT_DATA",
       "ticker": "ABCB"
     },
@@ -1130,6 +1071,7 @@
       "historical_13f": null,
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Incomparable/incomplete annual 10-K metrics"
       ],
       "metrics": {
@@ -1147,7 +1089,9 @@
       "price_target_usd": null,
       "quality_score_screen": null,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "industrial_specialist",
+      "sic": "2080",
+      "sic_description": "Beverages",
       "status": "INSUFFICIENT_DATA",
       "ticker": "ABEV"
     },
@@ -1162,6 +1106,7 @@
       "historical_13f": null,
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Incomparable/incomplete annual 10-K metrics"
       ],
       "metrics": {
@@ -1179,9 +1124,116 @@
       "price_target_usd": null,
       "quality_score_screen": null,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "distribution_specialist",
+      "sic": "5500",
+      "sic_description": "Retail-Auto Dealers & Gasoline Stations",
       "status": "INSUFFICIENT_DATA",
       "ticker": "ABG"
+    },
+    {
+      "cik": "0001957489",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001957489.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Able View Global Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "distribution_specialist",
+      "sic": "5960",
+      "sic_description": "Retail-Nonstore Retailers",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ABLV"
+    },
+    {
+      "cik": "0001559720",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001559720.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 2,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 20.51,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 20.78,
+        "revenue_cagr_pct": 19.55,
+        "years_available": 5
+      },
+      "name": "Airbnb, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "service_specialist",
+      "sic": "7340",
+      "sic_description": "Services-To Dwellings & Other Buildings",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ABNB"
+    },
+    {
+      "cik": "0001576885",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001576885.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 5
+      },
+      "name": "Acumen Pharmaceuticals, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2836",
+      "sic_description": "Biological Products, (No Diagnostic Substances)",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ABOS"
     },
     {
       "cik": "0000004962",
@@ -1492,6 +1544,8 @@
       "quality_score_screen": null,
       "sector_model_status": "not_applicable",
       "sector_profile": "unclassified",
+      "sic": "7510",
+      "sic_description": "Services-Auto Rental & Leasing (No Drivers)",
       "status": "INSUFFICIENT_DATA",
       "ticker": "HTZ"
     },
@@ -1513,6 +1567,7 @@
       },
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Incomparable/incomplete annual 10-K metrics"
       ],
       "metrics": {
@@ -1530,7 +1585,9 @@
       "price_target_usd": null,
       "quality_score_screen": null,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "financial_specialist",
+      "sic": "6282",
+      "sic_description": "Investment Advice",
       "status": "INSUFFICIENT_DATA",
       "ticker": "KKR"
     },
@@ -1552,6 +1609,7 @@
       },
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Incomparable/incomplete annual 10-K metrics"
       ],
       "metrics": {
@@ -1569,7 +1627,9 @@
       "price_target_usd": null,
       "quality_score_screen": null,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
       "status": "INSUFFICIENT_DATA",
       "ticker": "NAMS"
     },
@@ -1591,6 +1651,7 @@
       },
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Incomparable/incomplete annual 10-K metrics"
       ],
       "metrics": {
@@ -1608,7 +1669,9 @@
       "price_target_usd": null,
       "quality_score_screen": null,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "manufacturing_specialist",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
       "status": "INSUFFICIENT_DATA",
       "ticker": "NVDA"
     },
@@ -1630,6 +1693,7 @@
       },
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Incomparable/incomplete annual 10-K metrics"
       ],
       "metrics": {
@@ -1647,7 +1711,9 @@
       "price_target_usd": null,
       "quality_score_screen": null,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "distribution_specialist",
+      "sic": "5812",
+      "sic_description": "Retail-Eating  Places",
       "status": "INSUFFICIENT_DATA",
       "ticker": "QSR"
     },
@@ -1669,6 +1735,7 @@
       },
       "investment_signal": null,
       "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
         "Incomparable/incomplete annual 10-K metrics"
       ],
       "metrics": {
@@ -1686,7 +1753,9 @@
       "price_target_usd": null,
       "quality_score_screen": null,
       "sector_model_status": "not_applicable",
-      "sector_profile": "unclassified",
+      "sector_profile": "service_specialist",
+      "sic": "7380",
+      "sic_description": "Services-Miscellaneous Business Services",
       "status": "INSUFFICIENT_DATA",
       "ticker": "SE"
     },
