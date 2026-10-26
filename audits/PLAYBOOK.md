@@ -76,3 +76,17 @@ Clasificar HECHO / CÁLCULO / HIPÓTESIS / INFERENCIA / NO VERIFICADO. Conservar
 - En TXN FCF GAAP LTM 7318m, subvención directa CHIPS en inversión 1104m y crédito fiscal dentro CFO 469m son tres conceptos diferentes; la reserva de ciclo 1818m no es CAPEX de mantenimiento probado. EV aproximado Silicon Labs y facility comprometida no equivalen a cash check o a deuda dispuesta.
 - Los datos históricos conciliados cierran incidencias de procedencia y aritmética; la aprobación económica prospectiva requiere unidades de negocio, crecimiento, ciclos de CAPEX, litigios, financiación y eventos posteriores sustentados por notas.
 - Política de resultado: nunca emitir `READY` ni una decisión de cartera hasta completar estos puentes, revisar nuevas presentaciones y reconciliar capital diluido actual.
+
+
+## CIIP v3 — Descubrimiento sin lista fija (26-10-2026)
+**El universo operativo NO son las cinco compañías de calibración ni los ~30 tickers originales.** El universo potencial se obtiene del fichero SEC company_tickers_exchange.json y se rastrea por lotes según presupuesto de consultas. La lista estática original funciona solo como cohort de regresión y cobertura permanente.
+
+- `scripts/discover_opportunities.py prepare --limit 24` consulta universo SEC, descarta duplicados por CIK, fondos evidentes y SPAC por nombre, prioriza menciones históricas 13F del `data.json` y rota por el resto del catálogo; deja `discovery/queue.json`.
+- `scripts/update_fundamentals.py` incorpora automáticamente a las candidatas de la cola a su descarga SEC e introduce sectorización SIC provisional.
+- Tras validación histórica, `scripts/discover_opportunities.py rank` publica `discovery/radar.json` con estados RESEARCH_PRIORITY, WATCHLIST, SPECIALIST_REVIEW, INSUFFICIENT_DATA, y persiste cursor/fechas en `discovery/state.json`; las fallidas no se marcan como exitosas.
+- El workflow SEC se ejecuta de lunes a viernes (cron UTC 07:45; GitHub Actions puede retrasar ejecuciones). La app muestra la cola en `discovery/index.html`, enlazada desde el panel principal.
+- 13F almacenadas son instantáneas históricas, no novedades. Ampliación necesaria: ingestión 13F SEC trimestral con resolución de CUSIP↔emisor y pesos ajustados; nunca usar antigüedad como nueva entrada.
+- **Separar los niveles:** (A) generación y priorización automática de ideas, (B) modelo sectorial retrospectivo + evidencia, (C) valoración individual proyectada y verificada. Un 0–100 del cribado NO es margen de seguridad ni valor intrínseco. Ninguna idea genera orden automática.
+- SIC es clasificación aproximada y puede ser incompatible con el negocio mixto; jamás aprobar modelo simplemente por SIC. Emisores 20-F, ADR, IFRS, bancos, aseguradoras, REIT, SPAC, multiclase y negocios híbridos requieren conectores y valoraciones sectoriales específicas. SEC companyfacts US-GAAP no implica cobertura real de cualquier mercado global.
+- Lista de cinco expedientes `audits/per_share_inputs.json` y `scripts/audit_ciip_models.py` permanece como REGRESIÓN de investigación profunda; ya no es el ámbito del descubrimiento.
+- Cada alerta automatizada debe conservar fecha, fuente primaria, explicación de la oportunidad, factores de riesgo, calidad del dato y limitación de precio, en especial dividendos/corporate actions y dilución.
