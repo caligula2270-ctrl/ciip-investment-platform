@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/update_fundamentals.py'
+      - 'scripts/discover_opportunities.py'
+      - 'scripts/test_discover_opportunities.py'
       - 'scripts/ciip_quality_controls.py'
       - 'scripts/ciip_sector_models.py'
       - 'scripts/ciip_official_filing_bridges.py'
@@ -20,7 +22,7 @@ on:
       - 'audits/PLAYBOOK.md'
       - '.github/workflows/fundamentals.yml'
   schedule:
-    - cron: '45 7 * * 2'
+    - cron: '45 7 * * 1-5'
   workflow_dispatch:
 permissions:
   contents: write
@@ -39,6 +41,11 @@ jobs:
       - name: Validate normalization and share reconciliation
         run: |
           PYTHONPATH=scripts python -m unittest discover -s scripts -p 'test_ciip_*.py' -v
+          PYTHONPATH=scripts python -m unittest discover -s scripts -p 'test_discover_opportunities.py' -v
+      - name: Prepare rotating SEC stock discovery
+        env:
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
+        run: python scripts/discover_opportunities.py prepare --limit 24
       - name: Download SEC reported fundamentals
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
@@ -51,12 +58,17 @@ jobs:
         run: python scripts/audit_ciip_models.py
       - name: Build independently reconciled economic bridge (no valuation overwrite)
         run: python scripts/ciip_economic_bridge_v2.py
+      - name: Rank automatically discovered candidates
+        run: python scripts/discover_opportunities.py rank
       - name: Publish SEC facts and audit report safely
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cp fundamentals-auto.json /tmp/ciip-fundamentals-auto.json
+          cp discovery/queue.json /tmp/ciip-discovery-queue.json
+          cp discovery/state.json /tmp/ciip-discovery-state.json
+          cp discovery/radar.json /tmp/ciip-discovery-radar.json
           cp audits/latest.json /tmp/ciip-audit-latest.json
           cp audits/REPORT.md /tmp/ciip-audit-report.md
           cp audits/per_share_latest.json /tmp/ciip-per-share-latest.json
@@ -71,6 +83,10 @@ jobs:
             # Do NOT rebase timestamped JSON files: concurrent bot writes conflict.
             git reset --hard origin/main
             cp /tmp/ciip-fundamentals-auto.json fundamentals-auto.json
+            mkdir -p discovery
+            cp /tmp/ciip-discovery-queue.json discovery/queue.json
+            cp /tmp/ciip-discovery-state.json discovery/state.json
+            cp /tmp/ciip-discovery-radar.json discovery/radar.json
             cp /tmp/ciip-audit-latest.json audits/latest.json
             cp /tmp/ciip-audit-report.md audits/REPORT.md
             cp /tmp/ciip-per-share-latest.json audits/per_share_latest.json
@@ -79,7 +95,7 @@ jobs:
             cp /tmp/ciip-economic-report.md audits/ECONOMIC_BRIDGE_REPORT.md
             cp /tmp/ciip-validation-latest.json audits/model_validation_latest.json
             cp /tmp/ciip-validation-report.md audits/MODEL_VALIDATION_REPORT.md
-            git add fundamentals-auto.json audits/latest.json audits/REPORT.md audits/per_share_latest.json audits/PER_SHARE_REPORT.md audits/model_validation_latest.json audits/MODEL_VALIDATION_REPORT.md audits/economic_bridge_latest.json audits/ECONOMIC_BRIDGE_REPORT.md
+            git add discovery/queue.json discovery/state.json discovery/radar.json fundamentals-auto.json audits/latest.json audits/REPORT.md audits/per_share_latest.json audits/PER_SHARE_REPORT.md audits/model_validation_latest.json audits/MODEL_VALIDATION_REPORT.md audits/economic_bridge_latest.json audits/ECONOMIC_BRIDGE_REPORT.md
             if git diff --cached --quiet; then
               echo "No changes in SEC fundamentals or audits"
               exit 0
