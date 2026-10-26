@@ -215,6 +215,13 @@ def requested_tickers():
                     candidates.append(ticker)
         except (ValueError,TypeError,OSError) as exc:
             raise SystemExit(f"Invalid issuer audit manifest: {exc}")
+    queue=ROOT/"discovery"/"queue.json"
+    if queue.exists():
+        d=json.loads(queue.read_text(encoding="utf-8"))
+        for item in d.get("candidates",[]):
+            ticker=item.get("ticker","")
+            if ticker.isascii() and 1<=len(ticker)<=12 and ticker not in candidates:
+                candidates.append(ticker)
     return candidates
 
 def main():
