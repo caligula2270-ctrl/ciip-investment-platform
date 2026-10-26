@@ -1,0 +1,877 @@
+{
+  "13f_policy": "Dated user-provided historical holdings are only lead sources; not refreshed 13F evidence",
+  "companies": [
+    {
+      "cik": "0001652044",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 3,
+        "reference_urls": [
+          "https://13f.info/13f/000117266126002336-pershing-square-capital-management-l-p-q1-2026",
+          "https://13f.info/manager/0001096343-markel-group-inc",
+          "https://13f.info/manager/0001656456-appaloosa-lp"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 32.81,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 32.03,
+        "revenue_cagr_pct": 11.82,
+        "years_available": 5
+      },
+      "name": "Alphabet Inc.",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 85,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "GOOG"
+    },
+    {
+      "cik": "0001090872",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001090872.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-10-31",
+        "net_margin_pct": 18.75,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 21.29,
+        "revenue_cagr_pct": 2.4,
+        "years_available": 5
+      },
+      "name": "AGILENT TECHNOLOGIES, INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 80,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "A"
+    },
+    {
+      "cik": "0001543151",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001543151.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 2,
+        "reference_urls": [
+          "https://13f.info/13f/000117266126002336-pershing-square-capital-management-l-p-q1-2026",
+          "https://13f.info/manager/0001656456-appaloosa-lp"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 4,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 19.33,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 10.7,
+        "revenue_cagr_pct": 31.39,
+        "years_available": 5
+      },
+      "name": "Uber Technologies, Inc",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 78,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "UBER"
+    },
+    {
+      "cik": "0000320193",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 1,
+        "reference_urls": [
+          "https://13f.info/13f/000119312526226661-berkshire-hathaway-inc-q1-2026"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-09-27",
+        "net_margin_pct": 26.92,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 31.97,
+        "revenue_cagr_pct": 3.27,
+        "years_available": 5
+      },
+      "name": "Apple Inc.",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 72,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AAPL"
+    },
+    {
+      "cik": "0000008177",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000008177.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 2.86,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 1.76,
+        "revenue_cagr_pct": 1.34,
+        "years_available": 5
+      },
+      "name": "ATLANTIC AMERICAN CORP",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 67,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AAME"
+    },
+    {
+      "cik": "0001158449",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001158449.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 3,
+        "fiscal_year_end": "2026-01-03",
+        "net_margin_pct": 0.51,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -0.5,
+        "revenue_cagr_pct": -5.95,
+        "years_available": 5
+      },
+      "name": "ADVANCE AUTO PARTS INC",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 18,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AAP"
+    },
+    {
+      "cik": "0001158114",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001158114.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -8.39,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -11.98,
+        "revenue_cagr_pct": 21.15,
+        "years_available": 5
+      },
+      "name": "APPLIED OPTOELECTRONICS, INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 15,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AAOI"
+    },
+    {
+      "cik": "0001675149",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001675149.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 1,
+        "reference_urls": [
+          "https://13f.info/13f/000153641126000004-duquesne-family-office-llc-q1-2026"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 4,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 9.02,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 1.37,
+        "years_available": 5
+      },
+      "name": "Alcoa Corp",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AA"
+    },
+    {
+      "cik": "0002128115",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0002128115.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Ares Acquisition Corp III",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AAC"
+    },
+    {
+      "cik": "0001420529",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001420529.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "ATA Creativity Global",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AACG"
+    },
+    {
+      "cik": "0002092897",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0002092897.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Armada Acquisition Corp. III",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AACI"
+    },
+    {
+      "cik": "0002099906",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0002099906.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Abony Acquisition Corp. I",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AACO"
+    },
+    {
+      "cik": "0002102123",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0002102123.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Apogee Acquisition Corp",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AACP"
+    },
+    {
+      "cik": "0002118195",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0002118195.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Applied Aerospace & Defense, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AADX"
+    },
+    {
+      "cik": "0000006201",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000006201.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 0.2,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 2.69,
+        "revenue_cagr_pct": 16.28,
+        "years_available": 5
+      },
+      "name": "American Airlines Group Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AAL"
+    },
+    {
+      "cik": "0001748824",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001748824.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 14.19,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 23.43,
+        "revenue_cagr_pct": 1.85,
+        "years_available": 5
+      },
+      "name": "Acadian Asset Management Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AAMI"
+    },
+    {
+      "cik": "0000004962",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000004962.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 1,
+        "reference_urls": [
+          "https://13f.info/13f/000119312526226661-berkshire-hathaway-inc-q1-2026"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 26.23,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 10.49,
+        "years_available": 5
+      },
+      "name": "AMERICAN EXPRESS CO",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AXP"
+    },
+    {
+      "cik": "0001577552",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001577552.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 1,
+        "reference_urls": [
+          "https://13f.info/manager/0001656456-appaloosa-lp"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Alibaba Group Holding Ltd",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "BABA"
+    },
+    {
+      "cik": "0000070858",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000070858.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 1,
+        "reference_urls": [
+          "https://13f.info/13f/000119312526226661-berkshire-hathaway-inc-q1-2026"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 26.98,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 6.14,
+        "years_available": 5
+      },
+      "name": "BANK OF AMERICA CORP /DE/",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "BAC"
+    },
+    {
+      "cik": "0000896159",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 1,
+        "reference_urls": [
+          "https://13f.info/13f/000119312526226661-berkshire-hathaway-inc-q1-2026"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 17.36,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 9.8,
+        "years_available": 5
+      },
+      "name": "Chubb Ltd",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "CB"
+    },
+    {
+      "cik": "0000093410",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000093410.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 1,
+        "reference_urls": [
+          "https://13f.info/13f/000119312526226661-berkshire-hathaway-inc-q1-2026"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 6.67,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 4.34,
+        "years_available": 5
+      },
+      "name": "CHEVRON CORP",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "CVX"
+    },
+    {
+      "cik": "0000315189",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000315189.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 1,
+        "reference_urls": [
+          "https://13f.info/manager/0001096343-markel-group-inc"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-11-02",
+        "net_margin_pct": 11.0,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 0.93,
+        "years_available": 5
+      },
+      "name": "DEERE & CO",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "DE"
+    },
+    {
+      "cik": "0001981792",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001981792.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 1,
+        "reference_urls": [
+          "https://13f.info/13f/000117266126002336-pershing-square-capital-management-l-p-q1-2026"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 8.4,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 22.48,
+        "revenue_cagr_pct": 0.81,
+        "years_available": 5
+      },
+      "name": "Howard Hughes Holdings Inc.",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "HHH"
+    },
+    {
+      "cik": "0001046179",
+      "decision_ready": false,
+      "detected_at": "2026-10-26",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001046179.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": {
+        "latest_reported_holdings_date": "2026-03-31",
+        "manager_count_historical": 2,
+        "reference_urls": [
+          "https://13f.info/13f/000153641126000004-duquesne-family-office-llc-q1-2026",
+          "https://13f.info/manager/0001656456-appaloosa-lp"
+        ],
+        "status": "historical_snapshot_not_current_13f"
+      },
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD",
+      "origin": "historical_13f",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "TSM"
+    }
+  ],
+  "generated_on": "2026-10-26",
+  "last_batch_sec_downloaded": 24,
+  "last_batch_size": 24,
+  "readiness": "RESEARCH_SCREEN_ONLY_NOT_RECOMMENDATIONS",
+  "schema": "ciip-automatic-discovery-radar-v1",
+  "scope": "SEC-listed US equity issuers, rotating incremental sampling",
+  "total_unique_candidates_seen": 24
+}
