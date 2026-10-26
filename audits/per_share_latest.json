@@ -1,7 +1,7 @@
 {
   "schema": "ciip-per-share-valuation-v1",
-  "generated_at": "2026-10-25T21:20:29.716827+00:00",
-  "as_of": "2026-10-25",
+  "generated_at": "2026-10-26T22:42:18.778615+00:00",
+  "as_of": "2026-10-26",
   "source_review_as_of": "2026-10-24",
   "evidence_urls": {
     "inputs": "audits/per_share_inputs.json",
@@ -15,7 +15,7 @@
     "MSFT": {
       "ticker": "MSFT",
       "company": "Microsoft",
-      "as_of": "2026-10-25",
+      "as_of": "2026-10-26",
       "quote": {
         "currency": "USD",
         "date": "2026-10-23",
@@ -182,7 +182,7 @@
     "ADBE": {
       "ticker": "ADBE",
       "company": "Adobe",
-      "as_of": "2026-10-25",
+      "as_of": "2026-10-26",
       "quote": {
         "currency": "USD",
         "date": "2026-10-23",
@@ -355,7 +355,7 @@
     "V": {
       "ticker": "V",
       "company": "Visa",
-      "as_of": "2026-10-25",
+      "as_of": "2026-10-26",
       "quote": {
         "currency": "USD",
         "date": "2026-10-23",
@@ -580,7 +580,7 @@
     "MA": {
       "ticker": "MA",
       "company": "Mastercard",
-      "as_of": "2026-10-25",
+      "as_of": "2026-10-26",
       "quote": {
         "currency": "USD",
         "date": "2026-10-23",
@@ -762,7 +762,7 @@
     "TXN": {
       "ticker": "TXN",
       "company": "Texas Instruments",
-      "as_of": "2026-10-25",
+      "as_of": "2026-10-26",
       "quote": {
         "currency": "USD",
         "date": "2026-10-23",

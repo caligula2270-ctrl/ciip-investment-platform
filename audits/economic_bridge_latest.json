@@ -1,6 +1,6 @@
 {
   "schema": "ciip-economic-bridges-v2",
-  "as_of": "2026-10-25",
+  "as_of": "2026-10-26",
   "existing_dcf_immutable": true,
   "overall_status": "ECONOMIC_BRIDGES_PARTIAL_FORECAST_NOT_SIGNED",
   "companies": {
