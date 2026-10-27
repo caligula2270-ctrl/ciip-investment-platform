@@ -169,9 +169,9 @@ def scenario_sec(rows,quote,sector):
     # outstanding & future SBC net dilution is not reconciled.
     fcf_per_share=latest_rev*normalized_margin/latest_diluted
     if fcf_per_share<=0:return {"status":"negative_owner_cash","reason":"FCF normalizado no positivo"}
-    bear=project(fcf_per_share,max(-.08,growth-.06),11,.14)
-    base=project(fcf_per_share,growth,18,.12)
-    bull=project(fcf_per_share,min(.16,growth+.05),25,.11)
+    bear=project(fcf_per_share,max(-.08,growth-.06),.14,11)
+    base=project(fcf_per_share,growth,.12,18)
+    bull=project(fcf_per_share,min(.16,growth+.05),.11,25)
     if not (bear<=base<=bull):
         return {"status":"scenario_inconsistent","reason":"Orden de escenarios no coherente"}
     return {"status":"indicative_research_only","bearUSD":bear,"baseUSD":base,"bullUSD":bull,
