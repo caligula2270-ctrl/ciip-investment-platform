@@ -5,11 +5,11 @@ Datos reportados, recuentos estimados, precios del proveedor e hipótesis DCF se
 
 | Ticker | Precio 23/10 USD | Conservador | Base | Optimista | Dilución central, millones | Estado |
 |---|---:|---:|---:|---:|---:|---|
-| MSFT | 532.60 | 74.42 | 167.99 | 389.84 | 7,449.55 | SCREEN-GRADE |
-| ADBE | 258.62 | 117.25 | 265.78 | 570.72 | 389.70 | SCREEN-GRADE |
-| V | 404.16 | 102.76 | 210.64 | 433.54 | 1,896.90 | SCREEN-GRADE |
-| MA | 613.50 | 185.16 | 383.66 | 743.59 | 877.01 | SCREEN-GRADE |
-| TXN | 298.12 | 23.28 | 97.40 | 221.88 | 920.77 | SCREEN-GRADE |
+| MSFT | 531.33 | 74.42 | 167.99 | 389.84 | 7,449.55 | SCREEN-GRADE |
+| ADBE | 248.36 | 117.25 | 265.78 | 570.72 | 389.70 | SCREEN-GRADE |
+| V | 401.86 | 102.76 | 210.64 | 433.54 | 1,896.90 | SCREEN-GRADE |
+| MA | 609.85 | 185.16 | 383.66 | 743.59 | 877.01 | SCREEN-GRADE |
+| TXN | 308.91 | 23.28 | 97.40 | 221.88 | 920.77 | SCREEN-GRADE |
 
 ## MSFT — Microsoft
 Acciones: 7425.545491 + 24 FY2026 treasury method stock-award equivalents. Banda 7,425.545 – 7,503.545 millones.
@@ -22,7 +22,7 @@ Flujo base: Start with FY2026 CFO 182,935 − CAPEX 115,948 − SBC 12,405 − f
 | conservador | 45,000 | 6.0% | 3.0% | 12.0% | 2.0% | 74.42 | 73.89–74.66 | 41.4% |
 | base | 51,481 | 13.0% | 7.0% | 10.0% | 2.5% | 167.99 | 166.78–168.53 | 56.0% |
 | optimista | 67,000 | 18.0% | 9.0% | 8.5% | 3.0% | 389.84 | 387.04–391.10 | 67.3% |
-Flujo anual de partida requerido para justificar el precio con hipótesis base: 163,216.7 M USD (valor implícito inverso, no previsión).
+Flujo anual de partida requerido para justificar el precio con hipótesis base: 162,827.6 M USD (valor implícito inverso, no previsión).
 
 Pendientes:
 - Current fully diluted share count has not been certified
@@ -42,7 +42,7 @@ Flujo base: FY2025 source cash CFO 10,031 − CAPEX 179 − SBC 1,942 = $7,910m.
 | conservador | 4,300 | 3.0% | 2.0% | 12.0% | 2.0% | 117.25 | 114.20–117.40 | 39.6% |
 | base | 6,150 | 8.0% | 4.0% | 10.5% | 2.5% | 265.78 | 258.87–266.12 | 50.1% |
 | optimista | 8,000 | 12.0% | 6.0% | 9.0% | 3.0% | 570.72 | 555.88–571.45 | 61.5% |
-Flujo anual de partida requerido para justificar el precio con hipótesis base: 6,334.3 M USD (valor implícito inverso, no previsión).
+Flujo anual de partida requerido para justificar el precio con hipótesis base: 6,096.9 M USD (valor implícito inverso, no previsión).
 
 Pendientes:
 - Current fully diluted share count has not been certified
@@ -62,7 +62,7 @@ Flujo base: FY2025 10-K CFO 23,059 − property/equipment/technology CAPEX 1,482
 | conservador | 15,000 | 6.0% | 3.0% | 11.5% | 2.0% | 102.76 | 101.69–103.75 | 43.2% |
 | base | 19,000 | 11.0% | 5.0% | 10.0% | 2.5% | 210.64 | 208.43–212.66 | 53.9% |
 | optimista | 23,000 | 15.0% | 7.0% | 8.5% | 3.0% | 433.54 | 428.99–437.69 | 65.3% |
-Flujo anual de partida requerido para justificar el precio con hipótesis base: 36,455.8 M USD (valor implícito inverso, no previsión).
+Flujo anual de partida requerido para justificar el precio con hipótesis base: 36,248.3 M USD (valor implícito inverso, no previsión).
 
 Pendientes:
 - Current fully diluted share count has not been certified
@@ -82,7 +82,7 @@ Flujo base: FY2025 10-K net income $14,968m, CFO $17,648m, CAPEX $489m. Forward 
 | conservador | 12,000 | 7.0% | 3.0% | 11.5% | 2.0% | 185.16 | 183.49–185.37 | 43.4% |
 | base | 16,000 | 11.0% | 5.0% | 10.0% | 2.5% | 383.66 | 380.20–384.10 | 53.9% |
 | optimista | 19,000 | 14.0% | 7.0% | 8.5% | 3.0% | 743.59 | 736.88–744.44 | 65.2% |
-Flujo anual de partida requerido para justificar el precio con hipótesis base: 25,585.2 M USD (valor implícito inverso, no previsión).
+Flujo anual de partida requerido para justificar el precio con hipótesis base: 25,432.9 M USD (valor implícito inverso, no previsión).
 
 Pendientes:
 - Current fully diluted share count has not been certified
@@ -102,7 +102,7 @@ Flujo base: Q3 2026 LTM GAAP CFO 9,896 − CAPEX 2,578 = FCF proxy 7,318m. Forwa
 | conservador | 2,200 | 2.0% | 1.0% | 12.0% | 1.5% | 23.28 | 23.05–23.46 | 37.1% |
 | base | 5,500 | 8.0% | 4.0% | 10.5% | 2.0% | 97.40 | 96.43–98.15 | 48.5% |
 | optimista | 8,000 | 12.0% | 5.0% | 9.0% | 2.5% | 221.88 | 219.68–223.58 | 58.7% |
-Flujo anual de partida requerido para justificar el precio con hipótesis base: 16,834.3 M USD (valor implícito inverso, no previsión).
+Flujo anual de partida requerido para justificar el precio con hipótesis base: 17,443.6 M USD (valor implícito inverso, no previsión).
 
 Pendientes:
 - Current fully diluted share count has not been certified
