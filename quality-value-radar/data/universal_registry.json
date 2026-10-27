@@ -2,39 +2,54 @@
   "schema": "qvr-universal-registry-v1",
   "companies": {
     "MSFT": {
-      "name": "MSFT",
+      "name": "Microsoft Corporation",
+      "currency": "USD",
       "firstAddedAt": "2026-10-27T00:00:00Z",
-      "source": "initial cross-market pilot"
+      "instrumentType": "EQUITY",
+      "exchangeName": "NMS"
     },
     "GOOGL": {
-      "name": "GOOGL",
+      "name": "Alphabet Inc.",
+      "currency": "USD",
       "firstAddedAt": "2026-10-27T00:00:00Z",
-      "source": "initial cross-market pilot"
+      "instrumentType": "EQUITY",
+      "exchangeName": "NMS"
     },
     "V": {
-      "name": "V",
+      "name": "Visa Inc.",
+      "currency": "USD",
       "firstAddedAt": "2026-10-27T00:00:00Z",
-      "source": "initial cross-market pilot"
+      "instrumentType": "EQUITY",
+      "exchangeName": "NYQ"
     },
     "MA": {
-      "name": "MA",
+      "name": "Mastercard Incorporated",
+      "currency": "USD",
       "firstAddedAt": "2026-10-27T00:00:00Z",
-      "source": "initial cross-market pilot"
+      "instrumentType": "EQUITY",
+      "exchangeName": "NYQ"
     },
     "SAP.DE": {
-      "name": "SAP.DE",
+      "name": "SAP SE",
+      "currency": "EUR",
       "firstAddedAt": "2026-10-27T00:00:00Z",
-      "source": "initial cross-market pilot"
+      "instrumentType": "EQUITY",
+      "exchangeName": "GER"
     },
     "SAN.MC": {
-      "name": "SAN.MC",
+      "name": "Banco Santander, S.A.",
+      "currency": "EUR",
       "firstAddedAt": "2026-10-27T00:00:00Z",
-      "source": "initial cross-market pilot"
+      "instrumentType": "EQUITY",
+      "exchangeName": "MCE"
     },
     "7203.T": {
-      "name": "7203.T",
+      "name": "Toyota Motor Corporation",
+      "currency": "JPY",
       "firstAddedAt": "2026-10-27T00:00:00Z",
-      "source": "initial cross-market pilot"
+      "instrumentType": "EQUITY",
+      "exchangeName": "JPX"
     }
-  }
+  },
+  "updatedAt": "2026-10-27T21:14:36.875754+00:00"
 }
