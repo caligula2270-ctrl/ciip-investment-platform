@@ -1,4 +1,40 @@
 {
   "schema": "qvr-universal-registry-v1",
-  "companies": {}
+  "companies": {
+    "MSFT": {
+      "name": "MSFT",
+      "firstAddedAt": "2026-10-27T00:00:00Z",
+      "source": "initial cross-market pilot"
+    },
+    "GOOGL": {
+      "name": "GOOGL",
+      "firstAddedAt": "2026-10-27T00:00:00Z",
+      "source": "initial cross-market pilot"
+    },
+    "V": {
+      "name": "V",
+      "firstAddedAt": "2026-10-27T00:00:00Z",
+      "source": "initial cross-market pilot"
+    },
+    "MA": {
+      "name": "MA",
+      "firstAddedAt": "2026-10-27T00:00:00Z",
+      "source": "initial cross-market pilot"
+    },
+    "SAP.DE": {
+      "name": "SAP.DE",
+      "firstAddedAt": "2026-10-27T00:00:00Z",
+      "source": "initial cross-market pilot"
+    },
+    "SAN.MC": {
+      "name": "SAN.MC",
+      "firstAddedAt": "2026-10-27T00:00:00Z",
+      "source": "initial cross-market pilot"
+    },
+    "7203.T": {
+      "name": "7203.T",
+      "firstAddedAt": "2026-10-27T00:00:00Z",
+      "source": "initial cross-market pilot"
+    }
+  }
 }
