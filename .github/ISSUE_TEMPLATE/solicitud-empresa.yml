@@ -1,7 +1,6 @@
 name: Solicitar análisis universal
 description: Registrar una empresa cotizada nueva para el motor Quality & Value Radar
 title: "[QVR] Alta de empresa"
-labels: ["qvr-request"]
 body:
   - type: markdown
     attributes:
