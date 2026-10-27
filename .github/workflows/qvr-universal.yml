@@ -1,0 +1,67 @@
+name: QVR Universal - altas y actualizacion
+on:
+  workflow_dispatch:
+    inputs:
+      ticker:
+        description: 'Ticker de Yahoo Finance, por ejemplo MSFT o SAP.DE'
+        required: false
+        type: string
+  issues:
+    types: [opened]
+  schedule:
+    - cron: '40 7 * * 1-5'
+permissions:
+  contents: write
+  issues: read
+concurrency:
+  group: qvr-universal
+  cancel-in-progress: false
+jobs:
+  analyze:
+    if: github.event_name != 'issues' || startsWith(github.event.issue.title, '[QVR]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validar motor universal
+        run: |
+          python -m py_compile quality-value-radar/scripts/universal_market.py
+          python -m unittest discover -s quality-value-radar/scripts -p 'test_universal.py' -v
+      - name: Buscar cotizaciones y datos públicos
+        env:
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}
+          INPUT_TICKER: ${{ inputs.ticker }}
+          IS_ISSUE: ${{ github.event_name == 'issues' }}
+        run: |
+          if [ "$IS_ISSUE" = "true" ]; then
+            python quality-value-radar/scripts/universal_market.py --from-event
+          elif [ -n "$INPUT_TICKER" ]; then
+            python quality-value-radar/scripts/universal_market.py --ticker "$INPUT_TICKER"
+          else
+            python quality-value-radar/scripts/universal_market.py --refresh
+          fi
+      - name: Verificar integridad
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("quality-value-radar/data/universal_registry.json").read_text())
+          v=json.loads(Path("quality-value-radar/data/universal_results.json").read_text())
+          assert r["schema"]=="qvr-universal-registry-v1"
+          assert v["schema"]=="qvr-universal-results-v1" and not v["purchasesEnabled"]
+          assert set(r["companies"]).issubset(v["companies"])
+          assert all(not x["purchaseApproved"] for x in v["companies"].values())
+          PY
+      - name: Publicar nuevas investigaciones
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add quality-value-radar/data/universal_registry.json quality-value-radar/data/universal_results.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data(qvr): investigaciones universales"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
