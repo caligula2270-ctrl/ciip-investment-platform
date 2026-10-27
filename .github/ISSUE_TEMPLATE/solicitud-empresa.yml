@@ -1,0 +1,17 @@
+name: Solicitar análisis universal
+description: Registrar una empresa cotizada nueva para el motor Quality & Value Radar
+title: "[QVR] Alta de empresa"
+labels: ["qvr-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Introduce el **ticker exacto de Yahoo Finance**, con sufijo de mercado si procede. La aplicación comprueba el instrumento y obtiene datos reales disponibles. Fuera del universo SEC, puede quedar sólo con cotización hasta contar con datos financieros normalizados.
+  - type: input
+    id: ticker
+    attributes:
+      label: Ticker de Yahoo Finance
+      description: "Por ejemplo MSFT, SAP.DE, 7203.T, SAN.MC"
+      placeholder: "MSFT"
+    validations:
+      required: true
