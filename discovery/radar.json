@@ -2,6 +2,42 @@
   "13f_policy": "Dated user-provided historical holdings are only lead sources; not refreshed 13F evidence",
   "companies": [
     {
+      "cik": "0000935036",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000935036.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Priority to research only; no sector DCF approved",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 12.88,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 18.75,
+        "revenue_cagr_pct": 6.45,
+        "years_available": 5
+      },
+      "name": "ACI WORLDWIDE, INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 79,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "software_candidate",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "status": "RESEARCH_PRIORITY",
+      "ticker": "ACIW"
+    },
+    {
       "cik": "0001652044",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -305,6 +341,43 @@
       "ticker": "ABT"
     },
     {
+      "cik": "0001467373",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001467373.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2026-08-31",
+        "net_margin_pct": 11.28,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 15.38,
+        "revenue_cagr_pct": 4.76,
+        "years_available": 5
+      },
+      "name": "Accenture plc",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 74,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "service_specialist",
+      "sic": "7389",
+      "sic_description": "Services-Business Services, NEC",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ACN"
+    },
+    {
       "cik": "0000320193",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -380,6 +453,42 @@
       "ticker": "ACEL"
     },
     {
+      "cik": "0001113232",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001113232.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 14.33,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 14.22,
+        "revenue_cagr_pct": 6.09,
+        "years_available": 5
+      },
+      "name": "AXCELIS TECHNOLOGIES INC",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 71,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "manufacturing_specialist",
+      "sic": "3559",
+      "sic_description": "Special Industry Machinery, NEC",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ACLS"
+    },
+    {
       "cik": "0000008177",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -412,6 +521,77 @@
       "sector_profile": "unclassified",
       "status": "SPECIALIST_REVIEW",
       "ticker": "AAME"
+    },
+    {
+      "cik": "0000868857",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000868857.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-09-30",
+        "net_margin_pct": 3.48,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 6.36,
+        "revenue_cagr_pct": 4.88,
+        "years_available": 5
+      },
+      "name": "AECOM",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 67,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "8711",
+      "sic_description": "Services-Engineering Services",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ACM"
+    },
+    {
+      "cik": "0001401521",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001401521.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 2,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 31.85,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 41.82,
+        "revenue_cagr_pct": 10.05,
+        "years_available": 5
+      },
+      "name": "AMERICAN COASTAL INSURANCE Corp",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 64,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "financial_specialist",
+      "sic": "6331",
+      "sic_description": "Fire, Marine & Casualty Insurance",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ACIC"
     },
     {
       "cik": "0001070494",
@@ -528,6 +708,42 @@
       "ticker": "VST"
     },
     {
+      "cik": "0000002098",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002098.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 3,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 5.18,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 7.49,
+        "revenue_cagr_pct": 1.93,
+        "years_available": 5
+      },
+      "name": "ACME UNITED CORP",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 50,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "industrial_specialist",
+      "sic": "3420",
+      "sic_description": "Cutlery, Handtools & General Hardware",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ACU"
+    },
+    {
       "cik": "0001013871",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -601,6 +817,42 @@
       "sic_description": "Oil & Gas Field Services, NEC",
       "status": "SPECIALIST_REVIEW",
       "ticker": "ACDC"
+    },
+    {
+      "cik": "0001637873",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001637873.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 3,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -8.71,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -8.32,
+        "revenue_cagr_pct": 20.65,
+        "years_available": 5
+      },
+      "name": "ACV Auctions Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 43,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "service_specialist",
+      "sic": "7389",
+      "sic_description": "Services-Business Services, NEC",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ACVA"
     },
     {
       "cik": "0001814287",
@@ -718,6 +970,79 @@
       "sector_profile": "unclassified",
       "status": "SPECIALIST_REVIEW",
       "ticker": "NTRA"
+    },
+    {
+      "cik": "0001680062",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001680062.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 1,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 10.44,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 12.14,
+        "revenue_cagr_pct": 36.48,
+        "years_available": 5
+      },
+      "name": "ACM Research, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 35,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "manufacturing_specialist",
+      "sic": "3559",
+      "sic_description": "Special Industry Machinery, NEC",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ACMR"
+    },
+    {
+      "cik": "0000095953",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000095953.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 4,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 1.16,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -9.38,
+        "revenue_cagr_pct": -31.21,
+        "years_available": 5
+      },
+      "name": "ASCENT INDUSTRIES CO.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 24,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "industrial_specialist",
+      "sic": "2800",
+      "sic_description": "Chemicals & Allied Products",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ACNT"
     },
     {
       "cik": "0001158449",
@@ -929,6 +1254,79 @@
       "sic_description": "Pharmaceutical Preparations",
       "status": "SPECIALIST_REVIEW",
       "ticker": "ABUS"
+    },
+    {
+      "cik": "0001635077",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001635077.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -9551.87,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -9312.55,
+        "revenue_cagr_pct": 5.86,
+        "years_available": 5
+      },
+      "name": "Aclarion, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 10,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "8071",
+      "sic_description": "Services-Medical Laboratories",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ACON"
+    },
+    {
+      "cik": "0001557746",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001557746.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -829.58,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -975.91,
+        "revenue_cagr_pct": 3.72,
+        "years_available": 5
+      },
+      "name": "Aclaris Therapeutics, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 5,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ACRS"
     },
     {
       "cik": "0001675149",
@@ -1966,6 +2364,461 @@
       "ticker": "ACHC"
     },
     {
+      "cik": "0001824502",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001824502.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -206066.67,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -243100.0,
+        "revenue_cagr_pct": null,
+        "years_available": 5
+      },
+      "name": "Archer Aviation Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "industrial_specialist",
+      "sic": "3721",
+      "sic_description": "Aircraft",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACHR"
+    },
+    {
+      "cik": "0000949858",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000949858.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 5
+      },
+      "name": "ACHIEVE LIFE SCIENCES, INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2835",
+      "sic_description": "In Vitro & In Vivo Diagnostic Substances",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACHV"
+    },
+    {
+      "cik": "0001646972",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001646972.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2026-02-28",
+        "net_margin_pct": 0.26,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 0.87,
+        "revenue_cagr_pct": 3.71,
+        "years_available": 5
+      },
+      "name": "Albertsons Companies, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "distribution_specialist",
+      "sic": "5411",
+      "sic_description": "Retail-Grocery Stores",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACI"
+    },
+    {
+      "cik": "0001651625",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001651625.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "AC Immune SA",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACIU"
+    },
+    {
+      "cik": "0000715579",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000715579.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 19.32,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 20.78,
+        "years_available": 5
+      },
+      "name": "ACNB CORP",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "financial_specialist",
+      "sic": "6022",
+      "sic_description": "State Commercial Banks",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACNB"
+    },
+    {
+      "cik": "0001655923",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001655923.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -202.24,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -221.72,
+        "revenue_cagr_pct": null,
+        "years_available": 3
+      },
+      "name": "Alpha Cognition Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2836",
+      "sic_description": "Biological Products, (No Diagnostic Substances)",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACOG"
+    },
+    {
+      "cik": "0001332551",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001332551.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 34.99,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 12.41,
+        "years_available": 5
+      },
+      "name": "ACRES Commercial Realty Corp.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "financial_specialist",
+      "sic": "6798",
+      "sic_description": "Real Estate Investment Trusts",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACR"
+    },
+    {
+      "cik": "0001529377",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001529377.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -1.64,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": -14.39,
+        "years_available": 5
+      },
+      "name": "Ares Commercial Real Estate Corp",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "financial_specialist",
+      "sic": "6798",
+      "sic_description": "Real Estate Investment Trusts",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACRE"
+    },
+    {
+      "cik": "0001781174",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001781174.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 5
+      },
+      "name": "Acrivon Therapeutics, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACRV"
+    },
+    {
+      "cik": "0001823529",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001823529.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 54.56,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 2.54,
+        "years_available": 5
+      },
+      "name": "Enact Holdings, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "financial_specialist",
+      "sic": "6411",
+      "sic_description": "Insurance Agents, Brokers & Service",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACT"
+    },
+    {
+      "cik": "0000934549",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000934549.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 1,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 7.6,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 2.25,
+        "revenue_cagr_pct": 34.16,
+        "years_available": 5
+      },
+      "name": "ACACIA RESEARCH CORP",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "financial_specialist",
+      "sic": "6794",
+      "sic_description": "Patent Owners & Lessors",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACTG"
+    },
+    {
+      "cik": "0001652935",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652935.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 3
+      },
+      "name": "ACTUATE THERAPEUTICS, INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACTU"
+    },
+    {
+      "cik": "0001736243",
+      "decision_ready": false,
+      "detected_at": "2026-10-27",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001736243.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 5
+      },
+      "name": "Acurx Pharmaceuticals, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ACXP"
+    },
+    {
       "cik": "0000004962",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -2596,11 +3449,11 @@
       "ticker": "YPF"
     }
   ],
-  "generated_on": "2026-10-26",
+  "generated_on": "2026-10-27",
   "last_batch_sec_downloaded": 24,
   "last_batch_size": 24,
   "readiness": "RESEARCH_SCREEN_ONLY_NOT_RECOMMENDATIONS",
   "schema": "ciip-automatic-discovery-radar-v1",
   "scope": "SEC-listed US equity issuers, rotating incremental sampling",
-  "total_unique_candidates_seen": 72
+  "total_unique_candidates_seen": 96
 }

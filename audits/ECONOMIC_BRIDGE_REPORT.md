@@ -1,6 +1,6 @@
 # CIIP Economic Bridge Review v2
 
-Date: 2026-10-26. Status: **ECONOMIC_BRIDGES_PARTIAL_FORECAST_NOT_SIGNED**.
+Date: 2026-10-27. Status: **ECONOMIC_BRIDGES_PARTIAL_FORECAST_NOT_SIGNED**.
 Legacy DCF assumptions and share-count estimates are NOT overwritten.
 
 | Ticker | Legacy base DCF $/share | Reported arithmetic | Unresolved economic dependencies | Portfolio use |

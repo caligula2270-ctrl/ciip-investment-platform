@@ -1,220 +1,199 @@
 {
   "candidates": [
     {
-      "cik": "0002009684",
-      "exchange": "NYSE",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/13f/000117266126002336-pershing-square-capital-management-l-p-q1-2026"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "Seaport Entertainment Group Inc.",
-      "seed_reason": "historical_13f",
-      "ticker": "SEG"
-    },
-    {
-      "cik": "0001692819",
-      "exchange": "NYSE",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/manager/0001656456-appaloosa-lp"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "Vistra Corp.",
-      "seed_reason": "historical_13f",
-      "ticker": "VST"
-    },
-    {
-      "cik": "0000904851",
-      "exchange": "NYSE",
-      "historical_13f": {
-        "latest_reported_holdings_date": "2026-03-31",
-        "manager_count_historical": 1,
-        "reference_urls": [
-          "https://13f.info/13f/000153641126000004-duquesne-family-office-llc-q1-2026"
-        ],
-        "status": "historical_snapshot_not_current_13f"
-      },
-      "name": "YPF SOCIEDAD ANONIMA",
-      "seed_reason": "historical_13f",
-      "ticker": "YPF"
-    },
-    {
-      "cik": "0000001800",
+      "cik": "0001824502",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ABBOTT LABORATORIES",
+      "name": "Archer Aviation Inc.",
       "seed_reason": "rotation",
-      "ticker": "ABT"
+      "ticker": "ACHR"
     },
     {
-      "cik": "0001755953",
+      "cik": "0000949858",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "American Bitcoin Corp.",
+      "name": "ACHIEVE LIFE SCIENCES, INC.",
       "seed_reason": "rotation",
-      "ticker": "ABTC"
+      "ticker": "ACHV"
     },
     {
-      "cik": "0001864055",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "Abits Group Inc",
-      "seed_reason": "rotation",
-      "ticker": "ABTS"
-    },
-    {
-      "cik": "0001447028",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "Arbutus Biopharma Corp",
-      "seed_reason": "rotation",
-      "ticker": "ABUS"
-    },
-    {
-      "cik": "0001173313",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "ABVC BIOPHARMA, INC.",
-      "seed_reason": "rotation",
-      "ticker": "ABVC"
-    },
-    {
-      "cik": "0001956827",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "Abivax S.A.",
-      "seed_reason": "rotation",
-      "ticker": "ABVX"
-    },
-    {
-      "cik": "0001814287",
+      "cik": "0001646972",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "Abacus Global Management, Inc.",
+      "name": "Albertsons Companies, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ABX"
+      "ticker": "ACI"
     },
     {
-      "cik": "0001739445",
+      "cik": "0001401521",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "AMERICAN COASTAL INSURANCE Corp",
+      "seed_reason": "rotation",
+      "ticker": "ACIC"
+    },
+    {
+      "cik": "0001651625",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "AC Immune SA",
+      "seed_reason": "rotation",
+      "ticker": "ACIU"
+    },
+    {
+      "cik": "0000935036",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "ACI WORLDWIDE, INC.",
+      "seed_reason": "rotation",
+      "ticker": "ACIW"
+    },
+    {
+      "cik": "0001113232",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "AXCELIS TECHNOLOGIES INC",
+      "seed_reason": "rotation",
+      "ticker": "ACLS"
+    },
+    {
+      "cik": "0000868857",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "Arcosa, Inc.",
+      "name": "AECOM",
       "seed_reason": "rotation",
-      "ticker": "ACA"
+      "ticker": "ACM"
     },
     {
-      "cik": "0001070494",
+      "cik": "0001680062",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "ACADIA PHARMACEUTICALS INC",
+      "name": "ACM Research, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ACAD"
+      "ticker": "ACMR"
     },
     {
-      "cik": "0001683541",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "AURORA CANNABIS INC",
-      "seed_reason": "rotation",
-      "ticker": "ACB"
-    },
-    {
-      "cik": "0002038378",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "Acco Group Holdings Ltd",
-      "seed_reason": "rotation",
-      "ticker": "ACCL"
-    },
-    {
-      "cik": "0000712034",
+      "cik": "0001467373",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ACCO BRANDS Corp",
+      "name": "Accenture plc",
       "seed_reason": "rotation",
-      "ticker": "ACCO"
+      "ticker": "ACN"
     },
     {
-      "cik": "0000843006",
+      "cik": "0000715579",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "ACNB CORP",
+      "seed_reason": "rotation",
+      "ticker": "ACNB"
+    },
+    {
+      "cik": "0000095953",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "ASCENT INDUSTRIES CO.",
+      "seed_reason": "rotation",
+      "ticker": "ACNT"
+    },
+    {
+      "cik": "0001655923",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Alpha Cognition Inc.",
+      "seed_reason": "rotation",
+      "ticker": "ACOG"
+    },
+    {
+      "cik": "0001635077",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Aclarion, Inc.",
+      "seed_reason": "rotation",
+      "ticker": "ACON"
+    },
+    {
+      "cik": "0001332551",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ACCESS Newswire Inc.",
+      "name": "ACRES Commercial Realty Corp.",
       "seed_reason": "rotation",
-      "ticker": "ACCS"
+      "ticker": "ACR"
     },
     {
-      "cik": "0002141406",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "Accelevation Holdings Corp.",
-      "seed_reason": "rotation",
-      "ticker": "ACCV"
-    },
-    {
-      "cik": "0001881487",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "ProFrac Holding Corp.",
-      "seed_reason": "rotation",
-      "ticker": "ACDC"
-    },
-    {
-      "cik": "0001698991",
+      "cik": "0001529377",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "Accel Entertainment, Inc.",
+      "name": "Ares Commercial Real Estate Corp",
       "seed_reason": "rotation",
-      "ticker": "ACEL"
+      "ticker": "ACRE"
     },
     {
-      "cik": "0001720580",
+      "cik": "0001557746",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "Adicet Bio, Inc.",
+      "name": "Aclaris Therapeutics, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ACET"
+      "ticker": "ACRS"
     },
     {
-      "cik": "0000880984",
+      "cik": "0001781174",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "ACORN ENERGY, INC.",
+      "name": "Acrivon Therapeutics, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ACFN"
+      "ticker": "ACRV"
     },
     {
-      "cik": "0000947484",
+      "cik": "0001823529",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "ARCH CAPITAL GROUP LTD.",
+      "name": "Enact Holdings, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ACGL"
+      "ticker": "ACT"
     },
     {
-      "cik": "0000075252",
+      "cik": "0000934549",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "ACACIA RESEARCH CORP",
+      "seed_reason": "rotation",
+      "ticker": "ACTG"
+    },
+    {
+      "cik": "0001652935",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "ACTUATE THERAPEUTICS, INC.",
+      "seed_reason": "rotation",
+      "ticker": "ACTU"
+    },
+    {
+      "cik": "0000002098",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ACCENDRA HEALTH INC/VA/",
+      "name": "ACME UNITED CORP",
       "seed_reason": "rotation",
-      "ticker": "ACH"
+      "ticker": "ACU"
     },
     {
-      "cik": "0001520697",
+      "cik": "0001637873",
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "name": "ACV Auctions Inc.",
+      "seed_reason": "rotation",
+      "ticker": "ACVA"
+    },
+    {
+      "cik": "0001736243",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "Acadia Healthcare Company, Inc.",
+      "name": "Acurx Pharmaceuticals, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ACHC"
+      "ticker": "ACXP"
     }
   ],
-  "generated_on": "2026-10-26",
+  "generated_on": "2026-10-27",
   "listed_issuer_count": 5412,
   "no_universe_completeness_claim": true,
   "scan_budget": 24,
