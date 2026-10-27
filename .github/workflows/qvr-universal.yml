@@ -1,5 +1,9 @@
 name: QVR Universal - altas y actualizacion
 on:
+  push:
+    paths:
+      - 'quality-value-radar/scripts/universal_market.py'
+      - 'quality-value-radar/scripts/test_universal.py'
   workflow_dispatch:
     inputs:
       ticker:
