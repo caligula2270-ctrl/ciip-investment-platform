@@ -5,6 +5,7 @@ Scope: any listed ticker supported by the market-data source; fundamentals from
 official SEC XBRL US-GAAP when available. Other jurisdictions: quote-only until
 filing-normalized international adapters exist. No invented FCF, ROIC or FX.
 This script never executes orders or classifies a purchase as approved.
+Cross-market pilot: US filings, European and Japanese equity symbols.
 """
 from __future__ import annotations
 import argparse
