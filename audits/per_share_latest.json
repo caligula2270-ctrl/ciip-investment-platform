@@ -1,6 +1,6 @@
 {
   "schema": "ciip-per-share-valuation-v1",
-  "generated_at": "2026-10-28T08:26:21.219272+00:00",
+  "generated_at": "2026-10-28T23:54:25.684646+00:00",
   "as_of": "2026-10-28",
   "source_review_as_of": "2026-10-24",
   "evidence_urls": {
@@ -18,9 +18,9 @@
       "as_of": "2026-10-28",
       "quote": {
         "currency": "USD",
-        "date": "2026-10-27",
+        "date": "2026-10-28",
         "kind": "daily_close",
-        "price": 531.3300170898438,
+        "price": 531.010009765625,
         "source": "Yahoo Finance (chart)",
         "symbol": "MSFT",
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/MSFT?range=10d&interval=1d",
@@ -83,8 +83,8 @@
             "high_dilution_value_usd": 73.89
           },
           "terminal_weight_pct": 41.35,
-          "implied_price_to_value_pct": 713.9,
-          "margin_price_to_value_pct": -613.9,
+          "implied_price_to_value_pct": 713.5,
+          "margin_price_to_value_pct": -613.5,
           "cashflows": [
             47700.0,
             50562.0,
@@ -114,8 +114,8 @@
             "high_dilution_value_usd": 166.78
           },
           "terminal_weight_pct": 56.01,
-          "implied_price_to_value_pct": 316.3,
-          "margin_price_to_value_pct": -216.3,
+          "implied_price_to_value_pct": 316.1,
+          "margin_price_to_value_pct": -216.1,
           "cashflows": [
             58173.53,
             65736.089,
@@ -145,8 +145,8 @@
             "high_dilution_value_usd": 387.04
           },
           "terminal_weight_pct": 67.26,
-          "implied_price_to_value_pct": 136.3,
-          "margin_price_to_value_pct": -36.3,
+          "implied_price_to_value_pct": 136.2,
+          "margin_price_to_value_pct": -36.2,
           "cashflows": [
             79060.0,
             93290.8,
@@ -161,7 +161,7 @@
           ]
         }
       },
-      "base_cash_required_to_match_last_price_musd": 162827.6,
+      "base_cash_required_to_match_last_price_musd": 162729.5,
       "additional_issues": [
         "CAPEX FY2026 is massive relative to CFO",
         "Cash owner proxy assumes datacenter cycle change",
@@ -185,9 +185,9 @@
       "as_of": "2026-10-28",
       "quote": {
         "currency": "USD",
-        "date": "2026-10-27",
+        "date": "2026-10-28",
         "kind": "daily_close",
-        "price": 248.36000061035156,
+        "price": 249.75999450683594,
         "source": "Yahoo Finance (chart)",
         "symbol": "ADBE",
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/ADBE?range=10d&interval=1d",
@@ -254,8 +254,8 @@
             "high_dilution_value_usd": 114.2
           },
           "terminal_weight_pct": 39.56,
-          "implied_price_to_value_pct": 211.8,
-          "margin_price_to_value_pct": -111.8,
+          "implied_price_to_value_pct": 213.0,
+          "margin_price_to_value_pct": -113.0,
           "cashflows": [
             4429.0,
             4561.87,
@@ -286,8 +286,8 @@
             "high_dilution_value_usd": 258.87
           },
           "terminal_weight_pct": 50.11,
-          "implied_price_to_value_pct": 93.4,
-          "margin_price_to_value_pct": 6.6,
+          "implied_price_to_value_pct": 94.0,
+          "margin_price_to_value_pct": 6.0,
           "cashflows": [
             6642.0,
             7173.36,
@@ -318,8 +318,8 @@
             "high_dilution_value_usd": 555.88
           },
           "terminal_weight_pct": 61.51,
-          "implied_price_to_value_pct": 43.5,
-          "margin_price_to_value_pct": 56.5,
+          "implied_price_to_value_pct": 43.8,
+          "margin_price_to_value_pct": 56.2,
           "cashflows": [
             8960.0,
             10035.2,
@@ -334,7 +334,7 @@
           ]
         }
       },
-      "base_cash_required_to_match_last_price_musd": 6096.9,
+      "base_cash_required_to_match_last_price_musd": 6129.3,
       "additional_issues": [
         "SBC and repurchases need consistent economic treatment",
         "Adobe AI retention/pricing needs verification",
@@ -358,9 +358,9 @@
       "as_of": "2026-10-28",
       "quote": {
         "currency": "USD",
-        "date": "2026-10-27",
+        "date": "2026-10-28",
         "kind": "daily_close",
-        "price": 401.8599853515625,
+        "price": 400.6000061035156,
         "source": "Yahoo Finance (chart)",
         "symbol": "V",
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/V?range=10d&interval=1d",
@@ -481,8 +481,8 @@
             "high_dilution_value_usd": 101.69
           },
           "terminal_weight_pct": 43.16,
-          "implied_price_to_value_pct": 391.1,
-          "margin_price_to_value_pct": -291.1,
+          "implied_price_to_value_pct": 389.8,
+          "margin_price_to_value_pct": -289.8,
           "cashflows": [
             15900.0,
             16854.0,
@@ -512,8 +512,8 @@
             "high_dilution_value_usd": 208.43
           },
           "terminal_weight_pct": 53.88,
-          "implied_price_to_value_pct": 190.8,
-          "margin_price_to_value_pct": -90.8,
+          "implied_price_to_value_pct": 190.2,
+          "margin_price_to_value_pct": -90.2,
           "cashflows": [
             21090.0,
             23409.9,
@@ -543,8 +543,8 @@
             "high_dilution_value_usd": 428.99
           },
           "terminal_weight_pct": 65.35,
-          "implied_price_to_value_pct": 92.7,
-          "margin_price_to_value_pct": 7.3,
+          "implied_price_to_value_pct": 92.4,
+          "margin_price_to_value_pct": 7.6,
           "cashflows": [
             26450.0,
             30417.5,
@@ -559,7 +559,7 @@
           ]
         }
       },
-      "base_cash_required_to_match_last_price_musd": 36248.3,
+      "base_cash_required_to_match_last_price_musd": 36134.6,
       "additional_issues": [
         "No completed FY2026 accounts as of Oct25",
         "Multiclass and litigation conversion rates change",
@@ -583,9 +583,9 @@
       "as_of": "2026-10-28",
       "quote": {
         "currency": "USD",
-        "date": "2026-10-27",
+        "date": "2026-10-28",
         "kind": "daily_close",
-        "price": 609.8499755859375,
+        "price": 610.3099975585938,
         "source": "Yahoo Finance (chart)",
         "symbol": "MA",
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/MA?range=10d&interval=1d",
@@ -663,8 +663,8 @@
             "high_dilution_value_usd": 183.49
           },
           "terminal_weight_pct": 43.44,
-          "implied_price_to_value_pct": 329.4,
-          "margin_price_to_value_pct": -229.4,
+          "implied_price_to_value_pct": 329.6,
+          "margin_price_to_value_pct": -229.6,
           "cashflows": [
             12840.0,
             13738.8,
@@ -694,8 +694,8 @@
             "high_dilution_value_usd": 380.2
           },
           "terminal_weight_pct": 53.88,
-          "implied_price_to_value_pct": 159.0,
-          "margin_price_to_value_pct": -59.0,
+          "implied_price_to_value_pct": 159.1,
+          "margin_price_to_value_pct": -59.1,
           "cashflows": [
             17760.0,
             19713.6,
@@ -725,8 +725,8 @@
             "high_dilution_value_usd": 736.88
           },
           "terminal_weight_pct": 65.17,
-          "implied_price_to_value_pct": 82.0,
-          "margin_price_to_value_pct": 18.0,
+          "implied_price_to_value_pct": 82.1,
+          "margin_price_to_value_pct": 17.9,
           "cashflows": [
             21660.0,
             24692.4,
@@ -741,7 +741,7 @@
           ]
         }
       },
-      "base_cash_required_to_match_last_price_musd": 25432.9,
+      "base_cash_required_to_match_last_price_musd": 25452.1,
       "additional_issues": [
         "Customer incentives and prepaid balances distort CFO timing",
         "Litigation settlements and open antitrust cases",
@@ -765,9 +765,9 @@
       "as_of": "2026-10-28",
       "quote": {
         "currency": "USD",
-        "date": "2026-10-27",
+        "date": "2026-10-28",
         "kind": "daily_close",
-        "price": 308.9100036621094,
+        "price": 309.8299865722656,
         "source": "Yahoo Finance (chart)",
         "symbol": "TXN",
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/TXN?range=10d&interval=1d",
@@ -832,8 +832,8 @@
             "high_dilution_value_usd": 23.05
           },
           "terminal_weight_pct": 37.07,
-          "implied_price_to_value_pct": 1327.0,
-          "margin_price_to_value_pct": -1227.0,
+          "implied_price_to_value_pct": 1330.9,
+          "margin_price_to_value_pct": -1230.9,
           "cashflows": [
             2244.0,
             2288.88,
@@ -863,8 +863,8 @@
             "high_dilution_value_usd": 96.43
           },
           "terminal_weight_pct": 48.47,
-          "implied_price_to_value_pct": 317.2,
-          "margin_price_to_value_pct": -217.2,
+          "implied_price_to_value_pct": 318.1,
+          "margin_price_to_value_pct": -218.1,
           "cashflows": [
             5940.0,
             6415.2,
@@ -894,8 +894,8 @@
             "high_dilution_value_usd": 219.68
           },
           "terminal_weight_pct": 58.67,
-          "implied_price_to_value_pct": 139.2,
-          "margin_price_to_value_pct": -39.2,
+          "implied_price_to_value_pct": 139.6,
+          "margin_price_to_value_pct": -39.6,
           "cashflows": [
             8960.0,
             10035.2,
@@ -910,7 +910,7 @@
           ]
         }
       },
-      "base_cash_required_to_match_last_price_musd": 17443.6,
+      "base_cash_required_to_match_last_price_musd": 17495.5,
       "additional_issues": [
         "CHIPS grants are not recurring operating cash",
         "Industrial CAPEX and utilization cyclical",
