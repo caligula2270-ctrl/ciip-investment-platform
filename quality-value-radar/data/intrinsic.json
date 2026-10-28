@@ -1,6 +1,6 @@
 {
   "schema": "qvr-auto-v1",
-  "generatedAt": "2026-10-25T23:26:47.103748+00:00",
+  "generatedAt": "2026-10-28T10:01:31.282103+00:00",
   "source": "US SEC companyfacts; historical daily prices from Yahoo Finance",
   "methodology": "Conservative research screen, not a transaction recommendation.",
   "companies": {
@@ -145,9 +145,9 @@
       "valueFromHistoricalMultiple": 66.79,
       "fairValue": null,
       "quote": {
-        "price": 29.09,
+        "price": 28.92,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -183,7 +183,7 @@
       },
       "modelProFormaStatus": "not_adjusted",
       "legacyFairValue": 39.16,
-      "legacyMarginPct": 25.7,
+      "legacyMarginPct": 26.1,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -431,9 +431,9 @@
       "valueFromHistoricalMultiple": 943.32,
       "fairValue": null,
       "quote": {
-        "price": 1018.21,
+        "price": 992.13,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -518,7 +518,7 @@
         ]
       },
       "legacyFairValue": 534.97,
-      "legacyMarginPct": -90.3,
+      "legacyMarginPct": -85.5,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -716,9 +716,9 @@
       "valueFromHistoricalMultiple": 515.94,
       "fairValue": null,
       "quote": {
-        "price": 270.55,
+        "price": 248.36,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -816,7 +816,7 @@
         ]
       },
       "legacyFairValue": 381.95,
-      "legacyMarginPct": 29.2,
+      "legacyMarginPct": 35.0,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -1064,9 +1064,9 @@
       "valueFromHistoricalMultiple": 395.61,
       "fairValue": null,
       "quote": {
-        "price": 643.62,
+        "price": 639.58,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -1151,7 +1151,7 @@
         ]
       },
       "legacyFairValue": 342.31,
-      "legacyMarginPct": -88.0,
+      "legacyMarginPct": -86.8,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -1349,9 +1349,9 @@
       "valueFromHistoricalMultiple": 228.95,
       "fairValue": null,
       "quote": {
-        "price": 229.75,
+        "price": 232.0,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -1388,7 +1388,7 @@
         ]
       },
       "legacyFairValue": 140.68,
-      "legacyMarginPct": -63.3,
+      "legacyMarginPct": -64.9,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -1582,9 +1582,9 @@
       "valueFromHistoricalMultiple": 162.31,
       "fairValue": null,
       "quote": {
-        "price": 225.87,
+        "price": 231.25,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -1621,7 +1621,7 @@
         ]
       },
       "legacyFairValue": 94.59,
-      "legacyMarginPct": -138.8,
+      "legacyMarginPct": -144.5,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -2099,9 +2099,9 @@
       "valueFromHistoricalMultiple": 738.44,
       "fairValue": null,
       "quote": {
-        "price": 354.9,
+        "price": 328.45,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -2186,7 +2186,7 @@
         ]
       },
       "legacyFairValue": 512.35,
-      "legacyMarginPct": 30.7,
+      "legacyMarginPct": 35.9,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -2383,9 +2383,9 @@
       "valueFromHistoricalMultiple": 196.47,
       "fairValue": null,
       "quote": {
-        "price": 311.52,
+        "price": 336.1,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -2483,7 +2483,7 @@
         ]
       },
       "legacyFairValue": 129.74,
-      "legacyMarginPct": -140.1,
+      "legacyMarginPct": -159.1,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -2681,9 +2681,9 @@
       "valueFromHistoricalMultiple": 434.73,
       "fairValue": null,
       "quote": {
-        "price": 653.96,
+        "price": 673.79,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -2781,7 +2781,7 @@
         ]
       },
       "legacyFairValue": 353.15,
-      "legacyMarginPct": -85.2,
+      "legacyMarginPct": -90.8,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -2977,9 +2977,9 @@
       "valueFromHistoricalMultiple": 258.05,
       "fairValue": null,
       "quote": {
-        "price": 253.06,
+        "price": 250.8,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -3064,7 +3064,7 @@
         ]
       },
       "legacyFairValue": 216.33,
-      "legacyMarginPct": -17.0,
+      "legacyMarginPct": -15.9,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -3260,9 +3260,9 @@
       "valueFromHistoricalMultiple": 99.19,
       "fairValue": null,
       "quote": {
-        "price": 279.5,
+        "price": 308.91,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -3360,7 +3360,7 @@
         ]
       },
       "legacyFairValue": 51.58,
-      "legacyMarginPct": -441.9,
+      "legacyMarginPct": -498.9,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -3559,9 +3559,9 @@
       "valueFromHistoricalMultiple": 262.66,
       "fairValue": null,
       "quote": {
-        "price": 82.0,
+        "price": 78.23,
         "currency": "USD",
-        "date": "2026-10-22",
+        "date": "2026-10-27",
         "source": "Yahoo Finance chart (sin garantía de disponibilidad)"
       },
       "marginOfSafetyPct": null,
@@ -3597,7 +3597,7 @@
         ]
       },
       "legacyFairValue": 146.98,
-      "legacyMarginPct": 44.2,
+      "legacyMarginPct": 46.8,
       "economicReview": {
         "status": "requires_reconciliation",
         "reportedFcfPerShare3y": [
@@ -3690,14 +3690,14 @@
   "attempted": 16,
   "enhancement": {
     "version": "2.0",
-    "generatedAt": "2026-10-25T23:27:03.358064+00:00",
+    "generatedAt": "2026-10-28T10:01:48.926782+00:00",
     "period": "Anual SEC + último 10-Q compatible",
     "roic": "NOPAT / capital invertido medio con tasa efectiva y arrendamientos si reportados",
     "enriched": 12
   },
   "economicUpgrade": {
     "version": "4.0-precheck",
-    "generatedAt": "2026-10-25T23:27:06.013818+00:00",
+    "generatedAt": "2026-10-28T10:01:51.467228+00:00",
     "reviewed": 16,
     "status": "No automatic discounts until owner FCF and M&A are reconciled"
   }

@@ -1,6 +1,6 @@
 {
   "schema": "qvr-sensitivity-v7",
-  "generatedAt": "2026-10-25T23:27:07.568781+00:00",
+  "generatedAt": "2026-10-28T10:01:53.391934+00:00",
   "sourceVersion": "qvr-v6",
   "automaticBuyDecisions": false,
   "allValuesIllustrative": true,
@@ -8,9 +8,9 @@
     "ADBE": {
       "ticker": "ADBE",
       "currency": "USD",
-      "sourcePrice": 270.55,
-      "quoteDate": "2026-10-22",
-      "asOf": "2026-10-25",
+      "sourcePrice": 248.36,
+      "quoteDate": "2026-10-27",
+      "asOf": "2026-10-28",
       "baselineIndicativeValue": 424.73,
       "baselineLevel": "indicative",
       "verifiedMaintenanceGrowthSplit": false,
@@ -141,9 +141,9 @@
     "INTU": {
       "ticker": "INTU",
       "currency": "USD",
-      "sourcePrice": 354.9,
-      "quoteDate": "2026-10-22",
-      "asOf": "2026-10-25",
+      "sourcePrice": 328.45,
+      "quoteDate": "2026-10-27",
+      "asOf": "2026-10-28",
       "baselineIndicativeValue": 431.82,
       "baselineLevel": "indicative",
       "verifiedMaintenanceGrowthSplit": false,
@@ -274,9 +274,9 @@
     "CPRT": {
       "ticker": "CPRT",
       "currency": "USD",
-      "sourcePrice": 29.09,
-      "quoteDate": "2026-10-22",
-      "asOf": "2026-10-25",
+      "sourcePrice": 28.92,
+      "quoteDate": "2026-10-27",
+      "asOf": "2026-10-28",
       "baselineIndicativeValue": 33.22,
       "baselineLevel": "indicative",
       "verifiedMaintenanceGrowthSplit": false,
@@ -453,10 +453,10 @@
     "CSU.TO": {
       "ticker": "CSU.TO",
       "currency": "CAD",
-      "sourcePrice": 3408.5701,
-      "quoteDate": "2026-10-22",
-      "asOf": "2026-10-25",
-      "baselineIndicativeValue": 1196.57,
+      "sourcePrice": 3303.8201,
+      "quoteDate": "2026-10-27",
+      "asOf": "2026-10-28",
+      "baselineIndicativeValue": 1200.07,
       "baselineLevel": "preliminary",
       "verifiedMaintenanceGrowthSplit": false,
       "verifiedAcquisitionReturn": false,
@@ -471,22 +471,22 @@
         "valueCases": [
           {
             "fiveYearNetShareCagrPct": -1,
-            "approximateDCFBase": 1258.24,
+            "approximateDCFBase": 1261.92,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 0,
-            "approximateDCFBase": 1196.57,
+            "approximateDCFBase": 1200.07,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 1,
-            "approximateDCFBase": 1138.5,
+            "approximateDCFBase": 1141.83,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 2.5,
-            "approximateDCFBase": 1057.59,
+            "approximateDCFBase": 1060.69,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           }
         ]
@@ -497,31 +497,31 @@
         "nonAdditiveCashSpendSensitivity": [
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 0,
-            "staticCashDistributionValuePerShare": 1196.57,
+            "staticCashDistributionValuePerShare": 1200.07,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 15,
-            "staticCashDistributionValuePerShare": 1017.08,
+            "staticCashDistributionValuePerShare": 1020.06,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 30,
-            "staticCashDistributionValuePerShare": 837.6,
+            "staticCashDistributionValuePerShare": 840.05,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 50,
-            "staticCashDistributionValuePerShare": 598.28,
+            "staticCashDistributionValuePerShare": 600.03,
             "growthHeldFixed": true,
             "notValuation": true
           },
           {
             "futureAcquisitionBudgetAsPctPreAcquisitionFcf": 75,
-            "staticCashDistributionValuePerShare": 299.14,
+            "staticCashDistributionValuePerShare": 300.02,
             "growthHeldFixed": true,
             "notValuation": true
           }
@@ -539,10 +539,10 @@
     "ASML": {
       "ticker": "ASML",
       "currency": "USD",
-      "sourcePrice": 1560.54,
-      "quoteDate": "2026-10-22",
-      "asOf": "2026-10-25",
-      "baselineIndicativeValue": 361.71,
+      "sourcePrice": 1635.5699,
+      "quoteDate": "2026-10-27",
+      "asOf": "2026-10-28",
+      "baselineIndicativeValue": 359.17,
       "baselineLevel": "preliminary",
       "verifiedMaintenanceGrowthSplit": false,
       "verifiedAcquisitionReturn": false,
@@ -557,22 +557,22 @@
         "valueCases": [
           {
             "fiveYearNetShareCagrPct": -1,
-            "approximateDCFBase": 380.35,
+            "approximateDCFBase": 377.68,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 0,
-            "approximateDCFBase": 361.71,
+            "approximateDCFBase": 359.17,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 1,
-            "approximateDCFBase": 344.15,
+            "approximateDCFBase": 341.74,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           },
           {
             "fiveYearNetShareCagrPct": 2.5,
-            "approximateDCFBase": 319.7,
+            "approximateDCFBase": 317.45,
             "method": "Approximation applying 5Y share denominator to entire DCF, NOT a recomputed cash stream"
           }
         ]
@@ -592,9 +592,9 @@
     "DNP.WA": {
       "ticker": "DNP.WA",
       "currency": "PLN",
-      "sourcePrice": 39.06,
-      "quoteDate": "2026-10-21",
-      "asOf": "2026-10-25",
+      "sourcePrice": 39.07,
+      "quoteDate": "2026-10-26",
+      "asOf": "2026-10-28",
       "baselineIndicativeValue": 8.91,
       "baselineLevel": "preliminary",
       "verifiedMaintenanceGrowthSplit": false,

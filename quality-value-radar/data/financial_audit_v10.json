@@ -1,6 +1,6 @@
 {
   "schema": "qvr-financial-bridge-v10",
-  "generatedAt": "2026-10-25T23:27:07.682457+00:00",
+  "generatedAt": "2026-10-28T10:01:53.519447+00:00",
   "signalsAllowed": false,
   "verifiedEquityTargets": 0,
   "models": {
@@ -194,17 +194,17 @@
       "approvedTarget": null,
       "scenarioBridge": {
         "bear": {
-          "FCFEProxyPerShare": 607.26,
+          "FCFEProxyPerShare": 609.03,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         },
         "base": {
-          "FCFEProxyPerShare": 890.34,
+          "FCFEProxyPerShare": 892.95,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         },
         "bull": {
-          "FCFEProxyPerShare": 1006.85,
+          "FCFEProxyPerShare": 1009.8,
           "approvedEquityTarget": null,
           "status": "acquisition_cohort_yields_unvalidated"
         }
@@ -266,23 +266,23 @@
       "approvedTarget": null,
       "scenarioBridge": {
         "bear": {
-          "operatingEnterpriseValuePerShare": 144.38,
-          "equityProxyExcludingLeasesPerShare": 170.35,
-          "equityProxyIncludingLeasesPerShare": 169.62,
+          "operatingEnterpriseValuePerShare": 143.37,
+          "equityProxyExcludingLeasesPerShare": 169.16,
+          "equityProxyIncludingLeasesPerShare": 168.43,
           "approvedEquityTarget": null,
           "status": "illustrative_mismatched_filing_dates"
         },
         "base": {
-          "operatingEnterpriseValuePerShare": 443.15,
-          "equityProxyExcludingLeasesPerShare": 469.12,
-          "equityProxyIncludingLeasesPerShare": 468.39,
+          "operatingEnterpriseValuePerShare": 440.04,
+          "equityProxyExcludingLeasesPerShare": 465.83,
+          "equityProxyIncludingLeasesPerShare": 465.1,
           "approvedEquityTarget": null,
           "status": "illustrative_mismatched_filing_dates"
         },
         "bull": {
-          "operatingEnterpriseValuePerShare": 875.42,
-          "equityProxyExcludingLeasesPerShare": 901.39,
-          "equityProxyIncludingLeasesPerShare": 900.66,
+          "operatingEnterpriseValuePerShare": 869.28,
+          "equityProxyExcludingLeasesPerShare": 895.07,
+          "equityProxyIncludingLeasesPerShare": 894.34,
           "approvedEquityTarget": null,
           "status": "illustrative_mismatched_filing_dates"
         }

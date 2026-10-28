@@ -1,6 +1,6 @@
 {
   "schema": "qvr-pit-backtest-v6",
-  "generatedAt": "2026-10-25T23:27:06.434767+00:00",
+  "generatedAt": "2026-10-28T10:01:51.980832+00:00",
   "historicalResearchAsOf": "2021-10-25",
   "tickers": {
     "ADBE": {
@@ -12,10 +12,10 @@
       "historicalFairValue": 161.4,
       "historicalEntryPrice": 59.62,
       "wouldFlagForResearch": false,
-      "exitQuoteDate": "2026-10-22",
-      "exitPriceSplitAdjusted": 270.55,
-      "priceOnlyAnnualReturnPct": -16.03,
-      "years": 4.99,
+      "exitQuoteDate": "2026-10-27",
+      "exitPriceSplitAdjusted": 248.36,
+      "priceOnlyAnnualReturnPct": -17.41,
+      "years": 5.0,
       "financialFY": [
         "2018-11-30",
         "2019-11-29",
@@ -38,10 +38,10 @@
       "historicalFairValue": 178.16,
       "historicalEntryPrice": 65.81,
       "wouldFlagForResearch": false,
-      "exitQuoteDate": "2026-10-22",
-      "exitPriceSplitAdjusted": 354.9,
-      "priceOnlyAnnualReturnPct": -10.06,
-      "years": 4.99,
+      "exitQuoteDate": "2026-10-27",
+      "exitPriceSplitAdjusted": 328.45,
+      "priceOnlyAnnualReturnPct": -11.42,
+      "years": 5.0,
       "financialFY": [
         "2019-07-31",
         "2020-07-31",
@@ -64,10 +64,10 @@
       "historicalFairValue": 7.27,
       "historicalEntryPrice": 2.87,
       "wouldFlagForResearch": false,
-      "exitQuoteDate": "2026-10-22",
-      "exitPriceSplitAdjusted": 29.09,
-      "priceOnlyAnnualReturnPct": -5.37,
-      "years": 4.99,
+      "exitQuoteDate": "2026-10-27",
+      "exitPriceSplitAdjusted": 28.92,
+      "priceOnlyAnnualReturnPct": -5.47,
+      "years": 5.0,
       "financialFY": [
         "2019-07-31",
         "2020-07-31",

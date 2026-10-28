@@ -1,6 +1,6 @@
 {
   "schema": "qvr-closeout-v12",
-  "generatedAt": "2026-10-25T23:27:07.747107+00:00",
+  "generatedAt": "2026-10-28T10:01:53.592831+00:00",
   "models": {
     "ADBE": {
       "company": "ADBE",
@@ -102,7 +102,7 @@
         "Terminal value after acquisition funding",
         "Latest acquisition ROIC and available capital"
       ],
-      "previousResearchBase": 890.34,
+      "previousResearchBase": 892.95,
       "status": "material_claims_missing",
       "acquisitionCommitments": {
         "cashConsiderationUSDMillions": 669,
@@ -126,7 +126,7 @@
         "Nonoperating portfolio marks and financing consistency",
         "Working capital customer prepayment normalization"
       ],
-      "previousResearchBase": 443.15,
+      "previousResearchBase": 440.04,
       "status": "material_claims_missing",
       "interimBalancePartial": {
         "liquidAssetsEURMillions": 12735.1,

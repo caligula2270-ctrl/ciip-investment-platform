@@ -20,7 +20,7 @@
       "status": "preliminary_valuation",
       "reason": "FCFA2S es definición no GAAP; CAD por cotización frente USD reportados, adquisición intensiva e IRGA exigen conciliación.",
       "valuation": {
-        "marketImpliedFiveYearFcfGrowthPct": 35.49,
+        "marketImpliedFiveYearFcfGrowthPct": 34.48,
         "growthReference": "Reverse DCF uses flat per-share terminal share count; NOT management guidance",
         "historicalPfcfCrossCheck": "unavailable: comparable split-and-FX-adjusted fiscal prices not independently normalized",
         "reinvestmentAdjustment": "Not separately modeled: acquisitions / development CAPEX must be reviewed",
@@ -45,16 +45,16 @@
         "tradingCurrency": "CAD",
         "sharesMillions": 21.19153,
         "fx": {
-          "rate": 1.4016,
-          "date": "2026-10-25",
+          "rate": 1.4057,
+          "date": "2026-10-28",
           "source": "https://query1.finance.yahoo.com/v8/finance/chart/CAD%3DX?range=5d&interval=1d"
         },
-        "bear": 826.3,
-        "base": 1196.57,
-        "bull": 1633.81,
-        "quotePrice": 3408.5701,
-        "quoteDate": "2026-10-22",
-        "indicativeMarginPct": -184.9,
+        "bear": 828.72,
+        "base": 1200.07,
+        "bull": 1638.59,
+        "quotePrice": 3303.8201,
+        "quoteDate": "2026-10-27",
+        "indicativeMarginPct": -175.3,
         "assumptions": {
           "baseGrowthPct": 7.000000000000001,
           "discountPct": 12.5,
@@ -110,16 +110,16 @@
         "tradingCurrency": "USD",
         "sharesMillions": 385.417665,
         "fx": {
-          "rate": 1.120699,
-          "date": "2026-10-25",
+          "rate": 1.112842,
+          "date": "2026-10-28",
           "source": "https://query1.finance.yahoo.com/v8/finance/chart/EURUSD%3DX?range=5d&interval=1d"
         },
-        "bear": 243.8,
-        "base": 361.71,
-        "bull": 504.86,
-        "quotePrice": 1560.54,
-        "quoteDate": "2026-10-22",
-        "indicativeMarginPct": -331.4,
+        "bear": 242.09,
+        "base": 359.17,
+        "bull": 501.32,
+        "quotePrice": 1635.5699,
+        "quoteDate": "2026-10-27",
+        "indicativeMarginPct": -355.4,
         "assumptions": {
           "baseGrowthPct": 7.000000000000001,
           "discountPct": 11.5,
@@ -181,15 +181,15 @@
         "sharesMillions": 980.4,
         "fx": {
           "rate": 1,
-          "date": "2026-10-21",
+          "date": "2026-10-26",
           "source": "same currency"
         },
         "bear": 6.07,
         "base": 8.91,
         "bull": 12.28,
-        "quotePrice": 39.06,
-        "quoteDate": "2026-10-21",
-        "indicativeMarginPct": -338.4,
+        "quotePrice": 39.07,
+        "quoteDate": "2026-10-26",
+        "indicativeMarginPct": -338.5,
         "assumptions": {
           "baseGrowthPct": 9.5,
           "discountPct": 12.0,
@@ -207,5 +207,5 @@
       }
     }
   },
-  "generatedAt": "2026-10-25T23:27:06.084889+00:00"
+  "generatedAt": "2026-10-28T10:01:51.534792+00:00"
 }
