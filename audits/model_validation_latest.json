@@ -1,6 +1,6 @@
 {
   "schema": "ciip-model-audit-v1",
-  "as_of": "2026-10-27",
+  "as_of": "2026-10-28",
   "scope": [
     "ADBE",
     "MSFT",
@@ -17,7 +17,7 @@
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
-      "source_date": "2026-10-27",
+      "source_date": "2026-10-28",
       "checks": [
         {
           "name": "Shares bound correctly",
@@ -130,7 +130,7 @@
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
-      "source_date": "2026-10-27",
+      "source_date": "2026-10-28",
       "checks": [
         {
           "name": "Shares bound correctly",
@@ -237,7 +237,7 @@
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
-      "source_date": "2026-10-27",
+      "source_date": "2026-10-28",
       "checks": [
         {
           "name": "Shares bound correctly",
@@ -449,7 +449,7 @@
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
-      "source_date": "2026-10-27",
+      "source_date": "2026-10-28",
       "checks": [
         {
           "name": "Shares bound correctly",
@@ -562,7 +562,7 @@
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
-      "source_date": "2026-10-27",
+      "source_date": "2026-10-28",
       "checks": [
         {
           "name": "Shares bound correctly",

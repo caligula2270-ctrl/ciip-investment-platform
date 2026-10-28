@@ -2,6 +2,42 @@
   "13f_policy": "Dated user-provided historical holdings are only lead sources; not refreshed 13F evidence",
   "companies": [
     {
+      "cik": "0000769397",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000769397.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Priority to research only; no sector DCF approved",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2026-01-31",
+        "net_margin_pct": 15.6,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 21.9,
+        "revenue_cagr_pct": 13.22,
+        "years_available": 5
+      },
+      "name": "Autodesk, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 90,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "software_candidate",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "status": "RESEARCH_PRIORITY",
+      "ticker": "ADSK"
+    },
+    {
       "cik": "0000935036",
       "decision_ready": false,
       "detected_at": "2026-10-27",
@@ -36,6 +72,79 @@
       "sic_description": "Services-Prepackaged Software",
       "status": "RESEARCH_PRIORITY",
       "ticker": "ACIW"
+    },
+    {
+      "cik": "0000006281",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000006281.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-11-01",
+        "net_margin_pct": 20.58,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 26.61,
+        "revenue_cagr_pct": 10.76,
+        "years_available": 5
+      },
+      "name": "ANALOG DEVICES INC",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 90,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "manufacturing_specialist",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ADI"
+    },
+    {
+      "cik": "0001703056",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001703056.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 11.62,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 25.52,
+        "revenue_cagr_pct": 5.1,
+        "years_available": 5
+      },
+      "name": "ADT Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 85,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "service_specialist",
+      "sic": "7381",
+      "sic_description": "Services-Detective, Guard & Armored Car Services",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ADT"
     },
     {
       "cik": "0001652044",
@@ -186,6 +295,42 @@
       "ticker": "ABBV"
     },
     {
+      "cik": "0001803696",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001803696.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 25.05,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 39.47,
+        "revenue_cagr_pct": 3.18,
+        "years_available": 5
+      },
+      "name": "Adeia Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 80,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "telecom_specialist",
+      "sic": "4841",
+      "sic_description": "Cable & Other Pay Television Services",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ADEA"
+    },
+    {
       "cik": "0001739445",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -261,6 +406,41 @@
       "sector_profile": "unclassified",
       "status": "SPECIALIST_REVIEW",
       "ticker": "UBER"
+    },
+    {
+      "cik": "0001468328",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001468328.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 6.74,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 9.74,
+        "revenue_cagr_pct": 13.26,
+        "years_available": 5
+      },
+      "name": "Addus HomeCare Corp",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 77,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "8082",
+      "sic_description": "Services-Home Health Care Services",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ADUS"
     },
     {
       "cik": "0000021344",
@@ -489,6 +669,42 @@
       "ticker": "ACLS"
     },
     {
+      "cik": "0001368514",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001368514.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 3,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 28.8,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 37.53,
+        "revenue_cagr_pct": 58.45,
+        "years_available": 5
+      },
+      "name": "ADMA BIOLOGICS, INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 70,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2836",
+      "sic_description": "Biological Products, (No Diagnostic Substances)",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ADMA"
+    },
+    {
       "cik": "0000008177",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -628,6 +844,42 @@
       "sic_description": "Pharmaceutical Preparations",
       "status": "SPECIALIST_REVIEW",
       "ticker": "ACAD"
+    },
+    {
+      "cik": "0000821130",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000821130.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 29.92,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -56.78,
+        "revenue_cagr_pct": -55.18,
+        "years_available": 5
+      },
+      "name": "ARRAY DIGITAL INFRASTRUCTURE, INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 55,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "telecom_specialist",
+      "sic": "4812",
+      "sic_description": "Radiotelephone Communications",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AD"
     },
     {
       "cik": "0000843006",
@@ -892,6 +1144,43 @@
       "ticker": "ABX"
     },
     {
+      "cik": "0001776661",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001776661.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -6.43,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -3.57,
+        "revenue_cagr_pct": -0.42,
+        "years_available": 5
+      },
+      "name": "Advantage Solutions Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 40,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "service_specialist",
+      "sic": "7389",
+      "sic_description": "Services-Business Services, NEC",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ADV"
+    },
+    {
       "cik": "0001637459",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -930,6 +1219,42 @@
       "sector_profile": "unclassified",
       "status": "SPECIALIST_REVIEW",
       "ticker": "KHC"
+    },
+    {
+      "cik": "0000926282",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000926282.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 2,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -4.21,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -1.44,
+        "revenue_cagr_pct": 17.79,
+        "years_available": 5
+      },
+      "name": "ADTRAN Holdings, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 37,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "manufacturing_specialist",
+      "sic": "3661",
+      "sic_description": "Telephone & Telegraph Apparatus",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ADTN"
     },
     {
       "cik": "0001604821",
@@ -1146,6 +1471,42 @@
       "ticker": "ABEO"
     },
     {
+      "cik": "0001478320",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001478320.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -21.48,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -20.62,
+        "revenue_cagr_pct": 15.74,
+        "years_available": 5
+      },
+      "name": "Adaptive Biotechnologies Corp",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 15,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2836",
+      "sic_description": "Biological Products, (No Diagnostic Substances)",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ADPT"
+    },
+    {
       "cik": "0001104506",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -1327,6 +1688,43 @@
       "sic_description": "Pharmaceutical Preparations",
       "status": "SPECIALIST_REVIEW",
       "ticker": "ACRS"
+    },
+    {
+      "cik": "0001771910",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001771910.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -175.31,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -149.34,
+        "revenue_cagr_pct": 2.79,
+        "years_available": 4
+      },
+      "name": "ADC Therapeutics SA",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 5,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "ADCT"
     },
     {
       "cik": "0001675149",
@@ -2819,6 +3217,460 @@
       "ticker": "ACXP"
     },
     {
+      "cik": "0001818838",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001818838.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Adagene Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADAG"
+    },
+    {
+      "cik": "0002084227",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0002084227.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Advasa Holdings, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "software_candidate",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADBT"
+    },
+    {
+      "cik": "0000917251",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000917251.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 28.45,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 47.38,
+        "revenue_cagr_pct": 20.63,
+        "years_available": 5
+      },
+      "name": "AGREE REALTY CORP",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "financial_specialist",
+      "sic": "6798",
+      "sic_description": "Real Estate Investment Trusts",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADC"
+    },
+    {
+      "cik": "0002006986",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0002006986.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 1
+      },
+      "name": "Adagio Medical Holdings, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "industrial_specialist",
+      "sic": "3841",
+      "sic_description": "Surgical & Medical Instruments & Apparatus",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADGM"
+    },
+    {
+      "cik": "0002105139",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0002105139.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "ADI GLOBAL DISTRIBUTION INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "distribution_specialist",
+      "sic": "5072",
+      "sic_description": "Wholesale-Hardware",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADIG"
+    },
+    {
+      "cik": "0001513525",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001513525.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 5
+      },
+      "name": "ADIAL PHARMACEUTICALS, INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADIL"
+    },
+    {
+      "cik": "0000007084",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000007084.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 4.32,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": -26.44,
+        "years_available": 5
+      },
+      "name": "Archer-Daniels-Midland Co",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "industrial_specialist",
+      "sic": "2070",
+      "sic_description": "Fats & Oils",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADM"
+    },
+    {
+      "cik": "0001670541",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001670541.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-09-30",
+        "net_margin_pct": -1.93,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 1.53,
+        "years_available": 5
+      },
+      "name": "Adient plc",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "industrial_specialist",
+      "sic": "3714",
+      "sic_description": "Motor Vehicle Parts & Accessories",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADNT"
+    },
+    {
+      "cik": "0000008670",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000008670.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2026-06-30",
+        "net_margin_pct": 20.11,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 7.4,
+        "years_available": 5
+      },
+      "name": "AUTOMATIC DATA PROCESSING INC",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "software_candidate",
+      "sic": "7374",
+      "sic_description": "Services-Computer Processing & Data Preparation",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADP"
+    },
+    {
+      "cik": "0001802369",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001802369.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "ADARx Pharmaceuticals, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADRX"
+    },
+    {
+      "cik": "0001879248",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001879248.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Ads-Tec Energy Public Ltd Co",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "manufacturing_specialist",
+      "sic": "3690",
+      "sic_description": "Miscellaneous Electrical Machinery, Equipment & Supplies",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADSE"
+    },
+    {
+      "cik": "0001863934",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001863934.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "ADURO CLEAN TECHNOLOGIES INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "industrial_specialist",
+      "sic": "2800",
+      "sic_description": "Chemicals & Allied Products",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADUR"
+    },
+    {
+      "cik": "0001941029",
+      "decision_ready": false,
+      "detected_at": "2026-10-28",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001941029.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2026-06-30",
+        "net_margin_pct": 5231.3,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -4883.8,
+        "revenue_cagr_pct": null,
+        "years_available": 3
+      },
+      "name": "Advanced Biomed Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "8071",
+      "sic_description": "Services-Medical Laboratories",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADVB"
+    },
+    {
       "cik": "0000004962",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -3449,11 +4301,11 @@
       "ticker": "YPF"
     }
   ],
-  "generated_on": "2026-10-27",
+  "generated_on": "2026-10-28",
   "last_batch_sec_downloaded": 24,
   "last_batch_size": 24,
   "readiness": "RESEARCH_SCREEN_ONLY_NOT_RECOMMENDATIONS",
   "schema": "ciip-automatic-discovery-radar-v1",
   "scope": "SEC-listed US equity issuers, rotating incremental sampling",
-  "total_unique_candidates_seen": 96
+  "total_unique_candidates_seen": 120
 }
