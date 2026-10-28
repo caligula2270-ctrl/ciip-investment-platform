@@ -17,7 +17,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/MSFT/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-27T21:14:36.875754+00:00",
+      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
       "researchStatus": "indicative_research_only",
       "fundamentalSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
       "sourceType": "SEC US-GAAP reported 10-K",
@@ -158,7 +158,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/GOOGL/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-27T21:14:36.875754+00:00",
+      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
       "researchStatus": "indicative_research_only",
       "fundamentalSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
       "sourceType": "SEC US-GAAP reported 10-K",
@@ -299,7 +299,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/V/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-27T21:14:36.875754+00:00",
+      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
       "researchStatus": "insufficient_cash_data",
       "fundamentalSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001403161.json",
       "sourceType": "SEC US-GAAP reported 10-K",
@@ -333,7 +333,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/MA/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-27T21:14:36.875754+00:00",
+      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
       "researchStatus": "indicative_research_only",
       "fundamentalSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001141391.json",
       "sourceType": "SEC US-GAAP reported 10-K",
@@ -465,8 +465,8 @@
       "exchangeName": "GER",
       "instrumentType": "EQUITY",
       "quote": {
-        "price": 213.149994,
-        "date": "2026-10-27",
+        "price": 212.300003,
+        "date": "2026-10-28",
         "currency": "EUR",
         "name": "SAP SE",
         "instrumentType": "EQUITY",
@@ -474,7 +474,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/SAP.DE/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-27T21:14:36.875754+00:00",
+      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
       "researchStatus": "quote_only",
       "fundamentalSource": null,
       "sourceType": "market_quote_only",
@@ -492,8 +492,8 @@
       "exchangeName": "MCE",
       "instrumentType": "EQUITY",
       "quote": {
-        "price": 11.268,
-        "date": "2026-10-27",
+        "price": 10.876,
+        "date": "2026-10-28",
         "currency": "EUR",
         "name": "Banco Santander, S.A.",
         "instrumentType": "EQUITY",
@@ -501,7 +501,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/SAN.MC/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-27T21:14:36.875754+00:00",
+      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
       "researchStatus": "quote_only",
       "fundamentalSource": null,
       "sourceType": "market_quote_only",
@@ -519,8 +519,8 @@
       "exchangeName": "JPX",
       "instrumentType": "EQUITY",
       "quote": {
-        "price": 3102.0,
-        "date": "2026-10-27",
+        "price": 3051.0,
+        "date": "2026-10-28",
         "currency": "JPY",
         "name": "Toyota Motor Corporation",
         "instrumentType": "EQUITY",
@@ -528,7 +528,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/7203.T/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-27T21:14:36.875754+00:00",
+      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
       "researchStatus": "quote_only",
       "fundamentalSource": null,
       "sourceType": "market_quote_only",
@@ -541,7 +541,7 @@
     }
   },
   "purchasesEnabled": false,
-  "generatedAt": "2026-10-27T21:14:36.875754+00:00",
+  "generatedAt": "2026-10-28T08:24:35.771356+00:00",
   "count": 7,
   "methodology": "Official SEC US-GAAP when provided; global equities with no standardized official filings remain quote-only"
 }
