@@ -1,200 +1,200 @@
 {
   "candidates": [
     {
-      "cik": "0000821130",
+      "cik": "0001574232",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Addex Therapeutics Ltd.",
+      "seed_reason": "rotation",
+      "ticker": "ADXN"
+    },
+    {
+      "cik": "0002048519",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Aebi Schmidt Holding AG",
+      "seed_reason": "rotation",
+      "ticker": "AEBI"
+    },
+    {
+      "cik": "0001519469",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "ANFIELD ENERGY INC.",
+      "seed_reason": "rotation",
+      "ticker": "AEC"
+    },
+    {
+      "cik": "0001002910",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ARRAY DIGITAL INFRASTRUCTURE, INC.",
+      "name": "AMEREN CORP",
       "seed_reason": "rotation",
-      "ticker": "AD"
+      "ticker": "AEE"
     },
     {
-      "cik": "0001818838",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "Adagene Inc.",
-      "seed_reason": "rotation",
-      "ticker": "ADAG"
-    },
-    {
-      "cik": "0002084227",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "Advasa Holdings, Inc.",
-      "seed_reason": "rotation",
-      "ticker": "ADBT"
-    },
-    {
-      "cik": "0000917251",
+      "cik": "0000769218",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "AGREE REALTY CORP",
+      "name": "AEGON LTD.",
       "seed_reason": "rotation",
-      "ticker": "ADC"
+      "ticker": "AEG"
     },
     {
-      "cik": "0001771910",
+      "cik": "0001470683",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Antelope Enterprise Holdings Ltd",
+      "seed_reason": "rotation",
+      "ticker": "AEHL"
+    },
+    {
+      "cik": "0001040470",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "AEHR TEST SYSTEMS",
+      "seed_reason": "rotation",
+      "ticker": "AEHR"
+    },
+    {
+      "cik": "0001750106",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Alset Inc.",
+      "seed_reason": "rotation",
+      "ticker": "AEI"
+    },
+    {
+      "cik": "0001875655",
+      "exchange": "unverified",
+      "historical_13f": null,
+      "name": "AEI CapForce II Investment Corp",
+      "seed_reason": "rotation",
+      "ticker": "AEIB"
+    },
+    {
+      "cik": "0000927003",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "ADVANCED ENERGY INDUSTRIES INC",
+      "seed_reason": "rotation",
+      "ticker": "AEIS"
+    },
+    {
+      "cik": "0000002809",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ADC Therapeutics SA",
+      "name": "AGNICO EAGLE MINES LTD",
       "seed_reason": "rotation",
-      "ticker": "ADCT"
+      "ticker": "AEM"
     },
     {
-      "cik": "0001803696",
+      "cik": "0000882291",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "Adeia Inc.",
+      "name": "AETHLON MEDICAL INC",
       "seed_reason": "rotation",
-      "ticker": "ADEA"
+      "ticker": "AEMD"
     },
     {
-      "cik": "0002006986",
+      "cik": "0001823584",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "Adagio Medical Holdings, Inc.",
+      "name": "ALLIANCE ENTERTAINMENT HOLDING CORP",
       "seed_reason": "rotation",
-      "ticker": "ADGM"
+      "ticker": "AENT"
     },
     {
-      "cik": "0000006281",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "ANALOG DEVICES INC",
-      "seed_reason": "rotation",
-      "ticker": "ADI"
-    },
-    {
-      "cik": "0002105139",
+      "cik": "0000919012",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ADI GLOBAL DISTRIBUTION INC.",
+      "name": "AMERICAN EAGLE OUTFITTERS INC",
       "seed_reason": "rotation",
-      "ticker": "ADIG"
+      "ticker": "AEO"
     },
     {
-      "cik": "0001513525",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "ADIAL PHARMACEUTICALS, INC.",
-      "seed_reason": "rotation",
-      "ticker": "ADIL"
-    },
-    {
-      "cik": "0000007084",
+      "cik": "0001837607",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "Archer-Daniels-Midland Co",
+      "name": "AEON Biopharma, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ADM"
+      "ticker": "AEON"
     },
     {
-      "cik": "0001368514",
+      "cik": "0000004904",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "ADMA BIOLOGICS, INC.",
+      "name": "AMERICAN ELECTRIC POWER CO INC",
       "seed_reason": "rotation",
-      "ticker": "ADMA"
+      "ticker": "AEP"
     },
     {
-      "cik": "0001670541",
+      "cik": "0001378789",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "Adient plc",
+      "name": "AerCap Holdings N.V.",
       "seed_reason": "rotation",
-      "ticker": "ADNT"
+      "ticker": "AER"
     },
     {
-      "cik": "0000008670",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "AUTOMATIC DATA PROCESSING INC",
-      "seed_reason": "rotation",
-      "ticker": "ADP"
-    },
-    {
-      "cik": "0001478320",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "Adaptive Biotechnologies Corp",
-      "seed_reason": "rotation",
-      "ticker": "ADPT"
-    },
-    {
-      "cik": "0001802369",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "ADARx Pharmaceuticals, Inc.",
-      "seed_reason": "rotation",
-      "ticker": "ADRX"
-    },
-    {
-      "cik": "0001879248",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "Ads-Tec Energy Public Ltd Co",
-      "seed_reason": "rotation",
-      "ticker": "ADSE"
-    },
-    {
-      "cik": "0000769397",
-      "exchange": "Nasdaq",
-      "historical_13f": null,
-      "name": "Autodesk, Inc.",
-      "seed_reason": "rotation",
-      "ticker": "ADSK"
-    },
-    {
-      "cik": "0001703056",
+      "cik": "0001561861",
       "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ADT Inc.",
+      "name": "Grupo Aeromexico, S.A.B. de C.V.",
       "seed_reason": "rotation",
-      "ticker": "ADT"
+      "ticker": "AERO"
     },
     {
-      "cik": "0000926282",
+      "cik": "0001853044",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "ADTRAN Holdings, Inc.",
+      "name": "Aeries Technology, Inc.",
       "seed_reason": "rotation",
-      "ticker": "ADTN"
+      "ticker": "AERT"
     },
     {
-      "cik": "0001863934",
-      "exchange": "Nasdaq",
+      "cik": "0000874761",
+      "exchange": "NYSE",
       "historical_13f": null,
-      "name": "ADURO CLEAN TECHNOLOGIES INC.",
+      "name": "AES CORP",
       "seed_reason": "rotation",
-      "ticker": "ADUR"
+      "ticker": "AES"
     },
     {
-      "cik": "0001468328",
-      "exchange": "Nasdaq",
+      "cik": "0001984060",
+      "exchange": "NYSE",
       "historical_13f": null,
-      "name": "Addus HomeCare Corp",
+      "name": "Atlas Energy Solutions Inc.",
       "seed_reason": "rotation",
-      "ticker": "ADUS"
+      "ticker": "AESI"
     },
     {
-      "cik": "0001776661",
+      "cik": "0002082526",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "Advantage Solutions Inc.",
+      "name": "Aeon Acquisition I Corp.",
       "seed_reason": "rotation",
-      "ticker": "ADV"
+      "ticker": "AESP"
     },
     {
-      "cik": "0001941029",
+      "cik": "0001370416",
       "exchange": "Nasdaq",
       "historical_13f": null,
-      "name": "Advanced Biomed Inc.",
+      "name": "AETHERION TECHNOLOGIES INC.",
       "seed_reason": "rotation",
-      "ticker": "ADVB"
+      "ticker": "AETR"
+    },
+    {
+      "cik": "0001789029",
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "name": "Aeva Technologies, Inc.",
+      "seed_reason": "rotation",
+      "ticker": "AEVA"
     }
   ],
-  "generated_on": "2026-10-28",
-  "listed_issuer_count": 5412,
+  "generated_on": "2026-10-29",
+  "listed_issuer_count": 5417,
   "no_universe_completeness_claim": true,
   "scan_budget": 24,
   "schema": "ciip-discovery-queue-v1",

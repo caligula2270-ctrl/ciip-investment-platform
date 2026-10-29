@@ -1,6 +1,6 @@
 # CIIP | Auditoría fundamental focalizada
 
-Generado: 2026-10-28T08:26:21.163634+00:00 · SEC: 2026-10-28T08:25:52.880098+00:00
+Generado: 2026-10-29T08:27:18.507268+00:00 · SEC: 2026-10-29T08:26:51.640362+00:00
 
 **Alcance:** trabajo de investigación, no auditoría independiente. Los datos trimestrales y anuales no se mezclan, ni se emiten precios objetivo verificados.
 
@@ -70,7 +70,7 @@ Margen operativo 57.63% y SBC 597.00 M USD.
 ## MSFT | Microsoft Corporation
 Negocio: Cloud / enterprise software / AI datacenters. Modelo: capital_heavy_peak_capex_stress (review_required).
 Presentación revisada: [https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm](https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm)
-Estado de presentación SEC: latest_filing_metadata_matches.
+Estado de presentación SEC: newer_or_different_filing_needs_review.
 
 Último FY 2026-06-30: ingresos 331,839.00 M USD; CFO 182,935.00 M USD; CAPEX 115,948.00 M USD; FCF simple 66,987.00 M USD.
 Margen operativo 46.78% y SBC 12,405.00 M USD.
@@ -89,7 +89,7 @@ Margen operativo 46.78% y SBC 12,405.00 M USD.
 
 **Capital y dilución:** el recuento actual plenamente diluido no se ha verificado ni conciliado con todas las notas; sin valoración por acción.
 **Pendientes:**
-- Sin conciliación siquiera provisional de acciones
+- Presentación SEC actual distinta de la nota examinada
 - Notas de capital no permiten confirmar acciones plenamente diluidas actuales
 
 **Revisión documental adicional:**

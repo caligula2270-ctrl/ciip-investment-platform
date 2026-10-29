@@ -1,7 +1,7 @@
 {
   "schema": "ciip-issuer-research-audit-v1",
-  "generated_at": "2026-10-28T08:26:21.163634+00:00",
-  "sec_generated_at": "2026-10-28T08:25:52.880098+00:00",
+  "generated_at": "2026-10-29T08:27:18.507268+00:00",
+  "sec_generated_at": "2026-10-29T08:26:51.640362+00:00",
   "source_review_as_of": "2026-10-24",
   "methodology": "See audits/PLAYBOOK.md; investment research, not an independent or statutory audit",
   "companies": {
@@ -10,7 +10,7 @@
       "company": "Adobe Inc.",
       "sector": "Software subscription / creative and document tools",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-28T08:26:21.163634+00:00",
+      "generated_at": "2026-10-29T08:27:18.507268+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",
@@ -235,7 +235,7 @@
       "company": "Mastercard Incorporated",
       "sector": "Global payments network and value-added services",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-28T08:26:21.163634+00:00",
+      "generated_at": "2026-10-29T08:27:18.507268+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",
@@ -457,21 +457,21 @@
       "company": "Microsoft Corporation",
       "sector": "Cloud / enterprise software / AI datacenters",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-28T08:26:21.163634+00:00",
+      "generated_at": "2026-10-29T08:27:18.507268+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
-        "form": "10-K",
-        "filed": "2026-07-29",
-        "fiscal_period_end": "2026-06-30",
-        "accession": "0001193125-26-323660",
-        "primary_document": "msft-20260630.htm",
-        "document_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
-        "filing_index_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/0001193125-26-323660-index.html",
+        "form": "10-Q",
+        "filed": "2026-10-28",
+        "fiscal_period_end": "2026-09-30",
+        "accession": "0001193125-26-436133",
+        "primary_document": "msft-20260930.htm",
+        "document_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
+        "filing_index_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/0001193125-26-436133-index.html",
         "document_review_status": "not_reviewed"
       },
       "reference_filing": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
-      "filing_status": "latest_filing_metadata_matches",
-      "filing_date": "2026-07-29",
+      "filing_status": "newer_or_different_filing_needs_review",
+      "filing_date": "2026-10-28",
       "financials_five_years": [
         {
           "fy_end": "2022-06-30",
@@ -554,7 +554,7 @@
         "revenue_cagr_pct": 13.741147353015858,
         "sector_gate": "review",
         "normalization_status": "ready_with_caveats",
-        "shares_reconciliation_status": "manual_review"
+        "shares_reconciliation_status": "provisional_reconciled"
       },
       "sector_valuation": {
         "model": "capital_heavy_peak_capex_stress",
@@ -600,21 +600,21 @@
       "share_capital": {
         "historical_diluted_shares": 7453000000,
         "sec_basic_latest": {
-          "value": 7425545491,
-          "end": "2026-07-23",
-          "filed": "2026-07-29",
-          "form": "10-K",
-          "accession": "0001193125-26-323660",
+          "value": 7426194552,
+          "end": "2026-10-22",
+          "filed": "2026-10-28",
+          "form": "10-Q",
+          "accession": "0001193125-26-436133",
           "tag": "EntityCommonStockSharesOutstanding",
           "taxonomy": "dei",
           "unit": "shares"
         },
         "sec_quarter_weighted_diluted": {
-          "value": 7445000000,
-          "end": "2026-03-31",
-          "filed": "2026-04-29",
+          "value": 7446000000,
+          "end": "2026-09-30",
+          "filed": "2026-10-28",
           "form": "10-Q",
-          "accession": "0001193125-26-191507",
+          "accession": "0001193125-26-436133",
           "tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
           "taxonomy": "us-gaap",
           "unit": "shares"
@@ -668,7 +668,7 @@
         "unvested stock awards and buybacks"
       ],
       "open_issues": [
-        "Sin conciliación siquiera provisional de acciones",
+        "Presentación SEC actual distinta de la nota examinada",
         "Notas de capital no permiten confirmar acciones plenamente diluidas actuales"
       ],
       "signoff": {
@@ -685,7 +685,7 @@
       "company": "Texas Instruments Incorporated",
       "sector": "Semiconductors / industrial manufacturing",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-28T08:26:21.163634+00:00",
+      "generated_at": "2026-10-29T08:27:18.507268+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",
@@ -913,7 +913,7 @@
       "company": "Visa Inc.",
       "sector": "Global payments network",
       "scope": "source-backed investment research audit, not a statutory or financial statement audit",
-      "generated_at": "2026-10-28T08:26:21.163634+00:00",
+      "generated_at": "2026-10-29T08:27:18.507268+00:00",
       "reviewed_as_of": "2026-10-24",
       "latest_official_filing": {
         "form": "10-Q",

@@ -5,10 +5,10 @@
 | Compañía | Veredicto | P0 | P1 | DCF base USD |
 |---|---|---:|---:|---:|
 
-**P0 originales subsanados con prueba:** 6/6. **Cuestiones P0 nuevas:** 0.
+**P0 originales subsanados con prueba:** 6/6. **Cuestiones P0 nuevas:** 1.
 
 | ADBE | Not ready | 0 | 4 | 265.78 |
-| MSFT | Not ready | 0 | 4 | 167.99 |
+| MSFT | Not ready | 1 | 4 | 167.99 |
 | V | Not ready | 0 | 4 | 210.64 |
 | MA | Not ready | 0 | 4 | 383.66 |
 | TXN | Not ready | 0 | 4 | 97.4 |
@@ -44,6 +44,7 @@ Dictamen: Not ready
 
 ### Hallazgos y medidas
 - **P1 Unsupported assumption**: optimista terminal weight 67.26%. Impacto: High sensitivity to long-run economics. Acción: Stress terminal spread and exit economics.
+- **P0 Missing forecast refresh**: SEC filing changed since manual notes. Impacto: Capital or operating base may be stale. Acción: Refresh original 10-Q/10-K notes. [Fuente](https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm).
 - **P1 Not comparable without bridge**: Current diluted shares assembled from dated basic outstanding and weighted-average EPS dilution. Impacto: Forward share count can depart from observed EPS weighted average. Acción: Reconcile outstanding classes, options, RSUs, convertibles and subsequent events. [Fuente](https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm).
 - **P1 Unsupported assumption**: Microsoft first-stage 13% growth applied to a lease-adjusted $51.481bn base is not justified by a five-year datacenter segment forecast. Impacto: Uncertain server replacement economics and growth spending. Acción: Build asset replacement, cloud margin and AI return-on-capital forecasts. [Fuente](https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm).
 - **P1 Not comparable without bridge**: New finance-lease datacenter assets and future server renewal not captured as current cash CAPEX. Impacto: Long-run owner cash still uncertain. Acción: Model lease principal beyond FY2026 and noncash server investment commitments. [Fuente](https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm).

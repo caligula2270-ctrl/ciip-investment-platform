@@ -810,6 +810,42 @@
       "ticker": "ACIC"
     },
     {
+      "cik": "0000919012",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000919012.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2026-01-31",
+        "net_margin_pct": 3.46,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 4.08,
+        "revenue_cagr_pct": 2.57,
+        "years_available": 5
+      },
+      "name": "AMERICAN EAGLE OUTFITTERS INC",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 62,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "distribution_specialist",
+      "sic": "5651",
+      "sic_description": "Retail-Family Clothing Stores",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AEO"
+    },
+    {
       "cik": "0001070494",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -880,6 +916,42 @@
       "sic_description": "Radiotelephone Communications",
       "status": "SPECIALIST_REVIEW",
       "ticker": "AD"
+    },
+    {
+      "cik": "0001853044",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001853044.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 2,
+        "fiscal_year_end": "2026-03-31",
+        "net_margin_pct": 4.04,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 6.45,
+        "revenue_cagr_pct": 9.65,
+        "years_available": 4
+      },
+      "name": "Aeries Technology, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 54,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "8742",
+      "sic_description": "Services-Management Consulting Services",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AERT"
     },
     {
       "cik": "0000843006",
@@ -1334,6 +1406,79 @@
       "ticker": "ACMR"
     },
     {
+      "cik": "0001984060",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001984060.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 2,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -4.59,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -1.0,
+        "revenue_cagr_pct": 58.76,
+        "years_available": 5
+      },
+      "name": "Atlas Energy Solutions Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 27,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "1311",
+      "sic_description": "Crude Petroleum & Natural Gas",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AESI"
+    },
+    {
+      "cik": "0001823584",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001823584.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 3,
+        "fiscal_year_end": "2026-06-30",
+        "net_margin_pct": 1.14,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 2.37,
+        "revenue_cagr_pct": -5.11,
+        "years_available": 5
+      },
+      "name": "ALLIANCE ENTERTAINMENT HOLDING CORP",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 25,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "distribution_specialist",
+      "sic": "5099",
+      "sic_description": "Wholesale-Durable Goods, NEC",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AENT"
+    },
+    {
       "cik": "0000095953",
       "decision_ready": false,
       "detected_at": "2026-10-27",
@@ -1401,6 +1546,43 @@
       "sector_profile": "unclassified",
       "status": "SPECIALIST_REVIEW",
       "ticker": "AAP"
+    },
+    {
+      "cik": "0001040470",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001040470.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 3,
+        "fiscal_year_end": "2026-05-29",
+        "net_margin_pct": -14.25,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -28.3,
+        "revenue_cagr_pct": -0.41,
+        "years_available": 5
+      },
+      "name": "AEHR TEST SYSTEMS",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 18,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "industrial_specialist",
+      "sic": "3825",
+      "sic_description": "Instruments For Meas & Testing of  Electricity & Elec Signals",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AEHR"
     },
     {
       "cik": "0001158114",
@@ -1507,6 +1689,42 @@
       "ticker": "ADPT"
     },
     {
+      "cik": "0001789029",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001789029.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -804.4,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -705.77,
+        "revenue_cagr_pct": 18.19,
+        "years_available": 5
+      },
+      "name": "Aeva Technologies, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 15,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "industrial_specialist",
+      "sic": "3714",
+      "sic_description": "Motor Vehicle Parts & Accessories",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AEVA"
+    },
+    {
       "cik": "0001104506",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -1579,6 +1797,43 @@
       "sector_profile": "unclassified",
       "status": "SPECIALIST_REVIEW",
       "ticker": "ABCL"
+    },
+    {
+      "cik": "0001750106",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001750106.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Sector-specific accounting and valuation model not yet validated",
+        "Current diluted share capital not reconciled",
+        "No checked live price, intrinsic value, debt/cash bridge or forecast"
+      ],
+      "metrics": {
+        "fcf_positive_years": 2,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": -1060.53,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": -338.87,
+        "revenue_cagr_pct": -31.07,
+        "years_available": 5
+      },
+      "name": "Alset Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": 12,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "financial_specialist",
+      "sic": "6500",
+      "sic_description": "Real Estate",
+      "status": "SPECIALIST_REVIEW",
+      "ticker": "AEI"
     },
     {
       "cik": "0001447028",
@@ -3671,6 +3926,595 @@
       "ticker": "ADVB"
     },
     {
+      "cik": "0001574232",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001574232.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Addex Therapeutics Ltd.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "ADXN"
+    },
+    {
+      "cik": "0002048519",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0002048519.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 2,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 0.64,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 4.79,
+        "revenue_cagr_pct": null,
+        "years_available": 3
+      },
+      "name": "Aebi Schmidt Holding AG",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "manufacturing_specialist",
+      "sic": "3531",
+      "sic_description": "Construction Machinery & Equip",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AEBI"
+    },
+    {
+      "cik": "0001519469",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001519469.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "ANFIELD ENERGY INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "1000",
+      "sic_description": "Metal Mining",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AEC"
+    },
+    {
+      "cik": "0001002910",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001002910.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 23.03,
+        "revenue_cagr_pct": 8.31,
+        "years_available": 5
+      },
+      "name": "AMEREN CORP",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "4931",
+      "sic_description": "Electric & Other Services Combined",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AEE"
+    },
+    {
+      "cik": "0000769218",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000769218.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "AEGON LTD.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "financial_specialist",
+      "sic": "6311",
+      "sic_description": "Life Insurance",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AEG"
+    },
+    {
+      "cik": "0001470683",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001470683.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Antelope Enterprise Holdings Ltd",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "telecom_specialist",
+      "sic": "4899",
+      "sic_description": "Communications Services, NEC",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AEHL"
+    },
+    {
+      "cik": "0001875655",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001875655.json"
+      ],
+      "exchange": "unverified",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "AEI CapForce II Investment Corp",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "financial_specialist",
+      "sic": "6770",
+      "sic_description": "Blank Checks",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AEIB"
+    },
+    {
+      "cik": "0000927003",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927003.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 5,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 9.34,
+        "revenue_cagr_pct": 5.43,
+        "years_available": 5
+      },
+      "name": "ADVANCED ENERGY INDUSTRIES INC",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "manufacturing_specialist",
+      "sic": "3679",
+      "sic_description": "Electronic Components, NEC",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AEIS"
+    },
+    {
+      "cik": "0000002809",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000002809.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "AGNICO EAGLE MINES LTD",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "1040",
+      "sic_description": "Gold and Silver Ores",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AEM"
+    },
+    {
+      "cik": "0000882291",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000882291.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2026-03-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 5
+      },
+      "name": "AETHLON MEDICAL INC",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "industrial_specialist",
+      "sic": "3841",
+      "sic_description": "Surgical & Medical Instruments & Apparatus",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AEMD"
+    },
+    {
+      "cik": "0001837607",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001837607.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 2
+      },
+      "name": "AEON Biopharma, Inc.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "pharma_specialist",
+      "sic": "2834",
+      "sic_description": "Pharmaceutical Preparations",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AEON"
+    },
+    {
+      "cik": "0000004904",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000004904.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": 24.51,
+        "revenue_cagr_pct": 6.62,
+        "years_available": 5
+      },
+      "name": "AMERICAN ELECTRIC POWER CO INC",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "4911",
+      "sic_description": "Electric Services",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AEP"
+    },
+    {
+      "cik": "0001378789",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001378789.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "AerCap Holdings N.V.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "service_specialist",
+      "sic": "7359",
+      "sic_description": "Services-Equipment Rental & Leasing, NEC",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AER"
+    },
+    {
+      "cik": "0001561861",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001561861.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Grupo Aeromexico, S.A.B. de C.V.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "4512",
+      "sic_description": "Air Transportation, Scheduled",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AERO"
+    },
+    {
+      "cik": "0000874761",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0000874761.json"
+      ],
+      "exchange": "NYSE",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": "2025-12-31",
+        "net_margin_pct": 7.44,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": 2.37,
+        "years_available": 5
+      },
+      "name": "AES CORP",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "unclassified",
+      "sic": "4991",
+      "sic_description": "Cogeneration Services & Small Power Producers",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AES"
+    },
+    {
+      "cik": "0002082526",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0002082526.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "Aeon Acquisition I Corp.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "financial_specialist",
+      "sic": "6770",
+      "sic_description": "Blank Checks",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AESP"
+    },
+    {
+      "cik": "0001370416",
+      "decision_ready": false,
+      "detected_at": "2026-10-29",
+      "evidence": [
+        "https://data.sec.gov/api/xbrl/companyfacts/CIK0001370416.json"
+      ],
+      "exchange": "Nasdaq",
+      "historical_13f": null,
+      "investment_signal": null,
+      "limitations": [
+        "SIC sector classification provisional; specialist model not audited",
+        "Incomparable/incomplete annual 10-K metrics"
+      ],
+      "metrics": {
+        "fcf_positive_years": 0,
+        "fiscal_year_end": null,
+        "net_margin_pct": null,
+        "normalized_3y_fcf_usd": null,
+        "operating_margin_pct": null,
+        "revenue_cagr_pct": null,
+        "years_available": 0
+      },
+      "name": "AETHERION TECHNOLOGIES INC.",
+      "origin": "rotation",
+      "price_data_verified": false,
+      "price_target_usd": null,
+      "quality_score_screen": null,
+      "sector_model_status": "not_applicable",
+      "sector_profile": "manufacturing_specialist",
+      "sic": "3510",
+      "sic_description": "Engines & Turbines",
+      "status": "INSUFFICIENT_DATA",
+      "ticker": "AETR"
+    },
+    {
       "cik": "0000004962",
       "decision_ready": false,
       "detected_at": "2026-10-26",
@@ -4301,11 +5145,11 @@
       "ticker": "YPF"
     }
   ],
-  "generated_on": "2026-10-28",
+  "generated_on": "2026-10-29",
   "last_batch_sec_downloaded": 24,
   "last_batch_size": 24,
   "readiness": "RESEARCH_SCREEN_ONLY_NOT_RECOMMENDATIONS",
   "schema": "ciip-automatic-discovery-radar-v1",
   "scope": "SEC-listed US equity issuers, rotating incremental sampling",
-  "total_unique_candidates_seen": 120
+  "total_unique_candidates_seen": 144
 }

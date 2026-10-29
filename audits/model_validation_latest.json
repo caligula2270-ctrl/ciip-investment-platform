@@ -1,6 +1,6 @@
 {
   "schema": "ciip-model-audit-v1",
-  "as_of": "2026-10-28",
+  "as_of": "2026-10-29",
   "scope": [
     "ADBE",
     "MSFT",
@@ -17,7 +17,7 @@
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
-      "source_date": "2026-10-28",
+      "source_date": "2026-10-29",
       "checks": [
         {
           "name": "Shares bound correctly",
@@ -130,7 +130,7 @@
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
-      "source_date": "2026-10-28",
+      "source_date": "2026-10-29",
       "checks": [
         {
           "name": "Shares bound correctly",
@@ -174,6 +174,15 @@
           "impact": "High sensitivity to long-run economics",
           "required_fix": "Stress terminal spread and exit economics",
           "source": null
+        },
+        {
+          "ticker": "MSFT",
+          "severity": "P0",
+          "kind": "Missing forecast refresh",
+          "detail": "SEC filing changed since manual notes",
+          "impact": "Capital or operating base may be stale",
+          "required_fix": "Refresh original 10-Q/10-K notes",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
         },
         {
           "ticker": "MSFT",
@@ -226,7 +235,7 @@
           }
         }
       ],
-      "P0": 0,
+      "P0": 1,
       "P1": 4,
       "base_model_value_usd": 167.99
     },
@@ -237,7 +246,7 @@
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
-      "source_date": "2026-10-28",
+      "source_date": "2026-10-29",
       "checks": [
         {
           "name": "Shares bound correctly",
@@ -449,7 +458,7 @@
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
-      "source_date": "2026-10-28",
+      "source_date": "2026-10-29",
       "checks": [
         {
           "name": "Shares bound correctly",
@@ -562,7 +571,7 @@
       "portfolio_use": false,
       "valuation_approved": false,
       "source": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000169/txn-20260930.htm",
-      "source_date": "2026-10-28",
+      "source_date": "2026-10-29",
       "checks": [
         {
           "name": "Shares bound correctly",
@@ -669,6 +678,15 @@
     }
   },
   "issue_log": [
+    {
+      "ticker": "MSFT",
+      "severity": "P0",
+      "kind": "Missing forecast refresh",
+      "detail": "SEC filing changed since manual notes",
+      "impact": "Capital or operating base may be stale",
+      "required_fix": "Refresh original 10-Q/10-K notes",
+      "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+    },
     {
       "ticker": "ADBE",
       "severity": "P1",
@@ -852,6 +870,6 @@
   ],
   "original_P0_total": 6,
   "original_P0_corrected": 6,
-  "new_material_issues": 0,
+  "new_material_issues": 1,
   "method": "Independent recomputation and reported-cash check; does not approve forecast cash, future equity claims or stock prices"
 }
