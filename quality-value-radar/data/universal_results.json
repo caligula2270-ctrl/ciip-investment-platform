@@ -8,8 +8,8 @@
       "exchangeName": "NMS",
       "instrumentType": "EQUITY",
       "quote": {
-        "price": 531.330017,
-        "date": "2026-10-27",
+        "price": 531.01001,
+        "date": "2026-10-28",
         "currency": "USD",
         "name": "Microsoft Corporation",
         "instrumentType": "EQUITY",
@@ -17,7 +17,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/MSFT/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
+      "updatedAt": "2026-10-29T08:26:14.204897+00:00",
       "researchStatus": "indicative_research_only",
       "fundamentalSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
       "sourceType": "SEC US-GAAP reported 10-K",
@@ -149,8 +149,8 @@
       "exchangeName": "NMS",
       "instrumentType": "EQUITY",
       "quote": {
-        "price": 320.579987,
-        "date": "2026-10-27",
+        "price": 324.890015,
+        "date": "2026-10-28",
         "currency": "USD",
         "name": "Alphabet Inc.",
         "instrumentType": "EQUITY",
@@ -158,7 +158,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/GOOGL/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
+      "updatedAt": "2026-10-29T08:26:14.204897+00:00",
       "researchStatus": "indicative_research_only",
       "fundamentalSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
       "sourceType": "SEC US-GAAP reported 10-K",
@@ -290,8 +290,8 @@
       "exchangeName": "NYQ",
       "instrumentType": "EQUITY",
       "quote": {
-        "price": 401.859985,
-        "date": "2026-10-27",
+        "price": 400.600006,
+        "date": "2026-10-28",
         "currency": "USD",
         "name": "Visa Inc.",
         "instrumentType": "EQUITY",
@@ -299,7 +299,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/V/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
+      "updatedAt": "2026-10-29T08:26:14.204897+00:00",
       "researchStatus": "insufficient_cash_data",
       "fundamentalSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001403161.json",
       "sourceType": "SEC US-GAAP reported 10-K",
@@ -324,8 +324,8 @@
       "exchangeName": "NYQ",
       "instrumentType": "EQUITY",
       "quote": {
-        "price": 609.849976,
-        "date": "2026-10-27",
+        "price": 610.309998,
+        "date": "2026-10-28",
         "currency": "USD",
         "name": "Mastercard Incorporated",
         "instrumentType": "EQUITY",
@@ -333,7 +333,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/MA/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
+      "updatedAt": "2026-10-29T08:26:14.204897+00:00",
       "researchStatus": "indicative_research_only",
       "fundamentalSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001141391.json",
       "sourceType": "SEC US-GAAP reported 10-K",
@@ -465,8 +465,8 @@
       "exchangeName": "GER",
       "instrumentType": "EQUITY",
       "quote": {
-        "price": 212.300003,
-        "date": "2026-10-28",
+        "price": 209.600006,
+        "date": "2026-10-29",
         "currency": "EUR",
         "name": "SAP SE",
         "instrumentType": "EQUITY",
@@ -474,7 +474,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/SAP.DE/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
+      "updatedAt": "2026-10-29T08:26:14.204897+00:00",
       "researchStatus": "quote_only",
       "fundamentalSource": null,
       "sourceType": "market_quote_only",
@@ -492,8 +492,8 @@
       "exchangeName": "MCE",
       "instrumentType": "EQUITY",
       "quote": {
-        "price": 10.876,
-        "date": "2026-10-28",
+        "price": 10.364,
+        "date": "2026-10-29",
         "currency": "EUR",
         "name": "Banco Santander, S.A.",
         "instrumentType": "EQUITY",
@@ -501,7 +501,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/SAN.MC/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
+      "updatedAt": "2026-10-29T08:26:14.204897+00:00",
       "researchStatus": "quote_only",
       "fundamentalSource": null,
       "sourceType": "market_quote_only",
@@ -519,8 +519,8 @@
       "exchangeName": "JPX",
       "instrumentType": "EQUITY",
       "quote": {
-        "price": 3051.0,
-        "date": "2026-10-28",
+        "price": 3077.0,
+        "date": "2026-10-29",
         "currency": "JPY",
         "name": "Toyota Motor Corporation",
         "instrumentType": "EQUITY",
@@ -528,7 +528,7 @@
         "sourceUrl": "https://finance.yahoo.com/quote/7203.T/history/",
         "provider": "Yahoo chart, cotización no garantizada / cierre fechado"
       },
-      "updatedAt": "2026-10-28T08:24:35.771356+00:00",
+      "updatedAt": "2026-10-29T08:26:14.204897+00:00",
       "researchStatus": "quote_only",
       "fundamentalSource": null,
       "sourceType": "market_quote_only",
@@ -541,7 +541,7 @@
     }
   },
   "purchasesEnabled": false,
-  "generatedAt": "2026-10-28T08:24:35.771356+00:00",
+  "generatedAt": "2026-10-29T08:26:14.204897+00:00",
   "count": 7,
   "methodology": "Official SEC US-GAAP when provided; global equities with no standardized official filings remain quote-only"
 }
