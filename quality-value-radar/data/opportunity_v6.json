@@ -1,7 +1,7 @@
 {
   "schema": "qvr-v6",
-  "generatedAt": "2026-11-11T10:14:21.935639+00:00",
-  "asOf": "2026-11-11",
+  "generatedAt": "2026-11-18T18:08:22.232850+00:00",
+  "asOf": "2026-11-18",
   "focus": [
     "ADBE",
     "INTU",
@@ -31,8 +31,8 @@
         }
       },
       "qualityScore": 91,
-      "price": 235.765,
-      "quoteDate": "2026-11-10",
+      "price": 230.09,
+      "quoteDate": "2026-11-18",
       "fy": "2025-11-28",
       "normalizedOwnerFcfPerShare": 13.431155595071765,
       "historicalPownerFcf": 38.41,
@@ -107,12 +107,12 @@
       ],
       "baseValue": 424.73,
       "entryPrice": 155.49,
-      "priceToEntryGapPct": -34.0,
-      "marginVsBasePct": 44.5,
+      "priceToEntryGapPct": -32.4,
+      "marginVsBasePct": 45.8,
       "tenYearIndicativePv": 403.92,
       "projectedIrrPct": {
-        "fiveYear": 26.65,
-        "tenYear": 19.02
+        "fiveYear": 27.33,
+        "tenYear": 19.38
       },
       "valuationMethod": "Equity owner-FCF per share; DCF + historically capped P/owner-FCF exit; no balance-sheet EV bridge",
       "warnings": [
@@ -141,8 +141,8 @@
         }
       },
       "qualityScore": 87,
-      "price": 338.54,
-      "quoteDate": "2026-11-10",
+      "price": 317.3,
+      "quoteDate": "2026-11-18",
       "fy": "2026-07-31",
       "normalizedOwnerFcfPerShare": 14.681950024497796,
       "historicalPownerFcf": 53.48,
@@ -217,12 +217,12 @@
       ],
       "baseValue": 431.82,
       "entryPrice": 158.45,
-      "priceToEntryGapPct": -53.2,
-      "marginVsBasePct": 21.6,
+      "priceToEntryGapPct": -50.1,
+      "marginVsBasePct": 26.5,
       "tenYearIndicativePv": 398.18,
       "projectedIrrPct": {
-        "fiveYear": 17.5,
-        "tenYear": 13.68
+        "fiveYear": 19.16,
+        "tenYear": 14.58
       },
       "valuationMethod": "Equity owner-FCF per share; DCF + historically capped P/owner-FCF exit; no balance-sheet EV bridge",
       "warnings": [
@@ -251,8 +251,8 @@
         }
       },
       "qualityScore": 55,
-      "price": 32.125,
-      "quoteDate": "2026-11-10",
+      "price": 31.14,
+      "quoteDate": "2026-11-18",
       "fy": "2026-07-31",
       "normalizedOwnerFcfPerShare": 1.2201239916799373,
       "historicalPownerFcf": 37.15,
@@ -323,12 +323,12 @@
       ],
       "baseValue": 33.22,
       "entryPrice": 13.03,
-      "priceToEntryGapPct": -59.4,
-      "marginVsBasePct": 3.3,
+      "priceToEntryGapPct": -58.2,
+      "marginVsBasePct": 6.3,
       "tenYearIndicativePv": 30.9,
       "projectedIrrPct": {
-        "fiveYear": 12.31,
-        "tenYear": 10.98
+        "fiveYear": 13.07,
+        "tenYear": 11.4
       },
       "valuationMethod": "Equity owner-FCF per share; DCF + historically capped P/owner-FCF exit; no balance-sheet EV bridge",
       "warnings": [
@@ -357,8 +357,8 @@
         }
       },
       "qualityScore": null,
-      "quoteDate": "2026-11-10",
-      "price": 3430.0,
+      "quoteDate": "2026-11-18",
+      "price": 3330.4351,
       "valuationLevel": "preliminary",
       "investmentAction": "research_only",
       "sourceUrl": "https://www.csisoftware.com/constellation-software-inc-announces-results-for-the-second-quarter-ended-june-30-2026-and-declares-quarterly-dividend/",
@@ -373,19 +373,19 @@
       },
       "scenarios": {
         "bear": {
-          "value": 838.28
+          "value": 844.82
         },
         "base": {
-          "value": 1213.91
+          "value": 1223.38
         },
         "bull": {
-          "value": 1657.48
+          "value": 1670.41
         }
       },
-      "baseValue": 1213.91,
-      "entryPrice": 754.45,
-      "marginVsBasePct": -182.6,
-      "priceToEntryGapPct": -78.0,
+      "baseValue": 1223.38,
+      "entryPrice": 760.34,
+      "marginVsBasePct": -172.2,
+      "priceToEntryGapPct": -77.2,
       "warnings": [
         "Adquisiciones consumen caja y crean crecimiento; FCFA2S no equivale a caja repartible después de adquisiciones.",
         "Entry threshold illustrative, not a recommendation",
@@ -412,8 +412,8 @@
         }
       },
       "qualityScore": null,
-      "quoteDate": "2026-11-10",
-      "price": 1520.85,
+      "quoteDate": "2026-11-18",
+      "price": 1380.1801,
       "valuationLevel": "preliminary",
       "investmentAction": "research_only",
       "sourceUrl": "https://investor.asml.com/news-releases/news-release-details/asml-reports-eu11.7-billion-total-net-sales-and-eu5.0-billion-net-income-q3-2026",
@@ -428,19 +428,19 @@
       },
       "scenarios": {
         "bear": {
-          "value": 242.34
+          "value": 238.9
         },
         "base": {
-          "value": 359.53
+          "value": 354.44
         },
         "bull": {
-          "value": 501.82
+          "value": 494.71
         }
       },
-      "baseValue": 359.53,
-      "entryPrice": 218.11,
-      "marginVsBasePct": -323.0,
-      "priceToEntryGapPct": -85.7,
+      "baseValue": 354.44,
+      "entryPrice": 215.01,
+      "marginVsBasePct": -289.4,
+      "priceToEntryGapPct": -84.4,
       "warnings": [
         "ASML cotiza en Nasdaq en USD; modelo parte de EUR. FCF sensible a anticipos de clientes y ciclo de semiconductores.",
         "Entry threshold illustrative, not a recommendation",
@@ -467,8 +467,8 @@
         }
       },
       "qualityScore": null,
-      "quoteDate": "2026-11-10",
-      "price": 37.46,
+      "quoteDate": "2026-11-18",
+      "price": 37.3,
       "valuationLevel": "preliminary",
       "investmentAction": "research_only",
       "sourceUrl": "https://grupadino.pl/en/financial-reports/",
@@ -494,7 +494,7 @@
       },
       "baseValue": 8.91,
       "entryPrice": 5.46,
-      "marginVsBasePct": -320.4,
+      "marginVsBasePct": -318.6,
       "priceToEntryGapPct": -85.4,
       "warnings": [
         "Capex de expansión de tiendas elevado; FCF actual no mide plenamente valor de futuras aperturas. Split de 10:1 incorporado.",
@@ -575,8 +575,8 @@
     "INTU",
     "CPRT",
     "CSU.TO",
-    "DNP.WA",
-    "ASML"
+    "ASML",
+    "DNP.WA"
   ],
   "researchOnly": true,
   "transactionSignals": false,
