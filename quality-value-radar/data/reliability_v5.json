@@ -1,6 +1,6 @@
 {
   "schema": "qvr-v5-evidence",
-  "generatedAt": "2026-11-18T18:08:22.172886+00:00",
+  "generatedAt": "2026-11-25T19:21:05.183386+00:00",
   "policyVersion": "5.0",
   "signalsAllowed": false,
   "companies": {
@@ -1483,7 +1483,7 @@
         }
       ],
       "maintenanceGrowthCapex": [],
-      "reverseDcfImpliedGrowth": 34.15,
+      "reverseDcfImpliedGrowth": 31.91,
       "investmentReadiness": "needs_evidence",
       "automaticBuySignal": false,
       "blockers": [
